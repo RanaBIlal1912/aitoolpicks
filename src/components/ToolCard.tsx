@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { PRICING_MODEL_LABEL, getCategory, type Tool } from "@/data/tools";
 import AffLink from "./AffLink";
+import TiltCard from "./TiltCard";
+import ToolLogo from "./ToolLogo";
 
 const STATUS = {
   verified: { label: "Pricing verified", cls: "border-emerald-400/30 bg-emerald-400/10 text-emerald-200" },
@@ -12,18 +14,13 @@ const STATUS = {
 
 const OPEN_LABEL = { "open-source": "Open source", "source-available": "Source-available", "open-weights": "Open weights", proprietary: "Proprietary" } as const;
 
-export function Monogram({ name, hue, size = 48 }: { name: string; hue: number; size?: number }) {
-  return (
-    <span
-      aria-hidden="true"
-      className="grid shrink-0 place-items-center rounded-2xl font-extrabold text-white"
-      style={{ width: size, height: size, fontSize: size * 0.4, background: `linear-gradient(145deg, hsl(${hue} 38% 40%), hsl(${(hue + 30) % 360} 34% 26%))`, boxShadow: "inset 0 1px 0 rgba(255,255,255,.18)" }}
-    >
-      {name.charAt(0)}
-    </span>
-  );
-}
+const PILL = "rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft";
 
+/**
+ * One tool in a list. The card tilts gently toward the mouse and a soft light follows it (the original behaviour, kept subtle and
+ * switched off for reduced-motion and touch). The whole card opens the tool page through the stretched title link; the
+ * "Visit site" and compare controls sit above it so they keep working.
+ */
 export default function ToolCard({
   tool,
   selected,
@@ -40,30 +37,29 @@ export default function ToolCard({
   const st = STATUS[tool.pricingStatus];
   const free = tool.freePlan === true ? "Free plan" : tool.freePlan === false ? "No free plan" : "Not stated";
   return (
-    <article className="glass card-glow flex h-full flex-col p-6 transition-transform duration-300 hover:-translate-y-0.5" style={{ ["--hue" as string]: tool.hue }}>
+    <TiltCard hue={tool.hue} max={6} className="tool-card group flex h-full flex-col p-6">
       <div className="flex items-start gap-4">
-        <Monogram name={tool.name} hue={tool.hue} />
+        <ToolLogo id={tool.id} name={tool.name} hue={tool.hue} size={48} />
         <div className="min-w-0">
           <h3 className="text-xl font-bold leading-tight tracking-tight text-white">
-            <Link href={`/tools/${tool.id}/`} className="no-underline hover:underline">
+            <Link href={`/tools/${tool.id}/`} className="tool-card-link no-underline">
               {tool.name}
+              <span className="sr-only">: details and pricing</span>
             </Link>
           </h3>
-          <p className="text-sm text-muted">{tool.vendor}</p>
+          <p className="truncate text-sm text-muted">{tool.vendor}</p>
         </div>
       </div>
 
-      <p className="mt-4 text-[0.97rem] text-soft">{tool.tagline}</p>
-      {tool.keyFeature && <p className="mt-2 text-sm text-muted">Key capability: {tool.keyFeature}</p>}
+      <p className="mt-4 line-clamp-2 min-h-[3.2em] text-[0.97rem] text-soft">{tool.tagline}</p>
+      {tool.keyFeature && <p className="mt-2 line-clamp-2 min-h-[2.8em] text-sm text-muted">{tool.keyFeature}</p>}
 
       <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-        {cat && <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{sub ? `${cat.short} · ${sub.label}` : cat.short}</span>}
+        {cat && <span className={PILL}>{sub ? `${cat.short} · ${sub.label}` : cat.short}</span>}
         <span className={`rounded-full border px-2.5 py-1 ${st.cls}`}>{st.label}</span>
-        <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{PRICING_MODEL_LABEL[tool.pricingModel]}</span>
-        {tool.trial && <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">Free trial</span>}
-        {tool.openSource && tool.openSource !== "proprietary" && (
-          <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{OPEN_LABEL[tool.openSource]}</span>
-        )}
+        <span className={PILL}>{PRICING_MODEL_LABEL[tool.pricingModel]}</span>
+        {tool.trial && <span className={PILL}>Free trial</span>}
+        {tool.openSource && tool.openSource !== "proprietary" && <span className={PILL}>{OPEN_LABEL[tool.openSource]}</span>}
       </div>
 
       <dl className="mt-4 space-y-1.5 text-sm">
@@ -81,11 +77,10 @@ export default function ToolCard({
       {tool.plans.length > 3 && <p className="mt-1 text-xs text-muted">+ {tool.plans.length - 3} more plans on the tool page</p>}
       {tool.plans.length === 0 && <p className="mt-3 text-xs text-muted">Plans not captured. See the official pricing page.</p>}
 
-      <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
-        <Link href={`/tools/${tool.id}/`} className="btn-primary btn-sm">
+      <div className="relative z-10 mt-auto flex flex-wrap items-center gap-3 pt-6">
+        <span className="btn-primary btn-sm pointer-events-none" aria-hidden="true">
           Details &amp; pricing
-          <span className="sr-only"> for {tool.name}</span>
-        </Link>
+        </span>
         <AffLink id={tool.id} className="btn-ghost btn-sm">
           Visit site
         </AffLink>
@@ -103,6 +98,6 @@ export default function ToolCard({
           </label>
         )}
       </div>
-    </article>
+    </TiltCard>
   );
 }

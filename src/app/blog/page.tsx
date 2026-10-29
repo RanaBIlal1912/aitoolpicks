@@ -8,9 +8,9 @@ import BlogList from "@/components/BlogList";
 import ArticleCard from "@/components/ArticleCard";
 
 const meta = pageMeta({
-  title: "Blog: guides for freelancers, creators and small businesses",
+  title: "Blog: practical guides to AI tools, work and getting started",
   description:
-    "Practical guides on freelancing, AI writing, design, websites and hosting, written in plain English for freelancers, students and small businesses.",
+    "Practical, plain-English guides on AI writing, design, productivity, websites and hosting, plus how to choose and pay for AI tools.",
   path: "/blog/",
 });
 meta.openGraph = { ...meta.openGraph, images: [{ url: absUrl(coverPath("board", "og")), width: 1200, height: 630 }] };

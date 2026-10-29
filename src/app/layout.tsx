@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { SITE, absUrl } from "@/lib/site";
+import { SITE, absUrl, withBase } from "@/lib/site";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,12 +10,28 @@ import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE.url}/`),
-  title: { default: `${SITE.name}: honest AI tool reviews, comparisons and guides`, template: `%s | ${SITE.name}` },
+  title: { default: `${SITE.name}: discover AI tools, real prices and honest comparisons`, template: `%s | ${SITE.name}` },
   description: SITE.description,
   applicationName: SITE.name,
   alternates: { canonical: absUrl("/") },
-  openGraph: { siteName: SITE.name, type: "website", locale: "en_US", url: absUrl("/") },
-  twitter: { card: "summary_large_image" },
+  // Static files in public/brand (made by `npm run brand` from one mark). Paths include the GitHub Pages base path.
+  icons: {
+    icon: [
+      { url: withBase("/brand/mark.svg"), type: "image/svg+xml" },
+      { url: withBase("/brand/favicon-32.png"), sizes: "32x32", type: "image/png" },
+      { url: withBase("/brand/icon-192.png"), sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: withBase("/brand/apple-touch-icon.png"), sizes: "180x180", type: "image/png" }],
+  },
+  manifest: withBase("/manifest.webmanifest"),
+  openGraph: {
+    siteName: SITE.name,
+    type: "website",
+    locale: "en_US",
+    url: absUrl("/"),
+    images: [{ url: absUrl("/brand/og.png"), width: 1200, height: 630, alt: "AI Tool Picks: find the AI tool that fits, and what it really costs" }],
+  },
+  twitter: { card: "summary_large_image", images: [absUrl("/brand/og.png")] },
 };
 
 export const viewport: Viewport = {

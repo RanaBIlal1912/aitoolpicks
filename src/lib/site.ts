@@ -1,14 +1,14 @@
 export const SITE = {
   name: "AI Tool Picks",
-  tagline: "Honest guides to AI tools for freelancers and small businesses",
+  tagline: "Independent guides to AI tools, with prices checked against official sources",
   description:
-    "Plain-English reviews, comparisons and guides to AI and online tools for freelancers, creators and small businesses. Free plans first, honest pros and cons.",
+    "Discover AI tools with official plan prices, honest pros and cons, side-by-side comparisons and dated AI news. For creators, developers, professionals and businesses worldwide.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://ranabilal1912.github.io/aitoolpicks").replace(/\/$/, ""),
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   repo: "https://github.com/RanaBIlal1912/aitoolpicks",
   // Optional public contact address. Left empty on purpose: the contact page falls back to GitHub issues.
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
-  updated: "2026-10-29",
+  updated: "2026-10-30",
 } as const;
 
 /** Prefix an internal path with the base path (for plain <a> tags and raw HTML). */

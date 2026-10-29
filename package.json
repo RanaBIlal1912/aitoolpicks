@@ -12,6 +12,8 @@
     "postbuild": "node scripts/legacy-redirects.mjs",
     "covers": "vite --config scripts/covers/vite.config.mts",
     "catalog": "node scripts/build-catalog.mjs",
+    "logos": "node scripts/fetch-logos.mjs",
+    "brand": "node scripts/make-brand-assets.mjs",
     "catalog:report": "node scripts/build-catalog.mjs --report",
     "prebuild": "node scripts/build-catalog.mjs",
     "predev": "node scripts/build-catalog.mjs"

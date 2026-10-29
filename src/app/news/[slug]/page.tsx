@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import NewsCard, { formatDate } from "@/components/NewsCard";
-import { Monogram } from "@/components/ToolCard";
+import ToolLogo from "@/components/ToolLogo";
 import JsonLd from "@/components/JsonLd";
 
 export const dynamicParams = false;
@@ -81,7 +81,7 @@ export default async function NewsItemPage({ params }: Props) {
             <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {tools.map((t) => (
                 <li key={t.id} className="glass flex items-center gap-4 rounded-2xl p-4">
-                  <Monogram name={t.name} hue={t.hue} size={44} />
+                  <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
                   <div className="min-w-0">
                     <Link href={`/tools/${t.id}/`} className="font-bold text-white no-underline hover:underline">
                       {t.name}

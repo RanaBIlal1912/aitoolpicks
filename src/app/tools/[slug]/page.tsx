@@ -15,10 +15,9 @@ import PageHeader from "@/components/PageHeader";
 import AffLink from "@/components/AffLink";
 import PricingTable from "@/components/PricingTable";
 import { formatChecked } from "@/lib/dates";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
+import { logoFor } from "@/data/logos";
 import ArticleCard from "@/components/ArticleCard";
-import { Monogram } from "@/components/ToolCard";
+import ToolLogo from "@/components/ToolLogo";
 import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 
@@ -74,6 +73,8 @@ export default async function ToolPage({ params }: Props) {
   const guides = articlesMentioning(t.id);
   const comparisons = COMPARISONS.filter((c) => c.leftTool === t.id || c.rightTool === t.id);
   const alternatives = t.alternatives.map((id) => getTool(id)).filter((x): x is NonNullable<typeof x> => !!x);
+  const logo = logoFor(t.id);
+  const logoNote = logo ? (logo.status === "ok" ? undefined : `Logo: ${t.name}’s own site icon, shown at a small size.`) : "No verified logo yet, so a letter mark is shown.";
   const news = newsForTool(t.id).slice(0, 3);
   const sub = cat?.subs.find((s) => s.slug === t.subcategory);
   const related = [...comparisons.map((c) => c.article), ...guides.map((g) => g.slug)].filter((s, i, a) => a.indexOf(s) === i).slice(0, 4);
@@ -84,7 +85,7 @@ export default async function ToolPage({ params }: Props) {
         eyebrow={cat?.label ?? "Tool"}
         title={
           <span className="flex items-center gap-4">
-            <Monogram name={t.name} hue={t.hue} size={56} />
+            <ToolLogo id={t.id} name={t.name} hue={t.hue} size={56} alt={`${t.name} logo`} />
             {t.name}
           </span>
         }
@@ -161,7 +162,7 @@ export default async function ToolPage({ params }: Props) {
                 <ul className="mt-4 grid gap-4 sm:grid-cols-2">
                   {alternatives.map((a) => (
                     <li key={a.id} className="glass flex min-w-0 flex-wrap items-center gap-x-4 gap-y-3 rounded-2xl p-4">
-                      <Monogram name={a.name} hue={a.hue} size={44} />
+                      <ToolLogo id={a.id} name={a.name} hue={a.hue} size={44} />
                       <div className="min-w-[10rem] min-w-0 flex-1">
                         <Link href={`/tools/${a.id}/`} className="font-bold text-white no-underline hover:underline">
                           {a.name}
@@ -204,10 +205,16 @@ export default async function ToolPage({ params }: Props) {
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start" aria-label={`${t.name} quick facts`}>
-            <ParallaxFrame className="cover-frame aspect-[16/10]" strength={20}>
-              <Cover id={cat?.cover ?? "chip"} sizes="(min-width: 1024px) 30vw, 100vw" priority />
-            </ParallaxFrame>
-            <p className="-mt-3 text-xs text-muted">Illustration: a 3D render made for this site, not a screenshot of {t.name}.</p>
+            <div className="glass flex items-center gap-4 rounded-[22px] p-5">
+              <ToolLogo id={t.id} name={t.name} hue={t.hue} size={64} alt={`${t.name} logo`} />
+              <div className="min-w-0">
+                <p className="font-bold text-white">{t.name}</p>
+                <a href={t.website} target="_blank" rel="noopener noreferrer" className="block truncate text-sm text-[#9db4d6] underline">
+                  {t.website.replace(/^https:\/\//, "")} ↗
+                </a>
+              </div>
+            </div>
+            {logoNote && <p className="-mt-3 text-xs text-muted">{logoNote}</p>}
             <div className="glass rounded-[22px] p-6">
               <h2 className="kicker">Quick facts</h2>
               <dl className="mt-4 space-y-4 text-[0.97rem]">

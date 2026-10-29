@@ -23,8 +23,9 @@ export function pageMeta(opts: {
       siteName: SITE.name,
       type: opts.type ?? "website",
       locale: "en_US",
+      images: [{ url: absUrl("/brand/og.png"), width: 1200, height: 630, alt: `${SITE.name}: find the AI tool that fits, and what it really costs` }],
       ...(opts.publishedTime ? { publishedTime: opts.publishedTime } : {}),
     },
-    twitter: { card: "summary_large_image", title: opts.title, description: opts.description },
+    twitter: { card: "summary_large_image", title: opts.title, description: opts.description, images: [absUrl("/brand/og.png")] },
   };
 }

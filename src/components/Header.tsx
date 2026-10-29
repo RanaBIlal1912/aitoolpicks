@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MORE, NAV, SITE } from "@/lib/site";
+import { BrandMark } from "@/lib/brand";
 import { CODES, CURRENCIES, type CurrencyCode } from "@/lib/currency";
 import { useCurrency } from "./CurrencyProvider";
 
@@ -53,22 +54,6 @@ function CurrencySelect({ id }: { id: string }) {
         ))}
       </select>
     </label>
-  );
-}
-
-function LogoMark() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true">
-      <defs>
-        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#5b7fc0" />
-          <stop offset="1" stopColor="#8a83c2" />
-        </linearGradient>
-      </defs>
-      <rect x="1" y="1" width="32" height="32" rx="9" fill="url(#lg)" />
-      <path d="M17 7l8.5 5v10L17 27l-8.5-5V12z" fill="none" stroke="#fff" strokeOpacity=".9" strokeWidth="1.6" strokeLinejoin="round" />
-      <circle cx="17" cy="17" r="2.6" fill="#fff" />
-    </svg>
   );
 }
 
@@ -179,7 +164,7 @@ export default function Header() {
           className="flex items-center gap-2.5 rounded-lg font-extrabold tracking-tight text-white no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
           aria-label={`${SITE.name} home`}
         >
-          <LogoMark />
+          <BrandMark size={32} gradientId="brand-header" />
           <span className="text-[1.08rem]">{SITE.name}</span>
         </Link>
 

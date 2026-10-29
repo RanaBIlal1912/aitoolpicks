@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS } from "@/data/tools";
 import { formatChecked } from "@/lib/dates";
+import ToolLogo from "./ToolLogo";
 
 const STATUS = { verified: "Verified", partial: "Partly verified", unverified: "Not verified" } as const;
 const STATUS_CLS = { verified: "text-emerald-300", partial: "text-amber", unverified: "text-muted" } as const;
@@ -92,11 +93,16 @@ export default function PricingHub() {
           <tbody>
             {rows.map((t) => (
               <tr key={t.id}>
-                <th scope="row" className="!w-[22%]">
-                  <Link href={`/tools/${t.id}/`} className="font-bold text-white no-underline hover:underline">
-                    {t.name}
-                  </Link>
-                  <span className="mt-0.5 block text-xs font-normal text-muted">{PRICING_MODEL_LABEL[t.pricingModel]}</span>
+                <th scope="row" className="!w-[24%]">
+                  <span className="flex items-center gap-3">
+                    <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
+                    <span className="min-w-0">
+                      <Link href={`/tools/${t.id}/`} className="font-bold text-white no-underline hover:underline">
+                        {t.name}
+                      </Link>
+                      <span className="mt-0.5 block text-xs font-normal text-muted">{PRICING_MODEL_LABEL[t.pricingModel]}</span>
+                    </span>
+                  </span>
                 </th>
                 <td>{t.freePlan === true ? "Yes" : t.freePlan === false ? "No" : <span className="text-muted">Not stated</span>}</td>
                 <td>

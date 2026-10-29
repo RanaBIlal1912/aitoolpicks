@@ -8,8 +8,6 @@ import { pageMeta } from "@/lib/meta";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import ToolCard from "@/components/ToolCard";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
 import JsonLd from "@/components/JsonLd";
 
 export const dynamicParams = false;
@@ -75,9 +73,6 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </PageHeader>
       <div className="mx-auto max-w-6xl px-5">
-        <ParallaxFrame className="cover-frame mb-10 aspect-[16/6]" strength={24}>
-          <Cover id={c.cover} sizes="100vw" priority />
-        </ParallaxFrame>
         <h2 className="sr-only">Tools in {c.label}</h2>
         {groups.map((g) => (
           <section key={g.slug} className="mb-12" aria-labelledby={`sub-${g.slug}`}>

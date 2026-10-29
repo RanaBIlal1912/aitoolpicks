@@ -118,7 +118,7 @@ export const REVIEWS: Review[] = [
       "We could not verify Canva's current plans automatically, so check its pricing page for free-plan limits",
       "Not a replacement for professional design software",
     ],
-    bestFor: "Beginners, freelancers and small businesses that need clean visuals quickly.",
+    bestFor: "Beginners, creators and small teams that need clean visuals quickly.",
     skipIf: "You need precise, custom brand design or advanced illustration.",
     pricingNote:
       "Canva's official pricing page blocked automated access when we checked, so we do not publish its prices. See Canva's own plans page.",

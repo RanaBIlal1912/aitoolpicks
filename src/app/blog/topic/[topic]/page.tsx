@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!t) return {};
   const m = pageMeta({
     title: `${t.label}: guides and how-tos`,
-    description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for freelancers, students and small businesses.`.slice(0, 180),
+    description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for people choosing and using AI tools.`.slice(0, 180),
     path: `/blog/topic/${topic}/`,
   });
   m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(COVER_BY_TOPIC[t.id], "og")), width: 1200, height: 630 }] };

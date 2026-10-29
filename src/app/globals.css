@@ -226,6 +226,39 @@ a {
   opacity: 1;
 }
 
+/* Tool cards: the original tilt and pointer light, plus a refined border and a soft lift on hover or keyboard focus. */
+.tool-card {
+  transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+.tool-card:hover,
+.tool-card:focus-within {
+  border-color: rgba(168, 186, 226, 0.4);
+  box-shadow: 0 22px 44px -22px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(168, 186, 226, 0.08);
+}
+.tool-card:focus-within {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+/* The title link covers the whole card; real buttons inside sit above it (z-10). */
+.tool-card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+.tool-card-link:focus-visible {
+  outline: none;
+}
+.tool-card-link:hover {
+  text-decoration: underline;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-card {
+    transition: none;
+  }
+}
+
 .price-chip {
   display: inline-block;
   padding: 6px 12px;

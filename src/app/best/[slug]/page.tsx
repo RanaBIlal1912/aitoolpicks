@@ -11,7 +11,7 @@ import AffLink from "@/components/AffLink";
 import Cover from "@/components/Cover";
 import ParallaxFrame from "@/components/ParallaxFrame";
 import Reveal from "@/components/Reveal";
-import { Monogram } from "@/components/ToolCard";
+import ToolLogo from "@/components/ToolLogo";
 import { formatChecked } from "@/lib/dates";
 import JsonLd from "@/components/JsonLd";
 
@@ -92,7 +92,7 @@ export default async function RoundupPage({ params }: Props) {
             <Reveal as="li" key={tool.id} delay={0.03 * i}>
               <article className="glass rounded-[24px] p-6 md:p-8">
                 <div className="flex flex-wrap items-center gap-4">
-                  <Monogram name={tool.name} hue={tool.hue} size={52} />
+                  <ToolLogo id={tool.id} name={tool.name} hue={tool.hue} size={52} />
                   <div className="min-w-0 flex-1">
                     <p className="kicker">{badge}</p>
                     <h3 className="text-2xl font-bold tracking-tight text-white">

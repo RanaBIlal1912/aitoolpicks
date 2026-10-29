@@ -11,8 +11,6 @@ import AffLink from "@/components/AffLink";
 import PriceTag from "@/components/PriceTag";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/Reveal";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
 import { coverPath } from "@/data/covers";
 import { getCategory } from "@/data/tools";
 
@@ -76,10 +74,6 @@ export default async function ReviewPage({ params }: Props) {
       </PageHeader>
 
       <div className="mx-auto max-w-5xl px-5">
-        <ParallaxFrame className="cover-frame aspect-[16/6]" strength={26}>
-          <Cover id="chip" sizes="100vw" priority />
-        </ParallaxFrame>
-        <p className="mb-8 mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a screenshot of {tool.name}.</p>
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
           This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. This is an editorial
           overview, not lab testing.{" "}

@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { FOOTER_LINKS, NAV, SITE } from "@/lib/site";
 import RateNote from "./RateNote";
+import { BrandMark } from "@/lib/brand";
 
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-white/10 bg-black/20">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="text-lg font-extrabold tracking-tight text-white">{SITE.name}</p>
+          <p className="flex items-center gap-2.5 text-lg font-extrabold tracking-tight text-white">
+            <BrandMark size={28} gradientId="brand-footer" />
+            {SITE.name}
+          </p>
           <p className="mt-3 max-w-sm text-[0.95rem] text-muted">
             {SITE.tagline}. We say who each tool is good for, and who should skip it.
           </p>

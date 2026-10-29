@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import { REVIEWS } from "@/data/reviews";
-import { getTool } from "@/data/tools";
+import { getCategory, getTool } from "@/data/tools";
+import ToolLogo from "@/components/ToolLogo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 
@@ -17,7 +18,7 @@ export default function ReviewsPage() {
     <>
       <PageHeader
         eyebrow="Reviews"
-        title="Honest overviews, with the downsides included"
+        title="Overviews that include the downsides"
         lead="Each page covers what the tool does, who it suits, who should skip it and what it costs. Prices come from official pages."
         crumbs={[{ name: "Reviews", href: "/reviews/" }]}
       />
@@ -37,14 +38,9 @@ export default function ReviewsPage() {
                   style={{ ["--hue" as string]: t.hue }}
                 >
                   <div className="flex items-center gap-3">
-                    <span
-                      aria-hidden="true"
-                      className="grid h-11 w-11 place-items-center rounded-2xl font-extrabold text-white"
-                      style={{ background: `linear-gradient(135deg, hsl(${t.hue} 85% 55%), hsl(${(t.hue + 50) % 360} 80% 45%))` }}
-                    >
-                      {t.name.charAt(0)}
-                    </span>
-                    <span className="text-sm font-bold uppercase tracking-[0.12em] text-cyan">{t.category}</span>
+                    <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
+                    <span className="text-sm font-bold uppercase tracking-[0.12em] text-cyan">{getCategory(t.category)?.short ?? t.category}</span>
+                    <span className="ml-auto rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs font-semibold text-soft">Documentation-based</span>
                   </div>
                   <h2 className="font-serif text-2xl font-bold leading-snug tracking-tight text-white">{r.title}</h2>
                   <p className="text-muted">{r.summary}</p>

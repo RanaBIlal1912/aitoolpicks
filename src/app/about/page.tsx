@@ -5,7 +5,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata = pageMeta({
   title: "About AI Tool Picks: our mission and how we choose tools",
   description:
-    "AI Tool Picks publishes plain-English guides, comparisons and overviews of AI tools for freelancers and small businesses. Learn how we choose tools and how the site earns money.",
+    "AI Tool Picks is an independent directory and magazine for AI tools, with official prices, comparisons and dated news. Learn how we choose tools and how the site earns money.",
   path: "/about/",
 });
 
@@ -14,7 +14,7 @@ export default function AboutPage() {
     <LegalPage
       eyebrow="About"
       title="About AI Tool Picks"
-      lead="We help freelancers, students and small business owners choose AI and online tools without wasting money or time."
+      lead="We help creators, developers, professionals and businesses choose AI tools without wasting money or time."
       path="/about/"
     >
       <h2>Our mission</h2>
@@ -25,9 +25,10 @@ export default function AboutPage() {
 
       <h2>Who this is for</h2>
       <ul>
-        <li>Freelancers looking for clients and faster ways to deliver good work.</li>
-        <li>Students who want to learn faster and use AI honestly.</li>
-        <li>Small business owners who need a simple stack for writing, design, organisation and a website.</li>
+        <li>Creators and freelancers who want faster ways to deliver good work.</li>
+        <li>Developers and researchers comparing coding tools, models and infrastructure.</li>
+        <li>Professionals and business owners who need a sensible stack for writing, design, meetings, automation and a website.</li>
+        <li>Everyday users and students who want to try AI tools without overpaying.</li>
       </ul>
 
       <h2>How we choose and describe tools</h2>
