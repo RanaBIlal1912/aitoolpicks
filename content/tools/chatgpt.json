@@ -1,0 +1,72 @@
+{
+  "id": "chatgpt",
+  "name": "ChatGPT",
+  "vendor": "OpenAI",
+  "website": "https://chatgpt.com",
+  "category": "assistants",
+  "categories": [
+    "assistants",
+    "writing",
+    "coding"
+  ],
+  "tagline": "General-purpose AI assistant from OpenAI",
+  "description": "ChatGPT is OpenAI's chat assistant. You describe what you need in plain language and it replies in text, which people use for drafts, outlines, explanations and ideas.",
+  "features": [
+    "Chat-based assistant for writing, analysis and questions",
+    "Drafting, rewriting and summarising text",
+    "Brainstorming and outlining"
+  ],
+  "useCases": [
+    "Turning rough notes into a first draft of an email or proposal",
+    "Explaining an unfamiliar topic in simpler words",
+    "Brainstorming names, angles and outlines"
+  ],
+  "audience": [
+    "Freelancers",
+    "Students",
+    "Small business owners"
+  ],
+  "strengths": [
+    "Handles many writing and thinking tasks in one place",
+    "Widely used, so many tutorials and guides exist"
+  ],
+  "limitations": [
+    "Can state wrong facts confidently, so check anything important",
+    "Do not paste confidential client or personal information unless you are allowed to"
+  ],
+  "alternatives": [
+    "claude",
+    "gemini",
+    "copilot",
+    "perplexity"
+  ],
+  "hue": 160,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "unverified",
+    "model": "unknown",
+    "checked": "2026-10-29",
+    "source": "https://chatgpt.com/pricing",
+    "plans": [],
+    "notes": [
+      "Plans and limits for ChatGPT are not shown here because we could not verify them."
+    ],
+    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page (could not be read automatically)",
+      "url": "https://chatgpt.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://chatgpt.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "review": "chatgpt"
+}

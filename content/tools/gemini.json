@@ -1,0 +1,160 @@
+{
+  "id": "gemini",
+  "name": "Gemini",
+  "vendor": "Google",
+  "website": "https://gemini.google.com",
+  "category": "assistants",
+  "categories": [
+    "assistants",
+    "writing"
+  ],
+  "tagline": "AI assistant from Google",
+  "description": "Gemini is Google's AI assistant, offered through the Gemini app and Google AI subscription plans for individuals, plus Business and Enterprise options.",
+  "features": [
+    "Image generation and editing",
+    "Deep Research, Gemini Live, Canvas and Gems",
+    "Video generation on paid plans",
+    "Storage bundled with Google AI plans"
+  ],
+  "useCases": [
+    "Everyday help inside Google's apps",
+    "Research and drafting",
+    "Creating and editing files in a chat"
+  ],
+  "audience": [
+    "Individuals who use Google services",
+    "Businesses (Gemini Enterprise)"
+  ],
+  "strengths": [
+    "A free plan with a Google account",
+    "Business and Enterprise seats are priced in USD per seat"
+  ],
+  "limitations": [
+    "Usage limits reset every 5 hours until a weekly limit is reached; numeric limits are not stated",
+    "Some features are limited to selected countries and some require users to be 18 or older"
+  ],
+  "alternatives": [
+    "chatgpt",
+    "claude",
+    "copilot"
+  ],
+  "hue": 225,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://gemini.google/subscriptions/",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "PKR",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Flash-Lite model access",
+          "Image generation and editing",
+          "Deep Research, Gemini Live, Canvas, Gems",
+          "15 GB storage"
+        ]
+      },
+      {
+        "name": "Google AI Plus",
+        "audience": "individual",
+        "currency": "PKR",
+        "unit": "per month",
+        "monthly": 1400,
+        "highlights": [
+          "Flash model access",
+          "2x Free usage limits",
+          "Video generation",
+          "200 Google Flow credits",
+          "400 GB storage"
+        ],
+        "note": "Price shown in Pakistani rupees for Pakistan on 2026-10-29; the US dollar price was not captured"
+      },
+      {
+        "name": "Google AI Pro",
+        "audience": "individual",
+        "currency": "PKR",
+        "unit": "per month",
+        "monthly": 5600,
+        "highlights": [
+          "4x Free usage limits",
+          "1,000 Google Flow credits",
+          "5 TB storage"
+        ],
+        "note": "Price shown in Pakistani rupees for Pakistan on 2026-10-29; the US dollar price was not captured"
+      },
+      {
+        "name": "Google AI Ultra",
+        "audience": "individual",
+        "currency": "PKR",
+        "unit": "per month",
+        "monthly": 21999,
+        "highlights": [
+          "Highest access to Gemini models",
+          "10,000 or 25,000 Google Flow credits by tier",
+          "Storage starting at 20 TB"
+        ],
+        "note": "Starting price in Pakistani rupees (5x AI Pro usage); a 20x tier is shown at Rs 55,900 per month"
+      },
+      {
+        "name": "Gemini Enterprise Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 21,
+        "highlights": [
+          "For up to 300 seats",
+          "25 GiB pooled storage per seat"
+        ]
+      },
+      {
+        "name": "Gemini Enterprise Standard/Plus",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 30,
+        "highlights": [
+          "Unlimited seats",
+          "Up to 75 GiB pooled storage per seat"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Free with a Google account: Flash-Lite model access, image generation and editing, Deep Research, Gemini Live, Canvas, Gems, limited Google Flow access and 15 GB storage. Numeric usage limits are not stated."
+    },
+    "trial": "A limited trial of Veo 3.1 Lite with AI Pro is mentioned; its length and limits are not stated.",
+    "api": {
+      "summary": "Google AI Studio is free to start, with paid tiers for higher limits. The Gemini platform is pay-as-you-go. Per-token rates were not shown on the page we read.",
+      "source": "https://gemini.google/subscriptions/"
+    },
+    "regional": "Consumer prices on the page we read were shown in Pakistani rupees (the page localises by country), so the US price is not recorded here. Plan availability varies by country (footnotes cite 140+, 150+ or 160+ countries). Annual pricing is not stated for any plan.",
+    "notes": [
+      "Consumer plan prices differ by country. Check the official page for the price in your country."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official subscriptions page",
+      "url": "https://gemini.google/subscriptions/",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://gemini.google.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Mobile",
+    "macOS app"
+  ]
+}

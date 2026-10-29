@@ -1,0 +1,60 @@
+{
+  "id": "midjourney",
+  "name": "Midjourney",
+  "vendor": "Midjourney",
+  "website": "https://www.midjourney.com",
+  "category": "image",
+  "categories": [
+    "image"
+  ],
+  "tagline": "AI image generator",
+  "description": "Midjourney generates images from text descriptions and is used for concept art and visual ideas.",
+  "features": [
+    "Image generation from text prompts"
+  ],
+  "useCases": [
+    "Exploring visual ideas",
+    "Mood boards and concept art"
+  ],
+  "audience": [
+    "Designers",
+    "Creators"
+  ],
+  "strengths": [
+    "Widely used for concept work"
+  ],
+  "limitations": [
+    "Check current commercial-use terms before using images for clients",
+    "Results vary with how you write the prompt"
+  ],
+  "alternatives": [
+    "firefly",
+    "leonardo",
+    "ideogram"
+  ],
+  "hue": 240,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "unverified",
+    "model": "unknown",
+    "checked": "2026-10-29",
+    "source": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "plans": [],
+    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+  },
+  "sources": [
+    {
+      "label": "Official plan comparison (could not be read automatically)",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.midjourney.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ]
+}

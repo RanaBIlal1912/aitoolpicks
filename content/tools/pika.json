@@ -1,0 +1,143 @@
+{
+  "id": "pika",
+  "name": "Pika",
+  "vendor": "Pika",
+  "website": "https://pika.art",
+  "category": "video",
+  "categories": [
+    "video"
+  ],
+  "tagline": "Credit-based AI video generation",
+  "description": "Pika is an AI video and image generation service with a free plan and Starter, Creator and Fancy paid plans.",
+  "features": [
+    "Credits per month",
+    "Parallel video, image and audio generations",
+    "Commercial licence on paid plans"
+  ],
+  "useCases": [
+    "Generating short AI videos",
+    "Creating images and audio"
+  ],
+  "audience": [
+    "Creators",
+    "Social and marketing teams"
+  ],
+  "strengths": [
+    "Free plan with no watermark",
+    "Credit packs from $25 for 1,500 credits"
+  ],
+  "limitations": [
+    "Free plan has 0 monthly credits (credit packs only) and no commercial licence",
+    "Plan credits do not roll over and payments are non-refundable"
+  ],
+  "alternatives": [
+    "runway",
+    "luma",
+    "heygen"
+  ],
+  "hue": 330,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://pika.art/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "0 credits per month",
+          "No commercial licence"
+        ]
+      },
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 10,
+        "annual": 8,
+        "highlights": [
+          "900 credits per month",
+          "Commercial licence",
+          "2 parallel video, 8 parallel image and audio"
+        ]
+      },
+      {
+        "name": "Creator",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 35,
+        "annual": 28,
+        "highlights": [
+          "3,150 credits per month",
+          "8 parallel video, 32 parallel image and audio"
+        ],
+        "note": "The plan card also shows '$30' beside $35"
+      },
+      {
+        "name": "Fancy",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 95,
+        "annual": 76,
+        "highlights": [
+          "8,550 credits per month and up",
+          "Unlimited parallel generations",
+          "Priority queue"
+        ],
+        "note": "Ranges up to $880 monthly / $704 annual for larger credit tiers"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "0 credits per month (credit packs only), 2 parallel video generations, no watermark, no commercial licence."
+    },
+    "api": {
+      "summary": "A developer site is linked, but no prices were shown on the page we read.",
+      "source": "https://pika.art/pricing"
+    },
+    "notes": [
+      "Credit packs: from $25 (1,500 credits) to $1,000 (66,000 credits). Top-up credits expire after 365 days. Payments are non-refundable per the FAQ."
+    ],
+    "reference": {
+      "plan": "Starter",
+      "amount": 10,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://pika.art/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://pika.art",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "iOS"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "writesonic",
+  "name": "Writesonic",
+  "vendor": "Writesonic",
+  "website": "https://writesonic.com",
+  "category": "marketing",
+  "categories": [
+    "marketing",
+    "writing"
+  ],
+  "tagline": "AI search visibility and content platform",
+  "description": "Writesonic's pricing page lists plans measured in tracked AI prompts and answers, AI articles per month, site audits and users.",
+  "features": [
+    "AI prompts and answers tracked daily",
+    "AI articles per month",
+    "Site audits",
+    "Action Center trial on Growth"
+  ],
+  "useCases": [
+    "Tracking AI-search visibility",
+    "Generating articles"
+  ],
+  "audience": [
+    "Marketers",
+    "SEO teams"
+  ],
+  "strengths": [
+    "Trial with full access and no credit card (per the FAQ)",
+    "7-day refund stated"
+  ],
+  "limitations": [
+    "Monthly-billed prices were not stated",
+    "A fair-usage policy applies"
+  ],
+  "alternatives": [
+    "surfer",
+    "jasper"
+  ],
+  "hue": 35,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "free-trial",
+    "checked": "2026-10-29",
+    "source": "https://writesonic.com/pricing",
+    "plans": [
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 79,
+        "billing": "Per month, billed annually",
+        "highlights": [
+          "50 prompts and 50 answers tracked daily",
+          "15 AI articles per month",
+          "10 site audits",
+          "1 user, 1 project"
+        ]
+      },
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 199,
+        "billing": "Per month, billed annually",
+        "highlights": [
+          "100 prompts and 300 answers daily",
+          "25 AI articles per month",
+          "2 users, 1 project"
+        ]
+      },
+      {
+        "name": "Growth",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 399,
+        "billing": "Per month, billed annually",
+        "highlights": [
+          "200 prompts and 600 answers daily",
+          "50 AI articles per month",
+          "3 users, 2 projects"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "All 9 AI platforms",
+          "Custom limits"
+        ]
+      }
+    ],
+    "trial": "'Start free trial' is offered on Starter, Basic and Growth; the FAQ says to sign up with full access and no credit card. Duration not stated.",
+    "regional": "Currency shown as '$' without a code. Regional and tax notes: not stated.",
+    "notes": [
+      "Add-ons: extra users $50 per user per month (Basic and Growth); +20 articles for $100 per month on Growth."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://writesonic.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://writesonic.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

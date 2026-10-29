@@ -24,7 +24,7 @@ export const COMPARISONS: Comparison[] = [
     rows: [
       { label: "Main job", left: "Create: drafts, outlines, ideas and rewrites", right: "Fix: spelling, grammar and tone" },
       { label: "Best when", left: "You face a blank page or need ideas", right: "You already have text that needs cleaning up" },
-      { label: "Free option", left: "A free tier is available", right: "A free plan is available" },
+      { label: "Free option", left: "Not verified (the official pricing page blocked automated access)", right: "A free plan is documented on Grammarly's plans page" },
       { label: "Typical paid plan", left: { price: "chatgpt" }, right: { price: "grammarly" } },
       { label: "Watch out", left: "Can state wrong facts confidently. Check anything important.", right: "Suggestions are not always right for your style." },
     ],
@@ -38,7 +38,7 @@ export const COMPARISONS: Comparison[] = [
     rows: [
       { label: "Choose it if", left: "You make a few social posts, simple flyers or a portfolio, work alone and do not need lots of premium templates", right: "You design for clients every week, want brand colours, fonts and logos in one place, or keep hitting limits" },
       { label: "How to decide", left: "Use it for two weeks and list what blocked you", right: "Upgrade when a named feature saves more time or money than it costs" },
-      { label: "Price", left: "Free", right: "See Canva's plans page. We do not show a price because sources disagreed." },
+      { label: "Price", left: "Free", right: "See Canva's plans page. Its pricing page blocked automated access, so we do not publish a price." },
     ],
   },
 ];

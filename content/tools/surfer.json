@@ -1,0 +1,139 @@
+{
+  "id": "surfer",
+  "name": "Surfer",
+  "vendor": "Surfer",
+  "website": "https://surfer.ai",
+  "category": "marketing",
+  "categories": [
+    "marketing",
+    "writing"
+  ],
+  "tagline": "SEO and AI search visibility platform",
+  "description": "Surfer describes itself as a platform for AI Search Optimization and visibility, with plans measured in tracked AI prompts, documents, pages and seats.",
+  "features": [
+    "AI prompts tracked on a refresh schedule",
+    "Documents and pages per plan",
+    "Brand workspaces and team seats"
+  ],
+  "useCases": [
+    "Optimising content for search",
+    "Tracking visibility in AI search"
+  ],
+  "audience": [
+    "SEO teams",
+    "Content marketers"
+  ],
+  "strengths": [
+    "Clear per-plan limits are published"
+  ],
+  "limitations": [
+    "Monthly-billed prices were not stated; the listed prices are billed yearly",
+    "Trial length is not stated"
+  ],
+  "alternatives": [
+    "writesonic",
+    "jasper"
+  ],
+  "hue": 110,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "paid",
+    "checked": "2026-10-29",
+    "source": "https://surfer.ai/pricing/",
+    "plans": [
+      {
+        "name": "AI Search Analytics",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 82,
+        "billing": "Per month, billed yearly",
+        "highlights": [
+          "50 AI prompts (daily refresh)",
+          "5 brand spaces, 5 team seats"
+        ]
+      },
+      {
+        "name": "Discovery",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 49,
+        "billing": "Per month, billed yearly",
+        "highlights": [
+          "120 documents, 10 pages",
+          "1 brand workspace, 1 seat"
+        ]
+      },
+      {
+        "name": "Standard",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 99,
+        "billing": "Per month, billed yearly",
+        "highlights": [
+          "25 AI prompts (weekly refresh)",
+          "360 documents, 50 pages",
+          "3 seats"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 182,
+        "billing": "Per month, billed yearly",
+        "highlights": [
+          "50 AI prompts (daily refresh)",
+          "360 documents, 200 pages",
+          "5 brand workspaces, 5 seats"
+        ]
+      },
+      {
+        "name": "Peace of Mind",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 299,
+        "billing": "Per month, billed yearly",
+        "highlights": [
+          "100 AI prompts (daily refresh)",
+          "Unlimited* documents, 500 pages",
+          "10 seats"
+        ],
+        "note": "*Subject to a fair usage policy"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true
+      }
+    ],
+    "notes": [
+      "Plan buttons read 'Start for Free' but no trial length is given. Add-on prices: not stated."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://surfer.ai/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://surfer.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

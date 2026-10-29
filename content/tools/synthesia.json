@@ -1,0 +1,132 @@
+{
+  "id": "synthesia",
+  "name": "Synthesia",
+  "vendor": "Synthesia",
+  "website": "https://www.synthesia.io",
+  "category": "video",
+  "categories": [
+    "video"
+  ],
+  "tagline": "AI presenter videos from text",
+  "description": "Synthesia turns text into videos with AI presenters and dubbing, with a free Basic plan and Starter, Pro and Enterprise plans.",
+  "features": [
+    "Studio video creation and dubbing",
+    "Credits per month",
+    "Survey responses and promotional 'Syren' videos in plan limits"
+  ],
+  "useCases": [
+    "Training and explainer videos",
+    "Dubbing video into other languages"
+  ],
+  "audience": [
+    "Businesses",
+    "Training and communications teams"
+  ],
+  "strengths": [
+    "Free Basic plan",
+    "Yearly billing lowers the monthly price"
+  ],
+  "limitations": [
+    "The free plan is limited to about 10 minutes of Studio video",
+    "Free trial terms are not stated"
+  ],
+  "alternatives": [
+    "heygen",
+    "runway",
+    "descript"
+  ],
+  "hue": 235,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.synthesia.io/pricing",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "500 credits per month",
+          "10 minutes of Studio video creation or dubbing"
+        ]
+      },
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 19,
+        "annual": 14,
+        "annualTotal": 168,
+        "highlights": [
+          "1,250 credits monthly (15,000 yearly)",
+          "About 12 minutes of video monthly"
+        ],
+        "note": "The first month is shown at $9"
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 89,
+        "annual": 59,
+        "annualTotal": 708,
+        "highlights": [
+          "6,000 credits monthly (72,000 yearly)",
+          "About 60 minutes of video monthly"
+        ],
+        "note": "The first month is shown at $49"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Custom credits",
+          "Unlimited video minutes"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Basic: 500 credits per month, 10 minutes of Studio video creation or dubbing."
+    },
+    "api": {
+      "summary": "A separate API pricing page exists; its Basic tier is $0 per month with 500 credits per month. Other tiers were not shown.",
+      "source": "https://www.synthesia.io/pricing"
+    },
+    "regional": "Currency shown only as '$'. Regional and tax notes: not stated.",
+    "reference": {
+      "plan": "Starter",
+      "amount": 19,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.synthesia.io/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.synthesia.io",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

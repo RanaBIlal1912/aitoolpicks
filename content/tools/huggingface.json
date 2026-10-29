@@ -1,0 +1,116 @@
+{
+  "id": "huggingface",
+  "name": "Hugging Face",
+  "vendor": "Hugging Face",
+  "website": "https://huggingface.co",
+  "category": "automation",
+  "categories": [
+    "automation",
+    "coding"
+  ],
+  "tagline": "Hub for open models, datasets and Spaces",
+  "description": "Hugging Face hosts open models, datasets and apps (Spaces), with a PRO account, Team and Enterprise plans plus pay-as-you-go compute and storage.",
+  "features": [
+    "PRO, Team and Enterprise plans",
+    "Free CPU Basic and ZeroGPU Spaces",
+    "Inference Endpoints from $0.033 per hour",
+    "Storage billed per TB"
+  ],
+  "useCases": [
+    "Finding and running open models",
+    "Hosting demos and apps"
+  ],
+  "audience": [
+    "Developers",
+    "ML teams"
+  ],
+  "strengths": [
+    "Free tier for CPU Basic and ZeroGPU",
+    "Egress and CDN included at no extra cost"
+  ],
+  "limitations": [
+    "Compute is billed hourly and can be costly for large GPUs"
+  ],
+  "alternatives": [
+    "mistral"
+  ],
+  "hue": 45,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "usage-based",
+    "checked": "2026-10-29",
+    "source": "https://huggingface.co/pricing",
+    "plans": [
+      {
+        "name": "PRO Account",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 9,
+        "highlights": [
+          "10x private and 2x public storage",
+          "$2 monthly inference credits",
+          "8x ZeroGPU quota"
+        ]
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 20,
+        "highlights": [
+          "SSO, audit logs, resource groups"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 50,
+        "highlights": [
+          "All Team benefits",
+          "SCIM, highest rate limits",
+          "Managed billing with annual commitments"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Listed free options: CPU Basic (2 vCPU, 16 GB) and ZeroGPU (dynamic)."
+    },
+    "api": {
+      "summary": "Spaces: CPU Upgrade $0.03/hr, Nvidia T4 small $0.40/hr, A100 large $2.50/hr. Inference Endpoints start at $0.033/hr (GPU e.g. H100 1x $4.50/hr). Storage per TB per month: base $12 public / $18 private, with lower tiers at higher volumes.",
+      "source": "https://huggingface.co/pricing"
+    },
+    "regional": "Currency shown only as '$'. Regional or tax note: not stated.",
+    "reference": {
+      "plan": "PRO Account",
+      "amount": 9,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://huggingface.co/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://huggingface.co",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "API"
+  ]
+}

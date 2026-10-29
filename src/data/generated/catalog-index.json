@@ -1,0 +1,1587 @@
+[
+ {
+  "id": "bolt",
+  "name": "Bolt",
+  "vendor": "StackBlitz",
+  "category": "coding",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "Prompt, run and deploy full-stack apps in the browser",
+  "description": "Bolt (bolt.new) is a browser-based AI app builder with token-based usage on Free, Pro, Teams and Enterprise plans.",
+  "bestFor": "Individuals and Teams",
+  "officialUrl": "https://bolt.new",
+  "hue": 45,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 25,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://bolt.new/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$25/mo"
+   },
+   {
+    "name": "Teams",
+    "price": "$30/member/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "canva",
+  "name": "Canva",
+  "vendor": "Canva",
+  "category": "image",
+  "categories": [
+   "image",
+   "writing"
+  ],
+  "tagline": "Template-based design tool",
+  "description": "Canva is a template-based design tool for social posts, presentations, resumes and simple logos, made for people who are not designers.",
+  "bestFor": "Non-designers and Small businesses",
+  "officialUrl": "https://www.canva.com",
+  "hue": 195,
+  "review": "canva",
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.canva.com/pricing/",
+  "plans": []
+ },
+ {
+  "id": "chatgpt",
+  "name": "ChatGPT",
+  "vendor": "OpenAI",
+  "category": "assistants",
+  "categories": [
+   "assistants",
+   "writing",
+   "coding"
+  ],
+  "tagline": "General-purpose AI assistant from OpenAI",
+  "description": "ChatGPT is OpenAI's chat assistant. You describe what you need in plain language and it replies in text, which people use for drafts, outlines, explanations and ideas.",
+  "bestFor": "Freelancers and Students",
+  "officialUrl": "https://chatgpt.com",
+  "hue": 160,
+  "review": "chatgpt",
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://chatgpt.com/pricing",
+  "plans": []
+ },
+ {
+  "id": "claude",
+  "name": "Claude",
+  "vendor": "Anthropic",
+  "category": "assistants",
+  "categories": [
+   "assistants",
+   "writing",
+   "coding"
+  ],
+  "tagline": "AI assistant from Anthropic",
+  "description": "Claude is Anthropic's AI assistant, used to write, analyse, work through problems and handle longer documents, with separate plans for individuals, teams and enterprises.",
+  "bestFor": "Individuals and Teams of 2 to 150 users (Team plan)",
+  "officialUrl": "https://claude.ai",
+  "hue": 25,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 20,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://claude.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$20/mo monthly · $17/mo yearly"
+   },
+   {
+    "name": "Max",
+    "price": "$100/mo"
+   },
+   {
+    "name": "Team (Standard seat)",
+    "price": "$25/seat/mo monthly · $20/seat/mo yearly"
+   },
+   {
+    "name": "Team (Premium seat)",
+    "price": "$125/seat/mo monthly · $100/seat/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "$20/seat/mo billed yearly"
+   }
+  ]
+ },
+ {
+  "id": "copilot",
+  "name": "Microsoft Copilot",
+  "vendor": "Microsoft",
+  "category": "assistants",
+  "categories": [
+   "assistants",
+   "writing",
+   "productivity"
+  ],
+  "tagline": "AI assistant from Microsoft",
+  "description": "Microsoft describes Copilot as an AI assistant that helps you create, research, analyse and get things done in the Microsoft 365 apps you use. Individual access comes through Microsoft 365 plans.",
+  "bestFor": "People who work in Microsoft 365 and Families (Family plan, owner only for AI features)",
+  "officialUrl": "https://copilot.microsoft.com",
+  "hue": 200,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 9.99,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+  "plans": [
+   {
+    "name": "Microsoft 365 Personal",
+    "price": "$9.99/mo"
+   },
+   {
+    "name": "Microsoft 365 Family",
+    "price": "$12.99/mo"
+   },
+   {
+    "name": "Microsoft 365 Premium",
+    "price": "$19.99/mo"
+   },
+   {
+    "name": "Microsoft 365 Pro",
+    "price": "$99.99/mo"
+   }
+  ]
+ },
+ {
+  "id": "cursor",
+  "name": "Cursor",
+  "vendor": "Cursor",
+  "category": "coding",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "AI code editor with agents",
+  "description": "Cursor is an AI-assisted code editor. Its pricing page lists Free, Plus, Premium, Super and Ultra individual plans plus Teams and Enterprise.",
+  "bestFor": "Individual developers and Teams (Teams and Enterprise plans)",
+  "officialUrl": "https://cursor.com",
+  "hue": 275,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 8,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://cursor.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Plus",
+    "price": "$8/mo"
+   },
+   {
+    "name": "Premium",
+    "price": "$30/mo"
+   },
+   {
+    "name": "Super",
+    "price": "$100/mo"
+   },
+   {
+    "name": "Ultra",
+    "price": "$200/mo"
+   },
+   {
+    "name": "Teams",
+    "price": "$30/user/mo"
+   }
+  ]
+ },
+ {
+  "id": "descript",
+  "name": "Descript",
+  "vendor": "Descript",
+  "category": "video",
+  "categories": [
+   "video",
+   "audio"
+  ],
+  "tagline": "Edit video and audio by editing text",
+  "description": "Descript is a video and audio editor with AI features, priced per person with media hours and AI credits.",
+  "bestFor": "Podcasters and Video creators",
+  "officialUrl": "https://www.descript.com",
+  "hue": 270,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.descript.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Hobbyist",
+    "price": "See note"
+   },
+   {
+    "name": "Creator",
+    "price": "See note"
+   },
+   {
+    "name": "Business",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "vendor": "ElevenLabs",
+  "category": "audio",
+  "categories": [
+   "audio",
+   "video"
+  ],
+  "tagline": "AI voice, speech and music",
+  "description": "ElevenLabs offers text-to-speech, speech-to-text, sound effects, voice design and music, sold as credit-based plans from Free to Enterprise.",
+  "bestFor": "Creators and Developers",
+  "officialUrl": "https://elevenlabs.io",
+  "hue": 180,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 5,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://elevenlabs.io/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Starter",
+    "price": "$5/mo billed yearly"
+   },
+   {
+    "name": "Creator",
+    "price": "$18.33/mo billed yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$99/mo monthly · $82.50/mo yearly"
+   },
+   {
+    "name": "Scale",
+    "price": "$299/mo monthly · $249.17/mo yearly"
+   },
+   {
+    "name": "Business",
+    "price": "$990/mo monthly · $825/mo yearly"
+   }
+  ]
+ },
+ {
+  "id": "elicit",
+  "name": "Elicit",
+  "vendor": "Elicit",
+  "category": "research",
+  "categories": [
+   "research"
+  ],
+  "tagline": "AI research assistant for academic papers",
+  "description": "Elicit is an AI research assistant for finding and analysing academic papers, with a free Basic plan and Pro, Scale and Enterprise plans.",
+  "bestFor": "Researchers and Students",
+  "officialUrl": "https://elicit.com",
+  "hue": 140,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 49,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://elicit.com/pricing",
+  "plans": [
+   {
+    "name": "Basic",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$49/user/mo billed yearly"
+   },
+   {
+    "name": "Scale",
+    "price": "$229/user/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "figma",
+  "name": "Figma",
+  "vendor": "Figma",
+  "category": "image",
+  "categories": [
+   "image"
+  ],
+  "tagline": "Collaborative interface design",
+  "description": "Figma is a browser-based design tool for website and app interfaces, with plans priced per seat type (Full, Dev and Collab).",
+  "bestFor": "Designers and Developers",
+  "officialUrl": "https://www.figma.com",
+  "hue": 300,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 16,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.figma.com/pricing/",
+  "plans": [
+   {
+    "name": "Starter",
+    "price": "Free"
+   },
+   {
+    "name": "Professional (Full seat)",
+    "price": "$16/seat/mo"
+   },
+   {
+    "name": "Organization (Full seat)",
+    "price": "$55/seat/mo billed yearly"
+   },
+   {
+    "name": "Enterprise (Full seat)",
+    "price": "$90/seat/mo billed yearly"
+   }
+  ]
+ },
+ {
+  "id": "firefly",
+  "name": "Adobe Firefly",
+  "vendor": "Adobe",
+  "category": "image",
+  "categories": [
+   "image",
+   "video",
+   "audio"
+  ],
+  "tagline": "Generative AI for images, video, audio and translation",
+  "description": "Adobe Firefly is Adobe's generative AI service. Its plans are measured in monthly generative credits and cover images, short video, translation, sound effects and music.",
+  "bestFor": "Creators and Design and marketing teams",
+  "officialUrl": "https://www.adobe.com/products/firefly.html",
+  "hue": 350,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 9.99,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.adobe.com/products/firefly/plans.html",
+  "plans": [
+   {
+    "name": "Firefly Standard",
+    "price": "$9.99/mo"
+   },
+   {
+    "name": "Firefly Pro",
+    "price": "$19.99/mo"
+   },
+   {
+    "name": "Firefly Pro Plus",
+    "price": "$49.99/mo"
+   },
+   {
+    "name": "Firefly Premium",
+    "price": "$199.99/mo"
+   },
+   {
+    "name": "Pro / Pro Plus / Premium for teams",
+    "price": "$19.99/licence/mo"
+   }
+  ]
+ },
+ {
+  "id": "gamma",
+  "name": "Gamma",
+  "vendor": "Gamma",
+  "category": "writing",
+  "categories": [
+   "writing",
+   "productivity"
+  ],
+  "tagline": "AI presentations, documents and websites",
+  "description": "Gamma is an AI tool for creating presentations, documents and simple websites.",
+  "bestFor": "Professionals and Students",
+  "officialUrl": "https://gamma.app",
+  "hue": 320,
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://gamma.app/pricing",
+  "plans": []
+ },
+ {
+  "id": "gemini",
+  "name": "Gemini",
+  "vendor": "Google",
+  "category": "assistants",
+  "categories": [
+   "assistants",
+   "writing"
+  ],
+  "tagline": "AI assistant from Google",
+  "description": "Gemini is Google's AI assistant, offered through the Gemini app and Google AI subscription plans for individuals, plus Business and Enterprise options.",
+  "bestFor": "Individuals who use Google services and Businesses (Gemini Enterprise)",
+  "officialUrl": "https://gemini.google.com",
+  "hue": 225,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://gemini.google/subscriptions/",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Google AI Plus",
+    "price": "Rs 1400/mo"
+   },
+   {
+    "name": "Google AI Pro",
+    "price": "Rs 5600/mo"
+   },
+   {
+    "name": "Google AI Ultra",
+    "price": "Rs 21999/mo"
+   },
+   {
+    "name": "Gemini Enterprise Business",
+    "price": "$21/seat/mo"
+   },
+   {
+    "name": "Gemini Enterprise Standard/Plus",
+    "price": "$30/seat/mo"
+   }
+  ]
+ },
+ {
+  "id": "github-copilot",
+  "name": "GitHub Copilot",
+  "vendor": "GitHub (Microsoft)",
+  "category": "coding",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "AI coding assistant inside your editor and on GitHub",
+  "description": "GitHub Copilot is an AI coding assistant with inline suggestions, chat, an agent mode and a command-line tool, sold in Free, Pro, Pro+ and Max plans plus business offerings.",
+  "bestFor": "Individual developers and Teams (business and enterprise offerings)",
+  "officialUrl": "https://github.com/features/copilot",
+  "hue": 215,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 10,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://github.com/features/copilot/plans",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$10/mo"
+   },
+   {
+    "name": "Pro+",
+    "price": "$39/mo"
+   },
+   {
+    "name": "Max",
+    "price": "$100/mo"
+   }
+  ]
+ },
+ {
+  "id": "grammarly",
+  "name": "Grammarly",
+  "vendor": "Grammarly",
+  "category": "writing",
+  "categories": [
+   "writing"
+  ],
+  "tagline": "Spelling, grammar and tone checker",
+  "description": "Grammarly checks spelling, grammar and tone as you type in the browser and many apps, and offers AI prompts for rewriting and drafting.",
+  "bestFor": "Professionals and Students",
+  "officialUrl": "https://www.grammarly.com",
+  "hue": 150,
+  "review": "grammarly",
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.grammarly.com/plans",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "heygen",
+  "name": "HeyGen",
+  "vendor": "HeyGen",
+  "category": "video",
+  "categories": [
+   "video",
+   "audio"
+  ],
+  "tagline": "AI avatar videos and translation",
+  "description": "HeyGen creates videos with AI avatars and voices, with credit-based plans from a free plan to Business and Enterprise.",
+  "bestFor": "Marketing and training teams and Creators",
+  "officialUrl": "https://www.heygen.com",
+  "hue": 165,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 29,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.heygen.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Creator",
+    "price": "$29/mo monthly · $24/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$49/mo"
+   },
+   {
+    "name": "Business",
+    "price": "$149/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "hostinger",
+  "name": "Hostinger",
+  "vendor": "Hostinger",
+  "category": "web",
+  "categories": [
+   "web"
+  ],
+  "tagline": "Beginner-friendly web hosting",
+  "description": "Hostinger sells web hosting, VPS and a website builder aimed at first-time site owners. Hosting plans are paid upfront for a multi-year term.",
+  "bestFor": "First-time site owners and Agencies (Agency Startup)",
+  "officialUrl": "https://www.hostinger.com",
+  "hue": 262,
+  "review": "hostinger",
+  "freePlan": null,
+  "pricingModel": "paid",
+  "pricingStatus": "verified",
+  "fromUsd": 2.49,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.hostinger.com/pricing",
+  "plans": [
+   {
+    "name": "Premium",
+    "price": "$2.49/mo"
+   },
+   {
+    "name": "Unlimited",
+    "price": "$3.49/mo"
+   },
+   {
+    "name": "Cloud Startup",
+    "price": "$7.99/mo"
+   },
+   {
+    "name": "Agency Startup",
+    "price": "$29/mo"
+   }
+  ]
+ },
+ {
+  "id": "huggingface",
+  "name": "Hugging Face",
+  "vendor": "Hugging Face",
+  "category": "automation",
+  "categories": [
+   "automation",
+   "coding"
+  ],
+  "tagline": "Hub for open models, datasets and Spaces",
+  "description": "Hugging Face hosts open models, datasets and apps (Spaces), with a PRO account, Team and Enterprise plans plus pay-as-you-go compute and storage.",
+  "bestFor": "Developers and ML teams",
+  "officialUrl": "https://huggingface.co",
+  "hue": 45,
+  "freePlan": true,
+  "pricingModel": "usage-based",
+  "pricingStatus": "verified",
+  "fromUsd": 9,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://huggingface.co/pricing",
+  "plans": [
+   {
+    "name": "PRO Account",
+    "price": "$9/mo"
+   },
+   {
+    "name": "Team",
+    "price": "$20/user/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "$50/user/mo"
+   }
+  ]
+ },
+ {
+  "id": "ideogram",
+  "name": "Ideogram",
+  "vendor": "Ideogram",
+  "category": "image",
+  "categories": [
+   "image"
+  ],
+  "tagline": "AI image generator known for text in images",
+  "description": "Ideogram is an AI image generation service.",
+  "bestFor": "Designers and Creators",
+  "officialUrl": "https://ideogram.ai",
+  "hue": 20,
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://ideogram.ai/pricing",
+  "plans": []
+ },
+ {
+  "id": "intercom",
+  "name": "Intercom",
+  "vendor": "Intercom",
+  "category": "marketing",
+  "categories": [
+   "marketing"
+  ],
+  "tagline": "Customer service platform with the Fin AI agent",
+  "description": "Intercom is a customer service platform with seat-based plans and an AI agent, Fin, billed per outcome.",
+  "bestFor": "Support teams and Businesses",
+  "officialUrl": "https://www.intercom.com",
+  "hue": 215,
+  "freePlan": null,
+  "pricingModel": "usage-based",
+  "pricingStatus": "partial",
+  "fromUsd": 19,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.intercom.com/pricing",
+  "plans": [
+   {
+    "name": "Essential",
+    "price": "$19/seat/mo"
+   },
+   {
+    "name": "Advanced",
+    "price": "$85/seat/mo"
+   },
+   {
+    "name": "Expert",
+    "price": "$132/seat/mo"
+   },
+   {
+    "name": "Fin AI Agent",
+    "price": "$0.99/outcome"
+   }
+  ]
+ },
+ {
+  "id": "jasper",
+  "name": "Jasper",
+  "vendor": "Jasper",
+  "category": "writing",
+  "categories": [
+   "writing",
+   "marketing"
+  ],
+  "tagline": "AI platform for marketing teams",
+  "description": "Jasper is an AI platform aimed at marketing teams, with agents, brand voices and a canvas for content creation.",
+  "bestFor": "Marketing teams",
+  "officialUrl": "https://www.jasper.ai",
+  "hue": 275,
+  "freePlan": null,
+  "pricingModel": "free-trial",
+  "pricingStatus": "verified",
+  "fromUsd": 69,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.jasper.ai/pricing",
+  "plans": [
+   {
+    "name": "Pro",
+    "price": "$69/seat/mo monthly · $59/seat/mo yearly"
+   },
+   {
+    "name": "Business",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "leonardo",
+  "name": "Leonardo.Ai",
+  "vendor": "Leonardo.Ai",
+  "category": "image",
+  "categories": [
+   "image"
+  ],
+  "tagline": "AI image and asset generation platform",
+  "description": "Leonardo.Ai is an AI image generation platform.",
+  "bestFor": "Designers and Creators",
+  "officialUrl": "https://leonardo.ai",
+  "hue": 265,
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://leonardo.ai/pricing",
+  "plans": []
+ },
+ {
+  "id": "lovable",
+  "name": "Lovable",
+  "vendor": "Lovable",
+  "category": "coding",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "Describe an app and have AI build it",
+  "description": "Lovable is an AI app builder that works on a credit system. Its pricing page names Free, Pro, Business and Enterprise plans.",
+  "bestFor": "Non-developers and Founders and small teams",
+  "officialUrl": "https://lovable.dev",
+  "hue": 340,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://lovable.dev/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "See note"
+   },
+   {
+    "name": "Business",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "luma",
+  "name": "Luma",
+  "vendor": "Luma AI",
+  "category": "video",
+  "categories": [
+   "video",
+   "image"
+  ],
+  "tagline": "AI video and image generation with Luma and third-party models",
+  "description": "Luma offers credit-based individual plans (Plus, Pro, Ultra) for generating video and images, plus Team and Enterprise plans on request.",
+  "bestFor": "Creators and Teams",
+  "officialUrl": "https://lumalabs.ai",
+  "hue": 190,
+  "freePlan": null,
+  "pricingModel": "paid",
+  "pricingStatus": "verified",
+  "fromUsd": 30,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://lumalabs.ai/pricing",
+  "plans": [
+   {
+    "name": "Plus",
+    "price": "$30/mo monthly · $25/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$90/mo monthly · $75/mo yearly"
+   },
+   {
+    "name": "Ultra",
+    "price": "$300/mo monthly · $250/mo yearly"
+   },
+   {
+    "name": "Team",
+    "price": "Custom pricing"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "make",
+  "name": "Make",
+  "vendor": "Make",
+  "category": "automation",
+  "categories": [
+   "automation"
+  ],
+  "tagline": "Visual automation platform",
+  "description": "Make is an automation platform with credit-based plans: Free, Core, Pro, Teams and Enterprise, plus a Start-up plan.",
+  "bestFor": "Individuals and Teams",
+  "officialUrl": "https://www.make.com",
+  "hue": 265,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.make.com/en/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Core",
+    "price": "See note"
+   },
+   {
+    "name": "Pro",
+    "price": "See note"
+   },
+   {
+    "name": "Teams",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "midjourney",
+  "name": "Midjourney",
+  "vendor": "Midjourney",
+  "category": "image",
+  "categories": [
+   "image"
+  ],
+  "tagline": "AI image generator",
+  "description": "Midjourney generates images from text descriptions and is used for concept art and visual ideas.",
+  "bestFor": "Designers and Creators",
+  "officialUrl": "https://www.midjourney.com",
+  "hue": 240,
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+  "plans": []
+ },
+ {
+  "id": "mistral",
+  "name": "Le Chat (Mistral)",
+  "vendor": "Mistral AI",
+  "category": "assistants",
+  "categories": [
+   "assistants",
+   "coding",
+   "automation"
+  ],
+  "tagline": "AI assistant and models from Mistral AI",
+  "description": "Le Chat is Mistral AI's assistant, available on the web and mobile, with a free plan, paid individual and team plans, and a separate pay-as-you-go API for Mistral's models.",
+  "bestFor": "Individuals and Students (Education pricing)",
+  "officialUrl": "https://chat.mistral.ai",
+  "hue": 30,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 14.99,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://mistral.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$14.99/mo"
+   },
+   {
+    "name": "Education (Pro for students)",
+    "price": "$14.99/mo"
+   },
+   {
+    "name": "Team",
+    "price": "$24.99/user/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "n8n",
+  "name": "n8n",
+  "vendor": "n8n",
+  "category": "automation",
+  "categories": [
+   "automation"
+  ],
+  "tagline": "Workflow automation you can self-host",
+  "description": "n8n is a workflow automation tool with hosted cloud plans and a self-hosted Community Edition on GitHub.",
+  "bestFor": "Developers and Technical teams",
+  "officialUrl": "https://n8n.io",
+  "hue": 15,
+  "freePlan": null,
+  "pricingModel": "free-trial",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://n8n.io/pricing",
+  "plans": [
+   {
+    "name": "Starter",
+    "price": "€20/mo billed yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "€50/mo billed yearly"
+   },
+   {
+    "name": "Business",
+    "price": "€667/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "namecheap",
+  "name": "Namecheap",
+  "vendor": "Namecheap",
+  "category": "web",
+  "categories": [
+   "web"
+  ],
+  "tagline": "Domain names and hosting",
+  "description": "Namecheap is a domain name registrar that also sells hosting and related services.",
+  "bestFor": "Site owners",
+  "officialUrl": "https://www.namecheap.com",
+  "hue": 20,
+  "freePlan": null,
+  "pricingModel": "unknown",
+  "pricingStatus": "unverified",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.namecheap.com/domains/",
+  "plans": []
+ },
+ {
+  "id": "notebooklm",
+  "name": "NotebookLM",
+  "vendor": "Google",
+  "category": "research",
+  "categories": [
+   "research"
+  ],
+  "tagline": "Source-grounded notebooks from Google",
+  "description": "NotebookLM is Google's notebook tool for working with your own sources. Google's current support page for it is titled Gemini Notebook and describes free and paid tiers by notebook and source limits.",
+  "bestFor": "Students and Researchers",
+  "officialUrl": "https://notebooklm.google",
+  "hue": 60,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://support.google.com/notebooklm/answer/16213268",
+  "plans": [
+   {
+    "name": "Standard (free)",
+    "price": "Free"
+   },
+   {
+    "name": "Google AI Plus",
+    "price": "See note"
+   },
+   {
+    "name": "Google AI Pro",
+    "price": "See note"
+   },
+   {
+    "name": "Google AI Ultra (20 TB / 30 TB)",
+    "price": "See note"
+   }
+  ]
+ },
+ {
+  "id": "notion",
+  "name": "Notion",
+  "vendor": "Notion",
+  "category": "productivity",
+  "categories": [
+   "productivity",
+   "writing"
+  ],
+  "tagline": "Notes, docs and databases in one workspace",
+  "description": "Notion combines notes, documents and databases in one workspace. Its pricing page positions it as 'one tool to run your company', with Free, Plus, Business and Enterprise plans.",
+  "bestFor": "Individuals and Students and educators (free Plus for 1 member)",
+  "officialUrl": "https://www.notion.com",
+  "hue": 255,
+  "review": "notion",
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 10,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.notion.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Plus",
+    "price": "$10/member/mo"
+   },
+   {
+    "name": "Business",
+    "price": "$20/member/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "otter",
+  "name": "Otter.ai",
+  "vendor": "Otter.ai",
+  "category": "audio",
+  "categories": [
+   "audio",
+   "productivity"
+  ],
+  "tagline": "AI meeting notes and transcription",
+  "description": "Otter.ai records and transcribes meetings and conversations, with a free Basic plan and Pro, Business and Enterprise plans priced per user.",
+  "bestFor": "Professionals and Teams",
+  "officialUrl": "https://otter.ai",
+  "hue": 210,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 16.99,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://otter.ai/pricing",
+  "plans": [
+   {
+    "name": "Basic",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$16.99/user/mo monthly · $8.33/user/mo yearly"
+   },
+   {
+    "name": "Business",
+    "price": "$30/user/mo monthly · $19.99/user/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "perplexity",
+  "name": "Perplexity",
+  "vendor": "Perplexity AI",
+  "category": "assistants",
+  "categories": [
+   "assistants",
+   "research"
+  ],
+  "tagline": "AI answer engine with cited sources",
+  "description": "Perplexity is an AI answer engine that searches the web and shows the sources behind an answer, so you can open and check them.",
+  "bestFor": "Researchers and Students",
+  "officialUrl": "https://www.perplexity.ai",
+  "hue": 185,
+  "freePlan": null,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+  "plans": [
+   {
+    "name": "Pro",
+    "price": "See note"
+   },
+   {
+    "name": "Max",
+    "price": "See note"
+   }
+  ]
+ },
+ {
+  "id": "pika",
+  "name": "Pika",
+  "vendor": "Pika",
+  "category": "video",
+  "categories": [
+   "video"
+  ],
+  "tagline": "Credit-based AI video generation",
+  "description": "Pika is an AI video and image generation service with a free plan and Starter, Creator and Fancy paid plans.",
+  "bestFor": "Creators and Social and marketing teams",
+  "officialUrl": "https://pika.art",
+  "hue": 330,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 10,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://pika.art/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Starter",
+    "price": "$10/mo monthly · $8/mo yearly"
+   },
+   {
+    "name": "Creator",
+    "price": "$35/mo monthly · $28/mo yearly"
+   },
+   {
+    "name": "Fancy",
+    "price": "$95/mo monthly · $76/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "replit",
+  "name": "Replit",
+  "vendor": "Replit",
+  "category": "coding",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "Browser-based coding and app building with AI",
+  "description": "Replit is an online coding environment with an AI agent for building and deploying apps. Its pricing page lists Core, Pro and Enterprise plans.",
+  "bestFor": "Individuals and Small teams (Pro, up to 15 collaborators)",
+  "officialUrl": "https://replit.com",
+  "hue": 15,
+  "freePlan": null,
+  "pricingModel": "paid",
+  "pricingStatus": "partial",
+  "fromUsd": 20,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://replit.com/pricing",
+  "plans": [
+   {
+    "name": "Core",
+    "price": "$20/mo monthly · $18/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$100/mo monthly · $90/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "runway",
+  "name": "Runway",
+  "vendor": "Runway",
+  "category": "video",
+  "categories": [
+   "video",
+   "image"
+  ],
+  "tagline": "AI video and image generation studio",
+  "description": "Runway is a credit-based studio for generating and editing video and images with AI, with plans from Free to Max.",
+  "bestFor": "Creators and Marketing and video teams",
+  "officialUrl": "https://runway.com",
+  "hue": 300,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 15,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://runway.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Standard",
+    "price": "$15/mo monthly · $12/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$35/mo monthly · $28/mo yearly"
+   },
+   {
+    "name": "Max",
+    "price": "$95/mo monthly · $76/mo yearly"
+   }
+  ]
+ },
+ {
+  "id": "suno",
+  "name": "Suno",
+  "vendor": "Suno",
+  "category": "audio",
+  "categories": [
+   "audio"
+  ],
+  "tagline": "AI music and song generation",
+  "description": "Suno generates songs from text, with a free plan and Pro and Premier paid plans.",
+  "bestFor": "Hobbyists and Creators",
+  "officialUrl": "https://suno.com",
+  "hue": 50,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 8,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://suno.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$8/mo"
+   },
+   {
+    "name": "Premier",
+    "price": "$24/mo"
+   }
+  ]
+ },
+ {
+  "id": "surfer",
+  "name": "Surfer",
+  "vendor": "Surfer",
+  "category": "marketing",
+  "categories": [
+   "marketing",
+   "writing"
+  ],
+  "tagline": "SEO and AI search visibility platform",
+  "description": "Surfer describes itself as a platform for AI Search Optimization and visibility, with plans measured in tracked AI prompts, documents, pages and seats.",
+  "bestFor": "SEO teams and Content marketers",
+  "officialUrl": "https://surfer.ai",
+  "hue": 110,
+  "freePlan": null,
+  "pricingModel": "paid",
+  "pricingStatus": "verified",
+  "fromUsd": 49,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://surfer.ai/pricing/",
+  "plans": [
+   {
+    "name": "AI Search Analytics",
+    "price": "$82/mo billed yearly"
+   },
+   {
+    "name": "Discovery",
+    "price": "$49/mo billed yearly"
+   },
+   {
+    "name": "Standard",
+    "price": "$99/mo billed yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$182/mo billed yearly"
+   },
+   {
+    "name": "Peace of Mind",
+    "price": "$299/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "synthesia",
+  "name": "Synthesia",
+  "vendor": "Synthesia",
+  "category": "video",
+  "categories": [
+   "video"
+  ],
+  "tagline": "AI presenter videos from text",
+  "description": "Synthesia turns text into videos with AI presenters and dubbing, with a free Basic plan and Starter, Pro and Enterprise plans.",
+  "bestFor": "Businesses and Training and communications teams",
+  "officialUrl": "https://www.synthesia.io",
+  "hue": 235,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 19,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://www.synthesia.io/pricing",
+  "plans": [
+   {
+    "name": "Basic",
+    "price": "Free"
+   },
+   {
+    "name": "Starter",
+    "price": "$19/mo monthly · $14/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$89/mo monthly · $59/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "v0",
+  "name": "v0",
+  "vendor": "Vercel",
+  "category": "coding",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "AI that generates interfaces and apps",
+  "description": "v0 is Vercel's AI app and interface builder, priced per user with monthly credits, plus a separate per-token API.",
+  "bestFor": "Developers and designers and Teams",
+  "officialUrl": "https://v0.app",
+  "hue": 0,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 30,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://v0.app/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Plus",
+    "price": "$30/user/mo"
+   },
+   {
+    "name": "Business",
+    "price": "$100/user/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "writesonic",
+  "name": "Writesonic",
+  "vendor": "Writesonic",
+  "category": "marketing",
+  "categories": [
+   "marketing",
+   "writing"
+  ],
+  "tagline": "AI search visibility and content platform",
+  "description": "Writesonic's pricing page lists plans measured in tracked AI prompts and answers, AI articles per month, site audits and users.",
+  "bestFor": "Marketers and SEO teams",
+  "officialUrl": "https://writesonic.com",
+  "hue": 35,
+  "freePlan": null,
+  "pricingModel": "free-trial",
+  "pricingStatus": "verified",
+  "fromUsd": 79,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://writesonic.com/pricing",
+  "plans": [
+   {
+    "name": "Starter",
+    "price": "$79/mo billed yearly"
+   },
+   {
+    "name": "Basic",
+    "price": "$199/mo billed yearly"
+   },
+   {
+    "name": "Growth",
+    "price": "$399/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "zapier",
+  "name": "Zapier",
+  "vendor": "Zapier",
+  "category": "automation",
+  "categories": [
+   "automation"
+  ],
+  "tagline": "Workflow automation with AI agents and chatbots",
+  "description": "Zapier connects apps into automated workflows and offers AI agents and chatbots as add-ons, with plans measured in monthly tasks.",
+  "bestFor": "Individuals and Teams",
+  "officialUrl": "https://zapier.com",
+  "hue": 25,
+  "freePlan": true,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 29.99,
+  "verified": "2026-10-29",
+  "checked": "2026-10-29",
+  "pricingSource": "https://zapier.com/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Professional",
+    "price": "$29.99/mo monthly · $19.99/mo yearly"
+   },
+   {
+    "name": "Team",
+    "price": "$103.50/mo monthly · $69/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ }
+]

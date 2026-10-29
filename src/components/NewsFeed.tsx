@@ -17,6 +17,7 @@ export default function NewsFeed({ items, tags }: { items: NewsItem[]; tags: New
 
   return (
     <section aria-label="All AI news">
+      <h2 className="sr-only">All AI news items</h2>
       <div className="glass rounded-[24px] p-4 md:p-5">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by topic">
           <button type="button" className="chip" aria-pressed={tag === "All"} onClick={() => setTag("All")}>

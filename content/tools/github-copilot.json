@@ -1,0 +1,143 @@
+{
+  "id": "github-copilot",
+  "name": "GitHub Copilot",
+  "vendor": "GitHub (Microsoft)",
+  "website": "https://github.com/features/copilot",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "AI coding assistant inside your editor and on GitHub",
+  "description": "GitHub Copilot is an AI coding assistant with inline suggestions, chat, an agent mode and a command-line tool, sold in Free, Pro, Pro+ and Max plans plus business offerings.",
+  "features": [
+    "Inline code suggestions",
+    "Agent mode and CLI",
+    "Code review (paid plans)",
+    "Copilot in the cloud: assign work and create pull requests (paid plans)",
+    "Delegation to third-party agents (preview, Pro+ and Max)"
+  ],
+  "useCases": [
+    "Writing and completing code",
+    "Reviewing pull requests",
+    "Delegating tasks to an agent"
+  ],
+  "audience": [
+    "Individual developers",
+    "Teams (business and enterprise offerings)"
+  ],
+  "strengths": [
+    "Free plan available",
+    "Paid plans have unlimited inline suggestions",
+    "Extra usage can be bought as AI credits (1 credit = $0.01)"
+  ],
+  "limitations": [
+    "Free plan is limited to 2,000 inline suggestions per month and entry-level models",
+    "Business and Enterprise pricing is not shown on the page"
+  ],
+  "alternatives": [
+    "cursor",
+    "replit",
+    "mistral"
+  ],
+  "hue": 215,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://github.com/features/copilot/plans",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Agent mode and CLI",
+          "Limited chat and agent usage"
+        ],
+        "limits": [
+          "2,000 inline suggestions per month"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 10,
+        "highlights": [
+          "Unlimited inline suggestions",
+          "Code review",
+          "Copilot in the cloud",
+          "$15 of total AI credits per month ($10 base + $5 flex)"
+        ],
+        "note": "Annual pricing not stated"
+      },
+      {
+        "name": "Pro+",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 39,
+        "highlights": [
+          "Everything in Pro",
+          "Delegate to third-party agents (preview)",
+          "$70 of total AI credits per month"
+        ],
+        "note": "Annual pricing not stated"
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 100,
+        "highlights": [
+          "Everything in Pro+",
+          "$200 of total AI credits per month"
+        ],
+        "note": "Annual pricing not stated"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Limited chat and agent usage, 2,000 inline suggestions per month, entry-level models, agent mode and CLI."
+    },
+    "api": {
+      "summary": "Extra usage beyond included credits is available through a flex allotment or by buying credits; 1 AI credit = $0.01 USD. Budget alerts trigger at 75%, 90% and 100%.",
+      "source": "https://github.com/features/copilot/plans"
+    },
+    "notes": [
+      "Business and Enterprise pricing: contact sales (not shown on the page)."
+    ],
+    "reference": {
+      "plan": "Pro",
+      "amount": 10,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official plans page",
+      "url": "https://github.com/features/copilot/plans",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://github.com/features/copilot",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "IDE extensions",
+    "CLI",
+    "GitHub"
+  ]
+}

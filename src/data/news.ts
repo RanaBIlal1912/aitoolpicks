@@ -10,6 +10,10 @@ export type NewsItem = {
   url: string;
   tag: NewsTag;
   summary: string;
+  /** Catalog tool ids this item concerns. */
+  tools?: string[];
+  /** True when the date was read from the article address because the page only showed relative times. */
+  dateFromUrl?: boolean;
   /** Optional plain-language note on why it may matter to freelancers and small businesses. */
   matters?: string;
 };
@@ -21,6 +25,7 @@ export const NEWS: NewsItem[] = [
     source: "Google (The Keyword)",
     url: "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/",
     tag: "Products",
+    tools: ["gemini"],
     summary:
       "Google says the Gemini app can now create, preview and edit files such as PDFs, slideshows and spreadsheets inside a chat. PDF viewing and editing works on web and phones; other formats such as Docs, Sheets and code are web-only.",
     matters: "If you draft documents with an AI assistant, check which file types your account supports before relying on it.",
@@ -103,6 +108,73 @@ export const NEWS: NewsItem[] = [
     summary:
       "Anthropic published a 2026 update to its Usage Policy, effective 12 November, that clarifies existing rules and adds examples for newer capabilities. Changes include a section on deceptive campaigns, narrower election and surveillance rules, weapons restrictions covering software and components, human-oversight requirements for high-risk uses, and a ban on sustained, needless abuse of its models.",
     matters: "If you use AI tools for client work, it is worth reading the usage policy of each tool you rely on.",
+  },
+  {
+    title: "Granola crunches up a dictation feature to compete with Wispr",
+    date: "2026-10-29",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+    tag: "Products",
+    summary: "TechCrunch reports that Granola has added a dictation feature to compete with Wispr.",
+    dateFromUrl: true,
+  },
+  {
+    title: "Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
+    date: "2026-10-29",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/",
+    tag: "Models",
+    summary: "TechCrunch reports that Mistral AI released the weights of its trillion-parameter model, which it positions for cybersecurity. Hugging Face published its own announcement the same day.",
+    tools: ["mistral", "huggingface"],
+    dateFromUrl: true,
+  },
+  {
+    title: "Anthropic just launched tools to show companies what their AI spending is buying",
+    date: "2026-10-28",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+    tag: "Products",
+    summary: "TechCrunch reports that Anthropic launched tools meant to show companies what their AI spending is buying.",
+    tools: ["claude"],
+    dateFromUrl: true,
+  },
+  {
+    title: "Chrome's AI-powered Autofill can now dig through your Gmail to fill out forms",
+    date: "2026-10-28",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/",
+    tag: "Products",
+    summary: "TechCrunch reports that Chrome's AI-powered Autofill can now draw on information in Gmail to fill out forms.",
+    matters: "Features that read your email raise privacy questions, so check the settings before you switch them on.",
+    dateFromUrl: true,
+  },
+  {
+    title: "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+    date: "2026-10-28",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+    tag: "Products",
+    summary: "TechCrunch reports that Google is opening Gemini and Search to more apps as AI agents change how people use the web.",
+    tools: ["gemini"],
+    dateFromUrl: true,
+  },
+  {
+    title: "Voice AI in vogue: Nvidia releases new open transcription model",
+    date: "2026-10-28",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+    tag: "Models",
+    summary: "TechCrunch reports that Nvidia released a new open transcription model. Hugging Face lists a related NVIDIA Nemotron 3.5 Transcribe post from the same period.",
+    dateFromUrl: true,
+  },
+  {
+    title: "Google's Genie 4 world model adds audio, more realistic worlds and real-time steering",
+    date: "2026-10-27",
+    source: "TechCrunch",
+    url: "https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/",
+    tag: "Research",
+    summary: "TechCrunch reports that Google's Genie 4 world model adds audio, more realistic worlds and real-time steering.",
+    dateFromUrl: true,
   },
 ];
 

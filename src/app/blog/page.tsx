@@ -17,7 +17,7 @@ meta.openGraph = { ...meta.openGraph, images: [{ url: absUrl(coverPath("board", 
 export const metadata = meta;
 
 export default function BlogPage() {
-  const lead = GUIDES.find((g) => g.slug === "how-to-start-freelancing-from-pakistan") ?? GUIDES[0];
+  const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
   return (
     <>
       <PageHeader
@@ -31,7 +31,7 @@ export default function BlogPage() {
         crumbs={[{ name: "Blog", href: "/blog/" }]}
       />
       <div className="mx-auto max-w-6xl px-5">
-        <p className="kicker mb-4">Featured guide</p>
+        <h2 className="kicker mb-4">Featured guide</h2>
         <ArticleCard a={lead} featured />
         <div className="mt-10 flex flex-wrap items-center gap-2">
           <span className="mr-1 text-sm font-semibold text-muted">Browse by topic:</span>

@@ -25,6 +25,7 @@ export default function BlogList({ articles, topics }: { articles: Article[]; to
 
   return (
     <section aria-label="Guides" className="mx-auto max-w-6xl px-5">
+      <h2 className="sr-only">All guides</h2>
       <div className="glass rounded-[24px] p-4 md:p-5">
         <div className="flex flex-col gap-4 md:flex-row md:items-center">
           <div className="flex-1">

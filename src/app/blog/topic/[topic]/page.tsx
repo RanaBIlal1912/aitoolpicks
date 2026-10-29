@@ -52,6 +52,7 @@ export default async function TopicPage({ params }: Props) {
         <ParallaxFrame className="cover-frame mb-10 aspect-[16/6]" strength={24}>
           <Cover id={COVER_BY_TOPIC[t.id]} sizes="100vw" priority />
         </ParallaxFrame>
+        <h2 className="sr-only">Guides on {t.label.toLowerCase()}</h2>
         {first && (
           <div className="mb-6">
             <ArticleCard a={first} featured />

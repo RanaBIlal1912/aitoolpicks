@@ -1,0 +1,153 @@
+{
+  "id": "mistral",
+  "name": "Le Chat (Mistral)",
+  "vendor": "Mistral AI",
+  "website": "https://chat.mistral.ai",
+  "category": "assistants",
+  "categories": [
+    "assistants",
+    "coding",
+    "automation"
+  ],
+  "tagline": "AI assistant and models from Mistral AI",
+  "description": "Le Chat is Mistral AI's assistant, available on the web and mobile, with a free plan, paid individual and team plans, and a separate pay-as-you-go API for Mistral's models.",
+  "features": [
+    "Web search, image generation and editing",
+    "100+ connectors",
+    "Coding sessions in CLI, IDE and web",
+    "Spreadsheets and slides on Pro"
+  ],
+  "useCases": [
+    "Everyday assistant tasks",
+    "Coding help",
+    "Building on Mistral's API"
+  ],
+  "audience": [
+    "Individuals",
+    "Students (Education pricing)",
+    "Teams and developers"
+  ],
+  "strengths": [
+    "A free plan with Vibe CLI and Mistral Studio access (per the FAQ)",
+    "Pro includes $15 per month of API credits",
+    "Education pricing for verified students"
+  ],
+  "limitations": [
+    "Free plan has limited messages, web searches and coding sessions",
+    "Feature-table values for some limits were not clearly mapped to plans on the page"
+  ],
+  "alternatives": [
+    "chatgpt",
+    "claude",
+    "gemini"
+  ],
+  "hue": 30,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://mistral.ai/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Limited messages and web searches",
+          "Limited coding sessions",
+          "Basic image generation and editing",
+          "100+ connectors"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 14.99,
+        "highlights": [
+          "More messages and web searches",
+          "All-day coding in CLI, IDE and web",
+          "Spreadsheets and slides",
+          "$15 per month in API credits"
+        ],
+        "note": "Excluding taxes. Annual pricing not stated"
+      },
+      {
+        "name": "Education (Pro for students)",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 14.99,
+        "highlights": [
+          "Same as Pro",
+          "$25.50 per month in API credits"
+        ],
+        "note": "The page lists $14.99; the FAQ says verified students can get Pro for $5.99 per month"
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 24.99,
+        "highlights": [
+          "Higher limits and faster responses",
+          "Up to 30 GB storage per user",
+          "Domain verification and data export"
+        ],
+        "note": "Excluding taxes. A separate '$50 /mo' figure appears with an unclear label"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Custom models, agents and workflows",
+          "Audit logs, SAML SSO, white label"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Limited messages and web searches, limited coding sessions, basic image generation and editing, 100+ connectors."
+    },
+    "api": {
+      "summary": "Mistral Large is $0.50 per million input tokens and $1.50 per million output tokens. Batch processing is 50% cheaper and cached input tokens up to 90% cheaper. OCR, speech and tool APIs have their own units.",
+      "source": "https://mistral.ai/pricing"
+    },
+    "regional": "The page offers USD and EUR selectors and an 'including taxes' view; EUR amounts and regional differences were not captured.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 14.99,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://mistral.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://chat.mistral.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Mobile",
+    "CLI/IDE"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "copilot",
+  "name": "Microsoft Copilot",
+  "vendor": "Microsoft",
+  "website": "https://copilot.microsoft.com",
+  "category": "assistants",
+  "categories": [
+    "assistants",
+    "writing",
+    "productivity"
+  ],
+  "tagline": "AI assistant from Microsoft",
+  "description": "Microsoft describes Copilot as an AI assistant that helps you create, research, analyse and get things done in the Microsoft 365 apps you use. Individual access comes through Microsoft 365 plans.",
+  "features": [
+    "Copilot in Word, Excel, PowerPoint and Outlook (desktop)",
+    "Advanced Copilot chat with higher usage than free",
+    "Visual AI, audio and image creation on higher plans"
+  ],
+  "useCases": [
+    "Drafting and editing documents",
+    "Working with spreadsheets and presentations",
+    "Everyday questions"
+  ],
+  "audience": [
+    "People who work in Microsoft 365",
+    "Families (Family plan, owner only for AI features)"
+  ],
+  "strengths": [
+    "Bundled with Microsoft 365 storage and apps",
+    "One-month free trial on Personal, Family and Premium"
+  ],
+  "limitations": [
+    "AI features cannot be shared on the Family plan",
+    "Usage limits apply and app availability varies by device and language"
+  ],
+  "alternatives": [
+    "chatgpt",
+    "gemini",
+    "claude"
+  ],
+  "hue": 200,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+    "plans": [
+      {
+        "name": "Microsoft 365 Personal",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 9.99,
+        "annualTotal": 99.99,
+        "highlights": [
+          "1 person, up to 5 devices",
+          "1 TB storage",
+          "Copilot in desktop Word, Excel, PowerPoint and Outlook"
+        ]
+      },
+      {
+        "name": "Microsoft 365 Family",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 12.99,
+        "annualTotal": 129.99,
+        "highlights": [
+          "1 to 6 people",
+          "2 TB shared storage"
+        ],
+        "limits": [
+          "AI features are for the subscription owner only"
+        ]
+      },
+      {
+        "name": "Microsoft 365 Premium",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 19.99,
+        "annualTotal": 199.99,
+        "highlights": [
+          "Everything in Family",
+          "Extensive chat, visual AI, audio and image creation usage",
+          "Limited agentic AI usage"
+        ]
+      },
+      {
+        "name": "Microsoft 365 Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 99.99,
+        "highlights": [
+          "Everything in Premium",
+          "5 TB storage",
+          "Highest usage limits"
+        ],
+        "note": "Annual price not stated"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "The page refers to 'higher usage than free' but does not describe the free plan's limits."
+    },
+    "trial": "One-month free trial on Microsoft 365 Personal, Family and Premium.",
+    "regional": "Prices shown in $ (currency code not stated). Offers may vary by institution and region. Tax treatment: not stated.",
+    "reference": {
+      "plan": "Microsoft 365 Personal",
+      "amount": 9.99,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official individual plans page",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://copilot.microsoft.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Windows",
+    "Mobile"
+  ]
+}

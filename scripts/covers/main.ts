@@ -26,7 +26,9 @@ function finish(src: HTMLCanvasElement): HTMLCanvasElement {
   out.width = W;
   out.height = H;
   const ctx = out.getContext("2d")!;
+  ctx.filter = "saturate(0.68) brightness(0.98)";
   ctx.drawImage(src, 0, 0, W, H);
+  ctx.filter = "none";
   // bloom: blurred copies added back with "screen"
   const bright = document.createElement("canvas");
   bright.width = W;

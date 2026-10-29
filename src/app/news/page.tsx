@@ -38,7 +38,7 @@ export default function NewsPage() {
           list, not a complete feed, and we do not repeat rumours or unsourced reports.
         </p>
         <Reveal as="section" className="mt-8">
-          <p className="kicker mb-4">Top story</p>
+          <h2 className="kicker mb-4">Top story</h2>
           <NewsCard n={top} featured />
         </Reveal>
         <Reveal as="section" className="mt-14">

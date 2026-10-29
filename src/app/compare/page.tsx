@@ -45,9 +45,9 @@ export default function ComparePage() {
                   style={{ ["--hue" as string]: 265 }}
                 >
                   <div className="flex items-center gap-3 text-sm font-bold">
-                    <span className="rounded-full bg-electric/20 px-3 py-1 text-[#9cc2ff]">{c.leftLabel}</span>
+                    <span className="rounded-full bg-electric/20 px-3 py-1 text-[#a9bfe6]">{c.leftLabel}</span>
                     <span className="text-muted">vs</span>
-                    <span className="rounded-full bg-violet/20 px-3 py-1 text-[#cbb8ff]">{c.rightLabel}</span>
+                    <span className="rounded-full bg-violet/20 px-3 py-1 text-[#c1bce2]">{c.rightLabel}</span>
                   </div>
                   <h3 className="font-serif text-2xl font-bold leading-snug text-white">{a.title}</h3>
                   <p className="text-muted">{a.blurb}</p>

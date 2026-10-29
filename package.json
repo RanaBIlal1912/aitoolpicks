@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "node scripts/build-catalog.mjs && tsc --noEmit",
     "test": "vitest run",
     "check": "npm run typecheck && npm run test && npm run build",
     "postbuild": "node scripts/legacy-redirects.mjs",
-    "covers": "vite --config scripts/covers/vite.config.mts"
+    "covers": "vite --config scripts/covers/vite.config.mts",
+    "catalog": "node scripts/build-catalog.mjs",
+    "catalog:report": "node scripts/build-catalog.mjs --report",
+    "prebuild": "node scripts/build-catalog.mjs",
+    "predev": "node scripts/build-catalog.mjs"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

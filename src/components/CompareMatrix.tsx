@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { TOOLS, getTool, type Tool } from "@/data/tools";
-import { PRICES } from "@/lib/prices";
+import { useEffect, useState } from "react";
+import { PRICING_MODEL_LABEL, TOOLS, getCategory, getTool } from "@/data/tools";
 import AffLink from "./AffLink";
-import PriceTag from "./PriceTag";
+import { formatChecked } from "@/lib/dates";
 
-function ToolSelect({ id, label, value, onChange }: { id: string; label: string; value: string; onChange: (v: string) => void }) {
+const DEFAULT_IDS = ["claude", "mistral"];
+
+function ToolSelect({ id, label, value, onChange, taken }: { id: string; label: string; value: string; onChange: (v: string) => void; taken: string[] }) {
   return (
     <div>
       <label htmlFor={id} className="mb-1.5 block text-xs font-bold uppercase tracking-[0.12em] text-muted">
@@ -15,7 +16,7 @@ function ToolSelect({ id, label, value, onChange }: { id: string; label: string;
       </label>
       <select id={id} className="cur !w-full" value={value} onChange={(e) => onChange(e.target.value)}>
         {TOOLS.map((t) => (
-          <option key={t.id} value={t.id}>
+          <option key={t.id} value={t.id} disabled={taken.includes(t.id) && t.id !== value}>
             {t.name}
           </option>
         ))}
@@ -24,79 +25,113 @@ function ToolSelect({ id, label, value, onChange }: { id: string; label: string;
   );
 }
 
-function Row({ label, a, b }: { label: string; a: React.ReactNode; b: React.ReactNode }) {
+function Row({ label, cells }: { label: string; cells: React.ReactNode[] }) {
   return (
     <tr>
       <th scope="row">{label}</th>
-      <td>{a}</td>
-      <td>{b}</td>
+      {cells.map((c, i) => (
+        <td key={i}>{c}</td>
+      ))}
     </tr>
   );
 }
 
-const price = (t: Tool) => (PRICES[t.id] ? <PriceTag id={t.id} compact /> : <span className="text-muted">See the official site</span>);
-const free = (t: Tool) => (t.freePlan ? "Yes, a free plan is available" : <span className="text-muted">Check the official site</span>);
-const review = (t: Tool) => (
-  <span className="flex flex-col gap-1">
-    <Link href={`/tools/${t.id}/`} className="text-[#8fd3ff] underline">
-      Tool page
-    </Link>
-    {t.review && (
-      <Link href={`/reviews/${t.review}/`} className="text-[#8fd3ff] underline">
-        Our overview
-      </Link>
-    )}
-  </span>
-);
+const STATUS = { verified: "Verified from the official page", partial: "Partly verified", unverified: "Not verified" } as const;
 
 export default function CompareMatrix() {
-  const [aId, setA] = useState("chatgpt");
-  const [bId, setB] = useState("grammarly");
-  const a = getTool(aId) ?? TOOLS[0];
-  const b = getTool(bId) ?? TOOLS[1];
+  const [ids, setIds] = useState<string[]>(DEFAULT_IDS);
+
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search).get("ids");
+    if (!p) return;
+    const parsed = p.split(",").filter((x, i, a) => getTool(x) && a.indexOf(x) === i).slice(0, 3);
+    if (parsed.length >= 2) setIds(parsed);
+  }, []);
+
+  const tools = ids.map((id) => getTool(id)!).filter(Boolean);
+  const setAt = (i: number, v: string) => setIds((cur) => cur.map((x, j) => (j === i ? v : x)));
+  const addThird = () => setIds((cur) => (cur.length < 3 ? [...cur, TOOLS.find((t) => !cur.includes(t.id))!.id] : cur));
+  const removeThird = () => setIds((cur) => cur.slice(0, 2));
 
   return (
     <div className="glass rounded-[26px] p-5 md:p-7">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <ToolSelect id="cmp-a" label="Tool A" value={aId} onChange={setA} />
-        <ToolSelect id="cmp-b" label="Tool B" value={bId} onChange={setB} />
+      <div className={`grid gap-4 ${ids.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+        {ids.map((id, i) => (
+          <ToolSelect key={i} id={`cmp-${i}`} label={`Tool ${String.fromCharCode(65 + i)}`} value={id} onChange={(v) => setAt(i, v)} taken={ids} />
+        ))}
       </div>
-
-      {aId === bId && (
-        <p role="status" className="mt-4 rounded-xl border border-amber/30 bg-amber/10 px-4 py-2 text-sm text-amber">
-          You picked the same tool twice. Choose a different Tool B to compare.
-        </p>
-      )}
+      <div className="mt-3">
+        {ids.length < 3 ? (
+          <button type="button" className="chip" onClick={addThird}>
+            + Add a third tool
+          </button>
+        ) : (
+          <button type="button" className="chip" onClick={removeThird}>
+            Remove third tool
+          </button>
+        )}
+      </div>
 
       <div className="table-wrap mt-6 border border-white/10">
         <table className="cmp">
-          <caption className="sr-only">
-            Comparison of {a.name} and {b.name}
-          </caption>
+          <caption className="sr-only">Comparison of {tools.map((t) => t.name).join(", ")}</caption>
           <thead>
             <tr>
               <th scope="col">&nbsp;</th>
-              <th scope="col">{a.name}</th>
-              <th scope="col">{b.name}</th>
+              {tools.map((t) => (
+                <th key={t.id} scope="col">
+                  {t.name}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            <Row label="Category" a={a.category} b={b.category} />
-            <Row label="What it is" a={a.tagline} b={b.tagline} />
-            <Row label="Best for" a={a.bestFor} b={b.bestFor} />
-            <Row label="Free plan" a={free(a)} b={free(b)} />
-            <Row label="Paid plan (USD)" a={price(a)} b={price(b)} />
-            <Row label="Read more" a={review(a)} b={review(b)} />
+            <Row label="Vendor" cells={tools.map((t) => t.vendor)} />
+            <Row label="Category" cells={tools.map((t) => getCategory(t.category)?.label)} />
+            <Row label="What it is" cells={tools.map((t) => t.tagline)} />
+            <Row label="Intended for" cells={tools.map((t) => t.bestFor)} />
             <Row
-              label="Try it"
-              a={<AffLink id={a.id} />}
-              b={<AffLink id={b.id} />}
+              label="Free plan"
+              cells={tools.map((t) => (t.freePlan === true ? "Yes, documented" : t.freePlan === false ? "No" : <span className="text-muted">Not stated / not verified</span>))}
             />
+            <Row label="Pricing model" cells={tools.map((t) => PRICING_MODEL_LABEL[t.pricingModel])} />
+            <Row
+              label="Plans (merchant currency)"
+              cells={tools.map((t) =>
+                t.plans.length ? (
+                  <ul key={t.id} className="space-y-1">
+                    {t.plans.map((p) => (
+                      <li key={p.name}>
+                        <span className="text-muted">{p.name}:</span> {p.price}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="text-muted">Not captured</span>
+                ),
+              )}
+            />
+            <Row label="Pricing status" cells={tools.map((t) => `${STATUS[t.pricingStatus]}, checked ${formatChecked(t.checked)}`)} />
+            <Row
+              label="Read more"
+              cells={tools.map((t) => (
+                <span key={t.id} className="flex flex-col gap-1">
+                  <Link href={`/tools/${t.id}/`} className="text-[#9db4d6] underline">
+                    Full details and pricing
+                  </Link>
+                  <a href={t.pricingSource} target="_blank" rel="noopener noreferrer" className="text-[#9db4d6] underline">
+                    Official pricing page
+                  </a>
+                </span>
+              ))}
+            />
+            <Row label="Visit" cells={tools.map((t) => <AffLink key={t.id} id={t.id} className="btn-ghost btn-sm" />)} />
           </tbody>
         </table>
       </div>
       <p className="mt-4 text-sm text-muted">
-        Prices are shown only where we checked the official page. Other tools say &ldquo;See the official site&rdquo; instead of a guess.
+        Plans are shown in each merchant&rsquo;s own currency, exactly as listed on its pricing page. Where a price could not be read, the row says so
+        instead of guessing.
       </p>
     </div>
   );

@@ -1,0 +1,132 @@
+{
+  "id": "elicit",
+  "name": "Elicit",
+  "vendor": "Elicit",
+  "website": "https://elicit.com",
+  "category": "research",
+  "categories": [
+    "research"
+  ],
+  "tagline": "AI research assistant for academic papers",
+  "description": "Elicit is an AI research assistant for finding and analysing academic papers, with a free Basic plan and Pro, Scale and Enterprise plans.",
+  "features": [
+    "Search across more than 138 million papers",
+    "Research Agent and Research Reports",
+    "Systematic literature review workflows",
+    "Zotero import; API access on Pro"
+  ],
+  "useCases": [
+    "Literature reviews",
+    "Extracting data from papers"
+  ],
+  "audience": [
+    "Researchers",
+    "Students",
+    "Institutions"
+  ],
+  "strengths": [
+    "Free Basic plan with unlimited paper summaries",
+    "Enterprise plan states no training on your data by default"
+  ],
+  "limitations": [
+    "Free usage of the Research Agent and Reports is limited",
+    "A separate monthly-billing price is not stated for paid plans"
+  ],
+  "alternatives": [
+    "perplexity",
+    "notebooklm"
+  ],
+  "hue": 140,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://elicit.com/pricing",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Unlimited paper summaries",
+          "Unlimited chat with full-text papers"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "annual": 49,
+        "annualTotal": 588,
+        "billing": "Billed annually ($588)",
+        "highlights": [
+          "Standard usage for Research Agent and Reports",
+          "Systematic review screening of up to 5,000 papers",
+          "API access"
+        ],
+        "note": "Monthly price not stated. The page notes 35% savings"
+      },
+      {
+        "name": "Scale",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "annual": 229,
+        "annualTotal": 2748,
+        "billing": "Billed annually ($2,748)",
+        "highlights": [
+          "5x usage",
+          "Figure extraction and live collaboration",
+          "Admin panel"
+        ],
+        "note": "Monthly price not stated. The page notes 39% savings"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Custom usage limits",
+          "SSO, SAML, 2FA",
+          "Unlimited API access"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Basic: limited Research Agent and Research Report usage, search across 138M+ papers, unlimited paper summaries and chat with full-text papers."
+    },
+    "regional": "Currency shown only as '$'. Regional or tax note: not stated.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 49,
+      "currency": "USD",
+      "per": "user per month",
+      "billing": "billed annually"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://elicit.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://elicit.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

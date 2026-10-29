@@ -1,0 +1,124 @@
+{
+  "id": "zapier",
+  "name": "Zapier",
+  "vendor": "Zapier",
+  "website": "https://zapier.com",
+  "category": "automation",
+  "categories": [
+    "automation"
+  ],
+  "tagline": "Workflow automation with AI agents and chatbots",
+  "description": "Zapier connects apps into automated workflows and offers AI agents and chatbots as add-ons, with plans measured in monthly tasks.",
+  "features": [
+    "Task-based workflows",
+    "Agents and chatbots add-ons",
+    "14-day Professional trial"
+  ],
+  "useCases": [
+    "Automating routine work between apps",
+    "Building AI agents and chatbots"
+  ],
+  "audience": [
+    "Individuals",
+    "Teams",
+    "Businesses"
+  ],
+  "strengths": [
+    "Free plan with 100 tasks per month",
+    "14-day Professional trial, no card"
+  ],
+  "limitations": [
+    "Prices rise with the task tier",
+    "Agent and chatbot add-ons are priced separately from the task pool"
+  ],
+  "alternatives": [
+    "n8n",
+    "make"
+  ],
+  "hue": 25,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://zapier.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "100 tasks per month"
+        ]
+      },
+      {
+        "name": "Professional",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 29.99,
+        "annual": 19.99,
+        "billing": "From the 750-task tier; tiers run to 2,000,000 tasks per month",
+        "highlights": [
+          "750 to 2,000,000 tasks per month"
+        ]
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 103.5,
+        "annual": 69,
+        "billing": "From the 2,000-task tier; tiers run to 2,000,000 tasks per month"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Annual task limit, custom"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "100 tasks per month."
+    },
+    "trial": "14-day Professional trial for new accounts, no credit card required.",
+    "api": {
+      "summary": "AI add-ons are separate from the task pool: Agents (400 activities per month free, 1,500 on Pro, from about $33.33 per month billed annually) and Chatbots (2 free; about 5 at $13.33 or 20 at $66.67 per month billed annually).",
+      "source": "https://zapier.com/pricing"
+    },
+    "regional": "Prices are set in USD and can be billed in 19 local currencies; non-USD charges convert at the exchange rate at payment. Tax treatment: not stated.",
+    "reference": {
+      "plan": "Professional",
+      "amount": 29.99,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly (750-task tier)"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://zapier.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://zapier.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

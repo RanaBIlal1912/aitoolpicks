@@ -27,10 +27,19 @@ export const NAV = [
   { href: "/tools/", label: "Tools", feature: false },
   { href: "/reviews/", label: "Reviews", feature: false },
   { href: "/compare/", label: "Compare", feature: false },
-  { href: "/about/", label: "About", feature: false },
+  { href: "/pricing/", label: "Pricing", feature: false },
+] as const;
+
+/** Secondary links shown in the "More" menu and the footer. */
+export const MORE = [
+  { href: "/best/", label: "Best-of guides" },
+  { href: "/methodology/", label: "Methodology" },
+  { href: "/about/", label: "About" },
+  { href: "/contact/", label: "Contact" },
 ] as const;
 
 export const FOOTER_LINKS = [
+  { href: "/methodology/", label: "Methodology" },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
   { href: "/affiliate-disclosure/", label: "Affiliate disclosure" },

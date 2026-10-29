@@ -1,0 +1,115 @@
+{
+  "id": "replit",
+  "name": "Replit",
+  "vendor": "Replit",
+  "website": "https://replit.com",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "Browser-based coding and app building with AI",
+  "description": "Replit is an online coding environment with an AI agent for building and deploying apps. Its pricing page lists Core, Pro and Enterprise plans.",
+  "features": [
+    "Chat and agent with 'Free Mode' usage",
+    "Unlimited workspaces on Core",
+    "AI integrations",
+    "Collaboration and database rollback on Pro"
+  ],
+  "useCases": [
+    "Building and deploying small apps",
+    "Learning to code",
+    "Prototyping with an AI agent"
+  ],
+  "audience": [
+    "Individuals",
+    "Small teams (Pro, up to 15 collaborators)"
+  ],
+  "strengths": [
+    "Core includes $20 towards more powerful models",
+    "Pro includes $100 in credits and 28-day database rollback"
+  ],
+  "limitations": [
+    "The page we read did not show a separate free plan; 'Free Mode' limits appear under Core",
+    "Several Pro price figures appeared without labels"
+  ],
+  "alternatives": [
+    "lovable",
+    "bolt",
+    "v0",
+    "cursor"
+  ],
+  "hue": 15,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "paid",
+    "checked": "2026-10-29",
+    "source": "https://replit.com/pricing",
+    "plans": [
+      {
+        "name": "Core",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "annual": 18,
+        "highlights": [
+          "Up to 30 hours of chat on Free Mode",
+          "Up to 60 projects on Free Mode",
+          "$20 towards more powerful models",
+          "Unlimited workspaces"
+        ],
+        "note": "The page does not explicitly label $20 as the monthly-billing price"
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 100,
+        "annual": 90,
+        "highlights": [
+          "Everything in Core",
+          "$100 towards the most powerful models",
+          "Up to 15 collaborators",
+          "Database rollback up to 28 days",
+          "Premium support"
+        ],
+        "note": "Several other figures ($215, $425, $825, $2,000) appear on the page without labels"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "SSO, SCIM, audit logs",
+          "Single-tenant and private networking options"
+        ]
+      }
+    ],
+    "regional": "Prices subject to tax depending on your location. Currency shown as '$' without a code.",
+    "notes": [
+      "A free plan is not stated as a separate plan on the page we read."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://replit.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://replit.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

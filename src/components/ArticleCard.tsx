@@ -26,6 +26,7 @@ export default function ArticleCard({ a, featured = false }: { a: Article; featu
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="kicker">{a.kind === "comparison" ? "Comparison" : topic}</span>
           <span className="byline">{a.minutes} min read</span>
+          {a.region && <span className="rounded-full border border-white/15 bg-white/5 px-2 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wide text-muted">Regional guide: {a.region}</span>}
         </div>
         <h3 className={`font-serif font-bold leading-snug tracking-tight text-white ${featured ? "text-2xl md:text-[2rem] md:leading-[1.15]" : "text-xl"}`}>
           {a.title}

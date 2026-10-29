@@ -29,14 +29,15 @@ Using a custom domain later: set `NEXT_PUBLIC_SITE_URL` (for example `https://ex
 | What | File |
 | --- | --- |
 | Affiliate links (empty until a programme approves you) | `src/lib/affiliate.ts` |
-| Verified USD prices and their official source | `src/lib/prices.ts` |
+| Headline reference prices (generated from the tool records) | `src/data/generated/price-refs.json` |
 | Currencies, rate sources and fallback rates | `src/lib/currency.ts` |
-| Tool directory | `src/data/tools.ts` |
+| Tool records (one JSON file per tool) | `content/tools/*.json` |
+| Categories | `content/categories.json` |
 | Tool overviews (pros, cons, use cases) | `src/data/reviews.ts` |
-| Comparison tables | `src/data/compare.ts` |
+| Best-of guides | `src/data/roundups.ts` |
+| Comparison tables for the two long-form comparisons | `src/data/compare.ts` |
 | AI news (dated, with source links) | `src/data/news.ts` |
 | Guides (HTML bodies + metadata) | `content/articles/*.html`, `content/articles.json` |
-| Tool write-ups for each tool page | `src/data/tool-details.ts` |
 | Blog topics and their covers | `src/data/topics.ts` |
 | Cover images (3D renders) | `public/images/covers/`, `src/data/covers.ts` |
 | Public contact email (optional) | `NEXT_PUBLIC_CONTACT_EMAIL` (see `.env.example`) |
@@ -63,10 +64,39 @@ Changing the display currency never changes a link; a link can optionally differ
   `public/images/covers/`. Nothing is downloaded; every texture is generated in code.
 - Pages that show a render say it is an illustration, not a photo of a real product.
 
+## The tool catalog
+
+Every tool is **one JSON file** in `content/tools/`, so the catalog can grow to hundreds of entries without touching code.
+A record holds the vendor, category, features, use cases, audience, strengths, limitations, alternatives, source links with a
+checked date, and a `pricing` block with the vendor's own plan names, monthly and annual prices in the merchant's currency,
+free-plan and trial details, separate API pricing, regional notes and a verification status
+(`verified`, `partial` or `unverified`).
+
+Rules the validator enforces (`npm run catalog`):
+
+- Prices come only from an official page. A tool whose page could not be read is `unverified`, carries no prices and says why.
+- Plans keep the product's own names. Usage-based, custom and region-dependent prices are labelled as such.
+- Every record has at least one https source and a checked date; alternatives must exist; no placeholder text.
+
+### Add a tool
+
+1. Copy a similar file in `content/tools/`, rename it to the new id and fill it in from the vendor's pages. Do not guess.
+2. Add an empty slot for it in `src/lib/affiliate.ts` (a real affiliate link only when a programme has approved you).
+3. Run `npm run check`. It validates the record, regenerates `src/data/generated/*.json` and builds the site.
+
+### Re-check prices
+
+`npm run catalog:report` lists records that are not fully verified and any pricing older than 90 days. Update the file, set the new
+`checked` date and run `npm run check`. Nothing here updates by itself; records change when a person rechecks the source.
+
+### News
+
+Add items to `src/data/news.ts` only after reading the original source: a real date, a link, a tag and a short summary.
+
 ## Tests
 
-`npm test` runs checks for currency maths and rate parsing, affiliate-link rules, every article and internal link,
-price and news data, and that no fabricated affiliate links exist.
+`npm test` checks currency maths and rate parsing, affiliate-link rules, every article and internal link, the catalog validator
+(including negative cases), that unverified tools never show a price, news data, navigation, covers and that generated files are up to date.
 
 ## Known limits
 

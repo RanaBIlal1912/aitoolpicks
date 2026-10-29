@@ -89,6 +89,12 @@ export function convert(usd: number, cur: CurrencyCode, rates: Rates): number {
   return Math.round(v * 100) / 100;
 }
 
+/** Convert between two supported currencies through USD. Used only for clearly labelled estimates. */
+export function convertBetween(amount: number, from: CurrencyCode, to: CurrencyCode, rates: Rates): number {
+  if (from === to) return amount;
+  return convert(amount / rates[from], to, rates);
+}
+
 export function format(v: number, cur: CurrencyCode): string {
   const c = CURRENCIES[cur];
   const whole = c.decimals === 0 || v === Math.floor(v);

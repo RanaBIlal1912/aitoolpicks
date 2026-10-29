@@ -1,0 +1,168 @@
+{
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "vendor": "ElevenLabs",
+  "website": "https://elevenlabs.io",
+  "category": "audio",
+  "categories": [
+    "audio",
+    "video"
+  ],
+  "tagline": "AI voice, speech and music",
+  "description": "ElevenLabs offers text-to-speech, speech-to-text, sound effects, voice design and music, sold as credit-based plans from Free to Enterprise.",
+  "features": [
+    "Text to speech and speech to text",
+    "Sound effects, voice design and music",
+    "Projects and Studio",
+    "Credits that roll over for up to two months"
+  ],
+  "useCases": [
+    "Voiceovers and narration",
+    "Transcription",
+    "Sound effects and music"
+  ],
+  "audience": [
+    "Creators",
+    "Developers",
+    "Businesses"
+  ],
+  "strengths": [
+    "Free plan includes many tools",
+    "Annual billing is described as two months free"
+  ],
+  "limitations": [
+    "Downgrading or cancelling forfeits unused credits at the end of the cycle",
+    "Introductory offers appear on Starter and Creator and the end date is shown inconsistently"
+  ],
+  "alternatives": [
+    "suno",
+    "heygen",
+    "descript"
+  ],
+  "hue": 180,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://elevenlabs.io/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "10,000 credits per month",
+          "3 Studio projects"
+        ],
+        "limits": [
+          "Credits do not roll over"
+        ]
+      },
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 5,
+        "highlights": [
+          "30,000 credits per month"
+        ],
+        "note": "Monthly billing shows an introductory price ($1; $6 first month). The regular monthly price was not captured"
+      },
+      {
+        "name": "Creator",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 18.33,
+        "highlights": [
+          "121,000 credits per month"
+        ],
+        "note": "Monthly billing shows an introductory price ($11; $22 first month). The regular monthly price was not captured"
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 99,
+        "annual": 82.5,
+        "highlights": [
+          "600,000 credits per month"
+        ]
+      },
+      {
+        "name": "Scale",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 299,
+        "annual": 249.17,
+        "highlights": [
+          "1.8M credits per month",
+          "3 seats"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 990,
+        "annual": 825,
+        "highlights": [
+          "6M credits per month",
+          "10 seats"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Custom credits and seats"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "10k credits per month, with Text to Speech, Speech to Text, Sound Effects, Voice Design, Music, Productions, Image and 3 Studio projects."
+    },
+    "api": {
+      "summary": "A separate API pricing page exists. For some models the page states discounted API usage at between 0.5 and 1 credit per character.",
+      "source": "https://elevenlabs.io/pricing"
+    },
+    "regional": "Prices exclude all taxes, levies and duties. Regional pricing: not stated. Payment methods: card, Apple Pay, Google Pay.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 99,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://elevenlabs.io/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://elevenlabs.io",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "API"
+  ]
+}

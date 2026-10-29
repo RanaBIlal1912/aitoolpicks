@@ -1,0 +1,106 @@
+{
+  "id": "notebooklm",
+  "name": "NotebookLM",
+  "vendor": "Google",
+  "website": "https://notebooklm.google",
+  "category": "research",
+  "categories": [
+    "research"
+  ],
+  "tagline": "Source-grounded notebooks from Google",
+  "description": "NotebookLM is Google's notebook tool for working with your own sources. Google's current support page for it is titled Gemini Notebook and describes free and paid tiers by notebook and source limits.",
+  "features": [
+    "Notebooks with sources",
+    "Higher notebook and source limits on Google AI plans",
+    "Web and mobile app"
+  ],
+  "useCases": [
+    "Studying and summarising your own documents"
+  ],
+  "audience": [
+    "Students",
+    "Researchers",
+    "Professionals"
+  ],
+  "strengths": [
+    "Free tier with a Google account",
+    "Included with qualifying Google Workspace and Google AI plans"
+  ],
+  "limitations": [
+    "Free tier: 100 notebooks per user and 50 sources per notebook",
+    "Some paid tiers add a visible watermark in India, South Korea and Vietnam"
+  ],
+  "alternatives": [
+    "perplexity",
+    "elicit"
+  ],
+  "hue": 60,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://support.google.com/notebooklm/answer/16213268",
+    "plans": [
+      {
+        "name": "Standard (free)",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "100 notebooks per user",
+          "50 sources per notebook"
+        ]
+      },
+      {
+        "name": "Google AI Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "200 notebooks and 100 sources per notebook. Price not captured here: see Gemini"
+      },
+      {
+        "name": "Google AI Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "500 notebooks and 300 sources per notebook. Price not captured here: see Gemini"
+      },
+      {
+        "name": "Google AI Ultra (20 TB / 30 TB)",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "500 notebooks and 500 or 600 sources per notebook. Price not captured here"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Standard tier by signing up with a Gmail account: 100 notebooks per user and 50 sources per notebook."
+    },
+    "regional": "Plus, Pro and Ultra browser access depends on where the corresponding Google AI plan is available. The mobile app lists supported countries separately.",
+    "notes": [
+      "Also available with qualifying Google Workspace or Workspace for Education licences and through Gemini Enterprise; limits not stated for those."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official support page (titled Gemini Notebook)",
+      "url": "https://support.google.com/notebooklm/answer/16213268",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://notebooklm.google",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Mobile app"
+  ]
+}

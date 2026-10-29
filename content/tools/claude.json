@@ -1,0 +1,174 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "vendor": "Anthropic",
+  "website": "https://claude.ai",
+  "category": "assistants",
+  "categories": [
+    "assistants",
+    "writing",
+    "coding"
+  ],
+  "tagline": "AI assistant from Anthropic",
+  "description": "Claude is Anthropic's AI assistant, used to write, analyse, work through problems and handle longer documents, with separate plans for individuals, teams and enterprises.",
+  "features": [
+    "Chat on web, desktop and mobile",
+    "Web search, file creation and code execution",
+    "Memory, connectors and Artifacts",
+    "Projects (up to 5 on the free plan)",
+    "Claude Code included with Team plans"
+  ],
+  "useCases": [
+    "Writing and editing",
+    "Analysing documents and files",
+    "Working through coding problems"
+  ],
+  "audience": [
+    "Individuals",
+    "Teams of 2 to 150 users (Team plan)",
+    "Large organisations (Enterprise)"
+  ],
+  "strengths": [
+    "Free plan includes web search, file creation and memory",
+    "Team and Enterprise plans add central billing, SSO and admin controls"
+  ],
+  "limitations": [
+    "Usage limits apply on every plan and reset on a rolling five-hour window; paid plans add weekly limits",
+    "The pricing page gives no fixed message count"
+  ],
+  "alternatives": [
+    "chatgpt",
+    "gemini",
+    "mistral",
+    "perplexity"
+  ],
+  "hue": 25,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://claude.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Chat on web, desktop and mobile",
+          "Web search",
+          "File creation and code execution",
+          "Memory and connectors",
+          "Artifacts"
+        ],
+        "limits": [
+          "Up to 5 projects",
+          "Usage limits apply"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "annual": 17,
+        "annualTotal": 200,
+        "billing": "Annual billing is $200 up front",
+        "highlights": [
+          "More usage than Free",
+          "Projects",
+          "Task handoff and scheduling",
+          "Claude in Chrome and Microsoft 365"
+        ]
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 100,
+        "highlights": [
+          "5x or 20x Pro usage",
+          "Higher output limits",
+          "Priority access at busy times"
+        ],
+        "note": "Shown as 'from $100 per month'; no separate annual price on the page"
+      },
+      {
+        "name": "Team (Standard seat)",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 25,
+        "annual": 20,
+        "highlights": [
+          "For 2 to 150 users",
+          "More usage than Pro",
+          "Claude Code, central billing, SSO"
+        ]
+      },
+      {
+        "name": "Team (Premium seat)",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 125,
+        "annual": 100,
+        "highlights": [
+          "5x the usage of a Standard seat"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "annual": 20,
+        "billing": "Billed annually, 20-seat minimum, plus usage at API rates",
+        "highlights": [
+          "Role-based access, SCIM, audit logs",
+          "Compliance API, custom data retention, IP allowlisting"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Free for everyone: chat on web, desktop and mobile, web search, file creation and code execution, memory, connectors, Artifacts, up to 5 projects. Usage limits apply."
+    },
+    "api": {
+      "summary": "API usage is billed per million tokens (input/output): Fable 5.1 $10/$50, Opus 5.5 $4/$20, Sonnet 5.5 $2/$10, Haiku 5.5 $0.10/$0.50 for prompts up to 100K tokens. Batch processing is stated as a 50% saving; web search is $10 per 1,000 searches; code execution includes 50 free hours per day per organisation, then $0.05 per hour per container.",
+      "source": "https://claude.com/pricing"
+    },
+    "regional": "Displayed prices do not include applicable tax. US-only inference is available at 1.1x token pricing. Other regional pricing: not stated.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 20,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://claude.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://claude.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Desktop",
+    "Mobile"
+  ]
+}

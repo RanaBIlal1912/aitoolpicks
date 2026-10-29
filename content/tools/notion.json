@@ -1,0 +1,136 @@
+{
+  "id": "notion",
+  "name": "Notion",
+  "vendor": "Notion",
+  "website": "https://www.notion.com",
+  "category": "productivity",
+  "categories": [
+    "productivity",
+    "writing"
+  ],
+  "tagline": "Notes, docs and databases in one workspace",
+  "description": "Notion combines notes, documents and databases in one workspace. Its pricing page positions it as 'one tool to run your company', with Free, Plus, Business and Enterprise plans.",
+  "features": [
+    "Databases, forms and sites",
+    "Notion AI (limited trial on Free and Plus)",
+    "Notion Agent and AI Meeting Notes (Business)",
+    "Custom Agents priced per Notion credit"
+  ],
+  "useCases": [
+    "Client and project tracking",
+    "Reusable templates",
+    "Team wikis and docs"
+  ],
+  "audience": [
+    "Individuals",
+    "Students and educators (free Plus for 1 member)",
+    "Teams"
+  ],
+  "strengths": [
+    "Free plan available",
+    "Free Plus plan for students and educators with a school email"
+  ],
+  "limitations": [
+    "Free multi-member workspaces have a block limit (number not stated)",
+    "Free plan limits: 5 MB uploads, 7-day page history, 10 guests"
+  ],
+  "alternatives": [
+    "chatgpt",
+    "gamma"
+  ],
+  "hue": 255,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.notion.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per member per month",
+        "monthly": 0,
+        "limits": [
+          "5 MB file uploads",
+          "7-day page history"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per member per month",
+        "monthly": 10,
+        "highlights": [
+          "5 GB file uploads, 30-day page history",
+          "Custom forms and sites, charts",
+          "5 notion.site domains"
+        ],
+        "note": "Yearly billing is described as 'save up to 20%'; the yearly per-month price was not captured"
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per member per month",
+        "monthly": 20,
+        "highlights": [
+          "Notion Agent, AI Meeting Notes, Enterprise Search (beta)",
+          "SAML SSO",
+          "90-day page history"
+        ],
+        "note": "Marked 'Recommended'. Yearly price not captured"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Zero data retention with LLM providers",
+          "SCIM, audit log, advanced security"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Single-member workspaces have unlimited pages and blocks. Limits: 5 MB uploads, 7-day page history, 10 external guests, 1 notion.site domain."
+    },
+    "api": {
+      "summary": "Custom Agents are free to try, then $10 per 1,000 monthly Notion credits. Custom domains are $8 per month per domain billed annually or $10 monthly. Public API pricing is not stated.",
+      "source": "https://www.notion.com/pricing"
+    },
+    "regional": "Prices are in USD. Customers in the EU, UK and other regions with mandatory refund rules may be eligible for refunds beyond the standard 72 hours.",
+    "reference": {
+      "plan": "Plus",
+      "amount": 10,
+      "currency": "USD",
+      "per": "member per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.notion.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.notion.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Desktop",
+    "Mobile"
+  ],
+  "review": "notion"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "figma",
+  "name": "Figma",
+  "vendor": "Figma",
+  "website": "https://www.figma.com",
+  "category": "image",
+  "categories": [
+    "image"
+  ],
+  "tagline": "Collaborative interface design",
+  "description": "Figma is a browser-based design tool for website and app interfaces, with plans priced per seat type (Full, Dev and Collab).",
+  "features": [
+    "Seat types: Full, Dev and Collab",
+    "AI credits per seat",
+    "Dev Mode and MCP server access on paid plans"
+  ],
+  "useCases": [
+    "Designing screens for websites and apps",
+    "Handing designs to developers",
+    "Sharing prototypes"
+  ],
+  "audience": [
+    "Designers",
+    "Developers",
+    "Product teams"
+  ],
+  "strengths": [
+    "Free Starter plan with 150 AI credits per day (up to 500 per month)",
+    "Separate cheaper seats for developers and collaborators"
+  ],
+  "limitations": [
+    "The page does not label which billing cycle the Professional prices apply to",
+    "AI-credit add-on and API prices were not stated"
+  ],
+  "alternatives": [
+    "canva",
+    "firefly"
+  ],
+  "hue": 300,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.figma.com/pricing/",
+    "plans": [
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Unlimited drafts",
+          "150 AI credits per day, up to 500 per month"
+        ]
+      },
+      {
+        "name": "Professional (Full seat)",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 16,
+        "highlights": [
+          "Unlimited files and projects",
+          "Team-wide design libraries",
+          "3,000 AI credits per Full seat"
+        ],
+        "note": "Dev seat $12 and Collab seat $3. The page has a monthly/annual toggle but does not label which cycle these figures apply to"
+      },
+      {
+        "name": "Organization (Full seat)",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "annual": 55,
+        "billing": "Billed annually",
+        "highlights": [
+          "Shared libraries and fonts",
+          "Centralised admin tools",
+          "3,500 AI credits per Full seat"
+        ],
+        "note": "Dev seat $25 and Collab seat $5"
+      },
+      {
+        "name": "Enterprise (Full seat)",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "annual": 90,
+        "billing": "Billed annually",
+        "highlights": [
+          "Custom team workspaces",
+          "SCIM seat management",
+          "4,250 AI credits per Full seat"
+        ],
+        "note": "Dev seat $35 and Collab seat $5; sales-contact pricing"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Starter: free limited access to Figma products, unlimited drafts, UI kits and templates, 150 AI credits per day up to 500 per month."
+    },
+    "regional": "Prices are listed in USD. Regional pricing and tax: not stated.",
+    "reference": {
+      "plan": "Professional (Full seat)",
+      "amount": 16,
+      "currency": "USD",
+      "per": "seat per month",
+      "billing": "billing cycle not labelled"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.figma.com/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.figma.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Desktop"
+  ]
+}

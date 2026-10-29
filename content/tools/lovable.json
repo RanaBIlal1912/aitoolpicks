@@ -1,0 +1,105 @@
+{
+  "id": "lovable",
+  "name": "Lovable",
+  "vendor": "Lovable",
+  "website": "https://lovable.dev",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "Describe an app and have AI build it",
+  "description": "Lovable is an AI app builder that works on a credit system. Its pricing page names Free, Pro, Business and Enterprise plans.",
+  "features": [
+    "Credit-based building (default mode varies by task; Plan Mode costs 1 credit per message)",
+    "Cloud credits and credits for AI features in your apps"
+  ],
+  "useCases": [
+    "Building a web app from a description",
+    "Prototyping an idea"
+  ],
+  "audience": [
+    "Non-developers",
+    "Founders and small teams"
+  ],
+  "strengths": [
+    "Free plan with daily build credits"
+  ],
+  "limitations": [
+    "Credits expire (monthly plan credits after 2 months)",
+    "Apps with significant traffic can incur hosting costs paid from credits"
+  ],
+  "alternatives": [
+    "replit",
+    "bolt",
+    "v0"
+  ],
+  "hue": 340,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://lovable.dev/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "5 build credits per day, up to 30 per month",
+          "20 Cloud credits per month"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Price and credit amount not captured from the page we read"
+      },
+      {
+        "name": "Business",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Price not captured; the page says credits and the plan cost more than Pro"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Volume-based credit pricing"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Daily grant of 5 build credits (up to 30 per month), 20 Cloud credits monthly, and 4 credits for AI features in your apps."
+    },
+    "regional": "Some regional plans cap daily build credits at 30 per month. Tax treatment: not stated.",
+    "notes": [
+      "Example costs listed: 0.50 credits to change a button colour, 1.20 to add authentication, 1.70 for a landing page with 3 generated images. Top-up credit prices are not stated."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://lovable.dev/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://lovable.dev",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

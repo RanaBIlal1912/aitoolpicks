@@ -1,0 +1,125 @@
+{
+  "id": "bolt",
+  "name": "Bolt",
+  "vendor": "StackBlitz",
+  "website": "https://bolt.new",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "Prompt, run and deploy full-stack apps in the browser",
+  "description": "Bolt (bolt.new) is a browser-based AI app builder with token-based usage on Free, Pro, Teams and Enterprise plans.",
+  "features": [
+    "Monthly AI token allowance per plan",
+    "File uploads (10 MB on Free, 100 MB on paid)",
+    "Web requests per month"
+  ],
+  "useCases": [
+    "Building web apps from prompts",
+    "Prototyping quickly"
+  ],
+  "audience": [
+    "Individuals",
+    "Teams"
+  ],
+  "strengths": [
+    "Free forever with no card required",
+    "Unused tokens roll over on Pro"
+  ],
+  "limitations": [
+    "Free plan has a daily token limit of 300K and 1M tokens per month",
+    "Annual per-month prices were not captured"
+  ],
+  "alternatives": [
+    "lovable",
+    "replit",
+    "v0"
+  ],
+  "hue": 45,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://bolt.new/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "1M monthly tokens, 300K per day",
+          "10 MB upload limit"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 25,
+        "highlights": [
+          "10M monthly tokens, unused tokens roll over",
+          "No daily token limit",
+          "100 MB upload limit"
+        ],
+        "note": "Marked 'Most popular'. Plus applicable taxes."
+      },
+      {
+        "name": "Teams",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per member per month",
+        "monthly": 30,
+        "highlights": [
+          "10M tokens per team member",
+          "No daily token limit"
+        ],
+        "note": "Plus applicable taxes"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Unlimited tokens, priced by consumption"
+        ],
+        "note": "Custom annual contract, billed by consumption"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "1M monthly AI tokens, 300K daily token limit, 333K web requests per month and a 10 MB file upload limit. Unused tokens do not roll over."
+    },
+    "regional": "A yearly toggle shows 'Save up to 28%' but yearly prices were not captured. The page shows '$' without naming the currency.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 25,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://bolt.new/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://bolt.new",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

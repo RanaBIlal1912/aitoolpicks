@@ -15,6 +15,7 @@ export default function NewsCard({ n, compact = false, featured = false }: { n: 
           {formatDate(n.date)}
         </time>
         <span className="byline">via {n.source}</span>
+        {n.dateFromUrl && <span className="byline" title="The page showed relative times, so the date comes from the article address.">(date from article URL)</span>}
       </div>
       <h3
         className={`font-serif font-bold leading-snug tracking-tight text-white ${featured ? "text-2xl md:text-[2rem] md:leading-[1.15]" : "text-xl"}`}
@@ -26,7 +27,7 @@ export default function NewsCard({ n, compact = false, featured = false }: { n: 
       </h3>
       {!compact && <p className={`text-soft ${featured ? "text-base md:text-lg" : "text-[0.97rem]"}`}>{n.summary}</p>}
       {!compact && n.matters && (
-        <p className="rounded-xl border border-cyan/20 bg-cyan/5 px-4 py-2.5 text-sm text-[#bdf3fb]">
+        <p className="rounded-xl border border-cyan/20 bg-cyan/5 px-4 py-2.5 text-sm text-[#c3e3ea]">
           <strong className="text-white">Why it may matter:</strong> {n.matters}
         </p>
       )}
@@ -34,7 +35,7 @@ export default function NewsCard({ n, compact = false, featured = false }: { n: 
         href={n.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-auto pt-2 text-sm font-bold text-[#8fd3ff] no-underline hover:underline"
+        className="mt-auto pt-2 text-sm font-bold text-[#9db4d6] no-underline hover:underline"
         aria-label={`Read the original: ${n.title}`}
       >
         Read the original at {n.source} ↗

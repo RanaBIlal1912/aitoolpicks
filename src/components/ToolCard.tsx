@@ -1,58 +1,100 @@
 "use client";
 
 import Link from "next/link";
-import type { Tool } from "@/data/tools";
-import { PRICES } from "@/lib/prices";
-import TiltCard from "./TiltCard";
+import { PRICING_MODEL_LABEL, getCategory, type Tool } from "@/data/tools";
 import AffLink from "./AffLink";
-import PriceTag from "./PriceTag";
 
-export default function ToolCard({ tool, showPrice = true }: { tool: Tool; showPrice?: boolean }) {
-  const hasPrice = showPrice && !!PRICES[tool.id];
+const STATUS = {
+  verified: { label: "Pricing verified", cls: "border-emerald-400/30 bg-emerald-400/10 text-emerald-200" },
+  partial: { label: "Pricing partly verified", cls: "border-amber/30 bg-amber/10 text-amber" },
+  unverified: { label: "Pricing not verified", cls: "border-white/20 bg-white/5 text-muted" },
+} as const;
+
+export function Monogram({ name, hue, size = 48 }: { name: string; hue: number; size?: number }) {
   return (
-    <TiltCard hue={tool.hue} className="flex h-full flex-col p-6">
+    <span
+      aria-hidden="true"
+      className="grid shrink-0 place-items-center rounded-2xl font-extrabold text-white"
+      style={{ width: size, height: size, fontSize: size * 0.4, background: `linear-gradient(145deg, hsl(${hue} 38% 40%), hsl(${(hue + 30) % 360} 34% 26%))`, boxShadow: "inset 0 1px 0 rgba(255,255,255,.18)" }}
+    >
+      {name.charAt(0)}
+    </span>
+  );
+}
+
+export default function ToolCard({
+  tool,
+  selected,
+  onToggleCompare,
+  disableCompare = false,
+}: {
+  tool: Tool;
+  selected?: boolean;
+  onToggleCompare?: (id: string) => void;
+  disableCompare?: boolean;
+}) {
+  const cat = getCategory(tool.category);
+  const st = STATUS[tool.pricingStatus];
+  const free = tool.freePlan === true ? "Free plan" : tool.freePlan === false ? "No free plan" : "Not stated";
+  return (
+    <article className="glass card-glow flex h-full flex-col p-6 transition-transform duration-300 hover:-translate-y-0.5" style={{ ["--hue" as string]: tool.hue }}>
       <div className="flex items-start gap-4">
-        <span
-          aria-hidden="true"
-          className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-lg font-extrabold text-white shadow-lg"
-          style={{ background: `linear-gradient(135deg, hsl(${tool.hue} 85% 55%), hsl(${(tool.hue + 50) % 360} 80% 45%))` }}
-        >
-          {tool.name.charAt(0)}
-        </span>
+        <Monogram name={tool.name} hue={tool.hue} />
         <div className="min-w-0">
-          <h3 className="text-xl font-bold leading-tight tracking-tight text-white">{tool.name}</h3>
-          <p className="text-sm text-muted">{tool.tagline}</p>
+          <h3 className="text-xl font-bold leading-tight tracking-tight text-white">
+            <Link href={`/tools/${tool.id}/`} className="no-underline hover:underline">
+              {tool.name}
+            </Link>
+          </h3>
+          <p className="text-sm text-muted">{tool.vendor}</p>
         </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-        <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{tool.category}</span>
-        {tool.freePlan && (
-          <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-emerald-200">Free plan</span>
-        )}
-        {tool.review && (
-          <span className="rounded-full border border-violet/40 bg-violet/15 px-2.5 py-1 text-violet-200">Reviewed</span>
-        )}
+      <p className="mt-4 text-[0.97rem] text-soft">{tool.tagline}</p>
+
+      <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+        {cat && <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{cat.short}</span>}
+        <span className={`rounded-full border px-2.5 py-1 ${st.cls}`}>{st.label}</span>
+        <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{PRICING_MODEL_LABEL[tool.pricingModel]}</span>
       </div>
 
-      <p className="mt-4 text-[0.97rem] text-soft">{tool.description}</p>
-      <p className="mt-2 text-sm text-muted">
-        <span className="font-semibold text-soft">Best for:</span> {tool.bestFor}
-      </p>
-
-      {hasPrice && (
-        <div className="mt-4">
-          <PriceTag id={tool.id} />
+      <dl className="mt-4 space-y-1.5 text-sm">
+        <div className="flex justify-between gap-3">
+          <dt className="text-muted">Free access</dt>
+          <dd className="text-right text-soft">{free}</dd>
         </div>
-      )}
+        {tool.plans.slice(0, 3).map((p) => (
+          <div key={p.name} className="flex justify-between gap-3">
+            <dt className="truncate text-muted">{p.name}</dt>
+            <dd className="text-right text-soft">{p.price}</dd>
+          </div>
+        ))}
+      </dl>
+      {tool.plans.length > 3 && <p className="mt-1 text-xs text-muted">+ {tool.plans.length - 3} more plans on the tool page</p>}
+      {tool.plans.length === 0 && <p className="mt-3 text-xs text-muted">Plans not captured. See the official pricing page.</p>}
 
       <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
-        <AffLink id={tool.id} />
-        <Link href={`/tools/${tool.id}/`} className="btn-ghost btn-sm">
-          Details
-          <span className="sr-only"> about {tool.name}</span>
+        <Link href={`/tools/${tool.id}/`} className="btn-primary btn-sm">
+          Details &amp; pricing
+          <span className="sr-only"> for {tool.name}</span>
         </Link>
+        <AffLink id={tool.id} className="btn-ghost btn-sm">
+          Visit site
+        </AffLink>
+        {onToggleCompare && (
+          <label className="ml-auto flex cursor-pointer items-center gap-2 text-sm text-soft">
+            <input
+              type="checkbox"
+              checked={!!selected}
+              disabled={disableCompare && !selected}
+              onChange={() => onToggleCompare(tool.id)}
+              className="h-4 w-4 accent-[#7f95c9]"
+            />
+            Compare
+            <span className="sr-only"> {tool.name}</span>
+          </label>
+        )}
       </div>
-    </TiltCard>
+    </article>
   );
 }

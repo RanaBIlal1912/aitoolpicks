@@ -1,0 +1,113 @@
+{
+  "id": "n8n",
+  "name": "n8n",
+  "vendor": "n8n",
+  "website": "https://n8n.io",
+  "category": "automation",
+  "categories": [
+    "automation"
+  ],
+  "tagline": "Workflow automation you can self-host",
+  "description": "n8n is a workflow automation tool with hosted cloud plans and a self-hosted Community Edition on GitHub.",
+  "features": [
+    "Workflow executions per plan",
+    "Self-hosted Community Edition",
+    "EU hosting in Frankfurt for hosted plans"
+  ],
+  "useCases": [
+    "Automating workflows",
+    "Building AI-assisted flows"
+  ],
+  "audience": [
+    "Developers",
+    "Technical teams"
+  ],
+  "strengths": [
+    "Self-hosting is available",
+    "Hosted data is stored in the EU"
+  ],
+  "limitations": [
+    "The Business plan is self-hosted only (hosted availability is waitlisted)",
+    "Business and Enterprise self-hosted instances require a licence key checked daily",
+    "No USD list prices on the page"
+  ],
+  "alternatives": [
+    "zapier",
+    "make"
+  ],
+  "hue": 15,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "free-trial",
+    "checked": "2026-10-29",
+    "source": "https://n8n.io/pricing",
+    "plans": [
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "currency": "EUR",
+        "unit": "per month",
+        "annual": 20,
+        "billing": "Per month, billed annually",
+        "highlights": [
+          "2.5K workflow executions"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "EUR",
+        "unit": "per month",
+        "annual": 50,
+        "billing": "Per month, billed annually",
+        "highlights": [
+          "10K workflow executions"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "EUR",
+        "unit": "per month",
+        "annual": 667,
+        "billing": "Per month, billed annually",
+        "highlights": [
+          "40K workflow executions",
+          "Self-hosted only"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true
+      }
+    ],
+    "trial": "n8n Cloud trial with no credit card: 1,000 executions, 5 concurrent executions, 180-second timeout. Business trial: 14 days, card required.",
+    "regional": "Prices are listed in euros; no USD list prices appear on the page. Hosted plans store data in Frankfurt, Germany.",
+    "notes": [
+      "Monthly-billed prices are not stated. A free plan is not stated, but the self-hosted Community Edition is available on GitHub (licence terms not stated on the page)."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://n8n.io/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://n8n.io",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Cloud",
+    "Self-hosted"
+  ]
+}

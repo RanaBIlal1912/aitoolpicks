@@ -160,9 +160,9 @@ export function makeEnvironment(renderer: THREE.WebGLRenderer): THREE.Texture {
 export function addLights(scene: THREE.Scene, strength = 1): THREE.Light[] {
   const key = new THREE.DirectionalLight(0xbcd2ff, 1.5 * strength);
   key.position.set(4, 7, 5);
-  const rim = new THREE.PointLight(0x9d6bff, 110 * strength, 24, 2);
+  const rim = new THREE.PointLight(0x8e88c8, 90 * strength, 24, 2);
   rim.position.set(-6, 2.5, -3.5);
-  const fill = new THREE.PointLight(0x3f7dff, 55 * strength, 24, 2);
+  const fill = new THREE.PointLight(0x6488c4, 48 * strength, 24, 2);
   fill.position.set(5, -1.5, 4.5);
   const amb = new THREE.AmbientLight(0x1a2240, 0.6 * strength);
   scene.add(key, rim, fill, amb);

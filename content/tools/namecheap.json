@@ -1,0 +1,57 @@
+{
+  "id": "namecheap",
+  "name": "Namecheap",
+  "vendor": "Namecheap",
+  "website": "https://www.namecheap.com",
+  "category": "web",
+  "categories": [
+    "web"
+  ],
+  "tagline": "Domain names and hosting",
+  "description": "Namecheap is a domain name registrar that also sells hosting and related services.",
+  "features": [
+    "Domain registration",
+    "Hosting and related services"
+  ],
+  "useCases": [
+    "Registering a domain for a site"
+  ],
+  "audience": [
+    "Site owners"
+  ],
+  "strengths": [
+    "Widely used registrar"
+  ],
+  "limitations": [
+    "Domain prices vary by extension; check renewal prices before buying",
+    "We could not verify current prices"
+  ],
+  "alternatives": [
+    "hostinger"
+  ],
+  "hue": 20,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "unverified",
+    "model": "unknown",
+    "checked": "2026-10-29",
+    "source": "https://www.namecheap.com/domains/",
+    "plans": [],
+    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+  },
+  "sources": [
+    {
+      "label": "Official site (could not be read automatically)",
+      "url": "https://www.namecheap.com/domains/",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.namecheap.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ]
+}

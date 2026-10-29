@@ -1,0 +1,145 @@
+{
+  "id": "heygen",
+  "name": "HeyGen",
+  "vendor": "HeyGen",
+  "website": "https://www.heygen.com",
+  "category": "video",
+  "categories": [
+    "video",
+    "audio"
+  ],
+  "tagline": "AI avatar videos and translation",
+  "description": "HeyGen creates videos with AI avatars and voices, with credit-based plans from a free plan to Business and Enterprise.",
+  "features": [
+    "Custom video avatars",
+    "30+ languages on the free plan",
+    "Lip-sync translation and Video Agent (limited trial access on Free)",
+    "Export up to 4K on Pro and Business"
+  ],
+  "useCases": [
+    "Avatar-led videos",
+    "Translating video into other languages"
+  ],
+  "audience": [
+    "Marketing and training teams",
+    "Creators"
+  ],
+  "strengths": [
+    "Free plan with no card required",
+    "Credits roll over for one month on paid plans"
+  ],
+  "limitations": [
+    "Free videos carry a watermark, up to 1 minute each",
+    "Total monthly video minutes per plan are not stated"
+  ],
+  "alternatives": [
+    "synthesia",
+    "runway",
+    "descript"
+  ],
+  "hue": 165,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.heygen.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "3 videos per month, watermarked",
+          "Up to 1 minute per video"
+        ]
+      },
+      {
+        "name": "Creator",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 29,
+        "annual": 24,
+        "highlights": [
+          "600 credits",
+          "Up to 30 minutes per video, 1080p",
+          "HeyGen Voice up to 10 hours"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 49,
+        "highlights": [
+          "1,000 credits (base tier)",
+          "Up to 30 minutes per video, 4K",
+          "Higher credit tiers up to 100,000 credits at $4,300 per month"
+        ],
+        "note": "'Starting price'; annual price not stated"
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 149,
+        "highlights": [
+          "1,500 credits",
+          "Up to 60 minutes per video",
+          "5 custom video avatars, 4K upscaling"
+        ],
+        "note": "Extra team members cost $20 per seat per month"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Tailored credit volume",
+          "No maximum video duration"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "3 videos per month with a watermark, up to 1 minute per video, one Custom Video Avatar, 30+ languages. No credit card needed."
+    },
+    "api": {
+      "summary": "API pricing is linked from the page but no figures were shown.",
+      "source": "https://www.heygen.com/pricing"
+    },
+    "regional": "Currency shown only as '$'. Tax and regional pricing: not stated.",
+    "reference": {
+      "plan": "Creator",
+      "amount": 29,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.heygen.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.heygen.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

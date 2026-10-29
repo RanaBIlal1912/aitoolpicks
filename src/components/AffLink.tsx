@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { resolveAffiliate } from "@/lib/affiliate";
-import { getTool } from "@/data/tools";
+import links from "@/data/generated/tool-links.json";
 import { useCurrency } from "./CurrencyProvider";
 
 /**
@@ -19,14 +19,15 @@ export default function AffLink({
   className?: string;
 }) {
   const { country } = useCurrency();
-  const tool = getTool(id);
-  if (!tool) return null;
+  const entry = (links as unknown as Record<string, [string, string]>)[id];
+  if (!entry) return null;
+  const [name, officialUrl] = entry;
   const aff = resolveAffiliate(id, country);
-  const label = children ?? (aff ? `Try ${tool.name}` : `Visit ${tool.name}`);
+  const label = children ?? (aff ? `Try ${name}` : `Visit ${name}`);
   return (
     <a
       className={className}
-      href={aff ?? tool.officialUrl}
+      href={aff ?? officialUrl}
       target="_blank"
       rel={aff ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
       data-affiliate={aff ? "true" : "false"}

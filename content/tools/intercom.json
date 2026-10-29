@@ -1,0 +1,109 @@
+{
+  "id": "intercom",
+  "name": "Intercom",
+  "vendor": "Intercom",
+  "website": "https://www.intercom.com",
+  "category": "marketing",
+  "categories": [
+    "marketing"
+  ],
+  "tagline": "Customer service platform with the Fin AI agent",
+  "description": "Intercom is a customer service platform with seat-based plans and an AI agent, Fin, billed per outcome.",
+  "features": [
+    "Seat plans (Essential, Advanced, Expert)",
+    "Fin AI agent billed from $0.99 per outcome",
+    "Copilot add-on"
+  ],
+  "useCases": [
+    "Customer support",
+    "AI-assisted support answers"
+  ],
+  "audience": [
+    "Support teams",
+    "Businesses"
+  ],
+  "strengths": [
+    "14-day free trial with no credit card",
+    "Fin has no setup, integration or platform fees"
+  ],
+  "limitations": [
+    "Fin has a minimum monthly commitment",
+    "The billing period for seat prices is not stated"
+  ],
+  "alternatives": [],
+  "hue": 215,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "usage-based",
+    "checked": "2026-10-29",
+    "source": "https://www.intercom.com/pricing",
+    "plans": [
+      {
+        "name": "Essential",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 19,
+        "note": "Shown with $29 struck through; 'new customers save 35%'. Billing period not stated"
+      },
+      {
+        "name": "Advanced",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 85,
+        "highlights": [
+          "20 free Lite seats"
+        ],
+        "note": "Billing period not stated"
+      },
+      {
+        "name": "Expert",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 132,
+        "highlights": [
+          "50 free Lite seats"
+        ],
+        "note": "Billing period not stated"
+      },
+      {
+        "name": "Fin AI Agent",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per outcome",
+        "monthly": 0.99,
+        "highlights": [
+          "No seats required",
+          "No setup, integration or platform fees"
+        ],
+        "note": "'From $0.99 per Fin outcome'; a minimum monthly commitment applies"
+      }
+    ],
+    "trial": "14-day free trial, no credit card required.",
+    "regional": "Currency not stated (only '$'). Regional and tax notes: not stated.",
+    "notes": [
+      "Add-ons: Pro $100 per month (500 conversations, 6,000 credits); Proactive Support Plus $99 per month; Copilot $29 per agent per month ($35 if billed monthly, per the FAQ)."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.intercom.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.intercom.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

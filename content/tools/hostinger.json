@@ -1,0 +1,132 @@
+{
+  "id": "hostinger",
+  "name": "Hostinger",
+  "vendor": "Hostinger",
+  "website": "https://www.hostinger.com",
+  "category": "web",
+  "categories": [
+    "web"
+  ],
+  "tagline": "Beginner-friendly web hosting",
+  "description": "Hostinger sells web hosting, VPS and a website builder aimed at first-time site owners. Hosting plans are paid upfront for a multi-year term.",
+  "features": [
+    "Premium, Unlimited, Cloud Startup and Agency Startup hosting plans",
+    "Free weekly or daily backups depending on plan",
+    "SSH, WP-CLI, staging and malware scanning on all plans",
+    "30-day money-back guarantee"
+  ],
+  "useCases": [
+    "A first website or portfolio on your own domain",
+    "A small business site"
+  ],
+  "audience": [
+    "First-time site owners",
+    "Agencies (Agency Startup)"
+  ],
+  "strengths": [
+    "30-day money-back guarantee",
+    "Free domain for 1 year and free mailboxes for 1 year on listed plans"
+  ],
+  "limitations": [
+    "Prices are tied to long terms (48 months on most plans) and renewal prices are higher",
+    "No free plan or trial is stated"
+  ],
+  "alternatives": [
+    "namecheap"
+  ],
+  "hue": 262,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "paid",
+    "checked": "2026-10-29",
+    "source": "https://www.hostinger.com/pricing",
+    "plans": [
+      {
+        "name": "Premium",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 2.49,
+        "billing": "48-month term, $119.52 paid upfront; renews at $10.99 per month",
+        "highlights": [
+          "3 websites",
+          "20 GB SSD storage",
+          "Free weekly backups",
+          "Free domain for 1 year"
+        ],
+        "limits": [
+          "1 CPU core, 2 GB RAM"
+        ]
+      },
+      {
+        "name": "Unlimited",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 3.49,
+        "billing": "48-month term, $167.52 upfront; renews at $16.99 per month",
+        "highlights": [
+          "Unlimited websites*",
+          "50 GB NVMe storage",
+          "Daily backups"
+        ],
+        "note": "*Subject to a Fair Usage Policy"
+      },
+      {
+        "name": "Cloud Startup",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 7.99,
+        "billing": "48-month term, $383.52 upfront; renews at $25.99 per month",
+        "highlights": [
+          "Unlimited websites",
+          "100 GB NVMe storage",
+          "4 CPU cores, 4 GB RAM"
+        ]
+      },
+      {
+        "name": "Agency Startup",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 29,
+        "billing": "24-month term, $696 upfront; renews at $49 per month",
+        "highlights": [
+          "100 websites",
+          "300 GB NVMe storage",
+          "Dedicated IP address"
+        ]
+      }
+    ],
+    "regional": "Structured data lists USD and a worldwide service area; visible regional pricing and tax notes: not stated.",
+    "notes": [
+      "Two further plans (Cloud Professional $15.99 and Cloud Enterprise $29.99) appear only in structured data; their terms and renewal prices are not stated.",
+      "The monthly figures are the total plan price divided by the number of months; all plans are paid upfront."
+    ],
+    "reference": {
+      "plan": "Premium",
+      "amount": 2.49,
+      "currency": "USD",
+      "per": "month",
+      "billing": "48-month term paid upfront"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.hostinger.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.hostinger.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "review": "hostinger"
+}

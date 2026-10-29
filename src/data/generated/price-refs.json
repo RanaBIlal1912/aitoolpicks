@@ -1,0 +1,218 @@
+{
+ "bolt": {
+  "plan": "Pro",
+  "amount": 25,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://bolt.new/pricing",
+  "checked": "2026-10-29"
+ },
+ "claude": {
+  "plan": "Pro",
+  "amount": 20,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://claude.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "copilot": {
+  "plan": "Microsoft 365 Personal",
+  "amount": 9.99,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+  "checked": "2026-10-29"
+ },
+ "cursor": {
+  "plan": "Premium",
+  "amount": 30,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://cursor.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "elevenlabs": {
+  "plan": "Pro",
+  "amount": 99,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://elevenlabs.io/pricing",
+  "checked": "2026-10-29"
+ },
+ "elicit": {
+  "plan": "Pro",
+  "amount": 49,
+  "currency": "USD",
+  "per": "user per month",
+  "billing": "billed annually",
+  "source": "https://elicit.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "figma": {
+  "plan": "Professional (Full seat)",
+  "amount": 16,
+  "currency": "USD",
+  "per": "seat per month",
+  "billing": "billing cycle not labelled",
+  "source": "https://www.figma.com/pricing/",
+  "checked": "2026-10-29"
+ },
+ "firefly": {
+  "plan": "Firefly Standard",
+  "amount": 9.99,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://www.adobe.com/products/firefly/plans.html",
+  "checked": "2026-10-29"
+ },
+ "github-copilot": {
+  "plan": "Pro",
+  "amount": 10,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://github.com/features/copilot/plans",
+  "checked": "2026-10-29"
+ },
+ "grammarly": {
+  "plan": "Pro",
+  "amount": 12,
+  "currency": "USD",
+  "per": "month",
+  "billing": "billing period not labelled",
+  "source": "https://www.grammarly.com/plans",
+  "checked": "2026-10-29"
+ },
+ "heygen": {
+  "plan": "Creator",
+  "amount": 29,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://www.heygen.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "hostinger": {
+  "plan": "Premium",
+  "amount": 2.49,
+  "currency": "USD",
+  "per": "month",
+  "billing": "48-month term paid upfront",
+  "source": "https://www.hostinger.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "huggingface": {
+  "plan": "PRO Account",
+  "amount": 9,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://huggingface.co/pricing",
+  "checked": "2026-10-29"
+ },
+ "jasper": {
+  "plan": "Pro",
+  "amount": 69,
+  "currency": "USD",
+  "per": "seat per month",
+  "billing": "monthly",
+  "source": "https://www.jasper.ai/pricing",
+  "checked": "2026-10-29"
+ },
+ "luma": {
+  "plan": "Plus",
+  "amount": 30,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://lumalabs.ai/pricing",
+  "checked": "2026-10-29"
+ },
+ "mistral": {
+  "plan": "Pro",
+  "amount": 14.99,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://mistral.ai/pricing",
+  "checked": "2026-10-29"
+ },
+ "notion": {
+  "plan": "Plus",
+  "amount": 10,
+  "currency": "USD",
+  "per": "member per month",
+  "billing": "monthly",
+  "source": "https://www.notion.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "otter": {
+  "plan": "Pro",
+  "amount": 16.99,
+  "currency": "USD",
+  "per": "user per month",
+  "billing": "monthly",
+  "source": "https://otter.ai/pricing",
+  "checked": "2026-10-29"
+ },
+ "pika": {
+  "plan": "Starter",
+  "amount": 10,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://pika.art/pricing",
+  "checked": "2026-10-29"
+ },
+ "runway": {
+  "plan": "Standard",
+  "amount": 15,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://runway.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "suno": {
+  "plan": "Pro",
+  "amount": 8,
+  "currency": "USD",
+  "per": "month",
+  "billing": "price shown on the page; billing label not stated",
+  "source": "https://suno.com/pricing",
+  "checked": "2026-10-29"
+ },
+ "synthesia": {
+  "plan": "Starter",
+  "amount": 19,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://www.synthesia.io/pricing",
+  "checked": "2026-10-29"
+ },
+ "v0": {
+  "plan": "Plus",
+  "amount": 30,
+  "currency": "USD",
+  "per": "user per month",
+  "billing": "monthly",
+  "source": "https://v0.app/pricing",
+  "checked": "2026-10-29"
+ },
+ "zapier": {
+  "plan": "Professional",
+  "amount": 29.99,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly (750-task tier)",
+  "source": "https://zapier.com/pricing",
+  "checked": "2026-10-29"
+ }
+}

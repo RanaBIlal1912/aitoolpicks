@@ -1,0 +1,59 @@
+{
+  "id": "gamma",
+  "name": "Gamma",
+  "vendor": "Gamma",
+  "website": "https://gamma.app",
+  "category": "writing",
+  "categories": [
+    "writing",
+    "productivity"
+  ],
+  "tagline": "AI presentations, documents and websites",
+  "description": "Gamma is an AI tool for creating presentations, documents and simple websites.",
+  "features": [
+    "AI-generated presentations and documents"
+  ],
+  "useCases": [
+    "Slide decks",
+    "Quick documents"
+  ],
+  "audience": [
+    "Professionals",
+    "Students"
+  ],
+  "strengths": [
+    "Popular for fast presentation drafts"
+  ],
+  "limitations": [
+    "Plans and limits could not be verified automatically"
+  ],
+  "alternatives": [
+    "canva",
+    "notion"
+  ],
+  "hue": 320,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "unverified",
+    "model": "unknown",
+    "checked": "2026-10-29",
+    "source": "https://gamma.app/pricing",
+    "plans": [],
+    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page (could not be read automatically)",
+      "url": "https://gamma.app/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://gamma.app",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ]
+}

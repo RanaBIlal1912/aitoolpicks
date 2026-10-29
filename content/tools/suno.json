@@ -1,0 +1,116 @@
+{
+  "id": "suno",
+  "name": "Suno",
+  "vendor": "Suno",
+  "website": "https://suno.com",
+  "category": "audio",
+  "categories": [
+    "audio"
+  ],
+  "tagline": "AI music and song generation",
+  "description": "Suno generates songs from text, with a free plan and Pro and Premier paid plans.",
+  "features": [
+    "Credits per month",
+    "Song downloads per month on paid plans",
+    "Stem separation on paid plans",
+    "Priority queue on paid plans"
+  ],
+  "useCases": [
+    "Creating songs and backing tracks"
+  ],
+  "audience": [
+    "Hobbyists",
+    "Creators"
+  ],
+  "strengths": [
+    "Free plan with 50 credits per day",
+    "Commercial use rights on Pro and Premier"
+  ],
+  "limitations": [
+    "Free songs have no commercial rights",
+    "The terms of service may limit commercial use even on paid plans",
+    "Subscription credits do not carry over"
+  ],
+  "alternatives": [
+    "elevenlabs"
+  ],
+  "hue": 50,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://suno.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "No commercial rights",
+          "No monthly song downloads"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 8,
+        "highlights": [
+          "2,500 credits per month",
+          "20 song downloads per month",
+          "Priority queue, 2 stem separation types",
+          "Commercial use rights"
+        ],
+        "note": "Yearly billing 'saves $24'; the annual per-month price was not stated"
+      },
+      {
+        "name": "Premier",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 24,
+        "highlights": [
+          "10,000 credits per month",
+          "60 song downloads per month",
+          "3 stem separation types",
+          "Commercial use rights"
+        ],
+        "note": "Yearly billing 'saves $72'; the annual per-month price was not stated"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "50 credits per day, uploads up to 8 minutes, no monthly song downloads, shared queue with 4 concurrent generations, no stem separation."
+    },
+    "regional": "Taxes are calculated at checkout. Currency shown only as '$'.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 8,
+      "currency": "USD",
+      "per": "month",
+      "billing": "price shown on the page; billing label not stated"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://suno.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://suno.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

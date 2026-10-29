@@ -23,7 +23,7 @@ const TOPIC_BY_CAT: Record<string, TopicId> = {
   Students: "students",
 };
 
-type Raw = { slug: string; title: string; description: string; icon: string; cat: string; blurb: string };
+type Raw = { slug: string; title: string; description: string; icon: string; cat: string; blurb: string; region?: string };
 
 export type Article = Raw & {
   topic: TopicId;

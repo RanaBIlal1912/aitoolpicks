@@ -1,0 +1,98 @@
+{
+  "id": "perplexity",
+  "name": "Perplexity",
+  "vendor": "Perplexity AI",
+  "website": "https://www.perplexity.ai",
+  "category": "assistants",
+  "categories": [
+    "assistants",
+    "research"
+  ],
+  "tagline": "AI answer engine with cited sources",
+  "description": "Perplexity is an AI answer engine that searches the web and shows the sources behind an answer, so you can open and check them.",
+  "features": [
+    "Answers with citations",
+    "Pro Search and Research",
+    "Image generation and limited video generation on Pro",
+    "Access to several advanced models on Pro"
+  ],
+  "useCases": [
+    "Quick research where you want sources",
+    "Getting oriented on an unfamiliar topic",
+    "Finding pages to read in full"
+  ],
+  "audience": [
+    "Researchers",
+    "Students",
+    "Professionals who need cited answers"
+  ],
+  "strengths": [
+    "Shows sources for answers",
+    "Paid Pro tier adds extended Pro Search and file uploads"
+  ],
+  "limitations": [
+    "A summary can still misread a source, so open the links for anything important"
+  ],
+  "alternatives": [
+    "chatgpt",
+    "claude",
+    "gemini"
+  ],
+  "hue": 185,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "highlights": [
+          "10x as many citations per answer",
+          "Increased file and photo uploads",
+          "Extended access to Perplexity Research",
+          "Enhanced image generation",
+          "Limited video generation",
+          "Access to advanced models"
+        ],
+        "note": "Price not stated on the help article we read"
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "highlights": [
+          "Advanced access to all advanced models",
+          "Priority support"
+        ],
+        "note": "Price not stated on the help article we read. Described as unlocking advanced access to all advanced models, enhanced video tools, priority support and early access."
+      }
+    ],
+    "notes": [
+      "We could not read prices from the official pages (the marketing page was empty to automated readers). Check the official site for current plans and prices."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official Pro help article",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.perplexity.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

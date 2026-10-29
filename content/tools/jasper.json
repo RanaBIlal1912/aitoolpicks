@@ -1,0 +1,105 @@
+{
+  "id": "jasper",
+  "name": "Jasper",
+  "vendor": "Jasper",
+  "website": "https://www.jasper.ai",
+  "category": "writing",
+  "categories": [
+    "writing",
+    "marketing"
+  ],
+  "tagline": "AI platform for marketing teams",
+  "description": "Jasper is an AI platform aimed at marketing teams, with agents, brand voices and a canvas for content creation.",
+  "features": [
+    "Canvas for content creation",
+    "Agents for core marketing workflows",
+    "Brand voices, knowledge assets and audiences",
+    "No-code custom agents and API access (Business)"
+  ],
+  "useCases": [
+    "Marketing copy",
+    "Keeping a consistent brand voice across campaigns"
+  ],
+  "audience": [
+    "Marketing teams"
+  ],
+  "strengths": [
+    "7-day free trial of Pro",
+    "Nonprofit discount of 20% after starting a trial (subject to review)"
+  ],
+  "limitations": [
+    "Pro includes 1 seat (the page is inconsistent about team size)",
+    "Cards only: PayPal, prepaid cards and cash apps are not accepted",
+    "No free plan is stated"
+  ],
+  "alternatives": [
+    "grammarly",
+    "writesonic",
+    "chatgpt"
+  ],
+  "hue": 275,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "free-trial",
+    "checked": "2026-10-29",
+    "source": "https://www.jasper.ai/pricing",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 69,
+        "annual": 59,
+        "billing": "Annual billing is a 12-month commitment; monthly plans can be cancelled anytime",
+        "highlights": [
+          "1 seat",
+          "Canvas and core marketing agents",
+          "2 Brand Voices, 5 knowledge assets, 3 audiences"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "billing": "Begins with a 12-month commitment",
+        "highlights": [
+          "Agents for complex workflows",
+          "No-code agent builder and Jasper Grid",
+          "Unlimited Brand Voices, knowledge assets and audiences",
+          "API access, admin controls, dedicated support"
+        ]
+      }
+    ],
+    "trial": "7-day free trial of the Pro plan; trial limits are not stated.",
+    "regional": "Prices are in USD; exchange rates are applied at purchase by Stripe. Tax treatment: not stated.",
+    "notes": [
+      "The page's structured data lists a 'Creator' plan that does not appear elsewhere, and a price validity date of 2025-12-31."
+    ],
+    "reference": {
+      "plan": "Pro",
+      "amount": 69,
+      "currency": "USD",
+      "per": "seat per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.jasper.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.jasper.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ]
+}

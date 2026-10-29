@@ -30,7 +30,7 @@ export const REVIEWS: Review[] = [
     ],
     pros: [
       "Handles many different writing and thinking tasks in one place",
-      "A free tier is available, so you can try it before paying",
+      "Widely used, so tutorials and examples are easy to find",
       "Fast for first drafts and outlines",
     ],
     cons: [
@@ -40,9 +40,9 @@ export const REVIEWS: Review[] = [
     ],
     bestFor: "Freelancers, students and small business owners who need quick drafts and ideas.",
     skipIf: "You need guaranteed-accurate facts with no checking, or you are not allowed to use AI for the work.",
-    pricingNote: "Paid plans exist for heavier use. The Plus price below comes from the official pricing page.",
+    pricingNote: "ChatGPT's official pricing page blocked automated access when we checked, so we do not publish its plan prices. Read the official plans page before you decide.",
     verdict:
-      "A strong first-draft and brainstorming partner. Start on the free tier, always review what it writes, and only upgrade if you hit limits on paid work.",
+      "A strong first-draft and brainstorming partner. Check the current plans on the official site, always review what it writes, and only pay if you hit limits on paid work.",
   },
   {
     slug: "grammarly",
@@ -67,7 +67,7 @@ export const REVIEWS: Review[] = [
     ],
     bestFor: "Anyone who writes in English for clients, school or work and wants fewer mistakes.",
     skipIf: "You rarely write, or you already have a trusted human editor for everything.",
-    pricingNote: "A free plan is available. The Pro price below comes from the official plans page.",
+    pricingNote: "A free plan is documented on Grammarly's plans page. Pro is shown at $12 USD, but the page we read did not label the billing period, so confirm whether that is monthly or annual.",
     verdict:
       "Worth installing the free version if you send written messages to clients or teachers. Upgrade only if you use the advanced suggestions often.",
   },
@@ -94,7 +94,7 @@ export const REVIEWS: Review[] = [
     ],
     bestFor: "Freelancers and students who want everything organised in one place.",
     skipIf: "A simple notes app or a paper list already works for you.",
-    pricingNote: "A free plan is available. The Plus price below comes from the official pricing page.",
+    pricingNote: "A free plan is documented. Plus is $10 per member per month billed monthly on the official pricing page; the yearly price was not captured.",
     verdict:
       "Start with one page and one table. If you keep using it for a month, it is worth growing; if not, you have lost nothing.",
   },
@@ -111,18 +111,17 @@ export const REVIEWS: Review[] = [
     ],
     pros: [
       "Templates make decent results fast",
-      "A free plan is available",
       "Easy to learn",
     ],
     cons: [
       "Popular templates look familiar, so change colours and text to stand out",
-      "Free-plan limits may push heavy users to a paid plan",
+      "We could not verify Canva's current plans automatically, so check its pricing page for free-plan limits",
       "Not a replacement for professional design software",
     ],
     bestFor: "Beginners, freelancers and small businesses that need clean visuals quickly.",
     skipIf: "You need precise, custom brand design or advanced illustration.",
     pricingNote:
-      "We do not show a Canva price because sources we checked disagreed. See Canva's own plans page for current pricing.",
+      "Canva's official pricing page blocked automated access when we checked, so we do not publish its prices. See Canva's own plans page.",
     verdict:
       "Use the free plan for two weeks and note what blocks you. Pay only when a specific paid feature clearly saves time.",
   },
@@ -148,7 +147,7 @@ export const REVIEWS: Review[] = [
     bestFor: "Someone ready to pay for a first website on their own domain.",
     skipIf: "A free static site already meets your needs.",
     pricingNote:
-      "We do not show a Hostinger price because sources we checked disagreed and promotional prices change. Check the official plans page, including the renewal price.",
+      "Hostinger's hosting plans are paid upfront for a multi-year term and renew at higher prices (for example, Premium is $2.49 per month on a 48-month term and renews at $10.99 per month). Check the official plans page before buying.",
     verdict:
       "Worth comparing if you want your own domain and a managed setup. Read the renewal price and the terms before you pay.",
   },

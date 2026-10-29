@@ -90,7 +90,7 @@ export function brushedRoughness(size: number, seed: number, mean = 0.4): HTMLCa
 type Maps = { map: HTMLCanvasElement; emissive: HTMLCanvasElement; bump: HTMLCanvasElement };
 
 export type Palette = { trace: string; glowA: string; glowB: string; base: string };
-export const BLUE_VIOLET: Palette = { base: "#080d1c", trace: "#22365e", glowA: "#4d8dff", glowB: "#9d7bff" };
+export const BLUE_VIOLET: Palette = { base: "#080d1a", trace: "#26354f", glowA: "#6f93cf", glowB: "#9a90d0" };
 
 /** Printed-circuit style board: copper traces, vias and pads, with a matching glow and bump map. */
 export function circuitMaps(size: number, seed: number, pal: Palette = BLUE_VIOLET): Maps {

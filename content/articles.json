@@ -1,11 +1,28 @@
 [
   {
+    "slug": "how-to-start-freelancing",
+    "title": "How to Start Freelancing: A 30-Day Plan for Any Country",
+    "description": "A four-week plan to choose a service, build proof, set up profiles and payment, and reach your first clients from anywhere.",
+    "icon": "🚀",
+    "cat": "Start here",
+    "blurb": "A four-week plan you can follow from any country, with free tools first."
+  },
+  {
+    "slug": "how-to-get-paid-as-a-freelancer",
+    "title": "How to Get Paid as a Freelancer: A Practical Checklist",
+    "description": "What to check before choosing a payout method, an invoice checklist, milestone tips, scam warning signs and basic record keeping, for freelancers anywhere.",
+    "icon": "💸",
+    "cat": "Freelancers",
+    "blurb": "Payment methods to compare, an invoice checklist and scam warning signs."
+  },
+  {
     "slug": "how-to-start-freelancing-from-pakistan",
     "title": "How to Start Freelancing from Pakistan",
     "description": "A step-by-step beginner plan: pick a skill, build a profile, get your first client and receive payments.",
     "icon": "🚀",
     "cat": "Start here",
-    "blurb": "A step-by-step plan: pick a skill, build a profile, get your first client and get paid."
+    "blurb": "A step-by-step plan: pick a skill, build a profile, get your first client and get paid.",
+    "region": "Pakistan"
   },
   {
     "slug": "best-ai-writing-tools",
@@ -101,6 +118,7 @@
     "description": "An overview of common ways to receive freelance payments in Pakistan, what to check before you choose one, and basic record keeping.",
     "icon": "💸",
     "cat": "Freelancers",
-    "blurb": "Common ways to receive money, what to check first, and simple record keeping."
+    "blurb": "Common ways to receive money, what to check first, and simple record keeping.",
+    "region": "Pakistan"
   }
 ]

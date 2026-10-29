@@ -1,0 +1,121 @@
+{
+  "id": "grammarly",
+  "name": "Grammarly",
+  "vendor": "Grammarly",
+  "website": "https://www.grammarly.com",
+  "category": "writing",
+  "categories": [
+    "writing"
+  ],
+  "tagline": "Spelling, grammar and tone checker",
+  "description": "Grammarly checks spelling, grammar and tone as you type in the browser and many apps, and offers AI prompts for rewriting and drafting.",
+  "features": [
+    "Writing mistake checks and tone view",
+    "AI prompts per month (100 on Free, 2,000 per member on Pro)",
+    "Full-sentence rewrites, tone adjustment and citation consistency (Pro)",
+    "Team analytics, style guides and brand tones (Pro and Enterprise)"
+  ],
+  "useCases": [
+    "Proofreading proposals, emails and essays",
+    "Adjusting tone before sending"
+  ],
+  "audience": [
+    "Professionals",
+    "Students",
+    "Teams"
+  ],
+  "strengths": [
+    "Works where you already write",
+    "Free plan available"
+  ],
+  "limitations": [
+    "Suggestions are not always right for your style",
+    "It does not check whether your facts are correct"
+  ],
+  "alternatives": [
+    "jasper",
+    "chatgpt"
+  ],
+  "hue": 150,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.grammarly.com/plans",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Mistake checks",
+          "Tone view",
+          "100 AI prompts per month"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "highlights": [
+          "Full-sentence rewrites and tone adjustment",
+          "AI-generated text and plagiarism detection",
+          "2,000 AI prompts per member per month",
+          "Snippets, Knowledge Share, priority support, Team Analytics"
+        ],
+        "note": "$12 USD is shown without a billing-period label on the page we read; the page describes Pro as 'for eligible individuals and teams'"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Everything in Pro",
+          "Unlimited AI prompts per member",
+          "SAML single sign-on, SCIM, audit logs API"
+        ],
+        "note": "Contact Sales"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Writing mistake checks, writing tone view and 100 AI prompts per month."
+    },
+    "trial": "Pro shows 'Try for free' with $0 payment today and an email reminder 2 days before the trial ends; the trial length is not stated.",
+    "regional": "Prices are shown only in USD.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 12,
+      "currency": "USD",
+      "per": "month",
+      "billing": "billing period not labelled"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official plans page",
+      "url": "https://www.grammarly.com/plans",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.grammarly.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "review": "grammarly"
+}

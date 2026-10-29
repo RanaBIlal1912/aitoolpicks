@@ -1,0 +1,123 @@
+{
+  "id": "v0",
+  "name": "v0",
+  "vendor": "Vercel",
+  "website": "https://v0.app",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "AI that generates interfaces and apps",
+  "description": "v0 is Vercel's AI app and interface builder, priced per user with monthly credits, plus a separate per-token API.",
+  "features": [
+    "Monthly and daily credits per user",
+    "Team-shared purchased credits",
+    "Pay-per-token API models"
+  ],
+  "useCases": [
+    "Generating UI and apps from prompts",
+    "Prototyping web interfaces"
+  ],
+  "audience": [
+    "Developers and designers",
+    "Teams"
+  ],
+  "strengths": [
+    "Free plan available",
+    "New users get $5 in one-time credits"
+  ],
+  "limitations": [
+    "Free plan is limited to 7 messages per day",
+    "Prices exclude VAT and GST"
+  ],
+  "alternatives": [
+    "lovable",
+    "bolt",
+    "replit"
+  ],
+  "hue": 0,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://v0.app/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "7 messages per day"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 30,
+        "highlights": [
+          "$30 of included monthly credits per user",
+          "$2 of free daily credits on login",
+          "Extra credits shared across the team"
+        ],
+        "note": "A '$90' figure appears beside the price with no label"
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 100,
+        "highlights": [
+          "$30 monthly credits and $2 daily credits per user",
+          "Team-shared purchased credits"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "7 messages per day."
+    },
+    "api": {
+      "summary": "Per 1M tokens (input / cache write / cache read / output): v0 Mini $0.20 / $0.25 / $0.02 / $1.20; v0 Pro $2 / $2.50 / $0.20 / $10; v0 Max $5 / $6.25 / $0.50 / $25; v0 Max Fast $10 / $12.50 / $1 / $50.",
+      "source": "https://v0.app/pricing"
+    },
+    "regional": "Prices are in USD and exclude VAT, GST and similar taxes; taxes are calculated from the billing address.",
+    "reference": {
+      "plan": "Plus",
+      "amount": 30,
+      "currency": "USD",
+      "per": "user per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://v0.app/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://v0.app",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

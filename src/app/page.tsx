@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { ARTICLES, GUIDES, TOPICS, articlesInTopic, COVER_BY_TOPIC } from "@/data/articles";
 import { COMPARISONS } from "@/data/compare";
 import { NEWS } from "@/data/news";
-import { TOOLS, getTool } from "@/data/tools";
-import { CODES } from "@/lib/currency";
+import { CATEGORIES, TOOLS, getTool, toolsInCategory } from "@/data/tools";
+import { ROUNDUPS } from "@/data/roundups";
 import { SITE, absUrl } from "@/lib/site";
 import { coverPath } from "@/data/covers";
 import ArticleCard from "@/components/ArticleCard";
@@ -47,8 +47,9 @@ function SectionHead({ eyebrow, title, lead, href, cta }: { eyebrow: string; tit
 }
 
 export default function Home() {
-  const featured = TOOLS.filter((t) => t.review).slice(0, 5).map((t) => getTool(t.id)!);
-  const lead = GUIDES.find((g) => g.slug === "how-to-start-freelancing-from-pakistan") ?? GUIDES[0];
+  const featured = ["claude", "github-copilot", "runway", "elevenlabs", "notion", "zapier"].map((id) => getTool(id)!);
+  const verifiedCount = TOOLS.filter((t) => t.pricingStatus === "verified").length;
+  const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
   const latest = GUIDES.filter((g) => g.slug !== lead.slug).slice(0, 6);
   const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -66,8 +67,8 @@ export default function Home() {
               Pick the AI tools that <span className="gradient-text">earn their place</span> in your work
             </h1>
             <p className="mt-6 max-w-xl text-lg text-soft md:text-xl">
-              Dated AI news with original sources, practical guides, honest reviews and comparisons for freelancers, creators and
-              small businesses.
+              A growing catalogue of AI tools with official plan prices and the date we checked them, dated AI news with original
+              sources, and practical guides for creators, developers and small businesses worldwide.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link href="/news/" className="btn-primary">
@@ -80,11 +81,11 @@ export default function Home() {
                 Browse tools
               </Link>
             </div>
-            <dl className="mt-12 grid max-w-lg grid-cols-3 gap-4">
+            <dl className="mt-12 grid max-w-xl grid-cols-3 gap-4">
               {[
+                [String(TOOLS.length), "tools in " + CATEGORIES.length + " categories"],
+                [String(verifiedCount), "with verified pricing"],
                 [String(NEWS.length), "sourced news items"],
-                [String(ARTICLES.length), "guides & comparisons"],
-                [String(TOOLS.length), "tools · " + CODES.length + " currencies"],
               ].map(([n, l]) => (
                 <div key={l} className="glass rounded-2xl px-4 py-3">
                   <dt className="sr-only">{l}</dt>
@@ -116,7 +117,7 @@ export default function Home() {
             <div className="glass flex flex-col rounded-[22px] p-6">
               <div className="mb-4 flex items-center justify-between">
                 <span className="kicker">Latest AI news</span>
-                <Link href="/news/" className="text-sm font-bold text-[#8fd3ff] no-underline hover:underline">
+                <Link href="/news/" className="text-sm font-bold text-[#9db4d6] no-underline hover:underline">
                   All news →
                 </Link>
               </div>
@@ -143,16 +144,57 @@ export default function Home() {
 
         <Reveal as="section" className="pt-24">
           <SectionHead
-            eyebrow="Featured tools"
-            title="Tools worth a closer look"
-            lead="Each has a free plan or free tier we could confirm, plus an overview with pros, cons and who it suits."
+            eyebrow="Explore"
+            title="Browse AI tools by category"
+            lead="From assistants and coding tools to video, audio, research and automation. Every category page lists plans and prices in the vendor's own currency."
             href="/tools/"
-            cta="Browse all tools"
+            cta="Search all tools"
+          />
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {CATEGORIES.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/tools/category/${c.slug}/`} className="group relative block aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 no-underline">
+                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.05]">
+                    <Cover id={c.cover} />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-[#05070d]/60 to-[#05070d]/10" />
+                  <div className="absolute inset-x-0 bottom-0 p-4">
+                    <p className="font-bold text-white">{c.short}</p>
+                    <p className="text-xs text-soft">{toolsInCategory(c.slug).length} tools</p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal as="section" className="pt-24">
+          <SectionHead
+            eyebrow="Featured tools"
+            title="Tools with verified pricing"
+            lead="Plan names and prices are read from each vendor's own pricing page, with the date we checked."
+            href="/pricing/"
+            cta="Compare all pricing"
           />
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((t) => (
               <li key={t.id} className="[perspective:1000px]">
                 <ToolCard tool={t} />
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal as="section" className="pt-24">
+          <SectionHead eyebrow="Best-of guides" title="Which tool for which job" lead="Groups of tools matched to who they suit, with real prices." href="/best/" cta="All best-of guides" />
+          <ul className="grid gap-4 md:grid-cols-3">
+            {ROUNDUPS.slice(0, 3).map((r) => (
+              <li key={r.slug}>
+                <Link href={`/best/${r.slug}/`} className="glass card-glow flex h-full flex-col gap-2 p-6 no-underline transition-transform hover:-translate-y-0.5" style={{ ["--hue" as string]: 220 }}>
+                  <span className="kicker">{r.picks.length} picks</span>
+                  <h3 className="font-serif text-xl font-bold leading-snug text-white">{r.title}</h3>
+                  <p className="text-sm text-muted">{r.description}</p>
+                </Link>
               </li>
             ))}
           </ul>
@@ -183,9 +225,9 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col gap-3 p-7">
                     <div className="flex items-center gap-3 text-sm font-bold">
-                      <span className="rounded-full bg-electric/20 px-3 py-1 text-[#9cc2ff]">{c.leftLabel}</span>
+                      <span className="rounded-full bg-electric/20 px-3 py-1 text-[#a9bfe6]">{c.leftLabel}</span>
                       <span className="text-muted">vs</span>
-                      <span className="rounded-full bg-violet/20 px-3 py-1 text-[#cbb8ff]">{c.rightLabel}</span>
+                      <span className="rounded-full bg-violet/20 px-3 py-1 text-[#c1bce2]">{c.rightLabel}</span>
                     </div>
                     <h3 className="font-serif text-2xl font-bold leading-snug tracking-tight text-white">{a.title}</h3>
                     <p className="text-muted">{a.blurb}</p>

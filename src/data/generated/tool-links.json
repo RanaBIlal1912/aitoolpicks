@@ -1,0 +1,170 @@
+{
+ "bolt": [
+  "Bolt",
+  "https://bolt.new"
+ ],
+ "canva": [
+  "Canva",
+  "https://www.canva.com"
+ ],
+ "chatgpt": [
+  "ChatGPT",
+  "https://chatgpt.com"
+ ],
+ "claude": [
+  "Claude",
+  "https://claude.ai"
+ ],
+ "copilot": [
+  "Microsoft Copilot",
+  "https://copilot.microsoft.com"
+ ],
+ "cursor": [
+  "Cursor",
+  "https://cursor.com"
+ ],
+ "descript": [
+  "Descript",
+  "https://www.descript.com"
+ ],
+ "elevenlabs": [
+  "ElevenLabs",
+  "https://elevenlabs.io"
+ ],
+ "elicit": [
+  "Elicit",
+  "https://elicit.com"
+ ],
+ "figma": [
+  "Figma",
+  "https://www.figma.com"
+ ],
+ "firefly": [
+  "Adobe Firefly",
+  "https://www.adobe.com/products/firefly.html"
+ ],
+ "gamma": [
+  "Gamma",
+  "https://gamma.app"
+ ],
+ "gemini": [
+  "Gemini",
+  "https://gemini.google.com"
+ ],
+ "github-copilot": [
+  "GitHub Copilot",
+  "https://github.com/features/copilot"
+ ],
+ "grammarly": [
+  "Grammarly",
+  "https://www.grammarly.com"
+ ],
+ "heygen": [
+  "HeyGen",
+  "https://www.heygen.com"
+ ],
+ "hostinger": [
+  "Hostinger",
+  "https://www.hostinger.com"
+ ],
+ "huggingface": [
+  "Hugging Face",
+  "https://huggingface.co"
+ ],
+ "ideogram": [
+  "Ideogram",
+  "https://ideogram.ai"
+ ],
+ "intercom": [
+  "Intercom",
+  "https://www.intercom.com"
+ ],
+ "jasper": [
+  "Jasper",
+  "https://www.jasper.ai"
+ ],
+ "leonardo": [
+  "Leonardo.Ai",
+  "https://leonardo.ai"
+ ],
+ "lovable": [
+  "Lovable",
+  "https://lovable.dev"
+ ],
+ "luma": [
+  "Luma",
+  "https://lumalabs.ai"
+ ],
+ "make": [
+  "Make",
+  "https://www.make.com"
+ ],
+ "midjourney": [
+  "Midjourney",
+  "https://www.midjourney.com"
+ ],
+ "mistral": [
+  "Le Chat (Mistral)",
+  "https://chat.mistral.ai"
+ ],
+ "n8n": [
+  "n8n",
+  "https://n8n.io"
+ ],
+ "namecheap": [
+  "Namecheap",
+  "https://www.namecheap.com"
+ ],
+ "notebooklm": [
+  "NotebookLM",
+  "https://notebooklm.google"
+ ],
+ "notion": [
+  "Notion",
+  "https://www.notion.com"
+ ],
+ "otter": [
+  "Otter.ai",
+  "https://otter.ai"
+ ],
+ "perplexity": [
+  "Perplexity",
+  "https://www.perplexity.ai"
+ ],
+ "pika": [
+  "Pika",
+  "https://pika.art"
+ ],
+ "replit": [
+  "Replit",
+  "https://replit.com"
+ ],
+ "runway": [
+  "Runway",
+  "https://runway.com"
+ ],
+ "suno": [
+  "Suno",
+  "https://suno.com"
+ ],
+ "surfer": [
+  "Surfer",
+  "https://surfer.ai"
+ ],
+ "synthesia": [
+  "Synthesia",
+  "https://www.synthesia.io"
+ ],
+ "v0": [
+  "v0",
+  "https://v0.app"
+ ],
+ "writesonic": [
+  "Writesonic",
+  "https://writesonic.com"
+ ],
+ "zapier": [
+  "Zapier",
+  "https://zapier.com"
+ ]
+}

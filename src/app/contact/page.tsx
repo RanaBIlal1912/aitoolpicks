@@ -33,7 +33,7 @@ export default function ContactPage() {
           {SITE.contactEmail && (
             <div className="glass rounded-[22px] p-6">
               <h2 className="text-lg font-bold text-white">Email</h2>
-              <a className="mt-2 inline-block text-[#8fd3ff] underline" href={`mailto:${SITE.contactEmail}`}>
+              <a className="mt-2 inline-block text-[#9db4d6] underline" href={`mailto:${SITE.contactEmail}`}>
                 {SITE.contactEmail}
               </a>
             </div>

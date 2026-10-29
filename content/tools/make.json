@@ -1,0 +1,107 @@
+{
+  "id": "make",
+  "name": "Make",
+  "vendor": "Make",
+  "website": "https://www.make.com",
+  "category": "automation",
+  "categories": [
+    "automation"
+  ],
+  "tagline": "Visual automation platform",
+  "description": "Make is an automation platform with credit-based plans: Free, Core, Pro, Teams and Enterprise, plus a Start-up plan.",
+  "features": [
+    "Credits per month",
+    "Data stores and execution storage allowances"
+  ],
+  "useCases": [
+    "Automating workflows visually"
+  ],
+  "audience": [
+    "Individuals",
+    "Teams"
+  ],
+  "strengths": [
+    "Free plan with 1,000 credits per month"
+  ],
+  "limitations": [
+    "Prices were not shown in the page we read",
+    "Credits expire at the end of the term"
+  ],
+  "alternatives": [
+    "zapier",
+    "n8n"
+  ],
+  "hue": 265,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://www.make.com/en/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "1,000 credits per month"
+        ]
+      },
+      {
+        "name": "Core",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Price not captured"
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Price not captured"
+      },
+      {
+        "name": "Teams",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Price not captured"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "1,000 credits per month, 1 MB data storage and 1 data store."
+    },
+    "notes": [
+      "The page says prices are cheaper with annual payment in advance but gives no figures. The Start-up Plan discounts Business by 50% for teams under 20 employees."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.make.com/en/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.make.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

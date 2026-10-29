@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { NAV, SITE } from "@/lib/site";
+import { MORE, NAV, SITE } from "@/lib/site";
 import { CODES, CURRENCIES, type CurrencyCode } from "@/lib/currency";
 import { useCurrency } from "./CurrencyProvider";
 
@@ -18,7 +18,8 @@ function CurrencySelect({ id }: { id: string }) {
         className="cur"
         value={currency}
         onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
-        aria-label="Display currency"
+        aria-label="Display currency (estimates only)"
+        title="Display currency for estimates. Merchants may charge in a different currency."
       >
         {CODES.map((c) => (
           <option key={c} value={c}>
@@ -43,6 +44,53 @@ function LogoMark() {
       <path d="M17 7l8.5 5v10L17 27l-8.5-5V12z" fill="none" stroke="#fff" strokeOpacity=".9" strokeWidth="1.6" strokeLinejoin="round" />
       <circle cx="17" cy="17" r="2.6" fill="#fff" />
     </svg>
+  );
+}
+
+function MoreMenu({ pathname }: { pathname: string }) {
+  const [open, setOpen] = useState(false);
+  const wrap = useRef<HTMLDivElement>(null);
+  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const away = (e: MouseEvent) => {
+      if (wrap.current && !wrap.current.contains(e.target as Node)) setOpen(false);
+    };
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("mousedown", away);
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.removeEventListener("mousedown", away);
+      document.removeEventListener("keydown", esc);
+    };
+  }, [open]);
+  const active = MORE.some((m) => pathname.startsWith(m.href));
+  return (
+    <div ref={wrap} className="relative">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((v) => !v)}
+        className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[0.95rem] font-medium transition-colors ${active || open ? "bg-white/10 text-white" : "text-soft hover:bg-white/5 hover:text-white"}`}
+      >
+        More
+        <svg width="10" height="6" viewBox="0 0 12 8" aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>
+          <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      </button>
+      {open && (
+        <ul className="glass absolute right-0 top-full z-50 mt-2 w-56 rounded-2xl p-2 shadow-2xl" role="menu">
+          {MORE.map((m) => (
+            <li key={m.href} role="none">
+              <Link href={m.href} role="menuitem" className="block rounded-xl px-4 py-2.5 text-soft no-underline hover:bg-white/10 hover:text-white">
+                {m.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
@@ -88,6 +136,7 @@ export default function Header() {
               </Link>
             );
           })}
+          <MoreMenu pathname={pathname} />
         </nav>
 
         <div className="flex items-center gap-2">
@@ -122,7 +171,7 @@ export default function Header() {
             className="overflow-hidden lg:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 pb-5">
-              {NAV.map((n) => (
+              {[...NAV, ...MORE].map((n) => (
                 <Link
                   key={n.href}
                   href={n.href}

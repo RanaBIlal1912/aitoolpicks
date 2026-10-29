@@ -1,0 +1,141 @@
+{
+  "id": "runway",
+  "name": "Runway",
+  "vendor": "Runway",
+  "website": "https://runway.com",
+  "category": "video",
+  "categories": [
+    "video",
+    "image"
+  ],
+  "tagline": "AI video and image generation studio",
+  "description": "Runway is a credit-based studio for generating and editing video and images with AI, with plans from Free to Max.",
+  "features": [
+    "Credits for AI video and image models",
+    "Up to 4K upscaling",
+    "Custom voice clones and Brand Kits on higher plans",
+    "MCP access on Pro and above"
+  ],
+  "useCases": [
+    "Generating short video clips",
+    "Editing and upscaling footage",
+    "Creating images"
+  ],
+  "audience": [
+    "Creators",
+    "Marketing and video teams"
+  ],
+  "strengths": [
+    "Free plan with one-time credits",
+    "Annual billing lowers each plan's monthly price"
+  ],
+  "limitations": [
+    "Credits do not roll over on Standard and Pro",
+    "Credit costs vary by model (for example, Gen-4.5 is 60 credits per 5-second video)"
+  ],
+  "alternatives": [
+    "luma",
+    "pika",
+    "heygen"
+  ],
+  "hue": 300,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://runway.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "125 one-time credits",
+          "5 GB storage"
+        ]
+      },
+      {
+        "name": "Standard",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 15,
+        "annual": 12,
+        "highlights": [
+          "625 credits per month",
+          "Up to 3 projects, 5 parallel generations",
+          "20 GB storage, no watermarks, 4K upscaling"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 35,
+        "annual": 28,
+        "highlights": [
+          "2,250 credits per month",
+          "Up to 5 projects, 15 parallel generations",
+          "1 Brand Kit, 1 custom voice clone",
+          "100 GB storage, Runway MCP"
+        ]
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 95,
+        "annual": 76,
+        "highlights": [
+          "9,500 credits per month",
+          "Up to 10 projects, 20 parallel generations",
+          "500 GB storage, early access to new models",
+          "HDR/ProRes/image-sequence output"
+        ],
+        "note": "Unused credits roll over for one month"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "125 one-time credits that do not expire, 5 GB storage, a selection of generative models."
+    },
+    "api": {
+      "summary": "A developer pricing link exists but no figures were shown on the page we read.",
+      "source": "https://runway.com/pricing"
+    },
+    "regional": "Currency shown only as '$'. Regional pricing and tax: not stated.",
+    "notes": [
+      "Additional credits: minimum purchase of 1,000 credits; purchased credits never expire."
+    ],
+    "reference": {
+      "plan": "Standard",
+      "amount": 15,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://runway.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://runway.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ]
+}

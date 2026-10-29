@@ -1,0 +1,131 @@
+{
+  "id": "otter",
+  "name": "Otter.ai",
+  "vendor": "Otter.ai",
+  "website": "https://otter.ai",
+  "category": "audio",
+  "categories": [
+    "audio",
+    "productivity"
+  ],
+  "tagline": "AI meeting notes and transcription",
+  "description": "Otter.ai records and transcribes meetings and conversations, with a free Basic plan and Pro, Business and Enterprise plans priced per user.",
+  "features": [
+    "Meeting and recording minutes per user",
+    "Imported-file minutes",
+    "API and webhooks listed as features"
+  ],
+  "useCases": [
+    "Meeting notes",
+    "Transcribing recordings and files"
+  ],
+  "audience": [
+    "Professionals",
+    "Teams",
+    "Students (20% off Pro with .edu email)"
+  ],
+  "strengths": [
+    "Free Basic plan",
+    "Student discount on Pro"
+  ],
+  "limitations": [
+    "Basic has 300 minutes per month, 30 minutes per conversation and 3 lifetime file imports",
+    "Some listed offers are valid only with an India-issued credit card"
+  ],
+  "alternatives": [
+    "descript"
+  ],
+  "hue": 210,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://otter.ai/pricing",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "300 minutes per month",
+          "30 minutes per conversation"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 16.99,
+        "annual": 8.33,
+        "highlights": [
+          "1,200 meeting minutes per user per month",
+          "10 file imports per month",
+          "90 minutes per conversation"
+        ],
+        "note": "Promotional figures ($8.49 monthly, $4.17 annual) are shown only for an India-issued card"
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 30,
+        "annual": 19.99,
+        "highlights": [
+          "Unlimited meeting minutes",
+          "4 hours per conversation"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Unlimited meeting minutes",
+          "4 hours per conversation"
+        ],
+        "note": "Demo request"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "300 transcription minutes per user per month, 3 lifetime file imports, 30 minutes per conversation, last 25 conversations in history."
+    },
+    "regional": "Prices are in USD. Tax treatment: not stated.",
+    "notes": [
+      "The Business plan lists both '6,000 imported-file minutes per user' and 'unlimited imports', which conflict on the page."
+    ],
+    "reference": {
+      "plan": "Pro",
+      "amount": 16.99,
+      "currency": "USD",
+      "per": "user per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://otter.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://otter.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Mobile"
+  ]
+}

@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import { resolveAffiliate } from "@/lib/affiliate";
-import { convert, format } from "@/lib/currency";
+import { convertBetween, format } from "@/lib/currency";
 import { PRICES, PRICES_AS_OF } from "@/lib/prices";
-import { getTool } from "@/data/tools";
+import links from "@/data/generated/tool-links.json";
 import { useCurrency } from "./CurrencyProvider";
 
 /**
@@ -21,9 +21,9 @@ export default function ProseHtml({ html }: { html: string }) {
 
     root.querySelectorAll<HTMLAnchorElement>("a[data-aff]").forEach((a) => {
       const id = a.dataset.aff ?? "";
-      const tool = getTool(id);
+      const entry = (links as unknown as Record<string, [string, string]>)[id];
       const aff = resolveAffiliate(id, country);
-      const url = aff ?? tool?.officialUrl;
+      const url = aff ?? entry?.[1];
       if (!url) return;
       a.href = url;
       a.target = "_blank";
@@ -37,12 +37,12 @@ export default function ProseHtml({ html }: { html: string }) {
         el.hidden = true;
         return;
       }
-      const merchant = `${format(p.usd, "USD")} / ${p.per} (${p.note})`;
+      const merchant = `${format(p.amount, p.currency)} per ${p.per} (${p.plan}; ${p.billing})`;
       const est =
-        currency === "USD"
-          ? "Shown in US dollars."
-          : `Estimate in ${currency}: ≈ ${format(convert(p.usd, currency, rates), currency)}${meta.live ? ` (rates of ${meta.date})` : " (approximate rate)"}.`;
-      el.textContent = `Merchant price: ${merchant}, checked ${PRICES_AS_OF}. ${est} Check the official site for current pricing.`;
+        currency === p.currency
+          ? "Shown in the merchant's own currency."
+          : `Estimate in ${currency}: about ${format(convertBetween(p.amount, p.currency, currency, rates), currency)}${meta.live ? ` (rates of ${meta.date})` : " (approximate rate)"}. The merchant charges in ${p.currency}.`;
+      el.textContent = `Official price: ${merchant}, checked ${PRICES_AS_OF}. ${est}`;
       el.hidden = false;
     });
   }, [currency, rates, meta, country, html]);

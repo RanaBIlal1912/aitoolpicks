@@ -1,0 +1,62 @@
+{
+  "id": "canva",
+  "name": "Canva",
+  "vendor": "Canva",
+  "website": "https://www.canva.com",
+  "category": "image",
+  "categories": [
+    "image",
+    "writing"
+  ],
+  "tagline": "Template-based design tool",
+  "description": "Canva is a template-based design tool for social posts, presentations, resumes and simple logos, made for people who are not designers.",
+  "features": [
+    "Templates for social posts, presentations and documents"
+  ],
+  "useCases": [
+    "Social media graphics",
+    "Presentations and simple documents"
+  ],
+  "audience": [
+    "Non-designers",
+    "Small businesses"
+  ],
+  "strengths": [
+    "Easy to learn"
+  ],
+  "limitations": [
+    "Popular templates look familiar, so customise colours and text",
+    "Check commercial-use terms for specific content before client work"
+  ],
+  "alternatives": [
+    "firefly",
+    "figma",
+    "gamma"
+  ],
+  "hue": 195,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "unverified",
+    "model": "unknown",
+    "checked": "2026-10-29",
+    "source": "https://www.canva.com/pricing/",
+    "plans": [],
+    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page (could not be read automatically)",
+      "url": "https://www.canva.com/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.canva.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ],
+  "review": "canva"
+}

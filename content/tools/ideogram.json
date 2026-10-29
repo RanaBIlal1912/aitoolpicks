@@ -1,0 +1,58 @@
+{
+  "id": "ideogram",
+  "name": "Ideogram",
+  "vendor": "Ideogram",
+  "website": "https://ideogram.ai",
+  "category": "image",
+  "categories": [
+    "image"
+  ],
+  "tagline": "AI image generator known for text in images",
+  "description": "Ideogram is an AI image generation service.",
+  "features": [
+    "Image generation from text prompts"
+  ],
+  "useCases": [
+    "Posters, logos and graphics"
+  ],
+  "audience": [
+    "Designers",
+    "Creators"
+  ],
+  "strengths": [
+    "Widely used for image generation"
+  ],
+  "limitations": [
+    "Plans and limits could not be verified automatically"
+  ],
+  "alternatives": [
+    "midjourney",
+    "firefly",
+    "leonardo"
+  ],
+  "hue": 20,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "unverified",
+    "model": "unknown",
+    "checked": "2026-10-29",
+    "source": "https://ideogram.ai/pricing",
+    "plans": [],
+    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page (could not be read automatically)",
+      "url": "https://ideogram.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://ideogram.ai",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ]
+}

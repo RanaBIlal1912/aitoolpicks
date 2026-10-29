@@ -1,0 +1,163 @@
+{
+  "id": "cursor",
+  "name": "Cursor",
+  "vendor": "Cursor",
+  "website": "https://cursor.com",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "AI code editor with agents",
+  "description": "Cursor is an AI-assisted code editor. Its pricing page lists Free, Plus, Premium, Super and Ultra individual plans plus Teams and Enterprise.",
+  "features": [
+    "AI usage pool shared across Cursor products",
+    "Cloud agents and automations (Premium and above)",
+    "Code hosting and AI code reviews (Premium and above)",
+    "Third-party models billed at API list price"
+  ],
+  "useCases": [
+    "Writing and editing code with AI help",
+    "Running agents on tasks",
+    "Reviewing code"
+  ],
+  "audience": [
+    "Individual developers",
+    "Teams (Teams and Enterprise plans)"
+  ],
+  "strengths": [
+    "Spending caps can be set",
+    "Allowances refresh weekly"
+  ],
+  "limitations": [
+    "Third-party model usage is billed separately from the plan price",
+    "The page's plan cards also mention Grok products; we could not confirm from the page how the bundle is structured"
+  ],
+  "alternatives": [
+    "github-copilot",
+    "replit",
+    "lovable"
+  ],
+  "hue": 275,
+  "verified": "2026-10-29",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-29",
+    "source": "https://cursor.com/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Limited AI usage",
+          "Limited agent and chat requests"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 8,
+        "highlights": [
+          "Shared AI usage pool",
+          "Grok models only"
+        ],
+        "note": "Described as an introductory plan"
+      },
+      {
+        "name": "Premium",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 30,
+        "highlights": [
+          "4x Plus usage",
+          "Latest Grok models",
+          "Cloud agents and automations",
+          "Code hosting and AI code reviews",
+          "Third-party models at API list price"
+        ],
+        "note": "Marked 'Most popular'"
+      },
+      {
+        "name": "Super",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 100,
+        "highlights": [
+          "15x Plus usage",
+          "Priority model access at peak times"
+        ]
+      },
+      {
+        "name": "Ultra",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 200,
+        "highlights": [
+          "50x Plus usage",
+          "Earliest access to all products and models"
+        ]
+      },
+      {
+        "name": "Teams",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 30,
+        "highlights": [
+          "Centralised billing and usage analytics",
+          "SAML/OIDC SSO"
+        ],
+        "note": "'$30+' per user; listed in the comparison table only"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Invoice/PO billing, SCIM",
+          "Granular spend controls, audit logs"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Limited AI usage, limited agent requests and limited chat requests."
+    },
+    "regional": "Prices exclude taxes such as VAT. Annual pricing: not stated. Currency is shown as '$' without a code.",
+    "notes": [
+      "Allowances refresh weekly. Third-party model usage is billed separately at API list price."
+    ],
+    "reference": {
+      "plan": "Premium",
+      "amount": 30,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://cursor.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-29"
+    },
+    {
+      "label": "Official site",
+      "url": "https://cursor.com",
+      "type": "official",
+      "checked": "2026-10-29"
+    }
+  ]
+}

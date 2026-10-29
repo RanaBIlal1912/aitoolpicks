@@ -22,7 +22,7 @@ export default function Footer() {
         <nav aria-label="Explore">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">Explore</p>
           <ul className="mt-4 space-y-2">
-            {NAV.filter((n) => n.href !== "/about/").map((n) => (
+            {[...NAV, { href: "/best/", label: "Best-of guides", feature: false }].map((n) => (
               <li key={n.href}>
                 <Link href={n.href} className="text-soft no-underline hover:text-white">
                   {n.label}

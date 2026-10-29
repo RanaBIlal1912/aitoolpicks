@@ -14,7 +14,7 @@ import Reveal from "@/components/Reveal";
 import Cover from "@/components/Cover";
 import ParallaxFrame from "@/components/ParallaxFrame";
 import { coverPath } from "@/data/covers";
-import { CATEGORY_INFO } from "@/data/tools";
+import { getCategory } from "@/data/tools";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -61,7 +61,7 @@ export default async function ReviewPage({ params }: Props) {
   return (
     <>
       <PageHeader
-        eyebrow={`${tool.category} · Overview`}
+        eyebrow={`${getCategory(tool.category)?.label ?? tool.category} · Overview`}
         title={r.title}
         lead={r.summary}
         crumbs={[
@@ -77,7 +77,7 @@ export default async function ReviewPage({ params }: Props) {
 
       <div className="mx-auto max-w-5xl px-5">
         <ParallaxFrame className="cover-frame aspect-[16/6]" strength={26}>
-          <Cover id={CATEGORY_INFO[tool.category].cover === "neural" ? "chip" : CATEGORY_INFO[tool.category].cover} sizes="100vw" priority />
+          <Cover id="chip" sizes="100vw" priority />
         </ParallaxFrame>
         <p className="mb-8 mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a screenshot of {tool.name}.</p>
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
