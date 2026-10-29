@@ -25,3 +25,16 @@ article h2{margin-top:2rem}
 @media (prefers-color-scheme:dark){.btn{color:#161614}}
 .pros{color:var(--muted);font-size:.95rem;margin:6px 0}
 footer{border-top:1px solid var(--line);margin-top:40px;color:var(--muted);font-size:.85rem}
+
+/* currency selector and prices */
+.cur{display:flex;align-items:center;gap:6px}
+.cur select{font:inherit;font-size:16px;min-height:40px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.price-line{margin:8px 0 0;font-size:.95rem}
+.price-line[hidden],.rate-note[hidden]{display:none}
+.rate-note{margin:8px 0 0;font-size:.8rem}
+@media (max-width:560px){
+  header.site .wrap{justify-content:space-between}
+  header.site nav{order:3;width:100%;display:flex;flex-wrap:wrap;gap:2px 0}
+  header.site nav a:first-child{margin-left:0}
+}
