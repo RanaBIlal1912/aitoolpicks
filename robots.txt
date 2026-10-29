@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://ranabilal1912.github.io/aitoolpicks/sitemap.xml
