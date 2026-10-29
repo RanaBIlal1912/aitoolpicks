@@ -50,7 +50,7 @@ export default function Home() {
   const featured = ["claude", "github-copilot", "runway", "elevenlabs", "notion", "zapier"].map((id) => getTool(id)!);
   const verifiedCount = TOOLS.filter((t) => t.pricingStatus === "verified").length;
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
-  const latest = GUIDES.filter((g) => g.slug !== lead.slug).slice(0, 6);
+  const latest = GUIDES.filter((g) => g.slug !== lead.slug && !g.region).slice(0, 6); // regional guides stay on the blog
   const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
 
   return (

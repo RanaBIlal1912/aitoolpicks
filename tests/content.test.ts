@@ -76,6 +76,8 @@ describe("articles", () => {
     const site = fs.readFileSync(path.join(process.cwd(), "src", "lib", "site.ts"), "utf-8");
     for (const src of [home, layout, site]) expect(src.toLowerCase()).not.toContain("pakistan");
     expect(NAV.map((n) => n.label.toLowerCase()).join(" ")).not.toContain("pakistan");
+    // regional guides are flagged so the home page can leave them out
+    for (const a of ARTICLES.filter((x) => /pakistan/i.test(x.slug))) expect(a.region, a.slug).toBeTruthy();
   });
 });
 
