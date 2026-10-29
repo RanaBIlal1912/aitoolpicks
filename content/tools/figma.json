@@ -128,5 +128,7 @@
   "platforms": [
     "Web",
     "Desktop"
-  ]
+  ],
+  "subcategory": "design",
+  "added": "2026-10-29"
 }

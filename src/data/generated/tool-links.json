@@ -1,4 +1,8 @@
 {
+ "assemblyai": [
+  "AssemblyAI",
+  "https://www.assemblyai.com"
+ ],
  "bolt": [
   "Bolt",
   "https://bolt.new"
@@ -15,6 +19,10 @@
   "Claude",
   "https://claude.ai"
  ],
+ "consensus": [
+  "Consensus",
+  "https://consensus.app"
+ ],
  "copilot": [
   "Microsoft Copilot",
   "https://copilot.microsoft.com"
@@ -23,9 +31,17 @@
   "Cursor",
   "https://cursor.com"
  ],
+ "deepgram": [
+  "Deepgram",
+  "https://deepgram.com"
+ ],
  "descript": [
   "Descript",
   "https://www.descript.com"
+ ],
+ "devin": [
+  "Devin",
+  "https://devin.ai"
  ],
  "elevenlabs": [
   "ElevenLabs",
@@ -59,6 +75,14 @@
   "Grammarly",
   "https://www.grammarly.com"
  ],
+ "granola": [
+  "Granola",
+  "https://www.granola.ai"
+ ],
+ "groq": [
+  "Groq",
+  "https://groq.com"
+ ],
  "heygen": [
   "HeyGen",
   "https://www.heygen.com"
@@ -82,6 +106,10 @@
  "jasper": [
   "Jasper",
   "https://www.jasper.ai"
+ ],
+ "langsmith": [
+  "LangSmith",
+  "https://www.langchain.com/langsmith"
  ],
  "leonardo": [
   "Leonardo.Ai",
@@ -123,6 +151,14 @@
   "Notion",
   "https://www.notion.com"
  ],
+ "ollama": [
+  "Ollama",
+  "https://ollama.com"
+ ],
+ "openrouter": [
+  "OpenRouter",
+  "https://openrouter.ai"
+ ],
  "otter": [
   "Otter.ai",
   "https://otter.ai"
@@ -155,9 +191,17 @@
   "Synthesia",
   "https://www.synthesia.io"
  ],
+ "together": [
+  "Together AI",
+  "https://www.together.ai"
+ ],
  "v0": [
   "v0",
   "https://v0.app"
+ ],
+ "wisprflow": [
+  "Wispr Flow",
+  "https://wisprflow.ai"
  ],
  "writesonic": [
   "Writesonic",

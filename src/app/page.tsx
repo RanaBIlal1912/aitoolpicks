@@ -123,17 +123,16 @@ export default function Home() {
               </div>
               <ul className="divide-y divide-white/10">
                 {news.slice(0, 5).map((n) => (
-                  <li key={n.url} className="py-3.5 first:pt-0 last:pb-0">
+                  <li key={n.slug} className="py-3.5 first:pt-0 last:pb-0">
                     <div className="flex items-center gap-2 text-xs">
-                      <span className="font-bold uppercase tracking-[0.1em] text-cyan">{n.tag}</span>
+                      <span className="font-bold uppercase tracking-[0.1em] text-cyan">{n.kind}</span>
                       <time dateTime={n.date} className="text-muted">
                         {formatDate(n.date)}
                       </time>
                     </div>
-                    <a href={n.url} target="_blank" rel="noopener noreferrer" className="mt-1 block font-serif text-[1.05rem] font-bold leading-snug text-white no-underline hover:underline">
+                    <Link href={`/news/${n.slug}/`} className="mt-1 block font-serif text-[1.05rem] font-bold leading-snug text-white no-underline hover:underline">
                       {n.title}
-                      <span className="sr-only"> (opens the original source in a new tab)</span>
-                    </a>
+                    </Link>
                     <p className="mt-0.5 text-xs text-muted">via {n.source}</p>
                   </li>
                 ))}

@@ -159,5 +159,7 @@
       "type": "official",
       "checked": "2026-10-29"
     }
-  ]
+  ],
+  "subcategory": "assistants",
+  "added": "2026-10-29"
 }

@@ -39,6 +39,13 @@ export default async function CategoryPage({ params }: Props) {
   const tools = toolsInCategory(c.slug);
   const verified = tools.filter((t) => t.pricingStatus === "verified").length;
   const roundup = ROUNDUPS.find((r) => r.category === c.slug);
+  // Group by subcategory in the order the category defines; tools in a secondary category (no matching sub) go last.
+  const groups = c.subs
+    .map((s) => ({ slug: s.slug, label: s.label, tools: tools.filter((t) => t.category === c.slug && t.subcategory === s.slug) }))
+    .filter((g) => g.tools.length > 0);
+  const grouped = new Set(groups.flatMap((g) => g.tools.map((t) => t.id)));
+  const rest = tools.filter((t) => !grouped.has(t.id));
+  if (rest.length) groups.push({ slug: "related", label: "Also relevant here", tools: rest });
   return (
     <>
       <PageHeader
@@ -62,6 +69,9 @@ export default async function CategoryPage({ params }: Props) {
           <Link href={`/tools/?category=${c.slug}`} className="btn-ghost btn-sm">
             Search and filter this category
           </Link>
+          <Link href="/news/" className="btn-ghost btn-sm">
+            Latest AI news
+          </Link>
         </div>
       </PageHeader>
       <div className="mx-auto max-w-6xl px-5">
@@ -69,13 +79,20 @@ export default async function CategoryPage({ params }: Props) {
           <Cover id={c.cover} sizes="100vw" priority />
         </ParallaxFrame>
         <h2 className="sr-only">Tools in {c.label}</h2>
-        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {tools.map((t) => (
-            <li key={t.id}>
-              <ToolCard tool={t} />
-            </li>
-          ))}
-        </ul>
+        {groups.map((g) => (
+          <section key={g.slug} className="mb-12" aria-labelledby={`sub-${g.slug}`}>
+            <h3 id={`sub-${g.slug}`} className="mb-5 text-xl font-bold tracking-tight text-white">
+              {g.label} <span className="text-base font-medium text-muted">({g.tools.length})</span>
+            </h3>
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {g.tools.map((t) => (
+                <li key={t.id}>
+                  <ToolCard tool={t} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
         <div className="mt-12 flex flex-wrap gap-2" aria-label="Other categories">
           {CATEGORIES.filter((x) => x.slug !== c.slug).map((x) => (
             <Link key={x.slug} href={`/tools/category/${x.slug}/`} className="chip">

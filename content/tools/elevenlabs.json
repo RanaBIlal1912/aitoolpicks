@@ -164,5 +164,7 @@
   "platforms": [
     "Web",
     "API"
-  ]
+  ],
+  "subcategory": "voice",
+  "added": "2026-10-29"
 }

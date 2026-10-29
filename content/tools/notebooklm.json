@@ -102,5 +102,7 @@
   "platforms": [
     "Web",
     "Mobile app"
-  ]
+  ],
+  "subcategory": "notebooks",
+  "added": "2026-10-29"
 }

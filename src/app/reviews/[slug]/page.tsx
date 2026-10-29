@@ -88,6 +88,25 @@ export default async function ReviewPage({ params }: Props) {
           </Link>
         </p>
 
+        <Reveal as="section" className="mt-8">
+          <div className="glass rounded-[22px] p-6">
+            <h2 className="text-lg font-bold text-white">How this overview was prepared</h2>
+            <p className="mt-2 text-soft">
+              This is a documentation-based overview. We read the vendor&rsquo;s official pages and compare them with other public sources. We
+              have not run lab benchmarks, and statements about quality or speed are not test results. Prices come from the{" "}
+              <Link href={`/tools/${tool.id}/`} className="underline">
+                {tool.name} tool page
+              </Link>
+              , which lists each source and the date it was checked
+              {tool.verified ? ` (record verified ${tool.verified})` : ""}. See the{" "}
+              <Link href="/methodology/" className="underline">
+                methodology
+              </Link>
+              .
+            </p>
+          </div>
+        </Reveal>
+
         <Reveal as="section" className="mt-10">
           <h2 className="section-title text-white">What people use it for</h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">

@@ -8,7 +8,8 @@ const root = process.cwd();
 const { entries, errors } = validateAll(root);
 const categories = new Set<string>(loadCategories(root).map((c: { slug: string }) => c.slug));
 const ids = new Set<string>(entries.map((t: { id: string }) => t.id));
-const ctx = { categories, ids };
+const subs = new Map<string, Set<string>>(loadCategories(root).map((c: { slug: string; subs: { slug: string }[] }) => [c.slug, new Set(c.subs.map((x) => x.slug))]));
+const ctx = { categories, ids, subs };
 
 type Plan = { name: string; audience: string; currency: string; unit: string; monthly?: number; annual?: number; custom?: boolean; note?: string };
 type Rec = { id: string; name: string; alternatives: string[]; pricing: { status: string; model: string; source: string; checked: string; blockedReason?: string; plans: Plan[]; reference?: unknown }; sources: unknown[] } & Record<string, unknown>;
@@ -26,7 +27,7 @@ describe("catalog records", () => {
     for (const slug of ["assistants", "coding", "video", "image", "audio", "writing", "research", "marketing", "automation"]) {
       expect(counts.get(slug) ?? 0, slug).toBeGreaterThanOrEqual(2);
     }
-    expect(records.length).toBeGreaterThanOrEqual(40);
+    expect(records.length).toBeGreaterThanOrEqual(50);
   });
 
   it("keeps one file per tool named after its id", () => {

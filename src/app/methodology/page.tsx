@@ -72,7 +72,16 @@ export default function MethodologyPage() {
       <h2>AI news</h2>
       <p>
         News items link to the original source and carry the date that source shows (or, for some publications, the date in the article address, which we say).
-        Summaries stay close to the source, and we skip rumours and unsourced reports.
+        Summaries stay close to the source, and we skip rumours and unsourced reports. Each item has its own page on this site, is labelled as a new product,
+        a feature update, a model release, research, a policy update, a company announcement or an open standard, and links to the tools it concerns. The
+        &ldquo;why it may matter&rdquo; note is our interpretation for people choosing tools; it is not a claim made by the source.
+      </p>
+
+      <h2>Filters in the directory</h2>
+      <p>
+        &ldquo;Free plan&rdquo;, &ldquo;free trial&rdquo; and &ldquo;open source&rdquo; filters only match tools where the official page or repository states it. A
+        tool whose page does not say is not counted, so these filters can miss tools; they never include one on a guess. &ldquo;Source-available&rdquo; means the code
+        can be read but the licence is not an open-source licence.
       </p>
 
       <h2>Images</h2>

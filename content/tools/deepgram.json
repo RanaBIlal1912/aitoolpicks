@@ -1,0 +1,105 @@
+{
+  "id": "deepgram",
+  "name": "Deepgram",
+  "vendor": "Deepgram",
+  "website": "https://deepgram.com",
+  "category": "audio",
+  "categories": [
+    "audio",
+    "models"
+  ],
+  "tagline": "Speech-to-text, text-to-speech and voice agent APIs",
+  "description": "Deepgram provides speech-to-text, text-to-speech, voice agent and audio intelligence APIs, billed per minute of audio.",
+  "features": [
+    "Speech-to-text, text-to-speech and voice agent APIs",
+    "Audio intelligence",
+    "EU endpoint that keeps processing in the EU",
+    "Self-hosted containers for enterprises (NVIDIA GPUs required)"
+  ],
+  "useCases": [
+    "Transcribing audio at scale",
+    "Building voice agents"
+  ],
+  "audience": [
+    "Developers",
+    "Enterprises"
+  ],
+  "strengths": [
+    "$200 of free credit that does not expire",
+    "No minimums on pay as you go"
+  ],
+  "limitations": [
+    "Enterprise speech-to-text rates are not stated",
+    "Self-hosting requires NVIDIA GPUs"
+  ],
+  "alternatives": [
+    "assemblyai",
+    "elevenlabs"
+  ],
+  "hue": 170,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "usage-based",
+    "checked": "2026-10-30",
+    "source": "https://deepgram.com/pricing",
+    "plans": [
+      {
+        "name": "Pay as you go",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "No minimums or expiration; priced per minute of audio"
+      },
+      {
+        "name": "Growth",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per year",
+        "annualTotal": 4000,
+        "billing": "Prepaid annual credits starting at $4,000 per year, with savings of up to 20%"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Custom volume pricing",
+          "Self-hosted containers, HIPAA BAAs",
+          "Custom model training"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "$200 of free credit that does not expire; no credit card required to start."
+    },
+    "api": {
+      "summary": "Examples per minute (Pay as you go / Growth): Nova-3 Monolingual streaming $0.0077 / $0.0065; Nova-3 Monolingual pre-recorded $0.0043 / $0.0036; Whisper Large pre-recorded $0.0048 on both.",
+      "source": "https://deepgram.com/pricing"
+    },
+    "regional": "A dedicated EU endpoint (api.eu.deepgram.com) keeps data processing within the European Union. Tax treatment: not stated."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://deepgram.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://deepgram.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "API"
+  ],
+  "subcategory": "transcription",
+  "added": "2026-10-30"
+}

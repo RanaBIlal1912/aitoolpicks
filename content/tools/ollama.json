@@ -1,0 +1,155 @@
+{
+  "id": "ollama",
+  "name": "Ollama",
+  "vendor": "Ollama",
+  "website": "https://ollama.com",
+  "category": "models",
+  "categories": [
+    "models",
+    "coding"
+  ],
+  "tagline": "Run models locally, with optional cloud models",
+  "description": "Ollama is a tool for running large language models on your own hardware, with optional paid plans for cloud-hosted models. Its source code is published on GitHub under the MIT licence.",
+  "features": [
+    "Runs models on your own hardware, which the FAQ says is always unlimited",
+    "Pay-per-token cloud models",
+    "Usage credits on paid plans",
+    "Concurrent request limits per plan"
+  ],
+  "useCases": [
+    "Running open models locally",
+    "Using cloud-hosted models without managing GPUs"
+  ],
+  "audience": [
+    "Developers",
+    "Teams"
+  ],
+  "strengths": [
+    "Local use is unlimited and the GitHub repository is MIT-licensed",
+    "Free pay-as-you-go plan with pay-per-token cloud models"
+  ],
+  "limitations": [
+    "Cloud models are hosted primarily in the United States, with possible routing to Europe",
+    "Team is listed as early access"
+  ],
+  "alternatives": [
+    "huggingface",
+    "openrouter"
+  ],
+  "hue": 35,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://ollama.com/pricing",
+    "plans": [
+      {
+        "name": "Pay as you go",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Pay per token for every cloud model"
+        ],
+        "limits": [
+          "3 concurrent requests"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "annual": 16.67,
+        "annualTotal": 200,
+        "highlights": [
+          "$60 usage credits per month",
+          "3 concurrent requests"
+        ]
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 100,
+        "highlights": [
+          "$300 usage credits per month",
+          "10 concurrent requests"
+        ]
+      },
+      {
+        "name": "Team (early access)",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 500,
+        "highlights": [
+          "Unlimited users",
+          "$1,000 usage credits per month shared across the team",
+          "10 concurrent requests"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Model access controls",
+          "Cost budgets for users and API keys"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Pay as you go is $0 per month with 3 concurrent requests and pay-per-token cloud models. Running models on your own hardware is always unlimited."
+    },
+    "regional": "Currency shown as '$' without a code. Tax treatment: not stated. Off-peak model pricing applies outside 12:00 to 18:00 UTC on weekdays and all day on weekends.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 20,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://ollama.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "GitHub repository (MIT licence shown)",
+      "url": "https://github.com/ollama/ollama",
+      "type": "docs",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://ollama.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux",
+    "Cloud"
+  ],
+  "openSource": {
+    "status": "open-source",
+    "note": "MIT licence shown on the GitHub repository",
+    "source": "https://github.com/ollama/ollama"
+  },
+  "subcategory": "local-models",
+  "added": "2026-10-30"
+}

@@ -11,12 +11,17 @@ export const PRICING_MODELS = ["free", "freemium", "free-trial", "paid", "usage-
 export const AUDIENCES = ["individual", "team", "business", "enterprise", "api"];
 export const CURRENCIES = ["USD", "GBP", "EUR", "PKR", "CAD", "AUD"];
 export const STALE_AFTER_DAYS = 90;
+export const OPEN_SOURCE_STATUS = ["open-source", "source-available", "open-weights", "proprietary"];
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const HTTPS = /^https:\/\//;
 
 export function loadCategories(root) {
   return JSON.parse(fs.readFileSync(path.join(root, "content", "categories.json"), "utf-8"));
+}
+
+export function subMap(categoryList) {
+  return new Map(categoryList.map((c) => [c.slug, new Set((c.subs ?? []).map((s) => s.slug))]));
 }
 
 export function loadTools(root) {
@@ -45,6 +50,12 @@ export function validateTool(t, ctx) {
   if (!Array.isArray(t.alternatives)) at("alternatives must be a list");
   else for (const a of t.alternatives) if (!ctx.ids.has(a) || a === t.id) at(`bad alternative ${a}`);
   if (!ISO.test(t.verified ?? "")) at("verified must be an ISO date");
+  if (!ISO.test(t.added ?? "")) at("added must be an ISO date");
+  if (t.subcategory !== undefined && !(ctx.subs?.get(t.category)?.has(t.subcategory))) at(`subcategory ${t.subcategory} is not defined for ${t.category}`);
+  if (t.openSource !== undefined) {
+    const o = t.openSource;
+    if (!OPEN_SOURCE_STATUS.includes(o.status) || !isStr(o.note) || !HTTPS.test(o.source ?? "")) at("openSource needs a status, a note and an https source");
+  }
   if (!Array.isArray(t.sources) || t.sources.length < 1) at("needs at least one source");
   else for (const s of t.sources) if (!isStr(s.label) || !HTTPS.test(s.url ?? "") || !ISO.test(s.checked ?? "")) at(`bad source ${JSON.stringify(s)}`);
   if (!Number.isFinite(t.hue)) at("hue must be a number");
@@ -82,14 +93,16 @@ export function validateTool(t, ctx) {
 }
 
 export function validateAll(root) {
-  const categories = new Set(loadCategories(root).map((c) => c.slug));
+  const categoryList = loadCategories(root);
+  const categories = new Set(categoryList.map((c) => c.slug));
+  const subs = subMap(categoryList);
   const entries = loadTools(root);
   const ids = new Set(entries.map((e) => e.tool.id));
   const errors = [];
   if (ids.size !== entries.length) errors.push("duplicate tool ids");
   for (const { file, tool } of entries) {
     if (file !== `${tool.id}.json`) errors.push(`${file}: file name must match id`);
-    errors.push(...validateTool(tool, { categories, ids }));
+    errors.push(...validateTool(tool, { categories, ids, subs }));
   }
   return { entries: entries.map((e) => e.tool), errors };
 }
@@ -132,6 +145,7 @@ export function buildIndex(tools) {
     name: t.name,
     vendor: t.vendor,
     category: t.category,
+    subcategory: t.subcategory ?? null,
     categories: t.categories,
     tagline: t.tagline,
     description: t.description,
@@ -139,7 +153,11 @@ export function buildIndex(tools) {
     officialUrl: t.website,
     hue: t.hue,
     ...(t.review ? { review: t.review } : {}),
+    keyFeature: t.features[0],
     freePlan: freeFlag(t),
+    trial: Boolean(t.pricing.trial),
+    openSource: t.openSource ? t.openSource.status : null,
+    added: t.added,
     pricingModel: t.pricing.model,
     pricingStatus: t.pricing.status,
     fromUsd: fromUsd(t),

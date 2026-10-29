@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { RECORDS, getRecord } from "@/lib/catalog";
 import { CATEGORIES, PRICING_MODEL_LABEL, getCategory, getTool } from "@/data/tools";
 import { articlesMentioning, getArticle } from "@/data/articles";
+import { newsForTool } from "@/data/news";
+import NewsCard, { formatDate } from "@/components/NewsCard";
 import { COMPARISONS } from "@/data/compare";
 import { REVIEWS } from "@/data/reviews";
 import { coverPath } from "@/data/covers";
@@ -41,6 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return m;
 }
 
+const OPEN_LABEL = { "open-source": "Open source", "source-available": "Source-available (not open source)", "open-weights": "Open weights", proprietary: "Proprietary" } as const;
+
 function List({ title, items, tone }: { title: string; items: string[]; tone: "good" | "warn" | "plain" }) {
   const mark = tone === "good" ? "✓" : tone === "warn" ? "!" : "•";
   const color = tone === "good" ? "text-emerald-300" : tone === "warn" ? "text-amber" : "text-muted";
@@ -70,6 +74,8 @@ export default async function ToolPage({ params }: Props) {
   const guides = articlesMentioning(t.id);
   const comparisons = COMPARISONS.filter((c) => c.leftTool === t.id || c.rightTool === t.id);
   const alternatives = t.alternatives.map((id) => getTool(id)).filter((x): x is NonNullable<typeof x> => !!x);
+  const news = newsForTool(t.id).slice(0, 3);
+  const sub = cat?.subs.find((s) => s.slug === t.subcategory);
   const related = [...comparisons.map((c) => c.article), ...guides.map((g) => g.slug)].filter((s, i, a) => a.indexOf(s) === i).slice(0, 4);
 
   return (
@@ -137,6 +143,18 @@ export default async function ToolPage({ params }: Props) {
               <PricingTable pricing={t.pricing} name={t.name} />
             </Reveal>
 
+            {t.openSource && (
+              <Reveal as="section">
+                <h2 className="section-title text-white">Licence and openness</h2>
+                <p className="glass mt-4 rounded-2xl p-5 text-soft">
+                  <strong className="text-white">{OPEN_LABEL[t.openSource.status]}.</strong> {t.openSource.note}.{" "}
+                  <a href={t.openSource.source} target="_blank" rel="noopener noreferrer" className="text-[#9db4d6] underline">
+                    Source ↗
+                  </a>
+                </p>
+              </Reveal>
+            )}
+
             {alternatives.length > 0 && (
               <Reveal as="section">
                 <h2 className="section-title text-white">Alternatives</h2>
@@ -153,6 +171,19 @@ export default async function ToolPage({ params }: Props) {
                       <Link href={`/compare/?ids=${t.id},${a.id}`} className="chip">
                         Compare
                       </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            )}
+
+            {news.length > 0 && (
+              <Reveal as="section">
+                <h2 className="section-title text-white">Recent news about {t.name}</h2>
+                <ul className="mt-5 grid gap-6 md:grid-cols-2">
+                  {news.map((n) => (
+                    <li key={n.slug}>
+                      <NewsCard n={n} compact />
                     </li>
                   ))}
                 </ul>
@@ -192,9 +223,23 @@ export default async function ToolPage({ params }: Props) {
                     </Link>
                   </dd>
                 </div>
+                {sub && (
+                  <div>
+                    <dt className="text-muted">Subcategory</dt>
+                    <dd className="font-semibold text-white">{sub.label}</dd>
+                  </div>
+                )}
                 <div>
                   <dt className="text-muted">Pricing model</dt>
                   <dd className="font-semibold text-white">{PRICING_MODEL_LABEL[t.pricing.model]}</dd>
+                </div>
+                <div>
+                  <dt className="text-muted">Free trial</dt>
+                  <dd className="font-semibold text-white">{t.pricing.trial ? "Documented" : "Not stated"}</dd>
+                </div>
+                <div>
+                  <dt className="text-muted">Added to this directory</dt>
+                  <dd className="font-semibold text-white">{formatDate(t.added)}</dd>
                 </div>
                 <div>
                   <dt className="text-muted">Pricing status</dt>

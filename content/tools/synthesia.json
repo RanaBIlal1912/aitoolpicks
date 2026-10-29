@@ -128,5 +128,7 @@
   ],
   "platforms": [
     "Web"
-  ]
+  ],
+  "subcategory": "avatars",
+  "added": "2026-10-29"
 }

@@ -1,0 +1,109 @@
+{
+  "id": "together",
+  "name": "Together AI",
+  "vendor": "Together AI",
+  "website": "https://www.together.ai",
+  "category": "models",
+  "categories": [
+    "models"
+  ],
+  "tagline": "Inference, fine-tuning and GPU clusters",
+  "description": "Together AI's pricing page covers serverless inference, dedicated endpoints, fine-tuning and GPU clusters, with a 'Start for free' option.",
+  "features": [
+    "Serverless inference billed per 1M tokens",
+    "Dedicated inference per GPU per hour",
+    "GPU clusters, on-demand or reserved",
+    "Fine-tuning billed per token"
+  ],
+  "useCases": [
+    "Running open models through an API",
+    "Fine-tuning models",
+    "Renting GPU capacity"
+  ],
+  "audience": [
+    "Developers",
+    "ML teams"
+  ],
+  "strengths": [
+    "Per-token pricing is published for each model",
+    "Dedicated and reserved options for steady workloads"
+  ],
+  "limitations": [
+    "A free-credit amount is not stated on the page we read",
+    "Prices are per model and change by model"
+  ],
+  "alternatives": [
+    "openrouter",
+    "huggingface",
+    "groq"
+  ],
+  "hue": 150,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "usage-based",
+    "checked": "2026-10-30",
+    "source": "https://www.together.ai/pricing",
+    "plans": [
+      {
+        "name": "Serverless inference",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Per 1M tokens (input and output); some models also show cached-input rates. Image, video and audio models are priced per image, video, minute or character"
+      },
+      {
+        "name": "Dedicated inference",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Per GPU per hour, on-demand or reserved"
+      },
+      {
+        "name": "GPU clusters",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Per GPU per hour, on-demand or reserved by duration"
+      },
+      {
+        "name": "Fine-tuning",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Per 1M tokens based on training dataset size multiplied by epochs, with per-model minimum charges"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "A 'Start for free' option is shown; the credit amount and limits are not stated. Some models are listed at $0.00."
+    },
+    "api": {
+      "summary": "Examples per 1M tokens (input / output): Kimi K3 $3.00 / $15.00 ($0.30 cached input); GLM-5.3-Flash $0.15 / $0.50 ($0.03 cached input); gpt-oss-120B $0.15 / $0.60.",
+      "source": "https://www.together.ai/pricing"
+    },
+    "notes": [
+      "Enterprise and reserved capacity are arranged through sales. Regional and tax notes: not stated."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.together.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.together.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "API"
+  ],
+  "subcategory": "inference",
+  "added": "2026-10-30"
+}

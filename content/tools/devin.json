@@ -1,0 +1,143 @@
+{
+  "id": "devin",
+  "name": "Devin",
+  "vendor": "Cognition",
+  "website": "https://devin.ai",
+  "category": "coding",
+  "categories": [
+    "coding"
+  ],
+  "tagline": "AI coding agents and editor",
+  "description": "Devin is Cognition's AI coding product. The old windsurf.com/pricing address now redirects to devin.ai/pricing, which lists Free, Pro, Max, Teams and Enterprise plans.",
+  "features": [
+    "Unlimited Tab completions and inline edits on the free plan",
+    "Access to frontier models from several providers on Pro",
+    "Devin Cloud access on paid plans",
+    "Extra usage billed at API pricing"
+  ],
+  "useCases": [
+    "Coding with agents",
+    "Autocomplete and inline edits"
+  ],
+  "audience": [
+    "Individual developers",
+    "Teams of up to 200 users"
+  ],
+  "strengths": [
+    "Free plan available",
+    "Paid plans can buy extra usage beyond the allowance"
+  ],
+  "limitations": [
+    "Exact quota figures are not stated",
+    "Annual prices are not stated"
+  ],
+  "alternatives": [
+    "cursor",
+    "github-copilot"
+  ],
+  "hue": 250,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://devin.ai/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Light quota",
+          "Unlimited inline edits and Tab completions"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "highlights": [
+          "Increased quotas",
+          "Frontier and open-source models",
+          "Devin Cloud access",
+          "Extra usage at API pricing"
+        ]
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 200,
+        "highlights": [
+          "Everything in Pro",
+          "Significantly higher quotas"
+        ]
+      },
+      {
+        "name": "Teams",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 40,
+        "billing": "$80 per month for the team plus $40 per month per full developer seat",
+        "highlights": [
+          "Up to 200 users",
+          "Centralised billing and admin dashboard",
+          "Priority support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "SAML/OIDC SSO",
+          "Dedicated deployment option"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Light quota to code with agents; limited model availability; unlimited inline edits and Tab completions."
+    },
+    "regional": "Currency shown as '$' without a code. Prices are subject to tax depending on location.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 20,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page (windsurf.com/pricing redirects here)",
+      "url": "https://devin.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://devin.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Editor",
+    "Cloud"
+  ],
+  "aliases": [
+    "Windsurf"
+  ],
+  "subcategory": "agents",
+  "added": "2026-10-30"
+}

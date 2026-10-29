@@ -94,6 +94,14 @@ export default function CompareMatrix() {
               label="Free plan"
               cells={tools.map((t) => (t.freePlan === true ? "Yes, documented" : t.freePlan === false ? "No" : <span className="text-muted">Not stated / not verified</span>))}
             />
+            <Row label="Free trial" cells={tools.map((t) => (t.trial ? "Yes, documented" : <span className="text-muted">Not stated</span>))} />
+            <Row
+              label="Open source"
+              cells={tools.map((t) =>
+                t.openSource === "open-source" ? "Open source (verified)" : t.openSource === "source-available" ? "Source-available, not open source" : t.openSource === "open-weights" ? "Open weights" : <span className="text-muted">Not stated</span>,
+              )}
+            />
+            <Row label="Key capability" cells={tools.map((t) => t.keyFeature)} />
             <Row label="Pricing model" cells={tools.map((t) => PRICING_MODEL_LABEL[t.pricingModel])} />
             <Row
               label="Plans (merchant currency)"

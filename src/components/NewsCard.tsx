@@ -1,4 +1,5 @@
 import type { NewsItem } from "@/data/news";
+import Link from "next/link";
 import Cover from "./Cover";
 
 export function formatDate(iso: string): string {
@@ -10,7 +11,8 @@ export default function NewsCard({ n, compact = false, featured = false }: { n: 
   const body = (
     <>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="kicker">{n.tag}</span>
+        <span className="kicker">{n.kind}</span>
+        <span className="byline">{n.tag}</span>
         <time dateTime={n.date} className="byline">
           {formatDate(n.date)}
         </time>
@@ -20,13 +22,12 @@ export default function NewsCard({ n, compact = false, featured = false }: { n: 
       <h3
         className={`font-serif font-bold leading-snug tracking-tight text-white ${featured ? "text-2xl md:text-[2rem] md:leading-[1.15]" : "text-xl"}`}
       >
-        <a href={n.url} target="_blank" rel="noopener noreferrer" className="no-underline hover:underline">
+        <Link href={`/news/${n.slug}/`} className="no-underline hover:underline">
           {n.title}
-          <span className="sr-only"> (opens the original source in a new tab)</span>
-        </a>
+        </Link>
       </h3>
       {!compact && <p className={`text-soft ${featured ? "text-base md:text-lg" : "text-[0.97rem]"}`}>{n.summary}</p>}
-      {!compact && n.matters && (
+      {!compact && (
         <p className="rounded-xl border border-cyan/20 bg-cyan/5 px-4 py-2.5 text-sm text-[#c3e3ea]">
           <strong className="text-white">Why it may matter:</strong> {n.matters}
         </p>

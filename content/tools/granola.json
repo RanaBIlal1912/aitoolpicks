@@ -1,0 +1,120 @@
+{
+  "id": "granola",
+  "name": "Granola",
+  "vendor": "Granola",
+  "website": "https://www.granola.ai",
+  "category": "productivity",
+  "categories": [
+    "productivity",
+    "audio"
+  ],
+  "tagline": "AI notepad for meetings",
+  "description": "Granola is an AI notepad that takes meeting notes and offers AI chat across meetings, with desktop, iOS, Android and Apple Watch apps.",
+  "features": [
+    "Meeting notes",
+    "AI chat across meetings",
+    "Integrations such as Notion, Zapier and HubSpot (Business)",
+    "API access (Business)"
+  ],
+  "useCases": [
+    "Taking notes in meetings",
+    "Searching what was discussed"
+  ],
+  "audience": [
+    "Professionals",
+    "Teams"
+  ],
+  "strengths": [
+    "Free Basic plan",
+    "Apps for desktop, iOS, Android and Apple Watch"
+  ],
+  "limitations": [
+    "Basic has a limited meeting history (30 days) and no integrations or API access",
+    "Annual prices are not stated"
+  ],
+  "alternatives": [
+    "otter",
+    "notion"
+  ],
+  "hue": 95,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://www.granola.ai/pricing",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 0,
+        "limits": [
+          "30 days of meeting history",
+          "No integrations or API access"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 14,
+        "highlights": [
+          "Unlimited meeting notes and history",
+          "Model selection in chat",
+          "Integrations and API access",
+          "Centralised billing"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 35,
+        "highlights": [
+          "Everything in Business",
+          "SSO, SCIM, HIPAA-compliant workspaces",
+          "Audit API, dedicated support"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Basic is free: limited meeting history (30 days), auto model selection for chat, no API access or integrations."
+    },
+    "regional": "Currency shown as '$' without a code. Annual prices and regional pricing: not stated.",
+    "reference": {
+      "plan": "Business",
+      "amount": 14,
+      "currency": "USD",
+      "per": "user per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.granola.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.granola.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Desktop",
+    "iOS",
+    "Android",
+    "Apple Watch"
+  ],
+  "subcategory": "meetings",
+  "added": "2026-10-30"
+}

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { resolveAffiliate } from "@/lib/affiliate";
+import { track } from "@/lib/analytics";
 import links from "@/data/generated/tool-links.json";
 import { useCurrency } from "./CurrencyProvider";
 
@@ -31,6 +32,9 @@ export default function AffLink({
       target="_blank"
       rel={aff ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
       data-affiliate={aff ? "true" : "false"}
+      data-cta="outbound"
+      data-tool={id}
+      onClick={() => track("outbound_click", { tool: id, kind: aff ? "affiliate" : "official" })}
     >
       {label}
       <span className="sr-only"> (opens in a new tab{aff ? ", affiliate link" : ""})</span>

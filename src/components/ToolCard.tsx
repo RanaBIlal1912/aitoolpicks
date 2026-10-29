@@ -10,6 +10,8 @@ const STATUS = {
   unverified: { label: "Pricing not verified", cls: "border-white/20 bg-white/5 text-muted" },
 } as const;
 
+const OPEN_LABEL = { "open-source": "Open source", "source-available": "Source-available", "open-weights": "Open weights", proprietary: "Proprietary" } as const;
+
 export function Monogram({ name, hue, size = 48 }: { name: string; hue: number; size?: number }) {
   return (
     <span
@@ -34,6 +36,7 @@ export default function ToolCard({
   disableCompare?: boolean;
 }) {
   const cat = getCategory(tool.category);
+  const sub = cat?.subs.find((s) => s.slug === tool.subcategory);
   const st = STATUS[tool.pricingStatus];
   const free = tool.freePlan === true ? "Free plan" : tool.freePlan === false ? "No free plan" : "Not stated";
   return (
@@ -51,11 +54,16 @@ export default function ToolCard({
       </div>
 
       <p className="mt-4 text-[0.97rem] text-soft">{tool.tagline}</p>
+      {tool.keyFeature && <p className="mt-2 text-sm text-muted">Key capability: {tool.keyFeature}</p>}
 
       <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-        {cat && <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{cat.short}</span>}
+        {cat && <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{sub ? `${cat.short} · ${sub.label}` : cat.short}</span>}
         <span className={`rounded-full border px-2.5 py-1 ${st.cls}`}>{st.label}</span>
         <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{PRICING_MODEL_LABEL[tool.pricingModel]}</span>
+        {tool.trial && <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">Free trial</span>}
+        {tool.openSource && tool.openSource !== "proprietary" && (
+          <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-soft">{OPEN_LABEL[tool.openSource]}</span>
+        )}
       </div>
 
       <dl className="mt-4 space-y-1.5 text-sm">

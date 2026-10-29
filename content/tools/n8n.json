@@ -104,10 +104,29 @@
       "url": "https://n8n.io",
       "type": "official",
       "checked": "2026-10-29"
+    },
+    {
+      "label": "GitHub repository (licence information)",
+      "url": "https://github.com/n8n-io/n8n",
+      "type": "docs",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "GitHub repository (licence information)",
+      "url": "https://github.com/n8n-io/n8n",
+      "type": "docs",
+      "checked": "2026-10-30"
     }
   ],
   "platforms": [
     "Cloud",
     "Self-hosted"
-  ]
+  ],
+  "subcategory": "workflow",
+  "added": "2026-10-29",
+  "openSource": {
+    "status": "source-available",
+    "note": "The repository describes n8n as fair-code under the Sustainable Use License; it does not call it open source",
+    "source": "https://github.com/n8n-io/n8n"
+  }
 }

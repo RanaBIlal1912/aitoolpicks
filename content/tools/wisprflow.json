@@ -1,0 +1,125 @@
+{
+  "id": "wisprflow",
+  "name": "Wispr Flow",
+  "vendor": "Wispr",
+  "website": "https://wisprflow.ai",
+  "category": "audio",
+  "categories": [
+    "audio",
+    "productivity"
+  ],
+  "tagline": "Dictation that types into any app",
+  "description": "Wispr Flow is a dictation app that turns speech into written text in any app, and it also offers a Notetaker for meetings.",
+  "features": [
+    "Dictation on Mac, Windows, iOS and Android",
+    "Notetaker for meetings (Mac and Windows; mobile on the roadmap)"
+  ],
+  "useCases": [
+    "Dictating emails and documents",
+    "Taking meeting notes"
+  ],
+  "audience": [
+    "Professionals",
+    "Students (50% off Pro with an education email)"
+  ],
+  "strengths": [
+    "Free plan with no credit card",
+    "Education discount on Pro"
+  ],
+  "limitations": [
+    "Free plan is limited to 2,000 words per week on desktop",
+    "The Growth plan's prices were ambiguous on the page"
+  ],
+  "alternatives": [
+    "granola",
+    "otter"
+  ],
+  "hue": 330,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://wisprflow.ai/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 0,
+        "limits": [
+          "2,000 words per week on desktop"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 15,
+        "annual": 12,
+        "highlights": [
+          "Unlimited dictations",
+          "Higher Notetaker limits"
+        ]
+      },
+      {
+        "name": "Growth",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "highlights": [
+          "Unlimited Notetaker access"
+        ],
+        "note": "The page shows $23 and $33 monthly and $18 and $26 annual; which figure is current is not stated"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "No dictation limits"
+        ],
+        "note": "Available annually"
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "2,000 words per week on desktop, limited weekly use on mobile and a weekly Notetaker meeting limit (amount not stated). No credit card needed."
+    },
+    "regional": "Currency shown as '$' without a code. Non-profits get a discounted rate (amount not stated).",
+    "reference": {
+      "plan": "Pro",
+      "amount": 15,
+      "currency": "USD",
+      "per": "user per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://wisprflow.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://wisprflow.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Mac",
+    "Windows",
+    "iOS",
+    "Android"
+  ],
+  "subcategory": "transcription",
+  "added": "2026-10-30"
+}

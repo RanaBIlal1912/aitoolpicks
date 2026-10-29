@@ -3,10 +3,10 @@
   "name": "Hugging Face",
   "vendor": "Hugging Face",
   "website": "https://huggingface.co",
-  "category": "automation",
+  "category": "models",
   "categories": [
-    "automation",
-    "coding"
+    "models",
+    "automation"
   ],
   "tagline": "Hub for open models, datasets and Spaces",
   "description": "Hugging Face hosts open models, datasets and apps (Spaces), with a PRO account, Team and Enterprise plans plus pay-as-you-go compute and storage.",
@@ -112,5 +112,7 @@
   "platforms": [
     "Web",
     "API"
-  ]
+  ],
+  "subcategory": "model-hubs",
+  "added": "2026-10-29"
 }

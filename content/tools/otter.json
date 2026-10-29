@@ -127,5 +127,7 @@
   "platforms": [
     "Web",
     "Mobile"
-  ]
+  ],
+  "subcategory": "transcription",
+  "added": "2026-10-29"
 }

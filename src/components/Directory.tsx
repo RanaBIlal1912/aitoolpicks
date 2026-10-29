@@ -1,74 +1,79 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS, type Tool } from "@/data/tools";
+import { Component, useEffect, useMemo, useState, type ReactNode } from "react";
+import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS } from "@/data/tools";
+import { NO_FILTERS, filterTools, page, sortTools, type Filters, type Sort } from "@/lib/directory";
 import ToolCard from "./ToolCard";
 
-type Sort = "name" | "verified" | "price" | "recent";
 const MODELS = ["freemium", "free", "free-trial", "paid", "usage-based"] as const;
 const MAX_COMPARE = 3;
 
 const SORTS: { id: Sort; label: string }[] = [
   { id: "name", label: "Name (A to Z)" },
+  { id: "added", label: "Recently added" },
+  { id: "updated", label: "Recently verified" },
   { id: "verified", label: "Pricing verified first" },
   { id: "price", label: "Lowest starting price (USD per month)" },
-  { id: "recent", label: "Recently checked" },
 ];
 
-const STATUS_RANK = { verified: 0, partial: 1, unverified: 2 } as const;
-
-export function sortTools(list: Tool[], sort: Sort): Tool[] {
-  const out = [...list];
-  out.sort((a, b) => {
-    if (sort === "verified") return STATUS_RANK[a.pricingStatus] - STATUS_RANK[b.pricingStatus] || a.name.localeCompare(b.name);
-    if (sort === "recent") return b.checked.localeCompare(a.checked) || a.name.localeCompare(b.name);
-    if (sort === "price") {
-      const pa = a.fromUsd ?? Number.POSITIVE_INFINITY;
-      const pb = b.fromUsd ?? Number.POSITIVE_INFINITY;
-      return pa - pb || a.name.localeCompare(b.name);
-    }
-    return a.name.localeCompare(b.name);
-  });
-  return out;
+class Boundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    if (!this.state.failed) return this.props.children;
+    return (
+      <div role="alert" className="glass mx-auto mt-6 max-w-6xl rounded-[22px] p-8 text-center">
+        <p className="text-lg font-semibold text-white">The directory could not load.</p>
+        <p className="mt-2 text-muted">Reload the page, or browse by category using the tiles above.</p>
+        <button type="button" className="btn-primary btn-sm mt-4" onClick={() => location.reload()}>
+          Reload
+        </button>
+      </div>
+    );
+  }
 }
 
-export function filterTools(
-  list: Tool[],
-  f: { q: string; category: string; models: string[]; freeOnly: boolean; verifiedOnly: boolean },
-): Tool[] {
-  const needle = f.q.trim().toLowerCase();
-  return list.filter((t) => {
-    if (f.category !== "all" && !t.categories.includes(f.category)) return false;
-    if (f.models.length && !f.models.includes(t.pricingModel)) return false;
-    if (f.freeOnly && t.freePlan !== true) return false;
-    if (f.verifiedOnly && t.pricingStatus !== "verified") return false;
-    if (!needle) return true;
-    return [t.name, t.vendor, t.tagline, t.description, t.bestFor].join(" ").toLowerCase().includes(needle);
-  });
+function Toggle({ pressed, onClick, children }: { pressed: boolean; onClick: () => void; children: ReactNode }) {
+  return (
+    <button type="button" className="chip" aria-pressed={pressed} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
-export default function Directory({ initialCategory = "all" }: { initialCategory?: string }) {
-  const [q, setQ] = useState("");
-  const [category, setCategory] = useState(initialCategory);
-  const [models, setModels] = useState<string[]>([]);
-  const [freeOnly, setFreeOnly] = useState(false);
-  const [verifiedOnly, setVerifiedOnly] = useState(false);
+function DirectoryInner({ initialCategory }: { initialCategory: string }) {
+  const [f, setF] = useState<Filters>({ ...NO_FILTERS, category: initialCategory });
   const [sort, setSort] = useState<Sort>("name");
+  const [pages, setPages] = useState(1);
   const [picked, setPicked] = useState<string[]>([]);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const p = new URLSearchParams(window.location.search);
-    const c = p.get("category");
-    if (c && CATEGORIES.some((x) => x.slug === c)) setCategory(c);
-    const query = p.get("q");
-    if (query) setQ(query);
+    try {
+      const p = new URLSearchParams(window.location.search);
+      const c = p.get("category");
+      const patch: Partial<Filters> = {};
+      if (c && CATEGORIES.some((x) => x.slug === c)) patch.category = c;
+      const q = p.get("q");
+      if (q) patch.q = q.slice(0, 80);
+      if (Object.keys(patch).length) setF((v) => ({ ...v, ...patch }));
+    } catch {
+      /* ignore malformed URLs */
+    }
+    setReady(true);
   }, []);
 
-  const results = useMemo(
-    () => sortTools(filterTools(TOOLS, { q, category, models, freeOnly, verifiedOnly }), sort),
-    [q, category, models, freeOnly, verifiedOnly, sort],
-  );
+  const set = (patch: Partial<Filters>) => {
+    setF((v) => ({ ...v, ...patch }));
+    setPages(1);
+  };
+
+  const results = useMemo(() => sortTools(filterTools(TOOLS, f), sort), [f, sort]);
+  const { items, more } = page(results, pages);
+  const subs = CATEGORIES.find((c) => c.slug === f.category)?.subs ?? [];
 
   const counts = useMemo(() => {
     const m: Record<string, number> = { all: TOOLS.length };
@@ -76,19 +81,12 @@ export default function Directory({ initialCategory = "all" }: { initialCategory
     return m;
   }, []);
 
-  const toggleModel = (m: string) => setModels((v) => (v.includes(m) ? v.filter((x) => x !== m) : [...v, m]));
+  const toggleModel = (m: string) => set({ models: f.models.includes(m) ? f.models.filter((x) => x !== m) : [...f.models, m] });
   const togglePick = (id: string) => setPicked((v) => (v.includes(id) ? v.filter((x) => x !== id) : v.length < MAX_COMPARE ? [...v, id] : v));
-  const active = q || category !== "all" || models.length || freeOnly || verifiedOnly;
-  const clear = () => {
-    setQ("");
-    setCategory("all");
-    setModels([]);
-    setFreeOnly(false);
-    setVerifiedOnly(false);
-  };
+  const active = JSON.stringify(f) !== JSON.stringify(NO_FILTERS);
 
   return (
-    <section aria-labelledby="dir-title" className="mx-auto max-w-6xl px-5">
+    <section aria-labelledby="dir-title" aria-busy={!ready} className="mx-auto max-w-6xl px-5">
       <h2 id="dir-title" className="sr-only">
         Browse tools
       </h2>
@@ -106,8 +104,8 @@ export default function Directory({ initialCategory = "all" }: { initialCategory
             <input
               id="tool-search"
               type="search"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
+              value={f.q}
+              onChange={(e) => set({ q: e.target.value })}
               placeholder="Search by name, vendor or use"
               autoComplete="off"
               className="h-12 w-full rounded-2xl border border-white/12 bg-black/30 pl-11 pr-4 text-base text-white placeholder:text-muted focus:border-brand focus:outline-none"
@@ -130,42 +128,64 @@ export default function Directory({ initialCategory = "all" }: { initialCategory
         <fieldset className="mt-4">
           <legend className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">Category</legend>
           <div className="flex flex-wrap gap-2">
-            <button type="button" className="chip" aria-pressed={category === "all"} onClick={() => setCategory("all")}>
+            <Toggle pressed={f.category === "all"} onClick={() => set({ category: "all", sub: "all" })}>
               All <span className="text-xs text-muted">{counts.all}</span>
-            </button>
+            </Toggle>
             {CATEGORIES.map((c) => (
-              <button key={c.slug} type="button" className="chip" aria-pressed={category === c.slug} onClick={() => setCategory(c.slug)}>
+              <Toggle key={c.slug} pressed={f.category === c.slug} onClick={() => set({ category: c.slug, sub: "all" })}>
                 {c.short} <span className="text-xs text-muted">{counts[c.slug] ?? 0}</span>
-              </button>
+              </Toggle>
             ))}
           </div>
         </fieldset>
 
+        {subs.length > 0 && (
+          <fieldset className="mt-4">
+            <legend className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">Subcategory</legend>
+            <div className="flex flex-wrap gap-2">
+              <Toggle pressed={f.sub === "all"} onClick={() => set({ sub: "all" })}>
+                All
+              </Toggle>
+              {subs.map((s) => (
+                <Toggle key={s.slug} pressed={f.sub === s.slug} onClick={() => set({ sub: s.slug })}>
+                  {s.label}
+                </Toggle>
+              ))}
+            </div>
+          </fieldset>
+        )}
+
         <fieldset className="mt-4">
-          <legend className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">Pricing</legend>
+          <legend className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">Pricing and access</legend>
           <div className="flex flex-wrap gap-2">
             {MODELS.map((m) => (
-              <button key={m} type="button" className="chip" aria-pressed={models.includes(m)} onClick={() => toggleModel(m)}>
+              <Toggle key={m} pressed={f.models.includes(m)} onClick={() => toggleModel(m)}>
                 {PRICING_MODEL_LABEL[m]}
-              </button>
+              </Toggle>
             ))}
-            <button type="button" className="chip" aria-pressed={freeOnly} onClick={() => setFreeOnly((v) => !v)}>
+            <Toggle pressed={f.freeOnly} onClick={() => set({ freeOnly: !f.freeOnly })}>
               Free plan documented
-            </button>
-            <button type="button" className="chip" aria-pressed={verifiedOnly} onClick={() => setVerifiedOnly((v) => !v)}>
+            </Toggle>
+            <Toggle pressed={f.trialOnly} onClick={() => set({ trialOnly: !f.trialOnly })}>
+              Free trial documented
+            </Toggle>
+            <Toggle pressed={f.openOnly} onClick={() => set({ openOnly: !f.openOnly })}>
+              Open source or source-available (verified)
+            </Toggle>
+            <Toggle pressed={f.verifiedOnly} onClick={() => set({ verifiedOnly: !f.verifiedOnly })}>
               Pricing verified only
-            </button>
+            </Toggle>
           </div>
         </fieldset>
       </div>
 
       <p className="mt-6 text-sm text-muted" role="status" aria-live="polite">
-        Showing {results.length} of {TOOLS.length} tools
+        Showing {items.length} of {results.length} matching tools ({TOOLS.length} in the directory)
         {active ? (
           <>
             {" "}
             ·{" "}
-            <button type="button" className="underline hover:text-white" onClick={clear}>
+            <button type="button" className="underline hover:text-white" onClick={() => set({ ...NO_FILTERS })}>
               Clear filters
             </button>
           </>
@@ -173,22 +193,37 @@ export default function Directory({ initialCategory = "all" }: { initialCategory
       </p>
 
       <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {results.map((t) => (
+        {items.map((t) => (
           <li key={t.id}>
             <ToolCard tool={t} selected={picked.includes(t.id)} onToggleCompare={togglePick} disableCompare={picked.length >= MAX_COMPARE} />
           </li>
         ))}
       </ul>
 
+      {more > 0 && (
+        <div className="mt-8 text-center">
+          <button type="button" className="btn-ghost" onClick={() => setPages((n) => n + 1)}>
+            Show {Math.min(more, 24)} more ({more} remaining)
+          </button>
+        </div>
+      )}
+
       {results.length === 0 && (
         <div className="glass mt-6 rounded-[22px] p-10 text-center">
           <p className="text-lg font-semibold text-white">No tools match those filters.</p>
-          <p className="mt-2 text-muted">Try a different word, or clear the filters to see everything.</p>
+          <p className="mt-2 text-muted">Try a different word, remove a filter, or clear everything to see the full directory.</p>
+          <button type="button" className="btn-primary btn-sm mt-4" onClick={() => set({ ...NO_FILTERS })}>
+            Clear filters
+          </button>
         </div>
       )}
 
       {picked.length > 0 && (
-        <div className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-[min(94vw,640px)] items-center justify-between gap-3 rounded-2xl border border-white/15 bg-[#0b0f1c]/95 px-5 py-3 shadow-2xl backdrop-blur" role="region" aria-label="Compare selection">
+        <div
+          className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-[min(94vw,640px)] items-center justify-between gap-3 rounded-2xl border border-white/15 bg-[#0b0f1c]/95 px-5 py-3 shadow-2xl backdrop-blur"
+          role="region"
+          aria-label="Compare selection"
+        >
           <p className="text-sm text-soft">
             {picked.length} selected{picked.length >= MAX_COMPARE ? " (maximum)" : ""}: {picked.map((id) => TOOLS.find((t) => t.id === id)?.name).join(", ")}
           </p>
@@ -203,5 +238,13 @@ export default function Directory({ initialCategory = "all" }: { initialCategory
         </div>
       )}
     </section>
+  );
+}
+
+export default function Directory({ initialCategory = "all" }: { initialCategory?: string }) {
+  return (
+    <Boundary>
+      <DirectoryInner initialCategory={initialCategory} />
+    </Boundary>
   );
 }

@@ -12,9 +12,9 @@
   "description": "Perplexity is an AI answer engine that searches the web and shows the sources behind an answer, so you can open and check them.",
   "features": [
     "Answers with citations",
-    "Pro Search and Research",
-    "Image generation and limited video generation on Pro",
-    "Access to several advanced models on Pro"
+    "Deep Research and model selection per query (Pro)",
+    "400+ app connectors (Pro)",
+    "Image generation and limited video generation"
   ],
   "useCases": [
     "Quick research where you want sources",
@@ -31,6 +31,7 @@
     "Paid Pro tier adds extended Pro Search and file uploads"
   ],
   "limitations": [
+    "Free usage is limited",
     "A summary can still misread a source, so open the links for anything important"
   ],
   "alternatives": [
@@ -39,50 +40,90 @@
     "gemini"
   ],
   "hue": 185,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
+    "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
-    "source": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+    "checked": "2026-10-30",
+    "source": "https://www.perplexity.ai/hub/pricing",
+    "free": {
+      "available": true,
+      "details": "Search with citations in every answer and access to basic AI models, with limited usage (the plan card says daily, the FAQ says weekly)."
+    },
     "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "Search with citations",
+          "Basic AI models"
+        ],
+        "limits": [
+          "Limited usage"
+        ]
+      },
       {
         "name": "Pro",
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
+        "annual": 17,
+        "billing": "$17 per month when billed annually; the annual total and a monthly-billing price are not stated",
         "highlights": [
-          "10x as many citations per answer",
-          "Increased file and photo uploads",
-          "Extended access to Perplexity Research",
-          "Enhanced image generation",
-          "Limited video generation",
-          "Access to advanced models"
-        ],
-        "note": "Price not stated on the help article we read"
+          "Deep Research",
+          "Access to top AI models and model selection per query",
+          "Higher usage limits and memory",
+          "400+ app connectors",
+          "Premium data sources"
+        ]
       },
       {
         "name": "Max",
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
+        "annual": 167,
+        "billing": "$167 per month when billed annually",
         "highlights": [
-          "Advanced access to all advanced models",
-          "Priority support"
-        ],
-        "note": "Price not stated on the help article we read. Described as unlocking advanced access to all advanced models, enhanced video tools, priority support and early access."
+          "Everything in Pro",
+          "10,000 monthly credits",
+          "Highest usage limits",
+          "Priority access to new features"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Priced on a separate Enterprise page"
       }
     ],
-    "notes": [
-      "We could not read prices from the official pages (the marketing page was empty to automated readers). Check the official site for current plans and prices."
-    ]
+    "regional": "Prices are shown in USD with a '$' sign. Tax and regional pricing: not stated.",
+    "reference": {
+      "plan": "Pro",
+      "amount": 17,
+      "currency": "USD",
+      "per": "month",
+      "billing": "billed annually"
+    }
   },
   "sources": [
     {
+      "label": "Official pricing page",
+      "url": "https://www.perplexity.ai/hub/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
       "label": "Official Pro help article",
       "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
-      "type": "pricing",
+      "type": "docs",
       "checked": "2026-10-29"
     },
     {
@@ -94,5 +135,7 @@
   ],
   "platforms": [
     "Web"
-  ]
+  ],
+  "subcategory": "search",
+  "added": "2026-10-29"
 }

@@ -139,5 +139,7 @@
     "IDE extensions",
     "CLI",
     "GitHub"
-  ]
+  ],
+  "subcategory": "assistants",
+  "added": "2026-10-29"
 }

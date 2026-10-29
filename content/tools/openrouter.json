@@ -1,0 +1,133 @@
+{
+  "id": "openrouter",
+  "name": "OpenRouter",
+  "vendor": "OpenRouter",
+  "website": "https://openrouter.ai",
+  "category": "models",
+  "categories": [
+    "models",
+    "coding"
+  ],
+  "tagline": "One API for hundreds of models",
+  "description": "OpenRouter provides an OpenAI-compatible API that gives access to 500+ models from 80+ providers. Model usage is billed per token at each provider's list price.",
+  "features": [
+    "500+ models from 80+ providers",
+    "Auto-routing, budgets and spend controls",
+    "Prompt caching and management API keys",
+    "EU and US in-region routing (Business and Enterprise)"
+  ],
+  "useCases": [
+    "Trying many models behind one API",
+    "Controlling AI spend across projects"
+  ],
+  "audience": [
+    "Developers",
+    "Teams building AI products"
+  ],
+  "strengths": [
+    "No platform fee on the Free plan",
+    "Free models available, with higher daily limits after buying at least $10 of credits"
+  ],
+  "limitations": [
+    "A 5.5% (Standard) or 8% (Business) fee applies when you buy credits",
+    "Free models are capped at 20 requests per minute and 50 per day until you buy credits",
+    "Per-model prices are not listed on the pricing page"
+  ],
+  "alternatives": [
+    "together",
+    "huggingface",
+    "groq"
+  ],
+  "hue": 205,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "usage-based",
+    "checked": "2026-10-30",
+    "source": "https://openrouter.ai/pricing",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "25+ free models",
+          "5 workspaces",
+          "Community support"
+        ],
+        "limits": [
+          "50 requests per day"
+        ]
+      },
+      {
+        "name": "Standard (pay-as-you-go)",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "highlights": [
+          "500+ models, 80+ providers",
+          "Auto-routing, budgets and spend controls",
+          "Prompt caching",
+          "5 workspaces"
+        ],
+        "note": "No minimums. A 5.5% fee applies when credits are purchased, not per request"
+      },
+      {
+        "name": "Business (pay-as-you-go)",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "highlights": [
+          "Everything in Standard",
+          "EU and US in-region routing",
+          "1,000 workspaces",
+          "DPA available on request"
+        ],
+        "note": "8% fee on credit purchases"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Platform fee discounts",
+          "SSO/SAML, contractual SLAs, invoicing",
+          "Private endpoints available as an add-on"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "No platform fee; 25+ free models and 4 free providers; 5 workspaces; 50 requests per day (1,000 per day after buying at least $10 of credits); free models capped at 20 requests per minute."
+    },
+    "api": {
+      "summary": "Model usage is billed per token at each provider's list price on every plan. Per-model prices are available from the models API rather than the pricing page. Standard and Business include $25,000 per month of list-price inference with no fee when you bring your own keys, then 5%.",
+      "source": "https://openrouter.ai/pricing"
+    },
+    "regional": "Prices are exclusive of applicable taxes; VAT or GST may be added on invoices. EU and US in-region routing is available on Business and Enterprise."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://openrouter.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://openrouter.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "API"
+  ],
+  "subcategory": "inference",
+  "added": "2026-10-30"
+}

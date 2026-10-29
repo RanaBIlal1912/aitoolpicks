@@ -6,7 +6,7 @@ import type { Tool } from "./catalog-types";
 
 export type { Tool } from "./catalog-types";
 
-export type Category = { slug: string; label: string; short: string; cover: "chip" | "board" | "neural" | "lens" | "rack" | "wafer" | "fibre" | "signal"; blurb: string };
+export type Category = { slug: string; label: string; short: string; subs: { slug: string; label: string }[]; cover: "chip" | "board" | "neural" | "lens" | "rack" | "wafer" | "fibre" | "signal"; blurb: string };
 
 export const CATEGORIES = categoriesJson as Category[];
 export const TOOLS = index as Tool[];

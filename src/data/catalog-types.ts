@@ -60,6 +60,9 @@ export type ToolRecord = {
   tags?: string[];
   hue: number;
   review?: string;
+  subcategory?: string;
+  added: string;
+  openSource?: { status: "open-source" | "source-available" | "open-weights" | "proprietary"; note: string; source: string };
   verified: string;
   status: "active" | "unavailable" | "renamed";
   pricing: Pricing;
@@ -72,9 +75,14 @@ export type Tool = {
   name: string;
   vendor: string;
   category: string;
+  subcategory: string | null;
   categories: string[];
   tagline: string;
   description: string;
+  keyFeature: string;
+  trial: boolean;
+  openSource: "open-source" | "source-available" | "open-weights" | "proprietary" | null;
+  added: string;
   bestFor: string;
   officialUrl: string;
   hue: number;

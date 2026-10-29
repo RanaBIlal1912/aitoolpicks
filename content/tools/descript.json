@@ -122,5 +122,7 @@
   "platforms": [
     "Web",
     "Desktop"
-  ]
+  ],
+  "subcategory": "editing",
+  "added": "2026-10-29"
 }

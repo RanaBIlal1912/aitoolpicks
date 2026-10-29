@@ -1,0 +1,114 @@
+{
+  "id": "langsmith",
+  "name": "LangSmith",
+  "vendor": "LangChain",
+  "website": "https://www.langchain.com/langsmith",
+  "category": "automation",
+  "categories": [
+    "automation",
+    "models"
+  ],
+  "tagline": "Observability and deployment for AI agents",
+  "description": "LangSmith is LangChain's platform for tracing, evaluating and deploying AI applications, priced per seat plus pay-as-you-go usage.",
+  "features": [
+    "Trace retention of 14 days (base) or 180 days (extended)",
+    "Deployments, sandboxes and an engine metered in LangChain Standard Units",
+    "Cloud data location in the US or EU",
+    "Self-hosted and hybrid options for Enterprise"
+  ],
+  "useCases": [
+    "Debugging and monitoring agents",
+    "Deploying agent applications"
+  ],
+  "audience": [
+    "Developers",
+    "AI engineering teams"
+  ],
+  "strengths": [
+    "Free Developer plan",
+    "Cloud data can be located in the US or the EU"
+  ],
+  "limitations": [
+    "Usage beyond the included allowance is pay-as-you-go",
+    "Tuned Evaluators are in public beta for Plus and Cloud Enterprise in the US only"
+  ],
+  "alternatives": [
+    "huggingface",
+    "n8n"
+  ],
+  "hue": 140,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://www.langchain.com/pricing",
+    "plans": [
+      {
+        "name": "Developer",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 0,
+        "highlights": [
+          "1 seat",
+          "Up to 5k base traces per month"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 39,
+        "highlights": [
+          "Up to 10k base traces per month",
+          "Deployment and Engine",
+          "Unlimited seats at $39 each"
+        ],
+        "note": "Then pay as you go"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Self-hosted and hybrid options",
+          "Custom SSO, support SLA"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "Developer: $0 per seat per month, 1 seat, up to 5k base traces per month, then pay-as-you-go. Community support."
+    },
+    "api": {
+      "summary": "Usage is metered in LangChain Standard Units (LSU) at $1.00 each. Developer includes 7 LSUs per organisation per month for Fleet and Plus includes 37.",
+      "source": "https://www.langchain.com/pricing"
+    },
+    "regional": "Currency shown as '$' without a code. Tax treatment: not stated."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.langchain.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.langchain.com/langsmith",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Cloud",
+    "Self-hosted"
+  ],
+  "subcategory": "agent-tooling",
+  "added": "2026-10-30"
+}

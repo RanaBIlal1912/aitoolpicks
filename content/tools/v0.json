@@ -119,5 +119,7 @@
   ],
   "platforms": [
     "Web"
-  ]
+  ],
+  "subcategory": "app-builders",
+  "added": "2026-10-29"
 }

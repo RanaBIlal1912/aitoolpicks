@@ -105,5 +105,7 @@
   ],
   "platforms": [
     "Web"
-  ]
+  ],
+  "subcategory": "support",
+  "added": "2026-10-29"
 }

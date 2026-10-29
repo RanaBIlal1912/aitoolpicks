@@ -1,5 +1,5 @@
 import { pageMeta } from "@/lib/meta";
-import { NEWS, NEWS_CHECKED, NEWS_TAGS } from "@/data/news";
+import { NEWS, NEWS_CHECKED, NEWS_KINDS, NEWS_TAGS } from "@/data/news";
 import { coverPath } from "@/data/covers";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
@@ -43,7 +43,7 @@ export default function NewsPage() {
         </Reveal>
         <Reveal as="section" className="mt-14">
           <h2 className="section-title mb-6 text-white">More from the last few weeks</h2>
-          <NewsFeed items={rest} tags={NEWS_TAGS} />
+          <NewsFeed items={rest} tags={NEWS_TAGS} kinds={NEWS_KINDS} />
         </Reveal>
       </div>
       <JsonLd
@@ -54,7 +54,7 @@ export default function NewsPage() {
           itemListElement: items.map((n, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            item: { "@type": "NewsArticle", headline: n.title, datePublished: n.date, url: n.url, publisher: { "@type": "Organization", name: n.source } },
+            item: { "@type": "NewsArticle", headline: n.title, datePublished: n.date, url: absUrl(`/news/${n.slug}/`), isBasedOn: n.url, publisher: { "@type": "Organization", name: n.source } },
           })),
         }}
       />

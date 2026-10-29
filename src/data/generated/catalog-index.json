@@ -1,9 +1,51 @@
 [
  {
+  "id": "assemblyai",
+  "name": "AssemblyAI",
+  "vendor": "AssemblyAI",
+  "category": "audio",
+  "subcategory": "transcription",
+  "categories": [
+   "audio",
+   "models"
+  ],
+  "tagline": "Speech-to-text and speech AI APIs",
+  "description": "AssemblyAI's pricing page covers speech-to-text, text-to-speech and an LLM Gateway, with a free tier and pay-as-you-go per-hour rates.",
+  "bestFor": "Developers and Enterprises",
+  "officialUrl": "https://www.assemblyai.com",
+  "hue": 235,
+  "keyFeature": "Pre-recorded and streaming speech-to-text",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.assemblyai.com/pricing",
+  "plans": [
+   {
+    "name": "Free tier",
+    "price": "Free"
+   },
+   {
+    "name": "Pay-as-you-go",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "bolt",
   "name": "Bolt",
   "vendor": "StackBlitz",
   "category": "coding",
+  "subcategory": "app-builders",
   "categories": [
    "coding"
   ],
@@ -12,7 +54,11 @@
   "bestFor": "Individuals and Teams",
   "officialUrl": "https://bolt.new",
   "hue": 45,
+  "keyFeature": "Monthly AI token allowance per plan",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 25,
@@ -43,6 +89,7 @@
   "name": "Canva",
   "vendor": "Canva",
   "category": "image",
+  "subcategory": "design",
   "categories": [
    "image",
    "writing"
@@ -53,7 +100,11 @@
   "officialUrl": "https://www.canva.com",
   "hue": 195,
   "review": "canva",
+  "keyFeature": "Templates for social posts, presentations and documents",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -67,6 +118,7 @@
   "name": "ChatGPT",
   "vendor": "OpenAI",
   "category": "assistants",
+  "subcategory": "chatbots",
   "categories": [
    "assistants",
    "writing",
@@ -78,7 +130,11 @@
   "officialUrl": "https://chatgpt.com",
   "hue": 160,
   "review": "chatgpt",
+  "keyFeature": "Chat-based assistant for writing, analysis and questions",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -92,6 +148,7 @@
   "name": "Claude",
   "vendor": "Anthropic",
   "category": "assistants",
+  "subcategory": "chatbots",
   "categories": [
    "assistants",
    "writing",
@@ -102,7 +159,11 @@
   "bestFor": "Individuals and Teams of 2 to 150 users (Team plan)",
   "officialUrl": "https://claude.ai",
   "hue": 25,
+  "keyFeature": "Chat on web, desktop and mobile",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 20,
@@ -137,10 +198,47 @@
   ]
  },
  {
+  "id": "consensus",
+  "name": "Consensus",
+  "vendor": "Consensus",
+  "category": "research",
+  "subcategory": "papers",
+  "categories": [
+   "research"
+  ],
+  "tagline": "AI search engine for scientific research",
+  "description": "Consensus is an AI research tool for finding answers in scientific papers. Its pricing page lists Individual plus Team and Enterprise options.",
+  "bestFor": "Researchers and Students",
+  "officialUrl": "https://consensus.app",
+  "hue": 125,
+  "keyFeature": "Search over research papers",
+  "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "unknown",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://consensus.app/pricing/",
+  "plans": [
+   {
+    "name": "Individual",
+    "price": "See note"
+   },
+   {
+    "name": "Team and Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "copilot",
   "name": "Microsoft Copilot",
   "vendor": "Microsoft",
   "category": "assistants",
+  "subcategory": "chatbots",
   "categories": [
    "assistants",
    "writing",
@@ -151,7 +249,11 @@
   "bestFor": "People who work in Microsoft 365 and Families (Family plan, owner only for AI features)",
   "officialUrl": "https://copilot.microsoft.com",
   "hue": 200,
+  "keyFeature": "Copilot in Word, Excel, PowerPoint and Outlook (desktop)",
   "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 9.99,
@@ -182,6 +284,7 @@
   "name": "Cursor",
   "vendor": "Cursor",
   "category": "coding",
+  "subcategory": "assistants",
   "categories": [
    "coding"
   ],
@@ -190,7 +293,11 @@
   "bestFor": "Individual developers and Teams (Teams and Enterprise plans)",
   "officialUrl": "https://cursor.com",
   "hue": 275,
+  "keyFeature": "AI usage pool shared across Cursor products",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": 8,
@@ -225,10 +332,52 @@
   ]
  },
  {
+  "id": "deepgram",
+  "name": "Deepgram",
+  "vendor": "Deepgram",
+  "category": "audio",
+  "subcategory": "transcription",
+  "categories": [
+   "audio",
+   "models"
+  ],
+  "tagline": "Speech-to-text, text-to-speech and voice agent APIs",
+  "description": "Deepgram provides speech-to-text, text-to-speech, voice agent and audio intelligence APIs, billed per minute of audio.",
+  "bestFor": "Developers and Enterprises",
+  "officialUrl": "https://deepgram.com",
+  "hue": 170,
+  "keyFeature": "Speech-to-text, text-to-speech and voice agent APIs",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://deepgram.com/pricing",
+  "plans": [
+   {
+    "name": "Pay as you go",
+    "price": "See note"
+   },
+   {
+    "name": "Growth",
+    "price": "$4000/yr"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "descript",
   "name": "Descript",
   "vendor": "Descript",
   "category": "video",
+  "subcategory": "editing",
   "categories": [
    "video",
    "audio"
@@ -238,7 +387,11 @@
   "bestFor": "Podcasters and Video creators",
   "officialUrl": "https://www.descript.com",
   "hue": 270,
+  "keyFeature": "Media hours and AI credits per month",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
@@ -269,10 +422,59 @@
   ]
  },
  {
+  "id": "devin",
+  "name": "Devin",
+  "vendor": "Cognition",
+  "category": "coding",
+  "subcategory": "agents",
+  "categories": [
+   "coding"
+  ],
+  "tagline": "AI coding agents and editor",
+  "description": "Devin is Cognition's AI coding product. The old windsurf.com/pricing address now redirects to devin.ai/pricing, which lists Free, Pro, Max, Teams and Enterprise plans.",
+  "bestFor": "Individual developers and Teams of up to 200 users",
+  "officialUrl": "https://devin.ai",
+  "hue": 250,
+  "keyFeature": "Unlimited Tab completions and inline edits on the free plan",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 20,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://devin.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$20/mo"
+   },
+   {
+    "name": "Max",
+    "price": "$200/mo"
+   },
+   {
+    "name": "Teams",
+    "price": "$40/user/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "elevenlabs",
   "name": "ElevenLabs",
   "vendor": "ElevenLabs",
   "category": "audio",
+  "subcategory": "voice",
   "categories": [
    "audio",
    "video"
@@ -282,7 +484,11 @@
   "bestFor": "Creators and Developers",
   "officialUrl": "https://elevenlabs.io",
   "hue": 180,
+  "keyFeature": "Text to speech and speech to text",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": 5,
@@ -321,6 +527,7 @@
   "name": "Elicit",
   "vendor": "Elicit",
   "category": "research",
+  "subcategory": "papers",
   "categories": [
    "research"
   ],
@@ -329,7 +536,11 @@
   "bestFor": "Researchers and Students",
   "officialUrl": "https://elicit.com",
   "hue": 140,
+  "keyFeature": "Search across more than 138 million papers",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 49,
@@ -360,6 +571,7 @@
   "name": "Figma",
   "vendor": "Figma",
   "category": "image",
+  "subcategory": "design",
   "categories": [
    "image"
   ],
@@ -368,7 +580,11 @@
   "bestFor": "Designers and Developers",
   "officialUrl": "https://www.figma.com",
   "hue": 300,
+  "keyFeature": "Seat types: Full, Dev and Collab",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": 16,
@@ -399,6 +615,7 @@
   "name": "Adobe Firefly",
   "vendor": "Adobe",
   "category": "image",
+  "subcategory": "generation",
   "categories": [
    "image",
    "video",
@@ -409,7 +626,11 @@
   "bestFor": "Creators and Design and marketing teams",
   "officialUrl": "https://www.adobe.com/products/firefly.html",
   "hue": 350,
+  "keyFeature": "Generative credits per month",
   "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 9.99,
@@ -444,6 +665,7 @@
   "name": "Gamma",
   "vendor": "Gamma",
   "category": "writing",
+  "subcategory": "presentations",
   "categories": [
    "writing",
    "productivity"
@@ -453,7 +675,11 @@
   "bestFor": "Professionals and Students",
   "officialUrl": "https://gamma.app",
   "hue": 320,
+  "keyFeature": "AI-generated presentations and documents",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -467,6 +693,7 @@
   "name": "Gemini",
   "vendor": "Google",
   "category": "assistants",
+  "subcategory": "chatbots",
   "categories": [
    "assistants",
    "writing"
@@ -476,7 +703,11 @@
   "bestFor": "Individuals who use Google services and Businesses (Gemini Enterprise)",
   "officialUrl": "https://gemini.google.com",
   "hue": 225,
+  "keyFeature": "Image generation and editing",
   "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
@@ -515,6 +746,7 @@
   "name": "GitHub Copilot",
   "vendor": "GitHub (Microsoft)",
   "category": "coding",
+  "subcategory": "assistants",
   "categories": [
    "coding"
   ],
@@ -523,7 +755,11 @@
   "bestFor": "Individual developers and Teams (business and enterprise offerings)",
   "officialUrl": "https://github.com/features/copilot",
   "hue": 215,
+  "keyFeature": "Inline code suggestions",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 10,
@@ -554,6 +790,7 @@
   "name": "Grammarly",
   "vendor": "Grammarly",
   "category": "writing",
+  "subcategory": "proofreading",
   "categories": [
    "writing"
   ],
@@ -563,7 +800,11 @@
   "officialUrl": "https://www.grammarly.com",
   "hue": 150,
   "review": "grammarly",
+  "keyFeature": "Writing mistake checks and tone view",
   "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
@@ -586,10 +827,79 @@
   ]
  },
  {
+  "id": "granola",
+  "name": "Granola",
+  "vendor": "Granola",
+  "category": "productivity",
+  "subcategory": "meetings",
+  "categories": [
+   "productivity",
+   "audio"
+  ],
+  "tagline": "AI notepad for meetings",
+  "description": "Granola is an AI notepad that takes meeting notes and offers AI chat across meetings, with desktop, iOS, Android and Apple Watch apps.",
+  "bestFor": "Professionals and Teams",
+  "officialUrl": "https://www.granola.ai",
+  "hue": 95,
+  "keyFeature": "Meeting notes",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.granola.ai/pricing",
+  "plans": [
+   {
+    "name": "Basic",
+    "price": "Free"
+   },
+   {
+    "name": "Business",
+    "price": "$14/user/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "$35/user/mo"
+   }
+  ]
+ },
+ {
+  "id": "groq",
+  "name": "Groq",
+  "vendor": "Groq",
+  "category": "models",
+  "subcategory": "inference",
+  "categories": [
+   "models"
+  ],
+  "tagline": "Fast AI inference cloud",
+  "description": "Groq describes itself as a cloud provider focused on fast AI inference, built around its own LPU hardware.",
+  "bestFor": "Developers and Enterprises",
+  "officialUrl": "https://groq.com",
+  "hue": 20,
+  "keyFeature": "Fast inference cloud",
+  "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://groq.com/pricing",
+  "plans": []
+ },
+ {
   "id": "heygen",
   "name": "HeyGen",
   "vendor": "HeyGen",
   "category": "video",
+  "subcategory": "avatars",
   "categories": [
    "video",
    "audio"
@@ -599,7 +909,11 @@
   "bestFor": "Marketing and training teams and Creators",
   "officialUrl": "https://www.heygen.com",
   "hue": 165,
+  "keyFeature": "Custom video avatars",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 29,
@@ -634,6 +948,7 @@
   "name": "Hostinger",
   "vendor": "Hostinger",
   "category": "web",
+  "subcategory": "hosting",
   "categories": [
    "web"
   ],
@@ -643,7 +958,11 @@
   "officialUrl": "https://www.hostinger.com",
   "hue": 262,
   "review": "hostinger",
+  "keyFeature": "Premium, Unlimited, Cloud Startup and Agency Startup hosting plans",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "paid",
   "pricingStatus": "verified",
   "fromUsd": 2.49,
@@ -673,17 +992,22 @@
   "id": "huggingface",
   "name": "Hugging Face",
   "vendor": "Hugging Face",
-  "category": "automation",
+  "category": "models",
+  "subcategory": "model-hubs",
   "categories": [
-   "automation",
-   "coding"
+   "models",
+   "automation"
   ],
   "tagline": "Hub for open models, datasets and Spaces",
   "description": "Hugging Face hosts open models, datasets and apps (Spaces), with a PRO account, Team and Enterprise plans plus pay-as-you-go compute and storage.",
   "bestFor": "Developers and ML teams",
   "officialUrl": "https://huggingface.co",
   "hue": 45,
+  "keyFeature": "PRO, Team and Enterprise plans",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "usage-based",
   "pricingStatus": "verified",
   "fromUsd": 9,
@@ -710,6 +1034,7 @@
   "name": "Ideogram",
   "vendor": "Ideogram",
   "category": "image",
+  "subcategory": "generation",
   "categories": [
    "image"
   ],
@@ -718,7 +1043,11 @@
   "bestFor": "Designers and Creators",
   "officialUrl": "https://ideogram.ai",
   "hue": 20,
+  "keyFeature": "Image generation from text prompts",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -732,6 +1061,7 @@
   "name": "Intercom",
   "vendor": "Intercom",
   "category": "marketing",
+  "subcategory": "support",
   "categories": [
    "marketing"
   ],
@@ -740,7 +1070,11 @@
   "bestFor": "Support teams and Businesses",
   "officialUrl": "https://www.intercom.com",
   "hue": 215,
+  "keyFeature": "Seat plans (Essential, Advanced, Expert)",
   "freePlan": null,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "usage-based",
   "pricingStatus": "partial",
   "fromUsd": 19,
@@ -771,6 +1105,7 @@
   "name": "Jasper",
   "vendor": "Jasper",
   "category": "writing",
+  "subcategory": "content",
   "categories": [
    "writing",
    "marketing"
@@ -780,7 +1115,11 @@
   "bestFor": "Marketing teams",
   "officialUrl": "https://www.jasper.ai",
   "hue": 275,
+  "keyFeature": "Canvas for content creation",
   "freePlan": null,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "free-trial",
   "pricingStatus": "verified",
   "fromUsd": 69,
@@ -799,10 +1138,52 @@
   ]
  },
  {
+  "id": "langsmith",
+  "name": "LangSmith",
+  "vendor": "LangChain",
+  "category": "automation",
+  "subcategory": "agent-tooling",
+  "categories": [
+   "automation",
+   "models"
+  ],
+  "tagline": "Observability and deployment for AI agents",
+  "description": "LangSmith is LangChain's platform for tracing, evaluating and deploying AI applications, priced per seat plus pay-as-you-go usage.",
+  "bestFor": "Developers and AI engineering teams",
+  "officialUrl": "https://www.langchain.com/langsmith",
+  "hue": 140,
+  "keyFeature": "Trace retention of 14 days (base) or 180 days (extended)",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.langchain.com/pricing",
+  "plans": [
+   {
+    "name": "Developer",
+    "price": "Free"
+   },
+   {
+    "name": "Plus",
+    "price": "$39/seat/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "leonardo",
   "name": "Leonardo.Ai",
   "vendor": "Leonardo.Ai",
   "category": "image",
+  "subcategory": "generation",
   "categories": [
    "image"
   ],
@@ -811,7 +1192,11 @@
   "bestFor": "Designers and Creators",
   "officialUrl": "https://leonardo.ai",
   "hue": 265,
+  "keyFeature": "Image generation from text prompts",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -825,6 +1210,7 @@
   "name": "Lovable",
   "vendor": "Lovable",
   "category": "coding",
+  "subcategory": "app-builders",
   "categories": [
    "coding"
   ],
@@ -833,7 +1219,11 @@
   "bestFor": "Non-developers and Founders and small teams",
   "officialUrl": "https://lovable.dev",
   "hue": 340,
+  "keyFeature": "Credit-based building (default mode varies by task; Plan Mode costs 1 credit per message)",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
@@ -864,6 +1254,7 @@
   "name": "Luma",
   "vendor": "Luma AI",
   "category": "video",
+  "subcategory": "generation",
   "categories": [
    "video",
    "image"
@@ -873,7 +1264,11 @@
   "bestFor": "Creators and Teams",
   "officialUrl": "https://lumalabs.ai",
   "hue": 190,
+  "keyFeature": "Luma and third-party image and video models",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "paid",
   "pricingStatus": "verified",
   "fromUsd": 30,
@@ -908,6 +1303,7 @@
   "name": "Make",
   "vendor": "Make",
   "category": "automation",
+  "subcategory": "workflow",
   "categories": [
    "automation"
   ],
@@ -916,7 +1312,11 @@
   "bestFor": "Individuals and Teams",
   "officialUrl": "https://www.make.com",
   "hue": 265,
+  "keyFeature": "Credits per month",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
@@ -951,6 +1351,7 @@
   "name": "Midjourney",
   "vendor": "Midjourney",
   "category": "image",
+  "subcategory": "generation",
   "categories": [
    "image"
   ],
@@ -959,7 +1360,11 @@
   "bestFor": "Designers and Creators",
   "officialUrl": "https://www.midjourney.com",
   "hue": 240,
+  "keyFeature": "Image generation from text prompts",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -973,6 +1378,7 @@
   "name": "Le Chat (Mistral)",
   "vendor": "Mistral AI",
   "category": "assistants",
+  "subcategory": "chatbots",
   "categories": [
    "assistants",
    "coding",
@@ -983,7 +1389,11 @@
   "bestFor": "Individuals and Students (Education pricing)",
   "officialUrl": "https://chat.mistral.ai",
   "hue": 30,
+  "keyFeature": "Web search, image generation and editing",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 14.99,
@@ -1018,6 +1428,7 @@
   "name": "n8n",
   "vendor": "n8n",
   "category": "automation",
+  "subcategory": "workflow",
   "categories": [
    "automation"
   ],
@@ -1026,7 +1437,11 @@
   "bestFor": "Developers and Technical teams",
   "officialUrl": "https://n8n.io",
   "hue": 15,
+  "keyFeature": "Workflow executions per plan",
   "freePlan": null,
+  "trial": true,
+  "openSource": "source-available",
+  "added": "2026-10-29",
   "pricingModel": "free-trial",
   "pricingStatus": "verified",
   "fromUsd": null,
@@ -1057,6 +1472,7 @@
   "name": "Namecheap",
   "vendor": "Namecheap",
   "category": "web",
+  "subcategory": "domains",
   "categories": [
    "web"
   ],
@@ -1065,7 +1481,11 @@
   "bestFor": "Site owners",
   "officialUrl": "https://www.namecheap.com",
   "hue": 20,
+  "keyFeature": "Domain registration",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "unknown",
   "pricingStatus": "unverified",
   "fromUsd": null,
@@ -1079,6 +1499,7 @@
   "name": "NotebookLM",
   "vendor": "Google",
   "category": "research",
+  "subcategory": "notebooks",
   "categories": [
    "research"
   ],
@@ -1087,7 +1508,11 @@
   "bestFor": "Students and Researchers",
   "officialUrl": "https://notebooklm.google",
   "hue": 60,
+  "keyFeature": "Notebooks with sources",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
@@ -1118,6 +1543,7 @@
   "name": "Notion",
   "vendor": "Notion",
   "category": "productivity",
+  "subcategory": "notes",
   "categories": [
    "productivity",
    "writing"
@@ -1128,7 +1554,11 @@
   "officialUrl": "https://www.notion.com",
   "hue": 255,
   "review": "notion",
+  "keyFeature": "Databases, forms and sites",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 10,
@@ -1155,10 +1585,105 @@
   ]
  },
  {
+  "id": "ollama",
+  "name": "Ollama",
+  "vendor": "Ollama",
+  "category": "models",
+  "subcategory": "local-models",
+  "categories": [
+   "models",
+   "coding"
+  ],
+  "tagline": "Run models locally, with optional cloud models",
+  "description": "Ollama is a tool for running large language models on your own hardware, with optional paid plans for cloud-hosted models. Its source code is published on GitHub under the MIT licence.",
+  "bestFor": "Developers and Teams",
+  "officialUrl": "https://ollama.com",
+  "hue": 35,
+  "keyFeature": "Runs models on your own hardware, which the FAQ says is always unlimited",
+  "freePlan": true,
+  "trial": false,
+  "openSource": "open-source",
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 20,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://ollama.com/pricing",
+  "plans": [
+   {
+    "name": "Pay as you go",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$20/mo monthly · $16.67/mo yearly"
+   },
+   {
+    "name": "Max",
+    "price": "$100/mo"
+   },
+   {
+    "name": "Team (early access)",
+    "price": "$500/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "openrouter",
+  "name": "OpenRouter",
+  "vendor": "OpenRouter",
+  "category": "models",
+  "subcategory": "inference",
+  "categories": [
+   "models",
+   "coding"
+  ],
+  "tagline": "One API for hundreds of models",
+  "description": "OpenRouter provides an OpenAI-compatible API that gives access to 500+ models from 80+ providers. Model usage is billed per token at each provider's list price.",
+  "bestFor": "Developers and Teams building AI products",
+  "officialUrl": "https://openrouter.ai",
+  "hue": 205,
+  "keyFeature": "500+ models from 80+ providers",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://openrouter.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Standard (pay-as-you-go)",
+    "price": "See note"
+   },
+   {
+    "name": "Business (pay-as-you-go)",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "otter",
   "name": "Otter.ai",
   "vendor": "Otter.ai",
   "category": "audio",
+  "subcategory": "transcription",
   "categories": [
    "audio",
    "productivity"
@@ -1168,7 +1693,11 @@
   "bestFor": "Professionals and Teams",
   "officialUrl": "https://otter.ai",
   "hue": 210,
+  "keyFeature": "Meeting and recording minutes per user",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 16.99,
@@ -1199,6 +1728,7 @@
   "name": "Perplexity",
   "vendor": "Perplexity AI",
   "category": "assistants",
+  "subcategory": "search",
   "categories": [
    "assistants",
    "research"
@@ -1208,21 +1738,33 @@
   "bestFor": "Researchers and Students",
   "officialUrl": "https://www.perplexity.ai",
   "hue": 185,
-  "freePlan": null,
+  "keyFeature": "Answers with citations",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
-  "pricingStatus": "partial",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
-  "pricingSource": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+  "pricingStatus": "verified",
+  "fromUsd": 17,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.perplexity.ai/hub/pricing",
   "plans": [
    {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
     "name": "Pro",
-    "price": "See note"
+    "price": "$17/mo billed yearly"
    },
    {
     "name": "Max",
-    "price": "See note"
+    "price": "$167/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
    }
   ]
  },
@@ -1231,6 +1773,7 @@
   "name": "Pika",
   "vendor": "Pika",
   "category": "video",
+  "subcategory": "generation",
   "categories": [
    "video"
   ],
@@ -1239,7 +1782,11 @@
   "bestFor": "Creators and Social and marketing teams",
   "officialUrl": "https://pika.art",
   "hue": 330,
+  "keyFeature": "Credits per month",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 10,
@@ -1274,6 +1821,7 @@
   "name": "Replit",
   "vendor": "Replit",
   "category": "coding",
+  "subcategory": "app-builders",
   "categories": [
    "coding"
   ],
@@ -1282,7 +1830,11 @@
   "bestFor": "Individuals and Small teams (Pro, up to 15 collaborators)",
   "officialUrl": "https://replit.com",
   "hue": 15,
+  "keyFeature": "Chat and agent with 'Free Mode' usage",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "paid",
   "pricingStatus": "partial",
   "fromUsd": 20,
@@ -1309,6 +1861,7 @@
   "name": "Runway",
   "vendor": "Runway",
   "category": "video",
+  "subcategory": "generation",
   "categories": [
    "video",
    "image"
@@ -1318,7 +1871,11 @@
   "bestFor": "Creators and Marketing and video teams",
   "officialUrl": "https://runway.com",
   "hue": 300,
+  "keyFeature": "Credits for AI video and image models",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 15,
@@ -1349,6 +1906,7 @@
   "name": "Suno",
   "vendor": "Suno",
   "category": "audio",
+  "subcategory": "music",
   "categories": [
    "audio"
   ],
@@ -1357,7 +1915,11 @@
   "bestFor": "Hobbyists and Creators",
   "officialUrl": "https://suno.com",
   "hue": 50,
+  "keyFeature": "Credits per month",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": 8,
@@ -1384,6 +1946,7 @@
   "name": "Surfer",
   "vendor": "Surfer",
   "category": "marketing",
+  "subcategory": "seo",
   "categories": [
    "marketing",
    "writing"
@@ -1393,7 +1956,11 @@
   "bestFor": "SEO teams and Content marketers",
   "officialUrl": "https://surfer.ai",
   "hue": 110,
+  "keyFeature": "AI prompts tracked on a refresh schedule",
   "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "paid",
   "pricingStatus": "verified",
   "fromUsd": 49,
@@ -1432,6 +1999,7 @@
   "name": "Synthesia",
   "vendor": "Synthesia",
   "category": "video",
+  "subcategory": "avatars",
   "categories": [
    "video"
   ],
@@ -1440,7 +2008,11 @@
   "bestFor": "Businesses and Training and communications teams",
   "officialUrl": "https://www.synthesia.io",
   "hue": 235,
+  "keyFeature": "Studio video creation and dubbing",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 19,
@@ -1467,10 +2039,55 @@
   ]
  },
  {
+  "id": "together",
+  "name": "Together AI",
+  "vendor": "Together AI",
+  "category": "models",
+  "subcategory": "inference",
+  "categories": [
+   "models"
+  ],
+  "tagline": "Inference, fine-tuning and GPU clusters",
+  "description": "Together AI's pricing page covers serverless inference, dedicated endpoints, fine-tuning and GPU clusters, with a 'Start for free' option.",
+  "bestFor": "Developers and ML teams",
+  "officialUrl": "https://www.together.ai",
+  "hue": 150,
+  "keyFeature": "Serverless inference billed per 1M tokens",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.together.ai/pricing",
+  "plans": [
+   {
+    "name": "Serverless inference",
+    "price": "See note"
+   },
+   {
+    "name": "Dedicated inference",
+    "price": "See note"
+   },
+   {
+    "name": "GPU clusters",
+    "price": "See note"
+   },
+   {
+    "name": "Fine-tuning",
+    "price": "See note"
+   }
+  ]
+ },
+ {
   "id": "v0",
   "name": "v0",
   "vendor": "Vercel",
   "category": "coding",
+  "subcategory": "app-builders",
   "categories": [
    "coding"
   ],
@@ -1479,7 +2096,11 @@
   "bestFor": "Developers and designers and Teams",
   "officialUrl": "https://v0.app",
   "hue": 0,
+  "keyFeature": "Monthly and daily credits per user",
   "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 30,
@@ -1506,10 +2127,56 @@
   ]
  },
  {
+  "id": "wisprflow",
+  "name": "Wispr Flow",
+  "vendor": "Wispr",
+  "category": "audio",
+  "subcategory": "transcription",
+  "categories": [
+   "audio",
+   "productivity"
+  ],
+  "tagline": "Dictation that types into any app",
+  "description": "Wispr Flow is a dictation app that turns speech into written text in any app, and it also offers a Notetaker for meetings.",
+  "bestFor": "Professionals and Students (50% off Pro with an education email)",
+  "officialUrl": "https://wisprflow.ai",
+  "hue": 330,
+  "keyFeature": "Dictation on Mac, Windows, iOS and Android",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 15,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://wisprflow.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$15/user/mo monthly · $12/user/mo yearly"
+   },
+   {
+    "name": "Growth",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "writesonic",
   "name": "Writesonic",
   "vendor": "Writesonic",
   "category": "marketing",
+  "subcategory": "seo",
   "categories": [
    "marketing",
    "writing"
@@ -1519,7 +2186,11 @@
   "bestFor": "Marketers and SEO teams",
   "officialUrl": "https://writesonic.com",
   "hue": 35,
+  "keyFeature": "AI prompts and answers tracked daily",
   "freePlan": null,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "free-trial",
   "pricingStatus": "verified",
   "fromUsd": 79,
@@ -1550,6 +2221,7 @@
   "name": "Zapier",
   "vendor": "Zapier",
   "category": "automation",
+  "subcategory": "workflow",
   "categories": [
    "automation"
   ],
@@ -1558,7 +2230,11 @@
   "bestFor": "Individuals and Teams",
   "officialUrl": "https://zapier.com",
   "hue": 25,
+  "keyFeature": "Task-based workflows",
   "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 29.99,

@@ -1,0 +1,64 @@
+{
+  "id": "groq",
+  "name": "Groq",
+  "vendor": "Groq",
+  "website": "https://groq.com",
+  "category": "models",
+  "categories": [
+    "models"
+  ],
+  "tagline": "Fast AI inference cloud",
+  "description": "Groq describes itself as a cloud provider focused on fast AI inference, built around its own LPU hardware.",
+  "features": [
+    "Fast inference cloud"
+  ],
+  "useCases": [
+    "Running models with low latency"
+  ],
+  "audience": [
+    "Developers",
+    "Enterprises"
+  ],
+  "strengths": [
+    "Specialised inference hardware (LPU), per the vendor"
+  ],
+  "limitations": [
+    "The pricing page we read showed no plan names or per-token rates, so we do not publish prices"
+  ],
+  "alternatives": [
+    "together",
+    "openrouter"
+  ],
+  "hue": 20,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "usage-based",
+    "checked": "2026-10-30",
+    "source": "https://groq.com/pricing",
+    "plans": [],
+    "notes": [
+      "The page we read described the company but listed no prices. Check the official page for current plans and per-token rates."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://groq.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://groq.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "API"
+  ],
+  "subcategory": "inference",
+  "added": "2026-10-30"
+}

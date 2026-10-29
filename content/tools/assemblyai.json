@@ -1,0 +1,109 @@
+{
+  "id": "assemblyai",
+  "name": "AssemblyAI",
+  "vendor": "AssemblyAI",
+  "website": "https://www.assemblyai.com",
+  "category": "audio",
+  "categories": [
+    "audio",
+    "models"
+  ],
+  "tagline": "Speech-to-text and speech AI APIs",
+  "description": "AssemblyAI's pricing page covers speech-to-text, text-to-speech and an LLM Gateway, with a free tier and pay-as-you-go per-hour rates.",
+  "features": [
+    "Pre-recorded and streaming speech-to-text",
+    "Text-to-speech",
+    "LLM Gateway",
+    "EU region at the same price as the US"
+  ],
+  "useCases": [
+    "Transcribing audio and video",
+    "Real-time transcription in apps"
+  ],
+  "audience": [
+    "Developers",
+    "Enterprises"
+  ],
+  "strengths": [
+    "$50 in free credits at signup, no credit card required",
+    "EU region costs the same as the US region"
+  ],
+  "limitations": [
+    "Free-tier streaming concurrency is limited to 5 new streams per minute",
+    "Enterprise prices are not published"
+  ],
+  "alternatives": [
+    "deepgram",
+    "elevenlabs"
+  ],
+  "hue": 235,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "usage-based",
+    "checked": "2026-10-30",
+    "source": "https://www.assemblyai.com/pricing",
+    "plans": [
+      {
+        "name": "Free tier",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "highlights": [
+          "$50 in free credits at signup"
+        ],
+        "limits": [
+          "5 new streams per minute"
+        ]
+      },
+      {
+        "name": "Pay-as-you-go",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Billed per hour of audio; 100 new streams per minute"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "highlights": [
+          "Volume pricing and commit buyouts",
+          "Higher concurrency"
+        ]
+      }
+    ],
+    "free": {
+      "available": true,
+      "details": "$50 in free credits on signup, no credit card required; streaming concurrency of 5 new streams per minute."
+    },
+    "api": {
+      "summary": "Per hour: Universal-3.5 Pro (pre-recorded) $0.21; Universal-2 (pre-recorded) $0.15; Universal-3.6 Pro Realtime (streaming) $0.45 base; Universal-Streaming English $0.15.",
+      "source": "https://www.assemblyai.com/pricing"
+    },
+    "regional": "The EU region costs the same as the US region (endpoints api.eu.assemblyai.com and streaming.eu.assemblyai.com). Tax treatment: not stated."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.assemblyai.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.assemblyai.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "API"
+  ],
+  "subcategory": "transcription",
+  "added": "2026-10-30"
+}

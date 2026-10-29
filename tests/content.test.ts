@@ -3,7 +3,8 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { ARTICLES, getArticleHtml, getArticleParts } from "@/data/articles";
 import { COMPARISONS } from "@/data/compare";
-import { NEWS, NEWS_TAGS } from "@/data/news";
+import { NEWS, NEWS_KINDS, NEWS_TAGS, getNews, newsForTool } from "@/data/news";
+import { NO_FILTERS, PAGE_SIZE, filterTools, page, sortTools } from "@/lib/directory";
 import { REVIEWS } from "@/data/reviews";
 import { CATEGORIES, TOOLS, getCategory, getTool } from "@/data/tools";
 import { ROUNDUPS } from "@/data/roundups";
@@ -172,5 +173,61 @@ describe("navigation and news", () => {
       for (const id of n.tools ?? []) expect(getTool(id), `${n.title}: ${id}`).toBeTruthy();
     }
     expect(new Set(NEWS.map((n) => n.url)).size).toBe(NEWS.length);
+  });
+
+  it("gives every news item a unique slug, a type and a why-it-matters note", () => {
+    expect(new Set(NEWS.map((n) => n.slug)).size).toBe(NEWS.length);
+    for (const n of NEWS) {
+      expect(n.slug, n.title).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+      expect(NEWS_KINDS, n.title).toContain(n.kind);
+      expect(n.matters.length, n.title).toBeGreaterThan(30);
+      expect(getNews(n.slug)?.url).toBe(n.url);
+    }
+  });
+
+  it("links news to the tools it concerns", () => {
+    expect(newsForTool("granola").length).toBeGreaterThan(0);
+    expect(newsForTool("mistral").length).toBeGreaterThan(0);
+  });
+});
+
+describe("directory filters, sorting and paging", () => {
+  it("returns everything with no filters and pages the result", () => {
+    expect(filterTools(TOOLS, NO_FILTERS).length).toBe(TOOLS.length);
+    const p = page(TOOLS, 1);
+    expect(p.items.length).toBe(Math.min(PAGE_SIZE, TOOLS.length));
+    expect(p.items.length + p.more).toBe(TOOLS.length);
+    expect(page(TOOLS, 99).more).toBe(0);
+  });
+
+  it("filters by category and subcategory", () => {
+    const coding = filterTools(TOOLS, { ...NO_FILTERS, category: "coding" });
+    expect(coding.length).toBeGreaterThan(2);
+    const agents = filterTools(TOOLS, { ...NO_FILTERS, category: "coding", sub: "agents" });
+    expect(agents.length).toBeGreaterThan(0);
+    expect(agents.length).toBeLessThan(coding.length);
+    expect(agents.every((t) => t.subcategory === "agents")).toBe(true);
+  });
+
+  it("only counts a free plan, trial or open-source licence when the record states it", () => {
+    for (const t of filterTools(TOOLS, { ...NO_FILTERS, freeOnly: true })) expect(t.freePlan, t.id).toBe(true);
+    for (const t of filterTools(TOOLS, { ...NO_FILTERS, trialOnly: true })) expect(t.trial, t.id).toBe(true);
+    const open = filterTools(TOOLS, { ...NO_FILTERS, openOnly: true });
+    expect(open.map((t) => t.id)).toContain("ollama");
+    for (const t of open) expect(["open-source", "source-available", "open-weights"], t.id).toContain(t.openSource);
+    for (const t of filterTools(TOOLS, { ...NO_FILTERS, verifiedOnly: true })) expect(t.pricingStatus, t.id).toBe("verified");
+  });
+
+  it("searches name, vendor and description case-insensitively", () => {
+    expect(filterTools(TOOLS, { ...NO_FILTERS, q: "OLLAMA" }).map((t) => t.id)).toContain("ollama");
+    expect(filterTools(TOOLS, { ...NO_FILTERS, q: "zzzz-no-such-tool" })).toEqual([]);
+  });
+
+  it("sorts by recently added and by lowest price without losing items", () => {
+    const added = sortTools(TOOLS, "added");
+    expect(added.length).toBe(TOOLS.length);
+    for (let i = 1; i < added.length; i++) expect(added[i - 1].added >= added[i].added).toBe(true);
+    const price = sortTools(TOOLS, "price").filter((t) => t.fromUsd !== null && t.fromUsd !== undefined);
+    for (let i = 1; i < price.length; i++) expect((price[i - 1].fromUsd as number) <= (price[i].fromUsd as number)).toBe(true);
   });
 });

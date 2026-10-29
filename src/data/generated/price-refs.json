@@ -35,6 +35,15 @@
   "source": "https://cursor.com/pricing",
   "checked": "2026-10-29"
  },
+ "devin": {
+  "plan": "Pro",
+  "amount": 20,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://devin.ai/pricing",
+  "checked": "2026-10-30"
+ },
  "elevenlabs": {
   "plan": "Pro",
   "amount": 99,
@@ -88,6 +97,15 @@
   "billing": "billing period not labelled",
   "source": "https://www.grammarly.com/plans",
   "checked": "2026-10-29"
+ },
+ "granola": {
+  "plan": "Business",
+  "amount": 14,
+  "currency": "USD",
+  "per": "user per month",
+  "billing": "monthly",
+  "source": "https://www.granola.ai/pricing",
+  "checked": "2026-10-30"
  },
  "heygen": {
   "plan": "Creator",
@@ -152,6 +170,15 @@
   "source": "https://www.notion.com/pricing",
   "checked": "2026-10-29"
  },
+ "ollama": {
+  "plan": "Pro",
+  "amount": 20,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://ollama.com/pricing",
+  "checked": "2026-10-30"
+ },
  "otter": {
   "plan": "Pro",
   "amount": 16.99,
@@ -160,6 +187,15 @@
   "billing": "monthly",
   "source": "https://otter.ai/pricing",
   "checked": "2026-10-29"
+ },
+ "perplexity": {
+  "plan": "Pro",
+  "amount": 17,
+  "currency": "USD",
+  "per": "month",
+  "billing": "billed annually",
+  "source": "https://www.perplexity.ai/hub/pricing",
+  "checked": "2026-10-30"
  },
  "pika": {
   "plan": "Starter",
@@ -205,6 +241,15 @@
   "billing": "monthly",
   "source": "https://v0.app/pricing",
   "checked": "2026-10-29"
+ },
+ "wisprflow": {
+  "plan": "Pro",
+  "amount": 15,
+  "currency": "USD",
+  "per": "user per month",
+  "billing": "monthly",
+  "source": "https://wisprflow.ai/pricing",
+  "checked": "2026-10-30"
  },
  "zapier": {
   "plan": "Professional",

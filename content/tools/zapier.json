@@ -120,5 +120,7 @@
   ],
   "platforms": [
     "Web"
-  ]
+  ],
+  "subcategory": "workflow",
+  "added": "2026-10-29"
 }

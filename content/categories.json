@@ -1,13 +1,226 @@
 [
-  { "slug": "assistants", "label": "AI assistants & search", "short": "Assistants", "cover": "neural", "blurb": "Chat assistants and answer engines that draft, explain, summarise and search. Compare free tiers, plan limits and API pricing." },
-  { "slug": "coding", "label": "Coding & app builders", "short": "Coding", "cover": "board", "blurb": "AI coding assistants, editors, agents and app builders for developers and non-developers." },
-  { "slug": "video", "label": "Video, avatars & animation", "short": "Video", "cover": "fibre", "blurb": "Tools that generate, edit, translate and present video, including AI avatars and dubbing." },
-  { "slug": "image", "label": "Image generation & design", "short": "Image & design", "cover": "lens", "blurb": "Image generators, photo tools and design software, including collaborative interface design." },
-  { "slug": "audio", "label": "Audio, voice & music", "short": "Audio", "cover": "signal", "blurb": "Voice generation, transcription, dubbing and music tools, with credit and minute limits compared." },
-  { "slug": "writing", "label": "Writing, documents & presentations", "short": "Writing", "cover": "chip", "blurb": "Writing assistants, proofreaders and document and slide tools." },
-  { "slug": "productivity", "label": "Productivity & knowledge", "short": "Productivity", "cover": "rack", "blurb": "Notes, wikis, databases and meeting tools that keep work organised." },
-  { "slug": "research", "label": "Research & education", "short": "Research", "cover": "neural", "blurb": "Tools for finding, reading and checking sources, from academic papers to personal notebooks." },
-  { "slug": "marketing", "label": "Marketing, SEO & customer support", "short": "Marketing", "cover": "signal", "blurb": "SEO, content and customer-support platforms, with seat-based and usage-based pricing explained." },
-  { "slug": "automation", "label": "Agents, automation & infrastructure", "short": "Automation", "cover": "board", "blurb": "Workflow automation, agent platforms, model hubs and infrastructure for builders." },
-  { "slug": "web", "label": "Hosting & domains", "short": "Hosting", "cover": "wafer", "blurb": "Hosting and domains for a first website, with renewal prices and term lengths spelled out." }
+  {
+    "slug": "assistants",
+    "label": "AI assistants & search",
+    "short": "Assistants",
+    "cover": "neural",
+    "blurb": "Chat assistants and answer engines that draft, explain, summarise and search. Compare free tiers, plan limits and API pricing.",
+    "subs": [
+      {
+        "slug": "chatbots",
+        "label": "Chatbots and assistants"
+      },
+      {
+        "slug": "search",
+        "label": "Answer engines and search"
+      }
+    ]
+  },
+  {
+    "slug": "coding",
+    "label": "Coding & app builders",
+    "short": "Coding",
+    "cover": "board",
+    "blurb": "AI coding assistants, editors, agents and app builders for developers and non-developers.",
+    "subs": [
+      {
+        "slug": "assistants",
+        "label": "Editor assistants"
+      },
+      {
+        "slug": "agents",
+        "label": "Coding agents"
+      },
+      {
+        "slug": "app-builders",
+        "label": "App and website builders"
+      }
+    ]
+  },
+  {
+    "slug": "video",
+    "label": "Video, avatars & animation",
+    "short": "Video",
+    "cover": "fibre",
+    "blurb": "Tools that generate, edit, translate and present video, including AI avatars and dubbing.",
+    "subs": [
+      {
+        "slug": "generation",
+        "label": "Video generation"
+      },
+      {
+        "slug": "avatars",
+        "label": "Avatars and dubbing"
+      },
+      {
+        "slug": "editing",
+        "label": "Editing"
+      }
+    ]
+  },
+  {
+    "slug": "image",
+    "label": "Image generation & design",
+    "short": "Image & design",
+    "cover": "lens",
+    "blurb": "Image generators, photo tools and design software, including collaborative interface design.",
+    "subs": [
+      {
+        "slug": "generation",
+        "label": "Image generation"
+      },
+      {
+        "slug": "design",
+        "label": "Design tools"
+      }
+    ]
+  },
+  {
+    "slug": "audio",
+    "label": "Audio, voice & music",
+    "short": "Audio",
+    "cover": "signal",
+    "blurb": "Voice generation, transcription, dubbing and music tools, with credit and minute limits compared.",
+    "subs": [
+      {
+        "slug": "voice",
+        "label": "Voice and speech"
+      },
+      {
+        "slug": "music",
+        "label": "Music"
+      },
+      {
+        "slug": "transcription",
+        "label": "Transcription and dictation"
+      }
+    ]
+  },
+  {
+    "slug": "writing",
+    "label": "Writing, documents & presentations",
+    "short": "Writing",
+    "cover": "chip",
+    "blurb": "Writing assistants, proofreaders and document and slide tools.",
+    "subs": [
+      {
+        "slug": "proofreading",
+        "label": "Proofreading"
+      },
+      {
+        "slug": "content",
+        "label": "Content writing"
+      },
+      {
+        "slug": "presentations",
+        "label": "Presentations"
+      }
+    ]
+  },
+  {
+    "slug": "productivity",
+    "label": "Productivity & knowledge",
+    "short": "Productivity",
+    "cover": "rack",
+    "blurb": "Notes, wikis, databases and meeting tools that keep work organised.",
+    "subs": [
+      {
+        "slug": "notes",
+        "label": "Notes and knowledge"
+      },
+      {
+        "slug": "meetings",
+        "label": "Meetings"
+      }
+    ]
+  },
+  {
+    "slug": "research",
+    "label": "Research & education",
+    "short": "Research",
+    "cover": "neural",
+    "blurb": "Tools for finding, reading and checking sources, from academic papers to personal notebooks.",
+    "subs": [
+      {
+        "slug": "papers",
+        "label": "Academic papers"
+      },
+      {
+        "slug": "notebooks",
+        "label": "Notebooks and sources"
+      }
+    ]
+  },
+  {
+    "slug": "marketing",
+    "label": "Marketing, SEO & customer support",
+    "short": "Marketing",
+    "cover": "signal",
+    "blurb": "SEO, content and customer-support platforms, with seat-based and usage-based pricing explained.",
+    "subs": [
+      {
+        "slug": "seo",
+        "label": "SEO and visibility"
+      },
+      {
+        "slug": "support",
+        "label": "Customer support"
+      }
+    ]
+  },
+  {
+    "slug": "automation",
+    "label": "Agents, automation & infrastructure",
+    "short": "Automation",
+    "cover": "board",
+    "blurb": "Workflow automation, agent platforms, model hubs and infrastructure for builders.",
+    "subs": [
+      {
+        "slug": "workflow",
+        "label": "Workflow automation"
+      },
+      {
+        "slug": "agent-tooling",
+        "label": "Agent tooling"
+      }
+    ]
+  },
+  {
+    "slug": "models",
+    "label": "AI models & infrastructure",
+    "short": "Models & infra",
+    "cover": "chip",
+    "blurb": "Inference platforms, model hubs and tools for running models locally or through an API, with per-token prices spelled out.",
+    "subs": [
+      {
+        "slug": "inference",
+        "label": "Inference platforms"
+      },
+      {
+        "slug": "local-models",
+        "label": "Local and open models"
+      },
+      {
+        "slug": "model-hubs",
+        "label": "Model hubs"
+      }
+    ]
+  },
+  {
+    "slug": "web",
+    "label": "Hosting & domains",
+    "short": "Hosting",
+    "cover": "wafer",
+    "blurb": "Hosting and domains for a first website, with renewal prices and term lengths spelled out.",
+    "subs": [
+      {
+        "slug": "hosting",
+        "label": "Hosting"
+      },
+      {
+        "slug": "domains",
+        "label": "Domains"
+      }
+    ]
+  }
 ]

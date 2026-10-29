@@ -301,6 +301,28 @@ table.cmp tbody th {
   color: var(--color-muted);
   font-weight: 600;
 }
+/* Keep the row label visible while the table scrolls sideways on a phone. */
+table.cmp tbody th,
+table.cmp thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #0b0f1c;
+}
+@media (max-width: 640px) {
+  table.cmp th,
+  table.cmp td {
+    padding: 12px 12px;
+  }
+  table.cmp tbody th {
+    width: 7.5rem;
+    min-width: 7.5rem;
+    font-size: 0.85rem;
+  }
+  table.cmp td {
+    min-width: 11rem;
+  }
+}
 table.cmp tbody tr:last-child th,
 table.cmp tbody tr:last-child td {
   border-bottom: 0;
@@ -482,7 +504,7 @@ table.cmp tbody tr:last-child td {
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-header.sticky,
+/* The site header is sticky with its own z-index (see Header.tsx), so only the footer needs lifting above the 3D layers. */
 footer {
   position: relative;
   z-index: 2;

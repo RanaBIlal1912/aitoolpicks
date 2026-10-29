@@ -1,0 +1,80 @@
+{
+  "id": "consensus",
+  "name": "Consensus",
+  "vendor": "Consensus",
+  "website": "https://consensus.app",
+  "category": "research",
+  "categories": [
+    "research"
+  ],
+  "tagline": "AI search engine for scientific research",
+  "description": "Consensus is an AI research tool for finding answers in scientific papers. Its pricing page lists Individual plus Team and Enterprise options.",
+  "features": [
+    "Search over research papers"
+  ],
+  "useCases": [
+    "Finding evidence in the literature"
+  ],
+  "audience": [
+    "Researchers",
+    "Students"
+  ],
+  "strengths": [
+    "Individual and team options"
+  ],
+  "limitations": [
+    "The pricing page we read showed Monthly and Annual toggles but no prices"
+  ],
+  "alternatives": [
+    "elicit",
+    "perplexity"
+  ],
+  "hue": 125,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "unknown",
+    "checked": "2026-10-30",
+    "source": "https://consensus.app/pricing/",
+    "plans": [
+      {
+        "name": "Individual",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Price not shown on the page we read"
+      },
+      {
+        "name": "Team and Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Price not shown on the page we read"
+      }
+    ],
+    "notes": [
+      "Free plan, limits and student discount: not stated on the page we read."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://consensus.app/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://consensus.app",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "subcategory": "papers",
+  "added": "2026-10-30"
+}

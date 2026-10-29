@@ -52,6 +52,17 @@ export const AFFILIATE_LINKS: Record<string, AffiliateValue> = {
   "v0": "",
   writesonic: "",
   zapier: "",
+  assemblyai: "",
+  consensus: "",
+  deepgram: "",
+  devin: "",
+  granola: "",
+  groq: "",
+  langsmith: "",
+  ollama: "",
+  openrouter: "",
+  together: "",
+  wisprflow: "",
 };
 
 export function resolveAffiliate(

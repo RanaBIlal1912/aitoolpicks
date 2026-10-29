@@ -140,5 +140,7 @@
   ],
   "platforms": [
     "Web"
-  ]
+  ],
+  "subcategory": "generation",
+  "added": "2026-10-29"
 }
