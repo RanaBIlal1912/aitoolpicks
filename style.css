@@ -79,6 +79,7 @@ article h1{font-size:clamp(1.8rem,4.5vw,2.5rem);line-height:1.15;letter-spacing:
 article h2{margin-top:2.2rem;font-size:1.45rem;letter-spacing:-.02em;line-height:1.25}
 article p.disclosure+p{font-size:1.12rem;color:var(--muted)}
 article li{margin:.3rem 0}
+article blockquote{margin:12px 0 18px;padding:12px 18px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:0 12px 12px 0;color:var(--ink);font-size:.97rem}
 .pick{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px 26px;margin:20px 0;box-shadow:var(--shadow);overflow:hidden}
 .pick::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--brand),#34d399)}
 .pick h3{margin:2px 0 6px;font-size:1.25rem}
