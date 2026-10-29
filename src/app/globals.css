@@ -31,7 +31,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--color-bg);
+  /* Transparent on purpose: the glow, grid and 3D scene sit on negative z-index layers behind the page and
+     would be painted over by an opaque body background. The html element supplies the solid colour. */
+  background: transparent;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 17px;
@@ -100,7 +102,7 @@ a {
 
 /* ---------- building blocks ---------- */
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(180deg, rgba(22, 28, 56, 0.74), rgba(10, 13, 30, 0.66));
   border: 1px solid var(--color-line);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -368,7 +370,7 @@ table.cmp tbody tr:last-child td {
   padding: 24px 24px 22px 28px;
   border-radius: 20px;
   border: 1px solid var(--color-line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(180deg, rgba(22, 28, 56, 0.86), rgba(10, 13, 30, 0.82));
   overflow: hidden;
 }
 .prose-article .pick::before {
@@ -460,4 +462,90 @@ table.cmp tbody tr:last-child td {
   filter: blur(60px);
   opacity: 0.55;
   animation: float-slow 9s ease-in-out infinite;
+}
+
+/* ---------- cinematic finish (decorative, never blocks clicks) ---------- */
+.film-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 120% 90% at 50% 40%, transparent 55%, rgba(2, 3, 9, 0.55) 100%);
+}
+.film-grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+header.sticky,
+footer {
+  position: relative;
+  z-index: 2;
+}
+main {
+  position: relative;
+  z-index: 2;
+}
+/* Pages that sit over the 3D scene get a soft scrim so text stays readable */
+.scrim-panel {
+  background: linear-gradient(180deg, rgba(5, 6, 15, 0.72), rgba(5, 6, 15, 0.55));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* ---------- magazine details ---------- */
+.kicker {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+}
+.byline {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+.cover-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid var(--color-line);
+  background: #070a16;
+}
+.cover-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(5, 6, 15, 0.55));
+}
+.toc a {
+  display: block;
+  padding: 6px 12px;
+  border-left: 2px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+.toc a:hover,
+.toc a[aria-current="true"] {
+  color: #fff;
+  border-left-color: var(--color-violet);
+}
+.prose-article h2 {
+  scroll-margin-top: 96px;
+}
+.drop::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 3.4rem;
+  line-height: 0.9;
+  padding: 6px 10px 0 0;
+  color: #fff;
 }

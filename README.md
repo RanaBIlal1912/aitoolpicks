@@ -36,6 +36,9 @@ Using a custom domain later: set `NEXT_PUBLIC_SITE_URL` (for example `https://ex
 | Comparison tables | `src/data/compare.ts` |
 | AI news (dated, with source links) | `src/data/news.ts` |
 | Guides (HTML bodies + metadata) | `content/articles/*.html`, `content/articles.json` |
+| Tool write-ups for each tool page | `src/data/tool-details.ts` |
+| Blog topics and their covers | `src/data/topics.ts` |
+| Cover images (3D renders) | `public/images/covers/`, `src/data/covers.ts` |
 | Public contact email (optional) | `NEXT_PUBLIC_CONTACT_EMAIL` (see `.env.example`) |
 
 ### Adding an affiliate link
@@ -49,6 +52,16 @@ Changing the display currency never changes a link; a link can optionally differ
 - Never invent prices, reviews, ratings, features or affiliate links. A price is added only after checking the official page.
 - Merchant prices stay in USD. Converted amounts are labelled as estimates, with the rate date.
 - News items need a real publication date and a link to the original source.
+
+## The 3D look
+
+- There is exactly **one** WebGL scene. `src/components/scene/SceneBackdrop.tsx` keeps it fixed behind every page; the chip in
+  `src/lib/scene/chip.ts` turns and drifts as you scroll. It loads after the page is idle, renders at a capped frame rate, pauses
+  when the tab is hidden, dims behind reading, and is skipped for reduced motion (one still frame), data saver or no WebGL.
+- Page images are 3D renders made for this site. To regenerate them: `npm run covers`, then open
+  `http://localhost:8124/scripts/covers/index.html` (add `?only=chip,rack` for a subset). The images are written to
+  `public/images/covers/`. Nothing is downloaded; every texture is generated in code.
+- Pages that show a render say it is an illustration, not a photo of a real product.
 
 ## Tests
 

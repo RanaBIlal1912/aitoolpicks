@@ -182,3 +182,25 @@ export const TOOLS: Tool[] = [
 export function getTool(id: string): Tool | undefined {
   return TOOLS.find((t) => t.id === id);
 }
+
+export function categorySlug(c: Category): string {
+  return c.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+export function categoryFromSlug(slug: string): Category | undefined {
+  return CATEGORIES.find((c) => categorySlug(c) === slug);
+}
+
+export const CATEGORY_INFO: Record<Category, { cover: "neural" | "fibre" | "lens" | "board" | "signal" | "rack"; blurb: string }> = {
+  "AI assistants": { cover: "neural", blurb: "Chat assistants that draft, explain, summarise and brainstorm. Start with a free tier and check what they write." },
+  Writing: { cover: "fibre", blurb: "Tools that fix or produce written text, from spelling and tone checks to marketing copy." },
+  Design: { cover: "lens", blurb: "Design tools for everything from quick social posts to full website and app interfaces." },
+  Productivity: { cover: "board", blurb: "Notes, tasks and trackers that keep client work and deadlines organised." },
+  Research: { cover: "signal", blurb: "Tools that help you find and check information, ideally with sources you can open." },
+  "Image generation": { cover: "lens", blurb: "Tools that create images from text descriptions. Check commercial-use terms before using results for clients." },
+  "Hosting & domains": { cover: "rack", blurb: "Domains and hosting for a first website, plus free options worth trying first." },
+};
+
+export function toolsInCategory(c: Category): Tool[] {
+  return TOOLS.filter((t) => t.category === c);
+}

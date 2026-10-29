@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { GUIDES, getArticle, getArticleHtml, articlesInTopic, TOPICS } from "@/data/articles";
+import { GUIDES, getArticle, getArticleParts, articlesInTopic, TOPICS } from "@/data/articles";
+import { coverPath } from "@/data/covers";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import ProseHtml from "@/components/ProseHtml";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleCard, { formatDate } from "@/components/ArticleCard";
+import Cover from "@/components/Cover";
+import ParallaxFrame from "@/components/ParallaxFrame";
+import Toc from "@/components/Toc";
 import JsonLd from "@/components/JsonLd";
 
 export const dynamicParams = false;
@@ -20,7 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = getArticle(slug);
   if (!a) return {};
-  return pageMeta({ title: a.title, description: a.description, path: `/blog/${slug}/`, type: "article", publishedTime: a.date });
+  const m = pageMeta({ title: a.title, description: a.description, path: `/blog/${slug}/`, type: "article", publishedTime: a.date });
+  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(a.cover, "og")), width: 1200, height: 630, alt: a.title }] };
+  return m;
 }
 
 export default async function GuidePage({ params }: Props) {
@@ -28,6 +34,7 @@ export default async function GuidePage({ params }: Props) {
   const a = getArticle(slug);
   if (!a || a.kind !== "guide") notFound();
   const topic = TOPICS.find((t) => t.id === a.topic);
+  const { html, toc } = getArticleParts(a.slug);
   const related = articlesInTopic(a.topic)
     .filter((x) => x.slug !== a.slug)
     .concat(GUIDES.filter((x) => x.topic !== a.topic))
@@ -36,33 +43,53 @@ export default async function GuidePage({ params }: Props) {
   return (
     <>
       <PageHeader
-        eyebrow={a.cat}
+        eyebrow={topic?.label ?? a.cat}
         title={a.title}
         lead={a.description}
         crumbs={[
           { name: "Blog", href: "/blog/" },
+          { name: topic?.label ?? a.cat, href: `/blog/topic/${a.topic}/` },
           { name: a.title, href: `/blog/${slug}/` },
         ]}
       >
-        <p className="mt-5 text-sm text-muted">
-          Updated {a.date} · {a.minutes} min read{topic ? ` · ${topic.label}` : ""}
+        <p className="byline mt-5">
+          By {SITE.name} editors · Updated <time dateTime={a.date}>{formatDate(a.date)}</time> · {a.minutes} min read ·{" "}
+          <Link href={`/blog/topic/${a.topic}/`} className="underline">
+            More on {topic?.label.toLowerCase()}
+          </Link>
         </p>
       </PageHeader>
 
-      <div className="mx-auto max-w-3xl px-5">
-        <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
-          This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. Features and prices
-          change, so check each tool&rsquo;s own site before paying.{" "}
-          <Link href="/affiliate-disclosure/" className="text-soft underline">
-            Disclosure
-          </Link>
-        </p>
-        <div className="mt-8">
-          <ProseHtml html={getArticleHtml(a.slug)} />
+      <div className="mx-auto max-w-6xl px-5">
+        <figure>
+          <ParallaxFrame className="cover-frame aspect-[16/7]" strength={30}>
+            <Cover id={a.cover} sizes="(min-width: 1152px) 1100px, 100vw" priority />
+          </ParallaxFrame>
+          <figcaption className="mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a photo of a real product.</figcaption>
+        </figure>
+
+        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px]">
+          <div className="min-w-0 max-w-3xl">
+            <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
+              This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. Features and
+              prices change, so check each tool&rsquo;s own site before paying.{" "}
+              <Link href="/affiliate-disclosure/" className="text-soft underline">
+                Disclosure
+              </Link>
+            </p>
+            <div className="mt-8">
+              <ProseHtml html={html} />
+            </div>
+          </div>
+          <aside className="hidden lg:block">
+            <div className="sticky top-24">
+              <Toc items={toc} />
+            </div>
+          </aside>
         </div>
       </div>
 
-      <div className="mx-auto mt-20 max-w-6xl px-5">
+      <div className="mx-auto mt-24 max-w-6xl px-5">
         <h2 className="section-title mb-6 text-white">Keep reading</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {related.map((r) => (
@@ -79,6 +106,7 @@ export default async function GuidePage({ params }: Props) {
           description: a.description,
           datePublished: a.date,
           dateModified: SITE.updated,
+          image: absUrl(coverPath(a.cover, "og")),
           mainEntityOfPage: absUrl(`/blog/${slug}/`),
           wordCount: a.words,
           author: { "@type": "Organization", name: SITE.name },

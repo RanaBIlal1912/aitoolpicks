@@ -36,14 +36,18 @@ function Row({ label, a, b }: { label: string; a: React.ReactNode; b: React.Reac
 
 const price = (t: Tool) => (PRICES[t.id] ? <PriceTag id={t.id} compact /> : <span className="text-muted">See the official site</span>);
 const free = (t: Tool) => (t.freePlan ? "Yes, a free plan is available" : <span className="text-muted">Check the official site</span>);
-const review = (t: Tool) =>
-  t.review ? (
-    <Link href={`/reviews/${t.review}/`} className="text-[#8fd3ff] underline">
-      Read our overview
+const review = (t: Tool) => (
+  <span className="flex flex-col gap-1">
+    <Link href={`/tools/${t.id}/`} className="text-[#8fd3ff] underline">
+      Tool page
     </Link>
-  ) : (
-    <span className="text-muted">No overview yet</span>
-  );
+    {t.review && (
+      <Link href={`/reviews/${t.review}/`} className="text-[#8fd3ff] underline">
+        Our overview
+      </Link>
+    )}
+  </span>
+);
 
 export default function CompareMatrix() {
   const [aId, setA] = useState("chatgpt");
@@ -82,7 +86,7 @@ export default function CompareMatrix() {
             <Row label="Best for" a={a.bestFor} b={b.bestFor} />
             <Row label="Free plan" a={free(a)} b={free(b)} />
             <Row label="Paid plan (USD)" a={price(a)} b={price(b)} />
-            <Row label="Our overview" a={review(a)} b={review(b)} />
+            <Row label="Read more" a={review(a)} b={review(b)} />
             <Row
               label="Try it"
               a={<AffLink id={a.id} />}

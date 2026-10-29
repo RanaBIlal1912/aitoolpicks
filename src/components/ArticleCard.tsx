@@ -1,33 +1,42 @@
 import Link from "next/link";
 import type { Article } from "@/data/articles";
+import { TOPICS } from "@/data/topics";
+import Cover from "./Cover";
+
+export function formatDate(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+}
 
 export default function ArticleCard({ a, featured = false }: { a: Article; featured?: boolean }) {
+  const topic = TOPICS.find((t) => t.id === a.topic)?.label ?? a.cat;
   return (
     <Link
       href={a.href}
-      className={`glass card-glow group flex h-full flex-col gap-3 p-6 no-underline transition-transform duration-300 hover:-translate-y-1 ${
-        featured ? "md:flex-row md:items-center md:gap-8 md:p-9" : ""
+      className={`glass card-glow group flex h-full overflow-hidden no-underline transition-transform duration-300 hover:-translate-y-1 ${
+        featured ? "flex-col md:grid md:grid-cols-[1.15fr_1fr]" : "flex-col"
       }`}
-      style={{ ["--hue" as string]: featured ? 255 : 215 }}
+      style={{ ["--hue" as string]: featured ? 255 : 220 }}
     >
-      <span
-        aria-hidden="true"
-        className={`grid shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-electric/30 to-violet/30 ring-1 ring-white/15 ${
-          featured ? "h-20 w-20 text-4xl" : "h-12 w-12 text-2xl"
-        }`}
-      >
-        {a.icon}
-      </span>
-      <div className="flex min-w-0 flex-1 flex-col gap-2">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold uppercase tracking-[0.12em] text-cyan">
-          <span>{a.kind === "comparison" ? "Comparison" : a.cat}</span>
-          <span className="font-medium normal-case tracking-normal text-muted">{a.minutes} min read</span>
+      <div className={`cover-frame !rounded-none !border-0 ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[320px]" : "aspect-[16/9]"}`}>
+        <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+          <Cover id={a.cover} sizes={featured ? "(min-width: 768px) 55vw, 100vw" : undefined} priority={featured} />
         </div>
-        <h3 className={`font-serif font-bold leading-snug tracking-tight text-white ${featured ? "text-2xl md:text-3xl" : "text-xl"}`}>
+      </div>
+      <div className={`flex min-w-0 flex-1 flex-col gap-3 ${featured ? "p-7 md:p-10" : "p-6"}`}>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="kicker">{a.kind === "comparison" ? "Comparison" : topic}</span>
+          <span className="byline">{a.minutes} min read</span>
+        </div>
+        <h3 className={`font-serif font-bold leading-snug tracking-tight text-white ${featured ? "text-2xl md:text-[2rem] md:leading-[1.15]" : "text-xl"}`}>
           {a.title}
         </h3>
-        <p className="text-[0.97rem] text-muted">{a.blurb}</p>
-        <span className="mt-auto pt-3 text-sm font-bold text-soft transition-colors group-hover:text-white">Read the guide →</span>
+        <p className={`text-muted ${featured ? "text-base md:text-lg" : "text-[0.97rem]"}`}>{a.blurb}</p>
+        <div className="mt-auto flex items-center justify-between gap-3 pt-3 text-sm">
+          <time dateTime={a.date} className="byline">
+            {formatDate(a.date)}
+          </time>
+          <span className="font-bold text-soft transition-colors group-hover:text-white">Read →</span>
+        </div>
       </div>
     </Link>
   );

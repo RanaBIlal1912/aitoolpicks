@@ -81,8 +81,9 @@ export default function Header() {
                 aria-current={active ? "page" : undefined}
                 className={`rounded-full px-3.5 py-1.5 text-[0.95rem] font-medium no-underline transition-colors ${
                   active ? "bg-white/10 text-white" : "text-soft hover:bg-white/5 hover:text-white"
-                }`}
+                } ${n.feature && !active ? "ring-1 ring-inset ring-violet/35" : ""}`}
               >
+                {n.feature && <span aria-hidden="true" className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-cyan align-middle shadow-[0_0_8px_#22d3ee]" />}
                 {n.label}
               </Link>
             );

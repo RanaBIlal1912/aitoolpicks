@@ -22,12 +22,12 @@ export function absUrl(p: string): string {
 }
 
 export const NAV = [
-  { href: "/tools/", label: "Tools" },
-  { href: "/reviews/", label: "Reviews" },
-  { href: "/compare/", label: "Compare" },
-  { href: "/news/", label: "AI News" },
-  { href: "/blog/", label: "Blog" },
-  { href: "/about/", label: "About" },
+  { href: "/blog/", label: "Blog", feature: true },
+  { href: "/news/", label: "AI News", feature: true },
+  { href: "/tools/", label: "Tools", feature: false },
+  { href: "/reviews/", label: "Reviews", feature: false },
+  { href: "/compare/", label: "Compare", feature: false },
+  { href: "/about/", label: "About", feature: false },
 ] as const;
 
 export const FOOTER_LINKS = [

@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check": "npm run typecheck && npm run test && npm run build",
-    "postbuild": "node scripts/legacy-redirects.mjs"
+    "postbuild": "node scripts/legacy-redirects.mjs",
+    "covers": "vite --config scripts/covers/vite.config.mts"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

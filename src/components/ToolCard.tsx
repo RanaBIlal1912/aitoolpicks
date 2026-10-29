@@ -48,11 +48,10 @@ export default function ToolCard({ tool, showPrice = true }: { tool: Tool; showP
 
       <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
         <AffLink id={tool.id} />
-        {tool.review && (
-          <Link href={`/reviews/${tool.review}/`} className="btn-ghost btn-sm">
-            Read overview
-          </Link>
-        )}
+        <Link href={`/tools/${tool.id}/`} className="btn-ghost btn-sm">
+          Details
+          <span className="sr-only"> about {tool.name}</span>
+        </Link>
       </div>
     </TiltCard>
   );

@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { COMPARISONS, getComparison } from "@/data/compare";
 import { getArticle, getArticleHtml } from "@/data/articles";
+import { coverPath } from "@/data/covers";
+import Cover from "@/components/Cover";
+import ParallaxFrame from "@/components/ParallaxFrame";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
@@ -22,7 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getComparison(slug);
   const a = c && getArticle(c.article);
   if (!a) return {};
-  return pageMeta({ title: a.title, description: a.description, path: `/compare/${slug}/`, type: "article", publishedTime: a.date });
+  const m = pageMeta({ title: a.title, description: a.description, path: `/compare/${slug}/`, type: "article", publishedTime: a.date });
+  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(a.cover, "og")), width: 1200, height: 630, alt: a.title }] };
+  return m;
 }
 
 export default async function ComparisonPage({ params }: Props) {
@@ -46,6 +51,12 @@ export default async function ComparisonPage({ params }: Props) {
           Updated {a.date} · {a.minutes} min read
         </p>
       </PageHeader>
+      <div className="mx-auto max-w-6xl px-5">
+        <ParallaxFrame className="cover-frame aspect-[16/6]" strength={26}>
+          <Cover id={a.cover} sizes="100vw" priority />
+        </ParallaxFrame>
+        <p className="mb-8 mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a photo of a real product.</p>
+      </div>
       <div className="mx-auto max-w-3xl px-5">
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
           This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. Features and prices
@@ -72,6 +83,7 @@ export default async function ComparisonPage({ params }: Props) {
           description: a.description,
           datePublished: a.date,
           dateModified: SITE.updated,
+          image: absUrl(coverPath(a.cover, "og")),
           mainEntityOfPage: absUrl(`/compare/${slug}/`),
           author: { "@type": "Organization", name: SITE.name },
           publisher: { "@type": "Organization", name: SITE.name },

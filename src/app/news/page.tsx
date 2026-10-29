@@ -1,19 +1,25 @@
 import { pageMeta } from "@/lib/meta";
-import { NEWS, NEWS_CHECKED } from "@/data/news";
+import { NEWS, NEWS_CHECKED, NEWS_TAGS } from "@/data/news";
+import { coverPath } from "@/data/covers";
+import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import NewsCard, { formatDate } from "@/components/NewsCard";
+import NewsFeed from "@/components/NewsFeed";
 import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 
-export const metadata = pageMeta({
+const meta = pageMeta({
   title: "AI News: dated updates with original source links",
   description:
     "Short AI news summaries from official company announcements, each with its publication date and a link to the original source.",
   path: "/news/",
 });
+meta.openGraph = { ...meta.openGraph, images: [{ url: absUrl(coverPath("signal", "og")), width: 1200, height: 630 }] };
+export const metadata = meta;
 
 export default function NewsPage() {
   const items = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
+  const [top, ...rest] = items;
   return (
     <>
       <PageHeader
@@ -29,15 +35,16 @@ export default function NewsPage() {
       <div className="mx-auto max-w-6xl px-5">
         <p className="glass rounded-2xl border-l-4 border-l-cyan px-5 py-3 text-sm text-muted">
           Items are added by hand after reading the original source. Last checked {formatDate(NEWS_CHECKED)}. This is a short
-          list, not a complete feed, and we do not repeat rumours.
+          list, not a complete feed, and we do not repeat rumours or unsourced reports.
         </p>
-        <ul className="mt-8 grid gap-6 md:grid-cols-2">
-          {items.map((n, i) => (
-            <Reveal as="li" key={n.url} delay={(i % 2) * 0.06}>
-              <NewsCard n={n} />
-            </Reveal>
-          ))}
-        </ul>
+        <Reveal as="section" className="mt-8">
+          <p className="kicker mb-4">Top story</p>
+          <NewsCard n={top} featured />
+        </Reveal>
+        <Reveal as="section" className="mt-14">
+          <h2 className="section-title mb-6 text-white">More from the last few weeks</h2>
+          <NewsFeed items={rest} tags={NEWS_TAGS} />
+        </Reveal>
       </div>
       <JsonLd
         data={{

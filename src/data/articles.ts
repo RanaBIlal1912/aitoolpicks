@@ -4,17 +4,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { COMPARISONS } from "./compare";
 import { withBase } from "@/lib/site";
+import type { CoverId } from "./covers";
 
-export type TopicId = "freelancing" | "writing" | "design" | "business" | "websites" | "students";
+import { COVER_BY_TOPIC, TOPICS, type TopicId } from "./topics";
 
-export const TOPICS: { id: TopicId; label: string; blurb: string }[] = [
-  { id: "freelancing", label: "Freelancing", blurb: "Find clients, write proposals and get paid." },
-  { id: "writing", label: "AI writing", blurb: "Assistants, proofreading and prompts." },
-  { id: "design", label: "Design", blurb: "Clean visuals without design skills." },
-  { id: "business", label: "Small business", blurb: "A small stack that does the work." },
-  { id: "websites", label: "Websites & hosting", blurb: "Portfolios, domains and first sites." },
-  { id: "students", label: "Students", blurb: "Study help and honest AI use." },
-];
+export { COVER_BY_TOPIC, TOPICS };
+export type { TopicId };
 
 const TOPIC_BY_CAT: Record<string, TopicId> = {
   "Start here": "freelancing",
@@ -32,6 +27,7 @@ type Raw = { slug: string; title: string; description: string; icon: string; cat
 
 export type Article = Raw & {
   topic: TopicId;
+  cover: CoverId;
   kind: "guide" | "comparison";
   date: string;
   words: number;
@@ -56,9 +52,11 @@ export function articleHref(slug: string): string {
 
 export const ARTICLES: Article[] = RAW.map((a) => {
   const words = wordCount(fs.readFileSync(path.join(ROOT, "content", "articles", `${a.slug}.html`), "utf-8"));
+  const topic = TOPIC_BY_CAT[a.cat] ?? "freelancing";
   return {
     ...a,
-    topic: TOPIC_BY_CAT[a.cat] ?? "freelancing",
+    topic,
+    cover: COVER_BY_TOPIC[topic],
     kind: COMPARISON_SLUGS.has(a.slug) ? "comparison" : "guide",
     date: PUBLISHED,
     words,
@@ -79,14 +77,47 @@ const STATIC_PAGES: Record<string, string> = {
   "disclosure.html": "/affiliate-disclosure/",
 };
 
-/** Read an article's HTML and point its old `slug.html` links at the new routes. */
-export function getArticleHtml(slug: string): string {
-  const html = fs.readFileSync(path.join(ROOT, "content", "articles", `${slug}.html`), "utf-8");
-  return html.replace(/href="([a-z0-9-]+\.html)"/g, (m, file: string) => {
+function slugify(t: string): string {
+  return t
+    .toLowerCase()
+    .replace(/<[^>]+>/g, "")
+    .replace(/&[a-z]+;/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export type TocItem = { id: string; text: string };
+
+/** Read an article's HTML, point its old `slug.html` links at the new routes and give each h2 an anchor id. */
+export function getArticleParts(slug: string): { html: string; toc: TocItem[] } {
+  let html = fs.readFileSync(path.join(ROOT, "content", "articles", `${slug}.html`), "utf-8");
+  html = html.replace(/href="([a-z0-9-]+\.html)"/g, (m, file: string) => {
     if (STATIC_PAGES[file]) return `href="${withBase(STATIC_PAGES[file])}"`;
     const s = file.replace(/\.html$/, "");
     return getArticle(s) ? `href="${withBase(articleHref(s))}"` : m;
   });
+  const toc: TocItem[] = [];
+  const seen = new Set<string>();
+  html = html.replace(/<h2>(.*?)<\/h2>/g, (_m, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&rsquo;/g, "’");
+    let id = slugify(inner) || "section";
+    while (seen.has(id)) id += "-2";
+    seen.add(id);
+    toc.push({ id, text });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+  return { html, toc };
+}
+
+export function getArticleHtml(slug: string): string {
+  return getArticleParts(slug).html;
+}
+
+/** Articles that link to a tool through a `data-aff` button, for "mentioned in" lists. */
+export function articlesMentioning(toolId: string): Article[] {
+  return ARTICLES.filter((a) =>
+    fs.readFileSync(path.join(ROOT, "content", "articles", `${a.slug}.html`), "utf-8").includes(`data-aff="${toolId}"`),
+  );
 }
 
 export function articlesInTopic(id: TopicId): Article[] {

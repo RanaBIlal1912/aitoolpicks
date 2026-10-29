@@ -11,6 +11,10 @@ import AffLink from "@/components/AffLink";
 import PriceTag from "@/components/PriceTag";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/Reveal";
+import Cover from "@/components/Cover";
+import ParallaxFrame from "@/components/ParallaxFrame";
+import { coverPath } from "@/data/covers";
+import { CATEGORY_INFO } from "@/data/tools";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -23,7 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const r = getReview(slug);
   if (!r) return {};
-  return pageMeta({ title: r.title, description: r.summary.slice(0, 158), path: `/reviews/${slug}/`, type: "article", publishedTime: SITE.updated });
+  const m = pageMeta({ title: r.title, description: r.summary.slice(0, 158), path: `/reviews/${slug}/`, type: "article", publishedTime: SITE.updated });
+  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath("chip", "og")), width: 1200, height: 630, alt: r.title }] };
+  return m;
 }
 
 function List({ title, items, tone }: { title: string; items: string[]; tone: "good" | "bad" }) {
@@ -69,7 +75,11 @@ export default async function ReviewPage({ params }: Props) {
         </div>
       </PageHeader>
 
-      <div className="mx-auto max-w-4xl px-5">
+      <div className="mx-auto max-w-5xl px-5">
+        <ParallaxFrame className="cover-frame aspect-[16/6]" strength={26}>
+          <Cover id={CATEGORY_INFO[tool.category].cover === "neural" ? "chip" : CATEGORY_INFO[tool.category].cover} sizes="100vw" priority />
+        </ParallaxFrame>
+        <p className="mb-8 mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a screenshot of {tool.name}.</p>
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
           This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. This is an editorial
           overview, not lab testing.{" "}
@@ -129,6 +139,9 @@ export default async function ReviewPage({ params }: Props) {
         </Reveal>
 
         <Reveal as="section" className="mt-12">
+          <p className="mb-4 text-sm text-muted">
+            More: <Link href={`/tools/${tool.id}/`} className="underline">{tool.name} tool page</Link>
+          </p>
           <div className="glass relative overflow-hidden rounded-[26px] p-8">
             <div className="orb -right-8 -top-8 h-40 w-40 bg-electric" />
             <h2 className="relative text-xl font-bold text-white">Our verdict</h2>
@@ -151,6 +164,7 @@ export default async function ReviewPage({ params }: Props) {
           description: r.summary,
           datePublished: SITE.updated,
           dateModified: SITE.updated,
+          image: absUrl(coverPath("chip", "og")),
           mainEntityOfPage: absUrl(`/reviews/${slug}/`),
           author: { "@type": "Organization", name: SITE.name },
           publisher: { "@type": "Organization", name: SITE.name },
