@@ -50,3 +50,7 @@ Reproduce: serve `out/` under `/aitoolpicks/` and run `npx lighthouse http://loc
 | Blog, mobile | 80 | 100 | 100 | 100 | 1.7 s | 740 ms |
 
 Mobile performance is below 90 on every page tested. LCP and layout shift are good (CLS 0); the gap is total blocking time. The trace attributes it to the React runtime chunk (hydration of the page) under Lighthouse's 4x/6x CPU slowdown. Repeat runs of the same page differ by up to 11 points, so single numbers are indicative. Not fixed yet.
+
+### After skipping layout for off-screen list items (commit fa3183c), mobile, two runs each
+
+Tools 81 and 84 (was 69 to 80), Blog 92 and 81 (was 80), News 83 and 80 (was 78). Profile of Tools: unthrottled, the main thread was blocked about 230 ms, mostly the first layout (about 210 ms) and one 120 ms script run; hydration tasks were short. The 90 target is met only on some Blog runs. Home mobile (71) has not been profiled separately.
