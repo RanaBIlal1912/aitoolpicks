@@ -35,6 +35,15 @@
   "source": "https://cursor.com/pricing",
   "checked": "2026-10-29"
  },
+ "deepl": {
+  "plan": "Individual",
+  "amount": 7.49,
+  "currency": "EUR",
+  "per": "month",
+  "billing": "billed annually",
+  "source": "https://www.deepl.com/en/pricing",
+  "checked": "2026-10-30"
+ },
  "devin": {
   "plan": "Pro",
   "amount": 20,

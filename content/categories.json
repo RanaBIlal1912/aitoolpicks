@@ -114,6 +114,10 @@
       {
         "slug": "presentations",
         "label": "Presentations"
+      },
+      {
+        "slug": "translation",
+        "label": "Translation"
       }
     ]
   },

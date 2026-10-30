@@ -373,6 +373,54 @@
   ]
  },
  {
+  "id": "deepl",
+  "name": "DeepL",
+  "vendor": "DeepL",
+  "category": "writing",
+  "subcategory": "translation",
+  "categories": [
+   "writing"
+  ],
+  "tagline": "AI translation and writing assistant",
+  "description": "DeepL translates text and documents between languages and offers a Write Pro add-on for writing assistance, with individual, team and business plans.",
+  "bestFor": "Professionals and Teams",
+  "officialUrl": "https://www.deepl.com",
+  "hue": 215,
+  "keyFeature": "Text and document translation",
+  "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.deepl.com/en/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Individual",
+    "price": "€7.49/mo billed yearly"
+   },
+   {
+    "name": "Team",
+    "price": "€24.99/user/mo billed yearly"
+   },
+   {
+    "name": "Business",
+    "price": "€49.99/user/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "descript",
   "name": "Descript",
   "vendor": "Descript",
@@ -607,6 +655,51 @@
    {
     "name": "Enterprise (Full seat)",
     "price": "$90/seat/mo billed yearly"
+   }
+  ]
+ },
+ {
+  "id": "fireflies",
+  "name": "Fireflies.ai",
+  "vendor": "Fireflies.ai",
+  "category": "productivity",
+  "subcategory": "meetings",
+  "categories": [
+   "productivity",
+   "audio"
+  ],
+  "tagline": "AI meeting notetaker and transcription",
+  "description": "Fireflies.ai records and transcribes meetings and audio files, and its paid plans add integrations, analytics and team features.",
+  "bestFor": "Professionals and Teams",
+  "officialUrl": "https://fireflies.ai",
+  "hue": 285,
+  "keyFeature": "Meeting and audio file transcription",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://fireflies.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "See note"
+   },
+   {
+    "name": "Pro",
+    "price": "See note"
+   },
+   {
+    "name": "Business",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
    }
   ]
  },
@@ -1809,6 +1902,47 @@
    {
     "name": "Fancy",
     "price": "$95/mo monthly · $76/mo yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "replicate",
+  "name": "Replicate",
+  "vendor": "Replicate",
+  "category": "models",
+  "subcategory": "inference",
+  "categories": [
+   "models",
+   "coding"
+  ],
+  "tagline": "Run open and custom AI models through an API, billed by use",
+  "description": "Replicate lets developers run public and private machine-learning models through an API and pay as they go, by run time, output or tokens.",
+  "bestFor": "Developers and Teams",
+  "officialUrl": "https://replicate.com",
+  "hue": 340,
+  "keyFeature": "Public model library",
+  "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://replicate.com/pricing",
+  "plans": [
+   {
+    "name": "Public models",
+    "price": "See note"
+   },
+   {
+    "name": "Hardware (private models and fine-tunes)",
+    "price": "See note"
    },
    {
     "name": "Enterprise",

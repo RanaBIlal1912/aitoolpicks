@@ -1,0 +1,107 @@
+{
+  "id": "fireflies",
+  "name": "Fireflies.ai",
+  "vendor": "Fireflies.ai",
+  "website": "https://fireflies.ai",
+  "category": "productivity",
+  "categories": [
+    "productivity",
+    "audio"
+  ],
+  "subcategory": "meetings",
+  "tagline": "AI meeting notetaker and transcription",
+  "description": "Fireflies.ai records and transcribes meetings and audio files, and its paid plans add integrations, analytics and team features.",
+  "features": [
+    "Meeting and audio file transcription",
+    "Meeting bot and Chrome extension",
+    "Zapier and app integrations on higher tiers",
+    "Analytics and private channels (Business)"
+  ],
+  "useCases": [
+    "Recording and transcribing meetings",
+    "Searching what was said in past calls"
+  ],
+  "audience": [
+    "Professionals",
+    "Teams"
+  ],
+  "strengths": [
+    "A Free plan is listed",
+    "The FAQ says there are no monthly rate limits on the meeting bot or Chrome extension"
+  ],
+  "limitations": [
+    "Prices and Free-plan limits were not readable on the page we fetched",
+    "Some features (API, dialers, bulk uploads) have rate limits"
+  ],
+  "alternatives": [
+    "otter",
+    "granola"
+  ],
+  "hue": 285,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://fireflies.ai/pricing",
+    "free": {
+      "available": true,
+      "details": "A Free plan is listed; its limits are not stated in the text we could read."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "Price and limits not stated in the text we could read"
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "Price not stated in the text we could read; billed per seat"
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "Price not stated in the text we could read; adds higher team-pooled API limits, analytics, private channels and video recording"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per user per month",
+        "custom": true,
+        "note": "Contact the company; HIPAA BAA and FERPA DSA are available with Private Storage"
+      }
+    ],
+    "regional": "Currency and regional pricing: not stated in the text we could read. Check the official page for current prices.",
+    "notes": [
+      "The official page said paid plans are charged per seat and to contact the company for more than 50 members."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://fireflies.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://fireflies.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Chrome extension"
+  ],
+  "added": "2026-10-30"
+}

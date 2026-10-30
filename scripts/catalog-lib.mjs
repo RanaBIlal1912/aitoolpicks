@@ -84,6 +84,8 @@ export function validateTool(t, ctx) {
       if (!isStr(p.blockedReason)) at("unverified pricing needs blockedReason");
     }
   }
+  if (p.trial !== undefined && !isStr(p.trial, 5)) at("pricing.trial must be a sentence of text");
+  if (p.free?.details !== undefined && !isStr(p.free.details, 5)) at("pricing.free.details must be text");
   if (p.reference) {
     const r = p.reference;
     if (!(typeof r.amount === "number" && r.amount >= 0) || !CURRENCIES.includes(r.currency) || !isStr(r.plan)) at("bad pricing.reference");

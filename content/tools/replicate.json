@@ -1,0 +1,98 @@
+{
+  "id": "replicate",
+  "name": "Replicate",
+  "vendor": "Replicate",
+  "website": "https://replicate.com",
+  "category": "models",
+  "categories": [
+    "models",
+    "coding"
+  ],
+  "subcategory": "inference",
+  "tagline": "Run open and custom AI models through an API, billed by use",
+  "description": "Replicate lets developers run public and private machine-learning models through an API and pay as they go, by run time, output or tokens.",
+  "features": [
+    "Public model library",
+    "Private and fine-tuned models",
+    "Per-second hardware billing",
+    "Per-output pricing for many image, video and language models"
+  ],
+  "useCases": [
+    "Adding image, video or language models to an app",
+    "Running custom or fine-tuned models without managing servers"
+  ],
+  "audience": [
+    "Developers",
+    "Teams"
+  ],
+  "strengths": [
+    "Pay-per-use billing; the page says you only pay for what you use",
+    "Published example prices per model and per hardware type"
+  ],
+  "limitations": [
+    "A free tier and a minimum spend are not stated on the page we read",
+    "Private models are billed for all time an instance is online, including idle time"
+  ],
+  "alternatives": [
+    "together",
+    "openrouter",
+    "huggingface"
+  ],
+  "hue": 340,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "usage-based",
+    "checked": "2026-10-30",
+    "source": "https://replicate.com/pricing",
+    "plans": [
+      {
+        "name": "Public models",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Billed mostly by run time, some by input and output. Examples: flux-schnell $3.00 per thousand output images; flux-dev $0.025 per output image; flux-1.1-pro $0.04 per output image"
+      },
+      {
+        "name": "Hardware (private models and fine-tunes)",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Per second of use. Examples: cpu $0.000100 per second ($0.36 per hour); gpu-t4 $0.000225 per second ($0.81 per hour); gpu-a100-large $0.001400 per second ($5.04 per hour); gpu-h100 $0.001525 per second ($5.49 per hour)"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Dedicated account manager, higher GPU limits and committed-spend capacity are arranged through sales"
+      }
+    ],
+    "api": {
+      "summary": "Example per-run prices: deepseek-r1 $3.75 per million input tokens and $0.01 per thousand output tokens; ideogram-v3-quality $0.09 per output image; wan-2.1-i2v-480p $0.09 per second of output video.",
+      "source": "https://replicate.com/pricing"
+    },
+    "regional": "Prices are shown in USD with a '$' sign. Tax and regional pricing: not stated."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://replicate.com/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://replicate.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "API",
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

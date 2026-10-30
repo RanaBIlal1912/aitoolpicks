@@ -35,6 +35,10 @@
   "Deepgram",
   "https://deepgram.com"
  ],
+ "deepl": [
+  "DeepL",
+  "https://www.deepl.com"
+ ],
  "descript": [
   "Descript",
   "https://www.descript.com"
@@ -54,6 +58,10 @@
  "figma": [
   "Figma",
   "https://www.figma.com"
+ ],
+ "fireflies": [
+  "Fireflies.ai",
+  "https://fireflies.ai"
  ],
  "firefly": [
   "Adobe Firefly",
@@ -170,6 +178,10 @@
  "pika": [
   "Pika",
   "https://pika.art"
+ ],
+ "replicate": [
+  "Replicate",
+  "https://replicate.com"
  ],
  "replit": [
   "Replit",

@@ -1,0 +1,141 @@
+{
+  "id": "deepl",
+  "name": "DeepL",
+  "vendor": "DeepL",
+  "website": "https://www.deepl.com",
+  "category": "writing",
+  "categories": [
+    "writing"
+  ],
+  "subcategory": "translation",
+  "tagline": "AI translation and writing assistant",
+  "description": "DeepL translates text and documents between languages and offers a Write Pro add-on for writing assistance, with individual, team and business plans.",
+  "features": [
+    "Text and document translation",
+    "Glossaries and saved translations",
+    "Write Pro writing assistant (paid add-on)",
+    "API tab on the pricing page"
+  ],
+  "useCases": [
+    "Translating documents and messages",
+    "Keeping consistent terminology with glossaries"
+  ],
+  "audience": [
+    "Professionals",
+    "Teams",
+    "Businesses"
+  ],
+  "strengths": [
+    "A free version is listed",
+    "Individual and Team plans list a 30-day free trial"
+  ],
+  "limitations": [
+    "The free version is capped (50,000 characters per month, 1 file translation per month, files up to 5 MB)",
+    "Monthly-billing prices and API prices are not stated on the page we read"
+  ],
+  "alternatives": [
+    "grammarly",
+    "jasper"
+  ],
+  "hue": 215,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://www.deepl.com/en/pricing",
+    "free": {
+      "available": true,
+      "details": "A free version is listed with 50,000 characters per user per month, 1 file translation per month, 1 glossary, 1 saved translation and files up to 5 MB."
+    },
+    "trial": "Individual and Team show a 30-day free trial (Free for 30 days, cancel anytime). Business shows no free trial.",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "EUR",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "50,000 characters per month",
+          "1 file translation per month",
+          "Files up to 5 MB"
+        ]
+      },
+      {
+        "name": "Individual",
+        "audience": "individual",
+        "currency": "EUR",
+        "unit": "per month",
+        "annual": 7.49,
+        "billing": "Billed annually",
+        "highlights": [
+          "300,000 characters per month",
+          "3 file translations per month",
+          "1 glossary"
+        ]
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "EUR",
+        "unit": "per user per month",
+        "annual": 24.99,
+        "billing": "Billed annually",
+        "highlights": [
+          "1,000,000 characters per user per month",
+          "20 file translations per month",
+          "5 glossaries"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "EUR",
+        "unit": "per user per month",
+        "annual": 49.99,
+        "billing": "Billed annually",
+        "highlights": [
+          "Unlimited characters (fair usage policy)",
+          "100 file translations per month",
+          "Unlimited glossaries (fair usage policy)"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "EUR",
+        "unit": "per user per month",
+        "custom": true,
+        "note": "Custom pricing; contact sales"
+      }
+    ],
+    "regional": "Prices were shown in EUR with Germany selected and include VAT where the page says so; other countries may see different prices. Monthly-billing prices: not stated.",
+    "reference": {
+      "plan": "Individual",
+      "amount": 7.49,
+      "currency": "EUR",
+      "per": "month",
+      "billing": "billed annually"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.deepl.com/en/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.deepl.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

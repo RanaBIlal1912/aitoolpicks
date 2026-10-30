@@ -116,6 +116,19 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "deepl": {
+    "file": "deepl.svg",
+    "website": "https://www.deepl.com",
+    "source": "https://www.deepl.com/icon?96dd39650c8ded7a",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 2099,
+    "sha256": "e92ac3065c312199",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "descript": {
     "file": "descript.svg",
     "website": "https://www.descript.com",
@@ -181,6 +194,19 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "fireflies": {
+    "file": "fireflies.png",
+    "website": "https://fireflies.ai",
+    "source": "https://fireflies.ai/icon.png?icon.3227koqampzl_.png",
+    "kind": "icon",
+    "format": "png",
+    "width": 512,
+    "bytes": 86298,
+    "sha256": "ae4bf3e2208a6e3e",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "firefly": {
     "file": "firefly.ico",
     "website": "https://www.adobe.com/products/firefly.html",
@@ -195,18 +221,30 @@
     "checked": "2026-10-29"
   },
   "gamma": {
-    "file": null,
+    "file": "gamma.png",
     "website": "https://gamma.app",
-    "status": "missing",
-    "notes": "homepage 403",
-    "checked": "2026-10-29"
+    "source": "https://static.gamma.app/favicons/apple-touch-icon.png",
+    "kind": "apple-touch-icon",
+    "format": "png",
+    "width": 180,
+    "bytes": 19118,
+    "sha256": "5b0607f9aace88ab",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "gemini": {
-    "file": null,
+    "file": "gemini.png",
     "website": "https://gemini.google.com",
-    "status": "missing",
-    "notes": "homepage UND_ERR_HEADERS_OVERFLOW",
-    "checked": "2026-10-29"
+    "source": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "kind": "icon",
+    "format": "png",
+    "width": 512,
+    "bytes": 61823,
+    "sha256": "5e7cfecaa53f4f65",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "github-copilot": {
     "file": "github-copilot.svg",
@@ -545,6 +583,19 @@
     "status": "ok",
     "origin": "official-site",
     "checked": "2026-10-29"
+  },
+  "replicate": {
+    "file": "replicate.png",
+    "website": "https://replicate.com",
+    "source": "https://static.replicateassets.com/fe/0bb9cf627d9df92c8daaa9880fd1c329c4b46d70/favicon-CKiqAkf2.png",
+    "kind": "icon",
+    "format": "png",
+    "width": 512,
+    "bytes": 40197,
+    "sha256": "f37c94aa13c29697",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "replit": {
     "file": "replit.png",
