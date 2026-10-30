@@ -1,0 +1,113 @@
+{
+  "id": "scite",
+  "name": "Scite",
+  "vendor": "Scite",
+  "website": "https://scite.ai",
+  "category": "research",
+  "categories": [
+    "research"
+  ],
+  "subcategory": "papers",
+  "tagline": "Search scientific papers and see how they cite each other",
+  "description": "Scite is an AI-powered platform that helps researchers discover and evaluate scientific literature, using Smart Citations to show whether studies support or contradict a claim.",
+  "features": [
+    "Assistant and search across scientific literature",
+    "Smart Citations showing whether studies support or contradict a claim",
+    "Paper collections (up to 1,000 on Basic, 10,000 on Pro)",
+    "API access and MCP credits on paid plans"
+  ],
+  "useCases": [
+    "Checking how a paper has been cited",
+    "Finding supporting or contradicting evidence for a claim"
+  ],
+  "audience": [
+    "Researchers",
+    "Students",
+    "Institutions"
+  ],
+  "strengths": [
+    "Citation context rather than just citation counts",
+    "A 7-day free trial on Basic and Pro"
+  ],
+  "limitations": [
+    "No free plan was stated on the pricing page",
+    "Prices are shown billed yearly; the monthly-billing price is not stated"
+  ],
+  "alternatives": [
+    "elicit",
+    "consensus",
+    "notebooklm"
+  ],
+  "hue": 200,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "free-trial",
+    "checked": "2026-10-30",
+    "source": "https://scite.ai/pricing",
+    "trial": "Basic and Pro list a 7-day free trial that lets you explore all premium features without commitment.",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 12,
+        "billing": "$12 per month, billed yearly (the page shows a $96 saving)",
+        "highlights": [
+          "Full Assistant and Search access",
+          "250 MCP credits per month",
+          "Collections up to 1,000 papers"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 40,
+        "billing": "$40 per month, billed yearly (the page shows a $120 saving)",
+        "highlights": [
+          "API access, including a $60 API credit shown as limited time",
+          "2,500 MCP credits per month",
+          "Collections up to 10,000 papers"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Custom pricing based on users and usage; collections up to 50,000 papers and unlimited users with pooled usage"
+      }
+    ],
+    "regional": "Prices were shown with a '$' sign. Tax and regional pricing: not stated.",
+    "reference": {
+      "plan": "Basic",
+      "amount": 12,
+      "currency": "USD",
+      "per": "month",
+      "billing": "billed annually"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://scite.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://scite.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

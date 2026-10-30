@@ -10,6 +10,8 @@ export type NewsItem = {
   slug: string;
   /** Separates a new product or model from an update to something that already existed. */
   kind: NewsKind;
+  /** Editorial weight, 1 to 3. Decides which stories lead the News page; it is not the same as being newest. */
+  importance: 1 | 2 | 3;
   title: string;
   date: string; // ISO date from the source
   source: string;
@@ -28,6 +30,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "gemini-app-edit-files",
     kind: "Feature update",
+    importance: 2,
     title: "Gemini app lets you create, preview and edit files in a chat",
     date: "2026-10-29",
     source: "Google (The Keyword)",
@@ -41,6 +44,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "mistral-large-4-on-hugging-face",
     kind: "Model release",
+    importance: 3,
     title: "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
     date: "2026-10-29",
     source: "Hugging Face",
@@ -55,6 +59,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "project-protostar",
     kind: "Research",
+    importance: 1,
     title: "Announcing Project ProtoStar: making publicly funded science AI-ready",
     date: "2026-10-29",
     source: "Hugging Face",
@@ -69,6 +74,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "ai-for-science-expands",
     kind: "Company announcement",
+    importance: 1,
     title: "AI for Science expands to foundations and research institutions",
     date: "2026-10-28",
     source: "Anthropic",
@@ -82,6 +88,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "claude-drug-development-progress",
     kind: "Research",
+    importance: 1,
     title: "Early progress on accelerating drug development with Claude",
     date: "2026-10-27",
     source: "Anthropic",
@@ -95,6 +102,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "anthropic-gsa-partnership",
     kind: "Company announcement",
+    importance: 2,
     title: "Expanding our partnership with GSA to bring Claude to all levels of government",
     date: "2026-10-27",
     source: "Anthropic",
@@ -108,6 +116,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "anthropic-files-s1",
     kind: "Company announcement",
+    importance: 2,
     title: "Anthropic files S-1 with the SEC for proposed initial public offering",
     date: "2026-10-26",
     source: "Anthropic",
@@ -122,6 +131,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "agent-skills-donated-to-foundation",
     kind: "Open standard",
+    importance: 1,
     title: "Donating Agent Skills to the Agentic AI Foundation",
     date: "2026-10-22",
     source: "Anthropic",
@@ -136,6 +146,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "anthropic-singapore-office",
     kind: "Company announcement",
+    importance: 1,
     title: "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
     date: "2026-10-14",
     source: "Anthropic",
@@ -150,6 +161,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "anthropic-usage-policy-2026",
     kind: "Policy update",
+    importance: 1,
     title: "2026 Usage Policy update",
     date: "2026-10-08",
     source: "Anthropic",
@@ -163,6 +175,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "granola-adds-dictation",
     kind: "Feature update",
+    importance: 1,
     title: "Granola crunches up a dictation feature to compete with Wispr",
     date: "2026-10-29",
     source: "TechCrunch",
@@ -177,6 +190,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "mistral-releases-trillion-parameter-weights",
     kind: "Model release",
+    importance: 1,
     title: "Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
     date: "2026-10-29",
     source: "TechCrunch",
@@ -191,6 +205,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "anthropic-ai-spend-tools",
     kind: "Feature update",
+    importance: 1,
     title: "Anthropic just launched tools to show companies what their AI spending is buying",
     date: "2026-10-28",
     source: "TechCrunch",
@@ -205,6 +220,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "chrome-autofill-reads-gmail",
     kind: "Feature update",
+    importance: 1,
     title: "Chrome's AI-powered Autofill can now dig through your Gmail to fill out forms",
     date: "2026-10-28",
     source: "TechCrunch",
@@ -217,6 +233,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "google-opens-gemini-and-search-to-apps",
     kind: "Feature update",
+    importance: 1,
     title: "As AI agents reshape the web, Google opens Gemini and Search to more apps",
     date: "2026-10-28",
     source: "TechCrunch",
@@ -231,6 +248,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "nvidia-open-transcription-model",
     kind: "Model release",
+    importance: 1,
     title: "Voice AI in vogue: Nvidia releases new open transcription model",
     date: "2026-10-28",
     source: "TechCrunch",
@@ -245,6 +263,7 @@ export const NEWS: NewsItem[] = [
   {
     slug: "genie-4-world-model",
     kind: "Research",
+    importance: 1,
     title: "Google's Genie 4 world model adds audio, more realistic worlds and real-time steering",
     date: "2026-10-27",
     source: "TechCrunch",
@@ -267,6 +286,10 @@ export function getNews(slug: string): NewsItem | undefined {
 
 export function newsForTool(id: string): NewsItem[] {
   return NEWS.filter((n) => n.tools?.includes(id)).sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function topStories(n = 4): NewsItem[] {
+  return [...NEWS].sort((a, b) => b.importance - a.importance || b.date.localeCompare(a.date)).slice(0, n);
 }
 
 export function monthOf(n: NewsItem): string {

@@ -8,6 +8,15 @@
   "source": "https://bolt.new/pricing",
   "checked": "2026-10-29"
  },
+ "chatgpt": {
+  "plan": "Plus",
+  "amount": 20,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://chatgpt.com/pricing",
+  "checked": "2026-10-30"
+ },
  "claude": {
   "plan": "Pro",
   "amount": 20,
@@ -89,6 +98,15 @@
   "source": "https://www.adobe.com/products/firefly/plans.html",
   "checked": "2026-10-29"
  },
+ "gamma": {
+  "plan": "Plus",
+  "amount": 12,
+  "currency": "USD",
+  "per": "seat per month",
+  "billing": "monthly",
+  "source": "https://gamma.app/pricing",
+  "checked": "2026-10-30"
+ },
  "github-copilot": {
   "plan": "Pro",
   "amount": 10,
@@ -143,6 +161,15 @@
   "source": "https://huggingface.co/pricing",
   "checked": "2026-10-29"
  },
+ "ideogram": {
+  "plan": "Plus",
+  "amount": 20,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://ideogram.ai/pricing",
+  "checked": "2026-10-30"
+ },
  "jasper": {
   "plan": "Pro",
   "amount": 69,
@@ -160,6 +187,15 @@
   "billing": "monthly",
   "source": "https://lumalabs.ai/pricing",
   "checked": "2026-10-29"
+ },
+ "midjourney": {
+  "plan": "Basic",
+  "amount": 10,
+  "currency": "USD",
+  "per": "month",
+  "billing": "monthly",
+  "source": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+  "checked": "2026-10-30"
  },
  "mistral": {
   "plan": "Pro",
@@ -215,6 +251,15 @@
   "source": "https://pika.art/pricing",
   "checked": "2026-10-29"
  },
+ "quillbot": {
+  "plan": "Premium",
+  "amount": 4.17,
+  "currency": "USD",
+  "per": "month",
+  "billing": "billed annually",
+  "source": "https://quillbot.com/premium",
+  "checked": "2026-10-30"
+ },
  "runway": {
   "plan": "Standard",
   "amount": 15,
@@ -223,6 +268,15 @@
   "billing": "monthly",
   "source": "https://runway.com/pricing",
   "checked": "2026-10-29"
+ },
+ "scite": {
+  "plan": "Basic",
+  "amount": 12,
+  "currency": "USD",
+  "per": "month",
+  "billing": "billed annually",
+  "source": "https://scite.ai/pricing",
+  "checked": "2026-10-30"
  },
  "suno": {
   "plan": "Pro",

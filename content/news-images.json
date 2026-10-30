@@ -1,0 +1,62 @@
+{
+  "gemini-app-edit-files": {
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/fileGen2.0-thumbnail-resize.max-1440x810.png",
+    "credit": "Google",
+    "page": "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/",
+    "alt": "A spreadsheet in the Gemini app with the prompt 'show this as a graph instead' above a line chart",
+    "file": "gemini-files",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-30"
+  },
+  "mistral-large-4-on-hugging-face": {
+    "imageUrl": "https://huggingface.co/blog/assets/ml4/thumbnail.png",
+    "credit": "Hugging Face",
+    "page": "https://huggingface.co/blog/mistral-large4",
+    "alt": "Mistral and Hugging Face logos above the text 'Le Chonk (Mistral Large 4) comes to Hugging Face'",
+    "file": "mistral-l4",
+    "width": 1200,
+    "height": 600,
+    "fetched": "2026-10-30"
+  },
+  "project-protostar": {
+    "imageUrl": "https://huggingface.co/blog/assets/announcing-project-protostar/thumbnail.jpg",
+    "credit": "Hugging Face",
+    "page": "https://huggingface.co/blog/announcing-project-protostar",
+    "alt": "Project ProtoStar poster with the Hugging Face mascot drawn as a ringed planet",
+    "file": "protostar",
+    "width": 1200,
+    "height": 600,
+    "fetched": "2026-10-30"
+  },
+  "ai-for-science-expands": {
+    "imageUrl": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2c317246f4ac7eaf0667d90a76ac05a7a7b601fc-1200x630.jpg",
+    "credit": "Anthropic",
+    "page": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+    "alt": "Collage of vintage science illustrations, an old observatory telescope and a microscope",
+    "file": "ai-science",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "claude-drug-development-progress": {
+    "imageUrl": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6a50f5ba4c0931f8d2c411f26d860955c1efeae7-1200x630.jpg",
+    "credit": "Anthropic",
+    "page": "https://www.anthropic.com/research/early-progress-drug-development",
+    "alt": "White tablets on olive and teal panels beside a vintage laboratory photograph",
+    "file": "drug-dev",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "anthropic-gsa-partnership": {
+    "imageUrl": "https://www-cdn.anthropic.com/images/4zrzovbb/website/4e3bfa972a8ec391977288fa36de3da1ecd78232-1920x1080.webp",
+    "credit": "Anthropic",
+    "page": "https://www.anthropic.com/news/expanding-partnership-gsa",
+    "alt": "A blue grid square overlapping a green circle on a beige background",
+    "file": "gsa",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-30"
+  }
+}

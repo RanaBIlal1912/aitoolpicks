@@ -26,7 +26,8 @@
   ],
   "limitations": [
     "Popular templates look familiar, so customise colours and text",
-    "Check commercial-use terms for specific content before client work"
+    "Check commercial-use terms for specific content before client work",
+    "Prices differ by country; the amounts we recorded are in Pakistani rupees and per year only"
   ],
   "alternatives": [
     "firefly",
@@ -34,28 +35,87 @@
     "gamma"
   ],
   "hue": 195,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
     "source": "https://www.canva.com/pricing/",
-    "plans": [],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "free": {
+      "available": true,
+      "details": "Canva Free includes the drag-and-drop editor, 1.6M+ templates, 5GB of cloud storage and limited access to Standard and Premium AI."
+    },
+    "trial": "Canva Pro and Canva Business show a free trial option on the pricing page.",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "PKR",
+        "unit": "per year",
+        "annualTotal": 0,
+        "billing": "Yearly view; no cost",
+        "highlights": [
+          "1.6M+ templates",
+          "1 Brand Kit",
+          "5GB of cloud storage"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "PKR",
+        "unit": "per person per year",
+        "annualTotal": 9200,
+        "billing": "Shown as Rs 9,200 per year for one person",
+        "highlights": [
+          "3.6M+ templates including premium",
+          "5 Brand Kits",
+          "100GB of cloud storage",
+          "10x more AI than Free"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "currency": "PKR",
+        "unit": "per person per year",
+        "annualTotal": 16000,
+        "billing": "Shown as Rs 16,000 per year per person",
+        "highlights": [
+          "Collaboration and team admin tools",
+          "100 Brand Kits and approvals",
+          "500GB of cloud storage",
+          "20x more AI than Free"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "PKR",
+        "unit": "per person per year",
+        "custom": true,
+        "note": "Contact sales; 1TB storage, SSO and SCIM, dedicated success manager for 150+ contracted seats"
+      }
+    ],
+    "regional": "Canva showed these prices in rupees (Rs), per year, for the region this page was opened from (Pakistan). Other countries see different currencies and prices, and USD and monthly prices were not captured. Do not treat the rupee amounts as a universal price.",
+    "notes": [
+      "AI Pass is an extra-cost add-on for Pro and Business.",
+      "K-12 educational organisations and not-for-profits can get most premium features free (pricing page FAQ)."
+    ]
   },
   "sources": [
     {
-      "label": "Official pricing page (could not be read automatically)",
+      "label": "Official pricing page (region: Pakistan, PKR)",
       "url": "https://www.canva.com/pricing/",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://www.canva.com",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "review": "canva",

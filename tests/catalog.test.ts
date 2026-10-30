@@ -122,7 +122,8 @@ describe("catalog index", () => {
   it("only claims a free plan when documented, and keeps unknowns as null", () => {
     const idx = buildIndex(records) as { id: string; freePlan: boolean | null }[];
     expect(idx.find((t) => t.id === "claude")!.freePlan).toBe(true);
-    expect(idx.find((t) => t.id === "chatgpt")!.freePlan).toBeNull();
+    expect(idx.find((t) => t.id === "chatgpt")!.freePlan).toBe(true); // documented on the official pricing page
+    expect(idx.find((t) => t.id === "namecheap")!.freePlan).toBeNull();
     expect(idx.find((t) => t.id === "luma")!.freePlan).toBeNull();
   });
 
@@ -131,6 +132,6 @@ describe("catalog index", () => {
     const priced = idx.filter((t) => t.fromUsd !== null);
     expect(priced.length).toBeGreaterThan(15);
     expect(idx.find((t) => t.id === "github-copilot")!.fromUsd).toBe(10);
-    expect(idx.find((t) => t.id === "chatgpt")!.fromUsd).toBeNull();
+    expect(idx.find((t) => t.id === "namecheap")!.fromUsd).toBeNull(); // per-domain prices only, no plan price
   });
 });

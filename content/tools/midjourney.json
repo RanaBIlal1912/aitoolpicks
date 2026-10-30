@@ -25,7 +25,8 @@
   ],
   "limitations": [
     "Check current commercial-use terms before using images for clients",
-    "Results vary with how you write the prompt"
+    "Results vary with how you write the prompt",
+    "There is no free plan in the official plan comparison"
   ],
   "alternatives": [
     "firefly",
@@ -33,28 +34,98 @@
     "ideogram"
   ],
   "hue": 240,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "verified",
+    "model": "paid",
+    "checked": "2026-10-30",
     "source": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
-    "plans": [],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 10,
+        "annual": 8,
+        "annualTotal": 96,
+        "billing": "$10 per month; $96 billed annually ($8 per month)",
+        "highlights": [
+          "3.3 hours of Fast GPU time per month",
+          "SD video"
+        ]
+      },
+      {
+        "name": "Standard",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 30,
+        "annual": 24,
+        "annualTotal": 288,
+        "billing": "$30 per month; $288 billed annually ($24 per month)",
+        "highlights": [
+          "15 hours of Fast GPU time per month",
+          "Unlimited images in Relax mode",
+          "SD and HD video"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 60,
+        "annual": 48,
+        "annualTotal": 576,
+        "billing": "$60 per month; $576 billed annually ($48 per month)",
+        "highlights": [
+          "30 hours of Fast GPU time per month",
+          "Unlimited images and SD video in Relax mode",
+          "Stealth Mode"
+        ]
+      },
+      {
+        "name": "Mega",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 120,
+        "annual": 96,
+        "annualTotal": 1152,
+        "billing": "$120 per month; $1,152 billed annually ($96 per month)",
+        "highlights": [
+          "60 hours of Fast GPU time per month",
+          "Unlimited images and SD video in Relax mode",
+          "Stealth Mode"
+        ]
+      }
+    ],
+    "regional": "Prices were shown in USD. Tax: not stated. Extra GPU time can be bought at $4 per hour. Companies with more than $1,000,000 USD in annual gross revenue must subscribe to Pro or Mega (official plan comparison).",
+    "reference": {
+      "plan": "Basic",
+      "amount": 10,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    },
+    "notes": [
+      "Midjourney's own documentation lists no free plan; all plans are paid subscriptions that renew monthly or yearly. A 20% discount applies to annual plans."
+    ]
   },
   "sources": [
     {
-      "label": "Official plan comparison (could not be read automatically)",
+      "label": "Official plan comparison (Midjourney docs)",
       "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://www.midjourney.com",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "subcategory": "generation",

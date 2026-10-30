@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { MORE, NAV, SITE } from "@/lib/site";
 import { BrandMark } from "@/lib/brand";
 import { CODES, CURRENCIES, type CurrencyCode } from "@/lib/currency";
@@ -197,16 +196,11 @@ export default function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
+              {open && (
+          <div
             id="mobile-nav"
             ref={sheet}
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#05070d]/97 backdrop-blur-xl lg:hidden"
+            className="sheet-in fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#05070d]/97 backdrop-blur-xl lg:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto flex max-w-6xl flex-col px-5 py-4">
               {[...NAV, ...MORE].map((n) => {
@@ -226,9 +220,9 @@ export default function Header() {
                 );
               })}
             </nav>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
+      
     </header>
   );
 }

@@ -3,9 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { COMPARISONS, getComparison } from "@/data/compare";
 import { getArticle, getArticleHtml } from "@/data/articles";
-import { coverPath } from "@/data/covers";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
+import ArticleCover from "@/components/ArticleCover";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
@@ -26,7 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = c && getArticle(c.article);
   if (!a) return {};
   const m = pageMeta({ title: a.title, description: a.description, path: `/compare/${slug}/`, type: "article", publishedTime: a.date });
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(a.cover, "og")), width: 1200, height: 630, alt: a.title }] };
   return m;
 }
 
@@ -52,10 +49,9 @@ export default async function ComparisonPage({ params }: Props) {
         </p>
       </PageHeader>
       <div className="mx-auto max-w-6xl px-5">
-        <ParallaxFrame className="cover-frame aspect-[16/6]" strength={26}>
-          <Cover id={a.cover} sizes="100vw" priority />
-        </ParallaxFrame>
-        <p className="mb-8 mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a photo of a real product.</p>
+        <div className="mb-8 aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
+          <ArticleCover topic={a.topic} tools={a.tools} />
+        </div>
       </div>
       <div className="mx-auto max-w-3xl px-5">
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
@@ -83,7 +79,7 @@ export default async function ComparisonPage({ params }: Props) {
           description: a.description,
           datePublished: a.date,
           dateModified: SITE.updated,
-          image: absUrl(coverPath(a.cover, "og")),
+          image: absUrl("/brand/og.png"),
           mainEntityOfPage: absUrl(`/compare/${slug}/`),
           author: { "@type": "Organization", name: SITE.name },
           publisher: { "@type": "Organization", name: SITE.name },

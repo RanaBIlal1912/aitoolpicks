@@ -11,7 +11,6 @@ import AffLink from "@/components/AffLink";
 import PriceTag from "@/components/PriceTag";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/Reveal";
-import { coverPath } from "@/data/covers";
 import { getCategory } from "@/data/tools";
 
 export const dynamicParams = false;
@@ -26,7 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const r = getReview(slug);
   if (!r) return {};
   const m = pageMeta({ title: r.title, description: r.summary.slice(0, 158), path: `/reviews/${slug}/`, type: "article", publishedTime: SITE.updated });
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath("chip", "og")), width: 1200, height: 630, alt: r.title }] };
   return m;
 }
 
@@ -177,7 +175,7 @@ export default async function ReviewPage({ params }: Props) {
           description: r.summary,
           datePublished: SITE.updated,
           dateModified: SITE.updated,
-          image: absUrl(coverPath("chip", "og")),
+          image: absUrl("/brand/og.png"),
           mainEntityOfPage: absUrl(`/reviews/${slug}/`),
           author: { "@type": "Organization", name: SITE.name },
           publisher: { "@type": "Organization", name: SITE.name },

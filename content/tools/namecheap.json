@@ -24,34 +24,81 @@
   ],
   "limitations": [
     "Domain prices vary by extension; check renewal prices before buying",
-    "We could not verify current prices"
+    "Renewal prices are higher than the first-year sale prices; check the renewal price before buying"
   ],
   "alternatives": [
     "hostinger"
   ],
   "hue": 20,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "partial",
+    "model": "paid",
+    "checked": "2026-10-30",
     "source": "https://www.namecheap.com/domains/",
-    "plans": [],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "plans": [
+      {
+        "name": ".com domain",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per year",
+        "note": "Register $11.28 (sale: 25% off the first year, regular $14.98); renew $18.48; transfer $11.48"
+      },
+      {
+        "name": ".net domain",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per year",
+        "note": "Register $12.48 (sale, regular $14.98); renew $18.58; transfer $12.98"
+      },
+      {
+        "name": ".org domain",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per year",
+        "note": "Register $8.48 (sale, regular $14.48); renew $18.98; transfer $12.28"
+      },
+      {
+        "name": ".io domain",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per year",
+        "note": "Register $29.98 (sale, regular $65.98); renew $75.98; transfer $65.98"
+      },
+      {
+        "name": ".ai domain",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per year",
+        "note": "Register $89.98; renew $114.98; transfer $99.98"
+      },
+      {
+        "name": ".dev domain",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per year",
+        "note": "Register $10.98 (sale, regular $15.98); renew $20.98; transfer $15.98"
+      }
+    ],
+    "regional": "Prices were shown in USD. Namecheap says ICANN charges a mandatory annual fee of $0.20 per domain, added to some listed prices at purchase. Hosting, email and other products were not read.",
+    "notes": [
+      "The page showed promotional banners (for example .com at $6.48 for new customers) that differ from the table figure, so first-year prices depend on the offer at checkout; renewal prices are higher than the sale prices.",
+      "The page lists free privacy protection for life, free DNSSEC and a 1-month free email trial with registration."
+    ]
   },
   "sources": [
     {
-      "label": "Official site (could not be read automatically)",
+      "label": "Official domain pricing page",
       "url": "https://www.namecheap.com/domains/",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://www.namecheap.com",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "subcategory": "domains",

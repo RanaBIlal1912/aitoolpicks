@@ -101,17 +101,34 @@
   "hue": 195,
   "review": "canva",
   "keyFeature": "Templates for social posts, presentations and documents",
-  "freePlan": null,
-  "trial": false,
+  "freePlan": true,
+  "trial": true,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.canva.com/pricing/",
-  "plans": []
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Rs 0/yr"
+   },
+   {
+    "name": "Pro",
+    "price": "Rs 9200/yr"
+   },
+   {
+    "name": "Business",
+    "price": "Rs 16000/yr"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
  },
  {
   "id": "chatgpt",
@@ -131,17 +148,42 @@
   "hue": 160,
   "review": "chatgpt",
   "keyFeature": "Chat-based assistant for writing, analysis and questions",
-  "freePlan": null,
+  "freePlan": true,
   "trial": false,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 20,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://chatgpt.com/pricing",
-  "plans": []
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Go",
+    "price": "See note"
+   },
+   {
+    "name": "Plus",
+    "price": "$20/mo"
+   },
+   {
+    "name": "Pro 100",
+    "price": "$100/mo"
+   },
+   {
+    "name": "Pro 200",
+    "price": "$200/mo"
+   },
+   {
+    "name": "Pro 500",
+    "price": "$500/mo"
+   }
+  ]
  },
  {
   "id": "claude",
@@ -615,6 +657,55 @@
   ]
  },
  {
+  "id": "fathom",
+  "name": "Fathom",
+  "vendor": "Fathom",
+  "category": "productivity",
+  "subcategory": "meetings",
+  "categories": [
+   "productivity",
+   "audio"
+  ],
+  "tagline": "AI meeting partner that records and summarises calls",
+  "description": "Fathom records and transcribes calls and produces instant AI summaries, with a free plan and paid plans for individuals and teams.",
+  "bestFor": "Professionals and Teams",
+  "officialUrl": "https://fathom.ai",
+  "hue": 330,
+  "keyFeature": "Unlimited recordings and transcriptions on the Free plan",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://fathom.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Premium",
+    "price": "See note"
+   },
+   {
+    "name": "Team",
+    "price": "See note"
+   },
+   {
+    "name": "Business",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "figma",
   "name": "Figma",
   "vendor": "Figma",
@@ -754,6 +845,51 @@
   ]
  },
  {
+  "id": "fireworks",
+  "name": "Fireworks AI",
+  "vendor": "Fireworks AI",
+  "category": "models",
+  "subcategory": "inference",
+  "categories": [
+   "models",
+   "coding"
+  ],
+  "tagline": "Fast inference and fine-tuning for open models, billed by use",
+  "description": "Fireworks AI runs open models through a serverless API and dedicated GPU deployments, and offers managed fine-tuning, with usage-based billing.",
+  "bestFor": "Developers and Teams",
+  "officialUrl": "https://fireworks.ai",
+  "hue": 25,
+  "keyFeature": "Serverless inference priced per token",
+  "freePlan": null,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "usage-based",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://fireworks.ai/pricing",
+  "plans": [
+   {
+    "name": "Serverless inference",
+    "price": "See note"
+   },
+   {
+    "name": "On-demand GPUs",
+    "price": "See note"
+   },
+   {
+    "name": "Managed fine-tuning",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "gamma",
   "name": "Gamma",
   "vendor": "Gamma",
@@ -769,17 +905,34 @@
   "officialUrl": "https://gamma.app",
   "hue": 320,
   "keyFeature": "AI-generated presentations and documents",
-  "freePlan": null,
+  "freePlan": true,
   "trial": false,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 12,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://gamma.app/pricing",
-  "plans": []
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Plus",
+    "price": "$12/seat/mo monthly · $9/seat/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$25/seat/mo monthly · $18/seat/mo yearly"
+   },
+   {
+    "name": "Ultra",
+    "price": "$100/seat/mo monthly · $90/seat/mo yearly"
+   }
+  ]
  },
  {
   "id": "gemini",
@@ -1141,13 +1294,34 @@
   "trial": false,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingModel": "paid",
+  "pricingStatus": "verified",
+  "fromUsd": 20,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://ideogram.ai/pricing",
-  "plans": []
+  "plans": [
+   {
+    "name": "Plus",
+    "price": "$20/mo monthly · $15/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$60/mo monthly · $42/mo yearly"
+   },
+   {
+    "name": "Team",
+    "price": "$30/user/mo monthly · $20/user/mo yearly"
+   },
+   {
+    "name": "Pay as you go",
+    "price": "See note"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
  },
  {
   "id": "intercom",
@@ -1286,17 +1460,42 @@
   "officialUrl": "https://leonardo.ai",
   "hue": 265,
   "keyFeature": "Image generation from text prompts",
-  "freePlan": null,
+  "freePlan": true,
   "trial": false,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 12,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://leonardo.ai/pricing",
-  "plans": []
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Essential",
+    "price": "$12/mo"
+   },
+   {
+    "name": "Premium",
+    "price": "$30/mo"
+   },
+   {
+    "name": "Ultimate",
+    "price": "$60/mo"
+   },
+   {
+    "name": "Team Starter",
+    "price": "$72/mo"
+   },
+   {
+    "name": "Team Growth",
+    "price": "$144/mo"
+   }
+  ]
  },
  {
   "id": "lovable",
@@ -1458,13 +1657,30 @@
   "trial": false,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingModel": "paid",
+  "pricingStatus": "verified",
+  "fromUsd": 10,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
-  "plans": []
+  "plans": [
+   {
+    "name": "Basic",
+    "price": "$10/mo monthly · $8/mo yearly"
+   },
+   {
+    "name": "Standard",
+    "price": "$30/mo monthly · $24/mo yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$60/mo monthly · $48/mo yearly"
+   },
+   {
+    "name": "Mega",
+    "price": "$120/mo monthly · $96/mo yearly"
+   }
+  ]
  },
  {
   "id": "mistral",
@@ -1579,13 +1795,38 @@
   "trial": false,
   "openSource": null,
   "added": "2026-10-29",
-  "pricingModel": "unknown",
-  "pricingStatus": "unverified",
+  "pricingModel": "paid",
+  "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.namecheap.com/domains/",
-  "plans": []
+  "plans": [
+   {
+    "name": ".com domain",
+    "price": "See note"
+   },
+   {
+    "name": ".net domain",
+    "price": "See note"
+   },
+   {
+    "name": ".org domain",
+    "price": "See note"
+   },
+   {
+    "name": ".io domain",
+    "price": "See note"
+   },
+   {
+    "name": ".ai domain",
+    "price": "See note"
+   },
+   {
+    "name": ".dev domain",
+    "price": "See note"
+   }
+  ]
  },
  {
   "id": "notebooklm",
@@ -1910,6 +2151,46 @@
   ]
  },
  {
+  "id": "quillbot",
+  "name": "QuillBot",
+  "vendor": "QuillBot",
+  "category": "writing",
+  "subcategory": "proofreading",
+  "categories": [
+   "writing"
+  ],
+  "tagline": "Paraphraser, grammar checker and writing tools",
+  "description": "QuillBot offers a paraphraser, grammar checker, summariser, translator, citation generator and AI detector, with a free plan and a paid Premium plan.",
+  "bestFor": "Students and Writers",
+  "officialUrl": "https://quillbot.com",
+  "hue": 140,
+  "keyFeature": "Paraphrasing in multiple modes",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 4.17,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://quillbot.com/premium",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Premium",
+    "price": "$4.17/mo billed yearly"
+   },
+   {
+    "name": "Team",
+    "price": "See note"
+   }
+  ]
+ },
+ {
   "id": "replicate",
   "name": "Replicate",
   "vendor": "Replicate",
@@ -2032,6 +2313,46 @@
    {
     "name": "Max",
     "price": "$95/mo monthly · $76/mo yearly"
+   }
+  ]
+ },
+ {
+  "id": "scite",
+  "name": "Scite",
+  "vendor": "Scite",
+  "category": "research",
+  "subcategory": "papers",
+  "categories": [
+   "research"
+  ],
+  "tagline": "Search scientific papers and see how they cite each other",
+  "description": "Scite is an AI-powered platform that helps researchers discover and evaluate scientific literature, using Smart Citations to show whether studies support or contradict a claim.",
+  "bestFor": "Researchers and Students",
+  "officialUrl": "https://scite.ai",
+  "hue": 200,
+  "keyFeature": "Assistant and search across scientific literature",
+  "freePlan": null,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "free-trial",
+  "pricingStatus": "verified",
+  "fromUsd": 12,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://scite.ai/pricing",
+  "plans": [
+   {
+    "name": "Basic",
+    "price": "$12/mo billed yearly"
+   },
+   {
+    "name": "Pro",
+    "price": "$40/mo billed yearly"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
    }
   ]
  },

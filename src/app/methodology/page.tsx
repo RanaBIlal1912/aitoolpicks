@@ -86,8 +86,18 @@ export default function MethodologyPage() {
 
       <h2>Images</h2>
       <p>
-        Cover images are 3D renders made for this site, and pages say so. We do not use vendor logos or product screenshots without permission, so tool cards use a
-        simple letter mark.
+        <strong>Tool logos</strong> are the icons each product publishes on its own website. We download them from the icon link on the official site, record the
+        address and date, and show a plain letter mark where we could not get one. A small number are low-resolution because that is all the site publishes.
+        Logos belong to their owners and are used only to identify the product.
+      </p>
+      <p>
+        <strong>News images</strong> are the vendor&rsquo;s own announcement image for that story, shown with credit and a link to the page that published it. Where a
+        vendor has no image specific to the story, or only a general image it reuses for many posts, we draw an illustration instead, and the page says so. We do not use
+        other outlets&rsquo; photographs.
+      </p>
+      <p>
+        <strong>Guide and comparison covers</strong> are illustrations made for this site from the logos of the tools in the guide. They are not product
+        screenshots, and we do not publish screenshots we did not take or are not licensed to use.
       </p>
 
       <h2>Affiliate links</h2>

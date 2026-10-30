@@ -1,0 +1,115 @@
+{
+  "id": "fathom",
+  "name": "Fathom",
+  "vendor": "Fathom",
+  "website": "https://fathom.ai",
+  "category": "productivity",
+  "categories": [
+    "productivity",
+    "audio"
+  ],
+  "subcategory": "meetings",
+  "tagline": "AI meeting partner that records and summarises calls",
+  "description": "Fathom records and transcribes calls and produces instant AI summaries, with a free plan and paid plans for individuals and teams.",
+  "features": [
+    "Unlimited recordings and transcriptions on the Free plan",
+    "Choice of bot-free (beta) or bot capture",
+    "Instant AI call summaries",
+    "Clips, playlists and search across calls"
+  ],
+  "useCases": [
+    "Recording and summarising sales or client calls",
+    "Searching what was said across past calls"
+  ],
+  "audience": [
+    "Professionals",
+    "Teams"
+  ],
+  "strengths": [
+    "A free-forever plan with unlimited recordings",
+    "A 90-day guarantee is listed on every plan"
+  ],
+  "limitations": [
+    "The pricing page did not make clear which listed price is monthly and which is annual",
+    "Some features are marked limited use without saying which plan they apply to"
+  ],
+  "alternatives": [
+    "otter",
+    "granola",
+    "fireflies"
+  ],
+  "hue": 330,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://fathom.ai/pricing",
+    "free": {
+      "available": true,
+      "details": "Free forever: unlimited recordings and transcriptions, bot-free (beta) or bot capture, instant AI call summaries, clips, playlists and search across calls."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 0,
+        "highlights": [
+          "Unlimited recordings and transcriptions",
+          "Instant AI call summaries"
+        ]
+      },
+      {
+        "name": "Premium",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "$20 and $16 per user per month are both shown; the page does not say which is monthly billing and which is annual"
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "$19 and $15 per user per month are both shown, 2 users minimum; which is monthly and which is annual is not stated"
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "$34 and $25 per user per month are both shown, 2 users minimum; which is monthly and which is annual is not stated"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per user per month",
+        "custom": true,
+        "note": "Talk to sales"
+      }
+    ],
+    "regional": "Prices were shown with a '$' sign and no currency code. A toggle says annual billing saves 25% or more."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://fathom.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://fathom.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

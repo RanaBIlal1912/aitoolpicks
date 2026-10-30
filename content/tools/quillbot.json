@@ -1,0 +1,120 @@
+{
+  "id": "quillbot",
+  "name": "QuillBot",
+  "vendor": "QuillBot",
+  "website": "https://quillbot.com",
+  "category": "writing",
+  "categories": [
+    "writing"
+  ],
+  "subcategory": "proofreading",
+  "tagline": "Paraphraser, grammar checker and writing tools",
+  "description": "QuillBot offers a paraphraser, grammar checker, summariser, translator, citation generator and AI detector, with a free plan and a paid Premium plan.",
+  "features": [
+    "Paraphrasing in multiple modes",
+    "Grammar checker and citation generator",
+    "Summariser, translator and AI detector",
+    "Browser, desktop and mobile apps and a Word add-in"
+  ],
+  "useCases": [
+    "Rewriting and tightening text",
+    "Checking grammar and creating citations"
+  ],
+  "audience": [
+    "Students",
+    "Writers",
+    "Professionals"
+  ],
+  "strengths": [
+    "A free plan covers the basics",
+    "Premium lists unlimited paraphrasing modes and higher usage"
+  ],
+  "limitations": [
+    "Free paraphrasing is limited to 100 words and 2 modes",
+    "The Team plan price was not shown, and the monthly-billing price of Premium was not stated"
+  ],
+  "alternatives": [
+    "grammarly",
+    "deepl",
+    "jasper"
+  ],
+  "hue": 140,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://quillbot.com/premium",
+    "free": {
+      "available": true,
+      "details": "Free: paraphrase up to 100 words in 2 modes, fix basic grammar errors, humanize up to 100 words with limited usage, basic summaries and limited AI Detector access."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "Paraphrase up to 100 words in 2 modes",
+          "Summaries up to 1,200 words"
+        ]
+      },
+      {
+        "name": "Premium",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "annual": 4.17,
+        "billing": "$4.17 per month, billed annually",
+        "highlights": [
+          "Full paraphrasing access and unlimited modes",
+          "Advanced grammar suggestions",
+          "Summaries up to 6,000 words",
+          "Plagiarism check at 25,000 words per month"
+        ]
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "Price not shown; adds team usage metrics, user management dashboard, centralised billing and priority support"
+      }
+    ],
+    "regional": "Prices were shown in USD. Premium's monthly-billing price and tax: not stated. Usage limits apply and may vary by surface.",
+    "reference": {
+      "plan": "Premium",
+      "amount": 4.17,
+      "currency": "USD",
+      "per": "month",
+      "billing": "billed annually"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official Premium page",
+      "url": "https://quillbot.com/premium",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://quillbot.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web",
+    "Chrome",
+    "Edge",
+    "macOS",
+    "Word",
+    "Android",
+    "iOS"
+  ],
+  "added": "2026-10-30"
+}

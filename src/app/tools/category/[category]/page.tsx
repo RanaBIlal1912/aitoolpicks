@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { CATEGORIES, getCategory, toolsInCategory } from "@/data/tools";
 import { ROUNDUPS } from "@/data/roundups";
-import { coverPath } from "@/data/covers";
 import { pageMeta } from "@/lib/meta";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
@@ -26,7 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: c.blurb.slice(0, 180),
     path: `/tools/category/${category}/`,
   });
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(c.cover, "og")), width: 1200, height: 630 }] };
   return m;
 }
 

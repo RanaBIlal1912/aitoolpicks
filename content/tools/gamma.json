@@ -22,38 +22,110 @@
     "Students"
   ],
   "strengths": [
-    "Popular for fast presentation drafts"
+    "Popular for fast presentation drafts",
+    "A free plan with export to PDF, PPTX and Google Slides"
   ],
   "limitations": [
-    "Plans and limits could not be verified automatically"
+    "Free is limited to 10 slides per prompt, and branding removal starts on Plus"
   ],
   "alternatives": [
     "canva",
     "notion"
   ],
   "hue": 320,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "verified",
+    "model": "freemium",
+    "checked": "2026-10-30",
     "source": "https://gamma.app/pricing",
-    "plans": [],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "free": {
+      "available": true,
+      "details": "Free includes up to 10 slides per prompt, simple presentations, docs, websites, social and images, PDF and PPTX import, and export to PDF, PPTX, PNG and Google Slides. No credit card required."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 0,
+        "highlights": [
+          "Up to 10 slides per prompt",
+          "Import from PDF and PPTX",
+          "Export to PDF, PPTX, PNG and Google Slides"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 12,
+        "annual": 9,
+        "annualTotal": 108,
+        "billing": "$12 per seat per month billed monthly; $9 per seat per month billed annually ($108)",
+        "highlights": [
+          "Up to 100 slides per prompt",
+          "Remove Gamma branding",
+          "Advanced AI image models"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 25,
+        "annual": 18,
+        "annualTotal": 216,
+        "billing": "$25 per seat per month billed monthly; $18 per seat per month billed annually ($216)",
+        "highlights": [
+          "Premium AI image models",
+          "Custom branding",
+          "Detailed analytics and advanced sharing",
+          "Up to 10 custom domains"
+        ]
+      },
+      {
+        "name": "Ultra",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per seat per month",
+        "monthly": 100,
+        "annual": 90,
+        "annualTotal": 1080,
+        "billing": "$100 per seat per month billed monthly; $90 per seat per month billed annually ($1,080)",
+        "highlights": [
+          "20x more AI usage",
+          "Most advanced AI models (text, image, video)",
+          "Up to 100 custom domains",
+          "Early access to new features"
+        ]
+      }
+    ],
+    "regional": "Prices were shown in USD with a '$' sign; the page says prices are subject to tax depending on location. The Business tab was not read.",
+    "reference": {
+      "plan": "Plus",
+      "amount": 12,
+      "currency": "USD",
+      "per": "seat per month",
+      "billing": "monthly"
+    }
   },
   "sources": [
     {
-      "label": "Official pricing page (could not be read automatically)",
+      "label": "Official pricing page",
       "url": "https://gamma.app/pricing",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://gamma.app",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "subcategory": "presentations",

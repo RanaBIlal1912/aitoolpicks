@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { COVER_BY_TOPIC, TOPICS, articlesInTopic } from "@/data/articles";
-import { coverPath } from "@/data/covers";
+import { TOPICS, articlesInTopic } from "@/data/articles";
 import { pageMeta } from "@/lib/meta";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import ArticleCard from "@/components/ArticleCard";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
 import JsonLd from "@/components/JsonLd";
 
 export const dynamicParams = false;
@@ -27,7 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for people choosing and using AI tools.`.slice(0, 180),
     path: `/blog/topic/${topic}/`,
   });
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(COVER_BY_TOPIC[t.id], "og")), width: 1200, height: 630 }] };
   return m;
 }
 
@@ -49,9 +45,6 @@ export default async function TopicPage({ params }: Props) {
         ]}
       />
       <div className="mx-auto max-w-6xl px-5">
-        <ParallaxFrame className="cover-frame mb-10 aspect-[16/6]" strength={24}>
-          <Cover id={COVER_BY_TOPIC[t.id]} sizes="100vw" priority />
-        </ParallaxFrame>
         <h2 className="sr-only">Guides on {t.label.toLowerCase()}</h2>
         {first && (
           <div className="mb-6">

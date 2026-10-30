@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { NEWS, getNews } from "@/data/news";
 import { getTool } from "@/data/tools";
-import { coverPath } from "@/data/covers";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import NewsCard, { formatDate } from "@/components/NewsCard";
+import NewsVisual from "@/components/NewsVisual";
+import { newsImage } from "@/data/newsImages";
 import ToolLogo from "@/components/ToolLogo";
 import JsonLd from "@/components/JsonLd";
 
@@ -23,7 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const n = getNews(slug);
   if (!n) return {};
   const m = pageMeta({ title: n.title, description: n.summary.slice(0, 180), path: `/news/${slug}/` });
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath("signal", "og")), width: 1200, height: 630 }] };
+  const img = newsImage(slug);
+  if (img) m.openGraph = { ...m.openGraph, images: [{ url: absUrl(img.src), width: img.width, height: img.height, alt: img.alt }] };
   return m;
 }
 
@@ -31,6 +33,7 @@ export default async function NewsItemPage({ params }: Props) {
   const { slug } = await params;
   const n = getNews(slug);
   if (!n) notFound();
+  const image = newsImage(n.slug);
   const tools = (n.tools ?? []).map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t);
   const more = NEWS.filter((x) => x.slug !== n.slug && (x.tag === n.tag || x.tools?.some((t) => n.tools?.includes(t))))
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -53,6 +56,24 @@ export default async function NewsItemPage({ params }: Props) {
       </PageHeader>
 
       <div className="mx-auto max-w-3xl px-5">
+        <figure className="mb-8">
+          <div className="aspect-[16/9] overflow-hidden rounded-[22px] border border-white/10">
+            <NewsVisual n={n} priority sizes="(min-width: 768px) 768px, 100vw" logos={3} />
+          </div>
+          <figcaption className="mt-2 text-xs text-muted">
+            {image ? (
+              <>
+                Announcement image from{" "}
+                <a href={image.page} target="_blank" rel="noopener noreferrer" className="underline">
+                  {image.credit}
+                </a>
+                , shown with credit.
+              </>
+            ) : (
+              "Illustration made for this site. It is not an image from the source."
+            )}
+          </figcaption>
+        </figure>
         <section aria-labelledby="summary" className="glass rounded-[22px] p-7">
           <h2 id="summary" className="kicker">
             What the source says
@@ -78,9 +99,9 @@ export default async function NewsItemPage({ params }: Props) {
             <h2 id="tools" className="section-title text-white">
               Tools mentioned
             </h2>
-            <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+            <ul className="mt-4 grid min-w-0 gap-4 sm:grid-cols-2">
               {tools.map((t) => (
-                <li key={t.id} className="glass flex items-center gap-4 rounded-2xl p-4">
+                <li key={t.id} className="glass flex min-w-0 items-center gap-4 rounded-2xl p-4">
                   <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
                   <div className="min-w-0">
                     <Link href={`/tools/${t.id}/`} className="font-bold text-white no-underline hover:underline">
@@ -102,7 +123,7 @@ export default async function NewsItemPage({ params }: Props) {
             <ul className="mt-5 grid gap-6 md:grid-cols-2">
               {more.map((x) => (
                 <li key={x.slug}>
-                  <NewsCard n={x} compact />
+                  <NewsCard n={x} variant="compact" />
                 </li>
               ))}
             </ul>

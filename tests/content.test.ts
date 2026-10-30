@@ -13,7 +13,7 @@ import { AFFILIATE_LINKS } from "@/lib/affiliate";
 import { PRICES } from "@/lib/prices";
 import { MORE, NAV } from "@/lib/site";
 
-const KNOWN_ROUTES = new Set(["/", "/about/", "/affiliate-disclosure/", ...ARTICLES.map((a) => a.href)]);
+const KNOWN_ROUTES = new Set(["/", "/about/", "/affiliate-disclosure/", "/pricing/", "/tools/", "/compare/", ...ARTICLES.map((a) => a.href)]);
 const WORDS = (html: string) => html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
 
 describe("articles", () => {

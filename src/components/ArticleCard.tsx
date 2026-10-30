@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Article } from "@/data/articles";
 import { TOPICS } from "@/data/topics";
-import Cover from "./Cover";
+import ArticleCover from "./ArticleCover";
 
 export function formatDate(iso: string): string {
   return new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
@@ -18,8 +18,8 @@ export default function ArticleCard({ a, featured = false }: { a: Article; featu
       style={{ ["--hue" as string]: featured ? 255 : 220 }}
     >
       <div className={`cover-frame !rounded-none !border-0 ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[320px]" : "aspect-[16/9]"}`}>
-        <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-          <Cover id={a.cover} sizes={featured ? "(min-width: 768px) 55vw, 100vw" : undefined} priority={featured} />
+        <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+          <ArticleCover topic={a.topic} tools={a.tools} />
         </div>
       </div>
       <div className={`flex min-w-0 flex-1 flex-col gap-3 ${featured ? "p-7 md:p-10" : "p-6"}`}>

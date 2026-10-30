@@ -8,7 +8,8 @@ import { ROUNDUPS } from "@/data/roundups";
 import { SITE, absUrl } from "@/lib/site";
 import ArticleCard from "@/components/ArticleCard";
 import HeroSearch from "@/components/HeroSearch";
-import NewsCard, { formatDate } from "@/components/NewsCard";
+import { formatDate } from "@/components/NewsCard";
+import NewsVisual from "@/components/NewsVisual";
 import Reveal from "@/components/Reveal";
 import ToolCard from "@/components/ToolCard";
 import ToolLogo from "@/components/ToolLogo";
@@ -65,10 +66,6 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="relative isolate">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.86),rgba(5,7,13,0.4)_55%,transparent)] max-sm:bg-[rgba(5,7,13,0.62)]"
-        />
         <div className="relative mx-auto flex min-h-[min(80vh,720px)] max-w-6xl flex-col justify-center px-5 pb-14 pt-14">
           <div className="max-w-2xl">
             <span className="eyebrow">AI tool directory and magazine</span>
@@ -130,21 +127,28 @@ export default function Home() {
                 </Link>
               </div>
               <ul className="divide-y divide-white/10">
-                {news.slice(0, 5).map((n) => (
-                  <li key={n.slug} className="py-3.5 first:pt-0 last:pb-0">
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="font-bold uppercase tracking-[0.1em] text-cyan">{n.kind}</span>
-                      <time dateTime={n.date} className="text-muted">
-                        {formatDate(n.date)}
-                      </time>
+                {news.slice(0, 4).map((n) => (
+                  <li key={n.slug} className="flex gap-3 py-3.5 first:pt-0 last:pb-0">
+                    <div className="aspect-[4/3] w-20 shrink-0 overflow-hidden rounded-lg">
+                      <NewsVisual n={n} sizes="90px" logos={1} small />
                     </div>
-                    <Link href={`/news/${n.slug}/`} className="mt-1 block font-serif text-[1.05rem] font-bold leading-snug text-white no-underline hover:underline">
-                      {n.title}
-                    </Link>
-                    <p className="mt-0.5 text-xs text-muted">via {n.source}</p>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="font-bold uppercase tracking-[0.1em] text-cyan">{n.kind}</span>
+                        <time dateTime={n.date} className="text-muted">
+                          {formatDate(n.date)}
+                        </time>
+                      </div>
+                      <Link href={`/news/${n.slug}/`} className="mt-1 block font-serif text-[1.02rem] font-bold leading-snug text-white no-underline hover:underline">
+                        {n.title}
+                      </Link>
+                    </div>
                   </li>
                 ))}
               </ul>
+              <Link href="/news/" className="btn-ghost btn-sm mt-5 self-start">
+                Explore all AI news →
+              </Link>
             </div>
           </div>
         </Reveal>
@@ -223,11 +227,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </Reveal>
-
-        <Reveal as="section" className="pt-24">
-          <SectionHead eyebrow="Featured news" title="What just happened in AI" lead="Short summaries with the publication date and a link to the original source." href="/news/" cta="More news" />
-          <NewsCard n={news[0]} featured />
         </Reveal>
 
         <Reveal as="section" className="pt-24">

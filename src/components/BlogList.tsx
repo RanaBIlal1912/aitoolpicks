@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
 import ArticleCard from "./ArticleCard";
 import type { Article, TopicId } from "@/data/articles";
 
@@ -27,7 +26,7 @@ export default function BlogList({ articles, topics }: { articles: Article[]; to
     <section aria-label="Guides" className="mx-auto max-w-6xl px-5">
       <h2 className="sr-only">All guides</h2>
       <div className="glass rounded-[24px] p-4 md:p-5">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center">
+        <div className="flex flex-col gap-4">
           <div className="flex-1">
             <label htmlFor="blog-search" className="sr-only">
               Search guides
@@ -61,9 +60,9 @@ export default function BlogList({ articles, topics }: { articles: Article[]; to
 
       <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {list.map((a) => (
-          <motion.li key={a.slug} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
+          <li key={a.slug}>
             <ArticleCard a={a} />
-          </motion.li>
+          </li>
         ))}
       </ul>
       {list.length === 0 && (

@@ -3,7 +3,7 @@ import { pageMeta } from "@/lib/meta";
 import { ROUNDUPS } from "@/data/roundups";
 import { getCategory } from "@/data/tools";
 import PageHeader from "@/components/PageHeader";
-import Cover from "@/components/Cover";
+import BestCover from "@/components/BestCover";
 import Reveal from "@/components/Reveal";
 
 export const metadata = pageMeta({
@@ -32,9 +32,9 @@ export default function BestIndex() {
             return (
               <Reveal as="li" key={r.slug} delay={0.04 * i}>
                 <Link href={`/best/${r.slug}/`} className="glass card-glow group flex h-full flex-col overflow-hidden no-underline transition-transform hover:-translate-y-0.5" style={{ ["--hue" as string]: 220 }}>
-                  <div className="cover-frame aspect-[16/7] !rounded-none !border-0">
-                    <div className="h-full transition-transform duration-700 group-hover:scale-[1.04]">
-                      <Cover id={cat?.cover ?? "chip"} />
+                  <div className="aspect-[16/7] overflow-hidden">
+                    <div className="h-full transition-transform duration-700 group-hover:scale-[1.03]">
+                      <BestCover picks={r.picks.map((p) => p.id)} hue={cat?.slug ?? "assistants"} />
                     </div>
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-6">

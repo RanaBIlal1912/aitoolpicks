@@ -23,7 +23,7 @@
     "Widely used for image generation"
   ],
   "limitations": [
-    "Plans and limits could not be verified automatically"
+    "The billing interval behind the listed monthly prices was unclear on the page"
   ],
   "alternatives": [
     "midjourney",
@@ -31,28 +31,122 @@
     "ideogram"
   ],
   "hue": 265,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
     "source": "https://leonardo.ai/pricing",
-    "plans": [],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "free": {
+      "available": true,
+      "details": "Free: 150 fast tokens per day, Auto model only, public creations, 1 personal collection."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "150 fast tokens per day",
+          "Auto model only",
+          "Creations are public"
+        ]
+      },
+      {
+        "name": "Essential",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 12,
+        "highlights": [
+          "8,500 fast tokens per month",
+          "80+ models",
+          "Private creations"
+        ]
+      },
+      {
+        "name": "Premium",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 30,
+        "highlights": [
+          "25,000 fast tokens per month",
+          "Unlimited relaxed image generation for select models"
+        ]
+      },
+      {
+        "name": "Ultimate",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 60,
+        "highlights": [
+          "60,000 fast tokens per month",
+          "Unlimited relaxed image and video generation for select models"
+        ]
+      },
+      {
+        "name": "Team Starter",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 72,
+        "billing": "$72 per month for the team, shown as $24 per seat",
+        "highlights": [
+          "75,000 shared tokens",
+          "25,000 fast tokens per seat"
+        ]
+      },
+      {
+        "name": "Team Growth",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 144,
+        "billing": "$144 per month for the team, shown as $48 per seat",
+        "highlights": [
+          "180,000 shared tokens",
+          "60,000 fast tokens per seat",
+          "Train AI models using team tokens"
+        ]
+      },
+      {
+        "name": "API: Pay as you go",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "No commitments, pay only for what you use; API credit does not expire; up to 10 concurrent generations"
+      },
+      {
+        "name": "API: Custom",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Contact sales"
+      }
+    ],
+    "regional": "Prices were shown in USD, labelled 'ex. tax'. The page has a 'Pay Yearly (up to 20% off)' and a 'Pay Monthly' toggle, but the figures did not change when we selected monthly, so we cannot say which billing interval the figures belong to. Treat them as indicative and check the page.",
+    "notes": [
+      "Unlimited relaxed generation applies only to selected models and may be slowed during high demand (footnote on the page)."
+    ]
   },
   "sources": [
     {
-      "label": "Official pricing page (could not be read automatically)",
+      "label": "Official pricing page",
       "url": "https://leonardo.ai/pricing",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://leonardo.ai",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "subcategory": "generation",

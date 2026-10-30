@@ -8,7 +8,6 @@ import { newsForTool } from "@/data/news";
 import NewsCard, { formatDate } from "@/components/NewsCard";
 import { COMPARISONS } from "@/data/compare";
 import { REVIEWS } from "@/data/reviews";
-import { coverPath } from "@/data/covers";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
@@ -38,7 +37,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/tools/${slug}/`,
   });
   const cover = getCategory(t.category)?.cover ?? "chip";
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(cover, "og")), width: 1200, height: 630 }] };
   return m;
 }
 
@@ -184,7 +182,7 @@ export default async function ToolPage({ params }: Props) {
                 <ul className="mt-5 grid gap-6 md:grid-cols-2">
                   {news.map((n) => (
                     <li key={n.slug}>
-                      <NewsCard n={n} compact />
+                      <NewsCard n={n} variant="compact" />
                     </li>
                   ))}
                 </ul>

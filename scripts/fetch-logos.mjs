@@ -3,6 +3,7 @@
 //   node scripts/fetch-logos.mjs            fetch tools that have no logo yet
 //   node scripts/fetch-logos.mjs --all      refetch every tool
 //   node scripts/fetch-logos.mjs ollama groq   refetch specific ids
+//   add --curl to use the system curl (works on some sites that refuse Node's fetch)
 //   add --fallback to try the favicon service for sites that block scripted requests
 //
 // What it does, per tool (website comes from content/tools/<id>.json):
@@ -15,6 +16,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { execFileSync } from "node:child_process";
+import os from "node:os";
 
 const root = process.cwd();
 const TOOLS_DIR = path.join(root, "content", "tools");
@@ -32,7 +35,24 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf-8")) : {};
 const records = fs.readdirSync(TOOLS_DIR).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(TOOLS_DIR, f), "utf-8")));
 
+// Some sites answer curl but refuse Node's fetch (bot protection looks at the TLS and header fingerprint). `--curl` uses the system curl
+// for every request; it makes the same plain GET and nothing else.
+const useCurl = args.includes("--curl");
+
 async function get(url, { text = false, timeout = 15000 } = {}) {
+  if (useCurl) {
+    const tmp = path.join(os.tmpdir(), `logo-${crypto.randomBytes(6).toString("hex")}`);
+    try {
+      const out = execFileSync("curl", ["-sL", "-A", UA, "-m", String(Math.ceil(timeout / 1000)), "-o", tmp, "-w", "%{http_code} %{url_effective}", url], { encoding: "utf-8" });
+      const [code, ...rest] = out.trim().split(" ");
+      if (code !== "200") return { ok: false, status: Number(code) };
+      return { ok: true, buf: fs.readFileSync(tmp), type: "", url: rest.join(" ") };
+    } catch (e) {
+      return { ok: false, status: "curl" };
+    } finally {
+      fs.rmSync(tmp, { force: true });
+    }
+  }
   const ctl = new AbortController();
   const t = setTimeout(() => ctl.abort(), timeout);
   try {

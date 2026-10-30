@@ -1,0 +1,77 @@
+  <p>Developers building with AI face a choice before they write any code: use a closed model through its maker's API, rent an open model from an inference provider, or run an open model on their own machine. Each route trades money, control, privacy and effort differently.</p>
+
+  <p class="pros"><strong>How this guide was made:</strong> it is a documentation-based overview. We read each vendor's official pages and recorded plans, prices and limits on the date shown; we have not run hands-on tests or benchmarks, so nothing here is a performance claim. Prices change, so confirm on the official page before you pay.</p>
+
+  <h2>The three routes</h2>
+  <ul>
+    <li><strong>Closed API:</strong> you pay the vendor per use and get its latest models without running anything yourself.</li>
+    <li><strong>Hosted open models:</strong> an inference platform runs open models for you and bills by use. Prices and available models vary by provider.</li>
+    <li><strong>Local open models:</strong> you run a model on your own hardware. The software can be free, but the hardware, setup and updates are yours.</li>
+  </ul>
+
+  <h2>What "open" can mean</h2>
+  <p>Not every "open" model has the same licence. Some are fully open source, some publish weights under a custom licence with limits on commercial use, and some tools are source-available rather than open source. Read the licence before you build a product on a model; our tool pages show an open-source status only where the official repository states it.</p>
+
+  <h2>The tools, side by side</h2>
+  <div class="pick">
+    <span class="tag">Run models locally</span>
+    <h3>Ollama</h3>
+    <p>Ollama is a tool for running large language models on your own hardware, with optional paid plans for cloud-hosted models. Its source code is published on GitHub under the MIT licence.</p>
+    <p class="pros"><strong>Good for:</strong> developers, teams. <strong>Watch out for:</strong> Cloud models are hosted primarily in the United States, with possible routing to Europe.</p>
+    <p class="pros"><strong>Plans (pricing verified, checked 30 Oct 2026):</strong> Pay as you go: free; Pro: $20/month monthly, $16.67/month billed yearly; Max: $100/month; Team (early access): $500/month; Enterprise: custom pricing.</p>
+    <a class="btn" data-aff="ollama" href="#">Visit Ollama</a>
+  </div>
+
+  <div class="pick">
+    <span class="tag">Model hub</span>
+    <h3>Hugging Face</h3>
+    <p>Hugging Face hosts open models, datasets and apps (Spaces), with a PRO account, Team and Enterprise plans plus pay-as-you-go compute and storage.</p>
+    <p class="pros"><strong>Good for:</strong> developers, ml teams. <strong>Watch out for:</strong> Compute is billed hourly and can be costly for large GPUs.</p>
+    <p class="pros"><strong>Plans (pricing verified, checked 30 Oct 2026):</strong> PRO Account: $9/month; Team: $20 per user/month; Enterprise: $50 per user/month.</p>
+    <a class="btn" data-aff="huggingface" href="#">Visit Hugging Face</a>
+  </div>
+
+  <div class="pick">
+    <span class="tag">One API, many models</span>
+    <h3>OpenRouter</h3>
+    <p>OpenRouter provides an OpenAI-compatible API that gives access to 500+ models from 80+ providers. Model usage is billed per token at each provider&#x27;s list price.</p>
+    <p class="pros"><strong>Good for:</strong> developers, teams building ai products. <strong>Watch out for:</strong> A 5.5% (Standard) or 8% (Business) fee applies when you buy credits.</p>
+    <p class="pros"><strong>Plans (pricing verified, checked 30 Oct 2026):</strong> Free: free; Standard (pay-as-you-go): price not captured (see the tool page); Business (pay-as-you-go): price not captured (see the tool page); Enterprise: custom pricing.</p>
+    <a class="btn" data-aff="openrouter" href="#">Visit OpenRouter</a>
+  </div>
+
+  <div class="pick">
+    <span class="tag">Hosted open models</span>
+    <h3>Together AI</h3>
+    <p>Together AI&#x27;s pricing page covers serverless inference, dedicated endpoints, fine-tuning and GPU clusters, with a &#x27;Start for free&#x27; option.</p>
+    <p class="pros"><strong>Good for:</strong> developers, ml teams. <strong>Watch out for:</strong> A free-credit amount is not stated on the page we read.</p>
+    <p class="pros"><strong>Plans (pricing partly verified, checked 30 Oct 2026):</strong> Serverless inference: price not captured (see the tool page); Dedicated inference: price not captured (see the tool page); GPU clusters: price not captured (see the tool page); Fine-tuning: price not captured (see the tool page).</p>
+    <a class="btn" data-aff="together" href="#">Visit Together AI</a>
+  </div>
+
+  <div class="pick">
+    <span class="tag">Hosted inference</span>
+    <h3>Groq</h3>
+    <p>Groq describes itself as a cloud provider focused on fast AI inference, built around its own LPU hardware.</p>
+    <p class="pros"><strong>Good for:</strong> developers, enterprises. <strong>Watch out for:</strong> The pricing page we read showed no plan names or per-token rates, so we do not publish prices.</p>
+    <p class="pros"><strong>Plans (pricing partly verified, checked 30 Oct 2026):</strong> .</p>
+    <a class="btn" data-aff="groq" href="#">Visit Groq</a>
+  </div>
+
+  <div class="pick">
+    <span class="tag">Pay per run</span>
+    <h3>Replicate</h3>
+    <p>Replicate lets developers run public and private machine-learning models through an API and pay as they go, by run time, output or tokens.</p>
+    <p class="pros"><strong>Good for:</strong> developers, teams. <strong>Watch out for:</strong> A free tier and a minimum spend are not stated on the page we read.</p>
+    <p class="pros"><strong>Plans (pricing verified, checked 30 Oct 2026):</strong> Public models: price not captured (see the tool page); Hardware (private models and fine-tunes): price not captured (see the tool page); Enterprise: custom pricing.</p>
+    <a class="btn" data-aff="replicate" href="#">Visit Replicate</a>
+  </div>
+
+  <h2>How to choose</h2>
+  <ul>
+    <li><strong>Prototyping:</strong> a hosted API is quickest; compare per-token or per-run prices on a small test workload.</li>
+    <li><strong>Private data or no internet:</strong> a local model keeps data on your machine, at the cost of hardware and maintenance.</li>
+    <li><strong>Cost at scale:</strong> estimate monthly tokens or run time first, because pay-per-use grows with traffic and fixed GPU rental does not.</li>
+    <li><strong>Avoiding lock-in:</strong> a router or an open model you can move between hosts keeps your options open.</li>
+  </ul>
+

@@ -41,31 +41,146 @@
     "perplexity"
   ],
   "hue": 160,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
     "source": "https://chatgpt.com/pricing",
-    "plans": [],
-    "notes": [
-      "Plans and limits for ChatGPT are not shown here because we could not verify them."
+    "free": {
+      "available": true,
+      "details": "Free plan: unlimited text chats (subject to abuse guardrails) with limited uploads, image creation, voice chats, deep research and memory."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "Limited uploads, image creation, voice chats, deep research and memory"
+        ]
+      },
+      {
+        "name": "Go",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Billed monthly, in USD. The price was not shown in the text of the pricing page or in the help article we read.",
+        "highlights": [
+          "More messages, uploads, image creation and voice chats than Free",
+          "Longer memory",
+          "May include ads (the page says so)"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "billing": "$20 per month, billed monthly. The help center says annual billing is not offered.",
+        "highlights": [
+          "Advanced reasoning models",
+          "Expanded messages, uploads, deep research and memory",
+          "Projects, scheduled tasks and custom GPTs",
+          "Expanded Codex usage"
+        ]
+      },
+      {
+        "name": "Pro 100",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 100,
+        "billing": "Monthly",
+        "highlights": [
+          "Higher usage than Plus",
+          "Pro reasoning models and longer Codex sessions"
+        ]
+      },
+      {
+        "name": "Pro 200",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 200,
+        "billing": "Monthly",
+        "highlights": [
+          "More usage than Pro 100"
+        ]
+      },
+      {
+        "name": "Pro 500",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 500,
+        "billing": "Monthly",
+        "highlights": [
+          "Highest included usage",
+          "Ultrafast option (Pro 500 only)"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per user per month",
+        "note": "Priced per user, starting at 2 users, with monthly and annual options. The price was not captured."
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per user per month",
+        "custom": true,
+        "note": "Contact sales; annual plans"
+      }
     ],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "api": {
+      "summary": "API usage is billed separately from ChatGPT plans.",
+      "source": "https://chatgpt.com/pricing"
+    },
+    "regional": "Purchases are made in USD; local-currency billing exists in a limited set of countries (OpenAI help center). Tax may apply.",
+    "reference": {
+      "plan": "Plus",
+      "amount": 20,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    },
+    "notes": [
+      "The pricing page showed plan names and features but did not display price figures in the text we could read; Plus and Pro prices come from the official OpenAI help center.",
+      "Educational and non-profit discounts exist; see the pricing page FAQ."
+    ]
   },
   "sources": [
     {
-      "label": "Official pricing page (could not be read automatically)",
+      "label": "Official pricing page",
       "url": "https://chatgpt.com/pricing",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "OpenAI help center: What is ChatGPT Plus?",
+      "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+      "type": "docs",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "OpenAI help center: About ChatGPT Pro tiers",
+      "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
+      "type": "docs",
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://chatgpt.com",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "review": "chatgpt",

@@ -26,17 +26,17 @@
     "checked": "2026-10-29"
   },
   "canva": {
-    "file": "canva.ico",
+    "file": "canva.png",
     "website": "https://www.canva.com",
-    "source": "https://static.canva.com/static/images/favicon.ico",
-    "kind": "icon",
-    "format": "ico",
-    "width": 32,
-    "bytes": 4414,
-    "sha256": "ec2fbad47e598fe0",
-    "status": "low-resolution",
+    "source": "https://static.canva.com/domain-assets/canva/static/images/apple-touch-120x120-1.png",
+    "kind": "apple-touch-icon",
+    "format": "png",
+    "width": 120,
+    "bytes": 11535,
+    "sha256": "f185093b0c68c57e",
+    "status": "ok",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "chatgpt": {
     "file": "chatgpt.svg",
@@ -78,17 +78,17 @@
     "checked": "2026-10-29"
   },
   "copilot": {
-    "file": "copilot.ico",
+    "file": "copilot.svg",
     "website": "https://copilot.microsoft.com",
-    "source": "https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/favicon-copilot-brand-refresh-23392c1f66.ico",
+    "source": "https://copilot.microsoft.com/static/cmc/favicon.svg",
     "kind": "icon",
-    "format": "ico",
-    "width": 48,
-    "bytes": 7400,
-    "sha256": "69e8ead6e5a1a076",
-    "status": "low-resolution",
+    "format": "svg",
+    "width": null,
+    "bytes": 3436,
+    "sha256": "c5b0ad0fc0c6fd9c",
+    "status": "ok",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "cursor": {
     "file": "cursor.svg",
@@ -181,6 +181,19 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "fathom": {
+    "file": "fathom.png",
+    "website": "https://fathom.ai",
+    "source": "https://cdn.prod.website-files.com/6899da9beccbdbe92be49b5d/6a4282cf5eaacfd4a9c45526_fathom_favicon.png",
+    "kind": "icon",
+    "format": "png",
+    "width": 512,
+    "bytes": 11979,
+    "sha256": "99b63354e347412a",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "figma": {
     "file": "figma.svg",
     "website": "https://www.figma.com",
@@ -218,7 +231,20 @@
     "sha256": "3dcf3ebe68870413",
     "status": "low-resolution",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
+  },
+  "fireworks": {
+    "file": "fireworks.svg",
+    "website": "https://fireworks.ai",
+    "source": "https://fireworks.ai/icon.svg?26fd47f5c5eddcac",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 871,
+    "sha256": "d88cab178a47518c",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "gamma": {
     "file": "gamma.png",
@@ -270,7 +296,7 @@
     "sha256": "89df91925aef73d9",
     "status": "low-resolution",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "granola": {
     "file": "granola.svg",
@@ -309,7 +335,7 @@
     "sha256": "88129ff619e6caff",
     "status": "low-resolution",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "hostinger": {
     "file": "hostinger.ico",
@@ -322,7 +348,7 @@
     "sha256": "bdd206c6a1494899",
     "status": "low-resolution",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "huggingface": {
     "file": "huggingface.ico",
@@ -335,7 +361,7 @@
     "sha256": "7266292a50733887",
     "status": "ok",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "ideogram": {
     "file": "ideogram.svg",
@@ -361,7 +387,7 @@
     "sha256": "9bc9f0edcd7095e7",
     "status": "low-resolution",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "jasper": {
     "file": "jasper.png",
@@ -392,15 +418,15 @@
   "leonardo": {
     "file": "leonardo.png",
     "website": "https://leonardo.ai",
-    "source": "https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128",
+    "source": "https://leonardo.ai/images/leonardo_favicon.png",
     "kind": "icon",
     "format": "png",
-    "width": 128,
-    "bytes": 3135,
-    "sha256": "2c2893aa82ebe809",
-    "status": "needs-review",
-    "origin": "favicon-service (the site's own favicon, fetched because the site blocks scripts)",
-    "checked": "2026-10-29"
+    "width": 512,
+    "bytes": 10273,
+    "sha256": "56e136a75ff29716",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "lovable": {
     "file": "lovable.svg",
@@ -426,7 +452,7 @@
     "sha256": "fb7e0157e3d27c8e",
     "status": "low-resolution",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   },
   "make": {
     "file": "make.png",
@@ -444,28 +470,28 @@
   "midjourney": {
     "file": "midjourney.png",
     "website": "https://www.midjourney.com",
-    "source": "https://www.google.com/s2/favicons?domain=www.midjourney.com&sz=128",
-    "kind": "icon",
+    "source": "https://www.midjourney.com/public/apple-touch-icon.png",
+    "kind": "apple-touch-icon",
     "format": "png",
-    "width": 128,
-    "bytes": 2011,
-    "sha256": "8a25cc9c3f32ebe9",
-    "status": "needs-review",
-    "origin": "favicon-service (the site's own favicon, fetched because the site blocks scripts)",
-    "checked": "2026-10-29"
+    "width": 180,
+    "bytes": 4306,
+    "sha256": "e1db80a5d5bd8cab",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "mistral": {
     "file": "mistral.png",
     "website": "https://chat.mistral.ai",
-    "source": "https://www.google.com/s2/favicons?domain=chat.mistral.ai&sz=128",
-    "kind": "icon",
+    "source": "https://chat.mistral.ai/favicons/apple-touch-icon.png",
+    "kind": "apple-touch-icon",
     "format": "png",
-    "width": 128,
-    "bytes": 452,
-    "sha256": "4b1d0cf790bfe80d",
-    "status": "needs-review",
-    "origin": "favicon-service (the site's own favicon, fetched because the site blocks scripts)",
-    "checked": "2026-10-29"
+    "width": 180,
+    "bytes": 1997,
+    "sha256": "514f877c2bcf9ee2",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "n8n": {
     "file": "n8n.png",
@@ -483,28 +509,28 @@
   "namecheap": {
     "file": "namecheap.png",
     "website": "https://www.namecheap.com",
-    "source": "https://www.google.com/s2/favicons?domain=www.namecheap.com&sz=128",
-    "kind": "icon",
+    "source": "https://www.namecheap.com/assets/img/nc-icon/namecheap-icon-152x152.png",
+    "kind": "apple-touch-icon",
     "format": "png",
-    "width": 128,
-    "bytes": 1496,
-    "sha256": "d34bb2689ea4c123",
-    "status": "needs-review",
-    "origin": "favicon-service (the site's own favicon, fetched because the site blocks scripts)",
-    "checked": "2026-10-29"
+    "width": 152,
+    "bytes": 1438,
+    "sha256": "4726e0f27c721746",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "notebooklm": {
-    "file": "notebooklm.png",
-    "website": "https://notebooklm.google",
-    "source": "https://www.google.com/s2/favicons?domain=notebooklm.google&sz=128",
+    "file": "notebooklm.svg",
+    "website": "https://notebooklm.google.com",
+    "source": "https://www.gstatic.com/tailwind/_/static/branding/v6/light_mode/favicon/favicon.svg",
     "kind": "icon",
-    "format": "png",
-    "width": 128,
-    "bytes": 1617,
-    "sha256": "313af32c18d4c953",
-    "status": "needs-review",
-    "origin": "favicon-service (the site's own favicon, fetched because the site blocks scripts)",
-    "checked": "2026-10-29"
+    "format": "svg",
+    "width": null,
+    "bytes": 2470,
+    "sha256": "0e369abeda7894c1",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "notion": {
     "file": "notion.png",
@@ -584,6 +610,19 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "quillbot": {
+    "file": "quillbot.svg",
+    "website": "https://quillbot.com",
+    "source": "https://quillbot.com/rebrand/icon.svg",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 1834,
+    "sha256": "63fe7b171f6df61d",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "replicate": {
     "file": "replicate.png",
     "website": "https://replicate.com",
@@ -622,6 +661,19 @@
     "status": "ok",
     "origin": "official-site",
     "checked": "2026-10-29"
+  },
+  "scite": {
+    "file": "scite.ico",
+    "website": "https://scite.ai",
+    "source": "https://cdn.scite.ai/assets/images/favicon.ico",
+    "kind": "icon",
+    "format": "ico",
+    "width": 256,
+    "bytes": 31590,
+    "sha256": "6008d15d46a71bba",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
   },
   "suno": {
     "file": "suno.png",
@@ -725,6 +777,6 @@
     "sha256": "733fdd5c9e5b3020",
     "status": "ok",
     "origin": "official-site",
-    "checked": "2026-10-29"
+    "checked": "2026-10-30"
   }
 }

@@ -2,14 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { GUIDES, getArticle, getArticleParts, articlesInTopic, TOPICS } from "@/data/articles";
-import { coverPath } from "@/data/covers";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import ProseHtml from "@/components/ProseHtml";
 import ArticleCard, { formatDate } from "@/components/ArticleCard";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
+import ArticleCover from "@/components/ArticleCover";
 import Toc from "@/components/Toc";
 import JsonLd from "@/components/JsonLd";
 
@@ -25,7 +23,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = getArticle(slug);
   if (!a) return {};
   const m = pageMeta({ title: a.title, description: a.description, path: `/blog/${slug}/`, type: "article", publishedTime: a.date });
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(a.cover, "og")), width: 1200, height: 630, alt: a.title }] };
   return m;
 }
 
@@ -62,10 +59,10 @@ export default async function GuidePage({ params }: Props) {
 
       <div className="mx-auto max-w-6xl px-5">
         <figure>
-          <ParallaxFrame className="cover-frame aspect-[16/7]" strength={30}>
-            <Cover id={a.cover} sizes="(min-width: 1152px) 1100px, 100vw" priority />
-          </ParallaxFrame>
-          <figcaption className="mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a photo of a real product.</figcaption>
+          <div className="aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
+            <ArticleCover topic={a.topic} tools={a.tools} />
+          </div>
+          <figcaption className="mt-2 text-xs text-muted">Cover made for this site from the logos of the tools in this guide. It is an illustration, not a screenshot.</figcaption>
         </figure>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px]">
@@ -106,7 +103,7 @@ export default async function GuidePage({ params }: Props) {
           description: a.description,
           datePublished: a.date,
           dateModified: SITE.updated,
-          image: absUrl(coverPath(a.cover, "og")),
+          image: absUrl("/brand/og.png"),
           mainEntityOfPage: absUrl(`/blog/${slug}/`),
           wordCount: a.words,
           author: { "@type": "Organization", name: SITE.name },

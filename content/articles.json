@@ -120,5 +120,77 @@
     "cat": "Freelancers",
     "blurb": "Common ways to receive money, what to check first, and simple record keeping.",
     "region": "Pakistan"
+  },
+  {
+    "slug": "ai-coding-assistants-compared",
+    "title": "AI Coding Assistants Compared: Editors, Agents and App Builders",
+    "description": "GitHub Copilot, Cursor, Devin, Replit, Lovable, Bolt and v0 compared by what they do, free access and the plans the vendors publish.",
+    "icon": "💻",
+    "cat": "AI for developers",
+    "blurb": "Seven coding tools grouped by what they actually do, with plans taken from official pricing pages.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "open-weight-vs-api-models",
+    "title": "Open-Weight Models vs Paid APIs: How Developers Choose",
+    "description": "Run a model yourself, rent it through an inference provider or call a closed vendor's API? The trade-offs, with Ollama, Hugging Face, OpenRouter, Together AI, Groq and Replicate as examples.",
+    "icon": "🧩",
+    "cat": "AI for developers",
+    "blurb": "Local, hosted or closed API: what each route costs you in money, control and effort.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-meeting-notetakers-compared",
+    "title": "AI Meeting Notetakers Compared: Otter, Granola and Fireflies.ai",
+    "description": "Three AI notetakers compared by how they work, free access and the plans the vendors publish.",
+    "icon": "🎙️",
+    "cat": "AI productivity",
+    "blurb": "Otter, Granola and Fireflies.ai compared by free access, plans and what to check before you record.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-dictation-and-transcription-tools",
+    "title": "AI Dictation and Transcription Tools: For People and For Developers",
+    "description": "Wispr Flow and Otter for people who talk, Deepgram and AssemblyAI for developers who build speech into products: plans and what each is for.",
+    "icon": "🗣️",
+    "cat": "AI productivity",
+    "blurb": "Dictation, meeting transcripts and speech APIs are different jobs; here is which tool fits which.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-image-generators-compared",
+    "title": "AI Image Generators Compared: Midjourney, Ideogram, Leonardo and Adobe Firefly",
+    "description": "Four image generators compared by how they are priced, whether a free plan exists and what to check before commercial use.",
+    "icon": "🖼️",
+    "cat": "Image and video",
+    "blurb": "Credits, GPU time or subscriptions: how the main image generators charge, and what to check for commercial use.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-video-tools-compared",
+    "title": "AI Video Tools Compared: Generators and Avatar Presenters",
+    "description": "Runway, Luma and Pika generate video from prompts; HeyGen and Synthesia produce presenter-style avatar videos. Plans and what each is for.",
+    "icon": "🎬",
+    "cat": "Image and video",
+    "blurb": "Prompt-to-video generators and avatar presenters are different tools; here is how to tell which you need.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "how-to-read-ai-pricing-pages",
+    "title": "How to Read an AI Pricing Page (Credits, Seats and Regional Prices)",
+    "description": "Seats, credits, GPU time, annual discounts and regional currencies: how AI pricing pages work, with examples from real vendors.",
+    "icon": "🏷️",
+    "cat": "Beginner guides",
+    "blurb": "Why two AI plans with the same price are not the same, with real examples from vendor pricing pages.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "how-to-choose-an-ai-tool",
+    "title": "How to Choose an AI Tool: A Practical Five-Step Method",
+    "description": "A simple process for picking an AI tool without wasting money: define the job, shortlist, test free plans, check the fine print and decide.",
+    "icon": "🧭",
+    "cat": "Beginner guides",
+    "blurb": "Define the job, shortlist three tools, test the free plans and read the fine print before paying.",
+    "date": "2026-10-30"
   }
 ]

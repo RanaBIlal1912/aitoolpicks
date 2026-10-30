@@ -520,24 +520,7 @@ table.cmp tbody tr:last-child td {
   animation: float-slow 9s ease-in-out infinite;
 }
 
-/* ---------- cinematic finish (decorative, never blocks clicks) ---------- */
-.film-vignette {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 120% 90% at 50% 40%, transparent 55%, rgba(2, 3, 9, 0.55) 100%);
-}
-.film-grain {
-  position: fixed;
-  inset: -50%;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.055;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-/* The site header is sticky with its own z-index (see Header.tsx), so only the footer needs lifting above the 3D layers. */
+/* The site header is sticky with its own z-index (see Header.tsx), so only the footer needs lifting above the background layers. */
 footer {
   position: relative;
   z-index: 2;
@@ -604,4 +587,76 @@ main {
   line-height: 0.9;
   padding: 6px 10px 0 0;
   color: #fff;
+}
+
+/* News cards: the headline link covers the card; the "original" link and other real links sit above it (z-10). */
+.news-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.news-link:hover {
+  text-decoration: underline;
+}
+.news-card {
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.news-card:hover,
+.news-card:focus-within {
+  border-color: rgba(168, 186, 226, 0.35);
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+}
+.news-card:focus-within {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+.news-link:focus-visible {
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .news-card,
+  .news-card * {
+    transition: none !important;
+  }
+}
+
+/* Motion without an animation library: scroll reveal, mobile menu and card tilt are plain CSS transitions. */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+.sheet-in {
+  animation: sheet-in 0.2s ease-out;
+}
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tilt {
+  transition: transform 0.18s ease-out, border-color 0.25s, box-shadow 0.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .sheet-in {
+    animation: none;
+  }
+  .tilt {
+    transition: none;
+  }
 }

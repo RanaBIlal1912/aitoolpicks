@@ -3,13 +3,11 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ROUNDUPS, getRoundup } from "@/data/roundups";
 import { PRICING_MODEL_LABEL, getCategory, getTool } from "@/data/tools";
-import { coverPath } from "@/data/covers";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import AffLink from "@/components/AffLink";
-import Cover from "@/components/Cover";
-import ParallaxFrame from "@/components/ParallaxFrame";
+import BestCover from "@/components/BestCover";
 import Reveal from "@/components/Reveal";
 import ToolLogo from "@/components/ToolLogo";
 import { formatChecked } from "@/lib/dates";
@@ -28,7 +26,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!r) return {};
   const m = pageMeta({ title: r.title, description: r.description, path: `/best/${slug}/`, type: "article", publishedTime: SITE.updated });
   const cover = getCategory(r.category)?.cover ?? "chip";
-  m.openGraph = { ...m.openGraph, images: [{ url: absUrl(coverPath(cover, "og")), width: 1200, height: 630 }] };
   return m;
 }
 
@@ -56,10 +53,9 @@ export default async function RoundupPage({ params }: Props) {
       </PageHeader>
 
       <div className="mx-auto max-w-5xl px-5">
-        <ParallaxFrame className="cover-frame aspect-[16/6]" strength={26}>
-          <Cover id={cat?.cover ?? "chip"} sizes="100vw" priority />
-        </ParallaxFrame>
-        <p className="mb-8 mt-2 text-xs text-muted">Illustration: a 3D render made for this site, not a screenshot of any product.</p>
+        <div className="mb-8 aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
+          <BestCover picks={picks.map((p) => p.tool.id)} hue={cat?.slug ?? "assistants"} />
+        </div>
 
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
           Some links may be affiliate links, and we may earn a commission at no cost to you. Buttons go to official sites unless an affiliate link is

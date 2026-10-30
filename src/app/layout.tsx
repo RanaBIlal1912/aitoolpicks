@@ -5,7 +5,6 @@ import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import SceneBackdrop from "@/components/scene/SceneBackdrop";
 import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
@@ -54,10 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Providers>
-          <SceneBackdrop />
           <ScrollProgress />
-          <div className="film-vignette" aria-hidden="true" />
-          <div className="film-grain" aria-hidden="true" />
           <Header />
           <main id="main">{children}</main>
           <Footer />

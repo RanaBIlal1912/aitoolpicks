@@ -54,15 +54,17 @@ Changing the display currency never changes a link; a link can optionally differ
 - Merchant prices stay in USD. Converted amounts are labelled as estimates, with the rate date.
 - News items need a real publication date and a link to the original source.
 
-## The 3D look
+## Images and 3D
 
-- There is exactly **one** WebGL scene. `src/components/scene/SceneBackdrop.tsx` keeps it fixed behind every page; the chip in
-  `src/lib/scene/chip.ts` turns and drifts as you scroll. It loads after the page is idle, renders at a capped frame rate, pauses
-  when the tab is hidden, dims behind reading, and is skipped for reduced motion (one still frame), data saver or no WebGL.
-- Page images are 3D renders made for this site. To regenerate them: `npm run covers`, then open
-  `http://localhost:8124/scripts/covers/index.html` (add `?only=chip,rack` for a subset). The images are written to
-  `public/images/covers/`. Nothing is downloaded; every texture is generated in code.
-- Pages that show a render say it is an illustration, not a photo of a real product.
+- The site no longer loads any WebGL. The old 3D scene was removed from the pages; `src/lib/scene` and `npm run covers` remain only for the optional cover renders in
+  `public/images/covers/`, which no page uses now.
+- **Tool logos:** `npm run logos` downloads each product's own icon from its official website into `public/logos/` and records source, format, size and review status in
+  `content/logos.json` (`--curl` uses the system curl for sites that refuse Node; `--fallback` tries a favicon service and flags the result `needs-review`). Components call
+  `logoFor()` in `src/data/logos.ts`; never hard-code a logo path.
+- **News images:** vendor announcement images are listed in `content/news-images.json` and built by `npm run news-images`. See `docs/NEWS_WORKFLOW.md`.
+- **Brand:** `public/brand/mark.svg` is the site mark; `npm run brand` renders the favicon, app icons and social image from it.
+- **Guide and best-of covers** are generated from topic colours and the logos of the tools involved (`ArticleCover`, `BestCover`).
+- `npm run assets:report` writes `docs/ASSETS_REPORT.md` (unresolved and low-resolution assets).
 
 ## The tool catalog
 
@@ -91,7 +93,13 @@ Rules the validator enforces (`npm run catalog`):
 
 ### News
 
-Add items to `src/data/news.ts` only after reading the original source: a real date, a link, a tag and a short summary.
+Add items to `src/data/news.ts` only after reading the original source. The full process (date, source, summary, "why it matters", type, importance, image) is in
+`docs/NEWS_WORKFLOW.md`. News is edited by hand; the RSS feed at `/news/feed.xml` is built from the same data.
+
+### Docs
+
+`docs/NEWS_WORKFLOW.md`, `docs/REVIEW_TEMPLATE.md` (documentation-based vs hands-on reviews), `docs/LAUNCH_CHECKLIST.md` (affiliate, custom domain, Search Console, analytics),
+`docs/ASSETS_REPORT.md` and `docs/LIGHTHOUSE.md`.
 
 ## Tests
 

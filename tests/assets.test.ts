@@ -94,3 +94,47 @@ describe("one source for catalog totals", () => {
     }
   });
 });
+
+describe("news images and blog topics", () => {
+  const news = JSON.parse(fs.readFileSync(path.join(root, "content", "news-images.json"), "utf-8")) as Record<
+    string,
+    { file: string; imageUrl: string; credit: string; page: string; alt: string }
+  >;
+
+  it("gives every announcement image a credit, a source page, alt text and optimised files that exist", async () => {
+    const { NEWS } = await import("@/data/news");
+    const slugs = new Set(NEWS.map((n) => n.slug));
+    const files = new Set<string>();
+    for (const [slug, m] of Object.entries(news)) {
+      expect(slugs.has(slug), `${slug} is not a news story`).toBe(true);
+      expect(m.credit, slug).toBeTruthy();
+      expect(m.page, slug).toMatch(/^https:\/\//);
+      expect(m.imageUrl, slug).toMatch(/^https:\/\//);
+      expect(m.alt.length, slug).toBeGreaterThan(20);
+      expect(files.has(m.file), `${slug} reuses a file name`).toBe(false);
+      files.add(m.file);
+      for (const f of [`${m.file}.webp`, `${m.file}-sm.webp`]) {
+        const buf = fs.readFileSync(path.join(root, "public", "images", "news", f));
+        expect(buf.subarray(8, 12).toString(), f).toBe("WEBP");
+        expect(buf.length, f).toBeLessThan(250_000);
+      }
+    }
+  });
+
+  it("never shares one announcement image between stories", () => {
+    const urls = Object.values(news).map((m) => m.imageUrl);
+    expect(new Set(urls).size).toBe(urls.length);
+  });
+
+  it("has no empty blog topic", async () => {
+    const { TOPICS, ARTICLES } = await import("@/data/articles");
+    for (const t of TOPICS) expect(ARTICLES.filter((a) => a.topic === t.id).length, t.id).toBeGreaterThanOrEqual(1);
+  });
+
+  it("keeps the prices quoted in the generated guides in step with the records", async () => {
+    const html = fs.readFileSync(path.join(root, "content", "articles", "ai-coding-assistants-compared.html"), "utf-8");
+    const copilot = JSON.parse(fs.readFileSync(path.join(root, "content", "tools", "github-copilot.json"), "utf-8"));
+    const pro = copilot.pricing.plans.find((p: { name: string }) => p.name === "Pro");
+    expect(html).toContain(`$${pro.monthly}/month`);
+  });
+});

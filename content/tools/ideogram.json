@@ -23,7 +23,7 @@
     "Widely used for image generation"
   ],
   "limitations": [
-    "Plans and limits could not be verified automatically"
+    "Generations use credits, and credit cost depends on the model and rendering setting"
   ],
   "alternatives": [
     "midjourney",
@@ -31,28 +31,104 @@
     "leonardo"
   ],
   "hue": 20,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "unverified",
-    "model": "unknown",
-    "checked": "2026-10-29",
+    "status": "verified",
+    "model": "paid",
+    "checked": "2026-10-30",
     "source": "https://ideogram.ai/pricing",
-    "plans": [],
-    "blockedReason": "The official pricing page refused automated access (HTTP 403) when we checked, so we could not read current plans or prices. Open the official page to see them."
+    "plans": [
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "annual": 15,
+        "annualTotal": 180,
+        "billing": "$20 per month billed monthly; $15 per month billed annually ($180)",
+        "highlights": [
+          "2,400 priority credits per month",
+          "All image and video models",
+          "Private generation",
+          "Unlimited slow credits"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 60,
+        "annual": 42,
+        "annualTotal": 504,
+        "billing": "$60 per month billed monthly; $42 per month billed annually ($504)",
+        "highlights": [
+          "7,500 priority credits per month",
+          "Batch generation",
+          "Largest generation queue",
+          "Best cost per credit"
+        ]
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per user per month",
+        "monthly": 30,
+        "annual": 20,
+        "annualTotal": 240,
+        "billing": "$30 per user per month billed monthly; $20 per user per month billed annually ($240)",
+        "highlights": [
+          "3,600 priority credits per user per month",
+          "Central billing and administration"
+        ]
+      },
+      {
+        "name": "Pay as you go",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "1 cent per credit, on demand"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Postpaid, contact sales; custom model training and volume API discounts"
+      }
+    ],
+    "api": {
+      "summary": "API access with credit-based usage is listed in the comparison table; Enterprise adds volume discounts on the API (billed separately).",
+      "source": "https://ideogram.ai/pricing"
+    },
+    "regional": "Prices were shown in USD with a '$' sign. Whether tax is included: not stated in the text we read.",
+    "reference": {
+      "plan": "Plus",
+      "amount": 20,
+      "currency": "USD",
+      "per": "month",
+      "billing": "monthly"
+    },
+    "notes": [
+      "No free plan was listed on the pricing page; the FAQ entry about free trials was collapsed and not read."
+    ]
   },
   "sources": [
     {
-      "label": "Official pricing page (could not be read automatically)",
+      "label": "Official pricing page",
       "url": "https://ideogram.ai/pricing",
       "type": "pricing",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     },
     {
       "label": "Official site",
       "url": "https://ideogram.ai",
       "type": "official",
-      "checked": "2026-10-29"
+      "checked": "2026-10-30"
     }
   ],
   "subcategory": "generation",

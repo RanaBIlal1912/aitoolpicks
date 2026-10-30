@@ -21,13 +21,19 @@ const TOPIC_BY_CAT: Record<string, TopicId> = {
   Websites: "websites",
   Hosting: "websites",
   Students: "students",
+  "AI for developers": "developers",
+  "AI productivity": "productivity",
+  "Image and video": "imagevideo",
+  "Beginner guides": "beginners",
 };
 
-type Raw = { slug: string; title: string; description: string; icon: string; cat: string; blurb: string; region?: string };
+type Raw = { slug: string; title: string; description: string; icon: string; cat: string; blurb: string; region?: string; date?: string };
 
 export type Article = Raw & {
   topic: TopicId;
   cover: CoverId;
+  /** Catalog tool ids the guide links to, used for its cover and for related tools. */
+  tools: string[];
   kind: "guide" | "comparison";
   date: string;
   words: number;
@@ -53,17 +59,23 @@ export function articleHref(slug: string): string {
 export const ARTICLES: Article[] = RAW.map((a) => {
   const words = wordCount(fs.readFileSync(path.join(ROOT, "content", "articles", `${a.slug}.html`), "utf-8"));
   const topic = TOPIC_BY_CAT[a.cat] ?? "freelancing";
+  const rawHtml = fs.readFileSync(path.join(ROOT, "content", "articles", `${a.slug}.html`), "utf-8");
+  const tools = Array.from(new Set(Array.from(rawHtml.matchAll(/data-aff="([a-z0-9-]+)"/g), (m) => m[1])));
   return {
     ...a,
+    tools,
     topic,
     cover: COVER_BY_TOPIC[topic],
     kind: COMPARISON_SLUGS.has(a.slug) ? "comparison" : "guide",
-    date: PUBLISHED,
+    date: a.date ?? PUBLISHED,
     words,
     minutes: Math.max(2, Math.round(words / 200)),
     href: articleHref(a.slug),
   };
 });
+
+// Newest first; the original guides share one date, so their order from articles.json is kept.
+ARTICLES.sort((x, y) => y.date.localeCompare(x.date));
 
 export const GUIDES = ARTICLES.filter((a) => a.kind === "guide");
 
@@ -75,6 +87,9 @@ const STATIC_PAGES: Record<string, string> = {
   "index.html": "/",
   "about.html": "/about/",
   "disclosure.html": "/affiliate-disclosure/",
+  "pricing.html": "/pricing/",
+  "tools.html": "/tools/",
+  "compare.html": "/compare/",
 };
 
 function slugify(t: string): string {

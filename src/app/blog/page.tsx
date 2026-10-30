@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import { ARTICLES, GUIDES, TOPICS } from "@/data/articles";
-import { coverPath } from "@/data/covers";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import BlogList from "@/components/BlogList";
@@ -13,7 +12,6 @@ const meta = pageMeta({
     "Practical, plain-English guides on AI writing, design, productivity, websites and hosting, plus how to choose and pay for AI tools.",
   path: "/blog/",
 });
-meta.openGraph = { ...meta.openGraph, images: [{ url: absUrl(coverPath("board", "og")), width: 1200, height: 630 }] };
 export const metadata = meta;
 
 export default function BlogPage() {
