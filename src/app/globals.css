@@ -136,8 +136,6 @@ a {
   background: linear-gradient(180deg, rgba(30, 34, 66, 0.82), rgba(23, 26, 48, 0.78));
   border: 1px solid var(--color-line);
   box-shadow: 0 18px 40px -26px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 .gradient-text {
@@ -783,4 +781,11 @@ main {
   margin-top: 18px;
   border-radius: 4px;
   background: linear-gradient(90deg, #754bff, #25c6e8, #ff4fa3);
+}
+
+/* Phones: no drifting aurora layer (it repaints a full-screen gradient every frame). */
+@media (max-width: 767px) {
+  body::before {
+    animation: none;
+  }
 }

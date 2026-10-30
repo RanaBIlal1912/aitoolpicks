@@ -21,11 +21,11 @@ const FLOATERS: { id: string; pos: string; delay: string }[] = [
  */
 export default function HeroVisual() {
   const [webgl, setWebgl] = useState(false);
+  const [lite, setLite] = useState(false);
   useEffect(() => {
-    const wide = matchMedia("(min-width: 768px)").matches;
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    if (!wide || calm || saver) return;
+    if (calm || saver) return;
     let canvas = false;
     try {
       const c = document.createElement("canvas");
@@ -34,29 +34,45 @@ export default function HeroVisual() {
       canvas = false;
     }
     if (!canvas) return;
-    const start = () => setWebgl(true);
-    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
-    const cic = (window as unknown as { cancelIdleCallback?: (n: number) => void }).cancelIdleCallback;
-    const id = ric ? ric(start, { timeout: 2500 }) : window.setTimeout(start, 1500);
-    return () => {
-      if (ric && cic) cic(id);
-      else clearTimeout(id);
+    const phone = !matchMedia("(min-width: 768px)").matches;
+    setLite(phone);
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      setWebgl(true);
     };
+    const cleanups: (() => void)[] = [];
+    if (phone) {
+      // On a phone the scene starts on the first touch or scroll, or after 6 seconds, so it never competes with the first paint.
+      for (const ev of ["touchstart", "scroll", "pointerdown"] as const) {
+        window.addEventListener(ev, start, { once: true, passive: true });
+        cleanups.push(() => window.removeEventListener(ev, start));
+      }
+      const t = window.setTimeout(start, 6000);
+      cleanups.push(() => clearTimeout(t));
+    } else {
+      const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+      const cic = (window as unknown as { cancelIdleCallback?: (n: number) => void }).cancelIdleCallback;
+      const id = ric ? ric(start, { timeout: 2500 }) : window.setTimeout(start, 1500);
+      cleanups.push(() => (ric && cic ? cic(id) : clearTimeout(id)));
+    }
+    return () => cleanups.forEach((c) => c());
   }, []);
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[520px]" aria-hidden="true">
-      <div className="hero-orb absolute inset-[14%] rounded-full" />
+    <div className="relative mx-auto aspect-[5/4] w-full max-w-[640px] md:aspect-square md:max-w-[600px]" aria-hidden="true">
+      <div className="hero-orb absolute inset-[16%] rounded-full" />
       {webgl && (
         <div className="absolute inset-0">
-          <HeroScene />
+          <HeroScene lite={lite} />
         </div>
       )}
-      {FLOATERS.map((f) => {
+      {FLOATERS.slice(0, lite ? 3 : 5).map((f) => {
         const t = getTool(f.id);
         return t ? (
           <span key={f.id} className={`float-y absolute ${f.pos} rounded-2xl shadow-xl shadow-black/40 ring-1 ring-white/20`} style={{ animationDelay: f.delay }}>
-            <ToolLogo id={t.id} name={t.name} hue={t.hue} size={56} />
+            <ToolLogo id={t.id} name={t.name} hue={t.hue} size={lite ? 44 : 56} />
           </span>
         ) : null;
       })}

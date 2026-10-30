@@ -4,6 +4,7 @@ import { TOOLS, getTool } from "@/data/tools";
 import { getNews } from "@/data/news";
 import { pageMeta } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
+import EcosystemNetwork from "@/components/universe/EcosystemNetwork";
 import ToolLogo from "@/components/ToolLogo";
 import { formatDate } from "@/components/NewsCard";
 
@@ -24,6 +25,8 @@ export default function EcosystemPage() {
         crumbs={[{ name: "Ecosystem", href: "/ecosystem/" }]}
       />
       <div className="mx-auto max-w-6xl px-5">
+        <EcosystemNetwork />
+        <div className="mt-16" />
         <section aria-labelledby="models-title">
           <h2 id="models-title" className="section-title text-white">
             Models we have verified
@@ -31,19 +34,26 @@ export default function EcosystemPage() {
           <p className="mt-2 max-w-2xl text-sm text-muted">Each model has a source. We add one only after reading the vendor&rsquo;s or host&rsquo;s own announcement.</p>
           <ul className="mt-5 grid gap-5 md:grid-cols-2">
             {MODELS.map((m) => {
-              const story = getNews(m.news);
+              const story = m.news ? getNews(m.news) : undefined;
               return (
                 <li key={m.id} className="glass flex flex-col gap-3 rounded-[22px] p-6">
                   <div className="flex flex-wrap items-center gap-3">
                     <h3 className="text-xl font-bold text-white">{m.name}</h3>
                     <span className="byline">
-                      {m.company} · announced {formatDate(m.released)}
+                      {m.company}{m.released ? ` · announced ${formatDate(m.released)}` : ""}
                     </span>
                   </div>
                   <p className="text-soft">{m.summary}</p>
                   <p className="text-sm text-muted">
                     <strong className="text-soft">Licence:</strong> {m.licence}
                   </p>
+                  {m.details && (
+                    <ul className="list-disc space-y-0.5 pl-5 text-sm text-muted">
+                      {m.details.map((d) => (
+                        <li key={d}>{d}</li>
+                      ))}
+                    </ul>
+                  )}
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted">Tools in the catalog connected to it</p>
                     <ul className="mt-2 flex flex-wrap gap-2">
@@ -79,7 +89,7 @@ export default function EcosystemPage() {
               );
             })}
           </ul>
-          <p className="mt-4 text-sm text-muted">Only one model is listed so far. More are added as we verify them; there are no placeholder entries.</p>
+          <p className="mt-4 text-sm text-muted">These models come from the vendors' own model pages or announcements. We add more as we verify them; there are no placeholder entries.</p>
         </section>
 
         <section className="mt-16" aria-labelledby="co-title">

@@ -160,7 +160,7 @@ describe("categories, ecosystem and reviews added in the latest round", () => {
     for (const m of MODELS) {
       expect(m.sources.length, m.id).toBeGreaterThan(0);
       expect(m.sources[0].url, m.id).toMatch(/^https:\/\//);
-      expect(getNews(m.news), m.id).toBeTruthy();
+      if (m.news) expect(getNews(m.news), m.id).toBeTruthy();
       for (const id of m.tools) expect(TOOLS.some((t) => t.id === id), `${m.id}: ${id}`).toBe(true);
       expect(COMPANIES.some((c) => c.name === m.company), m.company).toBe(true);
     }

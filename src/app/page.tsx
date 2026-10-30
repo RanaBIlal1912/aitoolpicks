@@ -15,6 +15,7 @@ import NewsVisual from "@/components/NewsVisual";
 import Reveal from "@/components/Reveal";
 import ToolTile from "@/components/ToolTile";
 import HeroVisual from "@/components/hero/HeroVisual";
+import UniverseSection from "@/components/universe/UniverseSection";
 import { catColors } from "@/data/palette";
 import ToolLogo from "@/components/ToolLogo";
 import { RecentStrip } from "@/components/SavedList";
@@ -79,8 +80,8 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="relative isolate overflow-hidden">
-        <div className="relative mx-auto grid min-h-[min(84vh,760px)] max-w-6xl items-center gap-10 px-5 pb-14 pt-12 md:grid-cols-[1.15fr_1fr]">
-          <div>
+        <div className="relative mx-auto grid min-h-[min(88vh,800px)] max-w-6xl items-center gap-6 px-5 pb-14 pt-12 md:grid-cols-[1fr_1.05fr] md:gap-4">
+          <div className="relative z-10">
             <span className="eyebrow">AI tool directory and magazine</span>
             <h1 className="mt-6 text-[clamp(2.6rem,6.8vw,5rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-white">
               Find the AI tool that fits, and <span className="gradient-text">what it really costs</span>
@@ -104,7 +105,11 @@ export default function Home() {
       </section>
 
       <div className="mx-auto max-w-6xl px-5">
-        <Reveal as="section" className="pt-6">
+        <div className="pt-4">
+          <UniverseSection />
+        </div>
+
+        <Reveal as="section" className="pt-24">
           <SectionHead eyebrow="Editor's picks" title="Good places to start" lead="Well-documented tools across the main jobs people use AI for." href="/tools/" cta="Browse every tool" />
           <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((t) => (

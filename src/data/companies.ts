@@ -10,12 +10,13 @@ export type Model = {
   id: string;
   name: string;
   company: string;
-  released: string;
+  released?: string;
+  details?: string[];
   summary: string;
   licence: string;
   tools: string[];
   toolNote: string;
-  news: string;
+  news?: string;
   sources: { label: string; url: string; checked: string }[];
 };
 

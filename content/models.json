@@ -6,9 +6,200 @@
     "released": "2026-10-29",
     "summary": "A multimodal, multilingual Mixture-of-Experts model with about 1T total parameters, 49B active and a 1M-token context window, positioned for cybersecurity, coding agents and multimodal tasks.",
     "licence": "Mistral Ecosystem Open-Weight License",
-    "tools": ["mistral", "huggingface", "vllm", "llamacpp"],
+    "tools": [
+      "mistral",
+      "huggingface",
+      "vllm",
+      "llamacpp"
+    ],
     "toolNote": "Hugging Face's announcement lists day-0 support in transformers, vLLM and llama.cpp.",
     "news": "mistral-large-4-on-hugging-face",
-    "sources": [{ "label": "Hugging Face announcement", "url": "https://huggingface.co/blog/mistral-large4", "checked": "2026-10-30" }]
+    "sources": [
+      {
+        "label": "Hugging Face announcement",
+        "url": "https://huggingface.co/blog/mistral-large4",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "claude-fable-5-1",
+    "name": "Claude Fable 5.1",
+    "company": "Anthropic",
+    "summary": "For demanding reasoning and long-horizon agentic work. Context window 1M tokens, max output 128K tokens, reliable knowledge cutoff Jun 2026.",
+    "licence": "Proprietary API model (not open weights)",
+    "details": [
+      "API ID: claude-fable-5-1",
+      "Base API price: $10 per input MTok, $50 per output MTok",
+      "Retirement: not sooner than September 1, 2027"
+    ],
+    "tools": [
+      "claude"
+    ],
+    "toolNote": "Available through the Claude API and Anthropic's apps.",
+    "sources": [
+      {
+        "label": "Anthropic models overview",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "claude-opus-5-5",
+    "name": "Claude Opus 5.5",
+    "company": "Anthropic",
+    "summary": "For long-running agentic coding and knowledge work. Context window 1M tokens, max output 128K tokens, reliable knowledge cutoff Jun 2026.",
+    "licence": "Proprietary API model (not open weights)",
+    "details": [
+      "API ID: claude-opus-5-5",
+      "Base API price: $4 per input MTok, $20 per output MTok",
+      "Retirement: not sooner than September 22, 2027"
+    ],
+    "tools": [
+      "claude"
+    ],
+    "toolNote": "Available through the Claude API and Anthropic's apps.",
+    "sources": [
+      {
+        "label": "Anthropic models overview",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "claude-sonnet-5-5",
+    "name": "Claude Sonnet 5.5",
+    "company": "Anthropic",
+    "summary": "Described as the best combination of speed and intelligence. Context window 1M tokens, max output 128K tokens, reliable knowledge cutoff Jun 2026.",
+    "licence": "Proprietary API model (not open weights)",
+    "details": [
+      "API ID: claude-sonnet-5-5",
+      "Base API price: $2 per input MTok, $10 per output MTok",
+      "Retirement: not sooner than September 28, 2027"
+    ],
+    "tools": [
+      "claude"
+    ],
+    "toolNote": "Available through the Claude API and Anthropic's apps.",
+    "sources": [
+      {
+        "label": "Anthropic models overview",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "claude-haiku-5-5",
+    "name": "Claude Haiku 5.5",
+    "company": "Anthropic",
+    "summary": "For high-volume, latency-sensitive tasks such as classification, extraction and routing. Context window 1M tokens, max output 128K tokens, reliable knowledge cutoff Jun 2026.",
+    "licence": "Proprietary API model (not open weights)",
+    "details": [
+      "API ID: claude-haiku-5-5",
+      "Base API price: from $0.10 per input MTok, from $0.50 per output MTok",
+      "Retirement: not sooner than October 7, 2027"
+    ],
+    "tools": [
+      "claude"
+    ],
+    "toolNote": "Available through the Claude API and Anthropic's apps.",
+    "sources": [
+      {
+        "label": "Anthropic models overview",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "mistral-large-3",
+    "name": "Mistral Large 3",
+    "company": "Mistral AI",
+    "summary": "A model listed on Mistral's models overview page, version v25.12.",
+    "licence": "Apache 2.0",
+    "details": [
+      "Version string on the page: v25.12",
+      "The page does not state a release date or context window for this model"
+    ],
+    "tools": [
+      "mistral"
+    ],
+    "toolNote": "Mistral's own models page lists it.",
+    "sources": [
+      {
+        "label": "Mistral models overview",
+        "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "mistral-small-4",
+    "name": "Mistral Small 4",
+    "company": "Mistral AI",
+    "summary": "A model listed on Mistral's models overview page, version v26.03.",
+    "licence": "Apache 2.0",
+    "details": [
+      "Version string on the page: v26.03",
+      "The page does not state a release date or context window for this model"
+    ],
+    "tools": [
+      "mistral"
+    ],
+    "toolNote": "Mistral's own models page lists it.",
+    "sources": [
+      {
+        "label": "Mistral models overview",
+        "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "ministral-3",
+    "name": "Ministral 3 (14B, 8B and 3B)",
+    "company": "Mistral AI",
+    "summary": "Three sizes of Ministral 3 (14B, 8B, 3B) are listed on Mistral's models overview page.",
+    "licence": "Apache 2.0",
+    "details": [
+      "Version string on the page: v25.12",
+      "The page does not state a release date or context window for this model"
+    ],
+    "tools": [
+      "mistral"
+    ],
+    "toolNote": "Mistral's own models page lists it.",
+    "sources": [
+      {
+        "label": "Mistral models overview",
+        "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+        "checked": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "id": "voxtral-small",
+    "name": "Voxtral Small",
+    "company": "Mistral AI",
+    "summary": "A speech model listed in the audio section of Mistral's models overview page.",
+    "licence": "Apache 2.0",
+    "details": [
+      "Version string on the page: v25.07",
+      "The page does not state a release date or context window for this model"
+    ],
+    "tools": [
+      "mistral"
+    ],
+    "toolNote": "Mistral's own models page lists it.",
+    "sources": [
+      {
+        "label": "Mistral models overview",
+        "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+        "checked": "2026-10-30"
+      }
+    ]
   }
 ]
