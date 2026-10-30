@@ -33,6 +33,7 @@ export default function Photo({
       alt={decorative ? "" : PHOTOS[id].alt}
       aria-hidden={decorative ? true : undefined}
       loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
       decoding="async"
       className={`h-full w-full object-cover ${className}`}
     />

@@ -6,7 +6,6 @@ import { getTool } from "@/data/tools";
 import { constellation } from "@/lib/constellation";
 import ToolLogo from "../ToolLogo";
 import { whenEngaged } from "@/lib/engage";
-import Photo from "../Photo";
 
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
@@ -39,13 +38,6 @@ function StaticNetwork() {
 export default function HeroVisual() {
   const [webgl, setWebgl] = useState(false);
   const [lite, setLite] = useState(false);
-  // The faded backdrop photo on phones is added after the page has loaded, so it never competes with the headline for the first paint.
-  const [backdrop, setBackdrop] = useState(false);
-  useEffect(() => {
-    const go = () => window.setTimeout(() => setBackdrop(true), 1200);
-    if (document.readyState === "complete") go();
-    else window.addEventListener("load", go, { once: true });
-  }, []);
   useEffect(() => {
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
@@ -64,9 +56,6 @@ export default function HeroVisual() {
 
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-y-0 right-0 w-full opacity-60 mix-blend-screen lg:hidden" style={{ maskImage: "linear-gradient(to left, #000 20%, transparent 95%)", WebkitMaskImage: "linear-gradient(to left, #000 20%, transparent 95%)" }}>
-        {backdrop && <Photo id="light-dark-room" decorative small sizes="100vw" width={640} height={427} />}
-      </div>
       <div className="hero-orb absolute right-[-6%] top-[8%] h-[80%] w-[62%] rounded-full" />
       <div className={`absolute inset-0 transition-opacity duration-700 ${webgl ? "opacity-0" : "opacity-100"}`}>
         <StaticNetwork />

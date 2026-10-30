@@ -44,7 +44,7 @@ const WORLD: Record<TopicId, { a: string; b: string; glyph: ReactNode }> = {
   comparisons: { a: "#7c3aed", b: "#db2777", glyph: <path d="M8 3L4 7l4 4M4 7h12M16 21l4-4-4-4M20 17H8" /> },
 };
 
-export default function ArticleCover({ topic, tools = [], small = false, seed = "" }: { topic: TopicId; tools?: string[]; small?: boolean; seed?: string }) {
+export default function ArticleCover({ topic, tools = [], small = false, seed = "", priority = false }: { topic: TopicId; tools?: string[]; small?: boolean; seed?: string; priority?: boolean }) {
   const w = WORLD[topic];
   const label = TOPICS.find((t) => t.id === topic)?.label ?? "Guide";
   const list = tools.map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t).slice(0, 4);
@@ -57,7 +57,7 @@ export default function ArticleCover({ topic, tools = [], small = false, seed = 
       style={{ background: `linear-gradient(135deg, ${w.a}, ${w.b})` }}
     >
       <div className="absolute inset-0 mix-blend-multiply opacity-60">
-        <Photo id={pickPhoto(POOL[topic], seed || topic)} decorative sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
+        <Photo id={pickPhoto(POOL[topic], seed || topic)} decorative priority={priority} sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
       <div className="relative flex items-center gap-2.5 px-4">
