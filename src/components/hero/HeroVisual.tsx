@@ -51,7 +51,10 @@ export default function HeroVisual() {
     }
     if (!canvas) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    return whenEngaged(() => setWebgl(true), 60000);
+    // Start only while the hero is still on screen: a visitor who has already scrolled down to the map does not also get a second WebGL scene running behind them.
+    return whenEngaged(() => {
+      if (window.scrollY < window.innerHeight * 0.5) setWebgl(true);
+    }, 60000);
   }, []);
 
   return (
