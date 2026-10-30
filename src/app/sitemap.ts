@@ -13,7 +13,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const last = new Date(SITE.updated);
-  const fixed = ["/", "/submit/", "/ecosystem/", "/tools/", "/reviews/", "/compare/", "/pricing/", "/best/", "/news/", "/blog/", "/methodology/", "/verification/", "/about/", "/contact/", "/affiliate-disclosure/", "/privacy/", "/terms/"];
+  const fixed = ["/", "/submit/", "/ecosystem/", "/tools/", "/reviews/", "/compare/", "/pricing/", "/best/", "/news/", "/blog/", "/methodology/", "/verification/", "/credits/", "/about/", "/contact/", "/affiliate-disclosure/", "/privacy/", "/terms/"];
   const dynamicPaths = [
     ...REVIEWS.map((r) => `/reviews/${r.slug}/`),
     ...COMPARISONS.map((c) => `/compare/${c.slug}/`),

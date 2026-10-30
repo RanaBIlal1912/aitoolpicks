@@ -2,6 +2,14 @@ import type { ReactNode } from "react";
 import { TOPICS, type TopicId } from "@/data/topics";
 import { getTool } from "@/data/tools";
 import ToolLogo from "./ToolLogo";
+import Photo from "./Photo";
+import type { PhotoId } from "@/data/photos";
+
+const PHOTO_BY_TOPIC: Record<TopicId, PhotoId> = {
+  freelancing: "laptop-desk", writing: "laptop-desk", design: "architecture-ribs", business: "office-glass", websites: "cable-network", students: "data-presentation",
+  developers: "circuit-macro", productivity: "laptop-desk", imagevideo: "light-dark-room", beginners: "processor-tweezers", research: "silicon-wafer",
+  automation: "fibre-switch", marketing: "data-presentation", security: "cable-network", comparisons: "circuit-blue",
+};
 
 // Each topic has its own colour world, so a blog full of guides does not look like one repeated image. A cover shows the logos of the
 // products the guide is about when there are any, otherwise a simple symbol for the topic. It is decoration, labelled as such to
@@ -32,17 +40,14 @@ export default function ArticleCover({ topic, tools = [], small = false }: { top
   return (
     <div
       role="img"
-      aria-label={`${label} guide cover (illustration)`}
+      aria-label={`${label} guide cover: stock photograph with the logos of the tools in the guide`}
       className="relative grid h-full w-full place-items-center overflow-hidden"
       style={{ background: `linear-gradient(135deg, ${w.a}, ${w.b})` }}
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: "radial-gradient(circle at 85% 10%, rgba(255,255,255,.5), transparent 40%), repeating-linear-gradient(135deg, rgba(255,255,255,.07) 0 2px, transparent 2px 24px)",
-        }}
-      />
+      <div className="absolute inset-0 mix-blend-multiply opacity-60">
+        <Photo id={PHOTO_BY_TOPIC[topic]} decorative sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
+      </div>
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
       <div className="relative flex items-center gap-2.5 px-4">
         {list.length > 0 ? (
           list.map((t) => (

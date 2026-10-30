@@ -11,6 +11,8 @@ import { catColors } from "@/data/palette";
 import ArticleCard from "../ArticleCard";
 import { formatDate } from "../NewsCard";
 import NewsVisual from "../NewsVisual";
+import Photo from "../Photo";
+import type { PhotoId } from "@/data/photos";
 import ToolLogo from "../ToolLogo";
 
 /** Section heading with a large index number, used instead of one repeated eyebrow + title pattern. */
@@ -122,11 +124,36 @@ export function FeaturedBento({ ids }: { ids: string[] }) {
   );
 }
 
+/** A full-width editorial panel over a real photograph of a data centre: states how the directory is checked and links to the evidence. */
+export function PhotoBand({ checked, total }: { checked: number; total: number }) {
+  return (
+    <section aria-label="How the directory is checked" className="relative isolate overflow-hidden rounded-[32px] border border-white/10">
+      <div className="absolute inset-0 -z-10">
+        <Photo id="server-aisle" decorative sizes="(min-width: 1152px) 1152px, 100vw" className="object-[50%_60%]" />
+      </div>
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#090B18] via-[#090B18]/85 to-[#090B18]/20" />
+      <div className="max-w-xl px-7 py-14 md:px-14 md:py-20">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan">Read from the source</p>
+        <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-white md:text-5xl">Prices come from the official page, not from a press release.</h2>
+        <p className="mt-4 text-soft">
+          We opened the official site of {checked === total ? "all " + total : checked + " of " + total} tools in a real browser, recorded the plans shown and the date we looked, and marked anything we could not confirm as partial.
+        </p>
+        <Link href="/verification/" className="btn-primary mt-7 inline-flex">
+          See the verification report
+        </Link>
+      </div>
+      <span className="absolute bottom-2 right-3 rounded bg-black/55 px-1.5 py-0.5 text-[0.65rem] text-white/80 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
+    </section>
+  );
+}
+
 /** Horizontal, snap-scrolling category cards with the real logos of the tools inside. */
+const CAT_PHOTOS: PhotoId[] = ["circuit-blue", "light-dark-room", "server-aisle", "silicon-wafer", "fibre-switch", "circuit-macro", "processor-tweezers", "cable-network"];
+
 export function CategoryRail() {
   return (
     <ul className="rail -mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-4" aria-label="Categories">
-      {CATEGORIES.map((c) => {
+      {CATEGORIES.map((c, ci) => {
         const [a, b] = catColors(c.slug);
         const tools = toolsInCategory(c.slug);
         return (
@@ -136,6 +163,10 @@ export function CategoryRail() {
               className="group relative flex h-[210px] w-[250px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-5 no-underline transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
               style={{ background: `linear-gradient(150deg, ${a}40, #0f1226 55%, ${b}26)` }}
             >
+              <span aria-hidden="true" className="absolute inset-0 opacity-35 mix-blend-luminosity transition-opacity duration-300 group-hover:opacity-55">
+                <Photo id={CAT_PHOTOS[ci % CAT_PHOTOS.length]} decorative sizes="250px" />
+              </span>
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0f1226] via-[#0f1226]/55 to-transparent" />
               <span aria-hidden="true" className="absolute -right-6 -top-6 h-28 w-28 rounded-full opacity-40 blur-2xl transition-opacity group-hover:opacity-70" style={{ background: a }} />
               <span className="relative flex -space-x-2">
                 {tools.slice(0, 4).map((t) => (

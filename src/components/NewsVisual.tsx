@@ -4,6 +4,13 @@ import { newsImage } from "@/data/newsImages";
 import { getTool } from "@/data/tools";
 import { withBase } from "@/lib/site";
 import ToolLogo from "./ToolLogo";
+import Photo from "./Photo";
+import type { PhotoId } from "@/data/photos";
+
+const PHOTO_BY_KIND: Record<NewsKind, PhotoId> = {
+  "New product": "processor-tweezers", "Feature update": "circuit-blue", "Model release": "datacenter-white", Research: "silicon-wafer",
+  "Policy update": "architecture-ribs", "Company announcement": "office-glass", "Open standard": "fibre-switch",
+};
 
 // Every story gets its own visual. When the vendor published an announcement image we use it (with credit). Otherwise the visual is an
 // illustration made for this site: a colour world per type of news, with the logos of the products involved. It is decoration, never a
@@ -44,17 +51,14 @@ export default function NewsVisual({ n, className = "", priority = false, sizes 
   return (
     <div
       role="img"
-      aria-label={`Illustration for ${n.kind.toLowerCase()} news, not an image from the source`}
+      aria-label={`Stock photograph for ${n.kind.toLowerCase()} news, not an image from the source`}
       className={`relative grid h-full w-full place-items-center overflow-hidden ${className}`}
       style={{ background: `linear-gradient(135deg, ${w.a}, ${w.b})` }}
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: "radial-gradient(circle at 20% 15%, rgba(255,255,255,.45), transparent 38%), repeating-linear-gradient(135deg, rgba(255,255,255,.07) 0 2px, transparent 2px 22px)",
-        }}
-      />
+      <div className="absolute inset-0 mix-blend-multiply opacity-60">
+        <Photo id={PHOTO_BY_KIND[n.kind]} decorative sizes={small ? "200px" : sizes} />
+      </div>
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
       <div className="relative flex items-center gap-3">
         {tools.length > 0 ? (
           tools.map((t) => (

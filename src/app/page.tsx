@@ -15,7 +15,7 @@ import UniverseSection from "@/components/universe/UniverseSection";
 import ToolLogo from "@/components/ToolLogo";
 import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
-import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, VersusTiles } from "@/components/home/Sections";
+import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, PhotoBand, VersusTiles } from "@/components/home/Sections";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
 
@@ -110,6 +110,9 @@ export default function Home() {
         <Reveal as="section" className="pt-28 cv-section">
           <Head n="02" eyebrow="Editor's picks" title="Where to start" lead="Well-documented tools across the jobs people use AI for." href="/tools/" cta="Browse every tool" />
           <FeaturedBento ids={picks} />
+          <div className="mt-16 cv-section">
+            <PhotoBand checked={TOOLS.length} total={TOOLS.length} />
+          </div>
         </Reveal>
 
         <Reveal as="section" className="pt-28 cv-section">

@@ -6,6 +6,7 @@ import { getTool } from "@/data/tools";
 import { constellation } from "@/lib/constellation";
 import ToolLogo from "../ToolLogo";
 import { whenEngaged } from "@/lib/engage";
+import Photo from "../Photo";
 
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
@@ -56,6 +57,9 @@ export default function HeroVisual() {
 
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div className="absolute inset-y-0 right-0 w-full opacity-60 mix-blend-screen md:w-[65%]" style={{ maskImage: "linear-gradient(to left, #000 20%, transparent 95%)", WebkitMaskImage: "linear-gradient(to left, #000 20%, transparent 95%)" }}>
+        <Photo id="light-dark-room" decorative priority sizes="(min-width: 768px) 65vw, 100vw" width={1920} height={1280} />
+      </div>
       <div className="hero-orb absolute right-[-6%] top-[8%] h-[80%] w-[62%] rounded-full" />
       <div className={`absolute inset-0 transition-opacity duration-700 ${webgl ? "opacity-0" : "opacity-100"}`}>
         <StaticNetwork />

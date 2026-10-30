@@ -92,11 +92,11 @@ export default function MethodologyPage() {
       </p>
       <p>
         <strong>News images</strong> are the vendor&rsquo;s own announcement image for that story, shown with credit and a link to the page that published it. Where a
-        vendor has no image specific to the story, or only a general image it reuses for many posts, we draw an illustration instead, and the page says so. We do not use
+        vendor has no image specific to the story, or only a general image it reuses for many posts, we show a licensed stock photograph with the logos of the products involved, and the page says so. We do not use
         other outlets&rsquo; photographs.
       </p>
       <p>
-        <strong>Guide and comparison covers</strong> are illustrations made for this site from the logos of the tools in the guide. They are not product
+        <strong>Guide and comparison covers</strong> combine a licensed Unsplash stock photograph (credited on the photo credits page) with the logos of the tools in the guide. They are not product
         screenshots, and we do not publish screenshots we did not take or are not licensed to use.
       </p>
 
