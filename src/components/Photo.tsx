@@ -8,6 +8,7 @@ export default function Photo({
   sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
   priority = false,
   decorative = false,
+  small = false,
   width = 1920,
   height = 1080,
 }: {
@@ -16,6 +17,8 @@ export default function Photo({
   sizes?: string;
   priority?: boolean;
   decorative?: boolean;
+  /** Only ever use the 640 px file (for faded backdrops). */
+  small?: boolean;
   width?: number;
   height?: number;
 }) {
@@ -23,7 +26,7 @@ export default function Photo({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={withBase(photoPath(id, "sm"))}
-      srcSet={`${withBase(photoPath(id, "sm"))} 640w, ${withBase(photoPath(id))} 1920w`}
+      srcSet={small ? undefined : `${withBase(photoPath(id, "sm"))} 640w, ${withBase(photoPath(id))} 1920w`}
       sizes={sizes}
       width={width}
       height={height}
