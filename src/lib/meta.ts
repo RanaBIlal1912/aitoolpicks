@@ -9,8 +9,8 @@ export function shortTitle(title: string, max = 50): string {
   const at = cut.lastIndexOf(" ");
   return cut
     .slice(0, at > 20 ? at : max)
-    .replace(/[s:,;.-–]+$/, "")
-    .replace(/(s+(and|or|the|a|an|to|of|with|for|in|on|is|are|that|who|what))+$/i, "");
+    .replace(/[\s:,;.\-–]+$/, "")
+    .replace(/(\s+(and|or|the|a|an|to|of|with|for|in|on|is|are|that|who|what))+$/i, "");
 }
 
 /** Build consistent per-page metadata: unique title and description, canonical URL, Open Graph and Twitter cards. */
