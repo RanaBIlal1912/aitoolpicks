@@ -51,7 +51,7 @@ export default function HeroVisual() {
     }
     if (!canvas) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    return whenEngaged(() => setWebgl(true), 10000);
+    return whenEngaged(() => setWebgl(true), 60000);
   }, []);
 
   return (
