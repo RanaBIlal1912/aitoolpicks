@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { CATEGORIES, TOOLS, toolsInCategory } from "@/data/tools";
 import { catColors } from "@/data/palette";
+import { whenEngaged } from "@/lib/engage";
 
 const UniverseScene = dynamic(() => import("./UniverseScene"), { ssr: false });
 
@@ -45,12 +46,21 @@ export default function UniverseSection() {
     }
     if (calm || saver || !gl) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    // The map is below the fold, so loading it when it scrolls into view does not touch the first paint.
+    // Load the 3D code when the section is on screen AND the visitor has interacted with the page (a scroll counts) or ten seconds have passed.
+    // The interaction listener starts now, so a scroll that brings the section into view is not missed.
+    let seen = false;
+    let engaged = false;
+    const go = () => seen && engaged && setOn(true);
+    const stop = whenEngaged(() => {
+      engaged = true;
+      go();
+    }, 10000);
     const io = new IntersectionObserver(
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
+          seen = true;
           io.disconnect();
-          setOn(true);
+          go();
         }
       },
       { rootMargin: "100px 0px" },
@@ -58,6 +68,7 @@ export default function UniverseSection() {
     io.observe(el);
     return () => {
       io.disconnect();
+      stop();
     };
   }, []);
 

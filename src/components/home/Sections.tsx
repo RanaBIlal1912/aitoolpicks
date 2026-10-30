@@ -18,9 +18,7 @@ export function Head({ n, eyebrow, title, lead, href, cta, tone = "dark" }: { n:
   return (
     <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
       <div className="flex items-start gap-5">
-        <span aria-hidden="true" className={`font-display text-5xl font-extrabold leading-none tracking-tighter md:text-6xl ${tone === "light" ? "text-black/15" : "text-white/10"}`}>
-          {n}
-        </span>
+        <span aria-hidden="true" data-n={n} className={`idx font-display text-5xl font-extrabold leading-none tracking-tighter md:text-6xl ${tone === "light" ? "text-black/15" : "text-white/10"}`} />
         <div>
           <span className={tone === "light" ? "text-xs font-bold uppercase tracking-[0.16em] text-violet-700" : "eyebrow"}>{eyebrow}</span>
           <h2 className={`section-title mt-2 ${tone === "light" ? "!text-[#0b0d1c]" : "text-white"}`}>{title}</h2>

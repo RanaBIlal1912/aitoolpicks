@@ -820,32 +820,10 @@ main {
     transform: none;
   }
 }
-.hero-title .gradient-text {
-  filter: drop-shadow(0 0 28px rgba(117, 75, 255, 0.5));
-}
 @media (prefers-reduced-motion: reduce) {
   .hero-title .word {
     opacity: 1;
     transform: none;
-    animation: none;
-  }
-}
-.hero-net circle {
-  animation: twinkle 5s ease-in-out infinite;
-}
-.hero-net circle:nth-child(3n) {
-  animation-delay: -1.5s;
-}
-.hero-net circle:nth-child(3n + 1) {
-  animation-delay: -3s;
-}
-@keyframes twinkle {
-  50% {
-    opacity: 0.45;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-net circle {
     animation: none;
   }
 }
@@ -996,4 +974,8 @@ main {
     transform-origin: 60% 55%;
     opacity: 0.75;
   }
+}
+
+.idx::before {
+  content: attr(data-n);
 }
