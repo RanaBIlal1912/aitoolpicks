@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Bricolage_Grotesque, Newsreader } from "next/font/google";
 import { SITE, absUrl, withBase } from "@/lib/site";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import ScrollProgress from "@/components/ScrollProgress";
+
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap", axes: ["opsz"] });
+const editorial = Newsreader({ subsets: ["latin"], variable: "--font-newsreader", display: "swap", style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE.url}/`),
@@ -42,7 +46,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${editorial.variable}`}>
       <head>
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>

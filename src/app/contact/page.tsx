@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 export default function ContactPage() {
   return (
     <>
-      <PageHeader
+      <PageHeader variant="studio"
         eyebrow="Contact"
         title="Tell us what we got wrong, or what to cover next"
         lead="We read every message. Corrections to prices or facts are the most useful thing you can send."

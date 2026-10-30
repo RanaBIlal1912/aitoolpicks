@@ -1,132 +1,151 @@
 "use client";
 
-import { Float } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { CAT_COLORS } from "@/data/palette";
+import { constellation } from "@/lib/constellation";
 
-// The home hero: a glass-and-light "AI core" (a torus knot with a clear-coat finish) wrapped by two orbit rings and a layer of floating polyhedra in the
-// category colours, set in a shell of dust. The camera leans toward the pointer and pulls back as the page scrolls (scroll storytelling), so the scene
-// reacts to the visitor without taking over the page. `lite` is the phone version: fewer particles and polygons, a lower pixel ratio, no extra polyhedra.
-const COLORS = Object.values(CAT_COLORS).map((c) => c[0]);
-
-function Core({ lite }: { lite: boolean }) {
-  const knot = useRef<THREE.Mesh>(null);
-  const ringA = useRef<THREE.Mesh>(null);
-  const ringB = useRef<THREE.Mesh>(null);
-  useFrame((_, dt) => {
-    if (knot.current) {
-      knot.current.rotation.y += dt * 0.35;
-      knot.current.rotation.x += dt * 0.12;
-    }
-    if (ringA.current) ringA.current.rotation.z += dt * 0.25;
-    if (ringB.current) ringB.current.rotation.z -= dt * 0.18;
-  });
-  return (
-    <group>
-      <mesh ref={knot}>
-        <torusKnotGeometry args={[0.95, 0.3, lite ? 72 : 180, lite ? 12 : 28, 2, 3]} />
-        <meshPhysicalMaterial color="#754BFF" metalness={0.35} roughness={0.18} clearcoat={1} clearcoatRoughness={0.1} emissive="#2a1a80" emissiveIntensity={0.7} />
-      </mesh>
-      <mesh ref={ringA} rotation={[1.1, 0.2, 0]}>
-        <torusGeometry args={[2, 0.018, 8, lite ? 80 : 160]} />
-        <meshBasicMaterial color="#25C6E8" />
-      </mesh>
-      <mesh ref={ringB} rotation={[0.4, 1.0, 0]}>
-        <torusGeometry args={[2.5, 0.014, 8, lite ? 80 : 160]} />
-        <meshBasicMaterial color="#FF4FA3" />
-      </mesh>
-      <mesh>
-        <sphereGeometry args={[0.35, 24, 24]} />
-        <meshBasicMaterial color="#25C6E8" />
-      </mesh>
-    </group>
-  );
+// The home hero: a living network. Nodes in the category colours are joined by their nearest neighbours; small bright "signals" travel along the links;
+// a glass core with a wireframe shell sits at the centre. The camera leans toward the pointer and pulls back as the page scrolls. `lite` is the phone
+// version: about half the nodes, a lower pixel ratio and no halo layer. The same layout is drawn as a static SVG before this loads (see HeroConstellation).
+function glowTexture() {
+  const c = document.createElement("canvas");
+  c.width = c.height = 128;
+  const g = c.getContext("2d")!;
+  const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  grad.addColorStop(0, "rgba(160,130,255,0.85)");
+  grad.addColorStop(0.35, "rgba(117,75,255,0.35)");
+  grad.addColorStop(1, "rgba(37,198,232,0)");
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 128, 128);
+  return new THREE.CanvasTexture(c);
 }
 
-const SHAPES = ["octahedron", "icosahedron", "dodecahedron", "tetrahedron"] as const;
+function Network({ lite }: { lite: boolean }) {
+  const group = useRef<THREE.Group>(null);
+  const nodesRef = useRef<THREE.InstancedMesh>(null);
+  const haloRef = useRef<THREE.InstancedMesh>(null);
+  const sig = useRef<THREE.Points>(null);
+  const core = useRef<THREE.Mesh>(null);
+  const shell = useRef<THREE.Mesh>(null);
+  const { nodes, edges } = useMemo(() => constellation(lite ? 46 : 84), [lite]);
+  const glow = useMemo(() => glowTexture(), []);
 
-function Shapes({ lite }: { lite: boolean }) {
-  const items = useMemo(() => {
-    const n = lite ? 4 : 10;
-    return Array.from({ length: n }, (_, i) => {
-      const a = (i / n) * Math.PI * 2;
-      const r = 2.9 + (i % 3) * 0.55;
-      return { pos: [Math.cos(a) * r, Math.sin(a * 1.7) * 1.5, Math.sin(a) * r * 0.7 - 0.5] as [number, number, number], shape: SHAPES[i % 4], color: COLORS[(i * 2) % COLORS.length], s: 0.2 + (i % 4) * 0.06 };
-    });
-  }, [lite]);
-  return (
-    <>
-      {items.map((it, i) => (
-        <Float key={i} speed={1.2 + (i % 3) * 0.4} rotationIntensity={1.2} floatIntensity={1.2}>
-          <mesh position={it.pos} scale={it.s * 2.2}>
-            {it.shape === "octahedron" && <octahedronGeometry args={[1, 0]} />}
-            {it.shape === "icosahedron" && <icosahedronGeometry args={[1, 0]} />}
-            {it.shape === "dodecahedron" && <dodecahedronGeometry args={[1, 0]} />}
-            {it.shape === "tetrahedron" && <tetrahedronGeometry args={[1, 0]} />}
-            <meshPhysicalMaterial color={it.color} metalness={0.2} roughness={0.25} clearcoat={0.8} emissive={it.color} emissiveIntensity={0.35} />
-          </mesh>
-        </Float>
-      ))}
-    </>
-  );
-}
-
-function Dust({ lite }: { lite: boolean }) {
-  const ref = useRef<THREE.Points>(null);
-  const geo = useMemo(() => {
-    const n = lite ? 150 : 650;
-    const pos = new Float32Array(n * 3);
-    const col = new Float32Array(n * 3);
-    const palette = ["#25C6E8", "#FF4FA3", "#754BFF", "#FFB020"].map((c) => new THREE.Color(c));
-    const v = new THREE.Vector3();
-    for (let i = 0; i < n; i++) {
-      v.randomDirection().multiplyScalar(3.2 + Math.random() * 3.2);
-      pos.set([v.x, v.y, v.z], i * 3);
-      const c = palette[i % 4];
-      col.set([c.r, c.g, c.b], i * 3);
-    }
+  const lines = useMemo(() => {
+    const pts: number[] = [];
+    for (const [a, b] of edges) pts.push(nodes[a].x, nodes[a].y, nodes[a].z, nodes[b].x, nodes[b].y, nodes[b].z);
     const g = new THREE.BufferGeometry();
-    g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-    g.setAttribute("color", new THREE.BufferAttribute(col, 3));
+    g.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
     return g;
-  }, [lite]);
+  }, [nodes, edges]);
+
+  const signals = useMemo(() => {
+    const n = lite ? 8 : 16;
+    return Array.from({ length: n }, (_, i) => ({ edge: (i * 7) % edges.length, t: (i * 0.37) % 1, speed: 0.25 + ((i * 13) % 10) / 30 }));
+  }, [edges, lite]);
+  const sigGeo = useMemo(() => {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.Float32BufferAttribute(new Float32Array(signals.length * 3), 3));
+    return g;
+  }, [signals]);
+
+  useEffect(() => {
+    const m = new THREE.Matrix4();
+    const col = new THREE.Color();
+    nodes.forEach((n, i) => {
+      m.compose(new THREE.Vector3(n.x, n.y, n.z), new THREE.Quaternion(), new THREE.Vector3(n.size * 2, n.size * 2, n.size * 2));
+      nodesRef.current?.setMatrixAt(i, m);
+      nodesRef.current?.setColorAt(i, col.set(n.color));
+      if (haloRef.current) {
+        m.compose(new THREE.Vector3(n.x, n.y, n.z), new THREE.Quaternion(), new THREE.Vector3(n.size * 7, n.size * 7, n.size * 7));
+        haloRef.current.setMatrixAt(i, m);
+        haloRef.current.setColorAt(i, col.set(n.color));
+      }
+    });
+    if (nodesRef.current) nodesRef.current.instanceMatrix.needsUpdate = true;
+    if (nodesRef.current?.instanceColor) nodesRef.current.instanceColor.needsUpdate = true;
+    if (haloRef.current) {
+      haloRef.current.instanceMatrix.needsUpdate = true;
+      if (haloRef.current.instanceColor) haloRef.current.instanceColor.needsUpdate = true;
+    }
+  }, [nodes]);
+
   useFrame((_, dt) => {
-    if (ref.current) ref.current.rotation.y += dt * 0.03;
+    if (group.current) group.current.rotation.y += dt * 0.07;
+    if (core.current) core.current.rotation.y -= dt * 0.3;
+    if (shell.current) {
+      shell.current.rotation.y += dt * 0.18;
+      shell.current.rotation.x += dt * 0.07;
+    }
+    const pos = sigGeo.getAttribute("position") as THREE.BufferAttribute;
+    signals.forEach((s, i) => {
+      s.t += dt * s.speed;
+      if (s.t > 1) {
+        s.t = 0;
+        s.edge = (s.edge + 11) % edges.length;
+      }
+      const [a, b] = edges[s.edge];
+      pos.setXYZ(i, nodes[a].x + (nodes[b].x - nodes[a].x) * s.t, nodes[a].y + (nodes[b].y - nodes[a].y) * s.t, nodes[a].z + (nodes[b].z - nodes[a].z) * s.t);
+    });
+    pos.needsUpdate = true;
   });
+
   return (
-    <points ref={ref} geometry={geo}>
-      <pointsMaterial size={lite ? 0.05 : 0.04} vertexColors transparent opacity={0.9} sizeAttenuation depthWrite={false} />
-    </points>
+    <group position={[lite ? 0 : 1.7, lite ? 0.2 : 0, 0]}>
+      <group ref={group}>
+        <instancedMesh ref={nodesRef} args={[undefined, undefined, nodes.length]}>
+          <sphereGeometry args={[1, lite ? 8 : 14, lite ? 8 : 14]} />
+          <meshBasicMaterial toneMapped={false} />
+        </instancedMesh>
+        {!lite && (
+          <instancedMesh ref={haloRef} args={[undefined, undefined, nodes.length]}>
+            <sphereGeometry args={[1, 10, 10]} />
+            <meshBasicMaterial transparent opacity={0.13} depthWrite={false} blending={THREE.AdditiveBlending} toneMapped={false} />
+          </instancedMesh>
+        )}
+        <lineSegments geometry={lines}>
+          <lineBasicMaterial color="#8d7bff" transparent opacity={0.34} />
+        </lineSegments>
+        <points ref={sig} geometry={sigGeo}>
+          <pointsMaterial color="#ffffff" size={lite ? 0.12 : 0.1} sizeAttenuation transparent opacity={0.95} depthWrite={false} blending={THREE.AdditiveBlending} />
+        </points>
+      </group>
+      <mesh ref={core}>
+        <icosahedronGeometry args={[0.78, lite ? 1 : 2]} />
+        <meshPhysicalMaterial color="#754BFF" metalness={0.25} roughness={0.12} clearcoat={1} emissive="#3b1fb0" emissiveIntensity={0.9} />
+      </mesh>
+      <mesh ref={shell}>
+        <icosahedronGeometry args={[1.25, 1]} />
+        <meshBasicMaterial color="#25C6E8" wireframe transparent opacity={0.5} />
+      </mesh>
+      <sprite scale={[6, 6, 1]}>
+        <spriteMaterial map={glow} transparent depthWrite={false} blending={THREE.AdditiveBlending} />
+      </sprite>
+    </group>
   );
 }
 
 function Rig() {
   const { camera, pointer } = useThree();
+  const target = useRef(new THREE.Vector3());
   useFrame((_, dt) => {
-    const k = Math.min(1, dt * 2.2);
-    const scroll = Math.min(1, window.scrollY / 700);
-    const z = 7.6 + scroll * 3.2; // pulls back as you scroll
-    camera.position.x += (pointer.x * 0.9 - camera.position.x) * k;
-    camera.position.y += (pointer.y * 0.55 - camera.position.y) * k;
-    camera.position.z += (z - camera.position.z) * k;
-    camera.lookAt(0, 0, 0);
+    const scroll = Math.min(1, window.scrollY / Math.max(1, window.innerHeight));
+    target.current.set(pointer.x * 0.9, pointer.y * 0.55, 8.6 + scroll * 4.5);
+    camera.position.lerp(target.current, Math.min(1, dt * 2.2));
+    camera.lookAt(0.6, 0, 0);
   });
   return null;
 }
 
-export default function HeroScene({ lite = false }: { lite?: boolean }) {
+export default function HeroScene({ lite }: { lite: boolean }) {
   return (
-    <Canvas dpr={lite ? 1 : [1, 1.6]} camera={{ position: [0, 0, 7.6], fov: 42 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }} aria-hidden="true">
+    <Canvas dpr={lite ? 1 : [1, 1.6]} camera={{ position: [0, 0, 8.6], fov: 46 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
       <ambientLight intensity={0.55} />
-      <directionalLight position={[3, 4, 5]} intensity={2.2} color="#ffffff" />
+      <directionalLight position={[3, 4, 5]} intensity={2.4} />
       <pointLight position={[-4, -2, 3]} intensity={30} color="#25C6E8" />
       <pointLight position={[4, 2, -2]} intensity={26} color="#FF4FA3" />
+      <Network lite={lite} />
       <Rig />
-      <Core lite={lite} />
-      <Shapes lite={lite} />
-      <Dust lite={lite} />
     </Canvas>
   );
 }

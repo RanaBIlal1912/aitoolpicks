@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 export default function Page() {
   return (
     <>
-      <PageHeader eyebrow="Your browser" title="Saved tools" lead="Your saved AI tools. Kept only on this device." crumbs={[{ name: "Saved tools", href: "/favorites/" }]} />
+      <PageHeader variant="studio" eyebrow="Your browser" title="Saved tools" lead="Your saved AI tools. Kept only on this device." crumbs={[{ name: "Saved tools", href: "/favorites/" }]} />
       <div className="mx-auto max-w-6xl px-5">
         <SavedList mode="favorites" />
       </div>

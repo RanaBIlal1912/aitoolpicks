@@ -44,7 +44,7 @@ export default async function CategoryPage({ params }: Props) {
   if (rest.length) groups.push({ slug: "related", label: "Also relevant here", tools: rest });
   return (
     <>
-      <PageHeader
+      <PageHeader variant="directory"
         eyebrow="Tool category"
         title={c.label}
         lead={c.blurb}

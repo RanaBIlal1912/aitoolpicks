@@ -2,6 +2,7 @@ import { pageMeta } from "@/lib/meta";
 import { CATEGORIES, TOOLS } from "@/data/tools";
 import PageHeader from "@/components/PageHeader";
 import Directory from "@/components/Directory";
+import { CategoryRail } from "@/components/home/Sections";
 import JsonLd from "@/components/JsonLd";
 import { absUrl } from "@/lib/site";
 
@@ -17,6 +18,8 @@ export default function ToolsPage() {
   return (
     <>
       <PageHeader
+        variant="directory"
+        stats={[[String(TOOLS.length), "tools"], [String(CATEGORIES.length), "categories"], [String(verified), "fully verified prices"]]}
         eyebrow="Directory"
         title={
           <>
@@ -27,6 +30,9 @@ export default function ToolsPage() {
         crumbs={[{ name: "Tools", href: "/tools/" }]}
       />
 
+      <div className="mx-auto mb-10 max-w-6xl px-5">
+        <CategoryRail />
+      </div>
       <Directory />
 
       <JsonLd

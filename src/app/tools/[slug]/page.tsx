@@ -17,6 +17,7 @@ import { formatChecked } from "@/lib/dates";
 import { logoFor } from "@/data/logos";
 import ArticleCard from "@/components/ArticleCard";
 import ToolLogo from "@/components/ToolLogo";
+import { catColors } from "@/data/palette";
 import { slugify } from "@/data/companies";
 import AlternativeList from "@/components/AlternativeList";
 import { alternativesFor } from "@/lib/alternatives";
@@ -85,6 +86,8 @@ export default async function ToolPage({ params }: Props) {
   return (
     <>
       <PageHeader
+        accent={catColors(t.category)[0]}
+        stats={[[PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model, "pricing model"], [String(t.pricing.plans.length), "plans listed"], [t.verification.status === "verified" ? "Verified" : "Partly verified", "pricing record"]]}
         eyebrow={cat?.label ?? "Tool"}
         title={
           <span className="flex items-center gap-4">

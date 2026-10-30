@@ -16,7 +16,7 @@ export const metadata = pageMeta({
 export default function ReviewsPage() {
   return (
     <>
-      <PageHeader
+      <PageHeader variant="magazine"
         eyebrow="Reviews"
         title="Overviews that include the downsides"
         lead="Each page covers what the tool does, who it suits, who should skip it and what it costs. Prices come from official pages."
@@ -27,29 +27,52 @@ export default function ReviewsPage() {
           <strong className="text-soft">How we review:</strong> these are editorial overviews based on each product&rsquo;s own public
           documentation and widely known behaviour. We have not run lab tests, and we never present an overview as hands-on testing.
         </p>
-        <ul className="mt-8 grid gap-6 md:grid-cols-2">
-          {REVIEWS.map((r, i) => {
-            const t = getTool(r.toolId)!;
-            return (
-              <Reveal as="li" key={r.slug} delay={i * 0.05}>
+        {(() => {
+          const [first, ...others] = REVIEWS;
+          const ft = getTool(first.toolId)!;
+          return (
+            <>
+              <Reveal as="div" className="mt-8">
                 <Link
-                  href={`/reviews/${r.slug}/`}
-                  className="glass card-glow group flex h-full flex-col gap-3 p-7 no-underline transition-transform hover:-translate-y-1"
-                  style={{ ["--hue" as string]: t.hue }}
+                  href={`/reviews/${first.slug}/`}
+                  className="group relative grid overflow-hidden rounded-[28px] border border-white/10 no-underline md:grid-cols-[1fr_1.2fr]"
+                  style={{ background: `linear-gradient(135deg, hsl(${ft.hue} 60% 22% / .9), #0d1024 70%)` }}
                 >
-                  <div className="flex items-center gap-3">
-                    <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
-                    <span className="text-sm font-bold uppercase tracking-[0.12em] text-cyan">{getCategory(t.category)?.short ?? t.category}</span>
-                    <span className="ml-auto rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs font-semibold text-soft">Documentation-based</span>
+                  <div className="grid place-items-center p-10 md:p-14">
+                    <div className="scale-[1.9]">
+                      <ToolLogo id={ft.id} name={ft.name} hue={ft.hue} size={72} />
+                    </div>
                   </div>
-                  <h2 className="font-serif text-2xl font-bold leading-snug tracking-tight text-white">{r.title}</h2>
-                  <p className="text-muted">{r.summary}</p>
-                  <span className="mt-auto pt-2 text-sm font-bold text-soft group-hover:text-white">Read the overview →</span>
+                  <div className="p-8 md:p-12">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan">Featured overview · {getCategory(ft.category)?.short}</p>
+                    <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">{first.title}</h2>
+                    <p className="mt-4 text-soft">{first.summary}</p>
+                    <span className="mt-6 inline-block text-sm font-bold text-soft group-hover:text-white">Read the overview →</span>
+                  </div>
                 </Link>
               </Reveal>
-            );
-          })}
-        </ul>
+              <ol className="mt-10 divide-y divide-white/10 border-y border-white/10">
+                {others.map((r, i) => {
+                  const t = getTool(r.toolId)!;
+                  return (
+                    <li key={r.slug} className="cv-auto">
+                      <Link href={`/reviews/${r.slug}/`} className="group grid items-center gap-x-6 gap-y-2 py-6 no-underline md:grid-cols-[auto_auto_1fr_auto]">
+                        <span className="font-display text-3xl font-extrabold text-white/15 md:w-14">{String(i + 2).padStart(2, "0")}</span>
+                        <ToolLogo id={t.id} name={t.name} hue={t.hue} size={48} />
+                        <span className="min-w-0">
+                          <span className="block text-xs font-bold uppercase tracking-[0.14em] text-cyan">{getCategory(t.category)?.short} · Documentation-based</span>
+                          <span className="mt-1 block font-serif text-xl font-bold leading-snug text-white md:text-2xl">{r.title}</span>
+                          <span className="mt-1 line-clamp-2 block text-sm text-muted">{r.summary}</span>
+                        </span>
+                        <span aria-hidden="true" className="hidden text-2xl text-soft transition-transform group-hover:translate-x-1 md:block">→</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ol>
+            </>
+          );
+        })()}
       </div>
     </>
   );

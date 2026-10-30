@@ -16,7 +16,7 @@ export default function VerificationPage() {
   const count = (s: string) => rows.filter((r) => r.verification.status === s).length;
   return (
     <>
-      <PageHeader
+      <PageHeader variant="lab"
         eyebrow="Verification"
         title="Tool verification log"
         lead="Each record was checked by opening the vendor's own site and pricing page in a browser. Where a page hid a price, or a toggle could not be read, the record says so instead of guessing."

@@ -34,7 +34,7 @@ export default function NewsPage() {
 
   return (
     <>
-      <PageHeader
+      <PageHeader variant="magazine"
         eyebrow="AI news"
         title={
           <>

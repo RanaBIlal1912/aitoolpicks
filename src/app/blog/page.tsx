@@ -18,7 +18,7 @@ export default function BlogPage() {
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
   return (
     <>
-      <PageHeader
+      <PageHeader variant="magazine"
         eyebrow="Blog"
         title={
           <>

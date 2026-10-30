@@ -22,6 +22,15 @@
 
 :root {
   color-scheme: dark;
+  --font-serif: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
 }
 
 * {
@@ -794,4 +803,170 @@ main {
 .cv-auto {
   content-visibility: auto;
   contain-intrinsic-size: auto 340px;
+}
+
+/* ---------- home redesign ---------- */
+.hero-title .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.45em) rotateX(-40deg);
+  transform-origin: 50% 100%;
+  animation: word-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 90ms + 120ms);
+}
+@keyframes word-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-title .gradient-text {
+  filter: drop-shadow(0 0 28px rgba(117, 75, 255, 0.5));
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .word {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+.hero-net circle {
+  animation: twinkle 5s ease-in-out infinite;
+}
+.hero-net circle:nth-child(3n) {
+  animation-delay: -1.5s;
+}
+.hero-net circle:nth-child(3n + 1) {
+  animation-delay: -3s;
+}
+@keyframes twinkle {
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-net circle {
+    animation: none;
+  }
+}
+
+/* Logo ribbon */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: marquee 70s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 7px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Horizontal rails */
+.rail {
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  list-style: none;
+  margin-top: 0;
+}
+.rail > li {
+  flex-shrink: 0;
+}
+
+/* Light "paper" surface for the news section: a deliberate break in tone */
+.paper {
+  background:
+    radial-gradient(900px 400px at 100% 0%, rgba(117, 75, 255, 0.14), transparent 70%),
+    radial-gradient(700px 400px at 0% 100%, rgba(37, 198, 232, 0.14), transparent 70%),
+    #efeff7;
+}
+.paper ::selection {
+  background: rgba(117, 75, 255, 0.3);
+  color: #0b0d1c;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+/* ---------- page header variants ---------- */
+.ph-magazine {
+  padding-top: 4.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 2rem;
+}
+.ph-magazine::before {
+  content: "";
+  position: absolute;
+  inset: 2.2rem 1.25rem auto;
+  border-top: 3px double rgba(255, 255, 255, 0.28);
+}
+.ph-magazine h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 0.98;
+  max-width: 16ch;
+}
+.ph-magazine p {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+}
+.ph-lab {
+  background-image: linear-gradient(rgba(37, 198, 232, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 198, 232, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, #000 70%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent);
+}
+.ph-lab h1 {
+  letter-spacing: -0.045em;
+  max-width: 18ch;
+}
+.ph-lab .eyebrow {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  text-transform: uppercase;
+}
+.ph-directory h1 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  max-width: 20ch;
+}
+.ph-studio {
+  padding-top: 3rem;
+}
+.ph-studio h1 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+
+.page-head[style*="--accent"]::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 420px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(560px 300px at 82% 10%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 70%);
+}
+.ph-stats dd {
+  margin: 0;
 }

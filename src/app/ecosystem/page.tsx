@@ -18,7 +18,7 @@ export default function EcosystemPage() {
   const open = TOOLS.filter((t) => t.openSource && t.openSource !== "proprietary");
   return (
     <>
-      <PageHeader
+      <PageHeader variant="lab"
         eyebrow="Ecosystem"
         title="Who makes what in AI"
         lead="Companies, models and open-source projects, linked only where our records or an official source state the relationship. This is a small, verified map, not a complete one."

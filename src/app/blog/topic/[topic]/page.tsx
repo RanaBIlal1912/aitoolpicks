@@ -35,7 +35,7 @@ export default async function TopicPage({ params }: Props) {
   const [first, ...rest] = list;
   return (
     <>
-      <PageHeader
+      <PageHeader variant="magazine"
         eyebrow="Topic"
         title={t.label}
         lead={t.blurb}

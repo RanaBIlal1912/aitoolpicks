@@ -15,7 +15,7 @@ export const metadata = pageMeta({
 export default function BestIndex() {
   return (
     <>
-      <PageHeader
+      <PageHeader variant="lab"
         eyebrow="Best-of guides"
         title={
           <>

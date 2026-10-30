@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 export default function SubmitPage() {
   return (
     <>
-      <PageHeader
+      <PageHeader variant="studio"
         eyebrow="Submit"
         title="Suggest an AI tool"
         lead="Know a useful AI product that is missing? Tell us about it. A person checks every suggestion against the product's official website and pricing page before anything is added."

@@ -4,12 +4,22 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { CATEGORIES, toolsInCategory } from "@/data/tools";
+import { CATEGORIES, TOOLS, toolsInCategory } from "@/data/tools";
 import { catColors } from "@/data/palette";
 
 const UniverseScene = dynamic(() => import("./UniverseScene"), { ssr: false });
 
-const ITEMS = CATEGORIES.map((c) => ({ slug: c.slug, label: c.short, count: toolsInCategory(c.slug).length, color: catColors(c.slug)[0] }));
+const ITEMS = CATEGORIES.map((c) => ({ slug: c.slug, label: c.short, count: toolsInCategory(c.slug).length, color: catColors(c.slug)[0], tools: toolsInCategory(c.slug).map((t) => ({ id: t.id, name: t.name })) }));
+
+// Two categories are joined when at least one real catalog tool is listed in both.
+const LINKS = (() => {
+  const m = new Map<string, number>();
+  for (const t of TOOLS) {
+    const cs = [...new Set(t.categories)].sort();
+    for (let i = 0; i < cs.length; i++) for (let j = i + 1; j < cs.length; j++) m.set(`${cs[i]}|${cs[j]}`, (m.get(`${cs[i]}|${cs[j]}`) ?? 0) + 1);
+  }
+  return [...m.entries()].map(([k, n]) => ({ a: k.split("|")[0], b: k.split("|")[1], n }));
+})();
 
 /**
  * An interactive 3D map of the categories: a hub with one node per category, sized by how many catalog tools it holds. Drag to rotate; tap or click a node
@@ -59,17 +69,17 @@ export default function UniverseSection() {
           <h2 id="universe-title" className="section-title mt-3 text-white">
             Explore AI by category
           </h2>
-          <p className="mt-3 max-w-2xl text-soft">Drag to turn the map. Tap a glowing node to open that category. Bigger nodes hold more tools in our catalog.</p>
+          <p className="mt-3 max-w-2xl text-soft">Drag to turn the map. Big nodes are categories and open that category; the small white dots around them are the real tools in it and open the tool. Cyan lines join categories that share a tool.</p>
         </div>
         <Link href="/tools/" className="btn-ghost btn-sm">
           Search all tools →
         </Link>
       </div>
-      <div ref={box} className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#11152A]/70" style={{ height: lite ? 360 : 520 }}>
+      <div ref={box} className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#11152A]/70" style={{ height: lite ? 440 : 640 }}>
         <div aria-hidden="true" className="absolute inset-0" style={{ background: "radial-gradient(60% 60% at 50% 50%, rgba(117,75,255,.22), transparent 70%)" }} />
         {on && (
           <div className="absolute inset-0 touch-pan-y" role="presentation">
-            <UniverseScene items={ITEMS} lite={lite} onSelect={(slug) => router.push(`/tools/category/${slug}/`)} />
+            <UniverseScene items={ITEMS} links={LINKS} lite={lite} onSelect={(slug) => router.push(`/tools/category/${slug}/`)} onSelectTool={(id) => router.push(`/tools/${id}/`)} />
           </div>
         )}
         {!on && <p className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted">The interactive map is loading. The category list below works without it.</p>}
