@@ -15,6 +15,7 @@ import UniverseSection from "@/components/universe/UniverseSection";
 import ToolLogo from "@/components/ToolLogo";
 import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
+import HeroFrame from "@/components/home/HeroFrame";
 import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, PhotoBand, VersusTiles } from "@/components/home/Sections";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
@@ -71,32 +72,35 @@ export default function Home() {
     <>
       <section id="hero" className="relative isolate">
         <HeroVisual />
-        <div className="relative mx-auto flex min-h-[min(92vh,860px)] max-w-6xl flex-col justify-center px-5 pb-20 pt-14">
-          <span className="eyebrow self-start">AI tool directory and magazine</span>
-          <h1 className="hero-title mt-6 max-w-[15ch] text-[clamp(3rem,9.5vw,7.4rem)] font-extrabold leading-[0.95] tracking-[-0.045em] text-white md:max-w-[12ch]">
-            <Word i={0}>Find</Word>
-            <Word i={1}>the</Word>
-            <Word i={2}>AI</Word>
-            <Word i={3}>tool</Word>
-            <Word i={4}>that</Word>
-            <span className="word gradient-text" style={{ ["--i" as string]: 5 }}>
-              fits.
-            </span>
-          </h1>
-          <p className="mt-7 max-w-xl text-lg text-soft md:text-xl">
-            {TOOLS.length} tools, every plan and price read from the official page, with the date we checked it. Search by the job you need done.
-          </p>
-          <div className="max-w-2xl">
-            <HeroSearch suggestions={SUGGESTIONS} />
+        <div className="relative mx-auto grid min-h-[min(92vh,880px)] max-w-6xl items-center gap-10 px-5 pb-24 pt-14 lg:grid-cols-[1.25fr_1fr]">
+          <div>
+            <span className="eyebrow">The AI tool magazine and price directory</span>
+            <h1 className="hero-title mt-6 text-[clamp(3rem,8.4vw,6.6rem)] font-extrabold leading-[0.93] tracking-[-0.045em] text-white">
+              <Word i={0}>Find</Word>
+              <Word i={1}>the</Word>
+              <Word i={2}>AI</Word>
+              <Word i={3}>tool</Word>
+              <Word i={4}>that</Word>
+              <span className="word gradient-text font-serif font-medium italic tracking-[-0.03em]" style={{ ["--i" as string]: 5 }}>
+                fits.
+              </span>
+            </h1>
+            <p className="mt-7 max-w-xl text-lg text-soft md:text-xl">
+              {TOOLS.length} tools, every plan and price read from the official page, with the date we checked it. Search by the job you need done.
+            </p>
+            <div className="max-w-2xl">
+              <HeroSearch suggestions={SUGGESTIONS} />
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/tools/" className="btn-primary">
+                Explore all tools
+              </Link>
+              <Link href="/compare/" className="btn-ghost">
+                Compare tools
+              </Link>
+            </div>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/tools/" className="btn-primary">
-              Explore all tools
-            </Link>
-            <Link href="/compare/" className="btn-ghost">
-              Compare tools
-            </Link>
-          </div>
+          <HeroFrame total={TOOLS.length} verified={TOOLS.filter((t) => t.pricingStatus === "verified").length} />
         </div>
       </section>
 

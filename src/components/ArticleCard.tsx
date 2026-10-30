@@ -19,7 +19,7 @@ export default function ArticleCard({ a, featured = false }: { a: Article; featu
     >
       <div className={`cover-frame !rounded-none !border-0 ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[320px]" : "aspect-[16/9]"}`}>
         <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
-          <ArticleCover topic={a.topic} tools={a.tools} />
+          <ArticleCover topic={a.topic} tools={a.tools} seed={a.slug} />
         </div>
       </div>
       <div className={`flex min-w-0 flex-1 flex-col gap-3 ${featured ? "p-7 md:p-10" : "p-6"}`}>

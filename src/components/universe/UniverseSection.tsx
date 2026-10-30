@@ -92,7 +92,20 @@ export default function UniverseSection() {
   useEffect(() => {
     const el = box.current;
     if (!on || !el) return;
-    const check = () => el.querySelector("canvas") && setReady(true);
+    let done = false;
+    const check = () => {
+      const cv = el.querySelector("canvas");
+      if (!cv || done) return;
+      done = true;
+      setReady(true);
+      // OrbitControls sets touch-action: none, which would trap a vertical swipe over the map and stop the page scrolling on a phone. Keep vertical swipes for the page; horizontal drags still rotate.
+      for (let e: HTMLElement | null = cv; e && e !== el; e = e.parentElement) {
+        const node = e;
+        const fix = () => node.style.touchAction !== "pan-y" && (node.style.touchAction = "pan-y");
+        fix();
+        new MutationObserver(fix).observe(node, { attributes: true, attributeFilter: ["style"] });
+      }
+    };
     const mo = new MutationObserver(check);
     mo.observe(el, { childList: true, subtree: true });
     check();

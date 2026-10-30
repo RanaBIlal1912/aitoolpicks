@@ -60,7 +60,7 @@ export default async function GuidePage({ params }: Props) {
       <div className="mx-auto max-w-6xl px-5">
         <figure>
           <div className="aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
-            <ArticleCover topic={a.topic} tools={a.tools} />
+            <ArticleCover topic={a.topic} tools={a.tools} seed={a.slug} />
           </div>
           <figcaption className="mt-2 text-xs text-muted">Cover: a stock photograph (see photo credits) with the logos of the tools in this guide. It is decoration, not a screenshot.</figcaption>
         </figure>

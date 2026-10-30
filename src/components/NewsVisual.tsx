@@ -5,11 +5,16 @@ import { getTool } from "@/data/tools";
 import { withBase } from "@/lib/site";
 import ToolLogo from "./ToolLogo";
 import Photo from "./Photo";
-import type { PhotoId } from "@/data/photos";
+import { pickPhoto, type PhotoId } from "@/data/photos";
 
-const PHOTO_BY_KIND: Record<NewsKind, PhotoId> = {
-  "New product": "processor-tweezers", "Feature update": "circuit-blue", "Model release": "datacenter-white", Research: "silicon-wafer",
-  "Policy update": "architecture-ribs", "Company announcement": "office-glass", "Open standard": "fibre-switch",
+const POOL: Record<NewsKind, PhotoId[]> = {
+  "New product": ["processor-tweezers", "camera-lens", "headphones-keys"],
+  "Feature update": ["circuit-blue", "code-screen", "analytics-laptop"],
+  "Model release": ["datacenter-white", "server-aisle", "city-night"],
+  Research: ["silicon-wafer", "microscope-lab", "library-study"],
+  "Policy update": ["architecture-ribs", "padlock-laptop", "city-night"],
+  "Company announcement": ["office-glass", "whiteboard", "data-presentation"],
+  "Open standard": ["fibre-switch", "cable-network", "code-screen"],
 };
 
 // Every story gets its own visual. When the vendor published an announcement image we use it (with credit). Otherwise the visual is an
@@ -56,7 +61,7 @@ export default function NewsVisual({ n, className = "", priority = false, sizes 
       style={{ background: `linear-gradient(135deg, ${w.a}, ${w.b})` }}
     >
       <div className="absolute inset-0 mix-blend-multiply opacity-60">
-        <Photo id={PHOTO_BY_KIND[n.kind]} decorative sizes={small ? "200px" : sizes} />
+        <Photo id={pickPhoto(POOL[n.kind], n.slug)} decorative sizes={small ? "200px" : sizes} />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
       <div className="relative flex items-center gap-3">

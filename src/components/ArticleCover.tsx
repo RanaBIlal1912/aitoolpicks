@@ -3,12 +3,24 @@ import { TOPICS, type TopicId } from "@/data/topics";
 import { getTool } from "@/data/tools";
 import ToolLogo from "./ToolLogo";
 import Photo from "./Photo";
-import type { PhotoId } from "@/data/photos";
+import { pickPhoto, type PhotoId } from "@/data/photos";
 
-const PHOTO_BY_TOPIC: Record<TopicId, PhotoId> = {
-  freelancing: "laptop-desk", writing: "laptop-desk", design: "architecture-ribs", business: "office-glass", websites: "cable-network", students: "data-presentation",
-  developers: "circuit-macro", productivity: "laptop-desk", imagevideo: "light-dark-room", beginners: "processor-tweezers", research: "silicon-wafer",
-  automation: "fibre-switch", marketing: "data-presentation", security: "cable-network", comparisons: "circuit-blue",
+const POOL: Record<TopicId, PhotoId[]> = {
+  freelancing: ["whiteboard", "laptop-desk", "notebook-pen", "marketing-strategy"],
+  writing: ["notebook-pen", "laptop-desk", "marketing-strategy"],
+  design: ["colour-swatches", "architecture-ribs", "camera-lens"],
+  business: ["whiteboard", "office-glass", "marketing-strategy", "analytics-laptop"],
+  websites: ["code-screen", "cable-network", "laptop-desk", "analytics-laptop"],
+  students: ["library-study", "notebook-pen", "data-presentation"],
+  developers: ["code-screen", "circuit-macro", "processor-tweezers", "circuit-blue"],
+  productivity: ["laptop-desk", "notebook-pen", "headphones-keys", "office-glass"],
+  imagevideo: ["camera-lens", "light-dark-room", "colour-swatches"],
+  beginners: ["processor-tweezers", "notebook-pen", "library-study", "city-night"],
+  research: ["microscope-lab", "silicon-wafer", "library-study", "analytics-laptop"],
+  automation: ["robot-arm", "fibre-switch", "cable-network"],
+  marketing: ["marketing-strategy", "analytics-laptop", "data-presentation", "city-night"],
+  security: ["padlock-laptop", "cable-network", "server-aisle"],
+  comparisons: ["circuit-blue", "analytics-laptop", "whiteboard", "data-presentation"],
 };
 
 // Each topic has its own colour world, so a blog full of guides does not look like one repeated image. A cover shows the logos of the
@@ -32,7 +44,7 @@ const WORLD: Record<TopicId, { a: string; b: string; glyph: ReactNode }> = {
   comparisons: { a: "#7c3aed", b: "#db2777", glyph: <path d="M8 3L4 7l4 4M4 7h12M16 21l4-4-4-4M20 17H8" /> },
 };
 
-export default function ArticleCover({ topic, tools = [], small = false }: { topic: TopicId; tools?: string[]; small?: boolean }) {
+export default function ArticleCover({ topic, tools = [], small = false, seed = "" }: { topic: TopicId; tools?: string[]; small?: boolean; seed?: string }) {
   const w = WORLD[topic];
   const label = TOPICS.find((t) => t.id === topic)?.label ?? "Guide";
   const list = tools.map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t).slice(0, 4);
@@ -45,7 +57,7 @@ export default function ArticleCover({ topic, tools = [], small = false }: { top
       style={{ background: `linear-gradient(135deg, ${w.a}, ${w.b})` }}
     >
       <div className="absolute inset-0 mix-blend-multiply opacity-60">
-        <Photo id={PHOTO_BY_TOPIC[topic]} decorative sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
+        <Photo id={pickPhoto(POOL[topic], seed || topic)} decorative sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
       <div className="relative flex items-center gap-2.5 px-4">

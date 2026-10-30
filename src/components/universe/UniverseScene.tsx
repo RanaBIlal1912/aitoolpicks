@@ -220,7 +220,7 @@ function Intro() {
 
 export default function UniverseScene({ items, links, lite, onSelect, onSelectTool }: { items: UniverseItem[]; links: UniverseLink[]; lite: boolean; onSelect: (slug: string) => void; onSelectTool: (id: string) => void }) {
   return (
-    <Canvas dpr={lite ? 1 : [1, 1.5]} camera={{ position: [0, 2.2, 15], fov: 45 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
+    <Canvas dpr={lite ? 1 : [1, 1.5]} camera={{ position: [0, 2.2, lite ? 21 : 15], fov: 45 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
       <ambientLight intensity={0.7} />
       <directionalLight position={[3, 4, 5]} intensity={2} />
       <pointLight position={[-4, -2, 3]} intensity={24} color="#25C6E8" />

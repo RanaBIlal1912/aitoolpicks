@@ -25,7 +25,7 @@ const photoSrc = fs.readFileSync(path.join(root, "src/data/photos.ts"), "utf8");
 md += `## Stock photographs (Unsplash License) in public/images/photo/\n\n| File | Size | Photographer | Original page | Rendered on |\n| --- | --- | --- | --- | --- |\n`;
 for (const f of fs.readdirSync(path.join(root, "public/images/photo")).filter((x) => !x.includes("-sm"))) {
   const id = f.replace(".webp", "");
-  const m = photoSrc.match(new RegExp(`"${id}": \{[^}]*by: "([^"]+)", page: "([^"]+)"`));
+  const m = photoSrc.match(new RegExp(`"?${id}"?: \{[^}]*by: "([^"]+)", page: "([^"]+)"`));
   md += `| ${f} | ${kb(path.join(root, "public/images/photo", f))} KB | ${m?.[1]} | ${m?.[2]} | ${sections(use["/images/photo/" + f] ?? new Set())} |\n`;
 }
 const ti = JSON.parse(fs.readFileSync(path.join(root, "content/tool-images.json"), "utf8"));

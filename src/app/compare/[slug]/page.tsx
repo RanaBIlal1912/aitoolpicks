@@ -50,7 +50,7 @@ export default async function ComparisonPage({ params }: Props) {
       </PageHeader>
       <div className="mx-auto max-w-6xl px-5">
         <div className="mb-8 aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
-          <ArticleCover topic={a.topic} tools={a.tools} />
+          <ArticleCover topic={a.topic} tools={a.tools} seed={a.slug} />
         </div>
       </div>
       <div className="mx-auto max-w-3xl px-5">

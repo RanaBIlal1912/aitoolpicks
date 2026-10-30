@@ -57,7 +57,7 @@ export default function HeroVisual() {
 
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-y-0 right-0 w-full opacity-60 mix-blend-screen md:w-[65%]" style={{ maskImage: "linear-gradient(to left, #000 20%, transparent 95%)", WebkitMaskImage: "linear-gradient(to left, #000 20%, transparent 95%)" }}>
+      <div className="absolute inset-y-0 right-0 w-full opacity-60 mix-blend-screen lg:hidden" style={{ maskImage: "linear-gradient(to left, #000 20%, transparent 95%)", WebkitMaskImage: "linear-gradient(to left, #000 20%, transparent 95%)" }}>
         <Photo id="light-dark-room" decorative priority sizes="(min-width: 768px) 65vw, 100vw" width={1920} height={1280} />
       </div>
       <div className="hero-orb absolute right-[-6%] top-[8%] h-[80%] w-[62%] rounded-full" />
@@ -73,7 +73,7 @@ export default function HeroVisual() {
         {FLOATERS.slice(0, lite ? 3 : 5).map((f) => {
           const t = getTool(f.id);
           return t ? (
-            <span key={f.id} className={`float-y absolute ${f.pos} hidden rounded-2xl shadow-xl shadow-black/40 ring-1 ring-white/20 sm:block`} style={{ animationDelay: f.delay }}>
+            <span key={f.id} className={`float-y absolute ${f.pos} hidden rounded-2xl shadow-xl shadow-black/40 ring-1 ring-white/20 sm:block lg:hidden`} style={{ animationDelay: f.delay }}>
               <ToolLogo id={t.id} name={t.name} hue={t.hue} size={52} />
             </span>
           ) : null;
