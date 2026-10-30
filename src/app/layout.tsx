@@ -8,12 +8,12 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import ScrollProgress from "@/components/ScrollProgress";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap", axes: ["opsz"] });
-const editorial = Newsreader({ subsets: ["latin"], variable: "--font-newsreader", display: "swap", style: ["normal", "italic"] });
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap" });
+const editorial = Newsreader({ subsets: ["latin"], variable: "--font-newsreader", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE.url}/`),
-  title: { default: `${SITE.name}: discover AI tools, real prices and honest comparisons`, template: `%s | ${SITE.name}` },
+  title: { default: `${SITE.name}: find AI tools and their real prices`, template: `%s | ${SITE.name}` },
   description: SITE.description,
   applicationName: SITE.name,
   alternates: { canonical: absUrl("/") },

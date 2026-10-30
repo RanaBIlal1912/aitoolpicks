@@ -17,7 +17,7 @@ import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
 import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, VersusTiles } from "@/components/home/Sections";
 
-const TITLE = `${SITE.name}: discover AI tools, real prices and honest comparisons`;
+const TITLE = `${SITE.name}: find AI tools and their real prices`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

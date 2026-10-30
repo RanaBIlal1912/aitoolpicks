@@ -18,25 +18,17 @@ const FLOATERS: { id: string; pos: string; delay: string }[] = [
   { id: "midjourney", pos: "right-[22%] top-[2%]", delay: "-3s" },
 ];
 
-/** The same constellation as the WebGL scene, drawn once as plain SVG so the hero is already composed at first paint. */
+/** The same constellation as the WebGL scene, drawn once as plain SVG so the hero is already composed at first paint. It is injected as markup, so React does not have to hydrate its ~200 elements. */
 function StaticNetwork() {
-  const { nodes, edges } = useMemo(() => constellation(60), []);
-  const px = (n: { x: number }) => 66 + n.x * 7.2;
-  const py = (n: { y: number }) => 50 + n.y * 8.4;
-  return (
-    <svg className="hero-net absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <g stroke="rgba(141,123,255,.28)" strokeWidth=".12">
-        {edges.map(([a, b]) => (
-          <line key={`${a}-${b}`} x1={px(nodes[a])} y1={py(nodes[a])} x2={px(nodes[b])} y2={py(nodes[b])} />
-        ))}
-      </g>
-      {nodes.map((n, i) => (
-        <circle key={i} cx={px(n)} cy={py(n)} r={n.size * 5.5} fill={n.color} opacity={0.9} />
-      ))}
-      <circle cx="66" cy="50" r="7" fill="rgba(117,75,255,.55)" />
-      <circle cx="66" cy="50" r="13" fill="rgba(117,75,255,.12)" />
-    </svg>
-  );
+  const html = useMemo(() => {
+    const { nodes, edges } = constellation(60);
+    const px = (n: { x: number }) => (66 + n.x * 7.2).toFixed(2);
+    const py = (n: { y: number }) => (50 + n.y * 8.4).toFixed(2);
+    const lines = edges.map(([a, b]) => `<line x1="${px(nodes[a])}" y1="${py(nodes[a])}" x2="${px(nodes[b])}" y2="${py(nodes[b])}"/>`).join("");
+    const dots = nodes.map((n) => `<circle cx="${px(n)}" cy="${py(n)}" r="${(n.size * 5.5).toFixed(2)}" fill="${n.color}" opacity=".9"/>`).join("");
+    return `<g stroke="rgba(141,123,255,.28)" stroke-width=".12">${lines}</g>${dots}<circle cx="66" cy="50" r="7" fill="rgba(117,75,255,.55)"/><circle cx="66" cy="50" r="13" fill="rgba(117,75,255,.12)"/>`;
+  }, []);
+  return <svg className="hero-net absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 /**

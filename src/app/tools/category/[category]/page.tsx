@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!c) return {};
   const m = pageMeta({
     title: `${c.label}: tools, pricing and free plans`,
-    description: c.blurb.slice(0, 180),
+    description: `${c.blurb} Compare plans, free tiers and verified prices for every ${c.short.toLowerCase()} tool in the directory.`.slice(0, 180),
     path: `/tools/category/${category}/`,
   });
   return m;

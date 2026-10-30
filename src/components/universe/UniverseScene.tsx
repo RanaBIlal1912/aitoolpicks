@@ -1,9 +1,10 @@
 "use client";
 
-import { Html, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+import Label from "./Label";
 
 export type UniverseTool = { id: string; name: string };
 export type UniverseItem = { slug: string; label: string; count: number; color: string; tools: UniverseTool[] };
@@ -55,9 +56,7 @@ function CategoryNode({ item, pos, lite, onSelect, onSelectTool, setHover }: { i
         <sphereGeometry args={[size, lite ? 14 : 24, lite ? 14 : 24]} />
         <meshStandardMaterial color={item.color} emissive={item.color} emissiveIntensity={hot ? 1.2 : 0.6} roughness={0.3} metalness={0.25} />
       </mesh>
-      <Html center distanceFactor={9} zIndexRange={[5, 0]} style={{ pointerEvents: "none", transform: "translateY(-34px)", opacity: hot ? 0 : 1 }}>
-        <span style={{ whiteSpace: "nowrap", fontSize: 12, fontWeight: 700, color: "#fff", textShadow: "0 1px 6px rgba(0,0,0,.95)" }}>{item.label}</span>
-      </Html>
+      {!hot && <Label text={item.label} position={[0, size + 0.42, 0]} size={0.34} />}
       {!lite && (
         <mesh scale={1.9}>
           <sphereGeometry args={[size, 12, 12]} />
@@ -199,12 +198,7 @@ function Universe({ items, links, lite, onSelect, onSelectTool }: { items: Unive
         <CategoryNode key={it.slug} item={it} pos={positions[i]} lite={lite} onSelect={onSelect} onSelectTool={onSelectTool} setHover={setHover} />
       ))}
       <Dust lite={lite} />
-      <Html position={hover ? hover.pos : [0, 0, 0]} center zIndexRange={[10, 0]} style={{ pointerEvents: "none", transform: "translateY(-30px)", display: hover ? "block" : "none" }}>
-        <span style={{ whiteSpace: "nowrap", display: "inline-block", fontSize: 13, fontWeight: 700, color: "#fff", background: "rgba(13,16,36,.94)", border: `1px solid ${hover?.color ?? "#754BFF"}`, borderRadius: 10, padding: "4px 10px" }}>
-          {hover ? hover.label : ""}
-          <span style={{ marginLeft: 8, fontWeight: 500, color: "#a8aac0" }}>{hover ? hover.sub : ""}</span>
-        </span>
-      </Html>
+      {hover && <Label text={hover.label} sub={hover.sub} color={hover.color} position={hover.pos.clone().add(new THREE.Vector3(0, 0.55, 0))} boxed size={0.42} />}
     </group>
   );
 }

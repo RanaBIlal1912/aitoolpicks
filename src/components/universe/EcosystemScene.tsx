@@ -1,9 +1,10 @@
 "use client";
 
-import { Html, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useState } from "react";
 import * as THREE from "three";
+import Label from "./Label";
 
 // The ecosystem network. Every node and every edge comes from a record: a company is the maker named on a product's official page, a product is a
 // catalog tool, a model is a sourced model record. Edges are only the relationships those records state (company makes tool; model is by company;
@@ -101,12 +102,7 @@ function Graph({ nodes, edges, onSelect, selected }: { nodes: GNode[]; edges: GE
           </mesh>
         );
       })}
-      {/* One label that stays mounted and moves; mounting and unmounting a label per hover caused DOM errors. */}
-      <Html position={labelNode ? pos[labelNode.id] : [0, 0, 0]} center distanceFactor={12} style={{ pointerEvents: "none", transform: "translateY(-22px)", display: labelNode ? "block" : "none" }}>
-        <span style={{ whiteSpace: "nowrap", fontSize: 13, fontWeight: 700, color: "#fff", background: "rgba(23,26,48,.94)", border: `1px solid ${labelNode?.color ?? "#754BFF"}`, borderRadius: 8, padding: "3px 8px" }}>
-          {labelNode ? `${labelNode.label} · ${labelNode.kind}` : ""}
-        </span>
-      </Html>
+      {labelNode && <Label text={labelNode.label} sub={labelNode.kind} color={labelNode.color} position={pos[labelNode.id].clone().add(new THREE.Vector3(0, 0.6, 0))} boxed size={0.5} />}
     </>
   );
 }
