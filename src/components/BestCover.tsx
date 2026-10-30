@@ -1,5 +1,12 @@
 import { getTool } from "@/data/tools";
 import ToolLogo from "./ToolLogo";
+import Photo from "./Photo";
+import type { PhotoId } from "@/data/photos";
+
+const PHOTO: Record<string, PhotoId> = {
+  assistants: "data-presentation", coding: "circuit-macro", video: "light-dark-room", image: "architecture-ribs", audio: "cable-network", writing: "laptop-desk",
+  productivity: "office-glass", research: "silicon-wafer", marketing: "data-presentation", automation: "fibre-switch", models: "datacenter-white", web: "server-aisle",
+};
 
 const PALETTE: Record<string, [string, string]> = {
   assistants: ["#2563eb", "#4338ca"],
@@ -21,12 +28,11 @@ export default function BestCover({ picks, hue }: { picks: string[]; hue: string
   const [a, b] = PALETTE[hue] ?? PALETTE.assistants;
   const tools = picks.map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t).slice(0, 5);
   return (
-    <div role="img" aria-label="Cover showing the logos of the tools in this guide (illustration)" className="relative grid h-full w-full place-items-center overflow-hidden" style={{ background: `linear-gradient(135deg, ${a}, ${b})` }}>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-30"
-        style={{ backgroundImage: "radial-gradient(circle at 15% 10%, rgba(255,255,255,.5), transparent 40%), repeating-linear-gradient(135deg, rgba(255,255,255,.07) 0 2px, transparent 2px 24px)" }}
-      />
+    <div role="img" aria-label="Cover showing the logos of the tools in this guide (stock photograph)" className="relative grid h-full w-full place-items-center overflow-hidden" style={{ background: `linear-gradient(135deg, ${a}, ${b})` }}>
+      <div className="absolute inset-0 mix-blend-multiply opacity-60">
+        <Photo id={PHOTO[hue] ?? "circuit-blue"} decorative sizes="(min-width: 768px) 400px, 100vw" />
+      </div>
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
       <div className="relative flex max-w-full flex-wrap items-center justify-center gap-2 px-3">
         {tools.map((t) => (
           <span key={t.id} className="rounded-2xl shadow-lg shadow-black/30">

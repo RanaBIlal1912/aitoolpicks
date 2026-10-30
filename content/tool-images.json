@@ -1,0 +1,452 @@
+{
+  "assemblyai": {
+    "file": "assemblyai",
+    "imageUrl": "https://www.assemblyai.com/_aai/images/meta/og-default.jpg",
+    "page": "https://www.assemblyai.com/",
+    "credit": "assemblyai.com",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-30"
+  },
+  "consensus": {
+    "file": "consensus",
+    "imageUrl": "https://consensus.app/images/og-default.png",
+    "page": "https://consensus.app/",
+    "credit": "consensus.app",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "bolt": {
+    "file": "bolt",
+    "imageUrl": "https://bolt.new/static/social_preview_index-v2.png",
+    "page": "https://bolt.new/",
+    "credit": "bolt.new",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "cursor": {
+    "file": "cursor",
+    "imageUrl": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/og/opengraph-default.png",
+    "page": "https://cursor.com/",
+    "credit": "cursor.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "deepgram": {
+    "file": "deepgram",
+    "imageUrl": "https://cdn.sanity.io/images/zf5tfwjf/production/7fda761638aa69f0a1a482d154745816a5278053-1200x630.jpg?w=1200&h=630",
+    "page": "https://deepgram.com/",
+    "credit": "deepgram.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "copilot": {
+    "file": "copilot",
+    "imageUrl": "https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/og-image-4986dc5dbb.png",
+    "page": "https://copilot.com/?fromcode=cmmlf487uwy&sessionId=ba592e7f-9dd6-4dd7-b699-2ab9843ed341&",
+    "credit": "copilot.com",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-30"
+  },
+  "descript": {
+    "file": "descript",
+    "imageUrl": "https://cdn.sanity.io/images/lsw4j9eq/production/126b70d12a747eb60c81bad5b72942f7d75041dd-1200x630.jpg?fit=max&auto=format",
+    "page": "https://www.descript.com/",
+    "credit": "descript.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "elevenlabs": {
+    "file": "elevenlabs",
+    "imageUrl": "https://elevenlabs.io/cover.png",
+    "page": "https://elevenlabs.io/",
+    "credit": "elevenlabs.io",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "deepl": {
+    "file": "deepl",
+    "imageUrl": "https://www.deepl.com/img/favicon/automatic_social_share_deepl.png",
+    "page": "https://www.deepl.com/en",
+    "credit": "deepl.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "devin": {
+    "file": "devin",
+    "imageUrl": "https://devin.ai/assets/images/devin-og-noise.jpg",
+    "page": "https://devin.ai/",
+    "credit": "devin.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "elicit": {
+    "file": "elicit",
+    "imageUrl": "https://framerusercontent.com/images/s7irwYwOOfdSFu6EPduaB8EDsIg.png",
+    "page": "https://elicit.com/",
+    "credit": "elicit.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "firefly": {
+    "file": "firefly",
+    "imageUrl": "https://www.adobe.com/products/media_1912d2dfb102c668252eb9dda176f925d677fc5e2.png?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "page": "https://www.adobe.com/products/firefly.html",
+    "credit": "adobe.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "fireflies": {
+    "file": "fireflies",
+    "imageUrl": "https://fireflies.ai/thumbnail.png",
+    "page": "https://fireflies.ai/",
+    "credit": "fireflies.ai",
+    "width": 1200,
+    "height": 548,
+    "fetched": "2026-10-30"
+  },
+  "grammarly": {
+    "file": "grammarly",
+    "imageUrl": "https://static-web.grammarly.com/1e6ajr2k4140/1kGiUxfxoLhCPH7wGcvknN/c218a7bbcdfc24301fbbfb6ae9892ec6/default_social_share.png",
+    "page": "https://www.grammarly.com/",
+    "credit": "grammarly.com",
+    "width": 1197,
+    "height": 626,
+    "fetched": "2026-10-30"
+  },
+  "granola": {
+    "file": "granola",
+    "imageUrl": "https://www.granola.ai/og-image.png",
+    "page": "https://www.granola.ai/",
+    "credit": "granola.ai",
+    "width": 1024,
+    "height": 537,
+    "fetched": "2026-10-30"
+  },
+  "fathom": {
+    "file": "fathom",
+    "imageUrl": "https://cdn.prod.website-files.com/6899da9beccbdbe92be49b5d/68f20f5cd1c6d0de365b8849_Fathom-Visual_Identity_Concepts-Stage_07-Website_Thumbnail-01.jpg",
+    "page": "https://www.fathom.ai/",
+    "credit": "fathom.ai",
+    "width": 1200,
+    "height": 800,
+    "fetched": "2026-10-30"
+  },
+  "groq": {
+    "file": "groq",
+    "imageUrl": "https://groq.com/images/og.png",
+    "page": "https://groq.com/",
+    "credit": "groq.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "figma": {
+    "file": "figma",
+    "imageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&q=70&fit=max&auto=format",
+    "page": "https://www.figma.com/",
+    "credit": "figma.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "hex": {
+    "file": "hex",
+    "imageUrl": "https://cdn.sanity.io/images/e92memrj/production/c423fc65085353820503111c97d9add8c3d5ca05-1200x630.png",
+    "page": "https://hex.tech/",
+    "credit": "hex.tech",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "huggingface": {
+    "file": "huggingface",
+    "imageUrl": "https://huggingface.co/front/thumbnails/v2-2.png",
+    "page": "https://huggingface.co/",
+    "credit": "huggingface.co",
+    "width": 1200,
+    "height": 648,
+    "fetched": "2026-10-30"
+  },
+  "hostinger": {
+    "file": "hostinger",
+    "imageUrl": "https://www.hostinger.com/og-image.gif",
+    "page": "https://www.hostinger.com/",
+    "credit": "hostinger.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "heygen": {
+    "file": "heygen",
+    "imageUrl": "https://cdn.sanity.io/images/pdhqcmb1/production/e6fbae484791e59b8d30413bb33dda951fb1027c-1200x630.png?fit=max&fm=png",
+    "page": "https://www.heygen.com/",
+    "credit": "heygen.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "fireworks": {
+    "file": "fireworks",
+    "imageUrl": "https://cdn.sanity.io/images/pv37i0yn/horizon/899fcf63d80829771ad528d647686f3d7265fe23-1200x720.png?v=2026-10-14T02%3A51%3A14Z",
+    "page": "https://fireworks.ai/",
+    "credit": "fireworks.ai",
+    "width": 1200,
+    "height": 720,
+    "fetched": "2026-10-30"
+  },
+  "jasper": {
+    "file": "jasper",
+    "imageUrl": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6846454bda26628fcf51d54c_9650916b48ce089735bcc21cc8e43f2f_OpenGraph%20-%20Home.png",
+    "page": "https://www.jasper.ai/",
+    "credit": "jasper.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "intercom": {
+    "file": "intercom",
+    "imageUrl": "https://cdn.sanity.io/images/4bgok82s/monorepo-static-assets/9d9c4802c510e9279b7525a4dd289dd793725b83-2400x1260.jpg",
+    "page": "https://www.intercom.com/",
+    "credit": "intercom.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "langsmith": {
+    "file": "langsmith",
+    "imageUrl": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a2224227e2e682a3a49a95_Website%20preview-LangSmith%20Platform%20Page-obs.png",
+    "page": "https://www.langchain.com/langsmith/observability",
+    "credit": "langchain.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "luma": {
+    "file": "luma",
+    "imageUrl": "https://cdn.sanity.io/images/2ylxvaa2/production/ff7469d468f6f7e447ccb4a50276f1cb03c6664d-1200x630.jpg?w=1200&h=630&fm=jpg",
+    "page": "https://lumalabs.ai/",
+    "credit": "lumalabs.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "make": {
+    "file": "make",
+    "imageUrl": "https://cdn.prod.website-files.com/6a294495bc84130c6dd0c4fd/6a706624f7fdfc3470419256_og-img.png",
+    "page": "https://www.make.com/",
+    "credit": "make.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "notebooklm": {
+    "file": "notebooklm",
+    "imageUrl": "https://notebook.google/_/static/branding/v6/og/notebook_lm_share.png",
+    "page": "https://notebook.google/",
+    "credit": "notebook.google",
+    "width": 1200,
+    "height": 627,
+    "fetched": "2026-10-30"
+  },
+  "langchain": {
+    "file": "langchain",
+    "imageUrl": "https://repository-images.githubusercontent.com/552661142/7392d590-2716-4261-b623-a0579df67e0d",
+    "page": "https://github.com/langchain-ai/langchain",
+    "credit": "github.com",
+    "width": 1200,
+    "height": 600,
+    "fetched": "2026-10-30"
+  },
+  "notion": {
+    "file": "notion",
+    "imageUrl": "https://www.notion.com/front-static/meta/teams-and-agents.jpg",
+    "page": "https://www.notion.com/",
+    "credit": "notion.com",
+    "width": 1200,
+    "height": 625,
+    "fetched": "2026-10-30"
+  },
+  "openrouter": {
+    "file": "openrouter",
+    "imageUrl": "https://openrouter.ai/dynamic-og?pathname=default&title=OpenRouter&description=The+unified+interface+for+every+model.+Find+the+best+models+%26+prices+for+your+prompts&v=2",
+    "page": "https://openrouter.ai/",
+    "credit": "openrouter.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "ollama": {
+    "file": "ollama",
+    "imageUrl": "https://ollama.com/public/og.png",
+    "page": "https://ollama.com/",
+    "credit": "ollama.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "github-copilot": {
+    "file": "github-copilot",
+    "imageUrl": "https://images.ctfassets.net/8aevphvgewt8/4KxWJH8PVVXdqBLs1V3UJ8/7b7f6e8405daa24565374f993c0fca68/github-copilot-open-graph-img.jpg",
+    "page": "https://github.com/features/copilot",
+    "credit": "github.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "pika": {
+    "file": "pika",
+    "imageUrl": "https://pika.art/brand/opengraph.png",
+    "page": "https://pika.art/",
+    "credit": "pika.art",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "replit": {
+    "file": "replit",
+    "imageUrl": "https://replit.com/public/images/opengraph_rebrand.jpg",
+    "page": "https://replit.com/",
+    "credit": "replit.com",
+    "width": 1200,
+    "height": 650,
+    "fetched": "2026-10-30"
+  },
+  "perplexity": {
+    "file": "perplexity",
+    "imageUrl": "https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png",
+    "page": "https://www.perplexity.ai/",
+    "credit": "perplexity.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "runway": {
+    "file": "runway",
+    "imageUrl": "https://d3phaj0sisr2ct.cloudfront.net/site/assets/homepage-og-card-v3.webp",
+    "page": "https://runway.com/",
+    "credit": "runway.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "n8n": {
+    "file": "n8n",
+    "imageUrl": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/og_image_website_3_afd66761a9.png",
+    "page": "https://n8n.io/",
+    "credit": "n8n.io",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "suno": {
+    "file": "suno",
+    "imageUrl": "https://cdn-o.suno.com/meta-preview.jpg",
+    "page": "https://suno.com/",
+    "credit": "suno.com",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-30"
+  },
+  "surfer": {
+    "file": "surfer",
+    "imageUrl": "https://surfer.ai/images/og/basic.jpg",
+    "page": "https://surfer.ai/",
+    "credit": "surfer.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "synthesia": {
+    "file": "synthesia",
+    "imageUrl": "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/6a69f92081e7150b43394a9f_OG-Image-EN.jpg",
+    "page": "https://www.synthesia.io/",
+    "credit": "synthesia.io",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "tidio": {
+    "file": "tidio",
+    "imageUrl": "https://www.tidio.com/images/seo/tidio-og.png",
+    "page": "https://www.tidio.com/",
+    "credit": "tidio.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "together": {
+    "file": "together",
+    "imageUrl": "https://cdn.prod.website-files.com/69654e88dce9154b5f1206dd/69a49f86fc70648ca04854f6_OG-image-home.png",
+    "page": "https://www.together.ai/",
+    "credit": "together.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "langgraph": {
+    "file": "langgraph",
+    "imageUrl": "https://repository-images.githubusercontent.com/676672661/b8343a50-7115-4759-ac4b-9466e1c64b85",
+    "page": "https://github.com/langchain-ai/langgraph",
+    "credit": "github.com",
+    "width": 1200,
+    "height": 600,
+    "fetched": "2026-10-30"
+  },
+  "v0": {
+    "file": "v0",
+    "imageUrl": "https://v0.app/chat/api/og",
+    "page": "https://v0.app/",
+    "credit": "v0.app",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "zapier": {
+    "file": "zapier",
+    "imageUrl": "https://res.cloudinary.com/zapier-media/image/upload/q_auto/f_auto/v1776210705/Governance/og-image-homepage_mskeaq.png",
+    "page": "https://zapier.com/",
+    "credit": "zapier.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "zendesk": {
+    "file": "zendesk",
+    "imageUrl": "https://d1eipm3vz40hy0.cloudfront.net/images/logos/favicons/zendesk-image.png",
+    "page": "https://www.zendesk.com/",
+    "credit": "zendesk.com",
+    "width": 1200,
+    "height": 600,
+    "fetched": "2026-10-30"
+  },
+  "wisprflow": {
+    "file": "wisprflow",
+    "imageUrl": "https://cdn.prod.website-files.com/682f84b3838c89f8ff7667db/6a724a4fff322698a57a7d97_dictation-og%20(1).jpg",
+    "page": "https://wisprflow.ai/",
+    "credit": "wisprflow.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  },
+  "writesonic": {
+    "file": "writesonic",
+    "imageUrl": "https://writesonic.com/opengraph-image",
+    "page": "https://writesonic.com/",
+    "credit": "writesonic.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-30"
+  }
+}

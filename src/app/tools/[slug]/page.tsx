@@ -17,6 +17,7 @@ import { formatChecked } from "@/lib/dates";
 import { logoFor } from "@/data/logos";
 import ArticleCard from "@/components/ArticleCard";
 import ToolLogo from "@/components/ToolLogo";
+import ToolShot from "@/components/ToolShot";
 import { catColors } from "@/data/palette";
 import { slugify } from "@/data/companies";
 import AlternativeList from "@/components/AlternativeList";
@@ -131,6 +132,7 @@ export default async function ToolPage({ params }: Props) {
       </PageHeader>
 
       <div className="mx-auto max-w-6xl px-5">
+        <ToolShot id={t.id} name={t.name} className="mb-12 max-w-3xl" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div className="min-w-0 space-y-12">
             <Reveal as="section">

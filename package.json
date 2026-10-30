@@ -15,6 +15,7 @@
     "logos": "node scripts/fetch-logos.mjs",
     "brand": "node scripts/make-brand-assets.mjs",
     "news-images": "node scripts/fetch-news-images.mjs",
+    "tool-images": "node scripts/fetch-tool-images.mjs",
     "assets:report": "node scripts/assets-report.mjs",
     "catalog:report": "node scripts/build-catalog.mjs --report",
     "prebuild": "node scripts/build-catalog.mjs",
