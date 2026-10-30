@@ -37,3 +37,16 @@ engine load itself is deferred, not removed, so a visitor who moves the mouse st
 - Best practices is 96 on most pages because the local test server returns 404 for Next's prefetch files, which GitHub Pages serves with 200.
 
 Reproduce: serve `out/` under `/aitoolpicks/` and run `npx lighthouse http://localhost:8123/aitoolpicks/ --preset=desktop --output=json` (omit `--preset` for mobile).
+
+## Live site re-test, 30 Oct 2026 (https://ranabilal1912.github.io/aitoolpicks/, Lighthouse CLI, single runs unless noted)
+
+| Page | Perf | A11y | Best practices | SEO | LCP | TBT |
+| --- | --- | --- | --- | --- | --- | --- |
+| Home, desktop | 93 | 100 | 100 | 100 | 0.7 s | 170 ms |
+| Home, mobile | 71 (two runs: 71, 71) | 100 | 100 | 100 | 1.8 s | 1.4 to 1.6 s |
+| News, mobile | 78 | 100 | 100 | 100 | 2.7 s | 650 ms |
+| Tools, mobile | 69, 77, 80 (three runs) | 100 | 100 | 100 | 1.8 s | 0.7 to 2.4 s |
+| Reviews, mobile | 85 | 100 | 100 | 100 | 1.4 s | 580 ms |
+| Blog, mobile | 80 | 100 | 100 | 100 | 1.7 s | 740 ms |
+
+Mobile performance is below 90 on every page tested. LCP and layout shift are good (CLS 0); the gap is total blocking time. The trace attributes it to the React runtime chunk (hydration of the page) under Lighthouse's 4x/6x CPU slowdown. Repeat runs of the same page differ by up to 11 points, so single numbers are indicative. Not fixed yet.
