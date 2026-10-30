@@ -356,6 +356,10 @@ table.cmp thead th:first-child {
     min-width: 11rem;
   }
 }
+table.cmp tr.cmp-diff td,
+table.cmp tr.cmp-diff th {
+  background: rgba(214, 180, 106, 0.06);
+}
 table.cmp tbody tr:last-child th,
 table.cmp tbody tr:last-child td {
   border-bottom: 0;

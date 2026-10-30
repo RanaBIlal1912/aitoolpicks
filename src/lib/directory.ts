@@ -2,20 +2,26 @@
 // and reused by the pricing hub and category pages.
 import type { Tool } from "@/data/catalog-types";
 
-export type Sort = "name" | "verified" | "price" | "added" | "updated";
+export type Sort = "relevance" | "name" | "verified" | "price" | "added" | "updated";
 
 export type Filters = {
   q: string;
   category: string;
+  /** Several categories at once (a tool matches when it is in any of them). */
+  cats: string[];
   sub: string;
   models: string[];
   freeOnly: boolean;
+  /** Has a paid option: anything that is not free-only. */
+  paidOnly: boolean;
+  /** Lowest documented starting price in USD must be at or under this; null for no limit. */
+  maxUsd: number | null;
   trialOnly: boolean;
   openOnly: boolean;
   verifiedOnly: boolean;
 };
 
-export const NO_FILTERS: Filters = { q: "", category: "all", sub: "all", models: [], freeOnly: false, trialOnly: false, openOnly: false, verifiedOnly: false };
+export const NO_FILTERS: Filters = { q: "", category: "all", cats: [], sub: "all", models: [], freeOnly: false, paidOnly: false, maxUsd: null, trialOnly: false, openOnly: false, verifiedOnly: false };
 
 export const PAGE_SIZE = 24;
 
@@ -25,6 +31,9 @@ export function filterTools(list: Tool[], f: Filters): Tool[] {
   const needle = f.q.trim().toLowerCase();
   return list.filter((t) => {
     if (f.category !== "all" && !t.categories.includes(f.category)) return false;
+    if (f.cats.length && !t.categories.some((c) => f.cats.includes(c))) return false;
+    if (f.paidOnly && t.pricingModel === "free") return false;
+    if (f.maxUsd !== null && (t.fromUsd === null || t.fromUsd > f.maxUsd)) return false;
     if (f.sub !== "all" && t.subcategory !== f.sub) return false;
     if (f.models.length && !f.models.includes(t.pricingModel)) return false;
     if (f.freeOnly && t.freePlan !== true) return false;
@@ -40,6 +49,7 @@ export function sortTools(list: Tool[], sort: Sort): Tool[] {
   const out = [...list];
   const byName = (a: Tool, b: Tool) => a.name.localeCompare(b.name);
   out.sort((a, b) => {
+    if (sort === "relevance") return 0; // caller supplies relevance order
     if (sort === "verified") return STATUS_RANK[a.pricingStatus] - STATUS_RANK[b.pricingStatus] || byName(a, b);
     if (sort === "added") return b.added.localeCompare(a.added) || byName(a, b);
     if (sort === "updated") return b.verified.localeCompare(a.verified) || byName(a, b);

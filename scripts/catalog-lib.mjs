@@ -179,6 +179,28 @@ export function buildPriceRefs(tools) {
   return out;
 }
 
+/** Longer descriptive fields for search, comparison and alternatives. Kept apart from the index so pages that only list tools do not load it. */
+export function buildDetail(tools) {
+  return Object.fromEntries(
+    tools.map((t) => [
+      t.id,
+      {
+        features: t.features,
+        useCases: t.useCases,
+        audience: t.audience,
+        strengths: t.strengths,
+        limitations: t.limitations,
+        platforms: t.platforms ?? [],
+        alternatives: t.alternatives,
+        // Only what the vendor's pricing page said about an API; null when nothing was recorded.
+        api: t.pricing.api?.summary ?? (t.pricing.plans.some((p) => p.audience === "api") ? "API pricing is listed (see the pricing section)" : null),
+        freeDetails: t.pricing.free?.details ?? null,
+        trialDetails: t.pricing.trial ?? null,
+      },
+    ]),
+  );
+}
+
 export function buildLinks(tools) {
   return Object.fromEntries(tools.map((t) => [t.id, [t.name, t.website]]));
 }

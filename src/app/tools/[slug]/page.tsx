@@ -17,6 +17,9 @@ import { formatChecked } from "@/lib/dates";
 import { logoFor } from "@/data/logos";
 import ArticleCard from "@/components/ArticleCard";
 import ToolLogo from "@/components/ToolLogo";
+import AlternativeList from "@/components/AlternativeList";
+import { alternativesFor } from "@/lib/alternatives";
+import FavoriteButton, { RecentTracker } from "@/components/FavoriteButton";
 import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 
@@ -70,7 +73,7 @@ export default async function ToolPage({ params }: Props) {
   const review = REVIEWS.find((r) => r.toolId === t.id);
   const guides = articlesMentioning(t.id);
   const comparisons = COMPARISONS.filter((c) => c.leftTool === t.id || c.rightTool === t.id);
-  const alternatives = t.alternatives.map((id) => getTool(id)).filter((x): x is NonNullable<typeof x> => !!x);
+  const alts = alternativesFor(t.id, 4);
   const logo = logoFor(t.id);
   const logoNote = logo ? (logo.status === "ok" ? undefined : `Logo: ${t.name}’s own site icon, shown at a small size.`) : "No verified logo yet, so a letter mark is shown.";
   const news = newsForTool(t.id).slice(0, 3);
@@ -94,8 +97,10 @@ export default async function ToolPage({ params }: Props) {
           { name: t.name, href: `/tools/${slug}/` },
         ]}
       >
+        <RecentTracker id={t.id} />
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <AffLink id={t.id} className="btn-primary" />
+          <FavoriteButton id={t.id} name={t.name} label className="!py-2.5" />
           <a href={t.pricing.source} target="_blank" rel="noopener noreferrer" className="btn-ghost">
             Official pricing page ↗
           </a>
@@ -154,25 +159,17 @@ export default async function ToolPage({ params }: Props) {
               </Reveal>
             )}
 
-            {alternatives.length > 0 && (
+            {alts.length > 0 && (
               <Reveal as="section">
-                <h2 className="section-title text-white">Alternatives</h2>
-                <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-                  {alternatives.map((a) => (
-                    <li key={a.id} className="glass flex min-w-0 flex-wrap items-center gap-x-4 gap-y-3 rounded-2xl p-4">
-                      <ToolLogo id={a.id} name={a.name} hue={a.hue} size={44} />
-                      <div className="min-w-[10rem] min-w-0 flex-1">
-                        <Link href={`/tools/${a.id}/`} className="font-bold text-white no-underline hover:underline">
-                          {a.name}
-                        </Link>
-                        <p className="truncate text-sm text-muted">{a.tagline}</p>
-                      </div>
-                      <Link href={`/compare/?ids=${t.id},${a.id}`} className="chip">
-                        Compare
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <h2 className="section-title text-white">Alternatives to {t.name}</h2>
+                  <Link href={`/tools/${t.id}/alternatives/`} className="btn-ghost btn-sm">
+                    All alternatives →
+                  </Link>
+                </div>
+                <div className="mt-5">
+                  <AlternativeList baseId={t.id} baseName={t.name} items={alts} />
+                </div>
               </Reveal>
             )}
 

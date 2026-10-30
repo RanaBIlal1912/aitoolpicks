@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { ARTICLES, GUIDES, TOPICS } from "@/data/articles";
 import { COMPARISONS } from "@/data/compare";
 import { NEWS } from "@/data/news";
-import { CATEGORIES, getTool } from "@/data/tools";
+import { CATEGORIES, TOOLS, getTool } from "@/data/tools";
+import type { Tool } from "@/data/catalog-types";
 import { ROUNDUPS } from "@/data/roundups";
 import { SITE, absUrl } from "@/lib/site";
 import ArticleCard from "@/components/ArticleCard";
@@ -13,6 +14,7 @@ import NewsVisual from "@/components/NewsVisual";
 import Reveal from "@/components/Reveal";
 import ToolCard from "@/components/ToolCard";
 import ToolLogo from "@/components/ToolLogo";
+import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
 
 const TITLE = `${SITE.name}: discover AI tools, real prices and honest comparisons`;
@@ -32,13 +34,32 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: SITE.description, images: [absUrl("/brand/og.png")] },
 };
 
+// Popular tasks: plain phrases that the local search understands (see src/lib/search.ts).
 const SUGGESTIONS = [
-  { label: "Coding agent", q: "coding agent" },
-  { label: "Video", q: "video" },
-  { label: "Voice", q: "voice" },
-  { label: "Research", q: "research" },
-  { label: "Automation", q: "automation" },
+  { label: "Create videos", q: "create professional videos" },
+  { label: "Code with AI", q: "AI coding assistant" },
+  { label: "Transcribe meetings", q: "transcribe meetings" },
+  { label: "Product images", q: "generate product images" },
+  { label: "Research papers", q: "research academic papers" },
+  { label: "Build a website", q: "build a website" },
+  { label: "Voiceovers", q: "create AI voiceovers" },
 ];
+
+function MiniTool({ t, note }: { t: Tool; note: string }) {
+  return (
+    <Link
+      href={`/tools/${t.id}/`}
+      className="glass flex h-full items-center gap-4 rounded-2xl p-4 no-underline transition-colors hover:border-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
+    >
+      <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
+      <span className="min-w-0">
+        <span className="block font-bold text-white">{t.name}</span>
+        <span className="line-clamp-1 block text-sm text-muted">{t.tagline}</span>
+        <span className="mt-0.5 block text-xs text-soft">{note}</span>
+      </span>
+    </Link>
+  );
+}
 
 function SectionHead({ eyebrow, title, lead, href, cta }: { eyebrow: string; title: string; lead?: string; href?: string; cta?: string }) {
   return (
@@ -62,6 +83,10 @@ export default function Home() {
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
   const latest = GUIDES.filter((g) => g.slug !== lead.slug && !g.region).slice(0, 3); // regional guides stay on the blog
   const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
+  // Free tools: a free plan is documented on the official page and the pricing record is fully verified.
+  const free = TOOLS.filter((t) => t.freePlan === true && t.pricingStatus === "verified").slice(0, 6);
+  // Recently added: newest records first. This is "added to our directory", not "released by the vendor".
+  const recent = [...TOOLS].sort((a, b) => b.added.localeCompare(a.added) || a.name.localeCompare(b.name)).slice(0, 6);
 
   return (
     <>
@@ -88,6 +113,30 @@ export default function Home() {
             {featured.map((t) => (
               <li key={t.id} className="[perspective:1000px]">
                 <ToolCard tool={t} />
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <RecentStrip />
+
+        <Reveal as="section" className="pt-24">
+          <SectionHead eyebrow="Free to start" title="AI tools with a free plan" lead="A free plan is documented on the vendor's official page and its pricing record is fully verified." href="/tools/?free=1" cta="All free tools" />
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {free.map((t) => (
+              <li key={t.id}>
+                <MiniTool t={t} note="Free plan documented" />
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal as="section" className="pt-24">
+          <SectionHead eyebrow="New in the directory" title="Recently added" lead="Newest records first. This shows when we added a tool, not when the vendor released it." href="/tools/" cta="Browse all" />
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {recent.map((t) => (
+              <li key={t.id}>
+                <MiniTool t={t} note={`Added ${t.added}`} />
               </li>
             ))}
           </ul>
@@ -257,6 +306,9 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-6 text-sm text-muted">
+            Is a tool missing? <Link href="/submit/" className="text-soft underline">Suggest it</Link>. A person reviews every suggestion.
+          </p>
+          <p className="mt-3 text-sm text-muted">
             Some links on this site are affiliate links. If you buy through them we may earn a commission at no extra cost to you, and it never changes what we
             write.{" "}
             <Link href="/affiliate-disclosure/" className="text-soft underline">

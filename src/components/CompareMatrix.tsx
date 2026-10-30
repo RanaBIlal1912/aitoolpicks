@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { PRICING_MODEL_LABEL, TOOLS, getCategory, getTool } from "@/data/tools";
 import AffLink from "./AffLink";
 import { formatChecked } from "@/lib/dates";
+import { getDetail } from "@/data/detail";
 
 const DEFAULT_IDS = ["claude", "mistral"];
 
@@ -25,10 +26,15 @@ function ToolSelect({ id, label, value, onChange, taken }: { id: string; label: 
   );
 }
 
-function Row({ label, cells }: { label: string; cells: React.ReactNode[] }) {
+/** A row; when the plain-text values differ between tools the row is marked, so differences stand out without picking a winner. */
+function Row({ label, cells, values }: { label: string; cells: React.ReactNode[]; values?: string[] }) {
+  const differs = !!values && new Set(values.map((v) => v.trim().toLowerCase())).size > 1;
   return (
-    <tr>
-      <th scope="row">{label}</th>
+    <tr className={differs ? "cmp-diff" : undefined}>
+      <th scope="row">
+        {label}
+        {differs && <span className="mt-1 block text-[0.68rem] font-bold uppercase tracking-[0.1em] text-amber">Differs</span>}
+      </th>
       {cells.map((c, i) => (
         <td key={i}>{c}</td>
       ))}
@@ -44,11 +50,35 @@ export default function CompareMatrix() {
   useEffect(() => {
     const p = new URLSearchParams(window.location.search).get("ids");
     if (!p) return;
-    const parsed = p.split(",").filter((x, i, a) => getTool(x) && a.indexOf(x) === i).slice(0, 3);
+    const asked = p.split(",").filter(Boolean);
+    setInvalid(asked.filter((x) => !getTool(x)));
+    const parsed = asked.filter((x, i, a) => getTool(x) && a.indexOf(x) === i).slice(0, 3);
     if (parsed.length >= 2) setIds(parsed);
   }, []);
 
+  useEffect(() => {
+    try {
+      history.replaceState(null, "", `${location.pathname}?ids=${ids.join(",")}`);
+    } catch {
+      /* ignore */
+    }
+  }, [ids]);
   const tools = ids.map((id) => getTool(id)!).filter(Boolean);
+  const dets = tools.map((t) => getDetail(t.id));
+  const list = (pick: (d: NonNullable<ReturnType<typeof getDetail>>) => string[]) =>
+    dets.map((d, i) => (d && pick(d).length ? <ul key={tools[i].id} className="list-disc space-y-1 pl-4">{pick(d).map((x) => <li key={x}>{x}</li>)}</ul> : <span key={tools[i].id} className="text-muted">Not recorded</span>));
+  const flat = (pick: (d: NonNullable<ReturnType<typeof getDetail>>) => string[]) => dets.map((d) => (d ? pick(d).join("|") : ""));
+  const [copied, setCopied] = useState(false);
+  const share = async () => {
+    try {
+      await navigator.clipboard.writeText(`${location.origin}${location.pathname}?ids=${ids.join(",")}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.prompt("Copy this link", `${location.origin}${location.pathname}?ids=${ids.join(",")}`);
+    }
+  };
+  const [invalid, setInvalid] = useState<string[]>([]);
   const setAt = (i: number, v: string) => setIds((cur) => cur.map((x, j) => (j === i ? v : x)));
   const addThird = () => setIds((cur) => (cur.length < 3 ? [...cur, TOOLS.find((t) => !cur.includes(t.id))!.id] : cur));
   const removeThird = () => setIds((cur) => cur.slice(0, 2));
@@ -70,6 +100,18 @@ export default function CompareMatrix() {
             Remove third tool
           </button>
         )}
+      </div>
+
+      {invalid.length > 0 && (
+        <p role="alert" className="mt-4 rounded-xl border border-amber/30 bg-amber/10 px-4 py-2 text-sm text-amber">
+          The link named {invalid.length === 1 ? "a tool" : "tools"} we do not have ({invalid.join(", ")}), so it was ignored.
+        </p>
+      )}
+      <div className="mt-3 flex flex-wrap items-center gap-3">
+        <button type="button" className="chip" onClick={share}>
+          {copied ? "Link copied" : "Copy shareable link"}
+        </button>
+        <span className="text-sm text-muted">Rows marked &ldquo;Differs&rdquo; are where the recorded details are not the same. That is not a ranking.</span>
       </div>
 
       <div className="table-wrap mt-6 border border-white/10">
@@ -101,7 +143,14 @@ export default function CompareMatrix() {
                 t.openSource === "open-source" ? "Open source (verified)" : t.openSource === "source-available" ? "Source-available, not open source" : t.openSource === "open-weights" ? "Open weights" : <span className="text-muted">Not stated</span>,
               )}
             />
-            <Row label="Key capability" cells={tools.map((t) => t.keyFeature)} />
+            <Row label="Key capability" cells={tools.map((t) => t.keyFeature)} values={tools.map((t) => t.keyFeature)} />
+            <Row label="Main features" cells={list((d) => d.features)} values={flat((d) => d.features)} />
+            <Row label="Use cases" cells={list((d) => d.useCases)} values={flat((d) => d.useCases)} />
+            <Row label="Strengths" cells={list((d) => d.strengths)} values={flat((d) => d.strengths)} />
+            <Row label="Limitations" cells={list((d) => d.limitations)} values={flat((d) => d.limitations)} />
+            <Row label="Platforms" cells={dets.map((d, i) => (d && d.platforms.length ? d.platforms.join(", ") : <span key={i} className="text-muted">Not recorded</span>))} values={flat((d) => d.platforms)} />
+            <Row label="API" cells={dets.map((d, i) => (d?.api ? d.api : <span key={i} className="text-muted">Not stated in our record</span>))} values={dets.map((d) => (d?.api ? "yes" : "no"))} />
+            <Row label="Free plan details" cells={dets.map((d, i) => (d?.freeDetails ? d.freeDetails : <span key={i} className="text-muted">None recorded</span>))} />
             <Row label="Pricing model" cells={tools.map((t) => PRICING_MODEL_LABEL[t.pricingModel])} />
             <Row
               label="Plans (merchant currency)"

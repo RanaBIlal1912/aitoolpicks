@@ -5,6 +5,7 @@ import { PRICING_MODEL_LABEL, getCategory, type Tool } from "@/data/tools";
 import AffLink from "./AffLink";
 import TiltCard from "./TiltCard";
 import ToolLogo from "./ToolLogo";
+import FavoriteButton from "./FavoriteButton";
 
 const STATUS = {
   verified: { label: "Pricing verified", cls: "border-emerald-400/30 bg-emerald-400/10 text-emerald-200" },
@@ -26,11 +27,14 @@ export default function ToolCard({
   selected,
   onToggleCompare,
   disableCompare = false,
+  reasons,
 }: {
   tool: Tool;
   selected?: boolean;
   onToggleCompare?: (id: string) => void;
   disableCompare?: boolean;
+  /** Why this tool matched a search, shown under the description. */
+  reasons?: string[];
 }) {
   const cat = getCategory(tool.category);
   const sub = cat?.subs.find((s) => s.slug === tool.subcategory);
@@ -49,10 +53,20 @@ export default function ToolCard({
           </h3>
           <p className="truncate text-sm text-muted">{tool.vendor}</p>
         </div>
+        <span className="relative z-10 ml-auto shrink-0">
+          <FavoriteButton id={tool.id} name={tool.name} />
+        </span>
       </div>
 
       <p className="mt-4 line-clamp-2 min-h-[3.2em] text-[0.97rem] text-soft">{tool.tagline}</p>
       {tool.keyFeature && <p className="mt-2 line-clamp-2 min-h-[2.8em] text-sm text-muted">{tool.keyFeature}</p>}
+      {reasons && reasons.length > 0 && (
+        <ul className="mt-3 space-y-1 rounded-xl border border-cyan/20 bg-cyan/5 px-3 py-2 text-xs text-[#c3e3ea]" aria-label="Why this matched your search">
+          {reasons.map((r) => (
+            <li key={r}>{r}</li>
+          ))}
+        </ul>
+      )}
 
       <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
         {cat && <span className={PILL}>{sub ? `${cat.short} · ${sub.label}` : cat.short}</span>}

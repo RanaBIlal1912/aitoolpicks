@@ -16,19 +16,19 @@ export default function PrivacyPage() {
       title="Privacy policy"
       lead="We collect as little as possible. This page explains what that means in practice."
       path="/privacy/"
-      updated="29 October 2026"
+      updated="30 October 2026"
     >
       <h2>Summary</h2>
       <ul>
         <li>No accounts, no sign-up and no advertising networks.</li>
         <li>We do not currently run analytics or tracking scripts.</li>
-        <li>We store your currency choice in your own browser, nothing more.</li>
+        <li>Your currency choice, saved tools and recently viewed tools are stored only in your own browser, never on our servers.</li>
       </ul>
 
       <h2>What is stored in your browser</h2>
       <p>
-        We use your browser&rsquo;s local storage (not cookies) for two things: the currency you picked, and a short-lived copy of
-        recent exchange rates so we do not fetch them on every page. You can clear this at any time in your browser settings. The
+        We use your browser&rsquo;s local storage (not cookies) for four things: the currency you picked, a short-lived copy of
+        recent exchange rates so we do not fetch them on every page, the tools you choose to save (heart button), and the tool pages you recently viewed (up to 12). The saved and recent lists never leave your device: there are no accounts and nothing is synchronised. Clear them on the Saved tools and Recently viewed pages, or in your browser settings. You can clear this at any time in your browser settings. The
         site works without it.
       </p>
 

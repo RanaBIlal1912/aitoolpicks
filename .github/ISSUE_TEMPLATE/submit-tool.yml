@@ -1,0 +1,65 @@
+name: Submit an AI tool
+description: Suggest an AI product for the AI Tool Picks directory. A person reviews every submission; nothing is published automatically.
+title: "Tool submission: "
+labels: ["tool-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a tool. This issue is **public**. Do not post private information. We only add tools we can verify from official sources, and a submission does not guarantee a listing.
+  - type: input
+    id: tool-name
+    attributes:
+      label: Tool name
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Official website
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: company
+    attributes:
+      label: Company or maker
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description
+    validations:
+      required: true
+  - type: textarea
+    id: features
+    attributes:
+      label: Main features
+    validations:
+      required: true
+  - type: input
+    id: pricing
+    attributes:
+      label: Official pricing page
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: submitter
+    attributes:
+      label: Your name (optional)
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email (optional, will be public)
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else

@@ -1,0 +1,2063 @@
+{
+ "assemblyai": {
+  "features": [
+   "Pre-recorded and streaming speech-to-text",
+   "Text-to-speech",
+   "LLM Gateway",
+   "EU region at the same price as the US"
+  ],
+  "useCases": [
+   "Transcribing audio and video",
+   "Real-time transcription in apps"
+  ],
+  "audience": [
+   "Developers",
+   "Enterprises"
+  ],
+  "strengths": [
+   "$50 in free credits at signup, no credit card required",
+   "EU region costs the same as the US region"
+  ],
+  "limitations": [
+   "Free-tier streaming concurrency is limited to 5 new streams per minute",
+   "Enterprise prices are not published"
+  ],
+  "platforms": [
+   "API"
+  ],
+  "alternatives": [
+   "deepgram",
+   "elevenlabs"
+  ],
+  "api": "Per hour: Universal-3.5 Pro (pre-recorded) $0.21; Universal-2 (pre-recorded) $0.15; Universal-3.6 Pro Realtime (streaming) $0.45 base; Universal-Streaming English $0.15.",
+  "freeDetails": "$50 in free credits on signup, no credit card required; streaming concurrency of 5 new streams per minute.",
+  "trialDetails": null
+ },
+ "bolt": {
+  "features": [
+   "Monthly AI token allowance per plan",
+   "File uploads (10 MB on Free, 100 MB on paid)",
+   "Web requests per month"
+  ],
+  "useCases": [
+   "Building web apps from prompts",
+   "Prototyping quickly"
+  ],
+  "audience": [
+   "Individuals",
+   "Teams"
+  ],
+  "strengths": [
+   "Free forever with no card required",
+   "Unused tokens roll over on Pro"
+  ],
+  "limitations": [
+   "Free plan has a daily token limit of 300K and 1M tokens per month",
+   "Annual per-month prices were not captured"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "lovable",
+   "replit",
+   "v0"
+  ],
+  "api": null,
+  "freeDetails": "1M monthly AI tokens, 300K daily token limit, 333K web requests per month and a 10 MB file upload limit. Unused tokens do not roll over.",
+  "trialDetails": null
+ },
+ "canva": {
+  "features": [
+   "Templates for social posts, presentations and documents"
+  ],
+  "useCases": [
+   "Social media graphics",
+   "Presentations and simple documents"
+  ],
+  "audience": [
+   "Non-designers",
+   "Small businesses"
+  ],
+  "strengths": [
+   "Easy to learn"
+  ],
+  "limitations": [
+   "Popular templates look familiar, so customise colours and text",
+   "Check commercial-use terms for specific content before client work",
+   "Prices differ by country; the amounts we recorded are in Pakistani rupees and per year only"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "firefly",
+   "figma",
+   "gamma"
+  ],
+  "api": null,
+  "freeDetails": "Canva Free includes the drag-and-drop editor, 1.6M+ templates, 5GB of cloud storage and limited access to Standard and Premium AI.",
+  "trialDetails": "Canva Pro and Canva Business show a free trial option on the pricing page."
+ },
+ "chatgpt": {
+  "features": [
+   "Chat-based assistant for writing, analysis and questions",
+   "Drafting, rewriting and summarising text",
+   "Brainstorming and outlining"
+  ],
+  "useCases": [
+   "Turning rough notes into a first draft of an email or proposal",
+   "Explaining an unfamiliar topic in simpler words",
+   "Brainstorming names, angles and outlines"
+  ],
+  "audience": [
+   "Freelancers",
+   "Students",
+   "Small business owners"
+  ],
+  "strengths": [
+   "Handles many writing and thinking tasks in one place",
+   "Widely used, so many tutorials and guides exist"
+  ],
+  "limitations": [
+   "Can state wrong facts confidently, so check anything important",
+   "Do not paste confidential client or personal information unless you are allowed to"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "claude",
+   "gemini",
+   "copilot",
+   "perplexity"
+  ],
+  "api": "API usage is billed separately from ChatGPT plans.",
+  "freeDetails": "Free plan: unlimited text chats (subject to abuse guardrails) with limited uploads, image creation, voice chats, deep research and memory.",
+  "trialDetails": null
+ },
+ "claude": {
+  "features": [
+   "Chat on web, desktop and mobile",
+   "Web search, file creation and code execution",
+   "Memory, connectors and Artifacts",
+   "Projects (up to 5 on the free plan)",
+   "Claude Code included with Team plans"
+  ],
+  "useCases": [
+   "Writing and editing",
+   "Analysing documents and files",
+   "Working through coding problems"
+  ],
+  "audience": [
+   "Individuals",
+   "Teams of 2 to 150 users (Team plan)",
+   "Large organisations (Enterprise)"
+  ],
+  "strengths": [
+   "Free plan includes web search, file creation and memory",
+   "Team and Enterprise plans add central billing, SSO and admin controls"
+  ],
+  "limitations": [
+   "Usage limits apply on every plan and reset on a rolling five-hour window; paid plans add weekly limits",
+   "The pricing page gives no fixed message count"
+  ],
+  "platforms": [
+   "Web",
+   "Desktop",
+   "Mobile"
+  ],
+  "alternatives": [
+   "chatgpt",
+   "gemini",
+   "mistral",
+   "perplexity"
+  ],
+  "api": "API usage is billed per million tokens (input/output): Fable 5.1 $10/$50, Opus 5.5 $4/$20, Sonnet 5.5 $2/$10, Haiku 5.5 $0.10/$0.50 for prompts up to 100K tokens. Batch processing is stated as a 50% saving; web search is $10 per 1,000 searches; code execution includes 50 free hours per day per organisation, then $0.05 per hour per container.",
+  "freeDetails": "Free for everyone: chat on web, desktop and mobile, web search, file creation and code execution, memory, connectors, Artifacts, up to 5 projects. Usage limits apply.",
+  "trialDetails": null
+ },
+ "consensus": {
+  "features": [
+   "Search over research papers"
+  ],
+  "useCases": [
+   "Finding evidence in the literature"
+  ],
+  "audience": [
+   "Researchers",
+   "Students"
+  ],
+  "strengths": [
+   "Individual and team options"
+  ],
+  "limitations": [
+   "The pricing page we read showed Monthly and Annual toggles but no prices"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "elicit",
+   "perplexity"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "copilot": {
+  "features": [
+   "Copilot in Word, Excel, PowerPoint and Outlook (desktop)",
+   "Advanced Copilot chat with higher usage than free",
+   "Visual AI, audio and image creation on higher plans"
+  ],
+  "useCases": [
+   "Drafting and editing documents",
+   "Working with spreadsheets and presentations",
+   "Everyday questions"
+  ],
+  "audience": [
+   "People who work in Microsoft 365",
+   "Families (Family plan, owner only for AI features)"
+  ],
+  "strengths": [
+   "Bundled with Microsoft 365 storage and apps",
+   "One-month free trial on Personal, Family and Premium"
+  ],
+  "limitations": [
+   "AI features cannot be shared on the Family plan",
+   "Usage limits apply and app availability varies by device and language"
+  ],
+  "platforms": [
+   "Web",
+   "Windows",
+   "Mobile"
+  ],
+  "alternatives": [
+   "chatgpt",
+   "gemini",
+   "claude"
+  ],
+  "api": null,
+  "freeDetails": "The page refers to 'higher usage than free' but does not describe the free plan's limits.",
+  "trialDetails": "One-month free trial on Microsoft 365 Personal, Family and Premium."
+ },
+ "cursor": {
+  "features": [
+   "AI usage pool shared across Cursor products",
+   "Cloud agents and automations (Premium and above)",
+   "Code hosting and AI code reviews (Premium and above)",
+   "Third-party models billed at API list price"
+  ],
+  "useCases": [
+   "Writing and editing code with AI help",
+   "Running agents on tasks",
+   "Reviewing code"
+  ],
+  "audience": [
+   "Individual developers",
+   "Teams (Teams and Enterprise plans)"
+  ],
+  "strengths": [
+   "Spending caps can be set",
+   "Allowances refresh weekly"
+  ],
+  "limitations": [
+   "Third-party model usage is billed separately from the plan price",
+   "The page's plan cards also mention Grok products; we could not confirm from the page how the bundle is structured"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "github-copilot",
+   "replit",
+   "lovable"
+  ],
+  "api": null,
+  "freeDetails": "Limited AI usage, limited agent requests and limited chat requests.",
+  "trialDetails": null
+ },
+ "deepgram": {
+  "features": [
+   "Speech-to-text, text-to-speech and voice agent APIs",
+   "Audio intelligence",
+   "EU endpoint that keeps processing in the EU",
+   "Self-hosted containers for enterprises (NVIDIA GPUs required)"
+  ],
+  "useCases": [
+   "Transcribing audio at scale",
+   "Building voice agents"
+  ],
+  "audience": [
+   "Developers",
+   "Enterprises"
+  ],
+  "strengths": [
+   "$200 of free credit that does not expire",
+   "No minimums on pay as you go"
+  ],
+  "limitations": [
+   "Enterprise speech-to-text rates are not stated",
+   "Self-hosting requires NVIDIA GPUs"
+  ],
+  "platforms": [
+   "API"
+  ],
+  "alternatives": [
+   "assemblyai",
+   "elevenlabs"
+  ],
+  "api": "Examples per minute (Pay as you go / Growth): Nova-3 Monolingual streaming $0.0077 / $0.0065; Nova-3 Monolingual pre-recorded $0.0043 / $0.0036; Whisper Large pre-recorded $0.0048 on both.",
+  "freeDetails": "$200 of free credit that does not expire; no credit card required to start.",
+  "trialDetails": null
+ },
+ "deepl": {
+  "features": [
+   "Text and document translation",
+   "Glossaries and saved translations",
+   "Write Pro writing assistant (paid add-on)",
+   "API tab on the pricing page"
+  ],
+  "useCases": [
+   "Translating documents and messages",
+   "Keeping consistent terminology with glossaries"
+  ],
+  "audience": [
+   "Professionals",
+   "Teams",
+   "Businesses"
+  ],
+  "strengths": [
+   "A free version is listed",
+   "Individual and Team plans list a 30-day free trial"
+  ],
+  "limitations": [
+   "The free version is capped (50,000 characters per month, 1 file translation per month, files up to 5 MB)",
+   "Monthly-billing prices and API prices are not stated on the page we read"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "grammarly",
+   "jasper"
+  ],
+  "api": null,
+  "freeDetails": "A free version is listed with 50,000 characters per user per month, 1 file translation per month, 1 glossary, 1 saved translation and files up to 5 MB.",
+  "trialDetails": "Individual and Team show a 30-day free trial (Free for 30 days, cancel anytime). Business shows no free trial."
+ },
+ "descript": {
+  "features": [
+   "Media hours and AI credits per month",
+   "Team seats on higher plans"
+  ],
+  "useCases": [
+   "Editing podcasts and video",
+   "Cleaning up recordings"
+  ],
+  "audience": [
+   "Podcasters",
+   "Video creators",
+   "Teams"
+  ],
+  "strengths": [
+   "Free plan with no card required"
+  ],
+  "limitations": [
+   "The page shows two prices per plan without saying which is the annual one",
+   "Free AI credits are one-time (100)"
+  ],
+  "platforms": [
+   "Web",
+   "Desktop"
+  ],
+  "alternatives": [
+   "runway",
+   "heygen",
+   "otter"
+  ],
+  "api": null,
+  "freeDetails": "60 minutes of media per month and 100 one-time AI credits. No credit card needed.",
+  "trialDetails": null
+ },
+ "devin": {
+  "features": [
+   "Unlimited Tab completions and inline edits on the free plan",
+   "Access to frontier models from several providers on Pro",
+   "Devin Cloud access on paid plans",
+   "Extra usage billed at API pricing"
+  ],
+  "useCases": [
+   "Coding with agents",
+   "Autocomplete and inline edits"
+  ],
+  "audience": [
+   "Individual developers",
+   "Teams of up to 200 users"
+  ],
+  "strengths": [
+   "Free plan available",
+   "Paid plans can buy extra usage beyond the allowance"
+  ],
+  "limitations": [
+   "Exact quota figures are not stated",
+   "Annual prices are not stated"
+  ],
+  "platforms": [
+   "Editor",
+   "Cloud"
+  ],
+  "alternatives": [
+   "cursor",
+   "github-copilot"
+  ],
+  "api": null,
+  "freeDetails": "Light quota to code with agents; limited model availability; unlimited inline edits and Tab completions.",
+  "trialDetails": null
+ },
+ "elevenlabs": {
+  "features": [
+   "Text to speech and speech to text",
+   "Sound effects, voice design and music",
+   "Projects and Studio",
+   "Credits that roll over for up to two months"
+  ],
+  "useCases": [
+   "Voiceovers and narration",
+   "Transcription",
+   "Sound effects and music"
+  ],
+  "audience": [
+   "Creators",
+   "Developers",
+   "Businesses"
+  ],
+  "strengths": [
+   "Free plan includes many tools",
+   "Annual billing is described as two months free"
+  ],
+  "limitations": [
+   "Downgrading or cancelling forfeits unused credits at the end of the cycle",
+   "Introductory offers appear on Starter and Creator and the end date is shown inconsistently"
+  ],
+  "platforms": [
+   "Web",
+   "API"
+  ],
+  "alternatives": [
+   "suno",
+   "heygen",
+   "descript"
+  ],
+  "api": "A separate API pricing page exists. For some models the page states discounted API usage at between 0.5 and 1 credit per character.",
+  "freeDetails": "10k credits per month, with Text to Speech, Speech to Text, Sound Effects, Voice Design, Music, Productions, Image and 3 Studio projects.",
+  "trialDetails": null
+ },
+ "elicit": {
+  "features": [
+   "Search across more than 138 million papers",
+   "Research Agent and Research Reports",
+   "Systematic literature review workflows",
+   "Zotero import; API access on Pro"
+  ],
+  "useCases": [
+   "Literature reviews",
+   "Extracting data from papers"
+  ],
+  "audience": [
+   "Researchers",
+   "Students",
+   "Institutions"
+  ],
+  "strengths": [
+   "Free Basic plan with unlimited paper summaries",
+   "Enterprise plan states no training on your data by default"
+  ],
+  "limitations": [
+   "Free usage of the Research Agent and Reports is limited",
+   "A separate monthly-billing price is not stated for paid plans"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "perplexity",
+   "notebooklm"
+  ],
+  "api": null,
+  "freeDetails": "Basic: limited Research Agent and Research Report usage, search across 138M+ papers, unlimited paper summaries and chat with full-text papers.",
+  "trialDetails": null
+ },
+ "fathom": {
+  "features": [
+   "Unlimited recordings and transcriptions on the Free plan",
+   "Choice of bot-free (beta) or bot capture",
+   "Instant AI call summaries",
+   "Clips, playlists and search across calls"
+  ],
+  "useCases": [
+   "Recording and summarising sales or client calls",
+   "Searching what was said across past calls"
+  ],
+  "audience": [
+   "Professionals",
+   "Teams"
+  ],
+  "strengths": [
+   "A free-forever plan with unlimited recordings",
+   "A 90-day guarantee is listed on every plan"
+  ],
+  "limitations": [
+   "The pricing page did not make clear which listed price is monthly and which is annual",
+   "Some features are marked limited use without saying which plan they apply to"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "otter",
+   "granola",
+   "fireflies"
+  ],
+  "api": null,
+  "freeDetails": "Free forever: unlimited recordings and transcriptions, bot-free (beta) or bot capture, instant AI call summaries, clips, playlists and search across calls.",
+  "trialDetails": null
+ },
+ "figma": {
+  "features": [
+   "Seat types: Full, Dev and Collab",
+   "AI credits per seat",
+   "Dev Mode and MCP server access on paid plans"
+  ],
+  "useCases": [
+   "Designing screens for websites and apps",
+   "Handing designs to developers",
+   "Sharing prototypes"
+  ],
+  "audience": [
+   "Designers",
+   "Developers",
+   "Product teams"
+  ],
+  "strengths": [
+   "Free Starter plan with 150 AI credits per day (up to 500 per month)",
+   "Separate cheaper seats for developers and collaborators"
+  ],
+  "limitations": [
+   "The page does not label which billing cycle the Professional prices apply to",
+   "AI-credit add-on and API prices were not stated"
+  ],
+  "platforms": [
+   "Web",
+   "Desktop"
+  ],
+  "alternatives": [
+   "canva",
+   "firefly"
+  ],
+  "api": null,
+  "freeDetails": "Starter: free limited access to Figma products, unlimited drafts, UI kits and templates, 150 AI credits per day up to 500 per month.",
+  "trialDetails": null
+ },
+ "fireflies": {
+  "features": [
+   "Meeting and audio file transcription",
+   "Meeting bot and Chrome extension",
+   "Zapier and app integrations on higher tiers",
+   "Analytics and private channels (Business)"
+  ],
+  "useCases": [
+   "Recording and transcribing meetings",
+   "Searching what was said in past calls"
+  ],
+  "audience": [
+   "Professionals",
+   "Teams"
+  ],
+  "strengths": [
+   "A Free plan is listed",
+   "The FAQ says there are no monthly rate limits on the meeting bot or Chrome extension"
+  ],
+  "limitations": [
+   "Prices and Free-plan limits were not readable on the page we fetched",
+   "Some features (API, dialers, bulk uploads) have rate limits"
+  ],
+  "platforms": [
+   "Web",
+   "Chrome extension"
+  ],
+  "alternatives": [
+   "otter",
+   "granola"
+  ],
+  "api": null,
+  "freeDetails": "A Free plan is listed; its limits are not stated in the text we could read.",
+  "trialDetails": null
+ },
+ "firefly": {
+  "features": [
+   "Generative credits per month",
+   "Video generation (5-second clips)",
+   "Audio and video translation",
+   "Sound effects and music generation"
+  ],
+  "useCases": [
+   "Generating images and short video",
+   "Translating audio and video",
+   "Creating sound effects and music"
+  ],
+  "audience": [
+   "Creators",
+   "Design and marketing teams"
+  ],
+  "strengths": [
+   "Free daily generations are described on the page",
+   "Team plans are priced per licence"
+  ],
+  "limitations": [
+   "Free daily generation limits are not stated",
+   "Annual pricing is not shown"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "midjourney",
+   "leonardo",
+   "ideogram",
+   "canva"
+  ],
+  "api": null,
+  "freeDetails": "The page describes free daily generations across image, video and audio; daily amounts are not stated.",
+  "trialDetails": "A free trial is shown for Standard, Pro and Pro Plus; its length is not stated."
+ },
+ "fireworks": {
+  "features": [
+   "Serverless inference priced per token",
+   "On-demand GPU deployments priced per GPU second",
+   "Managed supervised and preference fine-tuning",
+   "Fine-tuned models served at the same price as base models"
+  ],
+  "useCases": [
+   "Running open models behind an API",
+   "Fine-tuning an open model on your own data"
+  ],
+  "audience": [
+   "Developers",
+   "Teams",
+   "Enterprises"
+  ],
+  "strengths": [
+   "Pay-per-token serverless pricing with spend limits and auto reload",
+   "Compliance certifications listed (SOC 2 Type 2, ISO 27001, ISO 27701, ISO 42001)"
+  ],
+  "limitations": [
+   "A general free tier or free credits are not stated",
+   "Region-restricted deployments are priced at a 1.5x premium"
+  ],
+  "platforms": [
+   "API",
+   "Web"
+  ],
+  "alternatives": [
+   "together",
+   "groq",
+   "replicate",
+   "openrouter"
+  ],
+  "api": "API pricing is listed (see the pricing section)",
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "gamma": {
+  "features": [
+   "AI-generated presentations and documents"
+  ],
+  "useCases": [
+   "Slide decks",
+   "Quick documents"
+  ],
+  "audience": [
+   "Professionals",
+   "Students"
+  ],
+  "strengths": [
+   "Popular for fast presentation drafts",
+   "A free plan with export to PDF, PPTX and Google Slides"
+  ],
+  "limitations": [
+   "Free is limited to 10 slides per prompt, and branding removal starts on Plus"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "canva",
+   "notion"
+  ],
+  "api": null,
+  "freeDetails": "Free includes up to 10 slides per prompt, simple presentations, docs, websites, social and images, PDF and PPTX import, and export to PDF, PPTX, PNG and Google Slides. No credit card required.",
+  "trialDetails": null
+ },
+ "gemini": {
+  "features": [
+   "Image generation and editing",
+   "Deep Research, Gemini Live, Canvas and Gems",
+   "Video generation on paid plans",
+   "Storage bundled with Google AI plans"
+  ],
+  "useCases": [
+   "Everyday help inside Google's apps",
+   "Research and drafting",
+   "Creating and editing files in a chat"
+  ],
+  "audience": [
+   "Individuals who use Google services",
+   "Businesses (Gemini Enterprise)"
+  ],
+  "strengths": [
+   "A free plan with a Google account",
+   "Business and Enterprise seats are priced in USD per seat"
+  ],
+  "limitations": [
+   "Usage limits reset every 5 hours until a weekly limit is reached; numeric limits are not stated",
+   "Some features are limited to selected countries and some require users to be 18 or older"
+  ],
+  "platforms": [
+   "Web",
+   "Mobile",
+   "macOS app"
+  ],
+  "alternatives": [
+   "chatgpt",
+   "claude",
+   "copilot"
+  ],
+  "api": "Google AI Studio is free to start, with paid tiers for higher limits. The Gemini platform is pay-as-you-go. Per-token rates were not shown on the page we read.",
+  "freeDetails": "Free with a Google account: Flash-Lite model access, image generation and editing, Deep Research, Gemini Live, Canvas, Gems, limited Google Flow access and 15 GB storage. Numeric usage limits are not stated.",
+  "trialDetails": "A limited trial of Veo 3.1 Lite with AI Pro is mentioned; its length and limits are not stated."
+ },
+ "github-copilot": {
+  "features": [
+   "Inline code suggestions",
+   "Agent mode and CLI",
+   "Code review (paid plans)",
+   "Copilot in the cloud: assign work and create pull requests (paid plans)",
+   "Delegation to third-party agents (preview, Pro+ and Max)"
+  ],
+  "useCases": [
+   "Writing and completing code",
+   "Reviewing pull requests",
+   "Delegating tasks to an agent"
+  ],
+  "audience": [
+   "Individual developers",
+   "Teams (business and enterprise offerings)"
+  ],
+  "strengths": [
+   "Free plan available",
+   "Paid plans have unlimited inline suggestions",
+   "Extra usage can be bought as AI credits (1 credit = $0.01)"
+  ],
+  "limitations": [
+   "Free plan is limited to 2,000 inline suggestions per month and entry-level models",
+   "Business and Enterprise pricing is not shown on the page"
+  ],
+  "platforms": [
+   "IDE extensions",
+   "CLI",
+   "GitHub"
+  ],
+  "alternatives": [
+   "cursor",
+   "replit",
+   "mistral"
+  ],
+  "api": "Extra usage beyond included credits is available through a flex allotment or by buying credits; 1 AI credit = $0.01 USD. Budget alerts trigger at 75%, 90% and 100%.",
+  "freeDetails": "Limited chat and agent usage, 2,000 inline suggestions per month, entry-level models, agent mode and CLI.",
+  "trialDetails": null
+ },
+ "grammarly": {
+  "features": [
+   "Writing mistake checks and tone view",
+   "AI prompts per month (100 on Free, 2,000 per member on Pro)",
+   "Full-sentence rewrites, tone adjustment and citation consistency (Pro)",
+   "Team analytics, style guides and brand tones (Pro and Enterprise)"
+  ],
+  "useCases": [
+   "Proofreading proposals, emails and essays",
+   "Adjusting tone before sending"
+  ],
+  "audience": [
+   "Professionals",
+   "Students",
+   "Teams"
+  ],
+  "strengths": [
+   "Works where you already write",
+   "Free plan available"
+  ],
+  "limitations": [
+   "Suggestions are not always right for your style",
+   "It does not check whether your facts are correct"
+  ],
+  "platforms": [
+   "Browser",
+   "Desktop",
+   "Mobile"
+  ],
+  "alternatives": [
+   "jasper",
+   "chatgpt"
+  ],
+  "api": null,
+  "freeDetails": "Writing mistake checks, writing tone view and 100 AI prompts per month.",
+  "trialDetails": "Pro shows 'Try for free' with $0 payment today and an email reminder 2 days before the trial ends; the trial length is not stated."
+ },
+ "granola": {
+  "features": [
+   "Meeting notes",
+   "AI chat across meetings",
+   "Integrations such as Notion, Zapier and HubSpot (Business)",
+   "API access (Business)"
+  ],
+  "useCases": [
+   "Taking notes in meetings",
+   "Searching what was discussed"
+  ],
+  "audience": [
+   "Professionals",
+   "Teams"
+  ],
+  "strengths": [
+   "Free Basic plan",
+   "Apps for desktop, iOS, Android and Apple Watch"
+  ],
+  "limitations": [
+   "Basic has a limited meeting history (30 days) and no integrations or API access",
+   "Annual prices are not stated"
+  ],
+  "platforms": [
+   "Desktop",
+   "iOS",
+   "Android",
+   "Apple Watch"
+  ],
+  "alternatives": [
+   "otter",
+   "notion"
+  ],
+  "api": null,
+  "freeDetails": "Basic is free: limited meeting history (30 days), auto model selection for chat, no API access or integrations.",
+  "trialDetails": null
+ },
+ "groq": {
+  "features": [
+   "Fast inference cloud"
+  ],
+  "useCases": [
+   "Running models with low latency"
+  ],
+  "audience": [
+   "Developers",
+   "Enterprises"
+  ],
+  "strengths": [
+   "Specialised inference hardware (LPU), per the vendor"
+  ],
+  "limitations": [
+   "The pricing page we read showed no plan names or per-token rates, so we do not publish prices"
+  ],
+  "platforms": [
+   "API"
+  ],
+  "alternatives": [
+   "together",
+   "openrouter"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "heygen": {
+  "features": [
+   "Custom video avatars",
+   "30+ languages on the free plan",
+   "Lip-sync translation and Video Agent (limited trial access on Free)",
+   "Export up to 4K on Pro and Business"
+  ],
+  "useCases": [
+   "Avatar-led videos",
+   "Translating video into other languages"
+  ],
+  "audience": [
+   "Marketing and training teams",
+   "Creators"
+  ],
+  "strengths": [
+   "Free plan with no card required",
+   "Credits roll over for one month on paid plans"
+  ],
+  "limitations": [
+   "Free videos carry a watermark, up to 1 minute each",
+   "Total monthly video minutes per plan are not stated"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "synthesia",
+   "runway",
+   "descript"
+  ],
+  "api": "API pricing is linked from the page but no figures were shown.",
+  "freeDetails": "3 videos per month with a watermark, up to 1 minute per video, one Custom Video Avatar, 30+ languages. No credit card needed.",
+  "trialDetails": null
+ },
+ "hostinger": {
+  "features": [
+   "Premium, Unlimited, Cloud Startup and Agency Startup hosting plans",
+   "Free weekly or daily backups depending on plan",
+   "SSH, WP-CLI, staging and malware scanning on all plans",
+   "30-day money-back guarantee"
+  ],
+  "useCases": [
+   "A first website or portfolio on your own domain",
+   "A small business site"
+  ],
+  "audience": [
+   "First-time site owners",
+   "Agencies (Agency Startup)"
+  ],
+  "strengths": [
+   "30-day money-back guarantee",
+   "Free domain for 1 year and free mailboxes for 1 year on listed plans"
+  ],
+  "limitations": [
+   "Prices are tied to long terms (48 months on most plans) and renewal prices are higher",
+   "No free plan or trial is stated"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "namecheap"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "huggingface": {
+  "features": [
+   "PRO, Team and Enterprise plans",
+   "Free CPU Basic and ZeroGPU Spaces",
+   "Inference Endpoints from $0.033 per hour",
+   "Storage billed per TB"
+  ],
+  "useCases": [
+   "Finding and running open models",
+   "Hosting demos and apps"
+  ],
+  "audience": [
+   "Developers",
+   "ML teams"
+  ],
+  "strengths": [
+   "Free tier for CPU Basic and ZeroGPU",
+   "Egress and CDN included at no extra cost"
+  ],
+  "limitations": [
+   "Compute is billed hourly and can be costly for large GPUs"
+  ],
+  "platforms": [
+   "Web",
+   "API"
+  ],
+  "alternatives": [
+   "mistral"
+  ],
+  "api": "Spaces: CPU Upgrade $0.03/hr, Nvidia T4 small $0.40/hr, A100 large $2.50/hr. Inference Endpoints start at $0.033/hr (GPU e.g. H100 1x $4.50/hr). Storage per TB per month: base $12 public / $18 private, with lower tiers at higher volumes.",
+  "freeDetails": "Listed free options: CPU Basic (2 vCPU, 16 GB) and ZeroGPU (dynamic).",
+  "trialDetails": null
+ },
+ "ideogram": {
+  "features": [
+   "Image generation from text prompts"
+  ],
+  "useCases": [
+   "Posters, logos and graphics"
+  ],
+  "audience": [
+   "Designers",
+   "Creators"
+  ],
+  "strengths": [
+   "Widely used for image generation"
+  ],
+  "limitations": [
+   "Generations use credits, and credit cost depends on the model and rendering setting"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "midjourney",
+   "firefly",
+   "leonardo"
+  ],
+  "api": "API access with credit-based usage is listed in the comparison table; Enterprise adds volume discounts on the API (billed separately).",
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "intercom": {
+  "features": [
+   "Seat plans (Essential, Advanced, Expert)",
+   "Fin AI agent billed from $0.99 per outcome",
+   "Copilot add-on"
+  ],
+  "useCases": [
+   "Customer support",
+   "AI-assisted support answers"
+  ],
+  "audience": [
+   "Support teams",
+   "Businesses"
+  ],
+  "strengths": [
+   "14-day free trial with no credit card",
+   "Fin has no setup, integration or platform fees"
+  ],
+  "limitations": [
+   "Fin has a minimum monthly commitment",
+   "The billing period for seat prices is not stated"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [],
+  "api": "API pricing is listed (see the pricing section)",
+  "freeDetails": null,
+  "trialDetails": "14-day free trial, no credit card required."
+ },
+ "jasper": {
+  "features": [
+   "Canvas for content creation",
+   "Agents for core marketing workflows",
+   "Brand voices, knowledge assets and audiences",
+   "No-code custom agents and API access (Business)"
+  ],
+  "useCases": [
+   "Marketing copy",
+   "Keeping a consistent brand voice across campaigns"
+  ],
+  "audience": [
+   "Marketing teams"
+  ],
+  "strengths": [
+   "7-day free trial of Pro",
+   "Nonprofit discount of 20% after starting a trial (subject to review)"
+  ],
+  "limitations": [
+   "Pro includes 1 seat (the page is inconsistent about team size)",
+   "Cards only: PayPal, prepaid cards and cash apps are not accepted",
+   "No free plan is stated"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "grammarly",
+   "writesonic",
+   "chatgpt"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": "7-day free trial of the Pro plan; trial limits are not stated."
+ },
+ "langsmith": {
+  "features": [
+   "Trace retention of 14 days (base) or 180 days (extended)",
+   "Deployments, sandboxes and an engine metered in LangChain Standard Units",
+   "Cloud data location in the US or EU",
+   "Self-hosted and hybrid options for Enterprise"
+  ],
+  "useCases": [
+   "Debugging and monitoring agents",
+   "Deploying agent applications"
+  ],
+  "audience": [
+   "Developers",
+   "AI engineering teams"
+  ],
+  "strengths": [
+   "Free Developer plan",
+   "Cloud data can be located in the US or the EU"
+  ],
+  "limitations": [
+   "Usage beyond the included allowance is pay-as-you-go",
+   "Tuned Evaluators are in public beta for Plus and Cloud Enterprise in the US only"
+  ],
+  "platforms": [
+   "Cloud",
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "huggingface",
+   "n8n"
+  ],
+  "api": "Usage is metered in LangChain Standard Units (LSU) at $1.00 each. Developer includes 7 LSUs per organisation per month for Fleet and Plus includes 37.",
+  "freeDetails": "Developer: $0 per seat per month, 1 seat, up to 5k base traces per month, then pay-as-you-go. Community support.",
+  "trialDetails": null
+ },
+ "leonardo": {
+  "features": [
+   "Image generation from text prompts"
+  ],
+  "useCases": [
+   "Concept art and visual assets"
+  ],
+  "audience": [
+   "Designers",
+   "Creators"
+  ],
+  "strengths": [
+   "Widely used for image generation"
+  ],
+  "limitations": [
+   "The billing interval behind the listed monthly prices was unclear on the page"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "midjourney",
+   "firefly",
+   "ideogram"
+  ],
+  "api": "API pricing is listed (see the pricing section)",
+  "freeDetails": "Free: 150 fast tokens per day, Auto model only, public creations, 1 personal collection.",
+  "trialDetails": null
+ },
+ "lovable": {
+  "features": [
+   "Credit-based building (default mode varies by task; Plan Mode costs 1 credit per message)",
+   "Cloud credits and credits for AI features in your apps"
+  ],
+  "useCases": [
+   "Building a web app from a description",
+   "Prototyping an idea"
+  ],
+  "audience": [
+   "Non-developers",
+   "Founders and small teams"
+  ],
+  "strengths": [
+   "Free plan with daily build credits"
+  ],
+  "limitations": [
+   "Credits expire (monthly plan credits after 2 months)",
+   "Apps with significant traffic can incur hosting costs paid from credits"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "replit",
+   "bolt",
+   "v0"
+  ],
+  "api": null,
+  "freeDetails": "Daily grant of 5 build credits (up to 30 per month), 20 Cloud credits monthly, and 4 credits for AI features in your apps.",
+  "trialDetails": null
+ },
+ "luma": {
+  "features": [
+   "Luma and third-party image and video models",
+   "Commercial use on paid plans",
+   "Luma Agents with higher usage on higher plans"
+  ],
+  "useCases": [
+   "Generating video and images",
+   "Collaborating with guests who can edit"
+  ],
+  "audience": [
+   "Creators",
+   "Teams"
+  ],
+  "strengths": [
+   "Commercial use stated on Plus",
+   "Yearly billing reduces the monthly price"
+  ],
+  "limitations": [
+   "A free plan or trial is not stated on the page we read",
+   "Per-generation credit costs are listed separately on the page"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "runway",
+   "pika",
+   "heygen"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "make": {
+  "features": [
+   "Credits per month",
+   "Data stores and execution storage allowances"
+  ],
+  "useCases": [
+   "Automating workflows visually"
+  ],
+  "audience": [
+   "Individuals",
+   "Teams"
+  ],
+  "strengths": [
+   "Free plan with 1,000 credits per month"
+  ],
+  "limitations": [
+   "Prices were not shown in the page we read",
+   "Credits expire at the end of the term"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "zapier",
+   "n8n"
+  ],
+  "api": null,
+  "freeDetails": "1,000 credits per month, 1 MB data storage and 1 data store.",
+  "trialDetails": null
+ },
+ "midjourney": {
+  "features": [
+   "Image generation from text prompts"
+  ],
+  "useCases": [
+   "Exploring visual ideas",
+   "Mood boards and concept art"
+  ],
+  "audience": [
+   "Designers",
+   "Creators"
+  ],
+  "strengths": [
+   "Widely used for concept work"
+  ],
+  "limitations": [
+   "Check current commercial-use terms before using images for clients",
+   "Results vary with how you write the prompt",
+   "There is no free plan in the official plan comparison"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "firefly",
+   "leonardo",
+   "ideogram"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "mistral": {
+  "features": [
+   "Web search, image generation and editing",
+   "100+ connectors",
+   "Coding sessions in CLI, IDE and web",
+   "Spreadsheets and slides on Pro"
+  ],
+  "useCases": [
+   "Everyday assistant tasks",
+   "Coding help",
+   "Building on Mistral's API"
+  ],
+  "audience": [
+   "Individuals",
+   "Students (Education pricing)",
+   "Teams and developers"
+  ],
+  "strengths": [
+   "A free plan with Vibe CLI and Mistral Studio access (per the FAQ)",
+   "Pro includes $15 per month of API credits",
+   "Education pricing for verified students"
+  ],
+  "limitations": [
+   "Free plan has limited messages, web searches and coding sessions",
+   "Feature-table values for some limits were not clearly mapped to plans on the page"
+  ],
+  "platforms": [
+   "Web",
+   "Mobile",
+   "CLI/IDE"
+  ],
+  "alternatives": [
+   "chatgpt",
+   "claude",
+   "gemini"
+  ],
+  "api": "Mistral Large is $0.50 per million input tokens and $1.50 per million output tokens. Batch processing is 50% cheaper and cached input tokens up to 90% cheaper. OCR, speech and tool APIs have their own units.",
+  "freeDetails": "Limited messages and web searches, limited coding sessions, basic image generation and editing, 100+ connectors.",
+  "trialDetails": null
+ },
+ "n8n": {
+  "features": [
+   "Workflow executions per plan",
+   "Self-hosted Community Edition",
+   "EU hosting in Frankfurt for hosted plans"
+  ],
+  "useCases": [
+   "Automating workflows",
+   "Building AI-assisted flows"
+  ],
+  "audience": [
+   "Developers",
+   "Technical teams"
+  ],
+  "strengths": [
+   "Self-hosting is available",
+   "Hosted data is stored in the EU"
+  ],
+  "limitations": [
+   "The Business plan is self-hosted only (hosted availability is waitlisted)",
+   "Business and Enterprise self-hosted instances require a licence key checked daily",
+   "No USD list prices on the page"
+  ],
+  "platforms": [
+   "Cloud",
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "zapier",
+   "make"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": "n8n Cloud trial with no credit card: 1,000 executions, 5 concurrent executions, 180-second timeout. Business trial: 14 days, card required."
+ },
+ "namecheap": {
+  "features": [
+   "Domain registration",
+   "Hosting and related services"
+  ],
+  "useCases": [
+   "Registering a domain for a site"
+  ],
+  "audience": [
+   "Site owners"
+  ],
+  "strengths": [
+   "Widely used registrar"
+  ],
+  "limitations": [
+   "Domain prices vary by extension; check renewal prices before buying",
+   "Renewal prices are higher than the first-year sale prices; check the renewal price before buying"
+  ],
+  "platforms": [],
+  "alternatives": [
+   "hostinger"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "notebooklm": {
+  "features": [
+   "Notebooks with sources",
+   "Higher notebook and source limits on Google AI plans",
+   "Web and mobile app"
+  ],
+  "useCases": [
+   "Studying and summarising your own documents"
+  ],
+  "audience": [
+   "Students",
+   "Researchers",
+   "Professionals"
+  ],
+  "strengths": [
+   "Free tier with a Google account",
+   "Included with qualifying Google Workspace and Google AI plans"
+  ],
+  "limitations": [
+   "Free tier: 100 notebooks per user and 50 sources per notebook",
+   "Some paid tiers add a visible watermark in India, South Korea and Vietnam"
+  ],
+  "platforms": [
+   "Web",
+   "Mobile app"
+  ],
+  "alternatives": [
+   "perplexity",
+   "elicit"
+  ],
+  "api": null,
+  "freeDetails": "Standard tier by signing up with a Gmail account: 100 notebooks per user and 50 sources per notebook.",
+  "trialDetails": null
+ },
+ "notion": {
+  "features": [
+   "Databases, forms and sites",
+   "Notion AI (limited trial on Free and Plus)",
+   "Notion Agent and AI Meeting Notes (Business)",
+   "Custom Agents priced per Notion credit"
+  ],
+  "useCases": [
+   "Client and project tracking",
+   "Reusable templates",
+   "Team wikis and docs"
+  ],
+  "audience": [
+   "Individuals",
+   "Students and educators (free Plus for 1 member)",
+   "Teams"
+  ],
+  "strengths": [
+   "Free plan available",
+   "Free Plus plan for students and educators with a school email"
+  ],
+  "limitations": [
+   "Free multi-member workspaces have a block limit (number not stated)",
+   "Free plan limits: 5 MB uploads, 7-day page history, 10 guests"
+  ],
+  "platforms": [
+   "Web",
+   "Desktop",
+   "Mobile"
+  ],
+  "alternatives": [
+   "chatgpt",
+   "gamma"
+  ],
+  "api": "Custom Agents are free to try, then $10 per 1,000 monthly Notion credits. Custom domains are $8 per month per domain billed annually or $10 monthly. Public API pricing is not stated.",
+  "freeDetails": "Single-member workspaces have unlimited pages and blocks. Limits: 5 MB uploads, 7-day page history, 10 external guests, 1 notion.site domain.",
+  "trialDetails": null
+ },
+ "ollama": {
+  "features": [
+   "Runs models on your own hardware, which the FAQ says is always unlimited",
+   "Pay-per-token cloud models",
+   "Usage credits on paid plans",
+   "Concurrent request limits per plan"
+  ],
+  "useCases": [
+   "Running open models locally",
+   "Using cloud-hosted models without managing GPUs"
+  ],
+  "audience": [
+   "Developers",
+   "Teams"
+  ],
+  "strengths": [
+   "Local use is unlimited and the GitHub repository is MIT-licensed",
+   "Free pay-as-you-go plan with pay-per-token cloud models"
+  ],
+  "limitations": [
+   "Cloud models are hosted primarily in the United States, with possible routing to Europe",
+   "Team is listed as early access"
+  ],
+  "platforms": [
+   "macOS",
+   "Windows",
+   "Linux",
+   "Cloud"
+  ],
+  "alternatives": [
+   "huggingface",
+   "openrouter"
+  ],
+  "api": null,
+  "freeDetails": "Pay as you go is $0 per month with 3 concurrent requests and pay-per-token cloud models. Running models on your own hardware is always unlimited.",
+  "trialDetails": null
+ },
+ "openrouter": {
+  "features": [
+   "500+ models from 80+ providers",
+   "Auto-routing, budgets and spend controls",
+   "Prompt caching and management API keys",
+   "EU and US in-region routing (Business and Enterprise)"
+  ],
+  "useCases": [
+   "Trying many models behind one API",
+   "Controlling AI spend across projects"
+  ],
+  "audience": [
+   "Developers",
+   "Teams building AI products"
+  ],
+  "strengths": [
+   "No platform fee on the Free plan",
+   "Free models available, with higher daily limits after buying at least $10 of credits"
+  ],
+  "limitations": [
+   "A 5.5% (Standard) or 8% (Business) fee applies when you buy credits",
+   "Free models are capped at 20 requests per minute and 50 per day until you buy credits",
+   "Per-model prices are not listed on the pricing page"
+  ],
+  "platforms": [
+   "API"
+  ],
+  "alternatives": [
+   "together",
+   "huggingface",
+   "groq"
+  ],
+  "api": "Model usage is billed per token at each provider's list price on every plan. Per-model prices are available from the models API rather than the pricing page. Standard and Business include $25,000 per month of list-price inference with no fee when you bring your own keys, then 5%.",
+  "freeDetails": "No platform fee; 25+ free models and 4 free providers; 5 workspaces; 50 requests per day (1,000 per day after buying at least $10 of credits); free models capped at 20 requests per minute.",
+  "trialDetails": null
+ },
+ "otter": {
+  "features": [
+   "Meeting and recording minutes per user",
+   "Imported-file minutes",
+   "API and webhooks listed as features"
+  ],
+  "useCases": [
+   "Meeting notes",
+   "Transcribing recordings and files"
+  ],
+  "audience": [
+   "Professionals",
+   "Teams",
+   "Students (20% off Pro with .edu email)"
+  ],
+  "strengths": [
+   "Free Basic plan",
+   "Student discount on Pro"
+  ],
+  "limitations": [
+   "Basic has 300 minutes per month, 30 minutes per conversation and 3 lifetime file imports",
+   "Some listed offers are valid only with an India-issued credit card"
+  ],
+  "platforms": [
+   "Web",
+   "Mobile"
+  ],
+  "alternatives": [
+   "descript"
+  ],
+  "api": null,
+  "freeDetails": "300 transcription minutes per user per month, 3 lifetime file imports, 30 minutes per conversation, last 25 conversations in history.",
+  "trialDetails": null
+ },
+ "perplexity": {
+  "features": [
+   "Answers with citations",
+   "Deep Research and model selection per query (Pro)",
+   "400+ app connectors (Pro)",
+   "Image generation and limited video generation"
+  ],
+  "useCases": [
+   "Quick research where you want sources",
+   "Getting oriented on an unfamiliar topic",
+   "Finding pages to read in full"
+  ],
+  "audience": [
+   "Researchers",
+   "Students",
+   "Professionals who need cited answers"
+  ],
+  "strengths": [
+   "Shows sources for answers",
+   "Paid Pro tier adds extended Pro Search and file uploads"
+  ],
+  "limitations": [
+   "Free usage is limited",
+   "A summary can still misread a source, so open the links for anything important"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "chatgpt",
+   "claude",
+   "gemini"
+  ],
+  "api": null,
+  "freeDetails": "Search with citations in every answer and access to basic AI models, with limited usage (the plan card says daily, the FAQ says weekly).",
+  "trialDetails": null
+ },
+ "pika": {
+  "features": [
+   "Credits per month",
+   "Parallel video, image and audio generations",
+   "Commercial licence on paid plans"
+  ],
+  "useCases": [
+   "Generating short AI videos",
+   "Creating images and audio"
+  ],
+  "audience": [
+   "Creators",
+   "Social and marketing teams"
+  ],
+  "strengths": [
+   "Free plan with no watermark",
+   "Credit packs from $25 for 1,500 credits"
+  ],
+  "limitations": [
+   "Free plan has 0 monthly credits (credit packs only) and no commercial licence",
+   "Plan credits do not roll over and payments are non-refundable"
+  ],
+  "platforms": [
+   "Web",
+   "iOS"
+  ],
+  "alternatives": [
+   "runway",
+   "luma",
+   "heygen"
+  ],
+  "api": "A developer site is linked, but no prices were shown on the page we read.",
+  "freeDetails": "0 credits per month (credit packs only), 2 parallel video generations, no watermark, no commercial licence.",
+  "trialDetails": null
+ },
+ "quillbot": {
+  "features": [
+   "Paraphrasing in multiple modes",
+   "Grammar checker and citation generator",
+   "Summariser, translator and AI detector",
+   "Browser, desktop and mobile apps and a Word add-in"
+  ],
+  "useCases": [
+   "Rewriting and tightening text",
+   "Checking grammar and creating citations"
+  ],
+  "audience": [
+   "Students",
+   "Writers",
+   "Professionals"
+  ],
+  "strengths": [
+   "A free plan covers the basics",
+   "Premium lists unlimited paraphrasing modes and higher usage"
+  ],
+  "limitations": [
+   "Free paraphrasing is limited to 100 words and 2 modes",
+   "The Team plan price was not shown, and the monthly-billing price of Premium was not stated"
+  ],
+  "platforms": [
+   "Web",
+   "Chrome",
+   "Edge",
+   "macOS",
+   "Word",
+   "Android",
+   "iOS"
+  ],
+  "alternatives": [
+   "grammarly",
+   "deepl",
+   "jasper"
+  ],
+  "api": null,
+  "freeDetails": "Free: paraphrase up to 100 words in 2 modes, fix basic grammar errors, humanize up to 100 words with limited usage, basic summaries and limited AI Detector access.",
+  "trialDetails": null
+ },
+ "replicate": {
+  "features": [
+   "Public model library",
+   "Private and fine-tuned models",
+   "Per-second hardware billing",
+   "Per-output pricing for many image, video and language models"
+  ],
+  "useCases": [
+   "Adding image, video or language models to an app",
+   "Running custom or fine-tuned models without managing servers"
+  ],
+  "audience": [
+   "Developers",
+   "Teams"
+  ],
+  "strengths": [
+   "Pay-per-use billing; the page says you only pay for what you use",
+   "Published example prices per model and per hardware type"
+  ],
+  "limitations": [
+   "A free tier and a minimum spend are not stated on the page we read",
+   "Private models are billed for all time an instance is online, including idle time"
+  ],
+  "platforms": [
+   "API",
+   "Web"
+  ],
+  "alternatives": [
+   "together",
+   "openrouter",
+   "huggingface"
+  ],
+  "api": "Example per-run prices: deepseek-r1 $3.75 per million input tokens and $0.01 per thousand output tokens; ideogram-v3-quality $0.09 per output image; wan-2.1-i2v-480p $0.09 per second of output video.",
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "replit": {
+  "features": [
+   "Chat and agent with 'Free Mode' usage",
+   "Unlimited workspaces on Core",
+   "AI integrations",
+   "Collaboration and database rollback on Pro"
+  ],
+  "useCases": [
+   "Building and deploying small apps",
+   "Learning to code",
+   "Prototyping with an AI agent"
+  ],
+  "audience": [
+   "Individuals",
+   "Small teams (Pro, up to 15 collaborators)"
+  ],
+  "strengths": [
+   "Core includes $20 towards more powerful models",
+   "Pro includes $100 in credits and 28-day database rollback"
+  ],
+  "limitations": [
+   "The page we read did not show a separate free plan; 'Free Mode' limits appear under Core",
+   "Several Pro price figures appeared without labels"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "lovable",
+   "bolt",
+   "v0",
+   "cursor"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "runway": {
+  "features": [
+   "Credits for AI video and image models",
+   "Up to 4K upscaling",
+   "Custom voice clones and Brand Kits on higher plans",
+   "MCP access on Pro and above"
+  ],
+  "useCases": [
+   "Generating short video clips",
+   "Editing and upscaling footage",
+   "Creating images"
+  ],
+  "audience": [
+   "Creators",
+   "Marketing and video teams"
+  ],
+  "strengths": [
+   "Free plan with one-time credits",
+   "Annual billing lowers each plan's monthly price"
+  ],
+  "limitations": [
+   "Credits do not roll over on Standard and Pro",
+   "Credit costs vary by model (for example, Gen-4.5 is 60 credits per 5-second video)"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "luma",
+   "pika",
+   "heygen"
+  ],
+  "api": "A developer pricing link exists but no figures were shown on the page we read.",
+  "freeDetails": "125 one-time credits that do not expire, 5 GB storage, a selection of generative models.",
+  "trialDetails": null
+ },
+ "scite": {
+  "features": [
+   "Assistant and search across scientific literature",
+   "Smart Citations showing whether studies support or contradict a claim",
+   "Paper collections (up to 1,000 on Basic, 10,000 on Pro)",
+   "API access and MCP credits on paid plans"
+  ],
+  "useCases": [
+   "Checking how a paper has been cited",
+   "Finding supporting or contradicting evidence for a claim"
+  ],
+  "audience": [
+   "Researchers",
+   "Students",
+   "Institutions"
+  ],
+  "strengths": [
+   "Citation context rather than just citation counts",
+   "A 7-day free trial on Basic and Pro"
+  ],
+  "limitations": [
+   "No free plan was stated on the pricing page",
+   "Prices are shown billed yearly; the monthly-billing price is not stated"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "elicit",
+   "consensus",
+   "notebooklm"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": "Basic and Pro list a 7-day free trial that lets you explore all premium features without commitment."
+ },
+ "suno": {
+  "features": [
+   "Credits per month",
+   "Song downloads per month on paid plans",
+   "Stem separation on paid plans",
+   "Priority queue on paid plans"
+  ],
+  "useCases": [
+   "Creating songs and backing tracks"
+  ],
+  "audience": [
+   "Hobbyists",
+   "Creators"
+  ],
+  "strengths": [
+   "Free plan with 50 credits per day",
+   "Commercial use rights on Pro and Premier"
+  ],
+  "limitations": [
+   "Free songs have no commercial rights",
+   "The terms of service may limit commercial use even on paid plans",
+   "Subscription credits do not carry over"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "elevenlabs"
+  ],
+  "api": null,
+  "freeDetails": "50 credits per day, uploads up to 8 minutes, no monthly song downloads, shared queue with 4 concurrent generations, no stem separation.",
+  "trialDetails": null
+ },
+ "surfer": {
+  "features": [
+   "AI prompts tracked on a refresh schedule",
+   "Documents and pages per plan",
+   "Brand workspaces and team seats"
+  ],
+  "useCases": [
+   "Optimising content for search",
+   "Tracking visibility in AI search"
+  ],
+  "audience": [
+   "SEO teams",
+   "Content marketers"
+  ],
+  "strengths": [
+   "Clear per-plan limits are published"
+  ],
+  "limitations": [
+   "Monthly-billed prices were not stated; the listed prices are billed yearly",
+   "Trial length is not stated"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "writesonic",
+   "jasper"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": null
+ },
+ "synthesia": {
+  "features": [
+   "Studio video creation and dubbing",
+   "Credits per month",
+   "Survey responses and promotional 'Syren' videos in plan limits"
+  ],
+  "useCases": [
+   "Training and explainer videos",
+   "Dubbing video into other languages"
+  ],
+  "audience": [
+   "Businesses",
+   "Training and communications teams"
+  ],
+  "strengths": [
+   "Free Basic plan",
+   "Yearly billing lowers the monthly price"
+  ],
+  "limitations": [
+   "The free plan is limited to about 10 minutes of Studio video",
+   "Free trial terms are not stated"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "heygen",
+   "runway",
+   "descript"
+  ],
+  "api": "A separate API pricing page exists; its Basic tier is $0 per month with 500 credits per month. Other tiers were not shown.",
+  "freeDetails": "Basic: 500 credits per month, 10 minutes of Studio video creation or dubbing.",
+  "trialDetails": null
+ },
+ "together": {
+  "features": [
+   "Serverless inference billed per 1M tokens",
+   "Dedicated inference per GPU per hour",
+   "GPU clusters, on-demand or reserved",
+   "Fine-tuning billed per token"
+  ],
+  "useCases": [
+   "Running open models through an API",
+   "Fine-tuning models",
+   "Renting GPU capacity"
+  ],
+  "audience": [
+   "Developers",
+   "ML teams"
+  ],
+  "strengths": [
+   "Per-token pricing is published for each model",
+   "Dedicated and reserved options for steady workloads"
+  ],
+  "limitations": [
+   "A free-credit amount is not stated on the page we read",
+   "Prices are per model and change by model"
+  ],
+  "platforms": [
+   "API"
+  ],
+  "alternatives": [
+   "openrouter",
+   "huggingface",
+   "groq"
+  ],
+  "api": "Examples per 1M tokens (input / output): Kimi K3 $3.00 / $15.00 ($0.30 cached input); GLM-5.3-Flash $0.15 / $0.50 ($0.03 cached input); gpt-oss-120B $0.15 / $0.60.",
+  "freeDetails": "A 'Start for free' option is shown; the credit amount and limits are not stated. Some models are listed at $0.00.",
+  "trialDetails": null
+ },
+ "v0": {
+  "features": [
+   "Monthly and daily credits per user",
+   "Team-shared purchased credits",
+   "Pay-per-token API models"
+  ],
+  "useCases": [
+   "Generating UI and apps from prompts",
+   "Prototyping web interfaces"
+  ],
+  "audience": [
+   "Developers and designers",
+   "Teams"
+  ],
+  "strengths": [
+   "Free plan available",
+   "New users get $5 in one-time credits"
+  ],
+  "limitations": [
+   "Free plan is limited to 7 messages per day",
+   "Prices exclude VAT and GST"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "lovable",
+   "bolt",
+   "replit"
+  ],
+  "api": "Per 1M tokens (input / cache write / cache read / output): v0 Mini $0.20 / $0.25 / $0.02 / $1.20; v0 Pro $2 / $2.50 / $0.20 / $10; v0 Max $5 / $6.25 / $0.50 / $25; v0 Max Fast $10 / $12.50 / $1 / $50.",
+  "freeDetails": "7 messages per day.",
+  "trialDetails": null
+ },
+ "wisprflow": {
+  "features": [
+   "Dictation on Mac, Windows, iOS and Android",
+   "Notetaker for meetings (Mac and Windows; mobile on the roadmap)"
+  ],
+  "useCases": [
+   "Dictating emails and documents",
+   "Taking meeting notes"
+  ],
+  "audience": [
+   "Professionals",
+   "Students (50% off Pro with an education email)"
+  ],
+  "strengths": [
+   "Free plan with no credit card",
+   "Education discount on Pro"
+  ],
+  "limitations": [
+   "Free plan is limited to 2,000 words per week on desktop",
+   "The Growth plan's prices were ambiguous on the page"
+  ],
+  "platforms": [
+   "Mac",
+   "Windows",
+   "iOS",
+   "Android"
+  ],
+  "alternatives": [
+   "granola",
+   "otter"
+  ],
+  "api": null,
+  "freeDetails": "2,000 words per week on desktop, limited weekly use on mobile and a weekly Notetaker meeting limit (amount not stated). No credit card needed.",
+  "trialDetails": null
+ },
+ "writesonic": {
+  "features": [
+   "AI prompts and answers tracked daily",
+   "AI articles per month",
+   "Site audits",
+   "Action Center trial on Growth"
+  ],
+  "useCases": [
+   "Tracking AI-search visibility",
+   "Generating articles"
+  ],
+  "audience": [
+   "Marketers",
+   "SEO teams"
+  ],
+  "strengths": [
+   "Trial with full access and no credit card (per the FAQ)",
+   "7-day refund stated"
+  ],
+  "limitations": [
+   "Monthly-billed prices were not stated",
+   "A fair-usage policy applies"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "surfer",
+   "jasper"
+  ],
+  "api": null,
+  "freeDetails": null,
+  "trialDetails": "'Start free trial' is offered on Starter, Basic and Growth; the FAQ says to sign up with full access and no credit card. Duration not stated."
+ },
+ "zapier": {
+  "features": [
+   "Task-based workflows",
+   "Agents and chatbots add-ons",
+   "14-day Professional trial"
+  ],
+  "useCases": [
+   "Automating routine work between apps",
+   "Building AI agents and chatbots"
+  ],
+  "audience": [
+   "Individuals",
+   "Teams",
+   "Businesses"
+  ],
+  "strengths": [
+   "Free plan with 100 tasks per month",
+   "14-day Professional trial, no card"
+  ],
+  "limitations": [
+   "Prices rise with the task tier",
+   "Agent and chatbot add-ons are priced separately from the task pool"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "n8n",
+   "make"
+  ],
+  "api": "AI add-ons are separate from the task pool: Agents (400 activities per month free, 1,500 on Pro, from about $33.33 per month billed annually) and Chatbots (2 free; about 5 at $13.33 or 20 at $66.67 per month billed annually).",
+  "freeDetails": "100 tasks per month.",
+  "trialDetails": "14-day Professional trial for new accounts, no credit card required."
+ }
+}

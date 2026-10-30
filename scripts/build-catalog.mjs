@@ -2,7 +2,7 @@
 // Usage: node scripts/build-catalog.mjs [--report]
 import fs from "node:fs";
 import path from "node:path";
-import { buildIndex, buildLinks, buildPriceRefs, healthReport, validateAll } from "./catalog-lib.mjs";
+import { buildDetail, buildIndex, buildLinks, buildPriceRefs, healthReport, validateAll } from "./catalog-lib.mjs";
 
 const root = process.cwd();
 const { entries, errors } = validateAll(root);
@@ -15,6 +15,7 @@ const out = path.join(root, "src", "data", "generated");
 fs.mkdirSync(out, { recursive: true });
 const write = (name, data) => fs.writeFileSync(path.join(out, name), JSON.stringify(data, null, 1) + "\n");
 write("catalog-index.json", buildIndex(entries));
+write("catalog-detail.json", buildDetail(entries));
 write("price-refs.json", buildPriceRefs(entries));
 write("tool-links.json", buildLinks(entries));
 
