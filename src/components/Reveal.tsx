@@ -41,9 +41,10 @@ export default function Reveal({
     );
     io.observe(el);
     // An observer always reports once on observe(). If it stays silent (a page that is not being rendered), show the content rather than leave it hidden.
+    // Also never leave content hidden for good: a pane that is not scrolled, a screenshot tool or a print view would otherwise see blank cards.
     const safety = setTimeout(() => {
-      if (!fired) el.dataset.shown = "true";
-    }, 1500);
+      el.dataset.shown = "true";
+    }, fired ? 2500 : 1500);
     return () => {
       clearTimeout(safety);
       io.disconnect();

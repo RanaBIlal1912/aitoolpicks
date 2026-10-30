@@ -11,7 +11,7 @@ import { useCurrency } from "./CurrencyProvider";
 export default function PriceTag({ id, compact = false }: { id: string; compact?: boolean }) {
   const { currency, rates, meta } = useCurrency();
   const p = PRICES[id];
-  if (!p) return <span className="text-muted">Price not verified. See the official pricing page.</span>;
+  if (!p) return <span className="text-muted">No single headline price recorded. See the plans on the tool page or the official pricing page.</span>;
 
   const official = `${format(p.amount, p.currency)} per ${p.per}`;
   const est = currency === p.currency ? null : format(convertBetween(p.amount, p.currency, currency, rates), currency);
