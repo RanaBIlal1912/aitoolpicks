@@ -159,7 +159,7 @@ export default function Home() {
             <ArticleCard a={lead} featured />
           </div>
           <GuidesRail guides={latest.filter((g) => g.slug !== lead.slug)} />
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Guide topics">
+          <ul className="mt-8 flex flex-wrap gap-3" aria-label="Guide topics">
             {TOPICS.map((t) => (
               <li key={t.id}>
                 <Link href={`/blog/topic/${t.id}/`} className="chip">

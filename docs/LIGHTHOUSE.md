@@ -54,3 +54,18 @@ Mobile performance is below 90 on every page tested. LCP and layout shift are go
 ### After skipping layout for off-screen list items (commit fa3183c), mobile, two runs each
 
 Tools 81 and 84 (was 69 to 80), Blog 92 and 81 (was 80), News 83 and 80 (was 78). Profile of Tools: unthrottled, the main thread was blocked about 230 ms, mostly the first layout (about 210 ms) and one 120 ms script run; hydration tasks were short. The 90 target is met only on some Blog runs. Home mobile (71) has not been profiled separately.
+
+## After the visual redesign (live site, 30 Oct 2026)
+
+Measured on https://ranabilal1912.github.io/aitoolpicks/ with the Lighthouse CLI, single runs. The redesign added a larger home page (logo ribbon, rails, more sections), two web fonts and a richer 3D network, and it cost performance.
+
+| Page | Perf | A11y | BP | SEO | LCP | TBT |
+| --- | --- | --- | --- | --- | --- | --- |
+| Home, desktop | 78 | 97 | 100 | 100 | 0.9 s | 370 ms |
+| Home, mobile | 67 | 97 | 100 | 100 | 2.0 s | 1.8 s |
+| News, mobile | 76 | 100 | 100 | 100 | 2.1 s | 860 ms |
+| Tools, mobile | 71 | 100 | 100 | 100 | 1.9 s | 1.5 s |
+| Tool detail, mobile | 71 | 100 | 100 | 100 | 2.4 s | 1.1 s |
+| Reviews, mobile | 74 | 96 | 100 | 100 | 1.6 s | 1.2 s |
+
+Before the redesign: Home desktop 93, Home mobile 71. Fixes made along the way: the 3D map waits for the first interaction again (loading it on scroll-into-view cost 30 points), repaint-heavy effects were removed, off-screen sections skip layout. None of the tested pages reaches 90 on mobile. Accessibility on home was 97 because of small topic chips; fixed after this run.
