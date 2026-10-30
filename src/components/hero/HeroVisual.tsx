@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { getTool } from "@/data/tools";
 import ToolLogo from "../ToolLogo";
+import { whenEngaged } from "@/lib/engage";
 
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
@@ -36,28 +37,7 @@ export default function HeroVisual() {
     if (!canvas) return;
     const phone = !matchMedia("(min-width: 768px)").matches;
     setLite(phone);
-    let started = false;
-    const start = () => {
-      if (started) return;
-      started = true;
-      setWebgl(true);
-    };
-    const cleanups: (() => void)[] = [];
-    if (phone) {
-      // On a phone the scene starts on the first touch or scroll, or after 6 seconds, so it never competes with the first paint.
-      for (const ev of ["touchstart", "scroll", "pointerdown"] as const) {
-        window.addEventListener(ev, start, { once: true, passive: true });
-        cleanups.push(() => window.removeEventListener(ev, start));
-      }
-      const t = window.setTimeout(start, 6000);
-      cleanups.push(() => clearTimeout(t));
-    } else {
-      const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
-      const cic = (window as unknown as { cancelIdleCallback?: (n: number) => void }).cancelIdleCallback;
-      const id = ric ? ric(start, { timeout: 2500 }) : window.setTimeout(start, 1500);
-      cleanups.push(() => (ric && cic ? cic(id) : clearTimeout(id)));
-    }
-    return () => cleanups.forEach((c) => c());
+    return whenEngaged(() => setWebgl(true), 10000);
   }, []);
 
   return (

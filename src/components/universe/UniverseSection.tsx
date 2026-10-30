@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { CATEGORIES, toolsInCategory } from "@/data/tools";
 import { catColors } from "@/data/palette";
+import { whenEngaged } from "@/lib/engage";
 
 const UniverseScene = dynamic(() => import("./UniverseScene"), { ssr: false });
 
@@ -35,18 +36,22 @@ export default function UniverseSection() {
     }
     if (calm || saver || !gl) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    // Load the 3D code only when the section is about to scroll into view.
+    // Load the 3D code only when the section is on screen AND the visitor has started interacting with the page (or has stayed 10 seconds).
+    let stop = () => {};
     const io = new IntersectionObserver(
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
-          setOn(true);
           io.disconnect();
+          stop = whenEngaged(() => setOn(true), 10000);
         }
       },
-      { rootMargin: "300px 0px" },
+      { rootMargin: "100px 0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      io.disconnect();
+      stop();
+    };
   }, []);
 
   return (

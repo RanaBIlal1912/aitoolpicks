@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { COMPANIES, MODELS } from "@/data/companies";
 import { catColors } from "@/data/palette";
+import { whenEngaged } from "@/lib/engage";
 import type { GEdge, GNode } from "./EcosystemScene";
 
 const EcosystemScene = dynamic(() => import("./EcosystemScene"), { ssr: false });
@@ -57,9 +58,21 @@ export default function EcosystemNetwork() {
     }
     if (calm || !gl) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    const io = new IntersectionObserver((es) => es.some((e) => e.isIntersecting) && (setOn(true), io.disconnect()), { rootMargin: "300px 0px" });
+    let stop = () => {};
+    const io = new IntersectionObserver(
+      (es) => {
+        if (es.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          stop = whenEngaged(() => setOn(true), 10000);
+        }
+      },
+      { rootMargin: "300px 0px" },
+    );
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      io.disconnect();
+      stop();
+    };
   }, []);
 
   const related = sel ? graph.edges.filter((e) => e.a === sel.id || e.b === sel.id).length : 0;
