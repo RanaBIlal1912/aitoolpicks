@@ -69,3 +69,21 @@ Measured on https://ranabilal1912.github.io/aitoolpicks/ with the Lighthouse CLI
 | Reviews, mobile | 74 | 96 | 100 | 100 | 1.6 s | 1.2 s |
 
 Before the redesign: Home desktop 93, Home mobile 71. Fixes made along the way: the 3D map waits for the first interaction again (loading it on scroll-into-view cost 30 points), repaint-heavy effects were removed, off-screen sections skip layout. None of the tested pages reaches 90 on mobile. Accessibility on home was 97 because of small topic chips; fixed after this run.
+
+## Live site, 2026-10-31 (commit 6bab5d4 + earlier), fresh runs, machine benchmarkIndex 780-1110 (valid)
+
+Lighthouse 12 default throttling, run against https://ranabilal1912.github.io/aitoolpicks/. Accessibility, Best Practices and SEO were 100 on every page tested.
+
+| Page | Device | Performance | LCP | TBT |
+| --- | --- | --- | --- | --- |
+| Home | desktop | 77 / 65 | 1.7 s / 1.7 s | 290 / 590 ms |
+| Home | mobile | 68 / 69 | 2.0 s / 1.9 s | 1.93 / 1.80 s |
+| News | mobile | 84 | 1.7 s | 560 ms |
+| Blog | mobile | 72 | 4.2 s | 470 ms |
+| Tool page (Runway) | mobile | 83 | 2.0 s | 570 ms |
+
+Effect of the photographs (same build, `--blocked-url-patterns=*images/photo*`, home page): blocking photos gave mobile LCP 2.0-2.1 s and desktop 0.8-0.9 s; with photos the first attempt gave mobile LCP 4.0-4.3 s because a faded hero backdrop photo was the largest paint. That backdrop was removed; after the fix mobile LCP is 1.9-2.0 s, so photos now cost about nothing on mobile LCP. On desktop the framed hero photos add about 0.8 s to LCP (1.7 s vs 0.9 s) and still pass. Total-blocking-time differences between runs (290-850 ms desktop) were within run-to-run noise.
+
+Effect of 3D: Lighthouse never loads it (it needs a scroll to the map), so it does not appear in these scores. Measured in a real browser on the live site: scrolling to the map starts the 3D canvas about 1.3 s later and costs about 0.9 s of long tasks over the next 8 s (before the hero fix, the hero WebGL also started on that scroll and the total was about 4.0 s).
+
+Earlier valid live numbers from before the redesign: home about 62-63 on desktop and mobile. Remaining main cost is script evaluation and hydration of the home page (main-thread script work about 4 s under mobile throttling).
