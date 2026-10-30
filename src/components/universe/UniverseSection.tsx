@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { CATEGORIES, toolsInCategory } from "@/data/tools";
 import { catColors } from "@/data/palette";
-import { whenEngaged } from "@/lib/engage";
 
 const UniverseScene = dynamic(() => import("./UniverseScene"), { ssr: false });
 
@@ -36,13 +35,12 @@ export default function UniverseSection() {
     }
     if (calm || saver || !gl) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    // Load the 3D code only when the section is on screen AND the visitor has started interacting with the page (or has stayed 10 seconds).
-    let stop = () => {};
+    // The map is below the fold, so loading it when it scrolls into view does not touch the first paint.
     const io = new IntersectionObserver(
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
           io.disconnect();
-          stop = whenEngaged(() => setOn(true), 10000);
+          setOn(true);
         }
       },
       { rootMargin: "100px 0px" },
@@ -50,7 +48,6 @@ export default function UniverseSection() {
     io.observe(el);
     return () => {
       io.disconnect();
-      stop();
     };
   }, []);
 
@@ -75,7 +72,7 @@ export default function UniverseSection() {
             <UniverseScene items={ITEMS} lite={lite} onSelect={(slug) => router.push(`/tools/category/${slug}/`)} />
           </div>
         )}
-        {!on && <p className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted">The interactive map loads as you scroll. The category list below works without it.</p>}
+        {!on && <p className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted">The interactive map is loading. The category list below works without it.</p>}
       </div>
       <ul className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-5" aria-label="Categories">
         {ITEMS.map((i) => (
