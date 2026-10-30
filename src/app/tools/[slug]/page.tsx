@@ -87,6 +87,16 @@ export default async function ToolPage({ params }: Props) {
     <>
       <PageHeader
         accent={catColors(t.category)[0]}
+        aside={
+          <div className="relative grid h-[260px] w-[260px] place-items-center">
+            <span className="absolute inset-0 rounded-full opacity-60 blur-3xl" style={{ background: catColors(t.category)[0] }} />
+            <span className="absolute inset-6 rounded-full border border-white/15" />
+            <span className="absolute inset-0 rounded-full border border-dashed border-white/10 spin-slow" />
+            <span className="relative drop-shadow-2xl">
+              <ToolLogo id={t.id} name={t.name} hue={t.hue} size={128} />
+            </span>
+          </div>
+        }
         stats={[[PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model, "pricing model"], [String(t.pricing.plans.length), "plans listed"], [t.verification.status === "verified" ? "Verified" : "Partly verified", "pricing record"]]}
         eyebrow={cat?.label ?? "Tool"}
         title={

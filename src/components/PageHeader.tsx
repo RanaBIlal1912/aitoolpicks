@@ -50,6 +50,7 @@ export default function PageHeader({
   variant = "default",
   stats,
   accent,
+  aside,
 }: {
   eyebrow?: string;
   title: ReactNode;
@@ -59,6 +60,7 @@ export default function PageHeader({
   variant?: HeaderVariant;
   stats?: [string, string][];
   accent?: string;
+  aside?: ReactNode;
 }) {
   return (
     <header className={`page-head ph-${variant} relative mx-auto max-w-6xl px-5 pb-10 pt-14 md:pt-20`} style={accent ? ({ ["--accent"]: accent } as React.CSSProperties) : undefined}>
@@ -77,6 +79,11 @@ export default function PageHeader({
         </dl>
       )}
       {children}
+      {aside && (
+        <div aria-hidden="true" className="ph-aside pointer-events-none absolute right-5 top-24 hidden md:grid">
+          {aside}
+        </div>
+      )}
     </header>
   );
 }

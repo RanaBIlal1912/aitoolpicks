@@ -970,3 +970,30 @@ main {
 .ph-stats dd {
   margin: 0;
 }
+
+.spin-slow {
+  animation: spin 40s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow {
+    animation: none;
+  }
+}
+@media (min-width: 1100px) {
+  .ph-aside {
+    right: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-net {
+    transform: scale(0.55);
+    transform-origin: 60% 55%;
+    opacity: 0.75;
+  }
+}

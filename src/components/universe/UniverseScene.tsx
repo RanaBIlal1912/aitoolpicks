@@ -55,6 +55,9 @@ function CategoryNode({ item, pos, lite, onSelect, onSelectTool, setHover }: { i
         <sphereGeometry args={[size, lite ? 14 : 24, lite ? 14 : 24]} />
         <meshStandardMaterial color={item.color} emissive={item.color} emissiveIntensity={hot ? 1.2 : 0.6} roughness={0.3} metalness={0.25} />
       </mesh>
+      <Html center distanceFactor={9} zIndexRange={[5, 0]} style={{ pointerEvents: "none", transform: "translateY(-34px)", opacity: hot ? 0 : 1 }}>
+        <span style={{ whiteSpace: "nowrap", fontSize: 12, fontWeight: 700, color: "#fff", textShadow: "0 1px 6px rgba(0,0,0,.95)" }}>{item.label}</span>
+      </Html>
       {!lite && (
         <mesh scale={1.9}>
           <sphereGeometry args={[size, 12, 12]} />
