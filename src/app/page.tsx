@@ -153,7 +153,7 @@ export default function Home() {
       </div>
 
       <div className="mx-auto max-w-6xl px-5">
-        <Reveal as="section" className="pt-28 cv-section">
+        <Reveal as="section" className="pt-28">
           <Head n="07" eyebrow="Guides" title="Practical, plain-English reading" lead="Tutorials, workflows and comparisons. Each says what to do first and what to skip." href="/blog/" cta="All guides" />
           <div className="mb-8">
             <ArticleCard a={lead} featured />

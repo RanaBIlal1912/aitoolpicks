@@ -57,7 +57,7 @@ export default function ReviewsPage() {
                   return (
                     <li key={r.slug} className="cv-auto">
                       <Link href={`/reviews/${r.slug}/`} className="group grid items-center gap-x-6 gap-y-2 py-6 no-underline md:grid-cols-[auto_auto_1fr_auto]">
-                        <span className="font-display text-3xl font-extrabold text-white/15 md:w-14">{String(i + 2).padStart(2, "0")}</span>
+                        <span aria-hidden="true" data-n={String(i + 2).padStart(2, "0")} className="idx font-display text-3xl font-extrabold text-white/15 md:w-14" />
                         <ToolLogo id={t.id} name={t.name} hue={t.hue} size={48} />
                         <span className="min-w-0">
                           <span className="block text-xs font-bold uppercase tracking-[0.14em] text-cyan">{getCategory(t.category)?.short} · Documentation-based</span>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE, absUrl } from "./site";
 
 /** Keep the page title (plus the " | AI Tool Picks" suffix the layout adds) under about 65 characters so search results do not cut it off. */
-export function shortTitle(title: string, max = 50): string {
+export function shortTitle(title: string, max = 48): string {
   const t = title.replace(" overview: what it does, who it suits and what it costs", " overview: features, fit and cost");
   if (t.length <= max) return t;
   const cut = t.slice(0, max + 1);
