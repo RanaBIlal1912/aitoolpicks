@@ -111,5 +111,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://fathom.ai/",
+    "pricingUrl": "https://www.fathom.ai/pricing",
+    "notes": "Product active. The page shows Free $0; Premium $16; Team $15 and Business $25 per user/month (Team and Business need 2 users); Enterprise by sales. The pricing toggle (Monthly / Annually, save 25%+) could not be switched, so the page text does not say which billing period these figures belong to; an earlier check also saw $20, $19 and $34. Kept partial.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

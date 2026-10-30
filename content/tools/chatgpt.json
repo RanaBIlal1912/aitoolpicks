@@ -68,7 +68,7 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
-        "note": "Billed monthly, in USD. The price was not shown in the text of the pricing page or in the help article we read.",
+        "note": "Billed monthly. Displayed as PKR 1,400 per month for a Pakistan visitor; the USD price was not shown. The page says this plan may include ads.",
         "highlights": [
           "More messages, uploads, image creation and voice chats than Free",
           "Longer memory",
@@ -87,7 +87,8 @@
           "Expanded messages, uploads, deep research and memory",
           "Projects, scheduled tasks and custom GPTs",
           "Expanded Codex usage"
-        ]
+        ],
+        "note": "Displayed as PKR 5,700 per month for a Pakistan visitor; the USD $20 figure is from an earlier check and was not re-seen in this browser."
       },
       {
         "name": "Pro 100",
@@ -99,7 +100,8 @@
         "highlights": [
           "Higher usage than Plus",
           "Pro reasoning models and longer Codex sessions"
-        ]
+        ],
+        "note": "Pro has three usage tiers. For a Pakistan visitor the page showed 'From PKR 27,999 per month'; USD tier prices are from an earlier check."
       },
       {
         "name": "Pro 200",
@@ -185,5 +187,13 @@
   ],
   "review": "chatgpt",
   "subcategory": "chatbots",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://chatgpt.com/",
+    "pricingUrl": "https://chatgpt.com/pricing/",
+    "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees: Free PKR 0, Go PKR 1,400/month, Plus PKR 5,700/month, Pro from PKR 27,999/month (three usage tiers). Business and Enterprise sit on a separate tab that was not read. The USD figures kept here ($20 Plus; $100/$200/$500 Pro tiers) come from an earlier check and were not shown in this browser, so they stay partially verified.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

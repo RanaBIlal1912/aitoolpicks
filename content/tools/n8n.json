@@ -36,47 +36,57 @@
     "make"
   ],
   "hue": 15,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "free-trial",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://n8n.io/pricing",
     "plans": [
       {
         "name": "Starter",
         "audience": "individual",
-        "currency": "EUR",
+        "currency": "USD",
         "unit": "per month",
         "annual": 20,
         "billing": "Per month, billed annually",
         "highlights": [
           "2.5K workflow executions"
+        ],
+        "limits": [
+          "2.5k workflow executions per month",
+          "5 concurrent executions",
+          "1,600 Assistant credits per month"
         ]
       },
       {
         "name": "Pro",
         "audience": "individual",
-        "currency": "EUR",
+        "currency": "USD",
         "unit": "per month",
         "annual": 50,
         "billing": "Per month, billed annually",
         "highlights": [
           "10K workflow executions"
+        ],
+        "limits": [
+          "10k workflow executions per month",
+          "Up to 50 concurrent executions"
         ]
       },
       {
         "name": "Business",
         "audience": "business",
-        "currency": "EUR",
+        "currency": "USD",
         "unit": "per month",
-        "annual": 667,
+        "annual": 800,
         "billing": "Per month, billed annually",
         "highlights": [
           "40K workflow executions",
           "Self-hosted only"
-        ]
+        ],
+        "note": "Billed annually; 40k workflow executions; the page says Business is self-hosted only. Earlier check showed EUR 667."
       },
       {
         "name": "Enterprise",
@@ -87,7 +97,7 @@
       }
     ],
     "trial": "n8n Cloud trial with no credit card: 1,000 executions, 5 concurrent executions, 180-second timeout. Business trial: 14 days, card required.",
-    "regional": "Prices are listed in euros; no USD list prices appear on the page. Hosted plans store data in Frankfurt, Germany.",
+    "regional": "The page showed USD ($) on this visit; an earlier visit showed euros, so the displayed currency may depend on the visitor. Hosted plans store data in Frankfurt, Germany.",
     "notes": [
       "Monthly-billed prices are not stated. A free plan is not stated, but the self-hosted Community Edition is available on GitHub (licence terms not stated on the page)."
     ]
@@ -128,5 +138,13 @@
     "status": "source-available",
     "note": "The repository describes n8n as fair-code under the Sustainable Use License; it does not call it open source",
     "source": "https://github.com/n8n-io/n8n"
+  },
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://n8n.io/",
+    "pricingUrl": "https://n8n.io/pricing/",
+    "notes": "Product active. Annual view, shown in USD this time: Starter $20/month billed annually (2.5k executions), Pro $50 (10k), Business $800 (40k, self-hosted only); Enterprise custom. A Monthly toggle exists but was not read. An earlier check showed euros (EUR 20 / 50 / 667), so the displayed currency and the Business price differ by visit; the stored EUR figures are replaced by the USD figures seen now.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
   }
 }

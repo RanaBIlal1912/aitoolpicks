@@ -35,12 +35,12 @@
     "jasper"
   ],
   "hue": 110,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "paid",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://surfer.ai/pricing/",
     "plans": [
       {
@@ -137,5 +137,13 @@
     "Web"
   ],
   "subcategory": "seo",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://surfer.ai/",
+    "pricingUrl": "https://surfer.ai/pricing/",
+    "notes": "Product active. USD per month, billed yearly: AI Search Analytics $82 (saves $156), Standard $99 (saves $240), Pro $182 (saves $444), Peace of Mind $299 (saves $720); Enterprise by contact. The Discovery plan ($49) on the stored record was not visible in the part of the page read; the monthly-billing price is not shown.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

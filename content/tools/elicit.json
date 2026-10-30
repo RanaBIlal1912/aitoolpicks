@@ -37,12 +37,12 @@
     "notebooklm"
   ],
   "hue": 140,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://elicit.com/pricing",
     "plans": [
       {
@@ -130,5 +130,13 @@
     "Web"
   ],
   "subcategory": "papers",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://elicit.com/",
+    "pricingUrl": "https://elicit.com/pricing",
+    "notes": "Product active. Basic is free; Pro $49 per user per month billed as $588 annually (save 35%); Scale $229 per user per month billed as $2,748 annually (save 39%); Enterprise custom. The Monthly toggle was not read, so monthly-billing prices remain unstated.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

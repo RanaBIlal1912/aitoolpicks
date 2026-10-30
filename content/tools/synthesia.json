@@ -36,12 +36,12 @@
     "descript"
   ],
   "hue": 235,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.synthesia.io/pricing",
     "plans": [
       {
@@ -60,14 +60,14 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
-        "monthly": 19,
-        "annual": 14,
+        "monthly": 29,
+        "annual": 18,
         "annualTotal": 168,
         "highlights": [
           "1,250 credits monthly (15,000 yearly)",
           "About 12 minutes of video monthly"
         ],
-        "note": "The first month is shown at $9"
+        "note": "$29 billed monthly, or $18 a month ($216 billed yearly). 15,000 credits a year on the yearly plan."
       },
       {
         "name": "Pro",
@@ -75,13 +75,13 @@
         "currency": "USD",
         "unit": "per month",
         "monthly": 89,
-        "annual": 59,
+        "annual": 64,
         "annualTotal": 708,
         "highlights": [
           "6,000 credits monthly (72,000 yearly)",
           "About 60 minutes of video monthly"
         ],
-        "note": "The first month is shown at $49"
+        "note": "$89 billed monthly, or $64 a month ($768 billed yearly). 72,000 credits a year on the yearly plan."
       },
       {
         "name": "Enterprise",
@@ -130,5 +130,13 @@
     "Web"
   ],
   "subcategory": "avatars",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.synthesia.io/",
+    "pricingUrl": "https://www.synthesia.io/pricing",
+    "notes": "Product active. Page toggles Monthly / Yearly (save up to 4 months); the Yearly view shows Basic $0 (500 credits a month), Starter $29 struck to $18 a month ($216 billed yearly, 15,000 credits a year), Pro $89 struck to $64 a month ($768 billed yearly, 72,000 credits a year), Enterprise custom. Corrected: stored Starter $19/$14 and Pro annual $59 were out of date; the first-month promotions were not shown this time.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

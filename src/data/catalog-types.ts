@@ -65,8 +65,19 @@ export type ToolRecord = {
   openSource?: { status: "open-source" | "source-available" | "open-weights" | "proprietary"; note: string; source: string };
   verified: string;
   status: "active" | "unavailable" | "renamed";
+  verification: Verification;
   pricing: Pricing;
   sources: SourceLink[];
+};
+
+/** The result of opening the vendor's own site and pricing page in a real browser. */
+export type Verification = {
+  status: "verified" | "partial" | "login-required" | "custom-pricing" | "unavailable" | "discontinued";
+  checked: string;
+  officialUrl: string;
+  pricingUrl: string;
+  method: string;
+  notes: string;
 };
 
 /** The light-weight entry used by cards, filters and the comparison table. */

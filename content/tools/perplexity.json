@@ -93,6 +93,9 @@
           "10,000 monthly credits",
           "Highest usage limits",
           "Priority access to new features"
+        ],
+        "limits": [
+          "10,000 monthly Computer credits"
         ]
       },
       {
@@ -137,5 +140,13 @@
     "Web"
   ],
   "subcategory": "search",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.perplexity.ai/",
+    "pricingUrl": "https://www.perplexity.ai/hub/pricing",
+    "notes": "Product active. Individual tab, USD: Free $0; Pro $17/month when billed annually; Max $167/month when billed annually (10,000 monthly credits); Enterprise on a separate page. The monthly-billing price was not shown.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

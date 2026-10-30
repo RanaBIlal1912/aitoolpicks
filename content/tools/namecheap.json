@@ -43,21 +43,21 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per year",
-        "note": "Register $11.28 (sale: 25% off the first year, regular $14.98); renew $18.48; transfer $11.48"
+        "note": "Promotion seen: $6.48 for the first year for new customers, instead of $14.98 regular. Earlier check showed $11.28. Renewal and transfer prices were not re-read."
       },
       {
         "name": ".net domain",
         "audience": "individual",
         "currency": "USD",
         "unit": "per year",
-        "note": "Register $12.48 (sale, regular $14.98); renew $18.58; transfer $12.98"
+        "note": "Promotion seen: $11.68 with a promo code, instead of $14.98 regular. Renewal and transfer prices were not re-read."
       },
       {
         "name": ".org domain",
         "audience": "individual",
         "currency": "USD",
         "unit": "per year",
-        "note": "Register $8.48 (sale, regular $14.48); renew $18.98; transfer $12.28"
+        "note": "Promotion seen: $8.48, instead of $12.98 regular. Renewal and transfer prices were not re-read."
       },
       {
         "name": ".io domain",
@@ -102,5 +102,13 @@
     }
   ],
   "subcategory": "domains",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.namecheap.com/",
+    "pricingUrl": "https://www.namecheap.com/domains/",
+    "notes": "Company active. The domain price page showed promotional first-year prices that differ from the stored ones: .com $6.48/yr for new customers (instead of $14.98), .net $11.68 with a promo code (instead of $14.98), .org $8.48 (instead of $12.98); .ai register $89.98, renew $114.98, transfer $99.98 matches. Promotions change often; renewal prices were read only for .ai. Hosting and email products were not read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

@@ -74,5 +74,13 @@
     "Self-hosted"
   ],
   "added": "2026-10-30",
-  "logoSite": "https://llama.app"
+  "logoSite": "https://llama.app",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://github.com/ggml-org/llama.cpp",
+    "pricingUrl": "https://github.com/ggml-org/llama.cpp",
+    "notes": "Project active (LLM inference in C/C++; about 132.8k stars; recent commits). MIT license shown. No pricing: open-source software.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

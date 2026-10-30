@@ -39,12 +39,12 @@
     "cursor"
   ],
   "hue": 15,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
+    "status": "verified",
     "model": "paid",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://replit.com/pricing",
     "plans": [
       {
@@ -60,7 +60,7 @@
           "$20 towards more powerful models",
           "Unlimited workspaces"
         ],
-        "note": "The page does not explicitly label $20 as the monthly-billing price"
+        "note": "$20 billed monthly, or $18 a month billed annually. Includes $20 towards more powerful models."
       },
       {
         "name": "Pro",
@@ -76,7 +76,7 @@
           "Database rollback up to 28 days",
           "Premium support"
         ],
-        "note": "Several other figures ($215, $425, $825, $2,000) appear on the page without labels"
+        "note": "$100 billed monthly, or $90 a month billed annually. Includes $100 towards the most powerful models. Larger credit tiers at $215, $425, $825 and $2,000 a month are offered."
       },
       {
         "name": "Enterprise",
@@ -113,5 +113,13 @@
     "Web"
   ],
   "subcategory": "app-builders",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://replit.com/",
+    "pricingUrl": "https://replit.com/pricing",
+    "notes": "Product active. Page has Monthly / Yearly (up to 10% off) view: Core $20/month or $18/month billed annually; Pro $100/month or $90/month billed annually (credit tiers at $215, $425, $825 and $2,000 a month are offered for larger Pro usage); Enterprise custom. Taxes extra. The Core and Pro monthly prices are now confirmed by the struck-through figures.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

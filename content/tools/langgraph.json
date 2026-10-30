@@ -73,5 +73,13 @@
     "Self-hosted"
   ],
   "added": "2026-10-30",
-  "logoSite": "https://www.langchain.com"
+  "logoSite": "https://www.langchain.com",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://github.com/langchain-ai/langgraph",
+    "pricingUrl": "https://github.com/langchain-ai/langgraph",
+    "notes": "Project active. The repository page describes it as 'Build resilient agents.' and shows the MIT license. No pricing: open-source software.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

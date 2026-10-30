@@ -33,17 +33,48 @@
   "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
-    "model": "unknown",
+    "status": "verified",
+    "model": "freemium",
     "checked": "2026-10-30",
     "source": "https://consensus.app/pricing/",
     "plans": [
       {
-        "name": "Individual",
+        "name": "Free",
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
-        "note": "Price not shown on the page we read"
+        "monthly": 0,
+        "limits": [
+          "10 Pro messages per month",
+          "Up to 3 Deep reviews per month"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "annual": 12,
+        "note": "$20 billed monthly, or $144 billed annually ($12 a month equivalent).",
+        "limits": [
+          "Unlimited Pro messages",
+          "15 Deep reviews per month",
+          "500 API and MCP uses per month, then $0.05 per use up to 1,000"
+        ]
+      },
+      {
+        "name": "Deep",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 65,
+        "annual": 45,
+        "note": "$65 billed monthly, or $540 billed annually ($45 a month equivalent).",
+        "limits": [
+          "200 Deep reviews per month",
+          "2,000 API and MCP uses per month, then $0.05 per use up to 10,000"
+        ]
       },
       {
         "name": "Team and Enterprise",
@@ -51,12 +82,16 @@
         "currency": "USD",
         "unit": "per month",
         "custom": true,
-        "note": "Price not shown on the page we read"
+        "note": "Separate tab on the pricing page; not read."
       }
     ],
     "notes": [
       "Free plan, limits and student discount: not stated on the page we read."
-    ]
+    ],
+    "free": {
+      "available": true,
+      "details": "Free plan: basic paper search, 10 Pro messages per month and up to 3 Deep reviews per month."
+    }
   },
   "sources": [
     {
@@ -76,5 +111,13 @@
     "Web"
   ],
   "subcategory": "papers",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://consensus.app/",
+    "pricingUrl": "https://consensus.app/pricing/",
+    "notes": "Product active. Individual plans read on the Monthly and Annual views: Free $0; Pro $20/month or $144/year ($12/month equivalent); Deep $65/month or $540/year ($45/month equivalent). Team and Enterprise are on a separate tab and were not read. Previously stored as partial with no prices; corrected.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

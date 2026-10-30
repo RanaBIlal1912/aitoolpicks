@@ -59,6 +59,10 @@
           "Full Assistant and Search access",
           "250 MCP credits per month",
           "Collections up to 1,000 papers"
+        ],
+        "limits": [
+          "250 MCP credits per month",
+          "Collections up to 1,000 papers"
         ]
       },
       {
@@ -70,6 +74,10 @@
         "billing": "$40 per month, billed yearly (the page shows a $120 saving)",
         "highlights": [
           "API access, including a $60 API credit shown as limited time",
+          "2,500 MCP credits per month",
+          "Collections up to 10,000 papers"
+        ],
+        "limits": [
           "2,500 MCP credits per month",
           "Collections up to 10,000 papers"
         ]
@@ -109,5 +117,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://scite.ai/",
+    "pricingUrl": "https://scite.ai/pricing",
+    "notes": "Product active. Basic $12/month and Pro $40/month, both billed yearly (save $96 and $120), each with a 7-day free trial; Pro adds API access and larger collections (10,000 papers); Enterprise custom. The monthly-billing price is not shown.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

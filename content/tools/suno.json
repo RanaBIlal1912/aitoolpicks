@@ -35,12 +35,12 @@
     "elevenlabs"
   ],
   "hue": 50,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
+    "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://suno.com/pricing",
     "plans": [
       {
@@ -66,7 +66,12 @@
           "Priority queue, 2 stem separation types",
           "Commercial use rights"
         ],
-        "note": "Yearly billing 'saves $24'; the annual per-month price was not stated"
+        "note": "Yearly billing 'saves $24'; the annual per-month price was not stated",
+        "limits": [
+          "2,500 credits per month",
+          "20 song downloads per month",
+          "Commercial use rights"
+        ]
       },
       {
         "name": "Premier",
@@ -80,7 +85,12 @@
           "3 stem separation types",
           "Commercial use rights"
         ],
-        "note": "Yearly billing 'saves $72'; the annual per-month price was not stated"
+        "note": "Yearly billing 'saves $72'; the annual per-month price was not stated",
+        "limits": [
+          "10,000 credits per month",
+          "60 song downloads per month",
+          "Commercial use rights"
+        ]
       }
     ],
     "free": {
@@ -114,5 +124,13 @@
     "Web"
   ],
   "subcategory": "music",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://suno.com/",
+    "pricingUrl": "https://suno.com/pricing",
+    "notes": "Product active. Monthly view, USD: Free $0 (50 credits a day, no commercial rights); Pro $8/month (2,500 credits, 20 downloads); Premier $24/month (10,000 credits, 60 downloads). The page says billing yearly saves $24 and $72; the annual per-month price is not shown, so it is not recorded. Taxes calculated at checkout.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

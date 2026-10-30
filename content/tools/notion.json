@@ -39,12 +39,12 @@
     "gamma"
   ],
   "hue": 255,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.notion.com/pricing",
     "plans": [
       {
@@ -82,7 +82,10 @@
           "SAML SSO",
           "90-day page history"
         ],
-        "note": "Marked 'Recommended'. Yearly price not captured"
+        "note": "Marked 'Recommended'. Yearly price not captured",
+        "limits": [
+          "1,500 Standard credits and 500 Select credits per month"
+        ]
       },
       {
         "name": "Enterprise",
@@ -134,5 +137,13 @@
   ],
   "review": "notion",
   "subcategory": "notes",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.notion.com/",
+    "pricingUrl": "https://www.notion.com/pricing",
+    "notes": "Product active. USD, per seat/month: Free $0, Plus $10, Business $20 (recommended; includes 1,500 Standard and 500 Select credits a month), Enterprise custom; Pay monthly / Pay yearly toggle (save up to 20%) was not switched, so the yearly price is not recorded.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

@@ -1,14 +1,14 @@
 {
   "id": "notebooklm",
-  "name": "NotebookLM",
+  "name": "Gemini Notebook (formerly NotebookLM)",
   "vendor": "Google",
-  "website": "https://notebooklm.google",
+  "website": "https://notebook.google",
   "category": "research",
   "categories": [
     "research"
   ],
   "tagline": "Source-grounded notebooks from Google",
-  "description": "NotebookLM is Google's notebook tool for working with your own sources. Google's current support page for it is titled Gemini Notebook and describes free and paid tiers by notebook and source limits.",
+  "description": "Gemini Notebook is Google's notebook tool for working with your own sources; Google's site now uses this name (the notebooklm.google address redirects to notebook.google). Answers are grounded in the sources you add, and it can produce Audio Overviews and slide decks. It has a free Standard tier and higher limits through Google AI plans.",
   "features": [
     "Notebooks with sources",
     "Higher notebook and source limits on Google AI plans",
@@ -35,13 +35,13 @@
     "elicit"
   ],
   "hue": 60,
-  "verified": "2026-10-29",
-  "status": "active",
+  "verified": "2026-10-30",
+  "status": "renamed",
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-29",
-    "source": "https://support.google.com/notebooklm/answer/16213268",
+    "checked": "2026-10-30",
+    "source": "https://support.google.com/gemininotebook/answer/16213268",
     "plans": [
       {
         "name": "Standard (free)",
@@ -104,5 +104,13 @@
     "Mobile app"
   ],
   "subcategory": "notebooks",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://notebook.google/",
+    "pricingUrl": "https://support.google.com/notebooklm/answer/16213268",
+    "notes": "Product active but renamed: notebooklm.google now redirects to notebook.google, titled 'Gemini Notebook', and the help page is 'Learn about Gemini Notebook's plans'. The Standard tier is free with a Gmail account; Plus, Pro and Ultra tiers come with Google AI plans (see Gemini for the Pakistan prices of Plus and Pro). Notebook and source limits per tier were not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

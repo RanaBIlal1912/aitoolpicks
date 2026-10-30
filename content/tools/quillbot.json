@@ -116,5 +116,13 @@
     "Android",
     "iOS"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://quillbot.com/",
+    "pricingUrl": "https://quillbot.com/premium",
+    "notes": "Product active. Free $0; Premium $4.17 per month billed annually (USD); Team plan on a separate page with no price. The monthly-billing price is not stated.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

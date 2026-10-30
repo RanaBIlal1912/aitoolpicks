@@ -33,12 +33,12 @@
   ],
   "alternatives": [],
   "hue": 215,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
+    "status": "verified",
     "model": "usage-based",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.intercom.com/pricing",
     "plans": [
       {
@@ -46,30 +46,30 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per seat per month",
-        "monthly": 19,
-        "note": "Shown with $29 struck through; 'new customers save 35%'. Billing period not stated"
+        "note": "Annual billing, list price $29 per seat per month; the page showed $19 to new customers (35% off).",
+        "annual": 29
       },
       {
         "name": "Advanced",
         "audience": "individual",
         "currency": "USD",
         "unit": "per seat per month",
-        "monthly": 85,
         "highlights": [
           "20 free Lite seats"
         ],
-        "note": "Billing period not stated"
+        "note": "Annual billing per seat per month; includes 20 free Lite seats.",
+        "annual": 85
       },
       {
         "name": "Expert",
         "audience": "individual",
         "currency": "USD",
         "unit": "per seat per month",
-        "monthly": 132,
         "highlights": [
           "50 free Lite seats"
         ],
-        "note": "Billing period not stated"
+        "note": "Annual billing per seat per month; includes 50 free Lite seats.",
+        "annual": 132
       },
       {
         "name": "Fin AI Agent",
@@ -108,5 +108,13 @@
     "Web"
   ],
   "subcategory": "support",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.intercom.com/",
+    "pricingUrl": "https://www.intercom.com/pricing",
+    "notes": "Product active. Pricing is marked 'Pay annually': Essential $29 list ($19 shown to new customers, 'save 35%'), Advanced $85, Expert $132 per seat/month; Fin AI Agent $0.99 per outcome; 14-day cardless free trial. Corrected: these are annual-billing prices, not an unlabelled period.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

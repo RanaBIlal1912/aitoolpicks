@@ -38,12 +38,12 @@
     "chatgpt"
   ],
   "hue": 275,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "free-trial",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.jasper.ai/pricing",
     "plans": [
       {
@@ -103,5 +103,13 @@
     }
   ],
   "subcategory": "content",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.jasper.ai/",
+    "pricingUrl": "https://www.jasper.ai/pricing",
+    "notes": "Product active. The pricing FAQ states Pro is $59/month billed yearly or $69/month billed monthly, and Business is custom. A free trial is offered; the trial length was not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

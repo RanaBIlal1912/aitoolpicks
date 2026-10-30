@@ -94,5 +94,13 @@
     "API",
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://replicate.com/",
+    "pricingUrl": "https://replicate.com/pricing",
+    "notes": "Product active. Pay-as-you-go: most models billed by run time on the hardware used, some per input and output (flux-1.1-pro $0.04 per image, flux-dev $0.025, flux-schnell $3.00 per thousand images, deepseek-r1 $3.75 per million input tokens). No subscription tiers; enterprise by sales. Hardware per-second rates were not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

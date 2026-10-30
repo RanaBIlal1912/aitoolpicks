@@ -70,6 +70,9 @@
         "highlights": [
           "$60 usage credits per month",
           "3 concurrent requests"
+        ],
+        "limits": [
+          "$60 of usage credits per month"
         ]
       },
       {
@@ -93,6 +96,10 @@
           "Unlimited users",
           "$1,000 usage credits per month shared across the team",
           "10 concurrent requests"
+        ],
+        "limits": [
+          "$1,000 of shared usage credits per month",
+          "Unlimited users"
         ]
       },
       {
@@ -152,5 +159,13 @@
     "source": "https://github.com/ollama/ollama"
   },
   "subcategory": "local-models",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://ollama.com/",
+    "pricingUrl": "https://ollama.com/pricing",
+    "notes": "Product active. Pay as you go $0 (local models, 3 concurrent cloud requests); Pro $20/month or $200/year billed annually ($60 of monthly usage credits); Team early access $500/month ($1,000 of shared monthly credits, unlimited users); Enterprise custom. The Max tier price was not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

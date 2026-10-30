@@ -38,12 +38,12 @@
     "descript"
   ],
   "hue": 165,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.heygen.com/pricing",
     "plans": [
       {
@@ -68,6 +68,10 @@
           "600 credits",
           "Up to 30 minutes per video, 1080p",
           "HeyGen Voice up to 10 hours"
+        ],
+        "limits": [
+          "600 credits",
+          "1080p export"
         ]
       },
       {
@@ -81,7 +85,12 @@
           "Up to 30 minutes per video, 4K",
           "Higher credit tiers up to 100,000 credits at $4,300 per month"
         ],
-        "note": "'Starting price'; annual price not stated"
+        "note": "'Starting price'; annual price not stated",
+        "limits": [
+          "1,000 credits",
+          "4K export",
+          "Videos up to 30 minutes"
+        ]
       },
       {
         "name": "Business",
@@ -143,5 +152,13 @@
     "Web"
   ],
   "subcategory": "avatars",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.heygen.com/",
+    "pricingUrl": "https://www.heygen.com/pricing",
+    "notes": "Product active. For Individuals, Monthly view: Free $0 (3 watermarked videos/month, 1 minute each); Creator $29/month (600 credits, 1080p, no branding); Pro $49/month (1,000 credits, 4K, videos up to 30 minutes). A Yearly toggle ('2 months free') exists. The For Businesses tab was not re-read, so Business $149 is from an earlier check.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

@@ -42,7 +42,7 @@
     "source": "https://gamma.app/pricing",
     "free": {
       "available": true,
-      "details": "Free includes up to 10 slides per prompt, simple presentations, docs, websites, social and images, PDF and PPTX import, and export to PDF, PPTX, PNG and Google Slides. No credit card required."
+      "details": "No credit card required: 400 credits at signup, up to 10 slides per prompt, import from PDF and PPTX, export to PDF, PPTX, PNG and Google Slides."
     },
     "plans": [
       {
@@ -70,6 +70,10 @@
           "Up to 100 slides per prompt",
           "Remove Gamma branding",
           "Advanced AI image models"
+        ],
+        "limits": [
+          "1,500 monthly credits",
+          "Up to 100 slides per prompt"
         ]
       },
       {
@@ -86,6 +90,9 @@
           "Custom branding",
           "Detailed analytics and advanced sharing",
           "Up to 10 custom domains"
+        ],
+        "limits": [
+          "4,000 monthly credits"
         ]
       },
       {
@@ -102,6 +109,9 @@
           "Most advanced AI models (text, image, video)",
           "Up to 100 custom domains",
           "Early access to new features"
+        ],
+        "limits": [
+          "20,000 monthly credits"
         ]
       }
     ],
@@ -129,5 +139,13 @@
     }
   ],
   "subcategory": "presentations",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://gamma.app/",
+    "pricingUrl": "https://gamma.app/pricing",
+    "notes": "Product active. Individual tab, annual view: Plus $9, Pro $18, Ultra $90 per seat/month ($108 / $216 / $1,080 billed annually); the monthly figures ($12 / $25 / $100) are from an earlier check and were not re-seen. Free: 400 credits at signup. Monthly credits: Plus 1,500, Pro 4,000, Ultra 20,000. Business tab not read. Prices subject to tax.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

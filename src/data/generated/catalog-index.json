@@ -62,8 +62,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 25,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://bolt.new/pricing",
   "plans": [
    {
@@ -209,8 +209,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 20,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://claude.com/pricing",
   "plans": [
    {
@@ -254,20 +254,28 @@
   "officialUrl": "https://consensus.app",
   "hue": 125,
   "keyFeature": "Search over research papers",
-  "freePlan": null,
+  "freePlan": true,
   "trial": false,
   "openSource": null,
   "added": "2026-10-30",
-  "pricingModel": "unknown",
-  "pricingStatus": "partial",
-  "fromUsd": null,
+  "pricingModel": "freemium",
+  "pricingStatus": "verified",
+  "fromUsd": 20,
   "verified": "2026-10-30",
   "checked": "2026-10-30",
   "pricingSource": "https://consensus.app/pricing/",
   "plans": [
    {
-    "name": "Individual",
-    "price": "See note"
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Pro",
+    "price": "$20/mo monthly · $12/mo yearly"
+   },
+   {
+    "name": "Deep",
+    "price": "$65/mo monthly · $45/mo yearly"
    },
    {
     "name": "Team and Enterprise",
@@ -299,9 +307,9 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 9.99,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
-  "pricingSource": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.microsoft.com/en-us/copilot/solutions/individuals",
   "plans": [
    {
     "name": "Microsoft 365 Personal",
@@ -343,8 +351,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": 8,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://cursor.com/pricing",
   "plans": [
    {
@@ -438,7 +446,7 @@
   "fromUsd": null,
   "verified": "2026-10-30",
   "checked": "2026-10-30",
-  "pricingSource": "https://www.deepl.com/en/pricing",
+  "pricingSource": "https://www.deepl.com/en/pro",
   "plans": [
    {
     "name": "Free",
@@ -485,8 +493,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.descript.com/pricing",
   "plans": [
    {
@@ -551,7 +559,7 @@
    },
    {
     "name": "Teams",
-    "price": "$40/user/mo"
+    "price": "$80/mo"
    },
    {
     "name": "Enterprise",
@@ -580,10 +588,10 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "freemium",
-  "pricingStatus": "partial",
-  "fromUsd": 5,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingStatus": "verified",
+  "fromUsd": 6,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://elevenlabs.io/pricing",
   "plans": [
    {
@@ -592,11 +600,11 @@
    },
    {
     "name": "Starter",
-    "price": "$5/mo billed yearly"
+    "price": "$6/mo monthly · $5/mo yearly"
    },
    {
     "name": "Creator",
-    "price": "$18.33/mo billed yearly"
+    "price": "$22/mo monthly · $18.33/mo yearly"
    },
    {
     "name": "Pro",
@@ -634,8 +642,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 49,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://elicit.com/pricing",
   "plans": [
    {
@@ -727,8 +735,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": 16,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.figma.com/pricing/",
   "plans": [
    {
@@ -771,26 +779,26 @@
   "added": "2026-10-30",
   "pricingModel": "freemium",
   "pricingStatus": "partial",
-  "fromUsd": null,
+  "fromUsd": 10,
   "verified": "2026-10-30",
   "checked": "2026-10-30",
   "pricingSource": "https://fireflies.ai/pricing",
   "plans": [
    {
     "name": "Free",
-    "price": "See note"
+    "price": "Free"
    },
    {
     "name": "Pro",
-    "price": "See note"
+    "price": "$10/seat/mo billed yearly"
    },
    {
     "name": "Business",
-    "price": "See note"
+    "price": "$19/seat/mo billed yearly"
    },
    {
     "name": "Enterprise",
-    "price": "Custom pricing"
+    "price": "$39/seat/mo billed yearly"
    }
   ]
  },
@@ -818,8 +826,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 9.99,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.adobe.com/products/firefly/plans.html",
   "plans": [
    {
@@ -957,8 +965,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://gemini.google/subscriptions/",
   "plans": [
    {
@@ -1009,8 +1017,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 10,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://github.com/features/copilot/plans",
   "plans": [
    {
@@ -1054,8 +1062,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.grammarly.com/plans",
   "plans": [
    {
@@ -1208,8 +1216,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 29,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.heygen.com/pricing",
   "plans": [
    {
@@ -1255,15 +1263,15 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "paid",
-  "pricingStatus": "verified",
-  "fromUsd": 2.49,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingStatus": "partial",
+  "fromUsd": 3.49,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.hostinger.com/pricing",
   "plans": [
    {
     "name": "Premium",
-    "price": "$2.49/mo"
+    "price": "See note"
    },
    {
     "name": "Unlimited",
@@ -1302,8 +1310,8 @@
   "pricingModel": "usage-based",
   "pricingStatus": "verified",
   "fromUsd": 9,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://huggingface.co/pricing",
   "plans": [
    {
@@ -1389,23 +1397,23 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "usage-based",
-  "pricingStatus": "partial",
-  "fromUsd": 19,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingStatus": "verified",
+  "fromUsd": 29,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.intercom.com/pricing",
   "plans": [
    {
     "name": "Essential",
-    "price": "$19/seat/mo"
+    "price": "$29/seat/mo billed yearly"
    },
    {
     "name": "Advanced",
-    "price": "$85/seat/mo"
+    "price": "$85/seat/mo billed yearly"
    },
    {
     "name": "Expert",
-    "price": "$132/seat/mo"
+    "price": "$132/seat/mo billed yearly"
    },
    {
     "name": "Fin AI Agent",
@@ -1436,8 +1444,8 @@
   "pricingModel": "free-trial",
   "pricingStatus": "verified",
   "fromUsd": 69,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.jasper.ai/pricing",
   "plans": [
    {
@@ -1709,10 +1717,10 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "freemium",
-  "pricingStatus": "partial",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "pricingStatus": "verified",
+  "fromUsd": 25,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://lovable.dev/pricing",
   "plans": [
    {
@@ -1721,11 +1729,11 @@
    },
    {
     "name": "Pro",
-    "price": "See note"
+    "price": "$25/mo"
    },
    {
     "name": "Business",
-    "price": "See note"
+    "price": "$50/mo"
    },
    {
     "name": "Enterprise",
@@ -1756,8 +1764,8 @@
   "pricingModel": "paid",
   "pricingStatus": "verified",
   "fromUsd": 30,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://lumalabs.ai/pricing",
   "plans": [
    {
@@ -1804,8 +1812,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.make.com/en/pricing",
   "plans": [
    {
@@ -1876,7 +1884,7 @@
  },
  {
   "id": "mistral",
-  "name": "Le Chat (Mistral)",
+  "name": "Vibe Chat (Mistral)",
   "vendor": "Mistral AI",
   "category": "assistants",
   "subcategory": "chatbots",
@@ -1886,7 +1894,7 @@
    "automation"
   ],
   "tagline": "AI assistant and models from Mistral AI",
-  "description": "Le Chat is Mistral AI's assistant, available on the web and mobile, with a free plan, paid individual and team plans, and a separate pay-as-you-go API for Mistral's models.",
+  "description": "Vibe is Mistral AI's assistant, available on the web, in a CLI and IDE and on mobile, with a free plan, paid individual and team plans, and a separate pay-as-you-go API for Mistral's models. The catalog previously listed this product as Le Chat; Mistral's own site now calls it Vibe.",
   "bestFor": "Individuals and Students (Education pricing)",
   "officialUrl": "https://chat.mistral.ai",
   "hue": 30,
@@ -1898,8 +1906,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 14.99,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://mistral.ai/pricing",
   "plans": [
    {
@@ -1945,22 +1953,22 @@
   "added": "2026-10-29",
   "pricingModel": "free-trial",
   "pricingStatus": "verified",
-  "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "fromUsd": 20,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://n8n.io/pricing",
   "plans": [
    {
     "name": "Starter",
-    "price": "€20/mo billed yearly"
+    "price": "$20/mo billed yearly"
    },
    {
     "name": "Pro",
-    "price": "€50/mo billed yearly"
+    "price": "$50/mo billed yearly"
    },
    {
     "name": "Business",
-    "price": "€667/mo billed yearly"
+    "price": "$800/mo billed yearly"
    },
    {
     "name": "Enterprise",
@@ -2022,7 +2030,7 @@
  },
  {
   "id": "notebooklm",
-  "name": "NotebookLM",
+  "name": "Gemini Notebook (formerly NotebookLM)",
   "vendor": "Google",
   "category": "research",
   "subcategory": "notebooks",
@@ -2030,9 +2038,9 @@
    "research"
   ],
   "tagline": "Source-grounded notebooks from Google",
-  "description": "NotebookLM is Google's notebook tool for working with your own sources. Google's current support page for it is titled Gemini Notebook and describes free and paid tiers by notebook and source limits.",
+  "description": "Gemini Notebook is Google's notebook tool for working with your own sources; Google's site now uses this name (the notebooklm.google address redirects to notebook.google). Answers are grounded in the sources you add, and it can produce Audio Overviews and slide decks. It has a free Standard tier and higher limits through Google AI plans.",
   "bestFor": "Students and Researchers",
-  "officialUrl": "https://notebooklm.google",
+  "officialUrl": "https://notebook.google",
   "hue": 60,
   "keyFeature": "Notebooks with sources",
   "freePlan": true,
@@ -2042,9 +2050,9 @@
   "pricingModel": "freemium",
   "pricingStatus": "partial",
   "fromUsd": null,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
-  "pricingSource": "https://support.google.com/notebooklm/answer/16213268",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://support.google.com/gemininotebook/answer/16213268",
   "plans": [
    {
     "name": "Standard (free)",
@@ -2088,8 +2096,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 10,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.notion.com/pricing",
   "plans": [
    {
@@ -2181,7 +2189,7 @@
   "openSource": null,
   "added": "2026-10-30",
   "pricingModel": "usage-based",
-  "pricingStatus": "verified",
+  "pricingStatus": "partial",
   "fromUsd": null,
   "verified": "2026-10-30",
   "checked": "2026-10-30",
@@ -2228,8 +2236,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 16.99,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://otter.ai/pricing",
   "plans": [
    {
@@ -2317,8 +2325,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 10,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://pika.art/pricing",
   "plans": [
    {
@@ -2444,10 +2452,10 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "paid",
-  "pricingStatus": "partial",
+  "pricingStatus": "verified",
   "fromUsd": 20,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://replit.com/pricing",
   "plans": [
    {
@@ -2487,8 +2495,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 15,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://runway.com/pricing",
   "plans": [
    {
@@ -2569,10 +2577,10 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "freemium",
-  "pricingStatus": "partial",
+  "pricingStatus": "verified",
   "fromUsd": 8,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://suno.com/pricing",
   "plans": [
    {
@@ -2612,8 +2620,8 @@
   "pricingModel": "paid",
   "pricingStatus": "verified",
   "fromUsd": 49,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://surfer.ai/pricing/",
   "plans": [
    {
@@ -2663,9 +2671,9 @@
   "added": "2026-10-29",
   "pricingModel": "freemium",
   "pricingStatus": "verified",
-  "fromUsd": 19,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "fromUsd": 29,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://www.synthesia.io/pricing",
   "plans": [
    {
@@ -2674,11 +2682,11 @@
    },
    {
     "name": "Starter",
-    "price": "$19/mo monthly · $14/mo yearly"
+    "price": "$29/mo monthly · $18/mo yearly"
    },
    {
     "name": "Pro",
-    "price": "$89/mo monthly · $59/mo yearly"
+    "price": "$89/mo monthly · $64/mo yearly"
    },
    {
     "name": "Enterprise",
@@ -2719,11 +2727,11 @@
    },
    {
     "name": "Starter",
-    "price": "$24.17/mo"
+    "price": "$24.17/mo billed yearly"
    },
    {
     "name": "Growth",
-    "price": "$49.17/mo"
+    "price": "$49.17/mo billed yearly"
    },
    {
     "name": "Plus",
@@ -2805,8 +2813,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 30,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://v0.app/pricing",
   "plans": [
    {
@@ -2961,8 +2969,8 @@
   "pricingModel": "free-trial",
   "pricingStatus": "verified",
   "fromUsd": 79,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://writesonic.com/pricing",
   "plans": [
    {
@@ -3005,8 +3013,8 @@
   "pricingModel": "freemium",
   "pricingStatus": "verified",
   "fromUsd": 29.99,
-  "verified": "2026-10-29",
-  "checked": "2026-10-29",
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
   "pricingSource": "https://zapier.com/pricing",
   "plans": [
    {

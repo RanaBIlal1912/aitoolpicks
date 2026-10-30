@@ -78,5 +78,13 @@
     "Self-hosted"
   ],
   "added": "2026-10-30",
-  "logoSite": "https://vllm.ai"
+  "logoSite": "https://vllm.ai",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://github.com/vllm-project/vllm",
+    "pricingUrl": "https://github.com/vllm-project/vllm",
+    "notes": "Project active (high-throughput, memory-efficient inference and serving engine for LLMs). Apache-2.0 license shown. No pricing: open-source software.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

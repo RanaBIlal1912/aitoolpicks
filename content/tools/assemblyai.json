@@ -52,7 +52,7 @@
         "unit": "per month",
         "monthly": 0,
         "highlights": [
-          "$50 in free credits at signup"
+          "Up to 185 hours pre-recorded and 333 hours streaming transcription"
         ],
         "limits": [
           "5 new streams per minute"
@@ -63,7 +63,7 @@
         "audience": "api",
         "currency": "USD",
         "unit": "per month",
-        "note": "Billed per hour of audio; 100 new streams per minute"
+        "note": "Billed monthly on actual usage, in USD; no minimum commitment. Starting limit 100 new streams per minute."
       },
       {
         "name": "Enterprise",
@@ -79,10 +79,10 @@
     ],
     "free": {
       "available": true,
-      "details": "$50 in free credits on signup, no credit card required; streaming concurrency of 5 new streams per minute."
+      "details": "No credit card needed to start. The pricing page says the free tier includes up to 185 hours of pre-recorded transcription and up to 333 hours of streaming transcription; 5 new streaming connections per minute."
     },
     "api": {
-      "summary": "Per hour: Universal-3.5 Pro (pre-recorded) $0.21; Universal-2 (pre-recorded) $0.15; Universal-3.6 Pro Realtime (streaming) $0.45 base; Universal-Streaming English $0.15.",
+      "summary": "Pre-recorded speech-to-text per hour: Universal-3.5 Pro $0.21, Universal-2 $0.15. Text-to-Speech $15 per 1M input characters. Streaming per-hour prices are on the Realtime tab, which was not re-read.",
       "source": "https://www.assemblyai.com/pricing"
     },
     "regional": "The EU region costs the same as the US region (endpoints api.eu.assemblyai.com and streaming.eu.assemblyai.com). Tax treatment: not stated."
@@ -105,5 +105,13 @@
     "API"
   ],
   "subcategory": "transcription",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.assemblyai.com/",
+    "pricingUrl": "https://www.assemblyai.com/pricing",
+    "notes": "Product active (speech-to-text, understanding and text-to-speech APIs). Pricing page lists pay-as-you-go per-hour rates and a custom tier. Corrected: the free tier is now described as up to 185 hours of pre-recorded and 333 hours of streaming transcription (the old '$50 credit' wording was not on the page). Streaming per-hour prices sit on a separate tab that was not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

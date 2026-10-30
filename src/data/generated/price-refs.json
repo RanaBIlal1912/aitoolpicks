@@ -6,7 +6,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://bolt.new/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "chatgpt": {
   "plan": "Plus",
@@ -24,7 +24,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://claude.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "copilot": {
   "plan": "Microsoft 365 Personal",
@@ -32,8 +32,8 @@
   "currency": "USD",
   "per": "month",
   "billing": "monthly",
-  "source": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
-  "checked": "2026-10-29"
+  "source": "https://www.microsoft.com/en-us/copilot/solutions/individuals",
+  "checked": "2026-10-30"
  },
  "cursor": {
   "plan": "Premium",
@@ -42,7 +42,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://cursor.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "deepl": {
   "plan": "Individual",
@@ -50,7 +50,7 @@
   "currency": "EUR",
   "per": "month",
   "billing": "billed annually",
-  "source": "https://www.deepl.com/en/pricing",
+  "source": "https://www.deepl.com/en/pro",
   "checked": "2026-10-30"
  },
  "devin": {
@@ -69,7 +69,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://elevenlabs.io/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "elicit": {
   "plan": "Pro",
@@ -78,7 +78,7 @@
   "per": "user per month",
   "billing": "billed annually",
   "source": "https://elicit.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "figma": {
   "plan": "Professional (Full seat)",
@@ -87,7 +87,7 @@
   "per": "seat per month",
   "billing": "billing cycle not labelled",
   "source": "https://www.figma.com/pricing/",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "firefly": {
   "plan": "Firefly Standard",
@@ -96,7 +96,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://www.adobe.com/products/firefly/plans.html",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "gamma": {
   "plan": "Plus",
@@ -114,7 +114,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://github.com/features/copilot/plans",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "grammarly": {
   "plan": "Pro",
@@ -123,7 +123,7 @@
   "per": "month",
   "billing": "billing period not labelled",
   "source": "https://www.grammarly.com/plans",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "granola": {
   "plan": "Business",
@@ -141,7 +141,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://www.heygen.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "hostinger": {
   "plan": "Premium",
@@ -150,7 +150,7 @@
   "per": "month",
   "billing": "48-month term paid upfront",
   "source": "https://www.hostinger.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "huggingface": {
   "plan": "PRO Account",
@@ -159,7 +159,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://huggingface.co/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "ideogram": {
   "plan": "Plus",
@@ -177,7 +177,7 @@
   "per": "seat per month",
   "billing": "monthly",
   "source": "https://www.jasper.ai/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "luma": {
   "plan": "Plus",
@@ -186,7 +186,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://lumalabs.ai/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "midjourney": {
   "plan": "Basic",
@@ -204,7 +204,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://mistral.ai/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "notion": {
   "plan": "Plus",
@@ -213,7 +213,7 @@
   "per": "member per month",
   "billing": "monthly",
   "source": "https://www.notion.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "ollama": {
   "plan": "Pro",
@@ -231,7 +231,7 @@
   "per": "user per month",
   "billing": "monthly",
   "source": "https://otter.ai/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "perplexity": {
   "plan": "Pro",
@@ -249,7 +249,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://pika.art/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "quillbot": {
   "plan": "Premium",
@@ -267,7 +267,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://runway.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "scite": {
   "plan": "Basic",
@@ -285,7 +285,7 @@
   "per": "month",
   "billing": "price shown on the page; billing label not stated",
   "source": "https://suno.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "synthesia": {
   "plan": "Starter",
@@ -294,7 +294,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://www.synthesia.io/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "v0": {
   "plan": "Plus",
@@ -303,7 +303,7 @@
   "per": "user per month",
   "billing": "monthly",
   "source": "https://v0.app/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "wisprflow": {
   "plan": "Pro",
@@ -321,7 +321,7 @@
   "per": "month",
   "billing": "monthly (750-task tier)",
   "source": "https://zapier.com/pricing",
-  "checked": "2026-10-29"
+  "checked": "2026-10-30"
  },
  "zendesk": {
   "plan": "Support Team",

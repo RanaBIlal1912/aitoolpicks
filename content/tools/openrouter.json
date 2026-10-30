@@ -42,7 +42,7 @@
   "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "verified",
+    "status": "partial",
     "model": "usage-based",
     "checked": "2026-10-30",
     "source": "https://openrouter.ai/pricing",
@@ -129,5 +129,13 @@
     "API"
   ],
   "subcategory": "inference",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://openrouter.ai/",
+    "pricingUrl": "https://openrouter.ai/pricing",
+    "notes": "Product active. Free tier read: 25+ free models, 4 free providers, 5 workspaces, 50 requests a day, community support. The Standard (5.5%) and Business (8%) credit-purchase fees on the stored record are from an earlier check; the page's FAQ, which holds them, was not expanded.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

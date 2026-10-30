@@ -120,5 +120,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.zendesk.com/",
+    "pricingUrl": "https://www.zendesk.com/pricing/",
+    "notes": "Product active. Customer Service view, per agent/month paid yearly: Support Team $19, Suite Team $55, Suite Professional $115, Suite Enterprise + Copilot by sales. Add-ons: Copilot $50, Workforce Engagement Bundle $50, Contact Center $83 per agent/month paid yearly. Monthly-billing prices ($25, $69, $149) are from an earlier check and were not re-seen.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

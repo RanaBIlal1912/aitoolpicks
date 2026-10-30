@@ -1,6 +1,6 @@
 {
   "id": "mistral",
-  "name": "Le Chat (Mistral)",
+  "name": "Vibe Chat (Mistral)",
   "vendor": "Mistral AI",
   "website": "https://chat.mistral.ai",
   "category": "assistants",
@@ -10,7 +10,7 @@
     "automation"
   ],
   "tagline": "AI assistant and models from Mistral AI",
-  "description": "Le Chat is Mistral AI's assistant, available on the web and mobile, with a free plan, paid individual and team plans, and a separate pay-as-you-go API for Mistral's models.",
+  "description": "Vibe is Mistral AI's assistant, available on the web, in a CLI and IDE and on mobile, with a free plan, paid individual and team plans, and a separate pay-as-you-go API for Mistral's models. The catalog previously listed this product as Le Chat; Mistral's own site now calls it Vibe.",
   "features": [
     "Web search, image generation and editing",
     "100+ connectors",
@@ -42,12 +42,12 @@
     "gemini"
   ],
   "hue": 30,
-  "verified": "2026-10-29",
-  "status": "active",
+  "verified": "2026-10-30",
+  "status": "renamed",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://mistral.ai/pricing",
     "plans": [
       {
@@ -151,5 +151,13 @@
     "CLI/IDE"
   ],
   "subcategory": "chatbots",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://chat.mistral.ai/",
+    "pricingUrl": "https://mistral.ai/pricing/",
+    "notes": "Product active but renamed: chat.mistral.ai now opens as 'Vibe Chat' (tab title and 'Vibe Terms of Service'), and the pricing page describes 'Vibe' on web, CLI, IDE and mobile. The catalog name was 'Le Chat'; the display name is updated and the id is unchanged. USD view: Free $0; Pro $14.99/month (student plan available); Team $24.99 per user/month; Enterprise custom; amounts exclude tax. The sign-in and terms prompt was not accepted.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

@@ -36,12 +36,12 @@
     "heygen"
   ],
   "hue": 330,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://pika.art/pricing",
     "plans": [
       {
@@ -66,6 +66,10 @@
           "900 credits per month",
           "Commercial licence",
           "2 parallel video, 8 parallel image and audio"
+        ],
+        "limits": [
+          "900 credits per month",
+          "Commercial licence"
         ]
       },
       {
@@ -79,7 +83,11 @@
           "3,150 credits per month",
           "8 parallel video, 32 parallel image and audio"
         ],
-        "note": "The plan card also shows '$30' beside $35"
+        "note": "The plan card also shows '$30' beside $35",
+        "limits": [
+          "3,150 credits per month",
+          "Commercial licence"
+        ]
       },
       {
         "name": "Fancy",
@@ -141,5 +149,13 @@
     "iOS"
   ],
   "subcategory": "generation",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://pika.art/",
+    "pricingUrl": "https://pika.art/pricing",
+    "notes": "Product active. Monthly view, USD: Free (no monthly credits, credit packs only), Starter $10/month with 900 credits, Creator $35/month with 3,150 credits; a Yearly toggle (save 20%) exists. Fancy and Enterprise were not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

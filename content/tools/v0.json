@@ -36,12 +36,12 @@
     "replit"
   ],
   "hue": 0,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://v0.app/pricing",
     "plans": [
       {
@@ -65,7 +65,11 @@
           "$2 of free daily credits on login",
           "Extra credits shared across the team"
         ],
-        "note": "A '$90' figure appears beside the price with no label"
+        "note": "A '$90' figure appears beside the price with no label",
+        "limits": [
+          "$30 of included monthly credits per user",
+          "$2 of free daily credits on login"
+        ]
       },
       {
         "name": "Business",
@@ -76,6 +80,10 @@
         "highlights": [
           "$30 monthly credits and $2 daily credits per user",
           "Team-shared purchased credits"
+        ],
+        "limits": [
+          "$30 of included monthly credits per user",
+          "$2 of free daily credits on login"
         ]
       },
       {
@@ -88,7 +96,7 @@
     ],
     "free": {
       "available": true,
-      "details": "7 messages per day."
+      "details": "$5 in one-time credits for new users, a 7-message-per-day limit, Design Mode and GitHub sync."
     },
     "api": {
       "summary": "Per 1M tokens (input / cache write / cache read / output): v0 Mini $0.20 / $0.25 / $0.02 / $1.20; v0 Pro $2 / $2.50 / $0.20 / $10; v0 Max $5 / $6.25 / $0.50 / $25; v0 Max Fast $10 / $12.50 / $1 / $50.",
@@ -121,5 +129,13 @@
     "Web"
   ],
   "subcategory": "app-builders",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://v0.app/",
+    "pricingUrl": "https://v0.app/pricing",
+    "notes": "Product active. USD, excluding tax: Free $0 ($5 one-time credits for new users, 7 messages a day); Plus $30 per user/month ($30 of monthly credits plus $2 free daily credits; an unlabelled $90 figure sits beside it); Business $100 per user/month; Enterprise custom. Model token rates match the stored ones.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

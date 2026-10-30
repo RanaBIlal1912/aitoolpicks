@@ -43,12 +43,12 @@
     "perplexity"
   ],
   "hue": 25,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://claude.com/pricing",
     "plans": [
       {
@@ -172,5 +172,13 @@
     "Mobile"
   ],
   "subcategory": "chatbots",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://claude.ai/",
+    "pricingUrl": "https://claude.com/pricing",
+    "notes": "Product active. Individual tab: Free $0; Pro $17/month on annual billing ($200 billed up front) or $20 billed monthly; Max from $100/month (5x and 20x tiers), monthly billing only. Team & Enterprise tab: Standard seat $20 annual / $25 monthly; Premium seat $100 annual / $125 monthly; Enterprise US$20 per seat per month billed annually, 20 seat minimum, plus usage at API rates. Prices exclude tax.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

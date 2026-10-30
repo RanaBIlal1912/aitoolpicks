@@ -40,12 +40,12 @@
     "mistral"
   ],
   "hue": 215,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://github.com/features/copilot/plans",
     "plans": [
       {
@@ -74,7 +74,10 @@
           "Copilot in the cloud",
           "$15 of total AI credits per month ($10 base + $5 flex)"
         ],
-        "note": "Annual pricing not stated"
+        "note": "Annual pricing not stated",
+        "limits": [
+          "$15 monthly total credits"
+        ]
       },
       {
         "name": "Pro+",
@@ -87,7 +90,10 @@
           "Delegate to third-party agents (preview)",
           "$70 of total AI credits per month"
         ],
-        "note": "Annual pricing not stated"
+        "note": "Annual pricing not stated",
+        "limits": [
+          "$70 monthly total credits"
+        ]
       },
       {
         "name": "Max",
@@ -99,7 +105,10 @@
           "Everything in Pro+",
           "$200 of total AI credits per month"
         ],
-        "note": "Annual pricing not stated"
+        "note": "Annual pricing not stated",
+        "limits": [
+          "$200 monthly total credits"
+        ]
       }
     ],
     "free": {
@@ -141,5 +150,13 @@
     "GitHub"
   ],
   "subcategory": "assistants",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://github.com/features/copilot",
+    "pricingUrl": "https://github.com/features/copilot/plans",
+    "notes": "Product active. Individuals tab, USD: Free $0 (2,000 completions a month), Pro $10, Pro+ $39, Max $100 per user/month. Included monthly credits: Pro $15, Pro+ $70, Max $200. Business tab not re-read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

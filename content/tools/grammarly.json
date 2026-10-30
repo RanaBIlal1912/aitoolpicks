@@ -37,12 +37,12 @@
     "chatgpt"
   ],
   "hue": 150,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.grammarly.com/plans",
     "plans": [
       {
@@ -55,6 +55,9 @@
           "Mistake checks",
           "Tone view",
           "100 AI prompts per month"
+        ],
+        "limits": [
+          "100 AI prompts"
         ]
       },
       {
@@ -68,7 +71,10 @@
           "2,000 AI prompts per member per month",
           "Snippets, Knowledge Share, priority support, Team Analytics"
         ],
-        "note": "$12 USD is shown without a billing-period label on the page we read; the page describes Pro as 'for eligible individuals and teams'"
+        "note": "$12 USD is shown without a billing-period label on the page we read; the page describes Pro as 'for eligible individuals and teams'",
+        "limits": [
+          "2,000 AI prompts"
+        ]
       },
       {
         "name": "Enterprise",
@@ -119,5 +125,13 @@
   ],
   "review": "grammarly",
   "subcategory": "proofreading",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.grammarly.com/",
+    "pricingUrl": "https://www.grammarly.com/plans",
+    "notes": "Product active (the page now mentions availability through Superhuman Go). Free $0 with 100 AI prompts; Pro shows $12 USD with no billing-period label, a $0-today free trial (reminder 2 days before it ends) and 2,000 AI prompts; Enterprise by sales. Because the Pro billing period is unlabelled, it stays partial.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

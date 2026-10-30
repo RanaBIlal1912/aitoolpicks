@@ -67,24 +67,26 @@
         "audience": "team",
         "currency": "USD",
         "unit": "per month",
-        "monthly": 24.17,
         "billing": "Shown on the monthly view; the annual price was not stated",
         "highlights": [
           "100 billable conversations",
           "10 seats"
-        ]
+        ],
+        "annual": 24.17,
+        "note": "Annual-billing equivalent per month (2 months free). The monthly-billing price was not captured. 100 billable conversations a month."
       },
       {
         "name": "Growth",
         "audience": "business",
         "currency": "USD",
         "unit": "per month",
-        "monthly": 49.17,
         "billing": "Starts at $49.17 per month",
         "highlights": [
           "Up to 2,000 billable conversations",
           "10 seats"
-        ]
+        ],
+        "annual": 49.17,
+        "note": "Annual-billing equivalent per month (2 months free). The monthly-billing price was not captured."
       },
       {
         "name": "Plus",
@@ -128,5 +130,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.tidio.com/",
+    "pricingUrl": "https://www.tidio.com/pricing/",
+    "notes": "Product active. Free plan (50 billable conversations, 7-day trial) confirmed. The paid cards sit behind a Monthly / Annually (2 months free) toggle: Starter shows $24.17 a month, which equals $29 less 2 months free, so it is an annual-equivalent figure rather than a monthly price. Corrected: the stored Starter $24.17 and Growth $49.17 were labelled monthly; they are now recorded as annual-equivalent and the monthly prices are marked not captured.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

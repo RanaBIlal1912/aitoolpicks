@@ -67,7 +67,11 @@
           "Deployment and Engine",
           "Unlimited seats at $39 each"
         ],
-        "note": "Then pay as you go"
+        "note": "Then pay as you go",
+        "limits": [
+          "Up to 10k base traces per month, then pay as you go",
+          "Unlimited seats can be added"
+        ]
       },
       {
         "name": "Enterprise",
@@ -110,5 +114,13 @@
     "Self-hosted"
   ],
   "subcategory": "agent-tooling",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.langchain.com/langsmith",
+    "pricingUrl": "https://www.langchain.com/pricing",
+    "notes": "Product active. Developer $0 per seat/month (1 seat, up to 5k base traces/month, then pay as you go); Plus $39 per seat/month (up to 10k base traces/month, unlimited seats can be added); Enterprise custom. Usage in LangChain Standard Units at $1.00 each. Startup credits up to $10,000 offered.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

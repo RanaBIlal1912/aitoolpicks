@@ -106,5 +106,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://hex.tech/",
+    "pricingUrl": "https://hex.tech/pricing/",
+    "notes": "Product active (Hex 4.0 announced). Community free; Professional $36 and Team $75 per editor/month (Team: 14 days free); Enterprise custom. The page does not say whether prices are monthly or annual billing, so it stays partial.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

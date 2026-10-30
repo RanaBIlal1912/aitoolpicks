@@ -29,8 +29,8 @@
    "deepgram",
    "elevenlabs"
   ],
-  "api": "Per hour: Universal-3.5 Pro (pre-recorded) $0.21; Universal-2 (pre-recorded) $0.15; Universal-3.6 Pro Realtime (streaming) $0.45 base; Universal-Streaming English $0.15.",
-  "freeDetails": "$50 in free credits on signup, no credit card required; streaming concurrency of 5 new streams per minute.",
+  "api": "Pre-recorded speech-to-text per hour: Universal-3.5 Pro $0.21, Universal-2 $0.15. Text-to-Speech $15 per 1M input characters. Streaming per-hour prices are on the Realtime tab, which was not re-read.",
+  "freeDetails": "No credit card needed to start. The pricing page says the free tier includes up to 185 hours of pre-recorded transcription and up to 333 hours of streaming transcription; 5 new streaming connections per minute.",
   "trialDetails": null
  },
  "bolt": {
@@ -198,7 +198,7 @@
    "perplexity"
   ],
   "api": null,
-  "freeDetails": null,
+  "freeDetails": "Free plan: basic paper search, 10 Pro messages per month and up to 3 Deep reviews per month.",
   "trialDetails": null
  },
  "copilot": {
@@ -269,7 +269,7 @@
    "lovable"
   ],
   "api": null,
-  "freeDetails": "Limited AI usage, limited agent requests and limited chat requests.",
+  "freeDetails": "Limited AI usage, limited agent requests and limited chat requests (card text).",
   "trialDetails": null
  },
  "deepgram": {
@@ -302,7 +302,7 @@
    "assemblyai",
    "elevenlabs"
   ],
-  "api": "Examples per minute (Pay as you go / Growth): Nova-3 Monolingual streaming $0.0077 / $0.0065; Nova-3 Monolingual pre-recorded $0.0043 / $0.0036; Whisper Large pre-recorded $0.0048 on both.",
+  "api": "Streaming speech-to-text per minute (Pay as you go / Growth): Nova-3 Monolingual $0.0077 / $0.0065; Nova-3 Multilingual $0.0092 / $0.0078; Flux STT English $0.0077 / $0.0065. Billed per second. Pre-recorded rates are on a separate tab that was not re-read.",
   "freeDetails": "$200 of free credit that does not expire; no credit card required to start.",
   "trialDetails": null
  },
@@ -337,7 +337,7 @@
    "grammarly",
    "jasper"
   ],
-  "api": null,
+  "api": "API tab (Pakistan view, USD): Developer is free with a one-time 1M-character credit; Growth is $26.00 per month billed annually plus usage ($27.50 per extra 1,000,000 characters); Enterprise API is custom.",
   "freeDetails": "A free version is listed with 50,000 characters per user per month, 1 file translation per month, 1 glossary, 1 saved translation and files up to 5 MB.",
   "trialDetails": "Individual and Team show a 30-day free trial (Free for 30 days, cancel anytime). Business shows no free trial."
  },
@@ -586,7 +586,7 @@
    "granola"
   ],
   "api": null,
-  "freeDetails": "A Free plan is listed; its limits are not stated in the text we could read.",
+  "freeDetails": "Free forever: unlimited transcription, limited AI summaries, 400 minutes of storage per team, 20 AI credits.",
   "trialDetails": null
  },
  "firefly": {
@@ -689,7 +689,7 @@
    "notion"
   ],
   "api": null,
-  "freeDetails": "Free includes up to 10 slides per prompt, simple presentations, docs, websites, social and images, PDF and PPTX import, and export to PDF, PPTX, PNG and Google Slides. No credit card required.",
+  "freeDetails": "No credit card required: 400 credits at signup, up to 10 slides per prompt, import from PDF and PPTX, export to PDF, PPTX, PNG and Google Slides.",
   "trialDetails": null
  },
  "gemini": {
@@ -2149,7 +2149,7 @@
    "replit"
   ],
   "api": "Per 1M tokens (input / cache write / cache read / output): v0 Mini $0.20 / $0.25 / $0.02 / $1.20; v0 Pro $2 / $2.50 / $0.20 / $10; v0 Max $5 / $6.25 / $0.50 / $25; v0 Max Fast $10 / $12.50 / $1 / $50.",
-  "freeDetails": "7 messages per day.",
+  "freeDetails": "$5 in one-time credits for new users, a 7-message-per-day limit, Design Mode and GitHub sync.",
   "trialDetails": null
  },
  "vllm": {

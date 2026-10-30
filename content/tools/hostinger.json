@@ -35,12 +35,12 @@
     "namecheap"
   ],
   "hue": 262,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "verified",
+    "status": "partial",
     "model": "paid",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.hostinger.com/pricing",
     "plans": [
       {
@@ -48,7 +48,6 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
-        "monthly": 2.49,
         "billing": "48-month term, $119.52 paid upfront; renews at $10.99 per month",
         "highlights": [
           "3 websites",
@@ -58,7 +57,8 @@
         ],
         "limits": [
           "1 CPU core, 2 GB RAM"
-        ]
+        ],
+        "note": "Promotional price: $2.49 per month only when paying $119.52 up front for a 48-month term (80% off a $12.19 list price). Renews at $10.99 per month for the same term. Offer seen during a Black Friday promotion."
       },
       {
         "name": "Unlimited",
@@ -130,5 +130,13 @@
   ],
   "review": "hostinger",
   "subcategory": "hosting",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.hostinger.com/",
+    "pricingUrl": "https://www.hostinger.com/pricing",
+    "notes": "Company active. The Websites tab shows a Black Friday offer: Premium is $2.49/month only on a 48-month plan (list $12.19; 'today you pay $119.52 for 48 months; renews at $10.99/month'). Corrected: $2.49 was stored as a plain monthly price, but it is a promotional 48-month price and the renewal rate is much higher. Other plans (Unlimited, Cloud Startup, Agency) were not visible in the part read, so their stored prices are unconfirmed.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

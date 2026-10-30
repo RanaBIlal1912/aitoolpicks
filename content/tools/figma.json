@@ -37,12 +37,12 @@
     "firefly"
   ],
   "hue": 300,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.figma.com/pricing/",
     "plans": [
       {
@@ -130,5 +130,13 @@
     "Desktop"
   ],
   "subcategory": "design",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.figma.com/",
+    "pricingUrl": "https://www.figma.com/pricing/",
+    "notes": "Product active; prices in USD. Starter free (150 AI credits a day, up to 500 a month). Professional full seat $16/mo (dev $12, collab $3) behind a Monthly/Annual toggle whose selected state is not labelled; Organization full seat $55/mo and Enterprise full seat $90/mo, both labelled billed annually. Per-month AI credits: Professional full seat 3,000, Organization 3,500, Enterprise 4,250.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

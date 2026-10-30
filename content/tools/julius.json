@@ -69,6 +69,9 @@
           "2,000 credits monthly",
           "16 GB RAM",
           "7-day file storage"
+        ],
+        "limits": [
+          "2,000 credits per month"
         ]
       },
       {
@@ -82,6 +85,9 @@
           "5,000 credits monthly",
           "32 GB RAM",
           "Unlimited parallel agents"
+        ],
+        "limits": [
+          "5,000 credits per month"
         ]
       },
       {
@@ -95,6 +101,10 @@
           "60,000 credits monthly",
           "Up to 50 team members",
           "Postgres, BigQuery and Snowflake connectors"
+        ],
+        "limits": [
+          "60,000 credits per month",
+          "Up to 50 team members"
         ]
       },
       {
@@ -125,5 +135,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://julius.ai/",
+    "pricingUrl": "https://julius.ai/pricing",
+    "notes": "Product active (now an AI workspace for analysis, research and creation). USD: Plus $20, Pro $45, Business $450 per month; the page has an Annual Billing (save 20%) / Monthly Billing toggle that could not be switched, so the billing period behind these figures is unconfirmed. Plus 2,000 credits a month, Pro 5,000, Business 60,000.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

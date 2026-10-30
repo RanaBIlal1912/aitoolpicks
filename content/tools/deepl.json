@@ -44,7 +44,7 @@
     "status": "verified",
     "model": "freemium",
     "checked": "2026-10-30",
-    "source": "https://www.deepl.com/en/pricing",
+    "source": "https://www.deepl.com/en/pro",
     "free": {
       "available": true,
       "details": "A free version is listed with 50,000 characters per user per month, 1 file translation per month, 1 glossary, 1 saved translation and files up to 5 MB."
@@ -74,7 +74,8 @@
           "300,000 characters per month",
           "3 file translations per month",
           "1 glossary"
-        ]
+        ],
+        "note": "Pakistan view: $8.74 per month billed annually (USD). Germany view from an earlier check: EUR 7.49. Individual shows 300,000 characters and 3 file translations per month."
       },
       {
         "name": "Team",
@@ -87,7 +88,8 @@
           "1,000,000 characters per user per month",
           "20 file translations per month",
           "5 glossaries"
-        ]
+        ],
+        "note": "Pakistan view: $28.74 per user per month billed annually (USD). Germany view from an earlier check: EUR 24.99. 1,000,000 characters per user per month."
       },
       {
         "name": "Business",
@@ -100,7 +102,8 @@
           "Unlimited characters (fair usage policy)",
           "100 file translations per month",
           "Unlimited glossaries (fair usage policy)"
-        ]
+        ],
+        "note": "Pakistan view: $57.49 per user per month billed annually (USD). Germany view from an earlier check: EUR 49.99. Unlimited characters under a fair-usage policy."
       },
       {
         "name": "Enterprise",
@@ -118,6 +121,10 @@
       "currency": "EUR",
       "per": "month",
       "billing": "billed annually"
+    },
+    "api": {
+      "summary": "API tab (Pakistan view, USD): Developer is free with a one-time 1M-character credit; Growth is $26.00 per month billed annually plus usage ($27.50 per extra 1,000,000 characters); Enterprise API is custom.",
+      "source": "https://www.deepl.com/en/pro"
     }
   },
   "sources": [
@@ -137,5 +144,13 @@
   "platforms": [
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.deepl.com/",
+    "pricingUrl": "https://www.deepl.com/en/pro",
+    "notes": "Product active. /en/pricing redirects to /en/pro. Translator tab, Annual view, shown in USD for a Pakistan visitor: Individual $8.74/month billed annually, Team $28.74 per user/month billed annually, Business $57.49 per user/month billed annually, Enterprise custom; Individual and Team show a 30-day free trial. An earlier check with Germany selected showed EUR 7.49 / 24.99 / 49.99, so prices differ by region. The Monthly view and the free consumer tier were not re-read. API tab: Developer free (1M characters one-time), Growth $26.00/month billed annually plus usage.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

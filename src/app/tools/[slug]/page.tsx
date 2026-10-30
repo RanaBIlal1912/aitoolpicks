@@ -23,6 +23,7 @@ import { alternativesFor } from "@/lib/alternatives";
 import FavoriteButton, { RecentTracker } from "@/components/FavoriteButton";
 import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
+import { VERIFICATION_CLASS, VERIFICATION_LABEL } from "@/lib/verification";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -255,6 +256,21 @@ export default async function ToolPage({ params }: Props) {
                   </dd>
                 </div>
               </dl>
+              <h3 className="kicker mt-6">Browser verification</h3>
+              <p className="mt-2 text-sm">
+                <span className={`font-semibold ${VERIFICATION_CLASS[t.verification.status]}`}>{VERIFICATION_LABEL[t.verification.status]}</span>
+                <span className="text-muted"> · checked {formatChecked(t.verification.checked)}</span>
+              </p>
+              <p className="mt-2 text-sm text-muted">{t.verification.notes}</p>
+              <p className="mt-2 text-xs">
+                <a href={t.verification.officialUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  Official site ↗
+                </a>
+                {" · "}
+                <a href={t.verification.pricingUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  Pricing source ↗
+                </a>
+              </p>
               <h3 className="kicker mt-6">Sources</h3>
               <ul className="mt-2 space-y-2 text-sm">
                 {t.sources.map((s) => (

@@ -32,12 +32,12 @@
     "n8n"
   ],
   "hue": 265,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://www.make.com/en/pricing",
     "plans": [
       {
@@ -105,5 +105,13 @@
     "Web"
   ],
   "subcategory": "workflow",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.make.com/",
+    "pricingUrl": "https://www.make.com/en/pricing",
+    "notes": "Product active (visual automation; credits are the billing unit). The pricing page FAQ confirms the Free plan has 1,000 credits per month, and that Core, Pro and Teams are paid plans (annual payment is cheaper than monthly; Enterprise accepts wire transfer). The plan cards and their prices are not present in the page text this browser could read, so no paid price is recorded. Needs manual review.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

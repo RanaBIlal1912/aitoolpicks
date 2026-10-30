@@ -75,5 +75,13 @@
     "Self-hosted"
   ],
   "added": "2026-10-30",
-  "logoSite": "https://www.langchain.com"
+  "logoSite": "https://www.langchain.com",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://github.com/langchain-ai/langchain",
+    "pricingUrl": "https://github.com/langchain-ai/langchain",
+    "notes": "Project active. The repository page describes it as 'The agent engineering platform' and shows the MIT license. No pricing: open-source software; hosted LangSmith is a separate product.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

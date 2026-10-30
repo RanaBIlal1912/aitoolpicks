@@ -65,6 +65,9 @@
           "8,500 fast tokens per month",
           "80+ models",
           "Private creations"
+        ],
+        "limits": [
+          "8,500 fast tokens per month"
         ]
       },
       {
@@ -76,6 +79,9 @@
         "highlights": [
           "25,000 fast tokens per month",
           "Unlimited relaxed image generation for select models"
+        ],
+        "limits": [
+          "25,000 fast tokens per month"
         ]
       },
       {
@@ -87,6 +93,9 @@
         "highlights": [
           "60,000 fast tokens per month",
           "Unlimited relaxed image and video generation for select models"
+        ],
+        "limits": [
+          "60,000 fast tokens per month"
         ]
       },
       {
@@ -150,5 +159,13 @@
     }
   ],
   "subcategory": "generation",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://leonardo.ai/",
+    "pricingUrl": "https://leonardo.ai/pricing",
+    "notes": "Product active. Solo plans in USD, ex. tax: Free $0 (150 fast tokens/day), Essential $12, Premium $30, Ultimate $60 per month; Team Starter $72/month ($24 per seat). Fast tokens per month: Essential 8,500, Premium 25,000, Ultimate 60,000. The Pay Yearly / Pay Monthly toggle (up to 20% off) still does not change the displayed figures, so the billing period is unconfirmed.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

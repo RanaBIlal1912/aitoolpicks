@@ -83,14 +83,15 @@
         "name": "Teams",
         "audience": "team",
         "currency": "USD",
-        "unit": "per user per month",
-        "monthly": 40,
+        "unit": "per team per month, plus $40 per month per full developer seat",
+        "monthly": 80,
         "billing": "$80 per month for the team plus $40 per month per full developer seat",
         "highlights": [
           "Up to 200 users",
           "Centralised billing and admin dashboard",
           "Priority support"
-        ]
+        ],
+        "note": "Up to 200 users; centralized billing, admin dashboard and priority support."
       },
       {
         "name": "Enterprise",
@@ -139,5 +140,13 @@
     "Windsurf"
   ],
   "subcategory": "agents",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://devin.ai/",
+    "pricingUrl": "https://devin.ai/pricing",
+    "notes": "Product active (now an editor plus cloud agents). Free $0; Pro $20/month; Max $200/month; Teams is $80/month for the team plan plus $40/month per full developer seat (up to 200 users); Enterprise by demo. Corrected: Teams was stored as $40 per user only; the $80 team base was missing. Paid plans have daily and weekly usage allowances; extra usage is bought at API pricing.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

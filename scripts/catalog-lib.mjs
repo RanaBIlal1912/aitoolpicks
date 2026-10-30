@@ -11,6 +11,7 @@ export const PRICING_MODELS = ["free", "freemium", "free-trial", "paid", "usage-
 export const AUDIENCES = ["individual", "team", "business", "enterprise", "api"];
 export const CURRENCIES = ["USD", "GBP", "EUR", "PKR", "CAD", "AUD"];
 export const STALE_AFTER_DAYS = 90;
+export const VERIFICATION_STATUS = ["verified", "partial", "login-required", "custom-pricing", "unavailable", "discontinued"];
 export const OPEN_SOURCE_STATUS = ["open-source", "source-available", "open-weights", "proprietary"];
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
@@ -50,6 +51,16 @@ export function validateTool(t, ctx) {
   if (!Array.isArray(t.alternatives)) at("alternatives must be a list");
   else for (const a of t.alternatives) if (!ctx.ids.has(a) || a === t.id) at(`bad alternative ${a}`);
   if (!ISO.test(t.verified ?? "")) at("verified must be an ISO date");
+  const v = t.verification;
+  if (!v || typeof v !== "object") at("missing verification record (browser check)");
+  else {
+    if (!VERIFICATION_STATUS.includes(v.status)) at("verification.status invalid");
+    if (!ISO.test(v.checked ?? "")) at("verification.checked must be an ISO date");
+    if (!HTTPS.test(v.officialUrl ?? "") || !HTTPS.test(v.pricingUrl ?? "")) at("verification needs https officialUrl and pricingUrl");
+    if (!isStr(v.notes, 20) || !isStr(v.method, 10)) at("verification needs notes and method");
+    if (t.pricing && v.status === "verified" && t.pricing.status !== "verified") at("verification verified but pricing.status is not verified");
+    if (t.pricing && v.status === "partial" && t.pricing.status === "verified") at("verification partial but pricing.status is verified");
+  }
   if (!ISO.test(t.added ?? "")) at("added must be an ISO date");
   if (t.subcategory !== undefined && !(ctx.subs?.get(t.category)?.has(t.subcategory))) at(`subcategory ${t.subcategory} is not defined for ${t.category}`);
   if (t.openSource !== undefined) {

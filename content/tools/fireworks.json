@@ -99,5 +99,13 @@
     "API",
     "Web"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://fireworks.ai/",
+    "pricingUrl": "https://fireworks.ai/pricing",
+    "notes": "Product active (inference, training and on-demand GPU deployments). Pre-paid, usage-based pricing per token / per GPU second / per 1M training tokens; enterprise by contact. Embeddings from $0.008 per 1M input tokens. Per-model serverless rates are in the separate pricing docs and were not recorded. No standing free credit is stated; a time-limited free training offer ends 11/30.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

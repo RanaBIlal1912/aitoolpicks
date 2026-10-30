@@ -54,6 +54,9 @@
         "highlights": [
           "3.3 hours of Fast GPU time per month",
           "SD video"
+        ],
+        "limits": [
+          "3.3 hours of Fast GPU time per month"
         ]
       },
       {
@@ -69,6 +72,10 @@
           "15 hours of Fast GPU time per month",
           "Unlimited images in Relax mode",
           "SD and HD video"
+        ],
+        "limits": [
+          "15 hours of Fast GPU time per month",
+          "Unlimited Relax images"
         ]
       },
       {
@@ -84,6 +91,11 @@
           "30 hours of Fast GPU time per month",
           "Unlimited images and SD video in Relax mode",
           "Stealth Mode"
+        ],
+        "limits": [
+          "30 hours of Fast GPU time per month",
+          "Unlimited Relax images and SD video",
+          "Stealth Mode"
         ]
       },
       {
@@ -98,6 +110,11 @@
         "highlights": [
           "60 hours of Fast GPU time per month",
           "Unlimited images and SD video in Relax mode",
+          "Stealth Mode"
+        ],
+        "limits": [
+          "60 hours of Fast GPU time per month",
+          "Unlimited Relax images and SD video",
           "Stealth Mode"
         ]
       }
@@ -129,5 +146,13 @@
     }
   ],
   "subcategory": "generation",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.midjourney.com/",
+    "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "notes": "Product active. The official plan comparison lists monthly $10 / $30 / $60 / $120 and annual $96 / $288 / $576 / $1,152 (i.e. $8 / $24 / $48 / $96 a month) for Basic, Standard, Pro, Mega; extra GPU time $4/hour; companies above $1,000,000 USD gross revenue per year must use Pro or Mega. There is no free plan on this page.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

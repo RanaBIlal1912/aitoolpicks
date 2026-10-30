@@ -39,12 +39,12 @@
     "copilot"
   ],
   "hue": 225,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://gemini.google/subscriptions/",
     "plans": [
       {
@@ -158,5 +158,13 @@
     "macOS app"
   ],
   "subcategory": "chatbots",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://gemini.google.com/",
+    "pricingUrl": "https://gemini.google/subscriptions/",
+    "notes": "Product active. The page opened in Urdu for Pakistan and shows Free Rs 0, Google AI Plus Rs 1,400 per month, Google AI Pro Rs 5,600 per month (PKR), matching the stored figures; Pro includes 4x Free usage limits and Plus 2x. The Business and Developer tabs were not read, so the stored Gemini Enterprise USD prices are unconfirmed in this check. Pakistan prices only.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

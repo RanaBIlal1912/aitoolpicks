@@ -36,12 +36,12 @@
     "make"
   ],
   "hue": 25,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://zapier.com/pricing",
     "plans": [
       {
@@ -122,5 +122,13 @@
     "Web"
   ],
   "subcategory": "workflow",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://zapier.com/",
+    "pricingUrl": "https://zapier.com/pricing",
+    "notes": "Product active. Page has Pay monthly / Pay yearly (save 33%) and a task tier selector; the figures read are 'starting from': Free $0 (100 tasks a month), Professional from $19.99/month, Team from $69/month (25 users, SAML SSO), Enterprise by sales. They match the stored annual prices; the stored monthly prices ($29.99, $103.50) were not re-seen.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

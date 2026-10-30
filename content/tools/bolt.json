@@ -36,12 +36,12 @@
     "v0"
   ],
   "hue": 45,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://bolt.new/pricing",
     "plans": [
       {
@@ -66,7 +66,13 @@
           "No daily token limit",
           "100 MB upload limit"
         ],
-        "note": "Marked 'Most popular'. Plus applicable taxes."
+        "note": "Marked 'Most popular'. Plus applicable taxes.",
+        "limits": [
+          "10M tokens/month with rollover",
+          "No daily token limit",
+          "100 MB upload limit",
+          "1M web requests per month"
+        ]
       },
       {
         "name": "Teams",
@@ -123,5 +129,13 @@
     "Web"
   ],
   "subcategory": "app-builders",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://bolt.new/",
+    "pricingUrl": "https://bolt.new/pricing",
+    "notes": "Product active (AI app and website builder). Free $0, Pro $25/month billed monthly, Teams $30/member/month billed monthly, Enterprise custom annual contract. A yearly toggle (save up to 28%) exists; yearly prices were not read. Pro now lists 10M tokens/month with rollover, 100 MB uploads, 1M web requests per month; the page says taxes are extra.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

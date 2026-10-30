@@ -60,5 +60,13 @@
     "API"
   ],
   "subcategory": "inference",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://groq.com/",
+    "pricingUrl": "https://groq.com/pricing",
+    "notes": "Product active (homepage: 'the premier neocloud for fast inference'). The stored pricing URL now redirects to the homepage, and console.groq.com/docs/pricing returns 404, so no price list could be read. No prices are recorded. Needs manual review: find the current pricing page from the signed-in console.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

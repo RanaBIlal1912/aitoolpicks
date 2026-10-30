@@ -40,12 +40,12 @@
     "descript"
   ],
   "hue": 180,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
+    "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://elevenlabs.io/pricing",
     "plans": [
       {
@@ -71,7 +71,8 @@
         "highlights": [
           "30,000 credits per month"
         ],
-        "note": "Monthly billing shows an introductory price ($1; $6 first month). The regular monthly price was not captured"
+        "note": "Regular price $6 per month on monthly billing; the page showed an introductory $1 for the first month (until Nov 1). 30k credits per month.",
+        "monthly": 6
       },
       {
         "name": "Creator",
@@ -82,7 +83,8 @@
         "highlights": [
           "121,000 credits per month"
         ],
-        "note": "Monthly billing shows an introductory price ($11; $22 first month). The regular monthly price was not captured"
+        "note": "Regular price $22 per month on monthly billing; the page showed $11 for the first month. 121k credits per month.",
+        "monthly": 22
       },
       {
         "name": "Pro",
@@ -93,6 +95,9 @@
         "annual": 82.5,
         "highlights": [
           "600,000 credits per month"
+        ],
+        "limits": [
+          "600k credits per month"
         ]
       },
       {
@@ -105,6 +110,10 @@
         "highlights": [
           "1.8M credits per month",
           "3 seats"
+        ],
+        "limits": [
+          "1.8M credits per month",
+          "3 workspace seats"
         ]
       },
       {
@@ -117,6 +126,10 @@
         "highlights": [
           "6M credits per month",
           "10 seats"
+        ],
+        "limits": [
+          "6M credits per month",
+          "10 workspace seats"
         ]
       },
       {
@@ -166,5 +179,13 @@
     "API"
   ],
   "subcategory": "voice",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://elevenlabs.io/",
+    "pricingUrl": "https://elevenlabs.io/pricing",
+    "notes": "Product active. Monthly billing view (prices exclude taxes): Free $0 with 10k credits; Starter $6 regular (first month $1 until Nov 1); Creator $22 regular (first month $11); Pro $99; Scale $299 with 3 seats; Business $990 with 10 seats; Enterprise custom. Credits per month: Starter 30k, Creator 121k, Pro 600k, Scale 1.8M, Business 6M. Corrected: Starter and Creator regular monthly prices were previously not captured. The Yearly view was not re-read; the stored annual figures come from an earlier check.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

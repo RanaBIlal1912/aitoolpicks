@@ -39,13 +39,13 @@
     "claude"
   ],
   "hue": 200,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
-    "source": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+    "checked": "2026-10-30",
+    "source": "https://www.microsoft.com/en-us/copilot/solutions/individuals",
     "plans": [
       {
         "name": "Microsoft 365 Personal",
@@ -136,5 +136,13 @@
     "Mobile"
   ],
   "subcategory": "chatbots",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://copilot.microsoft.com/",
+    "pricingUrl": "https://www.microsoft.com/en-us/copilot/solutions/individuals",
+    "notes": "Product active. Pricing URL now redirects to /copilot/solutions/individuals. Monthly view: Microsoft 365 Personal $9.99, Family $12.99, Premium $19.99, Pro $99.99 (monthly billing only); one-month free trial on Personal, Family and Premium. A Yearly toggle (save up to 17%) exists; yearly prices were not read. Prices shown in $ without a currency code.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

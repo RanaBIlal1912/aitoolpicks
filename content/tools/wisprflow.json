@@ -73,7 +73,7 @@
         "highlights": [
           "Unlimited Notetaker access"
         ],
-        "note": "The page shows $23 and $33 monthly and $18 and $26 annual; which figure is current is not stated"
+        "note": "The page shows $18 per user per month with SSO, HIPAA/BAA and unlimited Notetaker access; the billing period behind it is unconfirmed."
       },
       {
         "name": "Enterprise",
@@ -121,5 +121,13 @@
     "Android"
   ],
   "subcategory": "transcription",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://wisprflow.ai/",
+    "pricingUrl": "https://wisprflow.ai/pricing",
+    "notes": "Product active. The page has a Monthly / Annual (20% discount) toggle and shows Free $0 (2,000 words a week on desktop), Pro $12 per user/month, Growth $18 per user/month, Enterprise custom. The toggle could not be switched, so it is not confirmed that these are annual-billing figures; the stored monthly figure for Pro ($15) is from an earlier check.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

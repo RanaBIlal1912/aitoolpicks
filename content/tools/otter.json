@@ -36,12 +36,12 @@
     "descript"
   ],
   "hue": 210,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://otter.ai/pricing",
     "plans": [
       {
@@ -129,5 +129,13 @@
     "Mobile"
   ],
   "subcategory": "transcription",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://otter.ai/",
+    "pricingUrl": "https://otter.ai/pricing",
+    "notes": "Product active. Annual view, USD: Pro $8.33 per user/month (save 51%), Business $19.99 per user/month (save 33%), Basic free with 300 monthly minutes, Enterprise by demo. Monthly figures ($16.99 and $30) are from an earlier check and were not re-seen.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

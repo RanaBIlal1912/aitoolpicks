@@ -39,12 +39,12 @@
     "heygen"
   ],
   "hue": 300,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://runway.com/pricing",
     "plans": [
       {
@@ -69,6 +69,9 @@
           "625 credits per month",
           "Up to 3 projects, 5 parallel generations",
           "20 GB storage, no watermarks, 4K upscaling"
+        ],
+        "limits": [
+          "625 credits per month"
         ]
       },
       {
@@ -83,6 +86,9 @@
           "Up to 5 projects, 15 parallel generations",
           "1 Brand Kit, 1 custom voice clone",
           "100 GB storage, Runway MCP"
+        ],
+        "limits": [
+          "2,250 credits per month"
         ]
       },
       {
@@ -98,7 +104,10 @@
           "500 GB storage, early access to new models",
           "HDR/ProRes/image-sequence output"
         ],
-        "note": "Unused credits roll over for one month"
+        "note": "Unused credits roll over for one month",
+        "limits": [
+          "9,500 credits per month"
+        ]
       }
     ],
     "free": {
@@ -139,5 +148,13 @@
     "Web"
   ],
   "subcategory": "generation",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://runway.com/",
+    "pricingUrl": "https://runway.com/pricing",
+    "notes": "Product active. Individual tab: Free $0 (125 one-time credits, 5 GB); Standard $15 monthly or $12 a month billed annually (625 credits); Pro $35 or $28 (2,250 credits); Max $95 or $76 (9,500 credits, credits roll over one month). Team & Enterprise and API tabs not read.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

@@ -35,12 +35,12 @@
     "mistral"
   ],
   "hue": 45,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "usage-based",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://huggingface.co/pricing",
     "plans": [
       {
@@ -53,6 +53,9 @@
           "10x private and 2x public storage",
           "$2 monthly inference credits",
           "8x ZeroGPU quota"
+        ],
+        "limits": [
+          "$2 of included inference credits monthly"
         ]
       },
       {
@@ -114,5 +117,13 @@
     "API"
   ],
   "subcategory": "model-hubs",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://huggingface.co/",
+    "pricingUrl": "https://huggingface.co/pricing",
+    "notes": "Product active. PRO Account $9/month (includes $2 of inference credits monthly, ZeroGPU quota and priority); Team $20 per user/month; Enterprise shown from $50; Spaces hardware and Inference Endpoints hourly prices listed (for example $0.033/hour entry). The page's text is surrounded by decorative symbols; plan figures were read by extracting the dollar amounts.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

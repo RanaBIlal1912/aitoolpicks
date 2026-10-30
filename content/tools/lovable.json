@@ -34,12 +34,12 @@
     "v0"
   ],
   "hue": 340,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
-    "status": "partial",
+    "status": "verified",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://lovable.dev/pricing",
     "plans": [
       {
@@ -58,14 +58,22 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
-        "note": "Price and credit amount not captured from the page we read"
+        "note": "Monthly view. 100 monthly credits, credit rollovers, custom domains and user roles. A Yearly toggle ('2 months free') exists; yearly prices were not read.",
+        "monthly": 25,
+        "limits": [
+          "100 monthly credits"
+        ]
       },
       {
         "name": "Business",
-        "audience": "individual",
+        "audience": "business",
         "currency": "USD",
         "unit": "per month",
-        "note": "Price not captured; the page says credits and the plan cost more than Pro"
+        "note": "Monthly view. 100 Business credits plus team workspace, SSO and priority support.",
+        "monthly": 50,
+        "limits": [
+          "100 monthly credits"
+        ]
       },
       {
         "name": "Enterprise",
@@ -103,5 +111,13 @@
     "Web"
   ],
   "subcategory": "app-builders",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://lovable.dev/",
+    "pricingUrl": "https://lovable.dev/pricing",
+    "notes": "Product active. Page shows a Monthly / Yearly (2 months free) toggle with Monthly figures: Free $0 (no card needed); Pro $25/month with 100 monthly credits; Business $50/month with 100 Business credits; Enterprise volume-based with a platform fee. Yearly prices were not read. Corrected: Pro and Business prices were previously not captured.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

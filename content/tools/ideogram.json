@@ -53,6 +53,9 @@
           "All image and video models",
           "Private generation",
           "Unlimited slow credits"
+        ],
+        "limits": [
+          "2,400 priority credits per month"
         ]
       },
       {
@@ -69,6 +72,9 @@
           "Batch generation",
           "Largest generation queue",
           "Best cost per credit"
+        ],
+        "limits": [
+          "7,500 priority credits per month"
         ]
       },
       {
@@ -83,6 +89,9 @@
         "highlights": [
           "3,600 priority credits per user per month",
           "Central billing and administration"
+        ],
+        "limits": [
+          "3,600 priority credits per user per month"
         ]
       },
       {
@@ -132,5 +141,13 @@
     }
   ],
   "subcategory": "generation",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://ideogram.ai/",
+    "pricingUrl": "https://ideogram.ai/pricing/",
+    "notes": "Product active. Subscription tab, USD: Plus $20/month ($180 billed annually), Pro $60/month ($504 billed annually), Team $30 per user/month ($240 billed annually); Enterprise postpaid by contact; pay-as-you-go credits at 1 cent each. Priority credits: Plus 2,400, Pro 7,500, Team 3,600 per user per month.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

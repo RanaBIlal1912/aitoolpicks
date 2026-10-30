@@ -168,7 +168,7 @@
   "https://www.midjourney.com"
  ],
  "mistral": [
-  "Le Chat (Mistral)",
+  "Vibe Chat (Mistral)",
   "https://chat.mistral.ai"
  ],
  "n8n": [
@@ -180,8 +180,8 @@
   "https://www.namecheap.com"
  ],
  "notebooklm": [
-  "NotebookLM",
-  "https://notebooklm.google"
+  "Gemini Notebook (formerly NotebookLM)",
+  "https://notebook.google"
  ],
  "notion": [
   "Notion",

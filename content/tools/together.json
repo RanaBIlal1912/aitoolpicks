@@ -105,5 +105,13 @@
     "API"
   ],
   "subcategory": "inference",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.together.ai/",
+    "pricingUrl": "https://www.together.ai/pricing",
+    "notes": "Product active. Serverless rates per 1M tokens are listed per model (for example Kimi K3 $3.00 input / $15.00 output; GLM-5.3-Flash $0.15 / $0.50; gpt-oss-120B $0.15 / $0.60). Dedicated, cluster and fine-tuning prices and any free credit were not re-read, so the record stays partial.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

@@ -73,7 +73,8 @@
           "5 Brand Kits",
           "100GB of cloud storage",
           "10x more AI than Free"
-        ]
+        ],
+        "note": "Yearly view, shown in PKR for a Pakistan visitor: Rs 9,200 per year for one person. Monthly and USD prices not captured."
       },
       {
         "name": "Business",
@@ -87,7 +88,8 @@
           "100 Brand Kits and approvals",
           "500GB of cloud storage",
           "20x more AI than Free"
-        ]
+        ],
+        "note": "Yearly view, shown in PKR for a Pakistan visitor: Rs 16,000 per year per person. Monthly and USD prices not captured."
       },
       {
         "name": "Enterprise",
@@ -120,5 +122,13 @@
   ],
   "review": "canva",
   "subcategory": "design",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://www.canva.com/",
+    "pricingUrl": "https://www.canva.com/pricing/",
+    "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees on the Yearly view: Free Rs 0, Pro Rs 9,200 per year for one person, Business Rs 16,000 per year per person; Enterprise is contact sales. Pro and Business show a free-trial button. The Monthly view was not read, and USD prices were not seen, so this stays partially verified.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

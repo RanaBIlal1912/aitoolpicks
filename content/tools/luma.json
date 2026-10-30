@@ -37,12 +37,12 @@
     "heygen"
   ],
   "hue": 190,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "paid",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://lumalabs.ai/pricing",
     "plans": [
       {
@@ -58,6 +58,9 @@
           "Luma and third-party image and video models",
           "Guest edit access",
           "Commercial use"
+        ],
+        "limits": [
+          "10,000 credits per month"
         ]
       },
       {
@@ -72,6 +75,9 @@
           "Everything in Plus",
           "40,000 credits",
           "4x usage with the Luma Agents"
+        ],
+        "limits": [
+          "40,000 credits per month"
         ]
       },
       {
@@ -86,6 +92,9 @@
           "Everything in Pro",
           "150,000 credits",
           "15x usage with the Luma Agents"
+        ],
+        "limits": [
+          "150,000 credits per month"
         ]
       },
       {
@@ -142,5 +151,13 @@
     "Web"
   ],
   "subcategory": "generation",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://lumalabs.ai/",
+    "pricingUrl": "https://lumalabs.ai/pricing",
+    "notes": "Product active. Monthly view, USD: Plus $30, Pro $90, Ultra $300 per month with 10,000 / 40,000 / 150,000 credits; Team and Enterprise by contact. A Yearly toggle (save up to 20%) exists; yearly prices were not re-read. Per-generation credit costs are listed on the page.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

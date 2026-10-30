@@ -116,5 +116,13 @@
     "Apple Watch"
   ],
   "subcategory": "meetings",
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://www.granola.ai/",
+    "pricingUrl": "https://www.granola.ai/pricing",
+    "notes": "Product active. Basic $0, Business $14, Enterprise $35, all per user per month; the page does not state a billing period, so none is claimed. Business adds unlimited meeting history, advanced integrations, API access and MCP.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

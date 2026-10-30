@@ -44,6 +44,7 @@ export const MORE = [
 
 export const FOOTER_LINKS = [
   { href: "/methodology/", label: "Methodology" },
+  { href: "/verification/", label: "Verification log" },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
   { href: "/affiliate-disclosure/", label: "Affiliate disclosure" },

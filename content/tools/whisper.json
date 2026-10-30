@@ -74,5 +74,13 @@
   "platforms": [
     "Self-hosted"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://github.com/openai/whisper",
+    "pricingUrl": "https://github.com/openai/whisper",
+    "notes": "Project active (about 111.6k stars; recent commit). MIT license shown. No pricing: open-source software; OpenAI's hosted transcription API is billed separately.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

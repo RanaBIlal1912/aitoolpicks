@@ -47,37 +47,56 @@
     "source": "https://fireflies.ai/pricing",
     "free": {
       "available": true,
-      "details": "A Free plan is listed; its limits are not stated in the text we could read."
+      "details": "Free forever: unlimited transcription, limited AI summaries, 400 minutes of storage per team, 20 AI credits."
     },
     "plans": [
       {
         "name": "Free",
         "audience": "individual",
         "currency": "USD",
-        "unit": "per user per month",
-        "note": "Price and limits not stated in the text we could read"
+        "unit": "per seat per month",
+        "monthly": 0,
+        "limits": [
+          "Limited AI summaries",
+          "400 minutes of storage per team",
+          "20 AI credits"
+        ]
       },
       {
         "name": "Pro",
         "audience": "individual",
         "currency": "USD",
-        "unit": "per user per month",
-        "note": "Price not stated in the text we could read; billed per seat"
+        "unit": "per seat per month",
+        "annual": 10,
+        "note": "$10 per seat per month billed annually. A higher figure of $18 is shown beside it; the monthly view was not captured.",
+        "limits": [
+          "Unlimited transcription and AI summaries",
+          "8,000 minutes of storage per seat",
+          "20 AI credits"
+        ]
       },
       {
         "name": "Business",
         "audience": "business",
         "currency": "USD",
-        "unit": "per user per month",
-        "note": "Price not stated in the text we could read; adds higher team-pooled API limits, analytics, private channels and video recording"
+        "unit": "per seat per month",
+        "annual": 19,
+        "note": "$19 per seat per month billed annually. A higher figure of $29 is shown beside it; the monthly view was not captured.",
+        "limits": [
+          "Unlimited storage",
+          "30 AI credits"
+        ]
       },
       {
         "name": "Enterprise",
         "audience": "enterprise",
         "currency": "USD",
-        "unit": "per user per month",
-        "custom": true,
-        "note": "Contact the company; HIPAA BAA and FERPA DSA are available with Private Storage"
+        "unit": "per seat per month",
+        "annual": 39,
+        "note": "$39 per seat per month, annual billing only; contact sales.",
+        "limits": [
+          "50 AI credits"
+        ]
       }
     ],
     "regional": "Currency and regional pricing: not stated in the text we could read. Check the official page for current prices.",
@@ -103,5 +122,13 @@
     "Web",
     "Chrome extension"
   ],
-  "added": "2026-10-30"
+  "added": "2026-10-30",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://fireflies.ai/",
+    "pricingUrl": "https://fireflies.ai/pricing",
+    "notes": "Product active. Page opened with a Monthly/Annual toggle (save up to 44%). Billed annually per seat/month: Pro $10, Business $19, Enterprise $39 (annual only). A second, higher figure sits beside Pro ($18) and Business ($29) and is most likely the monthly-billing price, but the Monthly view could not be toggled so it is not recorded as a price. Corrected: plan prices and Free limits were previously missing.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

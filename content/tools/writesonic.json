@@ -37,12 +37,12 @@
     "jasper"
   ],
   "hue": 35,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "verified",
     "model": "free-trial",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://writesonic.com/pricing",
     "plans": [
       {
@@ -57,6 +57,11 @@
           "15 AI articles per month",
           "10 site audits",
           "1 user, 1 project"
+        ],
+        "limits": [
+          "50 prompts tracked daily",
+          "15 AI articles per month",
+          "1 user, 1 project"
         ]
       },
       {
@@ -70,6 +75,11 @@
           "100 prompts and 300 answers daily",
           "25 AI articles per month",
           "2 users, 1 project"
+        ],
+        "limits": [
+          "100 prompts tracked daily",
+          "25 AI articles per month",
+          "2 users, 1 project"
         ]
       },
       {
@@ -81,6 +91,11 @@
         "billing": "Per month, billed annually",
         "highlights": [
           "200 prompts and 600 answers daily",
+          "50 AI articles per month",
+          "3 users, 2 projects"
+        ],
+        "limits": [
+          "200 prompts tracked daily",
           "50 AI articles per month",
           "3 users, 2 projects"
         ]
@@ -121,5 +136,13 @@
     "Web"
   ],
   "subcategory": "seo",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "verified",
+    "officialUrl": "https://writesonic.com/",
+    "pricingUrl": "https://writesonic.com/pricing",
+    "notes": "Product active (now positioned as an AI search visibility platform). USD per month, billed annually: Starter $79 (saves $240 a year), Basic $199 (saves $600), Growth $399 (saves $1,200); Enterprise custom. The Monthly toggle was not read, so monthly-billing prices are not recorded.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }

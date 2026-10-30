@@ -38,12 +38,12 @@
     "lovable"
   ],
   "hue": 275,
-  "verified": "2026-10-29",
+  "verified": "2026-10-30",
   "status": "active",
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-29",
+    "checked": "2026-10-30",
     "source": "https://cursor.com/pricing",
     "plans": [
       {
@@ -67,7 +67,7 @@
           "Shared AI usage pool",
           "Grok models only"
         ],
-        "note": "Described as an introductory plan"
+        "note": "Described as an introductory plan. The page says Plus includes Grok models only."
       },
       {
         "name": "Premium",
@@ -82,7 +82,7 @@
           "Code hosting and AI code reviews",
           "Third-party models at API list price"
         ],
-        "note": "Marked 'Most popular'"
+        "note": "The page FAQ recommends Premium for new AI users. Premium and above include usage of Grok models; third-party models are billed at API list price."
       },
       {
         "name": "Super",
@@ -132,9 +132,9 @@
     ],
     "free": {
       "available": true,
-      "details": "Limited AI usage, limited agent requests and limited chat requests."
+      "details": "Limited AI usage, limited agent requests and limited chat requests (card text)."
     },
-    "regional": "Prices exclude taxes such as VAT. Annual pricing: not stated. Currency is shown as '$' without a code.",
+    "regional": "Prices exclude taxes. The page says usage is a pool shared across Cursor and Grok that refreshes weekly, with optional top-ups. Annual pricing: not stated.",
     "notes": [
       "Allowances refresh weekly. Third-party model usage is billed separately at API list price."
     ],
@@ -161,5 +161,13 @@
     }
   ],
   "subcategory": "assistants",
-  "added": "2026-10-29"
+  "added": "2026-10-29",
+  "verification": {
+    "status": "partial",
+    "officialUrl": "https://cursor.com/",
+    "pricingUrl": "https://cursor.com/pricing",
+    "notes": "Product active (AI coding agent). The page's structured data lists Plus $8, Premium $30, Super $100, Ultra $200 and Teams $30 in USD, matching the stored prices. The pricing page text now describes a usage pool shared across Cursor and Grok, Plus as Grok-models-only, and third-party models at API list price; it is unusual and the visible plan cards could not be read cleanly, so the allowance details are unconfirmed. Needs manual review.",
+    "checked": "2026-10-30",
+    "method": "Opened in the Claude desktop built-in browser; page text read"
+  }
 }
