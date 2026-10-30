@@ -54,7 +54,7 @@ export default function UniverseSection() {
     const stop = whenEngaged(() => {
       engaged = true;
       go();
-    }, 10000);
+    }, 60000);
     const io = new IntersectionObserver(
       (es) => {
         if (es.some((e) => e.isIntersecting)) {

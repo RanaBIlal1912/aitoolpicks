@@ -59,7 +59,7 @@ export default function Home() {
   const picks = ["claude", "github-copilot", "runway", "elevenlabs", "perplexity"];
   const featured = ["claude", "github-copilot", "runway", "elevenlabs", "notion", "perplexity"].map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t);
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
-  const latest = GUIDES.filter((g) => !g.region).slice(0, 8);
+  const latest = GUIDES.filter((g) => !g.region).slice(0, 6);
   const trending = getTrending();
   const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
   // Free tools: a free plan is documented on the official page and the pricing record is fully verified.
@@ -107,12 +107,12 @@ export default function Home() {
           <UniverseSection />
         </div>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="02" eyebrow="Editor's picks" title="Where to start" lead="Well-documented tools across the jobs people use AI for." href="/tools/" cta="Browse every tool" />
           <FeaturedBento ids={picks} />
         </Reveal>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="03" eyebrow="Discover" title="Browse by category" href="/tools/" cta="Search all tools" />
           <CategoryRail />
         </Reveal>
@@ -120,7 +120,7 @@ export default function Home() {
         <RecentStrip />
 
         {trending && (
-          <Reveal as="section" className="pt-28">
+          <Reveal as="section" className="pt-28 cv-section">
             <Head n="+" eyebrow="Trending" title="Most viewed tool pages" lead={`Measured page views from ${trending.period.from} to ${trending.period.to} (${trending.source}; ${trending.method}).`} />
             <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {trending.items.map((i) => {
@@ -135,12 +135,12 @@ export default function Home() {
           </Reveal>
         )}
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="05" eyebrow="Free to start" title="Tools with a free plan" lead="Documented on the vendor's official page, with a fully verified pricing record." href="/tools/?free=1" cta="All free tools" />
           <FreeLedger tools={free} />
         </Reveal>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="06" eyebrow="New in the directory" title="Recently added" lead="Newest records first. This shows when we added a tool, not when the vendor released it." href="/tools/" cta="Browse all" />
           <AddedTimeline tools={recent} />
         </Reveal>
@@ -153,7 +153,7 @@ export default function Home() {
       </div>
 
       <div className="mx-auto max-w-6xl px-5">
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="07" eyebrow="Guides" title="Practical, plain-English reading" lead="Tutorials, workflows and comparisons. Each says what to do first and what to skip." href="/blog/" cta="All guides" />
           <div className="mb-8">
             <ArticleCard a={lead} featured />
@@ -170,12 +170,12 @@ export default function Home() {
           </ul>
         </Reveal>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="08" eyebrow="Comparisons" title="Which one do you actually need?" lead="Side-by-side tables, plus a tool that lets you compare any two." href="/compare/" cta="All comparisons" />
           <VersusTiles />
         </Reveal>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <Head n="09" eyebrow="Best-of guides" title="Which tool for which job" href="/best/" cta="All best-of guides" />
           <ul className="grid gap-4 md:grid-cols-3">
             {ROUNDUPS.slice(0, 3).map((r) => (
@@ -203,11 +203,11 @@ export default function Home() {
           </ul>
         </Reveal>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <EcosystemBand />
         </Reveal>
 
-        <Reveal as="section" className="pt-28">
+        <Reveal as="section" className="pt-28 cv-section">
           <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-8 md:p-12">
             <div className="grid gap-10 md:grid-cols-[1fr_1.2fr]">
               <div>

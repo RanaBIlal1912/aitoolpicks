@@ -979,3 +979,8 @@ main {
 .idx::before {
   content: attr(data-n);
 }
+
+.cv-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}

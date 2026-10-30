@@ -36,7 +36,7 @@ export function Head({ n, eyebrow, title, lead, href, cta, tone = "dark" }: { n:
 
 /** A slow ribbon of the real product logos in the catalog. Pure CSS animation; paused for reduced motion. */
 export function LogoRibbon() {
-  const list = TOOLS.filter((t) => t.openSource !== "open-source").slice(0, 30);
+  const list = TOOLS.filter((t) => t.openSource !== "open-source").slice(0, 20);
   const row = (suffix: string) =>
     list.map((t) => (
       <li key={t.id + suffix} className="shrink-0">
@@ -165,7 +165,7 @@ export function FreeLedger({ tools }: { tools: Tool[] }) {
       {tools.map((t, i) => (
         <li key={t.id} className="border-b border-white/10">
           <Link href={`/tools/${t.id}/`} className="group flex items-center gap-4 py-4 no-underline">
-            <span className="w-6 font-display text-sm font-bold text-white/30">{String(i + 1).padStart(2, "0")}</span>
+            <span className="w-6 font-display text-sm font-bold text-muted">{String(i + 1).padStart(2, "0")}</span>
             <ToolLogo id={t.id} name={t.name} hue={t.hue} size={40} />
             <span className="min-w-0 flex-1">
               <span className="block font-display text-lg font-bold text-white">{t.name}</span>
