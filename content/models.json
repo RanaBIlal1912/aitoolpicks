@@ -1,0 +1,14 @@
+[
+  {
+    "id": "mistral-large-4",
+    "name": "Mistral Large 4",
+    "company": "Mistral AI",
+    "released": "2026-10-29",
+    "summary": "A multimodal, multilingual Mixture-of-Experts model with about 1T total parameters, 49B active and a 1M-token context window, positioned for cybersecurity, coding agents and multimodal tasks.",
+    "licence": "Mistral Ecosystem Open-Weight License",
+    "tools": ["mistral", "huggingface", "vllm", "llamacpp"],
+    "toolNote": "Hugging Face's announcement lists day-0 support in transformers, vLLM and llama.cpp.",
+    "news": "mistral-large-4-on-hugging-face",
+    "sources": [{ "label": "Hugging Face announcement", "url": "https://huggingface.co/blog/mistral-large4", "checked": "2026-10-30" }]
+  }
+]

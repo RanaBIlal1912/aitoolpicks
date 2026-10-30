@@ -17,6 +17,7 @@ import { formatChecked } from "@/lib/dates";
 import { logoFor } from "@/data/logos";
 import ArticleCard from "@/components/ArticleCard";
 import ToolLogo from "@/components/ToolLogo";
+import { slugify } from "@/data/companies";
 import AlternativeList from "@/components/AlternativeList";
 import { alternativesFor } from "@/lib/alternatives";
 import FavoriteButton, { RecentTracker } from "@/components/FavoriteButton";
@@ -215,7 +216,11 @@ export default async function ToolPage({ params }: Props) {
               <dl className="mt-4 space-y-4 text-[0.97rem]">
                 <div>
                   <dt className="text-muted">Vendor</dt>
-                  <dd className="font-semibold text-white">{t.vendor}</dd>
+                  <dd className="font-semibold text-white">
+                    <Link href={`/ecosystem/companies/${slugify(t.vendor)}/`} className="no-underline hover:underline">
+                      {t.vendor}
+                    </Link>
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-muted">Category</dt>

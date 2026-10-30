@@ -20,7 +20,7 @@ export default function HeroSearch({ suggestions }: { suggestions: { label: stri
           type="search"
           autoComplete="off"
           placeholder="Search tools: video editor, coding agent, transcription"
-          className="h-14 w-full rounded-2xl border border-white/15 bg-[#0a0e18]/80 pl-13 pr-32 text-base text-white placeholder:text-muted focus:border-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/60"
+          className="h-14 w-full rounded-2xl border border-white/15 bg-[#11152A]/80 pl-13 pr-32 text-base text-white placeholder:text-muted focus:border-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/60"
           style={{ paddingLeft: "3.25rem" }}
         />
         <button type="submit" className="btn-primary btn-sm absolute right-2 top-1/2 -translate-y-1/2">

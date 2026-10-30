@@ -37,7 +37,7 @@ export default function NewsCard({ n, variant = "row" }: { n: NewsItem; variant?
 
   if (variant === "lead") {
     return (
-      <article className="news-card group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[#0a0e18]/80">
+      <article className="news-card group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[#11152A]/80">
         <div className="aspect-[16/9] w-full overflow-hidden">
           <div className="h-full w-full transition-transform duration-700 group-hover:scale-[1.03]">
             <NewsVisual n={n} priority sizes="(min-width: 1024px) 60vw, 100vw" logos={3} />
@@ -57,7 +57,7 @@ export default function NewsCard({ n, variant = "row" }: { n: NewsItem; variant?
 
   if (variant === "side") {
     return (
-      <article className="news-card group relative flex gap-4 overflow-hidden rounded-2xl border border-white/10 bg-[#0a0e18]/80 p-3 sm:p-4">
+      <article className="news-card group relative flex gap-4 overflow-hidden rounded-2xl border border-white/10 bg-[#11152A]/80 p-3 sm:p-4">
         <div className="aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-xl sm:w-36">
           <NewsVisual n={n} sizes="150px" logos={1} small />
         </div>
@@ -77,7 +77,7 @@ export default function NewsCard({ n, variant = "row" }: { n: NewsItem; variant?
 
   if (variant === "compact") {
     return (
-      <article className="news-card group relative rounded-2xl border border-white/10 bg-[#0a0e18]/80 p-5">
+      <article className="news-card group relative rounded-2xl border border-white/10 bg-[#11152A]/80 p-5">
         <Meta n={n} />
         <div className="mt-2">{title("text-lg")}</div>
         <p className="mt-2 line-clamp-3 text-sm text-muted">{n.summary}</p>
@@ -86,7 +86,7 @@ export default function NewsCard({ n, variant = "row" }: { n: NewsItem; variant?
   }
 
   return (
-    <article className="news-card group relative grid gap-4 overflow-hidden rounded-[22px] border border-white/10 bg-[#0a0e18]/80 p-4 sm:grid-cols-[15rem_1fr] sm:gap-6 sm:p-5">
+    <article className="news-card group relative grid gap-4 overflow-hidden rounded-[22px] border border-white/10 bg-[#11152A]/80 p-4 sm:grid-cols-[15rem_1fr] sm:gap-6 sm:p-5">
       <div className="aspect-[16/10] w-full overflow-hidden rounded-xl sm:aspect-[4/3]">
         <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.04]">
           <NewsVisual n={n} sizes="(min-width: 640px) 240px, 100vw" logos={2} />

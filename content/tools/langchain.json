@@ -1,0 +1,79 @@
+{
+  "id": "langchain",
+  "name": "LangChain",
+  "vendor": "LangChain",
+  "website": "https://github.com/langchain-ai/langchain",
+  "category": "open-source",
+  "categories": [
+    "open-source"
+  ],
+  "subcategory": "frameworks",
+  "tagline": "LangChain describes itself as the agent engineering platform",
+  "description": "LangChain describes itself as the agent engineering platform. Open-source software; the repository lists the licence as MIT.",
+  "features": [
+    "Open-source framework for building agents and LLM applications",
+    "Part of the LangChain ecosystem alongside LangGraph and LangSmith"
+  ],
+  "useCases": [
+    "Building agent applications in code",
+    "Connecting models to tools and data"
+  ],
+  "audience": [
+    "Developers"
+  ],
+  "strengths": [
+    "Source code and licence are public in the official repository",
+    "No licence fee for the software itself"
+  ],
+  "limitations": [
+    "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+    "We have not run or benchmarked it"
+  ],
+  "alternatives": [
+    "langgraph",
+    "n8n",
+    "langsmith"
+  ],
+  "hue": 160,
+  "verified": "2026-10-30",
+  "status": "active",
+  "openSource": {
+    "status": "open-source",
+    "note": "The official repository lists the licence as MIT",
+    "source": "https://github.com/langchain-ai/langchain"
+  },
+  "pricing": {
+    "status": "verified",
+    "model": "open-source",
+    "checked": "2026-10-30",
+    "source": "https://github.com/langchain-ai/langchain",
+    "free": {
+      "available": true,
+      "details": "The software is free to use under its MIT licence; infrastructure and any hosted offerings are separate."
+    },
+    "plans": [
+      {
+        "name": "Self-hosted (open source)",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "note": "Free software under the MIT licence; your own hosting and hardware costs apply"
+      }
+    ],
+    "regional": "No vendor price list. Any hosted or commercial offering from the same team is priced separately and is not covered here."
+  },
+  "sources": [
+    {
+      "label": "Official repository (licence read from it)",
+      "url": "https://github.com/langchain-ai/langchain",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Self-hosted"
+  ],
+  "added": "2026-10-30",
+  "logoSite": "https://www.langchain.com"
+}

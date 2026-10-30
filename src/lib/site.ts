@@ -33,6 +33,7 @@ export const NAV = [
 /** Secondary links shown in the "More" menu and the footer. */
 export const MORE = [
   { href: "/best/", label: "Best-of guides" },
+  { href: "/ecosystem/", label: "AI ecosystem" },
   { href: "/favorites/", label: "Saved tools" },
   { href: "/recent/", label: "Recently viewed" },
   { href: "/submit/", label: "Submit a tool" },

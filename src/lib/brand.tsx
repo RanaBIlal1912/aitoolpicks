@@ -1,6 +1,6 @@
 // The AI Tool Picks mark, defined once: a hexagon (the chip) with a tick (the pick). The header, footer, favicon, app icons and
 // social image all render this same component, so they cannot drift apart. public/brand/mark.svg is the same drawing as a file.
-export const BRAND = { from: "#5b7fc0", to: "#8a83c2", ink: "#05070d" } as const;
+export const BRAND = { from: "#5b7fc0", to: "#8a83c2", ink: "#090B18" } as const;
 
 export function BrandMark({ size = 32, gradientId = "brand-g" }: { size?: number; gradientId?: string }) {
   return (

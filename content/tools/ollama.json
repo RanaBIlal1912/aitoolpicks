@@ -6,7 +6,8 @@
   "category": "models",
   "categories": [
     "models",
-    "coding"
+    "coding",
+    "open-source"
   ],
   "tagline": "Run models locally, with optional cloud models",
   "description": "Ollama is a tool for running large language models on your own hardware, with optional paid plans for cloud-hosted models. Its source code is published on GitHub under the MIT licence.",

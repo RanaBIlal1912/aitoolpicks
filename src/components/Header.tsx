@@ -155,7 +155,7 @@ export default function Header() {
       {/* The blur lives on its own layer: a backdrop-filter on the header itself would become the containing block for the fixed mobile sheet and collapse it. */}
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 -z-10 transition-opacity duration-300 ${scrolled || open ? "bg-[#05070d]/85 opacity-100 backdrop-blur-xl" : "opacity-0"}`}
+        className={`pointer-events-none absolute inset-0 -z-10 transition-opacity duration-300 ${scrolled || open ? "bg-[#090B18]/85 opacity-100 backdrop-blur-xl" : "opacity-0"}`}
       />
       <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5">
         <Link
@@ -200,7 +200,7 @@ export default function Header() {
           <div
             id="mobile-nav"
             ref={sheet}
-            className="sheet-in fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#05070d]/97 backdrop-blur-xl lg:hidden"
+            className="sheet-in fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#090B18]/97 backdrop-blur-xl lg:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto flex max-w-6xl flex-col px-5 py-4">
               {[...NAV, ...MORE].map((n) => {

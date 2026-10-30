@@ -1,0 +1,110 @@
+{
+  "id": "hex",
+  "name": "Hex",
+  "vendor": "Hex",
+  "website": "https://hex.tech",
+  "category": "analytics",
+  "categories": [
+    "analytics",
+    "research"
+  ],
+  "subcategory": "data-analysis",
+  "tagline": "AI analytics platform for data exploration",
+  "description": "Hex is described as an AI analytics platform for trusted data exploration, with agentic notebooks, conversational self-serve analytics and interactive data apps.",
+  "features": [
+    "Agentic notebooks",
+    "Conversational self-serve analytics",
+    "Interactive data apps",
+    "Enterprise: OIDC SSO, audit logs and bring-your-own-key"
+  ],
+  "useCases": [
+    "Exploring and analysing data with AI help",
+    "Publishing interactive data apps"
+  ],
+  "audience": [
+    "Data teams",
+    "Analysts"
+  ],
+  "strengths": [
+    "A free Community plan",
+    "Professional is free for students and educators (per the FAQ)"
+  ],
+  "limitations": [
+    "Prices are per Editor; the billing interval behind them was not stated",
+    "Community is limited to small compute and 5 published apps"
+  ],
+  "alternatives": [
+    "julius",
+    "notebooklm"
+  ],
+  "hue": 275,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://hex.tech/pricing/",
+    "free": {
+      "available": true,
+      "details": "Community is free: a Hex agent trial, small compute, up to 5 published apps, 7-day version history, up to 3 shared collections and 3 shared components."
+    },
+    "trial": "Team: 14 days free (no card, per the FAQ); an extended 30-day trial of Hex Team is linked.",
+    "plans": [
+      {
+        "name": "Community",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "Small compute",
+          "Up to 5 published apps"
+        ]
+      },
+      {
+        "name": "Professional",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per editor per month",
+        "monthly": 36,
+        "billing": "Per Editor per month; monthly versus annual billing was not stated"
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per editor per month",
+        "monthly": 75,
+        "billing": "Per Editor per month; monthly versus annual billing was not stated"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per editor per month",
+        "custom": true,
+        "note": "Custom pricing; contact sales"
+      }
+    ],
+    "regional": "Prices were shown in USD. Pay-as-you-go compute is available on Team and Enterprise (for example Large at $0.32 per hour)."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://hex.tech/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://hex.tech",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

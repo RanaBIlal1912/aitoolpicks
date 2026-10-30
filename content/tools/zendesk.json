@@ -1,0 +1,124 @@
+{
+  "id": "zendesk",
+  "name": "Zendesk",
+  "vendor": "Zendesk",
+  "website": "https://www.zendesk.com",
+  "category": "support",
+  "categories": [
+    "support"
+  ],
+  "subcategory": "helpdesk",
+  "tagline": "Customer service platform with AI agents",
+  "description": "Zendesk brings email, messaging, phone and social conversations into one place, with AI agents for resolving service issues across channels.",
+  "features": [
+    "Ticketing across email, messaging, phone and social",
+    "AI agents included in Suite and Support plans, billed by automated resolution",
+    "Copilot, Workforce Engagement and Contact Center add-ons"
+  ],
+  "useCases": [
+    "Running a customer service desk",
+    "Automating answers with AI agents"
+  ],
+  "audience": [
+    "Support teams",
+    "Businesses"
+  ],
+  "strengths": [
+    "Clear per-agent plan prices with monthly and yearly options",
+    "A 14-day trial of the Suite Professional features and a startup programme are described"
+  ],
+  "limitations": [
+    "Priced per agent, and AI resolutions are billed on top of the included amount",
+    "Enterprise pricing is by talking to sales"
+  ],
+  "alternatives": [
+    "intercom",
+    "tidio"
+  ],
+  "hue": 160,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "verified",
+    "model": "free-trial",
+    "checked": "2026-10-30",
+    "source": "https://www.zendesk.com/pricing/",
+    "trial": "A 14-day trial with access to Suite Professional features; Zendesk for Startups offers a 6-month trial of the Suite for up to 50 agents for early-stage startups.",
+    "plans": [
+      {
+        "name": "Support Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per agent per month",
+        "monthly": 25,
+        "annual": 19,
+        "billing": "$25 per agent per month billed monthly; $19 billed yearly",
+        "highlights": [
+          "5 included automated resolutions per agent per month"
+        ]
+      },
+      {
+        "name": "Suite Team",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per agent per month",
+        "monthly": 69,
+        "annual": 55,
+        "billing": "$69 per agent per month billed monthly; $55 billed yearly",
+        "highlights": [
+          "5 included automated resolutions per agent per month"
+        ]
+      },
+      {
+        "name": "Suite Professional",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per agent per month",
+        "monthly": 149,
+        "annual": 115,
+        "billing": "$149 per agent per month billed monthly; $115 billed yearly",
+        "highlights": [
+          "10 included automated resolutions per agent per month"
+        ]
+      },
+      {
+        "name": "Suite Enterprise + Copilot",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per agent per month",
+        "custom": true,
+        "note": "Talk to sales"
+      }
+    ],
+    "api": {
+      "summary": "AI agents are billed per automated resolution: $1.50 each when committed and $2.00 each pay-as-you-go, on all three listed plans.",
+      "source": "https://www.zendesk.com/pricing/"
+    },
+    "regional": "Prices were shown with a '$' sign and no code; the FAQ lists USD, EUR, GBP and BRL as supported currencies. The page says annual billing is 20% off.",
+    "reference": {
+      "plan": "Support Team",
+      "amount": 25,
+      "currency": "USD",
+      "per": "agent per month",
+      "billing": "monthly"
+    }
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.zendesk.com/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.zendesk.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

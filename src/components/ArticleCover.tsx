@@ -17,6 +17,11 @@ const WORLD: Record<TopicId, { a: string; b: string; glyph: ReactNode }> = {
   productivity: { a: "#ea580c", b: "#9f1239", glyph: <path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 7v5l3 2" /> },
   imagevideo: { a: "#c026d3", b: "#ea580c", glyph: <path d="M3 5h18v14H3zM3 15l5-4 4 3 3-2 6 4M16 9h.01" /> },
   beginners: { a: "#0891b2", b: "#4f46e5", glyph: <path d="M3 11l18-8-8 18-2-8z" /> },
+  research: { a: "#0d9488", b: "#1d4ed8", glyph: <path d="M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15zM16 16l5 5" /> },
+  automation: { a: "#16a34a", b: "#0e7490", glyph: <path d="M12 8a4 4 0 100 8 4 4 0 000-8zM12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" /> },
+  marketing: { a: "#e11d48", b: "#c2410c", glyph: <path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1zM15 9a4 4 0 010 6M18 6a8 8 0 010 12" /> },
+  security: { a: "#475569", b: "#4338ca", glyph: <path d="M12 3l8 3v6c0 4.500-3.200 7.800-8 9-4.800-1.200-8-4.500-8-9V6zM9 12l2.200 2.200L15.500 10" /> },
+  comparisons: { a: "#7c3aed", b: "#db2777", glyph: <path d="M8 3L4 7l4 4M4 7h12M16 21l4-4-4-4M20 17H8" /> },
 };
 
 export default function ArticleCover({ topic, tools = [], small = false }: { topic: TopicId; tools?: string[]; small?: boolean }) {

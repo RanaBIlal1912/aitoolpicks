@@ -1,0 +1,129 @@
+{
+  "id": "julius",
+  "name": "Julius AI",
+  "vendor": "Julius",
+  "website": "https://julius.ai",
+  "category": "analytics",
+  "categories": [
+    "analytics",
+    "research"
+  ],
+  "subcategory": "data-analysis",
+  "tagline": "AI workspace for data analysis, research and creation",
+  "description": "Julius is an AI workspace to analyse data and research, create presentations and reports, build websites and generate images and video, with credits by plan.",
+  "features": [
+    "Analyse files and create charts and presentations",
+    "Reports and dashboards from your data",
+    "Data connectors on higher plans (Google Drive, OneDrive, SharePoint, Snowflake, BigQuery, Postgres)",
+    "Websites, images and video with limited use on lower plans"
+  ],
+  "useCases": [
+    "Analysing spreadsheets and data files",
+    "Producing reports and presentations from data"
+  ],
+  "audience": [
+    "Analysts",
+    "Professionals",
+    "Teams"
+  ],
+  "strengths": [
+    "A free plan with daily credits",
+    "Credits and connectors are listed per plan"
+  ],
+  "limitations": [
+    "Usage is metered in credits",
+    "The page did not make clear whether the monthly prices shown assume monthly or annual billing"
+  ],
+  "alternatives": [
+    "hex",
+    "notebooklm"
+  ],
+  "hue": 25,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://julius.ai/pricing",
+    "free": {
+      "available": true,
+      "details": "Free: $0 per month with free daily credits, Julius Lite models and limited use of the presentation, image, video and website tools."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0
+      },
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 20,
+        "billing": "$20 per month as shown; billing interval unclear",
+        "highlights": [
+          "2,000 credits monthly",
+          "16 GB RAM",
+          "7-day file storage"
+        ]
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 45,
+        "billing": "$45 per month as shown; billing interval unclear",
+        "highlights": [
+          "5,000 credits monthly",
+          "32 GB RAM",
+          "Unlimited parallel agents"
+        ]
+      },
+      {
+        "name": "Business",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 450,
+        "billing": "$450 per month as shown; billing interval unclear",
+        "highlights": [
+          "60,000 credits monthly",
+          "Up to 50 team members",
+          "Postgres, BigQuery and Snowflake connectors"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Contact us"
+      }
+    ],
+    "regional": "Prices were shown in USD. The page has an 'Annual Billing: save 20%' and a 'Monthly Billing' toggle, and we could not tell which view the figures belong to."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://julius.ai/pricing",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://julius.ai",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

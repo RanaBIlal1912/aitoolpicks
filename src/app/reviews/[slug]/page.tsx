@@ -72,6 +72,12 @@ export default async function ReviewPage({ params }: Props) {
       </PageHeader>
 
       <div className="mx-auto max-w-5xl px-5">
+        <div className="mb-4 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm" role="note">
+          <span className="rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.1em] text-cyan">Documentation-based</span>
+          <span className="text-muted">
+            Written from the vendor&rsquo;s official pages and our catalog record. No one tested this product for this page, and it has no score. A hands-on review would say who tested it and when.
+          </span>
+        </div>
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
           This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. This is an editorial
           overview, not lab testing.{" "}

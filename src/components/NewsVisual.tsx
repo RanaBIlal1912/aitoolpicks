@@ -22,7 +22,7 @@ export default function NewsVisual({ n, className = "", priority = false, sizes 
   const img = newsImage(n.slug);
   if (img) {
     return (
-      <div className={`relative h-full w-full overflow-hidden bg-[#0b0f1c] ${className}`}>
+      <div className={`relative h-full w-full overflow-hidden bg-[#11152A] ${className}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={withBase(img.src)}

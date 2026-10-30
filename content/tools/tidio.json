@@ -1,0 +1,132 @@
+{
+  "id": "tidio",
+  "name": "Tidio",
+  "vendor": "Tidio",
+  "website": "https://www.tidio.com",
+  "category": "support",
+  "categories": [
+    "support",
+    "marketing"
+  ],
+  "subcategory": "chat",
+  "tagline": "Live chat and an AI agent for customer conversations",
+  "description": "Tidio combines AI and human conversations on one platform, with the Lyro AI Agent answering common questions and no-code Flows for conversion paths.",
+  "features": [
+    "Lyro AI Agent answers common questions and performs recurring tasks",
+    "Flows: no-code conversion paths triggered at key moments",
+    "Live chat with human agents"
+  ],
+  "useCases": [
+    "Answering customer questions automatically",
+    "Handing conversations to a human agent"
+  ],
+  "audience": [
+    "Small businesses",
+    "Online stores",
+    "Support teams"
+  ],
+  "strengths": [
+    "A free plan and a 7-day trial without a card (per the page)",
+    "Plan limits are stated as numbers of billable conversations"
+  ],
+  "limitations": [
+    "Annual prices were not stated on the page we read",
+    "Lyro AI conversations are sold as an add-on beyond a small free allowance"
+  ],
+  "alternatives": [
+    "intercom",
+    "zendesk"
+  ],
+  "hue": 215,
+  "verified": "2026-10-30",
+  "status": "active",
+  "pricing": {
+    "status": "partial",
+    "model": "freemium",
+    "checked": "2026-10-30",
+    "source": "https://www.tidio.com/pricing/",
+    "free": {
+      "available": true,
+      "details": "Free: 50 billable conversations and 10 seats; the first 50 Lyro AI conversations are free (lifetime); the first 100 visitors reached via Flows are free."
+    },
+    "trial": "A 7-day free trial is offered without a credit card; the account then downgrades to Free unless upgraded.",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "limits": [
+          "50 billable conversations",
+          "10 seats"
+        ]
+      },
+      {
+        "name": "Starter",
+        "audience": "team",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 24.17,
+        "billing": "Shown on the monthly view; the annual price was not stated",
+        "highlights": [
+          "100 billable conversations",
+          "10 seats"
+        ]
+      },
+      {
+        "name": "Growth",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 49.17,
+        "billing": "Starts at $49.17 per month",
+        "highlights": [
+          "Up to 2,000 billable conversations",
+          "10 seats"
+        ]
+      },
+      {
+        "name": "Plus",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Starts at $300 per month plus monthly usage; custom conversations and seats"
+      },
+      {
+        "name": "Premium",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per month",
+        "custom": true,
+        "note": "Contact for pricing; from 3,000 Lyro AI conversations"
+      },
+      {
+        "name": "Lyro AI Agent add-on",
+        "audience": "business",
+        "currency": "USD",
+        "unit": "per month",
+        "note": "Starts at $32.50 per month for 50 Lyro AI conversations"
+      }
+    ],
+    "regional": "Prices were shown in USD. A toggle offers annual billing with 2 months free, but annual prices were not stated."
+  },
+  "sources": [
+    {
+      "label": "Official pricing page",
+      "url": "https://www.tidio.com/pricing/",
+      "type": "pricing",
+      "checked": "2026-10-30"
+    },
+    {
+      "label": "Official site",
+      "url": "https://www.tidio.com",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Web"
+  ],
+  "added": "2026-10-30"
+}

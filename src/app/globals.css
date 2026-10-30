@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #05070d;
-  --color-bg2: #0a0e18;
-  --color-ink: #eceff7;
-  --color-soft: #c7cee8;
-  --color-muted: #98a2c3;
-  --color-line: rgba(255, 255, 255, 0.09);
-  --color-brand: #7e97c9;
-  --color-electric: #5b7fc0;
-  --color-violet: #8a83c2;
-  --color-cyan: #74b4c2;
-  --color-amber: #d6b46a;
+  --color-bg: #090B18;
+  --color-bg2: #11152A;
+  --color-card: #171A30;
+  --color-ink: #f4f5fb;
+  --color-soft: #d3d6ea;
+  --color-muted: #A8AAC0;
+  --color-line: rgba(255, 255, 255, 0.1);
+  --color-brand: #754BFF;
+  --color-electric: #4f7dff;
+  --color-violet: #754BFF;
+  --color-cyan: #25C6E8;
+  --color-pink: #FF4FA3;
+  --color-orange: #FF8A3D;
+  --color-green: #3DDC97;
+  --color-amber: #FFB020;
   --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
 }
@@ -43,16 +47,43 @@ body {
   overflow-x: hidden;
 }
 
-/* Ambient lighting behind every page */
+/* Ambient colour behind every page: three soft glows that drift slowly. Static when the visitor prefers reduced motion. */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -20%;
   z-index: -2;
   background:
-    radial-gradient(900px 520px at 12% -8%, rgba(91, 127, 192, 0.15), transparent 60%),
-    radial-gradient(800px 520px at 92% 0%, rgba(138, 131, 194, 0.12), transparent 60%),
-    radial-gradient(700px 500px at 50% 110%, rgba(116, 180, 194, 0.05), transparent 60%);
+    radial-gradient(700px 480px at 12% 0%, rgba(117, 75, 255, 0.34), transparent 60%),
+    radial-gradient(640px 460px at 90% 8%, rgba(37, 198, 232, 0.22), transparent 60%),
+    radial-gradient(620px 460px at 55% 105%, rgba(255, 79, 163, 0.16), transparent 62%);
+  animation: aurora 38s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2%, 2%, 0) scale(1.06);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+  .gradient-text {
+  background: linear-gradient(95deg, #9a7bff 0%, #25c6e8 35%, #ff4fa3 70%, #9a7bff 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 9s linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position: 220% 0;
+  }
+}
 }
 body::after {
   content: "";
@@ -102,10 +133,11 @@ a {
 
 /* ---------- building blocks ---------- */
 .glass {
-  background: linear-gradient(180deg, rgba(22, 28, 56, 0.74), rgba(10, 13, 30, 0.66));
+  background: linear-gradient(180deg, rgba(30, 34, 66, 0.82), rgba(23, 26, 48, 0.78));
   border: 1px solid var(--color-line);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 40px -26px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .gradient-text {
@@ -121,9 +153,9 @@ a {
   gap: 8px;
   padding: 5px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(138, 131, 194, 0.35);
-  background: rgba(138, 131, 194, 0.1);
-  color: #c9c5e6;
+  border: 1px solid rgba(154, 123, 255, 0.45);
+  background: rgba(117, 75, 255, 0.14);
+  color: #d9ccff;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -156,12 +188,12 @@ a {
 }
 .btn-primary {
   color: #fff;
-  background: linear-gradient(120deg, #4a6fb0, #6a68aa 70%);
-  box-shadow: 0 8px 24px -10px rgba(74, 111, 176, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(120deg, #754bff, #4f7dff 55%, #25c6e8);
+  box-shadow: 0 10px 28px -10px rgba(117, 75, 255, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(100, 104, 180, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 14px 34px -10px rgba(117, 75, 255, 0.85), 0 0 0 1px rgba(37, 198, 232, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .btn-ghost {
   color: var(--color-ink);
@@ -202,8 +234,8 @@ a {
 }
 .chip[aria-pressed="true"],
 .chip[aria-current="true"] {
-  background: linear-gradient(120deg, rgba(91, 127, 192, 0.3), rgba(138, 131, 194, 0.3));
-  border-color: rgba(138, 131, 194, 0.5);
+  background: linear-gradient(120deg, rgba(117, 75, 255, 0.4), rgba(37, 198, 232, 0.28));
+  border-color: rgba(154, 123, 255, 0.6);
   color: #fff;
 }
 
@@ -340,7 +372,7 @@ table.cmp thead th:first-child {
   position: sticky;
   left: 0;
   z-index: 1;
-  background: #0b0f1c;
+  background: #11152A;
 }
 @media (max-width: 640px) {
   table.cmp th,
@@ -663,4 +695,92 @@ main {
   .tilt {
     transition: none;
   }
+}
+
+/* ---------- hero visual (decoration) ---------- */
+.hero-orb {
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.28), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(117, 75, 255, 0.9), rgba(37, 198, 232, 0.55) 55%, rgba(255, 79, 163, 0.3) 78%, transparent 80%);
+  filter: blur(2px);
+  box-shadow: 0 0 120px 30px rgba(117, 75, 255, 0.35), 0 0 220px 60px rgba(37, 198, 232, 0.18);
+  opacity: 0.55;
+}
+.float-y {
+  animation: float-y 7s ease-in-out infinite;
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-y {
+    animation: none;
+  }
+}
+
+/* ---------- static tool tile (no client JavaScript) ---------- */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--color-line);
+  background: linear-gradient(180deg, rgba(30, 34, 66, 0.85), rgba(23, 26, 48, 0.8));
+  transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s;
+}
+.tile:hover,
+.tile:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(154, 123, 255, 0.55);
+  box-shadow: 0 24px 46px -24px rgba(117, 75, 255, 0.55);
+}
+.tile:focus-within {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+.tile a.tile-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.tile a.tile-link:focus-visible {
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+  }
+  .tile:hover {
+    transform: none;
+  }
+}
+
+/* Page headers get a soft colour wash and an accent rule, so inner pages share the home page's atmosphere. */
+.page-head::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  height: 260px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(420px 200px at 8% 30%, rgba(117, 75, 255, 0.22), transparent 70%),
+    radial-gradient(380px 180px at 70% 10%, rgba(37, 198, 232, 0.14), transparent 70%);
+}
+.page-head h1::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: 18px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #754bff, #25c6e8, #ff4fa3);
 }

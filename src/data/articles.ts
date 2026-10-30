@@ -15,7 +15,7 @@ const TOPIC_BY_CAT: Record<string, TopicId> = {
   "Start here": "freelancing",
   Freelancers: "freelancing",
   Writing: "writing",
-  Comparison: "writing",
+  Comparison: "comparisons",
   Design: "design",
   "Small business": "business",
   Websites: "websites",
@@ -25,6 +25,11 @@ const TOPIC_BY_CAT: Record<string, TopicId> = {
   "AI productivity": "productivity",
   "Image and video": "imagevideo",
   "Beginner guides": "beginners",
+  "AI research": "research",
+  "AI automation": "automation",
+  "AI marketing": "marketing",
+  "AI security and privacy": "security",
+  "AI for business": "business",
 };
 
 type Raw = { slug: string; title: string; description: string; icon: string; cat: string; blurb: string; region?: string; date?: string };

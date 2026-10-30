@@ -324,6 +324,19 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "hex": {
+    "file": "hex.svg",
+    "website": "https://hex.tech",
+    "source": "https://hex.tech/favicon.svg",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 632,
+    "sha256": "73ec3dd519eecfcb",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "heygen": {
     "file": "heygen.ico",
     "website": "https://www.heygen.com",
@@ -402,6 +415,45 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "julius": {
+    "file": "julius.ico",
+    "website": "https://julius.ai",
+    "source": "https://julius.ai/favicon.ico?23f30d1c0141030b",
+    "kind": "icon",
+    "format": "ico",
+    "width": 196,
+    "bytes": 18202,
+    "sha256": "d3b2b5dd07f68694",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
+  "langchain": {
+    "file": "langchain.png",
+    "website": "https://github.com/langchain-ai/langchain",
+    "source": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a17e4f0c916c644f4de1cd_webclip%20lg.png",
+    "kind": "apple-touch-icon",
+    "format": "png",
+    "width": 256,
+    "bytes": 6101,
+    "sha256": "0c60295f8003df25",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
+  "langgraph": {
+    "file": "langgraph.png",
+    "website": "https://github.com/langchain-ai/langgraph",
+    "source": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a17e4f0c916c644f4de1cd_webclip%20lg.png",
+    "kind": "apple-touch-icon",
+    "format": "png",
+    "width": 256,
+    "bytes": 6101,
+    "sha256": "0c60295f8003df25",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "langsmith": {
     "file": "langsmith.png",
     "website": "https://www.langchain.com/langsmith",
@@ -424,6 +476,19 @@
     "width": 512,
     "bytes": 10273,
     "sha256": "56e136a75ff29716",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
+  "llamacpp": {
+    "file": "llamacpp.svg",
+    "website": "https://github.com/ggml-org/llama.cpp",
+    "source": "https://llama.app/favicon.ico",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 986,
+    "sha256": "4489f5424c4c1ed8",
     "status": "ok",
     "origin": "official-site",
     "checked": "2026-10-30"
@@ -714,6 +779,19 @@
     "origin": "official-site",
     "checked": "2026-10-29"
   },
+  "tidio": {
+    "file": "tidio.svg",
+    "website": "https://www.tidio.com",
+    "source": "https://www.tidio.com/images/favicon/icon.svg",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 13752,
+    "sha256": "cb770b2ac6d14a00",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
   "together": {
     "file": "together.png",
     "website": "https://www.together.ai",
@@ -739,6 +817,26 @@
     "status": "ok",
     "origin": "official-site",
     "checked": "2026-10-29"
+  },
+  "vllm": {
+    "file": "vllm.svg",
+    "website": "https://github.com/vllm-project/vllm",
+    "source": "https://vllm.ai/vLLM-Logo.svg",
+    "kind": "icon",
+    "format": "svg",
+    "width": null,
+    "bytes": 3502,
+    "sha256": "12a0812e247cef4b",
+    "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
+  "whisper": {
+    "file": null,
+    "website": "",
+    "status": "missing",
+    "notes": "The official site is a GitHub repository; GitHub's own icon is not this project's logo, so none is used",
+    "checked": "2026-10-30"
   },
   "wisprflow": {
     "file": "wisprflow.png",
@@ -776,6 +874,19 @@
     "bytes": 57638,
     "sha256": "733fdd5c9e5b3020",
     "status": "ok",
+    "origin": "official-site",
+    "checked": "2026-10-30"
+  },
+  "zendesk": {
+    "file": "zendesk.png",
+    "website": "https://www.zendesk.com",
+    "source": "https://d1eipm3vz40hy0.cloudfront.net/images/logos/favicons/zendesk-icon-57.png",
+    "kind": "apple-touch-icon",
+    "format": "png",
+    "width": 57,
+    "bytes": 1992,
+    "sha256": "849456bd46f26d80",
+    "status": "low-resolution",
     "origin": "official-site",
     "checked": "2026-10-30"
   }

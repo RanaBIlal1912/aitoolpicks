@@ -175,10 +175,10 @@ let done = 0;
 async function worker() {
   while (queue.length) {
     const r = queue.shift();
-    let found = await findLogo(r.website);
+    let found = await findLogo(r.logoSite ?? r.website);
     let viaService = false;
     if (found.missing && args.includes("--fallback")) {
-      const alt = await viaFaviconService(r.website);
+      const alt = await viaFaviconService(r.logoSite ?? r.website);
       if (alt) {
         found = { ...alt, notes: found.notes };
         viaService = true;

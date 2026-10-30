@@ -52,7 +52,7 @@ export default function PageHeader({
   children?: ReactNode;
 }) {
   return (
-    <header className="mx-auto max-w-6xl px-5 pb-10 pt-14 md:pt-20">
+    <header className="page-head relative mx-auto max-w-6xl px-5 pb-10 pt-14 md:pt-20">
       {crumbs && <Breadcrumbs items={crumbs} />}
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h1 className="mt-4 max-w-3xl text-[clamp(2.1rem,5vw,3.6rem)] font-extrabold leading-[1.05] tracking-[-0.035em] text-white">{title}</h1>

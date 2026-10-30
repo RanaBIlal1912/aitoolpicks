@@ -1,7 +1,13 @@
 // Editorial overviews. These are written from each product's own public documentation and general,
 // well-known behaviour. We have NOT run lab tests or long-term trials, and the pages say so.
 // Prices are never typed here: they come from lib/prices.ts so there is one verified source.
+import extra from "../../content/reviews-extra.json";
+
+/** "documentation": written from the vendor's pages and our catalog record. "hands-on": a named person tested the product (see docs/REVIEW_TEMPLATE.md). Only the first exists today. */
+export type ReviewMethod = "documentation" | "hands-on";
+
 export type Review = {
+  method?: ReviewMethod;
   slug: string;
   toolId: string;
   title: string;
@@ -16,6 +22,7 @@ export type Review = {
 };
 
 export const REVIEWS: Review[] = [
+  ...(extra as Review[]),
   {
     slug: "chatgpt",
     toolId: "chatgpt",

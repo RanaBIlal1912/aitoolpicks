@@ -5,7 +5,8 @@
   "website": "https://www.intercom.com",
   "category": "marketing",
   "categories": [
-    "marketing"
+    "marketing",
+    "support"
   ],
   "tagline": "Customer service platform with the Fin AI agent",
   "description": "Intercom is a customer service platform with seat-based plans and an AI agent, Fin, billed per outcome.",

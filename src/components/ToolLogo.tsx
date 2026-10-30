@@ -1,18 +1,13 @@
-"use client";
-
-import { useState } from "react";
 import { logoFor } from "@/data/logos";
 import { withBase } from "@/lib/site";
 
 /**
- * The product's own icon in a fixed-size tile. Falls back to a plain letter mark when no verified logo exists or the file
- * fails to load, and never substitutes another product's image.
+ * The product's own icon in a fixed-size tile. Falls back to a plain letter mark when no verified logo exists, and never substitutes another product's image.
  */
 export default function ToolLogo({ id, name, hue, size = 48, alt = "" }: { id: string; name: string; hue: number; size?: number; alt?: string }) {
   const logo = logoFor(id);
-  const [failed, setFailed] = useState(false);
   const radius = Math.round(size * 0.26);
-  if (logo && !failed) {
+  if (logo) {
     const pad = Math.round(size * 0.16);
     return (
       <span
@@ -27,7 +22,6 @@ export default function ToolLogo({ id, name, hue, size = 48, alt = "" }: { id: s
           height={size - pad * 2}
           loading="lazy"
           decoding="async"
-          onError={() => setFailed(true)}
           className="h-full w-full object-contain"
         />
       </span>

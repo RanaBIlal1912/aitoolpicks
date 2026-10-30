@@ -322,5 +322,14 @@
   "billing": "monthly (750-task tier)",
   "source": "https://zapier.com/pricing",
   "checked": "2026-10-29"
+ },
+ "zendesk": {
+  "plan": "Support Team",
+  "amount": 25,
+  "currency": "USD",
+  "per": "agent per month",
+  "billing": "monthly",
+  "source": "https://www.zendesk.com/pricing/",
+  "checked": "2026-10-30"
  }
 }

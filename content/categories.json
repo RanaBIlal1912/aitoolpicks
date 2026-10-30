@@ -226,5 +226,56 @@
         "label": "Domains"
       }
     ]
+  },
+  {
+    "slug": "open-source",
+    "label": "Open-source AI",
+    "short": "Open source",
+    "cover": "rack",
+    "blurb": "AI frameworks, runtimes and models you can inspect and run yourself. Only projects whose licence we read in the official repository are listed here.",
+    "subs": [
+      {
+        "slug": "frameworks",
+        "label": "Agent and app frameworks"
+      },
+      {
+        "slug": "inference",
+        "label": "Inference engines"
+      },
+      {
+        "slug": "speech",
+        "label": "Speech models"
+      }
+    ]
+  },
+  {
+    "slug": "support",
+    "label": "Customer support AI",
+    "short": "Support",
+    "cover": "signal",
+    "blurb": "Helpdesks and chat tools that use AI to answer or route customer questions, with per-agent, per-conversation and per-resolution pricing spelled out.",
+    "subs": [
+      {
+        "slug": "helpdesk",
+        "label": "Helpdesk and ticketing"
+      },
+      {
+        "slug": "chat",
+        "label": "Live chat and chatbots"
+      }
+    ]
+  },
+  {
+    "slug": "analytics",
+    "label": "Business analytics AI",
+    "short": "Analytics",
+    "cover": "chip",
+    "blurb": "AI-assisted data analysis, notebooks and reporting tools for turning data into answers.",
+    "subs": [
+      {
+        "slug": "data-analysis",
+        "label": "Data analysis and notebooks"
+      }
+    ]
   }
 ]

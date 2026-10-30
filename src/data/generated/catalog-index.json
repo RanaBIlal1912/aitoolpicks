@@ -1141,6 +1141,51 @@
   "plans": []
  },
  {
+  "id": "hex",
+  "name": "Hex",
+  "vendor": "Hex",
+  "category": "analytics",
+  "subcategory": "data-analysis",
+  "categories": [
+   "analytics",
+   "research"
+  ],
+  "tagline": "AI analytics platform for data exploration",
+  "description": "Hex is described as an AI analytics platform for trusted data exploration, with agentic notebooks, conversational self-serve analytics and interactive data apps.",
+  "bestFor": "Data teams and Analysts",
+  "officialUrl": "https://hex.tech",
+  "hue": 275,
+  "keyFeature": "Agentic notebooks",
+  "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 36,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://hex.tech/pricing/",
+  "plans": [
+   {
+    "name": "Community",
+    "price": "Free"
+   },
+   {
+    "name": "Professional",
+    "price": "$36/mo"
+   },
+   {
+    "name": "Team",
+    "price": "$75/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
   "id": "heygen",
   "name": "HeyGen",
   "vendor": "HeyGen",
@@ -1330,7 +1375,8 @@
   "category": "marketing",
   "subcategory": "support",
   "categories": [
-   "marketing"
+   "marketing",
+   "support"
   ],
   "tagline": "Customer service platform with the Fin AI agent",
   "description": "Intercom is a customer service platform with seat-based plans and an AI agent, Fin, billed per outcome.",
@@ -1401,6 +1447,119 @@
    {
     "name": "Business",
     "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "julius",
+  "name": "Julius AI",
+  "vendor": "Julius",
+  "category": "analytics",
+  "subcategory": "data-analysis",
+  "categories": [
+   "analytics",
+   "research"
+  ],
+  "tagline": "AI workspace for data analysis, research and creation",
+  "description": "Julius is an AI workspace to analyse data and research, create presentations and reports, build websites and generate images and video, with credits by plan.",
+  "bestFor": "Analysts and Professionals",
+  "officialUrl": "https://julius.ai",
+  "hue": 25,
+  "keyFeature": "Analyse files and create charts and presentations",
+  "freePlan": true,
+  "trial": false,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": 20,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://julius.ai/pricing",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Plus",
+    "price": "$20/mo"
+   },
+   {
+    "name": "Pro",
+    "price": "$45/mo"
+   },
+   {
+    "name": "Business",
+    "price": "$450/mo"
+   },
+   {
+    "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "langchain",
+  "name": "LangChain",
+  "vendor": "LangChain",
+  "category": "open-source",
+  "subcategory": "frameworks",
+  "categories": [
+   "open-source"
+  ],
+  "tagline": "LangChain describes itself as the agent engineering platform",
+  "description": "LangChain describes itself as the agent engineering platform. Open-source software; the repository lists the licence as MIT.",
+  "bestFor": "Developers",
+  "officialUrl": "https://github.com/langchain-ai/langchain",
+  "hue": 160,
+  "keyFeature": "Open-source framework for building agents and LLM applications",
+  "freePlan": true,
+  "trial": false,
+  "openSource": "open-source",
+  "added": "2026-10-30",
+  "pricingModel": "open-source",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://github.com/langchain-ai/langchain",
+  "plans": [
+   {
+    "name": "Self-hosted (open source)",
+    "price": "Free"
+   }
+  ]
+ },
+ {
+  "id": "langgraph",
+  "name": "LangGraph",
+  "vendor": "LangChain",
+  "category": "open-source",
+  "subcategory": "frameworks",
+  "categories": [
+   "open-source"
+  ],
+  "tagline": "LangGraph is a library to build resilient agents",
+  "description": "LangGraph is a library to build resilient agents. Open-source software; the repository lists the licence as MIT.",
+  "bestFor": "Developers",
+  "officialUrl": "https://github.com/langchain-ai/langgraph",
+  "hue": 150,
+  "keyFeature": "Open-source library for building agents",
+  "freePlan": true,
+  "trial": false,
+  "openSource": "open-source",
+  "added": "2026-10-30",
+  "pricingModel": "open-source",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://github.com/langchain-ai/langgraph",
+  "plans": [
+   {
+    "name": "Self-hosted (open source)",
+    "price": "Free"
    }
   ]
  },
@@ -1494,6 +1653,39 @@
    {
     "name": "Team Growth",
     "price": "$144/mo"
+   }
+  ]
+ },
+ {
+  "id": "llamacpp",
+  "name": "llama.cpp",
+  "vendor": "ggml-org",
+  "category": "open-source",
+  "subcategory": "inference",
+  "categories": [
+   "open-source",
+   "models"
+  ],
+  "tagline": "llama.cpp is LLM inference in C/C++",
+  "description": "llama.cpp is LLM inference in C/C++. Open-source software; the repository lists the licence as MIT.",
+  "bestFor": "Developers and Hobbyists",
+  "officialUrl": "https://github.com/ggml-org/llama.cpp",
+  "hue": 30,
+  "keyFeature": "Open-source LLM inference written in C/C++",
+  "freePlan": true,
+  "trial": false,
+  "openSource": "open-source",
+  "added": "2026-10-30",
+  "pricingModel": "open-source",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://github.com/ggml-org/llama.cpp",
+  "plans": [
+   {
+    "name": "Self-hosted (open source)",
+    "price": "Free"
    }
   ]
  },
@@ -1926,7 +2118,8 @@
   "subcategory": "local-models",
   "categories": [
    "models",
-   "coding"
+   "coding",
+   "open-source"
   ],
   "tagline": "Run models locally, with optional cloud models",
   "description": "Ollama is a tool for running large language models on your own hardware, with optional paid plans for cloud-hosted models. Its source code is published on GitHub under the MIT licence.",
@@ -2494,6 +2687,59 @@
   ]
  },
  {
+  "id": "tidio",
+  "name": "Tidio",
+  "vendor": "Tidio",
+  "category": "support",
+  "subcategory": "chat",
+  "categories": [
+   "support",
+   "marketing"
+  ],
+  "tagline": "Live chat and an AI agent for customer conversations",
+  "description": "Tidio combines AI and human conversations on one platform, with the Lyro AI Agent answering common questions and no-code Flows for conversion paths.",
+  "bestFor": "Small businesses and Online stores",
+  "officialUrl": "https://www.tidio.com",
+  "hue": 215,
+  "keyFeature": "Lyro AI Agent answers common questions and performs recurring tasks",
+  "freePlan": true,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "freemium",
+  "pricingStatus": "partial",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.tidio.com/pricing/",
+  "plans": [
+   {
+    "name": "Free",
+    "price": "Free"
+   },
+   {
+    "name": "Starter",
+    "price": "$24.17/mo"
+   },
+   {
+    "name": "Growth",
+    "price": "$49.17/mo"
+   },
+   {
+    "name": "Plus",
+    "price": "See note"
+   },
+   {
+    "name": "Premium",
+    "price": "Custom pricing"
+   },
+   {
+    "name": "Lyro AI Agent add-on",
+    "price": "See note"
+   }
+  ]
+ },
+ {
   "id": "together",
   "name": "Together AI",
   "vendor": "Together AI",
@@ -2578,6 +2824,72 @@
    {
     "name": "Enterprise",
     "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "vllm",
+  "name": "vLLM",
+  "vendor": "vLLM project",
+  "category": "open-source",
+  "subcategory": "inference",
+  "categories": [
+   "open-source",
+   "models"
+  ],
+  "tagline": "vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs",
+  "description": "vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs. Open-source software; the repository lists the licence as Apache-2.0.",
+  "bestFor": "Developers and ML engineers",
+  "officialUrl": "https://github.com/vllm-project/vllm",
+  "hue": 190,
+  "keyFeature": "High-throughput LLM inference and serving engine",
+  "freePlan": true,
+  "trial": false,
+  "openSource": "open-source",
+  "added": "2026-10-30",
+  "pricingModel": "open-source",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://github.com/vllm-project/vllm",
+  "plans": [
+   {
+    "name": "Self-hosted (open source)",
+    "price": "Free"
+   }
+  ]
+ },
+ {
+  "id": "whisper",
+  "name": "Whisper",
+  "vendor": "OpenAI",
+  "category": "open-source",
+  "subcategory": "speech",
+  "categories": [
+   "open-source",
+   "audio"
+  ],
+  "tagline": "Whisper is a speech recognition model published by OpenAI as open source",
+  "description": "Whisper is a speech recognition model published by OpenAI as open source. Open-source software; the repository lists the licence as MIT.",
+  "bestFor": "Developers and Researchers",
+  "officialUrl": "https://github.com/openai/whisper",
+  "hue": 210,
+  "keyFeature": "Open-source speech recognition model",
+  "freePlan": true,
+  "trial": false,
+  "openSource": "open-source",
+  "added": "2026-10-30",
+  "pricingModel": "open-source",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://github.com/openai/whisper",
+  "plans": [
+   {
+    "name": "Self-hosted (open source)",
+    "price": "Free"
    }
   ]
  },
@@ -2711,6 +3023,50 @@
    },
    {
     "name": "Enterprise",
+    "price": "Custom pricing"
+   }
+  ]
+ },
+ {
+  "id": "zendesk",
+  "name": "Zendesk",
+  "vendor": "Zendesk",
+  "category": "support",
+  "subcategory": "helpdesk",
+  "categories": [
+   "support"
+  ],
+  "tagline": "Customer service platform with AI agents",
+  "description": "Zendesk brings email, messaging, phone and social conversations into one place, with AI agents for resolving service issues across channels.",
+  "bestFor": "Support teams and Businesses",
+  "officialUrl": "https://www.zendesk.com",
+  "hue": 160,
+  "keyFeature": "Ticketing across email, messaging, phone and social",
+  "freePlan": null,
+  "trial": true,
+  "openSource": null,
+  "added": "2026-10-30",
+  "pricingModel": "free-trial",
+  "pricingStatus": "verified",
+  "fromUsd": null,
+  "verified": "2026-10-30",
+  "checked": "2026-10-30",
+  "pricingSource": "https://www.zendesk.com/pricing/",
+  "plans": [
+   {
+    "name": "Support Team",
+    "price": "$25/mo monthly · $19/mo yearly"
+   },
+   {
+    "name": "Suite Team",
+    "price": "$69/mo monthly · $55/mo yearly"
+   },
+   {
+    "name": "Suite Professional",
+    "price": "$149/mo monthly · $115/mo yearly"
+   },
+   {
+    "name": "Suite Enterprise + Copilot",
     "price": "Custom pricing"
    }
   ]

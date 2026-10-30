@@ -138,3 +138,48 @@ describe("news images and blog topics", () => {
     expect(html).toContain(`$${pro.monthly}/month`);
   });
 });
+
+describe("categories, ecosystem and reviews added in the latest round", () => {
+  it("has standalone open-source, support and analytics categories with several tools each", () => {
+    for (const slug of ["open-source", "support", "analytics"]) {
+      expect(CATEGORIES.some((c) => c.slug === slug), slug).toBe(true);
+      expect(toolsInCategory(slug).length, slug).toBeGreaterThanOrEqual(2);
+    }
+  });
+
+  it("only lists a tool as primary open source when its record carries an open-source licence read from the repository", () => {
+    for (const t of TOOLS.filter((x) => x.category === "open-source")) {
+      expect(t.openSource, t.id).toBe("open-source");
+    }
+  });
+
+  it("links every verified model to an announcement source, a news story and existing tools", async () => {
+    const { MODELS, COMPANIES } = await import("@/data/companies");
+    const { getNews } = await import("@/data/news");
+    expect(MODELS.length).toBeGreaterThan(0);
+    for (const m of MODELS) {
+      expect(m.sources.length, m.id).toBeGreaterThan(0);
+      expect(m.sources[0].url, m.id).toMatch(/^https:\/\//);
+      expect(getNews(m.news), m.id).toBeTruthy();
+      for (const id of m.tools) expect(TOOLS.some((t) => t.id === id), `${m.id}: ${id}`).toBe(true);
+      expect(COMPANIES.some((c) => c.name === m.company), m.company).toBe(true);
+    }
+    expect(COMPANIES.reduce((n, c) => n + c.tools.length, 0)).toBe(TOOLS.length);
+  });
+
+  it("labels every review as documentation-based unless it names who tested it", async () => {
+    const { REVIEWS } = await import("@/data/reviews");
+    expect(REVIEWS.length).toBeGreaterThanOrEqual(15);
+    for (const r of REVIEWS) {
+      const method = r.method ?? "documentation";
+      expect(["documentation", "hands-on"]).toContain(method);
+      if (method === "documentation") expect(JSON.stringify(r).toLowerCase()).not.toContain("we tested");
+    }
+  });
+
+  it("shows no Trending data while content/trending.json does not exist", async () => {
+    const { getTrending } = await import("@/lib/trending");
+    expect(fs.existsSync(path.join(root, "content", "trending.json"))).toBe(false);
+    expect(getTrending()).toBeNull();
+  });
+});

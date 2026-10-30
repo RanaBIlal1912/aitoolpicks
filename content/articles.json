@@ -192,5 +192,68 @@
     "cat": "Beginner guides",
     "blurb": "Define the job, shortlist three tools, test the free plans and read the fine print before paying.",
     "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-research-tools-compared",
+    "title": "AI Research Tools Compared: Elicit, Consensus, Scite, NotebookLM and Perplexity",
+    "description": "Five tools for finding and checking sources, compared by what they are for, free access and published plans.",
+    "icon": "🔬",
+    "cat": "AI research",
+    "blurb": "Finding papers, checking citations and querying your own sources: which tool does which job.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-automation-tools-compared",
+    "title": "AI Automation Tools Compared: Zapier, Make and n8n",
+    "description": "Three workflow automation tools compared by pricing model, free access and who each suits.",
+    "icon": "⚙️",
+    "cat": "AI automation",
+    "blurb": "How Zapier, Make and n8n charge and who they fit, from the vendors' own pricing pages.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-customer-support-tools-compared",
+    "title": "AI Customer Support Tools Compared: Intercom, Zendesk and Tidio",
+    "description": "Three customer support platforms with AI agents compared by how they price seats, conversations and resolutions.",
+    "icon": "💬",
+    "cat": "Comparison",
+    "blurb": "Per-agent, per-conversation and per-resolution pricing: how the main support tools charge for AI.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-data-analysis-tools-compared",
+    "title": "AI Data Analysis Tools Compared: Hex and Julius",
+    "description": "Two AI analytics tools compared by what they do, free access and published plans.",
+    "icon": "📊",
+    "cat": "AI for business",
+    "blurb": "Hex and Julius analyse data with AI help; here is how they differ and what to check.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-seo-and-writing-tools-for-marketing",
+    "title": "AI Tools for Marketing Copy and SEO: Jasper, Writesonic and Surfer",
+    "description": "Three marketing writing and SEO tools compared by what they do and how they are priced.",
+    "icon": "📣",
+    "cat": "AI marketing",
+    "blurb": "Copy generation versus SEO optimisation: which marketing tool does which job.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "ai-privacy-and-security-checklist",
+    "title": "A Privacy and Security Checklist Before You Use an AI Tool at Work",
+    "description": "Questions to answer before pasting company or customer data into an AI tool: training use, retention, access, sharing and rules.",
+    "icon": "🔐",
+    "cat": "AI security and privacy",
+    "blurb": "Eight questions to answer before you put work data into any AI tool.",
+    "date": "2026-10-30"
+  },
+  {
+    "slug": "open-source-ai-tools-explained",
+    "title": "Open-Source AI Tools Explained: Ollama, llama.cpp, vLLM, LangChain and Whisper",
+    "description": "What open source means for AI tools, how it differs from source-available and open weights, and five projects whose licences we read.",
+    "icon": "🧱",
+    "cat": "AI for developers",
+    "blurb": "Open source, source-available and open weights are different things; here are five projects and their licences.",
+    "date": "2026-10-30"
   }
 ]

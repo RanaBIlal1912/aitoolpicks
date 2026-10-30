@@ -99,6 +99,10 @@
   "Groq",
   "https://groq.com"
  ],
+ "hex": [
+  "Hex",
+  "https://hex.tech"
+ ],
  "heygen": [
   "HeyGen",
   "https://www.heygen.com"
@@ -123,6 +127,18 @@
   "Jasper",
   "https://www.jasper.ai"
  ],
+ "julius": [
+  "Julius AI",
+  "https://julius.ai"
+ ],
+ "langchain": [
+  "LangChain",
+  "https://github.com/langchain-ai/langchain"
+ ],
+ "langgraph": [
+  "LangGraph",
+  "https://github.com/langchain-ai/langgraph"
+ ],
  "langsmith": [
   "LangSmith",
   "https://www.langchain.com/langsmith"
@@ -130,6 +146,10 @@
  "leonardo": [
   "Leonardo.Ai",
   "https://leonardo.ai"
+ ],
+ "llamacpp": [
+  "llama.cpp",
+  "https://github.com/ggml-org/llama.cpp"
  ],
  "lovable": [
   "Lovable",
@@ -219,6 +239,10 @@
   "Synthesia",
   "https://www.synthesia.io"
  ],
+ "tidio": [
+  "Tidio",
+  "https://www.tidio.com"
+ ],
  "together": [
   "Together AI",
   "https://www.together.ai"
@@ -226,6 +250,14 @@
  "v0": [
   "v0",
   "https://v0.app"
+ ],
+ "vllm": [
+  "vLLM",
+  "https://github.com/vllm-project/vllm"
+ ],
+ "whisper": [
+  "Whisper",
+  "https://github.com/openai/whisper"
  ],
  "wisprflow": [
   "Wispr Flow",
@@ -238,5 +270,9 @@
  "zapier": [
   "Zapier",
   "https://zapier.com"
+ ],
+ "zendesk": [
+  "Zendesk",
+  "https://www.zendesk.com"
  ]
 }

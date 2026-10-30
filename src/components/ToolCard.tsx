@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { PRICING_MODEL_LABEL, getCategory, type Tool } from "@/data/tools";
+import { catColors } from "@/data/palette";
 import AffLink from "./AffLink";
 import TiltCard from "./TiltCard";
 import ToolLogo from "./ToolLogo";
@@ -39,9 +40,11 @@ export default function ToolCard({
   const cat = getCategory(tool.category);
   const sub = cat?.subs.find((s) => s.slug === tool.subcategory);
   const st = STATUS[tool.pricingStatus];
+  const [ca, cb] = catColors(tool.category);
   const free = tool.freePlan === true ? "Free plan" : tool.freePlan === false ? "No free plan" : "Not stated";
   return (
     <TiltCard hue={tool.hue} max={6} className="tool-card group flex h-full flex-col p-6">
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${ca}, ${cb})` }} />
       <div className="flex items-start gap-4">
         <ToolLogo id={tool.id} name={tool.name} hue={tool.hue} size={48} />
         <div className="min-w-0">
@@ -69,7 +72,11 @@ export default function ToolCard({
       )}
 
       <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-        {cat && <span className={PILL}>{sub ? `${cat.short} · ${sub.label}` : cat.short}</span>}
+        {cat && (
+          <span className="rounded-full border px-2.5 py-1 text-white" style={{ background: `${ca}26`, borderColor: `${ca}80` }}>
+            {sub ? `${cat.short} · ${sub.label}` : cat.short}
+          </span>
+        )}
         <span className={`rounded-full border px-2.5 py-1 ${st.cls}`}>{st.label}</span>
         <span className={PILL}>{PRICING_MODEL_LABEL[tool.pricingModel]}</span>
         {tool.trial && <span className={PILL}>Free trial</span>}
@@ -93,7 +100,7 @@ export default function ToolCard({
 
       <div className="relative z-10 mt-auto flex flex-wrap items-center gap-3 pt-6">
         <span className="btn-primary btn-sm pointer-events-none" aria-hidden="true">
-          Details &amp; pricing
+          Explore
         </span>
         <AffLink id={tool.id} className="btn-ghost btn-sm">
           Visit site

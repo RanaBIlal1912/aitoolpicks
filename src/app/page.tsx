@@ -7,12 +7,15 @@ import { CATEGORIES, TOOLS, getTool } from "@/data/tools";
 import type { Tool } from "@/data/catalog-types";
 import { ROUNDUPS } from "@/data/roundups";
 import { SITE, absUrl } from "@/lib/site";
+import { getTrending } from "@/lib/trending";
 import ArticleCard from "@/components/ArticleCard";
 import HeroSearch from "@/components/HeroSearch";
 import { formatDate } from "@/components/NewsCard";
 import NewsVisual from "@/components/NewsVisual";
 import Reveal from "@/components/Reveal";
-import ToolCard from "@/components/ToolCard";
+import ToolTile from "@/components/ToolTile";
+import HeroVisual from "@/components/hero/HeroVisual";
+import { catColors } from "@/data/palette";
 import ToolLogo from "@/components/ToolLogo";
 import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
@@ -45,22 +48,6 @@ const SUGGESTIONS = [
   { label: "Voiceovers", q: "create AI voiceovers" },
 ];
 
-function MiniTool({ t, note }: { t: Tool; note: string }) {
-  return (
-    <Link
-      href={`/tools/${t.id}/`}
-      className="glass flex h-full items-center gap-4 rounded-2xl p-4 no-underline transition-colors hover:border-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
-    >
-      <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
-      <span className="min-w-0">
-        <span className="block font-bold text-white">{t.name}</span>
-        <span className="line-clamp-1 block text-sm text-muted">{t.tagline}</span>
-        <span className="mt-0.5 block text-xs text-soft">{note}</span>
-      </span>
-    </Link>
-  );
-}
-
 function SectionHead({ eyebrow, title, lead, href, cta }: { eyebrow: string; title: string; lead?: string; href?: string; cta?: string }) {
   return (
     <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
@@ -82,6 +69,7 @@ export default function Home() {
   const featured = ["claude", "github-copilot", "runway", "elevenlabs", "notion", "perplexity"].map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t);
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
   const latest = GUIDES.filter((g) => g.slug !== lead.slug && !g.region).slice(0, 3); // regional guides stay on the blog
+  const trending = getTrending();
   const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
   // Free tools: a free plan is documented on the official page and the pricing record is fully verified.
   const free = TOOLS.filter((t) => t.freePlan === true && t.pricingStatus === "verified").slice(0, 6);
@@ -90,11 +78,11 @@ export default function Home() {
 
   return (
     <>
-      <section id="hero" className="relative isolate">
-        <div className="relative mx-auto flex min-h-[min(80vh,720px)] max-w-6xl flex-col justify-center px-5 pb-14 pt-14">
-          <div className="max-w-2xl">
+      <section id="hero" className="relative isolate overflow-hidden">
+        <div className="relative mx-auto grid min-h-[min(84vh,760px)] max-w-6xl items-center gap-10 px-5 pb-14 pt-12 md:grid-cols-[1.15fr_1fr]">
+          <div>
             <span className="eyebrow">AI tool directory and magazine</span>
-            <h1 className="mt-6 text-[clamp(2.5rem,6.6vw,4.9rem)] font-extrabold leading-[1.03] tracking-[-0.04em] text-white">
+            <h1 className="mt-6 text-[clamp(2.6rem,6.8vw,5rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-white">
               Find the AI tool that fits, and <span className="gradient-text">what it really costs</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-soft md:text-xl">
@@ -102,17 +90,26 @@ export default function Home() {
               date we checked it.
             </p>
             <HeroSearch suggestions={SUGGESTIONS} />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/tools/" className="btn-primary">
+                Explore all tools
+              </Link>
+              <Link href="/news/" className="btn-ghost">
+                Latest AI news
+              </Link>
+            </div>
           </div>
+          <HeroVisual />
         </div>
       </section>
 
       <div className="mx-auto max-w-6xl px-5">
         <Reveal as="section" className="pt-6">
           <SectionHead eyebrow="Editor's picks" title="Good places to start" lead="Well-documented tools across the main jobs people use AI for." href="/tools/" cta="Browse every tool" />
-          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((t) => (
-              <li key={t.id} className="[perspective:1000px]">
-                <ToolCard tool={t} />
+              <li key={t.id}>
+                <ToolTile tool={t} note={t.keyFeature ? undefined : undefined} />
               </li>
             ))}
           </ul>
@@ -120,12 +117,32 @@ export default function Home() {
 
         <RecentStrip />
 
+        {trending && (
+          <Reveal as="section" className="pt-24">
+            <SectionHead
+              eyebrow="Trending"
+              title="Most viewed tool pages"
+              lead={`Measured page views from ${trending.period.from} to ${trending.period.to} (${trending.source}; ${trending.method}).`}
+            />
+            <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {trending.items.map((i) => {
+                const t = getTool(i.id);
+                return t ? (
+                  <li key={i.id}>
+                    <ToolTile tool={t} note={`${i.views} views`} />
+                  </li>
+                ) : null;
+              })}
+            </ul>
+          </Reveal>
+        )}
+
         <Reveal as="section" className="pt-24">
           <SectionHead eyebrow="Free to start" title="AI tools with a free plan" lead="A free plan is documented on the vendor's official page and its pricing record is fully verified." href="/tools/?free=1" cta="All free tools" />
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {free.map((t) => (
               <li key={t.id}>
-                <MiniTool t={t} note="Free plan documented" />
+                <ToolTile tool={t} note="Free plan documented" />
               </li>
             ))}
           </ul>
@@ -136,7 +153,7 @@ export default function Home() {
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {recent.map((t) => (
               <li key={t.id}>
-                <MiniTool t={t} note={`Added ${t.added}`} />
+                <ToolTile tool={t} note={`Added ${t.added}`} />
               </li>
             ))}
           </ul>
@@ -145,22 +162,26 @@ export default function Home() {
         <Reveal as="section" className="pt-24">
           <SectionHead eyebrow="Explore" title="Browse by what you need to do" href="/tools/" cta="Search all tools" />
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CATEGORIES.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/tools/category/${c.slug}/`}
-                  className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-5 no-underline transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
-                >
-                  <span className="flex items-center justify-between font-bold text-white">
-                    {c.label}
-                    <span aria-hidden="true" className="text-muted transition-transform duration-200 group-hover:translate-x-1 group-hover:text-white">
-                      →
+            {CATEGORIES.map((c) => {
+              const [ca, cb] = catColors(c.slug);
+              return (
+                <li key={c.slug}>
+                  <Link
+                    href={`/tools/category/${c.slug}/`}
+                    className="tile group flex h-full flex-col p-5 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0 opacity-[0.16] transition-opacity duration-300 group-hover:opacity-30" style={{ background: `linear-gradient(135deg, ${ca}, ${cb})` }} />
+                    <span className="relative flex items-center justify-between font-bold text-white">
+                      {c.label}
+                      <span aria-hidden="true" className="text-soft transition-transform duration-200 group-hover:translate-x-1">
+                        →
+                      </span>
                     </span>
-                  </span>
-                  <span className="mt-2 text-sm text-muted">{c.subs.map((s) => s.label).join(" · ")}</span>
-                </Link>
-              </li>
-            ))}
+                    <span className="relative mt-2 text-sm text-soft">{c.subs.map((x) => x.label).join(" · ")}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </Reveal>
 
@@ -216,7 +237,7 @@ export default function Home() {
                     {r.picks.slice(0, 4).map((p) => {
                       const t = getTool(p.id);
                       return t ? (
-                        <span key={p.id} className="rounded-xl ring-2 ring-[#0a0e18]">
+                        <span key={p.id} className="rounded-xl ring-2 ring-[#11152A]">
                           <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
                         </span>
                       ) : null;

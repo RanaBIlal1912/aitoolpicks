@@ -310,7 +310,7 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
 
       {picked.length > 0 && (
         <div
-          className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-[min(94vw,640px)] items-center justify-between gap-3 rounded-2xl border border-white/15 bg-[#0b0f1c]/95 px-5 py-3 shadow-2xl backdrop-blur"
+          className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-[min(94vw,640px)] items-center justify-between gap-3 rounded-2xl border border-white/15 bg-[#11152A]/95 px-5 py-3 shadow-2xl backdrop-blur"
           role="region"
           aria-label="Compare selection"
         >

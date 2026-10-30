@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = pageMeta({
   title: "AI Tool Reviews: pros, cons and who each tool suits",
   description:
-    "Plain-English overviews of ChatGPT, Grammarly, Notion, Canva and Hostinger with pros, cons, use cases and prices checked against official pages.",
+    "Documentation-based overviews of AI tools with strengths, limitations, use cases, alternatives and prices checked against official pages. None are scored or hands-on tested.",
   path: "/reviews/",
 });
 

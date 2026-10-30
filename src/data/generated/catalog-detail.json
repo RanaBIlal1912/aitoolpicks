@@ -872,6 +872,40 @@
   "freeDetails": null,
   "trialDetails": null
  },
+ "hex": {
+  "features": [
+   "Agentic notebooks",
+   "Conversational self-serve analytics",
+   "Interactive data apps",
+   "Enterprise: OIDC SSO, audit logs and bring-your-own-key"
+  ],
+  "useCases": [
+   "Exploring and analysing data with AI help",
+   "Publishing interactive data apps"
+  ],
+  "audience": [
+   "Data teams",
+   "Analysts"
+  ],
+  "strengths": [
+   "A free Community plan",
+   "Professional is free for students and educators (per the FAQ)"
+  ],
+  "limitations": [
+   "Prices are per Editor; the billing interval behind them was not stated",
+   "Community is limited to small compute and 5 published apps"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "julius",
+   "notebooklm"
+  ],
+  "api": null,
+  "freeDetails": "Community is free: a Hex agent trial, small compute, up to 5 published apps, 7-day version history, up to 3 shared collections and 3 shared components.",
+  "trialDetails": "Team: 14 days free (no card, per the FAQ); an extended 30-day trial of Hex Team is linked."
+ },
  "heygen": {
   "features": [
    "Custom video avatars",
@@ -1061,6 +1095,103 @@
   "freeDetails": null,
   "trialDetails": "7-day free trial of the Pro plan; trial limits are not stated."
  },
+ "julius": {
+  "features": [
+   "Analyse files and create charts and presentations",
+   "Reports and dashboards from your data",
+   "Data connectors on higher plans (Google Drive, OneDrive, SharePoint, Snowflake, BigQuery, Postgres)",
+   "Websites, images and video with limited use on lower plans"
+  ],
+  "useCases": [
+   "Analysing spreadsheets and data files",
+   "Producing reports and presentations from data"
+  ],
+  "audience": [
+   "Analysts",
+   "Professionals",
+   "Teams"
+  ],
+  "strengths": [
+   "A free plan with daily credits",
+   "Credits and connectors are listed per plan"
+  ],
+  "limitations": [
+   "Usage is metered in credits",
+   "The page did not make clear whether the monthly prices shown assume monthly or annual billing"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "hex",
+   "notebooklm"
+  ],
+  "api": null,
+  "freeDetails": "Free: $0 per month with free daily credits, Julius Lite models and limited use of the presentation, image, video and website tools.",
+  "trialDetails": null
+ },
+ "langchain": {
+  "features": [
+   "Open-source framework for building agents and LLM applications",
+   "Part of the LangChain ecosystem alongside LangGraph and LangSmith"
+  ],
+  "useCases": [
+   "Building agent applications in code",
+   "Connecting models to tools and data"
+  ],
+  "audience": [
+   "Developers"
+  ],
+  "strengths": [
+   "Source code and licence are public in the official repository",
+   "No licence fee for the software itself"
+  ],
+  "limitations": [
+   "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+   "We have not run or benchmarked it"
+  ],
+  "platforms": [
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "langgraph",
+   "n8n",
+   "langsmith"
+  ],
+  "api": null,
+  "freeDetails": "The software is free to use under its MIT licence; infrastructure and any hosted offerings are separate.",
+  "trialDetails": null
+ },
+ "langgraph": {
+  "features": [
+   "Open-source library for building agents",
+   "Documented at docs.langchain.com"
+  ],
+  "useCases": [
+   "Building long-running agent workflows in code"
+  ],
+  "audience": [
+   "Developers"
+  ],
+  "strengths": [
+   "Source code and licence are public in the official repository",
+   "No licence fee for the software itself"
+  ],
+  "limitations": [
+   "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+   "We have not run or benchmarked it"
+  ],
+  "platforms": [
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "langchain",
+   "n8n"
+  ],
+  "api": null,
+  "freeDetails": "The software is free to use under its MIT licence; infrastructure and any hosted offerings are separate.",
+  "trialDetails": null
+ },
  "langsmith": {
   "features": [
    "Trace retention of 14 days (base) or 180 days (extended)",
@@ -1121,6 +1252,36 @@
   ],
   "api": "API pricing is listed (see the pricing section)",
   "freeDetails": "Free: 150 fast tokens per day, Auto model only, public creations, 1 personal collection.",
+  "trialDetails": null
+ },
+ "llamacpp": {
+  "features": [
+   "Open-source LLM inference written in C/C++"
+  ],
+  "useCases": [
+   "Running language models locally"
+  ],
+  "audience": [
+   "Developers",
+   "Hobbyists"
+  ],
+  "strengths": [
+   "Source code and licence are public in the official repository",
+   "No licence fee for the software itself"
+  ],
+  "limitations": [
+   "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+   "We have not run or benchmarked it"
+  ],
+  "platforms": [
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "ollama",
+   "vllm"
+  ],
+  "api": null,
+  "freeDetails": "The software is free to use under its MIT licence; infrastructure and any hosted offerings are separate.",
   "trialDetails": null
  },
  "lovable": {
@@ -1887,6 +2048,40 @@
   "freeDetails": "Basic: 500 credits per month, 10 minutes of Studio video creation or dubbing.",
   "trialDetails": null
  },
+ "tidio": {
+  "features": [
+   "Lyro AI Agent answers common questions and performs recurring tasks",
+   "Flows: no-code conversion paths triggered at key moments",
+   "Live chat with human agents"
+  ],
+  "useCases": [
+   "Answering customer questions automatically",
+   "Handing conversations to a human agent"
+  ],
+  "audience": [
+   "Small businesses",
+   "Online stores",
+   "Support teams"
+  ],
+  "strengths": [
+   "A free plan and a 7-day trial without a card (per the page)",
+   "Plan limits are stated as numbers of billable conversations"
+  ],
+  "limitations": [
+   "Annual prices were not stated on the page we read",
+   "Lyro AI conversations are sold as an add-on beyond a small free allowance"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "intercom",
+   "zendesk"
+  ],
+  "api": null,
+  "freeDetails": "Free: 50 billable conversations and 10 seats; the first 50 Lyro AI conversations are free (lifetime); the first 100 visitors reached via Flows are free.",
+  "trialDetails": "A 7-day free trial is offered without a credit card; the account then downgrades to Free unless upgraded."
+ },
  "together": {
   "features": [
    "Serverless inference billed per 1M tokens",
@@ -1955,6 +2150,71 @@
   ],
   "api": "Per 1M tokens (input / cache write / cache read / output): v0 Mini $0.20 / $0.25 / $0.02 / $1.20; v0 Pro $2 / $2.50 / $0.20 / $10; v0 Max $5 / $6.25 / $0.50 / $25; v0 Max Fast $10 / $12.50 / $1 / $50.",
   "freeDetails": "7 messages per day.",
+  "trialDetails": null
+ },
+ "vllm": {
+  "features": [
+   "High-throughput LLM inference and serving engine",
+   "Memory-efficient serving"
+  ],
+  "useCases": [
+   "Serving open models on your own GPUs",
+   "Running an inference endpoint"
+  ],
+  "audience": [
+   "Developers",
+   "ML engineers"
+  ],
+  "strengths": [
+   "Source code and licence are public in the official repository",
+   "No licence fee for the software itself"
+  ],
+  "limitations": [
+   "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+   "We have not run or benchmarked it"
+  ],
+  "platforms": [
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "ollama",
+   "llamacpp",
+   "together",
+   "fireworks"
+  ],
+  "api": null,
+  "freeDetails": "The software is free to use under its Apache-2.0 licence; infrastructure and any hosted offerings are separate.",
+  "trialDetails": null
+ },
+ "whisper": {
+  "features": [
+   "Open-source speech recognition model"
+  ],
+  "useCases": [
+   "Transcribing speech to text on your own machine"
+  ],
+  "audience": [
+   "Developers",
+   "Researchers"
+  ],
+  "strengths": [
+   "Source code and licence are public in the official repository",
+   "No licence fee for the software itself"
+  ],
+  "limitations": [
+   "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+   "We have not run or benchmarked it"
+  ],
+  "platforms": [
+   "Self-hosted"
+  ],
+  "alternatives": [
+   "deepgram",
+   "assemblyai",
+   "otter"
+  ],
+  "api": null,
+  "freeDetails": "The software is free to use under its MIT licence; infrastructure and any hosted offerings are separate.",
   "trialDetails": null
  },
  "wisprflow": {
@@ -2059,5 +2319,38 @@
   "api": "AI add-ons are separate from the task pool: Agents (400 activities per month free, 1,500 on Pro, from about $33.33 per month billed annually) and Chatbots (2 free; about 5 at $13.33 or 20 at $66.67 per month billed annually).",
   "freeDetails": "100 tasks per month.",
   "trialDetails": "14-day Professional trial for new accounts, no credit card required."
+ },
+ "zendesk": {
+  "features": [
+   "Ticketing across email, messaging, phone and social",
+   "AI agents included in Suite and Support plans, billed by automated resolution",
+   "Copilot, Workforce Engagement and Contact Center add-ons"
+  ],
+  "useCases": [
+   "Running a customer service desk",
+   "Automating answers with AI agents"
+  ],
+  "audience": [
+   "Support teams",
+   "Businesses"
+  ],
+  "strengths": [
+   "Clear per-agent plan prices with monthly and yearly options",
+   "A 14-day trial of the Suite Professional features and a startup programme are described"
+  ],
+  "limitations": [
+   "Priced per agent, and AI resolutions are billed on top of the included amount",
+   "Enterprise pricing is by talking to sales"
+  ],
+  "platforms": [
+   "Web"
+  ],
+  "alternatives": [
+   "intercom",
+   "tidio"
+  ],
+  "api": "AI agents are billed per automated resolution: $1.50 each when committed and $2.00 each pay-as-you-go, on all three listed plans.",
+  "freeDetails": null,
+  "trialDetails": "A 14-day trial with access to Suite Professional features; Zendesk for Startups offers a 6-month trial of the Suite for up to 50 agents for early-stage startups."
  }
 }

@@ -1,0 +1,285 @@
+[
+  {
+    "slug": "claude",
+    "toolId": "claude",
+    "title": "Claude overview: what it does, who it suits and what it costs",
+    "summary": "Claude is Anthropic's AI assistant, used to write, analyse, work through problems and handle longer documents, with separate plans for individuals, teams and enterprises.",
+    "useCases": [
+      "Writing and editing",
+      "Analysing documents and files",
+      "Working through coding problems"
+    ],
+    "pros": [
+      "Free plan includes web search, file creation and memory",
+      "Team and Enterprise plans add central billing, SSO and admin controls"
+    ],
+    "cons": [
+      "Usage limits apply on every plan and reset on a rolling five-hour window; paid plans add weekly limits",
+      "The pricing page gives no fixed message count"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: individuals, teams of 2 to 150 users (team plan), large organisations (enterprise).",
+    "skipIf": "The first limitation in our record matters to you: Usage limits apply on every plan and reset on a rolling five-hour window; paid plans add weekly limits.",
+    "pricingNote": "Pricing is verified as of 2026-10-29, in the vendor's own currency. Published plans: Free is free; Pro is $20 per month billed monthly or $17 per month billed yearly; Max is $100 per month; Team (Standard seat) is $25 per month billed monthly or $20 per month billed yearly; Team (Premium seat) is $125 per month billed monthly or $100 per month billed yearly.",
+    "verdict": "From its official pages, Claude is aI assistant from Anthropic. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "perplexity",
+    "toolId": "perplexity",
+    "title": "Perplexity overview: what it does, who it suits and what it costs",
+    "summary": "Perplexity is an AI answer engine that searches the web and shows the sources behind an answer, so you can open and check them.",
+    "useCases": [
+      "Quick research where you want sources",
+      "Getting oriented on an unfamiliar topic",
+      "Finding pages to read in full"
+    ],
+    "pros": [
+      "Shows sources for answers",
+      "Paid Pro tier adds extended Pro Search and file uploads"
+    ],
+    "cons": [
+      "Free usage is limited",
+      "A summary can still misread a source, so open the links for anything important"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: researchers, students, professionals who need cited answers.",
+    "skipIf": "The first limitation in our record matters to you: Free usage is limited.",
+    "pricingNote": "Pricing is verified as of 2026-10-30, in the vendor's own currency. Published plans: Free is free; Pro is $17 per month billed yearly; Max is $167 per month billed yearly; Enterprise has custom pricing.",
+    "verdict": "From its official pages, Perplexity is aI answer engine with cited sources. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "cursor",
+    "toolId": "cursor",
+    "title": "Cursor overview: what it does, who it suits and what it costs",
+    "summary": "Cursor is an AI-assisted code editor. Its pricing page lists Free, Plus, Premium, Super and Ultra individual plans plus Teams and Enterprise.",
+    "useCases": [
+      "Writing and editing code with AI help",
+      "Running agents on tasks",
+      "Reviewing code"
+    ],
+    "pros": [
+      "Spending caps can be set",
+      "Allowances refresh weekly"
+    ],
+    "cons": [
+      "Third-party model usage is billed separately from the plan price",
+      "The page's plan cards also mention Grok products; we could not confirm from the page how the bundle is structured"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: individual developers, teams (teams and enterprise plans).",
+    "skipIf": "The first limitation in our record matters to you: Third-party model usage is billed separately from the plan price.",
+    "pricingNote": "Pricing is partly verified as of 2026-10-29, in the vendor's own currency. Published plans: Free is free; Plus is $8 per month; Premium is $30 per month; Super is $100 per month; Ultra is $200 per month.",
+    "verdict": "From its official pages, Cursor is aI code editor with agents. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "github-copilot",
+    "toolId": "github-copilot",
+    "title": "GitHub Copilot overview: what it does, who it suits and what it costs",
+    "summary": "GitHub Copilot is an AI coding assistant with inline suggestions, chat, an agent mode and a command-line tool, sold in Free, Pro, Pro+ and Max plans plus business offerings.",
+    "useCases": [
+      "Writing and completing code",
+      "Reviewing pull requests",
+      "Delegating tasks to an agent"
+    ],
+    "pros": [
+      "Free plan available",
+      "Paid plans have unlimited inline suggestions",
+      "Extra usage can be bought as AI credits (1 credit = $0.01)"
+    ],
+    "cons": [
+      "Free plan is limited to 2,000 inline suggestions per month and entry-level models",
+      "Business and Enterprise pricing is not shown on the page"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: individual developers, teams (business and enterprise offerings).",
+    "skipIf": "The first limitation in our record matters to you: Free plan is limited to 2,000 inline suggestions per month and entry-level models.",
+    "pricingNote": "Pricing is verified as of 2026-10-29, in the vendor's own currency. Published plans: Free is free; Pro is $10 per month; Pro+ is $39 per month; Max is $100 per month.",
+    "verdict": "From its official pages, GitHub Copilot is aI coding assistant inside your editor and on GitHub. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "elevenlabs",
+    "toolId": "elevenlabs",
+    "title": "ElevenLabs overview: what it does, who it suits and what it costs",
+    "summary": "ElevenLabs offers text-to-speech, speech-to-text, sound effects, voice design and music, sold as credit-based plans from Free to Enterprise.",
+    "useCases": [
+      "Voiceovers and narration",
+      "Transcription",
+      "Sound effects and music"
+    ],
+    "pros": [
+      "Free plan includes many tools",
+      "Annual billing is described as two months free"
+    ],
+    "cons": [
+      "Downgrading or cancelling forfeits unused credits at the end of the cycle",
+      "Introductory offers appear on Starter and Creator and the end date is shown inconsistently"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: creators, developers, businesses.",
+    "skipIf": "The first limitation in our record matters to you: Downgrading or cancelling forfeits unused credits at the end of the cycle.",
+    "pricingNote": "Pricing is partly verified as of 2026-10-29, in the vendor's own currency. Published plans: Free is free; Starter is $5 per month billed yearly; Creator is $18.33 per month billed yearly; Pro is $99 per month billed monthly or $82.50 per month billed yearly; Scale is $299 per month billed monthly or $249.17 per month billed yearly.",
+    "verdict": "From its official pages, ElevenLabs is aI voice, speech and music. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "runway",
+    "toolId": "runway",
+    "title": "Runway overview: what it does, who it suits and what it costs",
+    "summary": "Runway is a credit-based studio for generating and editing video and images with AI, with plans from Free to Max.",
+    "useCases": [
+      "Generating short video clips",
+      "Editing and upscaling footage",
+      "Creating images"
+    ],
+    "pros": [
+      "Free plan with one-time credits",
+      "Annual billing lowers each plan's monthly price"
+    ],
+    "cons": [
+      "Credits do not roll over on Standard and Pro",
+      "Credit costs vary by model (for example, Gen-4.5 is 60 credits per 5-second video)"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: creators, marketing and video teams.",
+    "skipIf": "The first limitation in our record matters to you: Credits do not roll over on Standard and Pro.",
+    "pricingNote": "Pricing is verified as of 2026-10-29, in the vendor's own currency. Published plans: Free is free; Standard is $15 per month billed monthly or $12 per month billed yearly; Pro is $35 per month billed monthly or $28 per month billed yearly; Max is $95 per month billed monthly or $76 per month billed yearly.",
+    "verdict": "From its official pages, Runway is aI video and image generation studio. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "zapier",
+    "toolId": "zapier",
+    "title": "Zapier overview: what it does, who it suits and what it costs",
+    "summary": "Zapier connects apps into automated workflows and offers AI agents and chatbots as add-ons, with plans measured in monthly tasks.",
+    "useCases": [
+      "Automating routine work between apps",
+      "Building AI agents and chatbots"
+    ],
+    "pros": [
+      "Free plan with 100 tasks per month",
+      "14-day Professional trial, no card"
+    ],
+    "cons": [
+      "Prices rise with the task tier",
+      "Agent and chatbot add-ons are priced separately from the task pool"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: individuals, teams, businesses.",
+    "skipIf": "The first limitation in our record matters to you: Prices rise with the task tier.",
+    "pricingNote": "Pricing is verified as of 2026-10-29, in the vendor's own currency. Published plans: Free is free; Professional is $29.99 per month billed monthly or $19.99 per month billed yearly; Team is $103.50 per month billed monthly or $69 per month billed yearly; Enterprise has custom pricing.",
+    "verdict": "From its official pages, Zapier is workflow automation with AI agents and chatbots. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "deepl",
+    "toolId": "deepl",
+    "title": "DeepL overview: what it does, who it suits and what it costs",
+    "summary": "DeepL translates text and documents between languages and offers a Write Pro add-on for writing assistance, with individual, team and business plans.",
+    "useCases": [
+      "Translating documents and messages",
+      "Keeping consistent terminology with glossaries"
+    ],
+    "pros": [
+      "A free version is listed",
+      "Individual and Team plans list a 30-day free trial"
+    ],
+    "cons": [
+      "The free version is capped (50,000 characters per month, 1 file translation per month, files up to 5 MB)",
+      "Monthly-billing prices and API prices are not stated on the page we read"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: professionals, teams, businesses.",
+    "skipIf": "The first limitation in our record matters to you: The free version is capped (50,000 characters per month, 1 file translation per month, files up to 5 MB).",
+    "pricingNote": "Pricing is verified as of 2026-10-30, in the vendor's own currency. Published plans: Free is free; Individual is €7.49 per month billed yearly; Team is €24.99 per month billed yearly; Business is €49.99 per month billed yearly; Enterprise has custom pricing.",
+    "verdict": "From its official pages, DeepL is aI translation and writing assistant. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "midjourney",
+    "toolId": "midjourney",
+    "title": "Midjourney overview: what it does, who it suits and what it costs",
+    "summary": "Midjourney generates images from text descriptions and is used for concept art and visual ideas.",
+    "useCases": [
+      "Exploring visual ideas",
+      "Mood boards and concept art"
+    ],
+    "pros": [
+      "Widely used for concept work"
+    ],
+    "cons": [
+      "Check current commercial-use terms before using images for clients",
+      "Results vary with how you write the prompt",
+      "There is no free plan in the official plan comparison"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: designers, creators.",
+    "skipIf": "The first limitation in our record matters to you: Check current commercial-use terms before using images for clients.",
+    "pricingNote": "Pricing is verified as of 2026-10-30, in the vendor's own currency. Published plans: Basic is $10 per month billed monthly or $8 per month billed yearly; Standard is $30 per month billed monthly or $24 per month billed yearly; Pro is $60 per month billed monthly or $48 per month billed yearly; Mega is $120 per month billed monthly or $96 per month billed yearly.",
+    "verdict": "From its official pages, Midjourney is aI image generator. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "hex",
+    "toolId": "hex",
+    "title": "Hex overview: what it does, who it suits and what it costs",
+    "summary": "Hex is described as an AI analytics platform for trusted data exploration, with agentic notebooks, conversational self-serve analytics and interactive data apps.",
+    "useCases": [
+      "Exploring and analysing data with AI help",
+      "Publishing interactive data apps"
+    ],
+    "pros": [
+      "A free Community plan",
+      "Professional is free for students and educators (per the FAQ)"
+    ],
+    "cons": [
+      "Prices are per Editor; the billing interval behind them was not stated",
+      "Community is limited to small compute and 5 published apps"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: data teams, analysts.",
+    "skipIf": "The first limitation in our record matters to you: Prices are per Editor; the billing interval behind them was not stated.",
+    "pricingNote": "Pricing is partly verified as of 2026-10-30, in the vendor's own currency. Published plans: Community is free; Professional is $36 per month; Team is $75 per month; Enterprise has custom pricing.",
+    "verdict": "From its official pages, Hex is aI analytics platform for data exploration. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "zendesk",
+    "toolId": "zendesk",
+    "title": "Zendesk overview: what it does, who it suits and what it costs",
+    "summary": "Zendesk brings email, messaging, phone and social conversations into one place, with AI agents for resolving service issues across channels.",
+    "useCases": [
+      "Running a customer service desk",
+      "Automating answers with AI agents"
+    ],
+    "pros": [
+      "Clear per-agent plan prices with monthly and yearly options",
+      "A 14-day trial of the Suite Professional features and a startup programme are described"
+    ],
+    "cons": [
+      "Priced per agent, and AI resolutions are billed on top of the included amount",
+      "Enterprise pricing is by talking to sales"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: support teams, businesses.",
+    "skipIf": "The first limitation in our record matters to you: Priced per agent, and AI resolutions are billed on top of the included amount.",
+    "pricingNote": "Pricing is verified as of 2026-10-30, in the vendor's own currency. Published plans: Support Team is $25 per month billed monthly or $19 per month billed yearly; Suite Team is $69 per month billed monthly or $55 per month billed yearly; Suite Professional is $149 per month billed monthly or $115 per month billed yearly; Suite Enterprise + Copilot has custom pricing.",
+    "verdict": "From its official pages, Zendesk is customer service platform with AI agents. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  },
+  {
+    "slug": "ollama",
+    "toolId": "ollama",
+    "title": "Ollama overview: what it does, who it suits and what it costs",
+    "summary": "Ollama is a tool for running large language models on your own hardware, with optional paid plans for cloud-hosted models. Its source code is published on GitHub under the MIT licence.",
+    "useCases": [
+      "Running open models locally",
+      "Using cloud-hosted models without managing GPUs"
+    ],
+    "pros": [
+      "Local use is unlimited and the GitHub repository is MIT-licensed",
+      "Free pay-as-you-go plan with pay-per-token cloud models"
+    ],
+    "cons": [
+      "Cloud models are hosted primarily in the United States, with possible routing to Europe",
+      "Team is listed as early access"
+    ],
+    "bestFor": "People in these groups, according to the vendor's own description: developers, teams.",
+    "skipIf": "The first limitation in our record matters to you: Cloud models are hosted primarily in the United States, with possible routing to Europe.",
+    "pricingNote": "Pricing is verified as of 2026-10-30, in the vendor's own currency. Published plans: Pay as you go is free; Pro is $20 per month billed monthly or $16.67 per month billed yearly; Max is $100 per month; Team (early access) is $500 per month; Enterprise has custom pricing.",
+    "verdict": "From its official pages, Ollama is run models locally, with optional cloud models. This overview was written from documentation and our catalog record, not from testing, so check the limits above against your own use and confirm current prices on the official page before paying.",
+    "method": "documentation"
+  }
+]

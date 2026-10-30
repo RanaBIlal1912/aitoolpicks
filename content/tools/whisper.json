@@ -1,0 +1,78 @@
+{
+  "id": "whisper",
+  "name": "Whisper",
+  "vendor": "OpenAI",
+  "website": "https://github.com/openai/whisper",
+  "category": "open-source",
+  "categories": [
+    "open-source",
+    "audio"
+  ],
+  "subcategory": "speech",
+  "tagline": "Whisper is a speech recognition model published by OpenAI as open source",
+  "description": "Whisper is a speech recognition model published by OpenAI as open source. Open-source software; the repository lists the licence as MIT.",
+  "features": [
+    "Open-source speech recognition model"
+  ],
+  "useCases": [
+    "Transcribing speech to text on your own machine"
+  ],
+  "audience": [
+    "Developers",
+    "Researchers"
+  ],
+  "strengths": [
+    "Source code and licence are public in the official repository",
+    "No licence fee for the software itself"
+  ],
+  "limitations": [
+    "You run and maintain it yourself, so hosting, hardware and support costs are your own",
+    "We have not run or benchmarked it"
+  ],
+  "alternatives": [
+    "deepgram",
+    "assemblyai",
+    "otter"
+  ],
+  "hue": 210,
+  "verified": "2026-10-30",
+  "status": "active",
+  "openSource": {
+    "status": "open-source",
+    "note": "The official repository lists the licence as MIT",
+    "source": "https://github.com/openai/whisper"
+  },
+  "pricing": {
+    "status": "verified",
+    "model": "open-source",
+    "checked": "2026-10-30",
+    "source": "https://github.com/openai/whisper",
+    "free": {
+      "available": true,
+      "details": "The software is free to use under its MIT licence; infrastructure and any hosted offerings are separate."
+    },
+    "plans": [
+      {
+        "name": "Self-hosted (open source)",
+        "audience": "individual",
+        "currency": "USD",
+        "unit": "per month",
+        "monthly": 0,
+        "note": "Free software under the MIT licence; your own hosting and hardware costs apply"
+      }
+    ],
+    "regional": "No vendor price list. Any hosted or commercial offering from the same team is priced separately and is not covered here."
+  },
+  "sources": [
+    {
+      "label": "Official repository (licence read from it)",
+      "url": "https://github.com/openai/whisper",
+      "type": "official",
+      "checked": "2026-10-30"
+    }
+  ],
+  "platforms": [
+    "Self-hosted"
+  ],
+  "added": "2026-10-30"
+}
