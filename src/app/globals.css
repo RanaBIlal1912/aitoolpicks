@@ -789,3 +789,9 @@ main {
     animation: none;
   }
 }
+
+/* Skip layout and paint for list items that are far off screen; they render as they approach the viewport. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px;
+}

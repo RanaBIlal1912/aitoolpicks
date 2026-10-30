@@ -138,7 +138,7 @@ export default function NewsFeed({ items, tags, kinds }: { items: NewsItem[]; ta
 
       <ul className="mt-4 space-y-5">
         {shown.map((n) => (
-          <li key={n.slug}>
+          <li key={n.slug} className="cv-auto">
             <NewsCard n={n} variant="row" />
           </li>
         ))}

@@ -60,7 +60,7 @@ export default function BlogList({ articles, topics }: { articles: Article[]; to
 
       <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {list.map((a) => (
-          <li key={a.slug}>
+          <li key={a.slug} className="cv-auto">
             <ArticleCard a={a} />
           </li>
         ))}

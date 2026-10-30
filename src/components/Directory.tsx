@@ -275,7 +275,7 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
 
       <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((t) => (
-          <li key={t.id}>
+          <li key={t.id} className="cv-auto">
             <ToolCard tool={t} reasons={reasonsById[t.id]} selected={picked.includes(t.id)} onToggleCompare={togglePick} disableCompare={picked.length >= MAX_COMPARE} />
           </li>
         ))}
