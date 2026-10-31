@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import { pageMeta } from "@/lib/meta";
 import { ARTICLES, GUIDES, TOPICS } from "@/data/articles";
 import { absUrl } from "@/lib/site";
@@ -42,7 +41,6 @@ export default function BlogPage() {
         </div>
       </div>
       <div className="mt-12">
-        <Suspense>
         <BlogList topics={TOPICS.map((t) => ({ id: t.id, label: t.label }))} total={ARTICLES.length}>
           {ARTICLES.map((a) => (
             <li key={a.slug} className="cv-auto" data-topic={a.topic} data-text={`${a.title} ${a.blurb} ${a.cat}`.toLowerCase()}>
@@ -50,7 +48,6 @@ export default function BlogPage() {
             </li>
           ))}
         </BlogList>
-        </Suspense>
       </div>
     </>
   );
