@@ -36,7 +36,7 @@ export default async function CompanyPage({ params }: Props) {
           { name: c.name, href: `/ecosystem/companies/${slug}/` },
         ]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <section aria-labelledby="prod-title">
           <h2 id="prod-title" className="section-title text-white">
             Products

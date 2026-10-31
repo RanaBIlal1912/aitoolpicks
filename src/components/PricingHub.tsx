@@ -27,7 +27,7 @@ export default function PricingHub() {
   }, [q, cat, status, sort]);
 
   return (
-    <section aria-labelledby="pricing-title" className="mx-auto max-w-6xl px-5">
+    <section aria-labelledby="pricing-title" className="mx-auto max-w-7xl px-5">
       <h2 id="pricing-title" className="sr-only">
         Pricing table
       </h2>

@@ -6,7 +6,7 @@ import { BrandMark } from "@/lib/brand";
 export default function Footer() {
   return (
     <footer className="cv-foot mt-24 border-t border-white/10 bg-black/20">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="flex items-center gap-2.5 text-lg font-extrabold tracking-tight text-white">
             <BrandMark size={28} gradientId="brand-footer" />
@@ -49,7 +49,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-6xl space-y-2 px-5 py-6 text-sm text-muted">
+        <div className="mx-auto max-w-7xl space-y-2 px-5 py-6 text-sm text-muted">
           <RateNote />
           <p>
             &copy; {new Date().getFullYear()} {SITE.name}. Product names belong to their owners; we are not affiliated with

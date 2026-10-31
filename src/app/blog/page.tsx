@@ -28,7 +28,7 @@ export default function BlogPage() {
         lead="Start with the topic you care about. Every guide says what to do first and what to skip."
         crumbs={[{ name: "Blog", href: "/blog/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <h2 className="kicker mb-4">Featured guide</h2>
         <ArticleCard a={lead} featured />
         <div className="mt-10 flex flex-wrap items-center gap-2">

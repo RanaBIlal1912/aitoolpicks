@@ -32,7 +32,7 @@ export default function BlogList({ topics, total, children }: { topics: Topic[];
   }, [topic, q]);
 
   return (
-    <section aria-label="Guides" className="mx-auto max-w-6xl px-5">
+    <section aria-label="Guides" className="mx-auto max-w-7xl px-5">
       <h2 className="sr-only">All guides</h2>
       <div className="glass rounded-[24px] p-4 md:p-5">
         <div className="flex flex-col gap-4">

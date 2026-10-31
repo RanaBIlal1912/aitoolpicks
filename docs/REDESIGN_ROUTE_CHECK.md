@@ -1,10 +1,10 @@
 # Redesign route check (feature/futuristic-full-website-redesign)
 
-Automated pass over every built route in a headless browser at 1366 px and 375 px, against a local build (`node scripts/preview.mjs`). Per route and viewport it checks: loads with status 200, dark background (no white page), no horizontal overflow, exactly one h1, no large white content blocks, no console or page errors, and that the shared header with pill navigation and the shared button/panel styles are present.
+Automated pass over every built route in a headless browser at 1366 px and 375 px against a local build (`node scripts/preview.mjs`). Per route and viewport: status 200, dark background (no white page), no horizontal overflow, exactly one h1, no large white content blocks, no console or page errors, shared header and neon button/panel styles present.
 
-**Result: 324 routes x 2 viewports = 648 checks, 0 failures.** The 404 route is checked through `404.html` (the file GitHub Pages serves).
+**Result: 324 routes x 2 viewports = 648 checks, 0 failures** (after the page-composition pass: neon banner on every page, category banners with their own colour and icon, tool pages with product banner, feature cards and neon plan cards, neon news/blog/article/compare/pricing components).
 
-This is an automated structural check plus screenshots of one representative page per type (`docs/screenshots/redesign/`). It does not replace your own visual review.
+This is an automated structural check plus one screenshot per page type in `docs/screenshots/redesign/`. It does not replace a visual review.
 
 ## Routes by section
 

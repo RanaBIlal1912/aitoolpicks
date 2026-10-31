@@ -57,9 +57,9 @@ export default async function GuidePage({ params }: Props) {
         </p>
       </PageHeader>
 
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <figure>
-          <div className="aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
+          <div className="aspect-[16/7] overflow-hidden rounded-[28px] border border-[var(--panel-line)] shadow-[0_0_60px_-20px_rgba(110,90,255,0.8)]">
             <ArticleCover topic={a.topic} tools={a.tools} seed={a.slug} />
           </div>
           <figcaption className="mt-2 text-xs text-muted">Cover: a stock photograph (see photo credits) with the logos of the tools in this guide. It is decoration, not a screenshot.</figcaption>
@@ -86,7 +86,7 @@ export default async function GuidePage({ params }: Props) {
         </div>
       </div>
 
-      <div className="mx-auto mt-24 max-w-6xl px-5">
+      <div className="mx-auto mt-24 max-w-7xl px-5">
         <h2 className="section-title mb-6 text-white">Keep reading</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {related.map((r) => (

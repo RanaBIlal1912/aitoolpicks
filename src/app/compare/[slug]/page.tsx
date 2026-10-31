@@ -48,7 +48,7 @@ export default async function ComparisonPage({ params }: Props) {
           Updated {a.date} · {a.minutes} min read
         </p>
       </PageHeader>
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <div className="mb-8 aspect-[16/6] overflow-hidden rounded-[22px] border border-white/10">
           <ArticleCover topic={a.topic} tools={a.tools} seed={a.slug} />
         </div>

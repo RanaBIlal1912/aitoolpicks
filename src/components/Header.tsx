@@ -200,7 +200,7 @@ export default function Header() {
             ref={sheet}
             className="sheet-in fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#090B18]/97 backdrop-blur-xl lg:hidden"
           >
-            <nav aria-label="Mobile" className="mx-auto flex max-w-6xl flex-col px-5 py-4">
+            <nav aria-label="Mobile" className="mx-auto flex max-w-7xl flex-col px-5 py-4">
               {[...NAV, ...MORE].map((n) => {
                 const active = pathname.startsWith(n.href);
                 return (

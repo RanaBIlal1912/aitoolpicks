@@ -24,7 +24,7 @@ export default function EcosystemPage() {
         lead="Companies, models and open-source projects, linked only where our records or an official source state the relationship. This is a small, verified map, not a complete one."
         crumbs={[{ name: "Ecosystem", href: "/ecosystem/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <EcosystemNetwork />
         <div className="mt-16" />
         <section aria-labelledby="models-title">

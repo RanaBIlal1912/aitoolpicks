@@ -22,7 +22,7 @@ export default function ReviewsPage() {
         lead="Each page covers what the tool does, who it suits, who should skip it and what it costs. Prices come from official pages."
         crumbs={[{ name: "Reviews", href: "/reviews/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <p className="glass rounded-2xl border-l-4 border-l-cyan px-5 py-3 text-sm text-muted">
           <strong className="text-soft">How we review:</strong> these are editorial overviews based on each product&rsquo;s own public
           documentation and widely known behaviour. We have not run lab tests, and we never present an overview as hands-on testing.

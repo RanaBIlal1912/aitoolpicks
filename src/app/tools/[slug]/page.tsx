@@ -53,7 +53,7 @@ function List({ title, items, tone }: { title: string; items: string[]; tone: "g
   const mark = tone === "good" ? "✓" : tone === "warn" ? "!" : "•";
   const color = tone === "good" ? "text-emerald-300" : tone === "warn" ? "text-amber" : "text-muted";
   return (
-    <div className="glass rounded-[22px] p-6">
+    <div className="panel p-6">
       <h3 className={`text-lg font-bold ${tone === "plain" ? "text-white" : color}`}>{title}</h3>
       <ul className="mt-3 space-y-2.5">
         {items.map((g) => (
@@ -88,6 +88,7 @@ export default async function ToolPage({ params }: Props) {
     <>
       <PageHeader
         accent={catColors(t.category)[0]}
+        tint={catColors(t.category)}
         aside={
           <div className="relative grid h-[260px] w-[260px] place-items-center">
             <span className="absolute inset-0 rounded-full opacity-60 blur-3xl" style={{ background: catColors(t.category)[0] }} />
@@ -131,7 +132,7 @@ export default async function ToolPage({ params }: Props) {
         </p>
       </PageHeader>
 
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <ToolShot id={t.id} name={t.name} className="mb-12 max-w-3xl" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div className="min-w-0 space-y-12">
@@ -139,7 +140,8 @@ export default async function ToolPage({ params }: Props) {
               <h2 className="section-title text-white">Features</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {t.features.map((f) => (
-                  <li key={f} className="glass rounded-2xl px-5 py-4 text-soft">
+                  <li key={f} className="feature-card flex gap-3 text-soft">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" className="mt-0.5 shrink-0" fill="none" stroke="#22d3ee" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
                     {f}
                   </li>
                 ))}
@@ -217,7 +219,7 @@ export default async function ToolPage({ params }: Props) {
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start" aria-label={`${t.name} quick facts`}>
-            <div className="glass flex items-center gap-4 rounded-[22px] p-5">
+            <div className="panel flex items-center gap-4 p-5">
               <ToolLogo id={t.id} name={t.name} hue={t.hue} size={64} alt={`${t.name} logo`} />
               <div className="min-w-0">
                 <p className="font-bold text-white">{t.name}</p>
@@ -227,7 +229,7 @@ export default async function ToolPage({ params }: Props) {
               </div>
             </div>
             {logoNote && <p className="-mt-3 text-xs text-muted">{logoNote}</p>}
-            <div className="glass rounded-[22px] p-6">
+            <div className="panel p-6">
               <h2 className="kicker">Quick facts</h2>
               <dl className="mt-4 space-y-4 text-[0.97rem]">
                 <div>

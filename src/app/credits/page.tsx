@@ -20,7 +20,7 @@ export default function CreditsPage() {
         lead="Background and cover photographs are stock images downloaded from their original Unsplash pages. They are not product screenshots and do not show or endorse any tool."
         crumbs={[{ name: "Credits", href: "/credits/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <p className="text-soft">
           Licence: <a className="underline" href="https://unsplash.com/license" rel="noopener noreferrer">Unsplash License</a>, which allows free commercial use without permission. Credit is given anyway.
           Tool logos are the property of their owners and are used only to identify the product.

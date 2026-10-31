@@ -128,7 +128,7 @@ export default function Home() {
 
       <LogoRibbon />
 
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <div className="pt-20">
           <UniverseSection />
         </div>
@@ -176,12 +176,12 @@ export default function Home() {
       </div>
 
       <div className="mt-28 overflow-x-clip">
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-7xl px-5">
           <NewsPaper news={news.slice(0, 5)} />
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <Reveal as="section" className="pt-28">
           <Head n="07" eyebrow="Guides" title="Practical, plain-English reading" lead="Tutorials, workflows and comparisons. Each says what to do first and what to skip." href="/blog/" cta="All guides" />
           <div className="mb-8">

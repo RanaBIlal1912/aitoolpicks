@@ -31,7 +31,7 @@ export default function PricingPage() {
         crumbs={[{ name: "Pricing", href: "/pricing/" }]}
       />
       <PricingHub />
-      <section className="mx-auto mt-16 max-w-6xl px-5" aria-labelledby="incomplete-title">
+      <section className="mx-auto mt-16 max-w-7xl px-5" aria-labelledby="incomplete-title">
         <h2 id="incomplete-title" className="section-title text-white">
           Incomplete pricing records ({RECORDS.filter((r) => r.pricing.status !== "verified").length})
         </h2>

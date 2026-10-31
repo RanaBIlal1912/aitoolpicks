@@ -52,7 +52,7 @@ export default function NewsPage() {
         </p>
       </PageHeader>
 
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <section aria-labelledby="top-title">
           <h2 id="top-title" className="kicker mb-4">
             Top stories

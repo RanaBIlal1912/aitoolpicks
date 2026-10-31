@@ -234,7 +234,7 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
   const [lead, ...rest] = news;
   return (
     <section className="paper relative left-1/2 w-screen -translate-x-1/2 px-5 py-20 text-[#0b0d1c]">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <Head n="04" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="All news" tone="light" />
         <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <article>

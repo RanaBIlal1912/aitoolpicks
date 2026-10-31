@@ -38,7 +38,7 @@ export default async function AlternativesPage({ params }: Props) {
           { name: "Alternatives", href: `/tools/${t.id}/alternatives/` },
         ]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         {items.length === 0 ? (
           <div className="glass rounded-[22px] p-10 text-center">
             <p className="text-lg font-semibold text-white">We have no close alternatives for {t.name} in the catalog yet.</p>

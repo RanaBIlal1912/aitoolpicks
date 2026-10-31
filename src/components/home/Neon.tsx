@@ -67,7 +67,7 @@ export function StatStrip({ total, categories, verified }: { total: number; cate
 }
 
 // One icon and colour pair per category slug. Colours are decoration only.
-const CAT: Record<string, { c1: string; c2: string; d: string }> = {
+export const CAT: Record<string, { c1: string; c2: string; d: string }> = {
   assistants: { c1: "#2563eb", c2: "#1e3a8a", d: "M4 5h16v10H9l-4 4v-4H4zM8 10h.01M12 10h.01M16 10h.01" },
   coding: { c1: "#0ea5e9", c2: "#1e3a8a", d: "M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" },
   video: { c1: "#7c3aed", c2: "#4c1d95", d: "M3 5h18v14H3zM10 9l5 3-5 3z" },

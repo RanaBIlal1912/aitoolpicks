@@ -51,6 +51,7 @@ export default function PageHeader({
   stats,
   accent,
   aside,
+  tint,
 }: {
   eyebrow?: string;
   title: ReactNode;
@@ -61,29 +62,38 @@ export default function PageHeader({
   stats?: [string, string][];
   accent?: string;
   aside?: ReactNode;
+  /** Two hex colours that replace the banner glow (used by category pages so each has its own colour identity). */
+  tint?: [string, string];
 }) {
+  const rgb = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)).join(", ");
   return (
-    <header className={`page-head ph-${variant} relative mx-auto max-w-6xl px-5 pb-10 pt-14 md:pt-20`} style={accent ? ({ ["--accent"]: accent } as React.CSSProperties) : undefined}>
+    <header className={`page-head ph-${variant} relative mx-auto max-w-7xl px-5 pb-8 pt-10 md:pt-14`} style={{ ...(accent ? { ["--accent"]: accent } : {}), ...(tint ? { ["--ph-a"]: rgb(tint[0]), ["--ph-b"]: rgb(tint[1]) } : {}) } as React.CSSProperties}>
       {crumbs && <Breadcrumbs items={crumbs} />}
-      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h1 className="mt-4 max-w-3xl text-[clamp(2.1rem,5vw,3.6rem)] font-extrabold leading-[1.05] tracking-[-0.035em] text-white">{title}</h1>
-      {lead && <p className="mt-5 max-w-2xl text-lg text-soft">{lead}</p>}
-      {stats && (
-        <dl className="ph-stats mt-8 flex flex-wrap gap-x-10 gap-y-4">
-          {stats.map(([n, l]) => (
-            <div key={l}>
-              <dd className="font-display text-3xl font-extrabold tracking-tight text-white">{n}</dd>
-              <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">{l}</dt>
-            </div>
-          ))}
-        </dl>
-      )}
-      {children}
-      {aside && (
-        <div aria-hidden="true" className="ph-aside pointer-events-none absolute right-5 top-24 hidden md:grid">
-          {aside}
+      <div className="hero-banner relative overflow-hidden rounded-[30px] px-6 py-9 md:px-12 md:py-12">
+        <span aria-hidden="true" className="hb-orb" />
+        <span aria-hidden="true" className="hb-ring" />
+        <div className="relative max-w-3xl">
+          {eyebrow && <span className="eyebrow">{eyebrow}</span>}
+          <h1 className="mt-4 text-[clamp(2.1rem,4.6vw,3.7rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white">{title}</h1>
+          {lead && <p className="mt-5 max-w-2xl text-lg text-soft">{lead}</p>}
         </div>
-      )}
+        {stats && (
+          <dl className="ph-stats relative mt-8 flex flex-wrap gap-3">
+            {stats.map(([n, l]) => (
+              <div key={l} className="ph-stat">
+                <dd className="font-display text-2xl font-extrabold leading-none tracking-tight">{n}</dd>
+                <dt className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted">{l}</dt>
+              </div>
+            ))}
+          </dl>
+        )}
+        {children && <div className="relative">{children}</div>}
+        {aside && (
+          <div aria-hidden="true" className="ph-aside pointer-events-none absolute right-8 top-1/2 hidden -translate-y-1/2 md:grid">
+            {aside}
+          </div>
+        )}
+      </div>
     </header>
   );
 }

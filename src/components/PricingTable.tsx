@@ -31,7 +31,7 @@ function PlanCard({ plan }: { plan: Plan }) {
   const free = plan.monthly === 0 && plan.annual === undefined;
   const priced = plan.monthly !== undefined || plan.annual !== undefined;
   return (
-    <li className="glass flex h-full flex-col rounded-[20px] p-5">
+    <li className="glass plan-card flex h-full flex-col rounded-[22px] p-6">
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-lg font-bold text-white">{plan.name}</h3>
         <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wide text-muted">{AUDIENCE[plan.audience]}</span>

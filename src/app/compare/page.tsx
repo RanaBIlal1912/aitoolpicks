@@ -29,7 +29,7 @@ export default function ComparePage() {
         lead="Read a full comparison, or pick any two tools below and see them side by side."
         crumbs={[{ name: "Compare", href: "/compare/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <Reveal as="section">
           <h2 className="section-title mb-6 text-white">Compare any two tools</h2>
           <CompareMatrix />

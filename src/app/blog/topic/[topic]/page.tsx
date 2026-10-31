@@ -44,7 +44,7 @@ export default async function TopicPage({ params }: Props) {
           { name: t.label, href: `/blog/topic/${topic}/` },
         ]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <h2 className="sr-only">Guides on {t.label.toLowerCase()}</h2>
         {first && (
           <div className="mb-6">

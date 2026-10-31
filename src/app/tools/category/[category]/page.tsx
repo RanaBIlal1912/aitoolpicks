@@ -6,6 +6,9 @@ import { ROUNDUPS } from "@/data/roundups";
 import { pageMeta } from "@/lib/meta";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
+import { CatBadge } from "@/components/home/CatBadge";
+import ToolLogo from "@/components/ToolLogo";
+import { catColors } from "@/data/palette";
 import ToolCard from "@/components/ToolCard";
 import JsonLd from "@/components/JsonLd";
 
@@ -34,6 +37,8 @@ export default async function CategoryPage({ params }: Props) {
   if (!c) notFound();
   const tools = toolsInCategory(c.slug);
   const verified = tools.filter((t) => t.pricingStatus === "verified").length;
+  const [a, b] = catColors(c.slug);
+  const free = tools.filter((t) => t.freePlan === true).length;
   const roundup = ROUNDUPS.find((r) => r.category === c.slug);
   // Group by subcategory in the order the category defines; tools in a secondary category (no matching sub) go last.
   const groups = c.subs
@@ -44,7 +49,7 @@ export default async function CategoryPage({ params }: Props) {
   if (rest.length) groups.push({ slug: "related", label: "Also relevant here", tools: rest });
   return (
     <>
-      <PageHeader variant="directory"
+      <PageHeader variant="directory" tint={[a, b]} aside={<CatBadge slug={c.slug} />}
         eyebrow="Tool category"
         title={c.label}
         lead={c.blurb}
@@ -53,9 +58,25 @@ export default async function CategoryPage({ params }: Props) {
           { name: c.label, href: `/tools/category/${category}/` },
         ]}
       >
-        <p className="byline mt-4">
-          {tools.length} {tools.length === 1 ? "tool" : "tools"} listed · pricing verified for {verified}
-        </p>
+        <dl className="mt-7 flex flex-wrap gap-3">
+          {[
+            [String(tools.length), tools.length === 1 ? "tool listed" : "tools listed"],
+            [String(verified), "prices verified"],
+            [String(free), "with a free plan"],
+          ].map(([n, l]) => (
+            <div key={l} className="ph-stat">
+              <dd className="font-display text-2xl font-extrabold leading-none">{n}</dd>
+              <dt className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted">{l}</dt>
+            </div>
+          ))}
+        </dl>
+        <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tools in this category">
+          {tools.slice(0, 8).map((t) => (
+            <li key={t.id} className="rounded-xl ring-1 ring-white/25">
+              <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
+            </li>
+          ))}
+        </ul>
         <div className="mt-6 flex flex-wrap gap-3">
           {roundup && (
             <Link href={`/best/${roundup.slug}/`} className="btn-primary btn-sm">
@@ -70,12 +91,13 @@ export default async function CategoryPage({ params }: Props) {
           </Link>
         </div>
       </PageHeader>
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <h2 className="sr-only">Tools in {c.label}</h2>
         {groups.map((g) => (
           <section key={g.slug} className="mb-12" aria-labelledby={`sub-${g.slug}`}>
-            <h3 id={`sub-${g.slug}`} className="mb-5 text-xl font-bold tracking-tight text-white">
-              {g.label} <span className="text-base font-medium text-muted">({g.tools.length})</span>
+            <h3 id={`sub-${g.slug}`} className="mb-5 flex items-center gap-3 font-display text-2xl font-bold tracking-tight text-white">
+              <span aria-hidden="true" className="h-7 w-1.5 rounded-full" style={{ background: `linear-gradient(${a}, ${b})`, boxShadow: `0 0 14px ${a}` }} />
+              {g.label} <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-sm font-semibold text-soft">{g.tools.length}</span>
             </h3>
             <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {g.tools.map((t) => (
@@ -88,7 +110,8 @@ export default async function CategoryPage({ params }: Props) {
         ))}
         <div className="mt-12 flex flex-wrap gap-2" aria-label="Other categories">
           {CATEGORIES.filter((x) => x.slug !== c.slug).map((x) => (
-            <Link key={x.slug} href={`/tools/category/${x.slug}/`} className="chip">
+            <Link key={x.slug} href={`/tools/category/${x.slug}/`} className="chip" style={{ borderColor: `${catColors(x.slug)[0]}99` }}>
+              <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: catColors(x.slug)[0], boxShadow: `0 0 8px ${catColors(x.slug)[0]}` }} />
               {x.short}
             </Link>
           ))}

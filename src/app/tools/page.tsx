@@ -30,7 +30,7 @@ export default function ToolsPage() {
         crumbs={[{ name: "Tools", href: "/tools/" }]}
       />
 
-      <div className="mx-auto mb-10 max-w-6xl px-5">
+      <div className="mx-auto mb-10 max-w-7xl px-5">
         <CategoryRail />
       </div>
       <Directory />
