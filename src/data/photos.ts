@@ -5,7 +5,9 @@ export type PhotoId =
   | "server-aisle" | "datacenter-white" | "circuit-blue" | "circuit-macro" | "silicon-wafer" | "processor-tweezers" | "fibre-switch"
   | "light-dark-room" | "laptop-desk" | "office-glass" | "data-presentation" | "cable-network" | "architecture-ribs"
   | "notebook-pen" | "camera-lens" | "microphone" | "code-screen" | "whiteboard" | "analytics-laptop" | "colour-swatches" | "library-study"
-  | "padlock-laptop" | "robot-arm" | "marketing-strategy" | "microscope-lab" | "city-night" | "headphones-keys";
+  | "padlock-laptop" | "robot-arm" | "marketing-strategy" | "microscope-lab" | "city-night" | "headphones-keys"
+  | "freelance-cafe" | "freelance-paper" | "card-keyboard" | "video-timeline" | "research-books" | "shop-tablet" | "red-pen-book" | "stylus-wireframe"
+  | "meeting-table" | "support-headsets" | "calculator-desk";
 
 export const PHOTOS: Record<PhotoId, { alt: string; by: string; page: string }> = {
   "server-aisle": { alt: "Aisle between tall server racks in a data centre", by: "İsmail Enes Ayhan", page: "https://unsplash.com/photos/lVZjvw-u9V8" },
@@ -35,10 +37,21 @@ export const PHOTOS: Record<PhotoId, { alt: string; by: string; page: string }> 
   "microscope-lab": { alt: "A laboratory workbench with a microscope and equipment", by: "Trnava University", page: "https://unsplash.com/photos/_9xRHrMOjeg" },
   "city-night": { alt: "A city skyline at night across the water", by: "Diane Picchiottino", page: "https://unsplash.com/photos/EZ_SHxykcgw" },
   "headphones-keys": { alt: "Headphones resting on a music production keyboard in front of a screen", by: "Dima Zimakov", page: "https://unsplash.com/photos/wUcXPyX56Ug" },
+  "freelance-cafe": { alt: "A laptop and a cup of coffee on a wooden cafe table", by: "Alex Knight", page: "https://unsplash.com/photos/j4uuKnN43_M" },
+  "freelance-paper": { alt: "A hand signing a printed document at a desk", by: "Signature Pro", page: "https://unsplash.com/photos/wB9iWZKwljw" },
+  "card-keyboard": { alt: "A debit card resting on a laptop keyboard", by: "CardMapr.nl", page: "https://unsplash.com/photos/s8F8yglbpjo" },
+  "video-timeline": { alt: "A video editing timeline with coloured clips on a dark screen", by: "Peter Stumpf", page: "https://unsplash.com/photos/yk9VXp4W5-Q" },
+  "research-books": { alt: "A research design textbook on a desk beside notebooks", by: "Yen Vu", page: "https://unsplash.com/photos/07d1RdYYRjM" },
+  "shop-tablet": { alt: "A shop owner checking a tablet beside a clothes rail", by: "Vitaly Gariev", page: "https://unsplash.com/photos/sh6bfHZeaNY" },
+  "red-pen-book": { alt: "A red pen lying on a book, out of focus", by: "Emmanuel Phaeton", page: "https://unsplash.com/photos/ytt4fw6cD0I" },
+  "stylus-wireframe": { alt: "A stylus sketching website wireframes on a tablet", by: "Alvaro Reyes", page: "https://unsplash.com/photos/KxVlKiqQObU" },
+  "meeting-table": { alt: "A bright meeting room with a laptop on a table and grey chairs", by: "Social.Cut", page: "https://unsplash.com/photos/ZGqe7DaJn1w" },
+  "support-headsets": { alt: "Customer support staff wearing headsets in an office", by: "Charanjeet Dhiman", page: "https://unsplash.com/photos/mHusyBu4bxM" },
+  "calculator-desk": { alt: "A calculator and printed charts on a desk beside a laptop", by: "Jakub Żerdzicki", page: "https://unsplash.com/photos/8wLZi9OhsWU" },
 };
 
-export const PHOTO_SIZES = { full: { w: 1920 }, sm: { w: 640 } } as const;
-export const photoPath = (id: PhotoId, size: "full" | "sm" = "full") => `/images/photo/${id}${size === "sm" ? "-sm" : ""}.webp`;
+export const PHOTO_SIZES = { full: { w: 1920 }, md: { w: 960 }, sm: { w: 640 } } as const;
+export const photoPath = (id: PhotoId, size: "full" | "md" | "sm" = "full") => `/images/photo/${id}${size === "full" ? "" : `-${size}`}.webp`;
 
 /** Picks one photo from a pool, the same one every time for the same seed (a slug), so neighbouring articles do not all share one image. */
 export function pickPhoto(pool: PhotoId[], seed: string): PhotoId {

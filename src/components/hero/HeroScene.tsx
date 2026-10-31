@@ -137,9 +137,9 @@ function Rig() {
   return null;
 }
 
-export default function HeroScene({ lite }: { lite: boolean }) {
+export default function HeroScene({ lite, active = true }: { lite: boolean; active?: boolean }) {
   return (
-    <Canvas dpr={lite ? 1 : [1, 1.6]} camera={{ position: [0, 0, 8.6], fov: 46 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
+    <Canvas frameloop={active ? "always" : "never"} dpr={lite ? 1 : [1, 1.6]} camera={{ position: [0, 0, 8.6], fov: 46 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
       <ambientLight intensity={0.55} />
       <directionalLight position={[3, 4, 5]} intensity={2.4} />
       <pointLight position={[-4, -2, 3]} intensity={30} color="#25C6E8" />

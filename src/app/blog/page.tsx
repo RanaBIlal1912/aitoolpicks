@@ -41,7 +41,13 @@ export default function BlogPage() {
         </div>
       </div>
       <div className="mt-12">
-        <BlogList articles={ARTICLES} topics={TOPICS.map((t) => ({ id: t.id, label: t.label }))} />
+        <BlogList topics={TOPICS.map((t) => ({ id: t.id, label: t.label }))} total={ARTICLES.length}>
+          {ARTICLES.map((a) => (
+            <li key={a.slug} className="cv-auto" data-topic={a.topic} data-text={`${a.title} ${a.blurb} ${a.cat}`.toLowerCase()}>
+              <ArticleCard a={a} />
+            </li>
+          ))}
+        </BlogList>
       </div>
     </>
   );

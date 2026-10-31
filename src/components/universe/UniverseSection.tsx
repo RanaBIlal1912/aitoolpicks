@@ -54,6 +54,7 @@ export default function UniverseSection() {
   const box = useRef<HTMLDivElement>(null);
   const [on, setOn] = useState(false);
   const [ready, setReady] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [lite, setLite] = useState(false);
 
   useEffect(() => {
@@ -87,6 +88,15 @@ export default function UniverseSection() {
       clearTimeout(timer);
     };
   }, []);
+
+  // The scene only draws frames while the box is on screen; scrolled away, it costs nothing.
+  useEffect(() => {
+    const el = box.current;
+    if (!on || !el) return;
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), { rootMargin: "80px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [on]);
 
   // Remove the flat map once the 3D canvas exists.
   useEffect(() => {
@@ -131,7 +141,7 @@ export default function UniverseSection() {
         {!ready && <StaticMap />}
         {on && (
           <div className="absolute inset-0 touch-pan-y" role="presentation">
-            <UniverseScene items={ITEMS} links={LINKS} lite={lite} onSelect={(slug) => router.push(`/tools/category/${slug}/`)} onSelectTool={(id) => router.push(`/tools/${id}/`)} />
+            <UniverseScene items={ITEMS} links={LINKS} lite={lite} active={visible} onSelect={(slug) => router.push(`/tools/category/${slug}/`)} onSelectTool={(id) => router.push(`/tools/${id}/`)} />
           </div>
         )}
         {!ready && <p className="absolute bottom-3 left-0 right-0 px-6 text-center text-xs text-muted">Showing the flat map. {on ? "Loading the 3D version…" : "The 3D version loads as you scroll here."}</p>}

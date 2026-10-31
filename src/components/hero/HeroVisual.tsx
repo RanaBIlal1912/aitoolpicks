@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getTool } from "@/data/tools";
 import { constellation } from "@/lib/constellation";
 import ToolLogo from "../ToolLogo";
@@ -36,8 +36,11 @@ function StaticNetwork() {
  * where it is allowed (not for reduced motion or data saving, and only after the visitor first interacts or ten seconds pass) and fades in over it.
  */
 export default function HeroVisual() {
+  const [engaged, setEngaged] = useState(false);
+  const [inView, setInView] = useState(true);
   const [webgl, setWebgl] = useState(false);
   const [lite, setLite] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
@@ -51,21 +54,37 @@ export default function HeroVisual() {
     }
     if (!canvas) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    // Start only while the hero is still on screen: a visitor who has already scrolled down to the map does not also get a second WebGL scene running behind them.
-    return whenEngaged(() => {
-      if (window.scrollY < window.innerHeight * 0.5) setWebgl(true);
-    }, 60000);
+    return whenEngaged(() => setEngaged(true), 60000);
   }, []);
 
+  // Track whether the hero is on screen. The scene draws frames only while it is; a visitor who has scrolled down to the map does not also get a second
+  // WebGL scene running behind them. After four seconds out of view the scene is removed altogether (the static network shows again) and comes back on return.
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  useEffect(() => {
+    if (!engaged) return;
+    if (inView) {
+      setWebgl(true);
+      return;
+    }
+    const t = window.setTimeout(() => setWebgl(false), 4000);
+    return () => clearTimeout(t);
+  }, [engaged, inView]);
+
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div ref={root} className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <div className="hero-orb absolute right-[-6%] top-[8%] h-[80%] w-[62%] rounded-full" />
       <div className={`absolute inset-0 transition-opacity duration-700 ${webgl ? "opacity-0" : "opacity-100"}`}>
         <StaticNetwork />
       </div>
       {webgl && (
         <div className="hero-canvas pointer-events-auto absolute inset-0 touch-pan-y">
-          <HeroScene lite={lite} />
+          <HeroScene lite={lite} active={inView} />
         </div>
       )}
       <div className="absolute inset-0">

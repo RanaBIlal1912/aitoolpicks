@@ -1,26 +1,35 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import ArticleCard from "./ArticleCard";
-import type { Article, TopicId } from "@/data/articles";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import type { TopicId } from "@/data/articles";
 
 type Topic = { id: TopicId; label: string };
 
-export default function BlogList({ articles, topics }: { articles: Article[]; topics: Topic[] }) {
+/**
+ * Search and topic filter for the guide grid. The cards themselves are rendered on the server and passed in as children (each <li> carries
+ * data-topic and data-text), so the browser does not have to build 30 cards again in JavaScript: filtering only toggles the `hidden` attribute.
+ */
+export default function BlogList({ topics, total, children }: { topics: Topic[]; total: number; children: ReactNode }) {
   const [topic, setTopic] = useState<TopicId | "all">("all");
   const [q, setQ] = useState("");
+  const [count, setCount] = useState(total);
+  const grid = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const t = new URLSearchParams(window.location.search).get("topic");
     if (t && topics.some((x) => x.id === t)) setTopic(t as TopicId);
   }, [topics]);
 
-  const list = useMemo(() => {
+  useEffect(() => {
     const n = q.trim().toLowerCase();
-    return articles.filter(
-      (a) => (topic === "all" || a.topic === topic) && (!n || `${a.title} ${a.blurb} ${a.cat}`.toLowerCase().includes(n)),
-    );
-  }, [articles, topic, q]);
+    let shown = 0;
+    for (const li of Array.from(grid.current?.children ?? []) as HTMLElement[]) {
+      const ok = (topic === "all" || li.dataset.topic === topic) && (!n || (li.dataset.text ?? "").includes(n));
+      li.hidden = !ok;
+      if (ok) shown++;
+    }
+    setCount(shown);
+  }, [topic, q]);
 
   return (
     <section aria-label="Guides" className="mx-auto max-w-6xl px-5">
@@ -55,17 +64,13 @@ export default function BlogList({ articles, topics }: { articles: Article[]; to
       </div>
 
       <p className="mt-6 text-sm text-muted" role="status" aria-live="polite">
-        {list.length} {list.length === 1 ? "guide" : "guides"}
+        {count} {count === 1 ? "guide" : "guides"}
       </p>
 
-      <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {list.map((a) => (
-          <li key={a.slug} className="cv-auto">
-            <ArticleCard a={a} />
-          </li>
-        ))}
+      <ul ref={grid} className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {children}
       </ul>
-      {list.length === 0 && (
+      {count === 0 && (
         <div className="glass mt-6 rounded-[22px] p-10 text-center">
           <p className="text-lg font-semibold text-white">No guides match.</p>
           <p className="mt-2 text-muted">Try another word or choose &ldquo;All&rdquo;.</p>

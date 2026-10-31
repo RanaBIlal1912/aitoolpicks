@@ -203,24 +203,25 @@ function Universe({ items, links, lite, onSelect, onSelectTool }: { items: Unive
   );
 }
 
-/** Opening camera move: starts far away and settles in over about two seconds. */
+/** Opening camera move: starts far away and settles in over about two seconds. The resting distance depends on the shape of the box: a tall, narrow phone box needs the camera further back than a wide desktop one so no node is cut off at the sides. */
 function Intro() {
-  const { camera } = useThree();
+  const { camera, size } = useThree();
   const t = useRef(0);
+  const end = 8.9 * Math.max(1, 1.45 / (size.width / Math.max(1, size.height)));
   useFrame((_, dt) => {
     if (t.current >= 1) return;
     t.current = Math.min(1, t.current + dt / 2.2);
     const e = 1 - Math.pow(1 - t.current, 3);
-    camera.position.z = 15 + (8.9 - 15) * e;
+    camera.position.z = end * 1.7 + (end - end * 1.7) * e;
     camera.position.y = 2.2 + (0.4 - 2.2) * e;
     camera.lookAt(0, 0, 0);
   });
   return null;
 }
 
-export default function UniverseScene({ items, links, lite, onSelect, onSelectTool }: { items: UniverseItem[]; links: UniverseLink[]; lite: boolean; onSelect: (slug: string) => void; onSelectTool: (id: string) => void }) {
+export default function UniverseScene({ items, links, lite, active = true, onSelect, onSelectTool }: { items: UniverseItem[]; links: UniverseLink[]; lite: boolean; active?: boolean; onSelect: (slug: string) => void; onSelectTool: (id: string) => void }) {
   return (
-    <Canvas dpr={lite ? 1 : [1, 1.5]} camera={{ position: [0, 2.2, lite ? 21 : 15], fov: 45 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
+    <Canvas frameloop={active ? "always" : "never"} dpr={lite ? 1 : [1, 1.5]} camera={{ position: [0, 2.2, lite ? 21 : 15], fov: 45 }} gl={{ antialias: !lite, alpha: true, powerPreference: "low-power" }}>
       <ambientLight intensity={0.7} />
       <directionalLight position={[3, 4, 5]} intensity={2} />
       <pointLight position={[-4, -2, 3]} intensity={24} color="#25C6E8" />

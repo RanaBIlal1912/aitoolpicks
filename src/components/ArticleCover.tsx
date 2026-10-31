@@ -3,25 +3,7 @@ import { TOPICS, type TopicId } from "@/data/topics";
 import { getTool } from "@/data/tools";
 import ToolLogo from "./ToolLogo";
 import Photo from "./Photo";
-import { pickPhoto, type PhotoId } from "@/data/photos";
-
-const POOL: Record<TopicId, PhotoId[]> = {
-  freelancing: ["whiteboard", "laptop-desk", "notebook-pen", "marketing-strategy"],
-  writing: ["notebook-pen", "laptop-desk", "marketing-strategy"],
-  design: ["colour-swatches", "architecture-ribs", "camera-lens"],
-  business: ["whiteboard", "office-glass", "marketing-strategy", "analytics-laptop"],
-  websites: ["code-screen", "cable-network", "laptop-desk", "analytics-laptop"],
-  students: ["library-study", "notebook-pen", "data-presentation"],
-  developers: ["code-screen", "circuit-macro", "processor-tweezers", "circuit-blue"],
-  productivity: ["laptop-desk", "notebook-pen", "headphones-keys", "office-glass"],
-  imagevideo: ["camera-lens", "light-dark-room", "colour-swatches"],
-  beginners: ["processor-tweezers", "notebook-pen", "library-study", "city-night"],
-  research: ["microscope-lab", "silicon-wafer", "library-study", "analytics-laptop"],
-  automation: ["robot-arm", "fibre-switch", "cable-network"],
-  marketing: ["marketing-strategy", "analytics-laptop", "data-presentation", "city-night"],
-  security: ["padlock-laptop", "cable-network", "server-aisle"],
-  comparisons: ["circuit-blue", "analytics-laptop", "whiteboard", "data-presentation"],
-};
+import { coverPhoto } from "@/data/coverPhotos";
 
 // Each topic has its own colour world, so a blog full of guides does not look like one repeated image. A cover shows the logos of the
 // products the guide is about when there are any, otherwise a simple symbol for the topic. It is decoration, labelled as such to
@@ -57,7 +39,7 @@ export default function ArticleCover({ topic, tools = [], small = false, seed = 
       style={{ background: `linear-gradient(135deg, ${w.a}, ${w.b})` }}
     >
       <div className="absolute inset-0 mix-blend-multiply opacity-60">
-        <Photo id={pickPhoto(POOL[topic], seed || topic)} decorative priority={priority} sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
+        <Photo id={coverPhoto(seed, topic)} decorative priority={priority} sizes={small ? "200px" : "(min-width: 768px) 700px, 100vw"} />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
       <div className="relative flex items-center gap-2.5 px-4">

@@ -26,7 +26,7 @@ export default function Photo({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={withBase(photoPath(id, "sm"))}
-      srcSet={small ? undefined : `${withBase(photoPath(id, "sm"))} 640w, ${withBase(photoPath(id))} 1920w`}
+      srcSet={small ? undefined : `${withBase(photoPath(id, "sm"))} 640w, ${withBase(photoPath(id, "md"))} 960w, ${withBase(photoPath(id))} 1920w`}
       sizes={sizes}
       width={width}
       height={height}

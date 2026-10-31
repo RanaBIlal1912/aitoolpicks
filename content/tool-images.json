@@ -448,5 +448,122 @@
     "width": 1200,
     "height": 630,
     "fetched": "2026-10-30"
+  },
+  "canva": {
+    "file": "canva",
+    "imageUrl": "https://content-management-files.canva.com/c37135f6-6d9a-4920-b659-4f5e12698b8d/og-image-global-1200x630.jpg",
+    "page": "https://www.canva.com/",
+    "credit": "canva.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "chatgpt": {
+    "file": "chatgpt",
+    "imageUrl": "https://images.ctfassets.net/kftzwdyauwt9/7f6c5b76-875f-455d-ebb8813e1022/c16e0d3c81f4b9bcc9d9c65ed69b203d/chatgpt-og.jpg?w=1600&h=900&fit=fill",
+    "page": "https://openai.com/index/chatgpt/",
+    "credit": "openai.com",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-31"
+  },
+  "claude": {
+    "file": "claude",
+    "imageUrl": "https://assets.claude.com/0127845de9b30f0146d7d45c49049be8b749b158.jpg?w=2400&h=1260&fit=crop",
+    "page": "https://www.anthropic.com/claude",
+    "credit": "anthropic.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "gamma": {
+    "file": "gamma",
+    "imageUrl": "https://static.gamma.app/images/gamma-banner-8d71c455.png",
+    "page": "https://gamma.app/",
+    "credit": "gamma.app",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "gemini": {
+    "file": "gemini",
+    "imageUrl": "https://lh3.googleusercontent.com/1E500rkSh8Gqkz2l12tkrKkMgsDmbQot0h3afeiRukXNficphb2zEE8o6J3dSKkiDGOOCcQ8WtRYzEYudgiYK9FkoQeYg_SP92-C=e365-pa-nu-w1200-rj",
+    "page": "https://gemini.google/overview/",
+    "credit": "gemini.google",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "ideogram": {
+    "file": "ideogram",
+    "imageUrl": "https://storage.googleapis.com/ideogram-static/website/images/ba16d402d8d0b906.jpeg",
+    "page": "https://about.ideogram.ai/",
+    "credit": "about.ideogram.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "julius": {
+    "file": "julius",
+    "imageUrl": "https://julius.ai/opengraph-image.png",
+    "page": "https://julius.ai/",
+    "credit": "julius.ai",
+    "width": 1200,
+    "height": 600,
+    "fetched": "2026-10-31"
+  },
+  "leonardo": {
+    "file": "leonardo",
+    "imageUrl": "https://assets.leonardo.ai/aY8aLVWLo0XkEfdx_og-leonardo.png?auto=compress%2Cformat&rect=0%2C0%2C2400%2C1260&w=1200&h=630&q=80&fit=crop",
+    "page": "https://leonardo.ai/",
+    "credit": "leonardo.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "lovable": {
+    "file": "lovable",
+    "imageUrl": "https://lovable.dev/img/opengraph-image.png",
+    "page": "https://lovable.dev/",
+    "credit": "lovable.dev",
+    "width": 1200,
+    "height": 629,
+    "fetched": "2026-10-31"
+  },
+  "otter": {
+    "file": "otter",
+    "imageUrl": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67dd5a945aeed07e329d4e10_fb6d82f0792801a1a0d814599859e23e_og-image-otter-optim.jpg",
+    "page": "https://otter.ai/",
+    "credit": "otter.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "replicate": {
+    "file": "replicate",
+    "imageUrl": "https://replicate.com/_content/assets/og-image.y_bpW3_2.png",
+    "page": "https://replicate.com/docs",
+    "credit": "replicate.com",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "scite": {
+    "file": "scite",
+    "imageUrl": "https://cdn.scite.ai/assets/images/scite-opengraph.jpg",
+    "page": "https://scite.ai/about",
+    "credit": "scite.ai",
+    "width": 1200,
+    "height": 630,
+    "fetched": "2026-10-31"
+  },
+  "whisper": {
+    "file": "whisper",
+    "imageUrl": "https://images.ctfassets.net/kftzwdyauwt9/7b33cec2-6549-4c33-3264e61e732f/b877de50db423af6eefaebde60f504b6/whisper-og.jpg?w=1600&h=900&fit=fill",
+    "page": "https://openai.com/index/whisper/",
+    "credit": "openai.com",
+    "width": 1200,
+    "height": 675,
+    "fetched": "2026-10-31"
   }
 }

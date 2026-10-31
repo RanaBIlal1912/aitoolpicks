@@ -984,3 +984,9 @@ main {
   content-visibility: auto;
   contain-intrinsic-size: auto 700px;
 }
+
+/* The footer is always far below the first screen: skip its layout and paint until it is near the viewport. */
+.cv-foot {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 560px;
+}
