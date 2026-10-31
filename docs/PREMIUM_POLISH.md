@@ -21,3 +21,11 @@
 - 3D start: about 2.7 s after the page has loaded (browser idle), or on the first pointer move, touch, key press or scroll, whichever is first. The flat robot is on screen from the first paint.
 - Workload: 128 px matcap textures without mipmaps, fewer geometry segments, lighter rings, 1x resolution while probing, a five-frame device check that picks full (60 fps, up to 1.5x), smooth (about 30 fps), calm (about 15 fps) or still, and a throttled pointer redraw in still mode.
 - Measured (local Lighthouse, mobile, 3 runs): Home median 63, TBT about 3.8 s. Delaying the start does not hide the work from the lab, which waits for the page to settle; the remaining cost is loading and starting WebGL on the main thread of a weak integrated GPU.
+
+## Hero round 4: 3D in a web worker
+
+- The robot scene now lives in `src/components/hero/robot.worker.ts` (plain three.js, same geometry, matcap shading, tiles, cube, light trail and sparkles). The page gives the worker an `OffscreenCanvas`; scene building, shader compiling and drawing no longer run on the main thread. The old r3f `RobotScene` was removed (the AI Universe still uses r3f).
+- The main thread only loads the six logo images, draws each tile once into a bitmap (the worker has no DOM to decode SVG with), transfers them, and forwards size, pointer and visibility messages.
+- The worker checks WebGL and the renderer name itself, so the page no longer creates a throwaway WebGL context. No Worker or OffscreenCanvas support, no WebGL, a software renderer (unless `?robot=3d`), reduced motion or data saving all keep the flat SVG robot.
+- Frame pacing lives in the worker: a five-frame device check picks full (60 fps, up to 1.5x), smooth (about 30 fps), calm (about 15 fps) or still (redraw on pointer move).
+- Local Lighthouse (mobile, Home): runs 55, 79, 79 and 81, 80, 76, 77; TBT 0.6 to 0.8 s except one 10.8 s outlier (a single long main-thread task, not seen again in six more runs).

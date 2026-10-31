@@ -1,11 +1,35 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import type { SceneLogo } from "../hero/RobotScene";
+export type SceneLogo = { id: string; src: string; tile: "light" | "dark" };
 
-const RobotScene = dynamic(() => import("../hero/RobotScene"), { ssr: false });
+/**
+ * One product tile as a picture (rounded square with the logo on it), drawn here because the worker has no DOM to decode SVG or PNG files with.
+ * The picture is drawn upside down on purpose: image bitmaps cannot be flipped by WebGL, so the flip is done once here.
+ */
+async function tileBitmap(l: SceneLogo) {
+  const c = document.createElement("canvas");
+  c.width = c.height = 256;
+  const g = c.getContext("2d")!;
+  g.translate(0, 256);
+  g.scale(1, -1);
+  g.fillStyle = l.tile === "light" ? "#f4f6fc" : "#10131f";
+  g.beginPath();
+  g.roundRect(6, 6, 244, 244, 58);
+  g.fill();
+  try {
+    const img = new Image();
+    img.src = l.src;
+    await img.decode();
+    const pad = 54;
+    const r = Math.min((256 - pad * 2) / img.width, (256 - pad * 2) / img.height);
+    g.drawImage(img, (256 - img.width * r) / 2, (256 - img.height * r) / 2, img.width * r, img.height * r);
+  } catch {
+    /* a tile without its logo still looks fine */
+  }
+  return createImageBitmap(c);
+}
 
 /** Flat version of the robot, drawn as SVG so the hero is complete at first paint and stays if WebGL is unavailable. */
 function RobotSvg() {
@@ -57,38 +81,23 @@ function RobotSvg() {
 }
 
 /**
- * The hero artwork. The SVG robot is there at once; a real 3D robot (WebGL, built from geometry) fades in over it when the browser is idle,
- * only while the hero is on screen, and not for reduced motion or data saving.
+ * The hero artwork. The SVG robot is there at once. A real 3D robot (WebGL, built from geometry) is drawn by a web worker, so none of the scene
+ * building or drawing runs on the main thread of the page; it starts about 2.7 s after load or on the first interaction, and fades in over the SVG.
+ * Reduced motion, data saving, no worker or OffscreenCanvas support, no WebGL, or a software-only renderer all keep the flat robot.
  */
 export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; stat: ReactNode; logos: SceneLogo[] }) {
   const box = useRef<HTMLDivElement>(null);
+  const cv = useRef<HTMLCanvasElement>(null);
   const [gl, setGl] = useState(false);
-  const [lite, setLite] = useState(false);
-  const [inView, setInView] = useState(true);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    let ok = false;
-    let software = false;
-    try {
-      const c = document.createElement("canvas");
-      const ctx = (c.getContext("webgl2") || c.getContext("webgl")) as WebGLRenderingContext | null;
-      ok = !!ctx;
-      const info = ctx?.getExtension("WEBGL_debug_renderer_info");
-      const name = info && ctx ? String(ctx.getParameter(info.UNMASKED_RENDERER_WEBGL)) : "";
-      software = /swiftshader|llvmpipe|software|basic render/i.test(name);
-    } catch {
-      ok = false;
-    }
-    // A machine that renders WebGL on the CPU cannot animate the robot smoothly (it would block the page for seconds), so it keeps the flat robot.
-    // Adding ?robot=3d to the address forces the 3D version, which is how it is previewed in headless test browsers.
-    const forced = /[?&]robot=3d/.test(location.search);
-    if (calm || saver || !ok || (software && !forced)) return;
-    setLite(!matchMedia("(min-width: 768px)").matches);
+    const can = typeof Worker !== "undefined" && typeof OffscreenCanvas !== "undefined" && "transferControlToOffscreen" in HTMLCanvasElement.prototype;
+    if (calm || saver || !can) return;
     // The flat robot is already on screen. The 3D one starts about 2.7 s after the page has loaded (once the browser is idle), or on the first
-    // interaction (move, touch, key, scroll), whichever comes first, so first paint and early input are never competing with scene building.
+    // interaction (move, touch, key, scroll), whichever comes first, so first paint and early input never compete with start-up.
     const idle = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
     const events = ["pointermove", "pointerdown", "touchstart", "keydown", "wheel", "scroll"] as const;
     let t = 0;
@@ -117,13 +126,77 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
     };
   }, []);
 
+  // Hand the canvas to the worker and keep it told about size, pointer and visibility.
   useEffect(() => {
-    const el = box.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting));
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+    const canvas = cv.current;
+    if (!gl || !canvas) return;
+    let dead = false;
+    let worker: Worker | null = null;
+    const cleanups: (() => void)[] = [];
+    (async () => {
+      const bitmaps = await Promise.all(logos.map(tileBitmap));
+      if (dead) return;
+      const off = canvas.transferControlToOffscreen();
+      const wk = new Worker(new URL("../hero/robot.worker.ts", import.meta.url), { type: "module" });
+      worker = wk;
+      wk.onmessage = (e: MessageEvent<{ type: string }>) => {
+        if (e.data.type === "ready") setReady(true);
+        else if (e.data.type === "unsupported") {
+          wk.terminate();
+          setGl(false);
+        }
+      };
+      wk.onerror = () => {
+        wk.terminate();
+        setGl(false);
+      };
+      const r = canvas.getBoundingClientRect();
+      const lite = !matchMedia("(min-width: 768px)").matches;
+      const forced = /[?&]robot=3d/.test(location.search);
+      wk.postMessage({ type: "init", canvas: off, w: Math.round(r.width), h: Math.round(r.height), dpr: window.devicePixelRatio || 1, lite, forced, logos: logos.map((l, i) => ({ id: l.id, bitmap: bitmaps[i] })) }, [off, ...bitmaps]);
+
+      const ro = new ResizeObserver(() => {
+        const b = canvas.getBoundingClientRect();
+        wk.postMessage({ type: "size", w: Math.round(b.width), h: Math.round(b.height), dpr: window.devicePixelRatio || 1 });
+      });
+      ro.observe(canvas);
+      cleanups.push(() => ro.disconnect());
+
+      let visible = true;
+      const sendActive = () => wk.postMessage({ type: "active", on: visible && !document.hidden });
+      const io = new IntersectionObserver(([en]) => {
+        visible = en.isIntersecting;
+        sendActive();
+      });
+      io.observe(box.current ?? canvas);
+      document.addEventListener("visibilitychange", sendActive);
+      cleanups.push(() => {
+        io.disconnect();
+        document.removeEventListener("visibilitychange", sendActive);
+      });
+
+      let pending = false;
+      let px = 0;
+      let py = 0;
+      const move = (ev: PointerEvent) => {
+        px = (ev.clientX / window.innerWidth) * 2 - 1;
+        py = -((ev.clientY / window.innerHeight) * 2 - 1);
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(() => {
+          pending = false;
+          wk.postMessage({ type: "pointer", x: px, y: py });
+        });
+      };
+      window.addEventListener("pointermove", move, { passive: true });
+      cleanups.push(() => window.removeEventListener("pointermove", move));
+    })();
+    return () => {
+      dead = true;
+      cleanups.forEach((f) => f());
+      worker?.terminate();
+    };
+  }, [gl, logos]);
 
   return (
     <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[560px]">
@@ -131,9 +204,9 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
       <div className={`absolute inset-[4%] transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>
         <RobotSvg />
       </div>
-      {gl && inView !== undefined && (
+      {gl && (
         <div className="hero-canvas pointer-events-none absolute -bottom-[14%] -left-[26%] -top-[14%] right-0 max-md:-bottom-[8%] max-md:-left-[5%] max-md:-top-[8%]" aria-hidden="true">
-          <RobotScene lite={lite} active={inView} logos={logos} onReady={() => setReady(true)} />
+          <canvas ref={cv} className="block h-full w-full" />
         </div>
       )}
       <div className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>{tiles}</div>
