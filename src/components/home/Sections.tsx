@@ -229,19 +229,19 @@ export function AddedTimeline({ tools }: { tools: Tool[] }) {
   );
 }
 
-/** News on a light "paper" surface: a deliberate change of tone, laid out like a front page. */
+/** News laid out like a front page, on a deeper neon band. */
 export function NewsPaper({ news }: { news: NewsItem[] }) {
   const [lead, ...rest] = news;
   return (
-    <section className="paper relative left-1/2 w-screen -translate-x-1/2 px-5 py-20 text-[#0b0d1c]">
+    <section className="paper relative left-1/2 w-screen -translate-x-1/2 px-5 py-20 text-white">
       <div className="mx-auto max-w-7xl">
-        <Head n="04" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="All news" tone="light" />
+        <Head n="04" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="All news" />
         <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <article>
             <div className="aspect-[16/10] overflow-hidden rounded-2xl">
               <NewsVisual n={lead} priority={false} sizes="(min-width: 1024px) 700px, 100vw" />
             </div>
-            <p className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-violet-700">
+            <p className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-cyan">
               {lead.kind} · {formatDate(lead.date)}
             </p>
             <h3 className="mt-2 font-serif text-3xl font-bold leading-tight tracking-tight md:text-4xl">
@@ -249,12 +249,12 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
                 {lead.title}
               </Link>
             </h3>
-            <p className="mt-3 max-w-2xl text-[#3b3f58]">{lead.summary}</p>
+            <p className="mt-3 max-w-2xl text-soft">{lead.summary}</p>
           </article>
-          <ul className="divide-y divide-black/10 self-start">
+          <ul className="divide-y divide-white/10 self-start">
             {rest.slice(0, 4).map((n) => (
               <li key={n.slug} className="py-5 first:pt-0">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-violet-700">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-cyan">
                   {n.kind} · {formatDate(n.date)}
                 </p>
                 <h3 className="mt-1.5 font-serif text-xl font-bold leading-snug">
@@ -262,7 +262,7 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
                     {n.title}
                   </Link>
                 </h3>
-                <p className="mt-1 line-clamp-2 text-sm text-[#4a4e68]">{n.source}</p>
+                <p className="mt-1 line-clamp-2 text-sm text-muted">{n.source}</p>
               </li>
             ))}
           </ul>

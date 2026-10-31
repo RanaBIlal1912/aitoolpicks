@@ -237,7 +237,7 @@ export default function Home() {
         </Reveal>
 
         <Reveal as="section" className="pt-28 cv-section">
-          <div className="rounded-[26px] border border-white/10 bg-white/[0.03] p-8 md:p-12">
+          <div className="panel p-8 md:p-12">
             <div className="grid gap-10 md:grid-cols-[1fr_1.2fr]">
               <div>
                 <span className="eyebrow">How we work</span>

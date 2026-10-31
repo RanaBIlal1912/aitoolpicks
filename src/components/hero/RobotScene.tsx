@@ -39,7 +39,7 @@ function chestTexture() {
 
 function Eye({ x }: { x: number }) {
   return (
-    <mesh position={[x, 0.1, 1.08]} rotation={[0, 0, 0]}>
+    <mesh position={[x, 0.1, 1.05]} rotation={[0, 0, 0]}>
       <torusGeometry args={[0.15, 0.045, 14, 32, Math.PI]} />
       <meshBasicMaterial color={GLOW} toneMapped={false} />
     </mesh>
@@ -77,15 +77,15 @@ function Robot({ lite }: { lite: boolean }) {
           <sphereGeometry args={[1, seg, seg]} />
           <meshPhysicalMaterial {...SHELL} clearcoat={1} clearcoatRoughness={0.15} />
         </mesh>
-        {/* visor */}
-        <mesh position={[0, 0.02, 0.46]} scale={[1.04, 0.76, 0.7]}>
-          <sphereGeometry args={[0.95, seg, seg]} />
-          <meshPhysicalMaterial color="#04061c" roughness={0.08} metalness={0.4} clearcoat={1} emissive="#0a1450" emissiveIntensity={0.7} />
+        {/* visor: a cap cut from a slightly larger copy of the head sphere, so it follows the shell exactly and has a clean edge (no intersecting surfaces) */}
+        <mesh scale={[1.18, 1, 1.02]}>
+          <sphereGeometry args={[1.014, seg * 2, seg, Math.PI / 2 - 1.0, 2.0, Math.PI / 2 - 0.5, 1.0]} />
+          <meshPhysicalMaterial color="#04061c" roughness={0.1} metalness={0.4} clearcoat={1} emissive="#0a1450" emissiveIntensity={0.7} polygonOffset polygonOffsetFactor={-2} polygonOffsetUnits={-2} />
         </mesh>
         {/* eyes and smile */}
         <Eye x={-0.36} />
         <Eye x={0.36} />
-        <mesh position={[0, -0.2, 1.08]} rotation={[0, 0, Math.PI]}>
+        <mesh position={[0, -0.2, 1.04]} rotation={[0, 0, Math.PI]}>
           <torusGeometry args={[0.17, 0.04, 14, 32, Math.PI]} />
           <meshBasicMaterial color={GLOW} toneMapped={false} />
         </mesh>
