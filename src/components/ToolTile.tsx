@@ -17,7 +17,7 @@ export default function ToolTile({ tool, note }: { tool: Tool; note?: string }) 
         <ToolLogo id={tool.id} name={tool.name} hue={tool.hue} size={48} />
         <div className="min-w-0">
           <h3 className="text-lg font-bold leading-tight text-white">
-            <Link href={`/tools/${tool.id}/`} className="tile-link no-underline">
+            <Link prefetch={false} href={`/tools/${tool.id}/`} className="tile-link no-underline">
               {tool.name}
               <span className="sr-only">: details and pricing</span>
             </Link>

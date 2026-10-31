@@ -10,7 +10,7 @@ export function formatDate(iso: string): string {
 export default function ArticleCard({ a, featured = false }: { a: Article; featured?: boolean }) {
   const topic = TOPICS.find((t) => t.id === a.topic)?.label ?? a.cat;
   return (
-    <Link
+    <Link prefetch={false}
       href={a.href}
       className={`glass card-glow group flex h-full overflow-hidden no-underline transition-transform duration-300 hover:-translate-y-1 ${
         featured ? "flex-col md:grid md:grid-cols-[1.15fr_1fr]" : "flex-col"

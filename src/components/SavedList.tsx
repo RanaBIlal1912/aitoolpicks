@@ -31,7 +31,7 @@ export default function SavedList({ mode }: { mode: "favorites" | "recent" }) {
           <p className="mt-2 text-muted">
             {mode === "favorites" ? "Use the heart on any tool card or tool page to save it here." : "Tools you open will appear here, newest first."}
           </p>
-          <Link href="/tools/" className="btn-primary btn-sm mt-5">
+          <Link prefetch={false} href="/tools/" className="btn-primary btn-sm mt-5">
             Browse the directory
           </Link>
         </div>
@@ -44,7 +44,7 @@ export default function SavedList({ mode }: { mode: "favorites" | "recent" }) {
             </p>
             <div className="flex gap-2">
               {tools.length >= 2 && (
-                <Link href={`/compare/?ids=${tools.slice(0, 3).map((t) => t.id).join(",")}`} className="btn-ghost btn-sm">
+                <Link prefetch={false} href={`/compare/?ids=${tools.slice(0, 3).map((t) => t.id).join(",")}`} className="btn-ghost btn-sm">
                   Compare the first {Math.min(3, tools.length)}
                 </Link>
               )}
@@ -79,14 +79,14 @@ export function RecentStrip() {
         <h2 id="recent-title" className="section-title text-white">
           Pick up where you left off
         </h2>
-        <Link href="/recent/" className="btn-ghost btn-sm">
+        <Link prefetch={false} href="/recent/" className="btn-ghost btn-sm">
           All recently viewed →
         </Link>
       </div>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {tools.map((t) => (
           <li key={t.id}>
-            <Link href={`/tools/${t.id}/`} className="glass block rounded-2xl p-4 text-soft no-underline transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
+            <Link prefetch={false} href={`/tools/${t.id}/`} className="glass block rounded-2xl p-4 text-soft no-underline transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
               <span className="block font-bold text-white">{t.name}</span>
               <span className="mt-1 line-clamp-2 block text-sm text-muted">{t.tagline}</span>
             </Link>

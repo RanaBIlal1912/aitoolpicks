@@ -92,10 +92,10 @@ export default function Home() {
               <HeroSearch suggestions={SUGGESTIONS} />
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/tools/" className="btn-primary">
+              <Link prefetch={false} href="/tools/" className="btn-primary">
                 Explore all tools
               </Link>
-              <Link href="/compare/" className="btn-ghost">
+              <Link prefetch={false} href="/compare/" className="btn-ghost">
                 Compare tools
               </Link>
             </div>
@@ -169,7 +169,7 @@ export default function Home() {
           <ul className="mt-8 flex flex-wrap gap-3" aria-label="Guide topics">
             {TOPICS.map((t) => (
               <li key={t.id}>
-                <Link href={`/blog/topic/${t.id}/`} className="chip">
+                <Link prefetch={false} href={`/blog/topic/${t.id}/`} className="chip">
                   {t.label}
                 </Link>
               </li>
@@ -187,7 +187,7 @@ export default function Home() {
           <ul className="grid gap-4 md:grid-cols-3">
             {ROUNDUPS.slice(0, 3).map((r) => (
               <li key={r.slug}>
-                <Link
+                <Link prefetch={false}
                   href={`/best/${r.slug}/`}
                   className="glass card-glow flex h-full flex-col gap-3 p-6 no-underline transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
                   style={{ ["--hue" as string]: 220 }}
@@ -222,10 +222,10 @@ export default function Home() {
                 <h2 className="section-title mt-3 text-white">Sourced, dated and labelled</h2>
                 <p className="mt-4 text-soft">We do not invent prices, ratings, news or affiliate links. When a price could not be confirmed on the official page, the page says so.</p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Link href="/methodology/" className="btn-ghost btn-sm">
+                  <Link prefetch={false} href="/methodology/" className="btn-ghost btn-sm">
                     Read the methodology
                   </Link>
-                  <Link href="/verification/" className="btn-ghost btn-sm">
+                  <Link prefetch={false} href="/verification/" className="btn-ghost btn-sm">
                     See the verification log
                   </Link>
                 </div>
@@ -245,11 +245,11 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-6 text-sm text-muted">
-            Is a tool missing? <Link href="/submit/" className="text-soft underline">Suggest it</Link>. A person reviews every suggestion.
+            Is a tool missing? <Link prefetch={false} href="/submit/" className="text-soft underline">Suggest it</Link>. A person reviews every suggestion.
           </p>
           <p className="mt-3 text-sm text-muted">
             Some links on this site are affiliate links. If you buy through them we may earn a commission at no extra cost to you, and it never changes what we write.{" "}
-            <Link href="/affiliate-disclosure/" className="text-soft underline">
+            <Link prefetch={false} href="/affiliate-disclosure/" className="text-soft underline">
               Read the disclosure
             </Link>
             .

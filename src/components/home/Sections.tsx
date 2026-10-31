@@ -28,7 +28,7 @@ export function Head({ n, eyebrow, title, lead, href, cta, tone = "dark" }: { n:
         </div>
       </div>
       {href && cta && (
-        <Link href={href} className={tone === "light" ? "rounded-full border border-black/20 px-4 py-2 text-sm font-bold text-[#0b0d1c] no-underline hover:bg-black/5" : "btn-ghost btn-sm"}>
+        <Link prefetch={false} href={href} className={tone === "light" ? "rounded-full border border-black/20 px-4 py-2 text-sm font-bold text-[#0b0d1c] no-underline hover:bg-black/5" : "btn-ghost btn-sm"}>
           {cta} →
         </Link>
       )}
@@ -42,7 +42,7 @@ export function LogoRibbon() {
   const row = (suffix: string) =>
     list.map((t) => (
       <li key={t.id + suffix} className="shrink-0">
-        <Link href={`/tools/${t.id}/`} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] py-2 pl-2 pr-5 no-underline transition-colors hover:border-white/30 hover:bg-white/[0.08]">
+        <Link prefetch={false} href={`/tools/${t.id}/`} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] py-2 pl-2 pr-5 no-underline transition-colors hover:border-white/30 hover:bg-white/[0.08]">
           <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
           <span className="text-sm font-semibold text-soft">{t.name}</span>
         </Link>
@@ -86,7 +86,7 @@ export function FeaturedBento({ ids }: { ids: string[] }) {
           <ToolLogo id={lead.id} name={lead.name} hue={lead.hue} size={84} />
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-cyan">{getCategory(lead.category)?.short} · {lead.vendor}</p>
           <h3 className="mt-2 font-display text-4xl font-extrabold tracking-tight text-white md:text-5xl">
-            <Link href={`/tools/${lead.id}/`} className="tile-link no-underline">
+            <Link prefetch={false} href={`/tools/${lead.id}/`} className="tile-link no-underline">
               {lead.name}
               <span className="sr-only">: details and pricing</span>
             </Link>
@@ -108,7 +108,7 @@ export function FeaturedBento({ ids }: { ids: string[] }) {
             <span aria-hidden="true" className="absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-30 blur-2xl" style={{ background: c }} />
             <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
             <h3 className="font-display text-xl font-bold text-white">
-              <Link href={`/tools/${t.id}/`} className="tile-link no-underline">
+              <Link prefetch={false} href={`/tools/${t.id}/`} className="tile-link no-underline">
                 {t.name}
                 <span className="sr-only">: details and pricing</span>
               </Link>
@@ -138,7 +138,7 @@ export function PhotoBand({ checked, total }: { checked: number; total: number }
         <p className="mt-4 text-soft">
           We opened the official site of {checked === total ? "all " + total : checked + " of " + total} tools in a real browser, recorded the plans shown and the date we looked, and marked anything we could not confirm as partial.
         </p>
-        <Link href="/verification/" className="btn-primary mt-7 inline-flex">
+        <Link prefetch={false} href="/verification/" className="btn-primary mt-7 inline-flex">
           See the verification report
         </Link>
       </div>
@@ -158,7 +158,7 @@ export function CategoryRail() {
         const tools = toolsInCategory(c.slug);
         return (
           <li key={c.slug} className="snap-start">
-            <Link
+            <Link prefetch={false}
               href={`/tools/category/${c.slug}/`}
               className="group relative flex h-[210px] w-[250px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-5 no-underline transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
               style={{ background: `linear-gradient(150deg, ${a}40, #0f1226 55%, ${b}26)` }}
@@ -195,7 +195,7 @@ export function FreeLedger({ tools }: { tools: Tool[] }) {
     <ul className="grid gap-x-10 md:grid-cols-2">
       {tools.map((t, i) => (
         <li key={t.id} className="border-b border-white/10">
-          <Link href={`/tools/${t.id}/`} className="group flex items-center gap-4 py-4 no-underline">
+          <Link prefetch={false} href={`/tools/${t.id}/`} className="group flex items-center gap-4 py-4 no-underline">
             <span className="w-6 font-display text-sm font-bold text-muted">{String(i + 1).padStart(2, "0")}</span>
             <ToolLogo id={t.id} name={t.name} hue={t.hue} size={40} />
             <span className="min-w-0 flex-1">
@@ -218,7 +218,7 @@ export function AddedTimeline({ tools }: { tools: Tool[] }) {
       {tools.map((t) => (
         <li key={t.id} className="relative">
           <time dateTime={t.added} className="mb-3 block text-xs font-bold uppercase tracking-[0.14em] text-cyan">{formatDate(t.added)}</time>
-          <Link href={`/tools/${t.id}/`} className="tile flex h-full flex-col gap-3 p-4 no-underline">
+          <Link prefetch={false} href={`/tools/${t.id}/`} className="tile flex h-full flex-col gap-3 p-4 no-underline">
             <ToolLogo id={t.id} name={t.name} hue={t.hue} size={40} />
             <span className="font-display font-bold leading-tight text-white">{t.name}</span>
             <span className="text-xs text-muted">{getCategory(t.category)?.short}</span>
@@ -245,7 +245,7 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
               {lead.kind} · {formatDate(lead.date)}
             </p>
             <h3 className="mt-2 font-serif text-3xl font-bold leading-tight tracking-tight md:text-4xl">
-              <Link href={`/news/${lead.slug}/`} className="no-underline hover:underline">
+              <Link prefetch={false} href={`/news/${lead.slug}/`} className="no-underline hover:underline">
                 {lead.title}
               </Link>
             </h3>
@@ -258,7 +258,7 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
                   {n.kind} · {formatDate(n.date)}
                 </p>
                 <h3 className="mt-1.5 font-serif text-xl font-bold leading-snug">
-                  <Link href={`/news/${n.slug}/`} className="no-underline hover:underline">
+                  <Link prefetch={false} href={`/news/${n.slug}/`} className="no-underline hover:underline">
                     {n.title}
                   </Link>
                 </h3>
@@ -295,7 +295,7 @@ export function VersusTiles() {
         const [la] = left ? catColors(left.category) : ["#754BFF"];
         const [ra] = right ? catColors(right.category) : ["#25C6E8"];
         return (
-          <Link key={c.slug} href={`/compare/${c.slug}/`} className="group relative overflow-hidden rounded-3xl border border-white/10 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
+          <Link prefetch={false} key={c.slug} href={`/compare/${c.slug}/`} className="group relative overflow-hidden rounded-3xl border border-white/10 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
             <span aria-hidden="true" className="absolute inset-0" style={{ background: `linear-gradient(100deg, ${la}44 0%, #0d1024 48%, #0d1024 52%, ${ra}44 100%)` }} />
             <div className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-6 pb-4 pt-8">
               <div className="flex flex-col items-center gap-3 text-center">
@@ -336,7 +336,7 @@ export function EcosystemBand() {
           <p className="mt-4 max-w-xl text-soft">
             Companies, products and models linked only where a record states the relationship. Open the 3D network and follow the connections.
           </p>
-          <Link href="/ecosystem/" className="btn-primary mt-7 inline-block">
+          <Link prefetch={false} href="/ecosystem/" className="btn-primary mt-7 inline-block">
             Open the ecosystem map
           </Link>
         </div>

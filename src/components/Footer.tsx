@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
           <p className="mt-4 max-w-sm text-sm text-muted">
             Some links are affiliate links. We may earn a commission at no extra cost to you.{" "}
-            <Link href="/affiliate-disclosure/" className="text-soft underline">
+            <Link prefetch={false} href="/affiliate-disclosure/" className="text-soft underline">
               Read the disclosure
             </Link>
             .
@@ -28,7 +28,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2">
             {[...NAV, { href: "/best/", label: "Best-of guides", feature: false }].map((n) => (
               <li key={n.href}>
-                <Link href={n.href} className="text-soft no-underline hover:text-white">
+                <Link prefetch={false} href={n.href} className="text-soft no-underline hover:text-white">
                   {n.label}
                 </Link>
               </li>
@@ -40,7 +40,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2">
             {FOOTER_LINKS.map((n) => (
               <li key={n.href}>
-                <Link href={n.href} className="text-soft no-underline hover:text-white">
+                <Link prefetch={false} href={n.href} className="text-soft no-underline hover:text-white">
                   {n.label}
                 </Link>
               </li>
