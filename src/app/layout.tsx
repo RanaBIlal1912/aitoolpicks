@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Bricolage_Grotesque, Newsreader } from "next/font/google";
@@ -60,7 +61,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ScrollProgress />
           <Header />
           <main id="main">{children}</main>
-          <Footer />
+          <Suspense>
+            <Footer />
+          </Suspense>
         </Providers>
         <JsonLd
           data={{
