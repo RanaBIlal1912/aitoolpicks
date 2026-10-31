@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { GUIDES, TOPICS } from "@/data/articles";
 import { NEWS } from "@/data/news";
-import { TOOLS, getTool } from "@/data/tools";
+import { CATEGORIES, TOOLS, getTool } from "@/data/tools";
 import { ROUNDUPS } from "@/data/roundups";
 import { SITE, absUrl } from "@/lib/site";
 import { getTrending } from "@/lib/trending";
@@ -15,7 +15,7 @@ import UniverseSection from "@/components/universe/UniverseSection";
 import ToolLogo from "@/components/ToolLogo";
 import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
-import HeroFrame from "@/components/home/HeroFrame";
+import { BlogPanel, CategoryGrid, CtaPanel, FeaturedTools, HeroOrbit, NewsPanel, PanelHead, StatStrip } from "@/components/home/Neon";
 import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, PhotoBand, VersusTiles } from "@/components/home/Sections";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
@@ -57,6 +57,7 @@ function Word({ children, i }: { children: string; i: number }) {
 }
 
 export default function Home() {
+  const VERIFIED = TOOLS.filter((t) => t.pricingStatus === "verified").length;
   const picks = ["claude", "github-copilot", "runway", "elevenlabs", "perplexity"];
   const featured = ["claude", "github-copilot", "runway", "elevenlabs", "notion", "perplexity"].map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t);
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
@@ -72,18 +73,20 @@ export default function Home() {
     <>
       <section id="hero" className="relative isolate">
         <HeroVisual />
-        <div className="relative mx-auto grid min-h-[min(92vh,880px)] max-w-6xl items-center gap-10 px-5 pb-24 pt-14 lg:grid-cols-[1.25fr_1fr]">
+        <div className="relative mx-auto grid min-h-[min(88vh,820px)] max-w-7xl items-center gap-8 px-5 pb-16 pt-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <span className="eyebrow">The AI tool magazine and price directory</span>
-            <h1 className="hero-title mt-6 text-[clamp(3rem,8.4vw,6.6rem)] font-extrabold leading-[0.93] tracking-[-0.045em] text-white">
-              <Word i={0}>Find</Word>
+            <h1 className="hero-title mt-6 text-[clamp(2.4rem,4.9vw,4.4rem)] font-extrabold leading-[1] tracking-[-0.035em] text-white">
+              <Word i={0}>Discover</Word>
               <Word i={1}>the</Word>
-              <Word i={2}>AI</Word>
-              <Word i={3}>tool</Word>
-              <Word i={4}>that</Word>
-              <span className="word gradient-text font-serif font-medium italic tracking-[-0.03em]" style={{ ["--i" as string]: 5 }}>
-                fits.
-              </span>
+              <Word i={2}>Best</Word>
+              <br />
+              <span className="word gradient-text" style={{ ["--i" as string]: 3 }}>
+                AI Tools
+              </span>{" "}
+              <Word i={4}>in</Word>
+              <Word i={5}>One</Word>
+              <Word i={6}>Place</Word>
             </h1>
             <p className="mt-7 max-w-xl text-lg text-soft md:text-xl">
               {TOOLS.length} tools, every plan and price read from the official page, with the date we checked it. Search by the job you need done.
@@ -93,16 +96,35 @@ export default function Home() {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link prefetch={false} href="/tools/" className="btn-primary">
-                Explore all tools
+                Explore Tools <span aria-hidden="true">→</span>
               </Link>
               <Link prefetch={false} href="/compare/" className="btn-ghost">
-                Compare tools
+                Compare Prices
               </Link>
             </div>
           </div>
-          <HeroFrame total={TOOLS.length} verified={TOOLS.filter((t) => t.pricingStatus === "verified").length} />
+          <HeroOrbit total={TOOLS.length} verified={VERIFIED} />
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-5">
+        <StatStrip total={TOOLS.length} categories={CATEGORIES.length} verified={VERIFIED} />
+        <div className="mt-6 grid gap-5 lg:grid-cols-[1.05fr_1fr]">
+          <section className="panel p-5" aria-label="Popular categories">
+            <PanelHead icon={<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />} title="Popular Categories" sub="Browse AI tools by category" href="/tools/" cta="View all tools" />
+            <CategoryGrid />
+          </section>
+          <section className="panel p-5" aria-label="Featured tools">
+            <PanelHead icon={<path d="M12 3c1 3 4 4 4 8a4 4 0 01-8 0c0-1 .5-2 1-3 .5 2 2 2 2 0 0-2-1-3 1-5zM6 15a6 6 0 0012 0" />} title="Featured AI Tools" sub="Editor's picks with documented pricing" href="/tools/" cta="View all tools" />
+            <FeaturedTools ids={["chatgpt", "midjourney", "canva"]} />
+          </section>
+        </div>
+        <div className="mt-5 grid gap-5 lg:grid-cols-3">
+          <NewsPanel />
+          <BlogPanel a={lead} />
+          <CtaPanel />
+        </div>
+      </div>
 
       <LogoRibbon />
 

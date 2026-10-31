@@ -10,26 +10,14 @@ import { useCurrency } from "./CurrencyProvider";
 
 /** One style for every link in the bar, so the header looks identical on every route. */
 const LINK =
-  "group relative inline-flex h-10 items-center rounded-lg px-3 text-[0.95rem] font-medium no-underline transition-colors duration-200 " +
+  "group relative inline-flex h-10 items-center rounded-full border border-transparent px-3.5 text-[0.95rem] font-semibold no-underline transition-all duration-200 " +
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan";
-
-function Underline({ active }: { active: boolean }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`pointer-events-none absolute inset-x-3 bottom-1 h-px origin-left bg-current transition-transform duration-300 ease-out ${
-        active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100 group-focus-visible:scale-x-100"
-      }`}
-    />
-  );
-}
 
 function NavLink({ href, label, pathname }: { href: string; label: string; pathname: string }) {
   const active = pathname === href || pathname.startsWith(href);
   return (
-    <Link href={href} aria-current={active ? "page" : undefined} className={`${LINK} ${active ? "text-white" : "text-soft hover:text-white"}`}>
+    <Link href={href} aria-current={active ? "page" : undefined} className={`${LINK} ${active ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white shadow-[0_0_22px_-6px_rgba(110,90,255,0.9)]" : "text-soft hover:bg-white/5 hover:text-white"}`}>
       {label}
-      <Underline active={active} />
     </Link>
   );
 }
@@ -88,13 +76,12 @@ function MoreMenu({ pathname }: { pathname: string }) {
         aria-expanded={open}
         aria-controls="more-menu"
         onClick={() => setOpen((v) => !v)}
-        className={`${LINK} gap-1.5 ${active || open ? "text-white" : "text-soft hover:text-white"}`}
+        className={`${LINK} gap-1.5 ${active || open ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white" : "text-soft hover:bg-white/5 hover:text-white"}`}
       >
         More
         <svg width="10" height="6" viewBox="0 0 12 8" aria-hidden="true" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
           <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
         </svg>
-        <Underline active={active || open} />
       </button>
       {open && (
         <ul id="more-menu" className="glass absolute right-0 top-full z-50 mt-2 w-56 rounded-xl p-1.5 shadow-2xl">
@@ -157,14 +144,17 @@ export default function Header() {
         aria-hidden="true"
         className={`pointer-events-none absolute inset-0 -z-10 transition-opacity duration-300 ${scrolled || open ? "bg-[#090B18]/85 opacity-100 backdrop-blur-xl" : "opacity-0"}`}
       />
-      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-5">
         <Link
           href="/"
           className="flex items-center gap-2.5 rounded-lg font-extrabold tracking-tight text-white no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
           aria-label={`${SITE.name} home`}
         >
-          <BrandMark size={32} gradientId="brand-header" />
-          <span className="text-[1.08rem]">{SITE.name}</span>
+          <BrandMark size={38} gradientId="brand-header" />
+          <span className="flex flex-col leading-tight">
+            <span className="whitespace-nowrap text-[1.15rem]">{SITE.name}</span>
+            <span className="hidden text-[0.68rem] font-medium tracking-wide text-muted sm:block">Discover · Compare · Choose</span>
+          </span>
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-0.5 lg:flex">
@@ -176,6 +166,14 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <CurrencySelect id="currency-desktop" />
+          <Link href="/tools/" aria-label="Search all tools" className="hidden h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white no-underline transition-colors hover:border-cyan/60 hover:bg-white/10 md:grid">
+            <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" strokeWidth="1.8" /><path d="M14 14l4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+          </Link>
+          <div className="hidden xl:block">
+            <Link href="/tools/" className="btn-primary btn-sm">
+              Explore Tools <span aria-hidden="true">→</span>
+            </Link>
+          </div>
           <button
             ref={toggle}
             type="button"
