@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { whenEngaged } from "@/lib/engage";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import type { SceneLogo } from "../hero/RobotScene";
@@ -88,9 +87,18 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
     const forced = /[?&]robot=3d/.test(location.search);
     if (calm || saver || !ok || (software && !forced)) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    // Building the 3D scene (reflection map, shader compiles, textures) takes the main thread for a while, so it starts on the visitor's first
-    // pointer move, scroll, touch or key press, or after 20 s of reading. Until then the flat robot is shown.
-    return whenEngaged(() => setGl(true), 20000);
+    // Start as soon as the page has loaded and the browser is idle, so the first paint is never delayed.
+    const idle = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    let t = 0;
+    const go = () => {
+      t = window.setTimeout(() => (idle ? idle(() => setGl(true), { timeout: 1500 }) : setGl(true)), 300);
+    };
+    if (document.readyState === "complete") go();
+    else window.addEventListener("load", go, { once: true });
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("load", go);
+    };
   }, []);
 
   useEffect(() => {
@@ -108,7 +116,7 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
         <RobotSvg />
       </div>
       {gl && inView !== undefined && (
-        <div className="absolute -inset-x-[18%] -inset-y-[14%] [mask-image:radial-gradient(ellipse_closest-side,#000_90%,transparent)]" aria-hidden="true">
+        <div className="pointer-events-none absolute -inset-x-[30%] -inset-y-[16%] max-md:-inset-x-[8%]" aria-hidden="true">
           <RobotScene lite={lite} active={inView} logos={logos} onReady={() => setReady(true)} />
         </div>
       )}

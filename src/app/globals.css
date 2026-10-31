@@ -1435,10 +1435,11 @@ table.cmp tbody tr:hover th {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(820px 600px at 76% 44%, rgba(64, 92, 255, 0.58), transparent 66%),
-    radial-gradient(560px 440px at 94% 80%, rgba(255, 79, 216, 0.3), transparent 70%),
-    radial-gradient(640px 420px at 58% 6%, rgba(34, 211, 238, 0.24), transparent 70%),
-    radial-gradient(500px 360px at 0% 100%, rgba(139, 92, 255, 0.28), transparent 70%);
+    radial-gradient(900px 640px at 74% 42%, rgba(70, 110, 255, 0.85), transparent 66%),
+    radial-gradient(620px 480px at 96% 84%, rgba(255, 79, 216, 0.5), transparent 70%),
+    radial-gradient(700px 460px at 56% 4%, rgba(34, 211, 238, 0.45), transparent 70%),
+    radial-gradient(600px 420px at 8% 100%, rgba(139, 92, 255, 0.5), transparent 70%),
+    linear-gradient(112deg, rgba(9, 14, 70, 0.9) 0%, rgba(22, 36, 150, 0.55) 46%, rgba(86, 44, 200, 0.5) 78%, rgba(160, 50, 200, 0.35) 100%);
 }
 #hero::after {
   content: "";
@@ -1451,10 +1452,13 @@ table.cmp tbody tr:hover th {
   pointer-events: none;
   border-radius: 50%;
   border: 3px solid transparent;
-  background: linear-gradient(#090b18, #090b18) padding-box, linear-gradient(90deg, rgba(34, 211, 238, 0), #22d3ee 40%, #8b5cff 75%, rgba(255, 79, 216, 0)) border-box;
-  opacity: 0.55;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0), #22d3ee 40%, #8b5cff 75%, rgba(255, 79, 216, 0)) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) padding-box exclude, linear-gradient(#000 0 0);
+  opacity: 0.9;
   transform: rotate(-16deg);
-  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.7));
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.8));
 }
 @media (max-width: 1023px) {
   #hero::after {
