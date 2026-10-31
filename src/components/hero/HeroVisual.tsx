@@ -83,7 +83,7 @@ export default function HeroVisual() {
         <StaticNetwork />
       </div>
       {webgl && (
-        <div className="hero-canvas pointer-events-auto absolute inset-0 touch-pan-y opacity-60 md:opacity-100">
+        <div className="hero-canvas pointer-events-auto absolute inset-0 touch-pan-y opacity-60 md:opacity-85">
           <HeroScene lite={lite} active={inView} />
         </div>
       )}

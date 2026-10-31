@@ -49,8 +49,8 @@ function Network({ lite }: { lite: boolean }) {
     return g;
   }, [signals]);
 
-  // On a phone the network sits behind the headline, so its nodes are drawn smaller than on a desktop, where it has its own space on the right.
-  const k = lite ? 1 : 2;
+  // Node size matches the static SVG network this scene fades in over (about 80 px per unit of node size on a desktop screen), so nothing inflates when WebGL starts.
+  const k = lite ? 0.8 : 1.1;
   useEffect(() => {
     const m = new THREE.Matrix4();
     const col = new THREE.Color();
@@ -59,7 +59,7 @@ function Network({ lite }: { lite: boolean }) {
       nodesRef.current?.setMatrixAt(i, m);
       nodesRef.current?.setColorAt(i, col.set(n.color));
       if (haloRef.current) {
-        m.compose(new THREE.Vector3(n.x, n.y, n.z), new THREE.Quaternion(), new THREE.Vector3(n.size * 7, n.size * 7, n.size * 7));
+        m.compose(new THREE.Vector3(n.x, n.y, n.z), new THREE.Quaternion(), new THREE.Vector3(n.size * k * 3.5, n.size * k * 3.5, n.size * k * 3.5));
         haloRef.current.setMatrixAt(i, m);
         haloRef.current.setColorAt(i, col.set(n.color));
       }
@@ -93,7 +93,7 @@ function Network({ lite }: { lite: boolean }) {
   });
 
   return (
-    <group position={[lite ? 0 : 1.7, lite ? 0.2 : 0, 0]}>
+    <group position={[lite ? 0 : 2.4, lite ? 0.2 : 0, 0]}>
       <group ref={group}>
         <instancedMesh ref={nodesRef} args={[undefined, undefined, nodes.length]}>
           <sphereGeometry args={[1, lite ? 8 : 14, lite ? 8 : 14]} />
