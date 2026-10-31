@@ -7,36 +7,36 @@ import ToolLogo from "../ToolLogo";
 import NewsVisual from "../NewsVisual";
 import ArticleCover from "../ArticleCover";
 import { formatDate } from "../ArticleCard";
+import RobotHero from "./RobotHero";
 
-/** Hero visual: real product logos in floating tiles around a glowing orb. No mascot art and no invented figures. */
+/** Hero artwork: the 3D robot with real product logos floating around it and a card with the catalog counts. */
 export function HeroOrbit({ total, verified }: { total: number; verified: number }) {
   const tiles: { id: string; pos: string; size: number; delay: string }[] = [
-    { id: "chatgpt", pos: "left-[6%] top-[12%]", size: 64, delay: "0s" },
-    { id: "midjourney", pos: "right-[14%] top-[2%]", size: 68, delay: "-1.5s" },
-    { id: "claude", pos: "right-[0%] top-[34%]", size: 60, delay: "-3s" },
-    { id: "canva", pos: "left-[0%] top-[52%]", size: 58, delay: "-2s" },
-    { id: "gemini", pos: "left-[26%] bottom-[6%]", size: 56, delay: "-4s" },
-    { id: "notion", pos: "right-[26%] bottom-[2%]", size: 56, delay: "-2.5s" },
+    { id: "chatgpt", pos: "left-[4%] top-[8%]", size: 62, delay: "0s" },
+    { id: "midjourney", pos: "right-[18%] top-[0%]", size: 64, delay: "-1.5s" },
+    { id: "gemini", pos: "right-[0%] top-[18%]", size: 58, delay: "-3s" },
+    { id: "notion", pos: "left-[0%] top-[44%]", size: 56, delay: "-2s" },
+    { id: "canva", pos: "right-[4%] top-[48%]", size: 58, delay: "-4s" },
+    { id: "figma", pos: "left-[12%] bottom-[8%]", size: 54, delay: "-2.5s" },
   ];
   return (
-    <div className="relative mx-auto hidden aspect-[1/0.92] w-full max-w-[560px] lg:block" aria-hidden="true">
-      <div className="orbit-ring absolute left-[8%] right-[8%] top-[34%] h-[46%]" />
-      <div className="orb absolute left-1/2 top-[44%] h-[44%] w-[44%] -translate-x-1/2 -translate-y-1/2 rounded-full" />
-      <div className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2 text-center font-display text-6xl font-extrabold tracking-tight text-white drop-shadow-[0_0_24px_rgba(140,120,255,0.9)]">AI</div>
-      {tiles.map((t) => {
+    <RobotHero
+      tiles={tiles.map((t) => {
         const tool = getTool(t.id);
         return tool ? (
-          <span key={t.id} className={`float-y absolute ${t.pos} rounded-[22px] shadow-[0_0_30px_-4px_rgba(110,90,255,0.8)] ring-1 ring-white/30`} style={{ animationDelay: t.delay }}>
+          <span key={t.id} className={`float-y absolute ${t.pos} rounded-[20px] shadow-[0_0_30px_-4px_rgba(110,90,255,0.9)] ring-1 ring-white/30`} style={{ animationDelay: t.delay }}>
             <ToolLogo id={tool.id} name={tool.name} hue={tool.hue} size={t.size} />
           </span>
         ) : null;
       })}
-      <div className="panel absolute bottom-[14%] right-0 w-[44%] rotate-[-4deg] p-4">
-        <p className="font-display text-4xl font-extrabold leading-none text-white">{total}</p>
-        <p className="mt-1 text-sm font-semibold text-soft">AI tools indexed</p>
-        <p className="mt-0.5 text-xs text-muted">{verified} with fully verified prices</p>
-      </div>
-    </div>
+      stat={
+        <div className="panel !absolute bottom-[4%] right-[-2%] w-[44%] max-w-[210px] rotate-[-5deg] p-4 sm:bottom-[12%]">
+          <p className="font-display text-4xl font-extrabold leading-none text-white sm:text-5xl">{total}</p>
+          <p className="mt-1 text-sm font-semibold text-soft">AI tools indexed</p>
+          <p className="mt-0.5 text-xs text-muted">{verified} with fully verified prices</p>
+        </div>
+      }
+    />
   );
 }
 
@@ -153,30 +153,39 @@ export function FeaturedTools({ ids }: { ids: string[] }) {
 }
 
 export function NewsPanel() {
-  const n = [...NEWS].sort((a, b) => b.date.localeCompare(a.date))[0];
+  const list = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
   return (
     <div className="panel p-5">
       <PanelHead icon={<path d="M4 5h13v14H6a2 2 0 01-2-2zM17 9h3v8a2 2 0 01-2 2M8 9h6M8 13h6" />} title="Latest AI News" sub="From the original sources" href="/news/" cta="View all news" />
+      <ul className="space-y-4">
+        {list.map((n) => (
+          <li key={n.slug}>
       <Link href={`/news/${n.slug}/`} prefetch={false} className="group flex gap-4 no-underline">
-        <div className="relative h-24 w-32 shrink-0 overflow-hidden rounded-xl border border-white/10">
-          <NewsVisual n={n} small sizes="140px" logos={1} />
-        </div>
-        <div className="min-w-0">
-          <span className="rounded-md bg-violet/30 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wide text-[#d9ccff]">{n.kind}</span>
-          <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-white group-hover:underline">{n.title}</h3>
-          <p className="mt-1 text-xs text-muted">
-            {formatDate(n.date)} · {n.source}
-          </p>
-        </div>
-      </Link>
+              <div className="relative h-24 w-32 shrink-0 overflow-hidden rounded-xl border border-white/10">
+                <NewsVisual n={n} small sizes="140px" logos={1} />
+              </div>
+              <div className="min-w-0">
+                <span className="rounded-md bg-violet/30 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wide text-[#d9ccff]">{n.kind}</span>
+                <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-white group-hover:underline">{n.title}</h3>
+                <p className="mt-1 text-xs text-muted">
+                  {formatDate(n.date)} · {n.source}
+                </p>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-export function BlogPanel({ a }: { a: Article }) {
+export function BlogPanel({ items }: { items: Article[] }) {
   return (
     <div className="panel p-5">
       <PanelHead icon={<path d="M5 19l3.5-1 10-10a2 2 0 00-3-3l-10 10zM14 7l3 3" />} title="From Our Blog" sub="Practical, plain-English guides" href="/blog/" cta="View all guides" />
+      <ul className="space-y-4">
+        {items.map((a) => (
+          <li key={a.slug}>
       <Link href={a.href} prefetch={false} className="group flex gap-4 no-underline">
         <div className="relative h-24 w-32 shrink-0 overflow-hidden rounded-xl border border-white/10">
           <ArticleCover topic={a.topic} tools={[]} small seed={a.slug} />
@@ -188,6 +197,9 @@ export function BlogPanel({ a }: { a: Article }) {
           </p>
         </div>
       </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

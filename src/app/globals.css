@@ -1354,3 +1354,8 @@ table.cmp tbody tr:hover th {
   color: transparent;
   filter: drop-shadow(0 0 10px rgba(var(--ph-b), 0.55));
 }
+
+/* The static network behind the hero recedes so the robot is the focus */
+#hero .hero-net {
+  opacity: 0.35;
+}

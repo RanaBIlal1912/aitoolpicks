@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="relative isolate">
-        <HeroVisual />
+        <HeroVisual webgl={false} />
         <div className="relative mx-auto grid min-h-[min(88vh,820px)] max-w-7xl items-center gap-8 px-5 pb-16 pt-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <span className="eyebrow">The AI tool magazine and price directory</span>
@@ -116,12 +116,12 @@ export default function Home() {
           </section>
           <section className="panel p-5" aria-label="Featured tools">
             <PanelHead icon={<path d="M12 3c1 3 4 4 4 8a4 4 0 01-8 0c0-1 .5-2 1-3 .5 2 2 2 2 0 0-2-1-3 1-5zM6 15a6 6 0 0012 0" />} title="Featured AI Tools" sub="Editor's picks with documented pricing" href="/tools/" cta="View all tools" />
-            <FeaturedTools ids={["chatgpt", "midjourney", "canva"]} />
+            <FeaturedTools ids={["chatgpt", "midjourney", "canva", "claude", "gemini", "notion"]} />
           </section>
         </div>
         <div className="mt-5 grid gap-5 lg:grid-cols-3">
           <NewsPanel />
-          <BlogPanel a={lead} />
+          <BlogPanel items={latest.slice(0, 2)} />
           <CtaPanel />
         </div>
       </div>

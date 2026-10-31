@@ -14,7 +14,7 @@ const LINK =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan";
 
 function NavLink({ href, label, pathname }: { href: string; label: string; pathname: string }) {
-  const active = pathname === href || pathname.startsWith(href);
+  const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href);
   return (
     <Link href={href} aria-current={active ? "page" : undefined} className={`${LINK} ${active ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white shadow-[0_0_22px_-6px_rgba(110,90,255,0.9)]" : "text-soft hover:bg-white/5 hover:text-white"}`}>
       {label}
@@ -158,6 +158,7 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-0.5 lg:flex">
+          <NavLink href="/" label="Home" pathname={pathname} />
           {NAV.map((n) => (
             <NavLink key={n.href} href={n.href} label={n.label} pathname={pathname} />
           ))}
@@ -201,8 +202,8 @@ export default function Header() {
             className="sheet-in fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#090B18]/97 backdrop-blur-xl lg:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto flex max-w-7xl flex-col px-5 py-4">
-              {[...NAV, ...MORE].map((n) => {
-                const active = pathname.startsWith(n.href);
+              {[{ href: "/", label: "Home" }, ...NAV, ...MORE].map((n) => {
+                const active = n.href === "/" ? pathname === "/" : pathname.startsWith(n.href);
                 return (
                   <Link
                     key={n.href}
