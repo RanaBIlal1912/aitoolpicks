@@ -1357,3 +1357,110 @@ table.cmp tbody tr:hover th {
 #hero .hero-net {
   opacity: 0.35;
 }
+
+
+/* ---------- Premium card system: depth, glow and lift shared by every card ---------- */
+.card-lift {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+  will-change: transform;
+}
+.card-lift:hover,
+.card-lift:focus-within {
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 34px -8px rgba(34, 211, 238, 0.5), 0 26px 50px -24px rgba(5, 6, 30, 0.9);
+}
+.panel,
+.glass,
+.news-card,
+.tile,
+.versus {
+  position: relative;
+}
+.panel::after,
+.news-card::after,
+.versus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 32%, transparent 70%, rgba(34, 211, 238, 0.07));
+}
+.news-card,
+.tile,
+.versus {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+}
+.news-card:hover,
+.tile:hover,
+.versus:hover {
+  transform: translateY(-4px);
+}
+.versus {
+  border-color: var(--panel-line) !important;
+  box-shadow: var(--panel-glow);
+}
+.versus:hover {
+  border-color: rgba(34, 211, 238, 0.6) !important;
+  box-shadow: 0 0 36px -8px rgba(139, 92, 255, 0.7);
+}
+.toc {
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid var(--panel-line);
+  background: linear-gradient(170deg, rgba(24, 28, 84, 0.7), rgba(10, 12, 38, 0.85));
+  box-shadow: var(--panel-glow);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .news-card,
+  .tile,
+  .versus {
+    transition: none;
+  }
+  .card-lift:hover,
+  .news-card:hover,
+  .tile:hover,
+  .versus:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Hero atmosphere: electric blue and violet light behind the robot, a magenta bloom and a cyan swoosh ---------- */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: -80px 0 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(820px 600px at 76% 44%, rgba(64, 92, 255, 0.58), transparent 66%),
+    radial-gradient(560px 440px at 94% 80%, rgba(255, 79, 216, 0.3), transparent 70%),
+    radial-gradient(640px 420px at 58% 6%, rgba(34, 211, 238, 0.24), transparent 70%),
+    radial-gradient(500px 360px at 0% 100%, rgba(139, 92, 255, 0.28), transparent 70%);
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  right: -160px;
+  bottom: 40px;
+  width: 980px;
+  height: 260px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: linear-gradient(#090b18, #090b18) padding-box, linear-gradient(90deg, rgba(34, 211, 238, 0), #22d3ee 40%, #8b5cff 75%, rgba(255, 79, 216, 0)) border-box;
+  opacity: 0.55;
+  transform: rotate(-16deg);
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.7));
+}
+@media (max-width: 1023px) {
+  #hero::after {
+    display: none;
+  }
+}
+#hero {
+  overflow-x: clip;
+}

@@ -4,7 +4,7 @@ import { ARTICLES, GUIDES, TOPICS } from "@/data/articles";
 import { absUrl } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
 import BlogList from "@/components/BlogList";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleCard, { ArticleSide } from "@/components/ArticleCard";
 
 const meta = pageMeta({
   title: "Blog: practical guides to AI tools, work and getting started",
@@ -30,7 +30,14 @@ export default function BlogPage() {
       />
       <div className="mx-auto max-w-7xl px-5">
         <h2 className="kicker mb-4">Featured guide</h2>
-        <ArticleCard a={lead} featured />
+        <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
+          <ArticleCard a={lead} featured />
+          <div className="flex flex-col gap-6">
+            {GUIDES.filter((g) => g.slug !== lead.slug && !g.region).slice(0, 2).map((g) => (
+              <ArticleSide key={g.slug} a={g} />
+            ))}
+          </div>
+        </div>
         <div className="mt-10 flex flex-wrap items-center gap-2">
           <span className="mr-1 text-sm font-semibold text-muted">Browse by topic:</span>
           {TOPICS.map((t) => (

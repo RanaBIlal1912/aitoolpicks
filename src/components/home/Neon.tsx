@@ -8,6 +8,8 @@ import NewsVisual from "../NewsVisual";
 import ArticleCover from "../ArticleCover";
 import { formatDate } from "../ArticleCard";
 import RobotHero from "./RobotHero";
+import { logoFor } from "@/data/logos";
+import { withBase } from "@/lib/site";
 
 /** Hero artwork: the 3D robot with real product logos floating around it and a card with the catalog counts. */
 export function HeroOrbit({ total, verified }: { total: number; verified: number }) {
@@ -21,6 +23,10 @@ export function HeroOrbit({ total, verified }: { total: number; verified: number
   ];
   return (
     <RobotHero
+      logos={tiles.flatMap((t) => {
+        const l = logoFor(t.id);
+        return l ? [{ id: t.id, src: withBase(l.src), tile: l.tile }] : [];
+      })}
       tiles={tiles.map((t) => {
         const tool = getTool(t.id);
         return tool ? (

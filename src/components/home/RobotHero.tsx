@@ -1,7 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { whenEngaged } from "@/lib/engage";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+
+import type { SceneLogo } from "../hero/RobotScene";
 
 const RobotScene = dynamic(() => import("../hero/RobotScene"), { ssr: false });
 
@@ -58,7 +61,7 @@ function RobotSvg() {
  * The hero artwork. The SVG robot is there at once; a real 3D robot (WebGL, built from geometry) fades in over it when the browser is idle,
  * only while the hero is on screen, and not for reduced motion or data saving.
  */
-export default function RobotHero({ tiles, stat }: { tiles: ReactNode; stat: ReactNode }) {
+export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; stat: ReactNode; logos: SceneLogo[] }) {
   const box = useRef<HTMLDivElement>(null);
   const [gl, setGl] = useState(false);
   const [lite, setLite] = useState(false);
@@ -69,16 +72,25 @@ export default function RobotHero({ tiles, stat }: { tiles: ReactNode; stat: Rea
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     let ok = false;
+    let software = false;
     try {
       const c = document.createElement("canvas");
-      ok = !!(c.getContext("webgl2") || c.getContext("webgl"));
+      const ctx = (c.getContext("webgl2") || c.getContext("webgl")) as WebGLRenderingContext | null;
+      ok = !!ctx;
+      const info = ctx?.getExtension("WEBGL_debug_renderer_info");
+      const name = info && ctx ? String(ctx.getParameter(info.UNMASKED_RENDERER_WEBGL)) : "";
+      software = /swiftshader|llvmpipe|software|basic render/i.test(name);
     } catch {
       ok = false;
     }
-    if (calm || saver || !ok) return;
+    // A machine that renders WebGL on the CPU cannot animate the robot smoothly (it would block the page for seconds), so it keeps the flat robot.
+    // Adding ?robot=3d to the address forces the 3D version, which is how it is previewed in headless test browsers.
+    const forced = /[?&]robot=3d/.test(location.search);
+    if (calm || saver || !ok || (software && !forced)) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    const t = window.setTimeout(() => setGl(true), 900);
-    return () => clearTimeout(t);
+    // Building the 3D scene (reflection map, shader compiles, textures) takes the main thread for a while, so it starts on the visitor's first
+    // pointer move, scroll, touch or key press, or after 20 s of reading. Until then the flat robot is shown.
+    return whenEngaged(() => setGl(true), 20000);
   }, []);
 
   useEffect(() => {
@@ -89,19 +101,6 @@ export default function RobotHero({ tiles, stat }: { tiles: ReactNode; stat: Rea
     return () => io.disconnect();
   }, []);
 
-  useEffect(() => {
-    const el = box.current;
-    if (!gl || !el) return;
-    const mo = new MutationObserver(() => {
-      if (el.querySelector("canvas")) {
-        setReady(true);
-        mo.disconnect();
-      }
-    });
-    mo.observe(el, { childList: true, subtree: true });
-    return () => mo.disconnect();
-  }, [gl]);
-
   return (
     <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[560px]">
       <span aria-hidden="true" className="orb absolute left-1/2 top-[52%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60" />
@@ -109,11 +108,11 @@ export default function RobotHero({ tiles, stat }: { tiles: ReactNode; stat: Rea
         <RobotSvg />
       </div>
       {gl && inView !== undefined && (
-        <div className="absolute inset-0" aria-hidden="true">
-          <RobotScene lite={lite} active={inView} />
+        <div className="absolute -inset-x-[18%] -inset-y-[14%] [mask-image:radial-gradient(ellipse_closest-side,#000_90%,transparent)]" aria-hidden="true">
+          <RobotScene lite={lite} active={inView} logos={logos} onReady={() => setReady(true)} />
         </div>
       )}
-      <div className="pointer-events-none absolute inset-0">{tiles}</div>
+      <div className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>{tiles}</div>
       {stat}
     </div>
   );

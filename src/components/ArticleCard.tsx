@@ -42,3 +42,24 @@ export default function ArticleCard({ a, featured = false }: { a: Article; featu
     </Link>
   );
 }
+
+/** Compact horizontal card used beside a featured article: a small cover, the topic, the title and the date. */
+export function ArticleSide({ a }: { a: Article }) {
+  const topic = TOPICS.find((t) => t.id === a.topic)?.label ?? a.cat;
+  return (
+    <Link href={a.href} prefetch={false} className="glass card-glow card-lift group flex flex-1 gap-4 overflow-hidden p-4 no-underline" style={{ ["--hue" as string]: 220 }}>
+      <div className="aspect-[4/3] w-32 shrink-0 overflow-hidden rounded-2xl border border-white/10 sm:w-40">
+        <div className="h-full w-full transition-transform duration-700 group-hover:scale-[1.06]">
+          <ArticleCover topic={a.topic} tools={[]} small seed={a.slug} />
+        </div>
+      </div>
+      <div className="flex min-w-0 flex-col justify-center gap-2">
+        <span className="kicker">{topic}</span>
+        <h3 className="font-serif text-lg font-bold leading-snug text-white group-hover:underline">{a.title}</h3>
+        <span className="byline">
+          {formatDate(a.date)} · {a.minutes} min read
+        </span>
+      </div>
+    </Link>
+  );
+}

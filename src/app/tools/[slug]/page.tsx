@@ -79,6 +79,7 @@ export default async function ToolPage({ params }: Props) {
   const comparisons = COMPARISONS.filter((c) => c.leftTool === t.id || c.rightTool === t.id);
   const alts = alternativesFor(t.id, 4);
   const logo = logoFor(t.id);
+  const lowest = t.pricing.plans.filter((p) => typeof p.monthly === "number" && p.monthly > 0).sort((a, b) => (a.monthly as number) - (b.monthly as number))[0];
   const logoNote = logo ? (logo.status === "ok" ? undefined : `Logo: ${t.name}’s own site icon, shown at a small size.`) : "No verified logo yet, so a letter mark is shown.";
   const news = newsForTool(t.id).slice(0, 3);
   const sub = cat?.subs.find((s) => s.slug === t.subcategory);
@@ -132,6 +133,21 @@ export default async function ToolPage({ params }: Props) {
         </p>
       </PageHeader>
 
+      <div className="mx-auto max-w-7xl px-5">
+        <ul className="mb-10 grid grid-cols-2 gap-4 lg:grid-cols-4" aria-label={`${t.name} at a glance`}>
+          {[
+            ["Pricing model", PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model],
+            ["Free plan", t.pricing.free ? (t.pricing.free.available ? "Available" : "None") : "Not stated"],
+            ["Lowest listed paid plan", lowest ? `${lowest.currency} ${lowest.monthly}/mo` : "No monthly price listed"],
+            ["Pricing checked", formatChecked(t.pricing.checked)],
+          ].map(([k, v]) => (
+            <li key={k} className="panel card-lift p-5">
+              <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">{k}</p>
+              <p className="mt-2 font-display text-xl font-extrabold leading-tight text-white">{v}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="mx-auto max-w-7xl px-5">
         <ToolShot id={t.id} name={t.name} className="mb-12 max-w-3xl" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">

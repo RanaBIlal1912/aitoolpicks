@@ -1,6 +1,7 @@
 "use client";
 
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Sparkles } from "@react-three/drei";
+import Studio from "../hero/Studio";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -58,7 +59,7 @@ function CategoryNode({ item, pos, lite, onSelect, onSelectTool, setHover }: { i
         }}
       >
         <sphereGeometry args={[size, lite ? 14 : 24, lite ? 14 : 24]} />
-        <meshStandardMaterial color={item.color} emissive={item.color} emissiveIntensity={hot ? 1.2 : 0.6} roughness={0.3} metalness={0.25} />
+        <meshPhysicalMaterial color={item.color} emissive={item.color} emissiveIntensity={hot ? 1.2 : 0.55} roughness={0.22} metalness={0.2} clearcoat={1} clearcoatRoughness={0.1} />
       </mesh>
       {!hot && <Label text={item.label} position={[0, size + 0.42, 0]} size={0.34} />}
       {!lite && (
@@ -102,6 +103,23 @@ function CategoryNode({ item, pos, lite, onSelect, onSelectTool, setHover }: { i
   );
 }
 
+let hubTex: THREE.CanvasTexture | null = null;
+/** Soft round glow behind the hub. */
+function hubGlow() {
+  if (hubTex) return hubTex;
+  const c = document.createElement("canvas");
+  c.width = c.height = 128;
+  const g = c.getContext("2d")!;
+  const r = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  r.addColorStop(0, "rgba(255,255,255,0.9)");
+  r.addColorStop(0.4, "rgba(255,255,255,0.25)");
+  r.addColorStop(1, "rgba(255,255,255,0)");
+  g.fillStyle = r;
+  g.fillRect(0, 0, 128, 128);
+  hubTex = new THREE.CanvasTexture(c);
+  return hubTex;
+}
+
 function Hub({ lite }: { lite: boolean }) {
   const ref = useRef<THREE.Mesh>(null);
   const wire = useRef<THREE.Mesh>(null);
@@ -121,6 +139,13 @@ function Hub({ lite }: { lite: boolean }) {
       <mesh ref={wire}>
         <icosahedronGeometry args={[1.15, 1]} />
         <meshBasicMaterial color="#25C6E8" wireframe transparent opacity={0.35} />
+      </mesh>
+      <sprite scale={[6.5, 6.5, 1]}>
+        <spriteMaterial map={hubGlow()} color="#7a5cff" transparent opacity={0.75} blending={THREE.AdditiveBlending} depthWrite={false} />
+      </sprite>
+      <mesh rotation={[Math.PI / 2.4, 0, 0]}>
+        <torusGeometry args={[1.9, 0.012, 8, 120]} />
+        <meshBasicMaterial color="#35e0ff" transparent opacity={0.55} toneMapped={false} />
       </mesh>
     </group>
   );
@@ -230,6 +255,8 @@ export default function UniverseScene({ items, links, lite, active = true, onSel
       <directionalLight position={[3, 4, 5]} intensity={2} />
       <pointLight position={[-4, -2, 3]} intensity={24} color="#25C6E8" />
       <pointLight position={[4, 2, -2]} intensity={20} color="#FF4FA3" />
+      <Studio intensity={0.7} />
+      <Sparkles count={lite ? 30 : 70} scale={[22, 12, 14]} size={lite ? 2 : 2.6} speed={0.25} opacity={0.7} color="#9fe8ff" />
       <Intro />
       <Universe items={items} links={links} lite={lite} onSelect={onSelect} onSelectTool={onSelectTool} />
       <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.6} rotateSpeed={0.7} />

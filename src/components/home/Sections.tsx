@@ -295,7 +295,7 @@ export function VersusTiles() {
         const [la] = left ? catColors(left.category) : ["#754BFF"];
         const [ra] = right ? catColors(right.category) : ["#25C6E8"];
         return (
-          <Link prefetch={false} key={c.slug} href={`/compare/${c.slug}/`} className="group relative overflow-hidden rounded-3xl border border-white/10 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
+          <Link prefetch={false} key={c.slug} href={`/compare/${c.slug}/`} className="versus card-lift group relative overflow-hidden rounded-3xl border border-white/10 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
             <span aria-hidden="true" className="absolute inset-0" style={{ background: `linear-gradient(100deg, ${la}44 0%, #0d1024 48%, #0d1024 52%, ${ra}44 100%)` }} />
             <div className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-6 pb-4 pt-8">
               <div className="flex flex-col items-center gap-3 text-center">
