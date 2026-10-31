@@ -45,9 +45,20 @@ about 2 s in "program" work: style, layout, paint and parsing a 410 KB document 
 Hydration is the largest post-paint task. Lighthouse sometimes sees it as one 1.4 s task and sometimes as pieces of 100 to 200 ms, which is why
 a single run of Home TBT ranges from about 500 ms to over 2 s on the same build. Conclusions drawn only from three or more runs.
 
-Changes made: the hero WebGL scene no longer starts or keeps running when the hero is not on screen (it used to start on the first scroll even
-if the visitor had jumped past it), and the 3D changes below. The page's component tree was not rewritten, so Home's hydration cost is
-essentially unchanged; this is stated in the report rather than hidden.
+The live traces show the same thing every time: one long task in the React chunk at about 3.2 s (0.9 to 1.6 s long) is the hydration of the
+whole page, plus a 0.4 to 0.5 s first layout. The hydration cost follows the size of the page (about 1,650 elements and 28 client components
+in `<main>`) and cannot be split without changing how the page is built.
+
+Changes made:
+
+* **Route prefetching.** Home started 15 to 17 route prefetch requests right after load, because every visible `next/link` prefetches. Links
+  outside the header now use `prefetch={false}` (they still prefetch on hover or tap). Measured locally: 15 to 17 requests became 3. Local
+  Lighthouse Home TBT: 690, 630, 770, 400 ms before; 600, 500, 460, 590 ms after. Live Home TBT medians: 1,987 ms before (three runs: 1,987,
+  1,232, 2,023) and 1,269 ms after (2,324, 1,269, 1,207). The medians moved the right way, but the run-to-run range is as large as the change,
+  so this is a probable small gain, not a proven one.
+* The hero WebGL scene no longer starts or keeps running when the hero is not on screen (it used to start on the first scroll even if the
+  visitor had jumped past it).
+* The page's component tree was not rewritten, so the hydration task itself is essentially unchanged. Home mobile TBT is still above one second.
 
 ## 3D
 
@@ -58,5 +69,8 @@ essentially unchanged; this is stated in the report rather than hidden.
 * One geometry and one material are shared by all tool dots (about 100 meshes) instead of a pair per dot.
 * Bug found and fixed: the opening camera animation always ended at the desktop distance, so on a phone the map was cropped at both sides.
   The resting distance now follows the shape of the box. Checked on a 375 px viewport.
+* Hero scene (found while checking screenshots): its nodes were about three times larger than the static network they fade in over, which
+  put big flat circles across the headline once WebGL started. They are now sized like the static ones, the network sits further right on
+  desktop, and the phone version is smaller and dimmer so the text stays readable.
 * Not changed: node count, sphere detail, pixel ratio caps (1 on phones, 1.5 on desktop) and antialiasing (off on phones), because they were
   already conservative and the visual quality was to stay as it is.
