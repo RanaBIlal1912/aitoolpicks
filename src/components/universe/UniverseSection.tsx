@@ -62,14 +62,7 @@ export default function UniverseSection() {
     if (!el) return;
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    let gl = false;
-    try {
-      const c = document.createElement("canvas");
-      gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
-    } catch {
-      gl = false;
-    }
-    if (calm || saver || !gl) return;
+    if (calm || saver) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
     // The static SVG map is always there. The 3D code loads once the section is near the screen, after a short pause so a fast scroll past it costs nothing.
     let timer = 0;
@@ -77,7 +70,16 @@ export default function UniverseSection() {
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
           io.disconnect();
-          timer = window.setTimeout(() => setOn(true), 600);
+          timer = window.setTimeout(() => {
+            let gl = false;
+            try {
+              const c = document.createElement("canvas");
+              gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
+            } catch {
+              gl = false;
+            }
+            if (gl) setOn(true);
+          }, 600);
         }
       },
       { rootMargin: "200px 0px" },

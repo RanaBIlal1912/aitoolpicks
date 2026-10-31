@@ -330,6 +330,12 @@ select.cur {
   font-size: 16px;
   cursor: pointer;
 }
+@media (max-width: 379px) {
+  select.cur {
+    padding: 6px 26px 6px 10px;
+    background-position: right 9px center;
+  }
+}
 select.cur option {
   background: #0d1124;
   color: #eceffd;
@@ -1101,9 +1107,13 @@ body::before {
 }
 .panel-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px 12px;
+}
+.panel-head > div {
+  min-width: 0;
 }
 .ico-badge {
   display: grid;

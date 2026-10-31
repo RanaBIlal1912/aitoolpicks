@@ -113,7 +113,7 @@ export default function NewsPage() {
 
           <div className="glass min-w-0 rounded-[22px] p-6">
             <h2 className="text-lg font-bold text-white">Tools in the news</h2>
-            <ul className="mt-4 grid gap-3">
+            <ul className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-3">
               {toolsInNews.map((t) => (
                 <li key={t.id}>
                   <Link href={`/tools/${t.id}/`} className="flex min-w-0 items-center gap-3 text-soft no-underline hover:text-white">

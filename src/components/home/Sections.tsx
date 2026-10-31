@@ -192,7 +192,7 @@ export function CategoryRail() {
 /** Free-plan tools as a ledger: one line each, logo, name, what it is. */
 export function FreeLedger({ tools }: { tools: Tool[] }) {
   return (
-    <ul className="grid gap-x-10 md:grid-cols-2">
+    <ul className="grid grid-cols-[minmax(0,1fr)] gap-x-10 md:grid-cols-2">
       {tools.map((t, i) => (
         <li key={t.id} className="border-b border-white/10">
           <Link prefetch={false} href={`/tools/${t.id}/`} className="group flex items-center gap-4 py-4 no-underline">

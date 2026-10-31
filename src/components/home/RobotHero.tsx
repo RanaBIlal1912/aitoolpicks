@@ -11,7 +11,8 @@ export type SceneLogo = { id: string; src: string; tile: "light" | "dark" };
 async function tileBitmap(l: SceneLogo) {
   const c = document.createElement("canvas");
   c.width = c.height = 256;
-  const g = c.getContext("2d")!;
+  // A CPU-backed canvas: turning an accelerated canvas into a bitmap makes the main thread wait for the graphics process.
+  const g = c.getContext("2d", { willReadFrequently: true })!;
   g.translate(0, 256);
   g.scale(1, -1);
   g.fillStyle = l.tile === "light" ? "#f4f6fc" : "#10131f";

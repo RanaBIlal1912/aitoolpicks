@@ -10,7 +10,7 @@ import { useCurrency } from "./CurrencyProvider";
 
 /** One style for every link in the bar, so the header looks identical on every route. */
 const LINK =
-  "group relative inline-flex h-10 items-center rounded-full border border-transparent px-3.5 text-[0.95rem] font-semibold no-underline transition-all duration-200 " +
+  "group relative inline-flex h-10 items-center whitespace-nowrap rounded-full border border-transparent px-3 text-[0.95rem] xl:px-3.5 font-semibold no-underline transition-all duration-200 " +
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan";
 
 function NavLink({ href, label, pathname }: { href: string; label: string; pathname: string }) {
@@ -144,16 +144,18 @@ export default function Header() {
         aria-hidden="true"
         className={`pointer-events-none absolute inset-0 -z-10 transition-opacity duration-300 ${scrolled || open ? "bg-[#090B18]/85 opacity-100 backdrop-blur-xl" : "opacity-0"}`}
       />
-      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-5">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-5 max-[379px]:gap-2 max-[379px]:px-4">
         <Link
           href="/"
           className="flex items-center gap-2.5 rounded-lg font-extrabold tracking-tight text-white no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
           aria-label={`${SITE.name} home`}
         >
-          <BrandMark size={38} gradientId="brand-header" />
+          <span className="flex max-[379px]:[&>svg]:h-8 max-[379px]:[&>svg]:w-8">
+            <BrandMark size={38} gradientId="brand-header" />
+          </span>
           <span className="flex flex-col leading-tight">
-            <span className="whitespace-nowrap text-[1.15rem]">{SITE.name}</span>
-            <span className="hidden text-[0.68rem] font-medium tracking-wide text-muted sm:block">Discover · Compare · Choose</span>
+            <span className="whitespace-nowrap text-[1.15rem] max-[379px]:text-[1rem]">{SITE.name}</span>
+            <span className="hidden text-[0.68rem] font-medium tracking-wide text-muted sm:block lg:hidden xl:block">Discover · Compare · Choose</span>
           </span>
         </Link>
 
@@ -165,7 +167,7 @@ export default function Header() {
           <MoreMenu pathname={pathname} />
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 max-[379px]:gap-1.5">
           <CurrencySelect id="currency-desktop" />
           <Link href="/tools/" aria-label="Search all tools" className="hidden h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white no-underline transition-colors hover:border-cyan/60 hover:bg-white/10 md:grid">
             <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" strokeWidth="1.8" /><path d="M14 14l4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
@@ -178,7 +180,7 @@ export default function Header() {
           <button
             ref={toggle}
             type="button"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan max-[379px]:h-10 max-[379px]:w-10 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"

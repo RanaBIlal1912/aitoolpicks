@@ -29,3 +29,10 @@
 - The worker checks WebGL and the renderer name itself, so the page no longer creates a throwaway WebGL context. No Worker or OffscreenCanvas support, no WebGL, a software renderer (unless `?robot=3d`), reduced motion or data saving all keep the flat SVG robot.
 - Frame pacing lives in the worker: a five-frame device check picks full (60 fps, up to 1.5x), smooth (about 30 fps), calm (about 15 fps) or still (redraw on pointer move).
 - Local Lighthouse (mobile, Home): runs 55, 79, 79 and 81, 80, 76, 77; TBT 0.6 to 0.8 s except one 10.8 s outlier (a single long main-thread task, not seen again in six more runs).
+
+## Round 5: header widths, layout blowouts and the Lighthouse outlier
+
+- Header: no wrapping or overflow at 320 to 1440 px. Nav links never wrap (`whitespace-nowrap`), the tagline hides between 1024 and 1279 px to make room, and under 380 px the brand mark, currency select and menu button are slightly smaller.
+- Two grid lists let a long single-line row push their column wider than the screen (the home "latest" list on phones, "Tools in the news" at 1024 px); both columns are now `minmax(0, 1fr)`. Panel headings on the home page wrap their "View all" button on very narrow screens.
+- Outlier cause: a sampling profile of an outlier load showed about 1 s of self time in one function, normally about 30 ms: the AI Universe section's mount effect, which created a throwaway WebGL context just to test support. Asking the graphics process for a context at page start can stall the main thread for up to a second when that process is busy, which is rare and random (roughly 1 in 6 to 1 in 20 loads here). The check now runs only when the section is near the screen (and on the Ecosystem page, when it is engaged). The hero tile bitmaps also use a CPU-backed canvas so they never wait on the graphics process.
+- After the change: 40 consecutive profiled loads without a heavy function, and Lighthouse Home runs of 73, 80 and 77 (median 77, TBT about 0.7 s, LCP 1.7 s, CLS 0).
