@@ -49,11 +49,13 @@ function Network({ lite }: { lite: boolean }) {
     return g;
   }, [signals]);
 
+  // On a phone the network sits behind the headline, so its nodes are drawn smaller than on a desktop, where it has its own space on the right.
+  const k = lite ? 1 : 2;
   useEffect(() => {
     const m = new THREE.Matrix4();
     const col = new THREE.Color();
     nodes.forEach((n, i) => {
-      m.compose(new THREE.Vector3(n.x, n.y, n.z), new THREE.Quaternion(), new THREE.Vector3(n.size * 2, n.size * 2, n.size * 2));
+      m.compose(new THREE.Vector3(n.x, n.y, n.z), new THREE.Quaternion(), new THREE.Vector3(n.size * k, n.size * k, n.size * k));
       nodesRef.current?.setMatrixAt(i, m);
       nodesRef.current?.setColorAt(i, col.set(n.color));
       if (haloRef.current) {
@@ -68,7 +70,7 @@ function Network({ lite }: { lite: boolean }) {
       haloRef.current.instanceMatrix.needsUpdate = true;
       if (haloRef.current.instanceColor) haloRef.current.instanceColor.needsUpdate = true;
     }
-  }, [nodes]);
+  }, [nodes, k]);
 
   useFrame((_, dt) => {
     if (group.current) group.current.rotation.y += dt * 0.07;
@@ -111,11 +113,11 @@ function Network({ lite }: { lite: boolean }) {
         </points>
       </group>
       <mesh ref={core}>
-        <icosahedronGeometry args={[0.78, lite ? 1 : 2]} />
+        <icosahedronGeometry args={[lite ? 0.55 : 0.78, lite ? 1 : 2]} />
         <meshPhysicalMaterial color="#754BFF" metalness={0.25} roughness={0.12} clearcoat={1} emissive="#3b1fb0" emissiveIntensity={0.9} />
       </mesh>
       <mesh ref={shell}>
-        <icosahedronGeometry args={[1.25, 1]} />
+        <icosahedronGeometry args={[lite ? 0.9 : 1.25, 1]} />
         <meshBasicMaterial color="#25C6E8" wireframe transparent opacity={0.5} />
       </mesh>
       <sprite scale={[6, 6, 1]}>
