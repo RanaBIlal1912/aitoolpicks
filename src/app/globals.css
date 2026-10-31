@@ -806,6 +806,16 @@ main {
 }
 
 /* ---------- home redesign ---------- */
+.hero-title {
+  text-wrap: balance;
+}
+/* The 3D canvas is a little larger than the robot box so tiles can float around it; its outer few percent fade out so a soft glow never ends in a hard edge. */
+.hero-canvas {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
+}
 .hero-title .word {
   display: inline-block;
   opacity: 0;

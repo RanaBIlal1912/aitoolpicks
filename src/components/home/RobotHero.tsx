@@ -87,16 +87,32 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
     const forced = /[?&]robot=3d/.test(location.search);
     if (calm || saver || !ok || (software && !forced)) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
-    // Start as soon as the page has loaded and the browser is idle, so the first paint is never delayed.
+    // The flat robot is already on screen. The 3D one starts about 2.7 s after the page has loaded (once the browser is idle), or on the first
+    // interaction (move, touch, key, scroll), whichever comes first, so first paint and early input are never competing with scene building.
     const idle = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    const events = ["pointermove", "pointerdown", "touchstart", "keydown", "wheel", "scroll"] as const;
     let t = 0;
-    const go = () => {
-      t = window.setTimeout(() => (idle ? idle(() => setGl(true), { timeout: 1500 }) : setGl(true)), 300);
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      clearTimeout(t);
+      events.forEach((e) => window.removeEventListener(e, onInput));
+      window.removeEventListener("load", go);
+      if (idle) idle(() => setGl(true), { timeout: 600 });
+      else setGl(true);
     };
+    const onInput = () => start();
+    const go = () => {
+      t = window.setTimeout(start, 2700);
+    };
+    events.forEach((e) => window.addEventListener(e, onInput, { passive: true, once: true }));
     if (document.readyState === "complete") go();
     else window.addEventListener("load", go, { once: true });
     return () => {
+      started = true;
       clearTimeout(t);
+      events.forEach((e) => window.removeEventListener(e, onInput));
       window.removeEventListener("load", go);
     };
   }, []);
@@ -116,7 +132,7 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
         <RobotSvg />
       </div>
       {gl && inView !== undefined && (
-        <div className="pointer-events-none absolute -inset-x-[30%] -inset-y-[16%] max-md:-inset-x-[8%]" aria-hidden="true">
+        <div className="hero-canvas pointer-events-none absolute -bottom-[14%] -left-[26%] -top-[14%] right-0 max-md:-bottom-[8%] max-md:-left-[5%] max-md:-top-[8%]" aria-hidden="true">
           <RobotScene lite={lite} active={inView} logos={logos} onReady={() => setReady(true)} />
         </div>
       )}

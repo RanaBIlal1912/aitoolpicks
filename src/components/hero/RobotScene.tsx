@@ -10,6 +10,10 @@ import * as THREE from "three";
 
 export type SceneLogo = { id: string; src: string; tile: "light" | "dark" };
 
+/** The glowing fingertip and the cube, shared so the light trail can follow both as they move. */
+const tipObj: { current: THREE.Object3D | null } = { current: null };
+const cubeObj: { current: THREE.Object3D | null } = { current: null };
+
 
 // Painted "matcap" shading: each material is a small picture of a lit glossy sphere (soft top light, cyan and magenta rim light, darker underside),
 // so the robot looks polished and coloured by the scene without lights, an environment map or heavy physical shaders. That keeps start-up cheap
@@ -22,11 +26,17 @@ const MATCAPS: Record<string, Mc> = {
   metal: { top: "#f2f4ff", mid: "#9aa3d8", low: "#454c8a", rimL: "#35e0ff", spec: 0.8 },
   glass: { top: "#d9f3ff", mid: "#58b8ff", low: "#2f6bff", rimL: "#8ff3ff", rimR: "#b08bff", spec: 0.9 },
 };
+/** Painted textures that are drawn at about their own size need no mipmaps; skipping them saves work at start-up. */
+function flat(t: THREE.CanvasTexture) {
+  t.generateMipmaps = false;
+  t.minFilter = THREE.LinearFilter;
+  return t;
+}
 const mcCache: Record<string, THREE.CanvasTexture> = {};
 function mc(name: keyof typeof MATCAPS) {
   if (mcCache[name]) return mcCache[name];
   const m = MATCAPS[name];
-  const S = 256;
+  const S = 128;
   const c = document.createElement("canvas");
   c.width = c.height = S;
   const g = c.getContext("2d")!;
@@ -60,7 +70,7 @@ function mc(name: keyof typeof MATCAPS) {
   dot.addColorStop(1, "rgba(255,255,255,0)");
   g.fillStyle = dot;
   g.fillRect(0, 0, S, S);
-  const t = new THREE.CanvasTexture(c);
+  const t = flat(new THREE.CanvasTexture(c));
   t.colorSpace = THREE.SRGBColorSpace;
   mcCache[name] = t;
   return t;
@@ -82,7 +92,7 @@ function glowTexture() {
   r.addColorStop(1, "rgba(255,255,255,0)");
   g.fillStyle = r;
   g.fillRect(0, 0, 128, 128);
-  glowTex = new THREE.CanvasTexture(c);
+  glowTex = flat(new THREE.CanvasTexture(c));
   return glowTex;
 }
 
@@ -107,7 +117,7 @@ function chestTexture() {
   g.shadowColor = "#35e0ff";
   g.shadowBlur = 24;
   g.fillText("AI", 128, 138);
-  const t = new THREE.CanvasTexture(c);
+  const t = flat(new THREE.CanvasTexture(c));
   t.colorSpace = THREE.SRGBColorSpace;
   return t;
 }
@@ -119,7 +129,7 @@ function useLogoTexture(src: string, tile: "light" | "dark") {
     c.width = c.height = 256;
     const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace;
-    t.anisotropy = 4;
+    t.anisotropy = 2;
     const g = c.getContext("2d")!;
     const base = () => {
       g.clearRect(0, 0, 256, 256);
@@ -151,8 +161,8 @@ function LogoTile({ logo, pos, size, phase, depth }: { logo: SceneLogo; pos: [nu
   useFrame((s) => {
     if (!g.current) return;
     const t = s.clock.elapsedTime + phase;
-    g.current.position.x = pos[0] + Math.sin(t * 0.7) * 0.12 + pointer.x * depth * 0.35;
-    g.current.position.y = pos[1] + Math.sin(t * 1.1) * 0.16 + pointer.y * depth * 0.2;
+    g.current.position.x = pos[0] + Math.sin(t * 0.7) * 0.1 + pointer.x * depth * 0.16;
+    g.current.position.y = pos[1] + Math.sin(t * 1.1) * 0.14 + pointer.y * depth * 0.14;
     g.current.position.z = pos[2];
     g.current.rotation.y = Math.sin(t * 0.6) * 0.35 + pointer.x * 0.2;
     g.current.rotation.x = Math.cos(t * 0.5) * 0.12;
@@ -188,7 +198,7 @@ function Robot({ lite }: { lite: boolean }) {
   const ring2 = useRef<THREE.Mesh>(null);
   const chest = useMemo(() => chestTexture(), []);
   const { pointer } = useThree();
-  const seg = lite ? 20 : 32;
+  const seg = lite ? 16 : 24;
 
   useFrame((s, dt) => {
     const t = s.clock.elapsedTime;
@@ -237,7 +247,7 @@ function Robot({ lite }: { lite: boolean }) {
           </group>
         ))}
         <mesh position={[0, 0.2, 0]}>
-          <torusGeometry args={[1.22, 0.07, 14, 64, Math.PI]} />
+          <torusGeometry args={[1.22, 0.07, 10, 48, Math.PI]} />
           <meshMatcapMaterial matcap={mc("purple")} />
         </mesh>
         <mesh position={[0, 1.08, 0]}>
@@ -255,7 +265,7 @@ function Robot({ lite }: { lite: boolean }) {
         <meshMatcapMaterial matcap={mc("metal")} />
       </mesh>
       <mesh position={[0, -0.25, 0]} scale={[1, 1.12, 0.82]}>
-        <capsuleGeometry args={[0.62, 0.55, 12, seg]} />
+        <capsuleGeometry args={[0.62, 0.55, 8, seg]} />
         <meshMatcapMaterial matcap={mc("shell")} />
       </mesh>
       <mesh position={[0, -0.1, 0.56]}>
@@ -287,19 +297,19 @@ function Robot({ lite }: { lite: boolean }) {
             <capsuleGeometry args={[0.07, 0.3, 6, 14]} />
             <meshMatcapMaterial matcap={mc("shell")} />
           </mesh>
-          <mesh position={[0.02, -0.46, 0.18]}>
-            <sphereGeometry args={[0.095, 14, 14]} />
+          <mesh ref={(o) => { tipObj.current = o; }} position={[0.02, -0.46, 0.18]}>
+            <sphereGeometry args={[0.095, 12, 12]} />
             <meshBasicMaterial color={GLOW} toneMapped={false} />
           </mesh>
         </group>
       </group>
 
       <mesh ref={ring} position={[0, -0.55, 0]} rotation={[Math.PI / 2.15, 0, 0]}>
-        <torusGeometry args={[1.75, 0.025, 12, 128]} />
+        <torusGeometry args={[1.75, 0.025, 8, 96]} />
         <meshBasicMaterial color={GLOW} toneMapped={false} transparent opacity={0.95} />
       </mesh>
       <mesh ref={ring2} position={[0, -0.55, 0]} rotation={[Math.PI / 2.15, 0, 0]}>
-        <torusGeometry args={[1.98, 0.015, 12, 128]} />
+        <torusGeometry args={[1.98, 0.015, 8, 96]} />
         <meshBasicMaterial color="#b06bff" toneMapped={false} transparent opacity={0.75} />
       </mesh>
       <mesh position={[0, -1.3, 0]} rotation={[-Math.PI / 2, 0, 0]}>
@@ -329,24 +339,24 @@ function cubeFace() {
   g.shadowColor = "#5cf0ff";
   g.shadowBlur = 30;
   g.fillText("AI", 128, 140);
-  cubeTex = new THREE.CanvasTexture(c);
+  cubeTex = flat(new THREE.CanvasTexture(c));
   cubeTex.colorSpace = THREE.SRGBColorSpace;
   return cubeTex;
 }
 
 /** A glowing glass cube with "AI" on it, floating where the robot points (the hero of the reference artwork). */
 function AiCube({ lite }: { lite: boolean }) {
-  const g = useRef<THREE.Group>(null);
+  const g = useRef<THREE.Group | null>(null);
   const edges = useMemo(() => new THREE.EdgesGeometry(new THREE.BoxGeometry(1.15, 1.15, 1.15)), []);
   useFrame((s) => {
     if (!g.current) return;
     const t = s.clock.elapsedTime;
-    g.current.position.y = -0.55 + Math.sin(t * 1.3) * 0.12;
+    g.current.position.y = (lite ? -0.5 : -0.45) + Math.sin(t * 1.3) * 0.12;
     g.current.rotation.y = -0.5 + Math.sin(t * 0.6) * 0.35;
     g.current.rotation.x = 0.18 + Math.sin(t * 0.8) * 0.06;
   });
   return (
-    <group ref={g} position={lite ? [1.5, -0.55, 0.7] : [2.2, -0.5, 0.7]} scale={lite ? 0.78 : 1}>
+    <group ref={(o) => { g.current = o; cubeObj.current = o; }} position={lite ? [1.38, -0.5, 0.7] : [1.72, -0.45, 0.7]} scale={lite ? 0.74 : 0.9}>
       <mesh>
         <boxGeometry args={[1.15, 1.15, 1.15]} />
         <meshMatcapMaterial matcap={mc("glass")} transparent opacity={0.6} />
@@ -359,29 +369,67 @@ function AiCube({ lite }: { lite: boolean }) {
         <meshBasicMaterial map={cubeFace()} transparent toneMapped={false} />
       </mesh>
       <mesh position={[0, 0, -0.1]}>
-        <planeGeometry args={[lite ? 3.2 : 3.8, lite ? 3.2 : 3.8]} />
+        <planeGeometry args={[lite ? 2.5 : 2.9, lite ? 2.5 : 2.9]} />
         <meshBasicMaterial map={glowTexture()} color="#4aa8ff" transparent opacity={0.75} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
     </group>
   );
 }
 
+const TRAIL_N = 44;
+
+/** A soft, flowing light trail from the robot's fingertip to the AI cube: a string of glow points on a curve, with a brighter pulse travelling along it. */
+function Trail() {
+  const geo = useMemo(() => {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(TRAIL_N * 3), 3));
+    g.setAttribute("color", new THREE.BufferAttribute(new Float32Array(TRAIL_N * 3), 3));
+    return g;
+  }, []);
+  const v = useMemo(() => ({ a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3() }), []);
+  useEffect(() => () => geo.dispose(), [geo]);
+  useFrame((st) => {
+    if (!tipObj.current || !cubeObj.current) return;
+    const { a, b, c } = v;
+    tipObj.current.getWorldPosition(a);
+    cubeObj.current.getWorldPosition(b);
+    c.set((a.x + b.x) / 2 - 0.05, Math.max(a.y, b.y) + 0.7, (a.z + b.z) / 2 + 0.3);
+    const pos = geo.attributes.position as THREE.BufferAttribute;
+    const col = geo.attributes.color as THREE.BufferAttribute;
+    const head = (st.clock.elapsedTime * 0.5) % 1.5;
+    for (let i = 0; i < TRAIL_N; i++) {
+      const u = i / (TRAIL_N - 1);
+      const w = 1 - u;
+      pos.setXYZ(i, w * w * a.x + 2 * w * u * c.x + u * u * b.x, w * w * a.y + 2 * w * u * c.y + u * u * b.y, w * w * a.z + 2 * w * u * c.z + u * u * b.z);
+      const k = (0.55 + 1.1 * Math.exp(-((u - head) ** 2) / 0.015)) * Math.min(1, u * 6 + 0.3) * Math.min(1, (1 - u) * 5 + 0.2);
+      col.setXYZ(i, 0.3 * k, 0.85 * k, 1 * k);
+    }
+    pos.needsUpdate = true;
+    col.needsUpdate = true;
+  });
+  return (
+    <points geometry={geo} frustumCulled={false}>
+      <pointsMaterial map={glowTexture()} size={0.34} sizeAttenuation vertexColors transparent blending={THREE.AdditiveBlending} depthWrite={false} toneMapped={false} />
+    </points>
+  );
+}
+
 const SLOTS: { pos: [number, number, number]; size: number; depth: number }[] = [
-  { pos: [-1.95, 1.95, 0.7], size: 1.15, depth: 1.0 },
-  { pos: [1.75, 2.25, -0.8], size: 1.1, depth: 0.5 },
-  { pos: [2.7, 1.25, 0.2], size: 1.0, depth: 0.9 },
-  { pos: [-2.6, 0.35, -0.3], size: 0.98, depth: 0.6 },
-  { pos: [-2.2, -1.85, 0.8], size: 0.95, depth: 0.8 },
-  { pos: [2.65, -1.75, -0.2], size: 0.92, depth: 1.1 },
+  { pos: [-2.0, 1.95, 0.7], size: 1.15, depth: 1.0 },
+  { pos: [1.05, 2.55, -0.8], size: 1.1, depth: 0.5 },
+  { pos: [2.0, 1.45, -0.3], size: 1.0, depth: 0.9 },
+  { pos: [-2.55, 0.35, -0.3], size: 0.98, depth: 0.6 },
+  { pos: [-2.15, -1.8, 0.8], size: 0.95, depth: 0.8 },
+  { pos: [2.05, -1.95, -0.2], size: 0.9, depth: 1.1 },
 ];
 /** Phone version: the same arrangement pulled in so every tile stays on a 375 px screen. */
 const SLOTS_LITE: { pos: [number, number, number]; size: number; depth: number }[] = [
-  { pos: [-1.55, 2.05, 0.7], size: 0.95, depth: 1.0 },
-  { pos: [1.2, 2.45, -0.8], size: 0.9, depth: 0.5 },
-  { pos: [2.1, 1.35, 0.2], size: 0.82, depth: 0.9 },
-  { pos: [-2.05, 0.55, -0.3], size: 0.8, depth: 0.6 },
-  { pos: [-1.7, -1.75, 0.8], size: 0.78, depth: 0.8 },
-  { pos: [2.15, -1.95, -0.2], size: 0.76, depth: 1.1 },
+  { pos: [-1.5, 2.0, 0.7], size: 0.95, depth: 1.0 },
+  { pos: [1.0, 2.4, -0.8], size: 0.9, depth: 0.5 },
+  { pos: [1.95, 1.3, -0.3], size: 0.82, depth: 0.9 },
+  { pos: [-2.0, 0.5, -0.3], size: 0.8, depth: 0.6 },
+  { pos: [-1.65, -1.75, 0.8], size: 0.78, depth: 0.8 },
+  { pos: [1.95, -1.9, -0.2], size: 0.76, depth: 1.1 },
 ];
 
 /** Compiles every shader off the main thread (where the browser supports it) before the first frame, so building the scene does not freeze the page. */
@@ -405,9 +453,10 @@ function Warm({ onWarm }: { onWarm: () => void }) {
 }
 
 
-type Mode = "full" | "calm" | "still";
+/** probe: first frames at 1x resolution; full: 60 fps and sharper; smooth: about 30 fps; calm: about 15 fps; still: a picture that updates on pointer movement. */
+type Mode = "probe" | "full" | "smooth" | "calm" | "still";
 
-/** Watches the first frames. A device that cannot keep up drops to 15 frames a second, and a very slow one to a still picture that updates when the pointer moves. */
+/** Watches the first frames and picks the richest mode the device can sustain. */
 function Governor({ on, setMode }: { on: boolean; setMode: (m: Mode) => void }) {
   const { invalidate } = useThree();
   const n = useRef(0);
@@ -416,24 +465,31 @@ function Governor({ on, setMode }: { on: boolean; setMode: (m: Mode) => void }) 
   useFrame((_, dt) => {
     if (!on || done.current) return;
     n.current++;
-    if (n.current <= 6) return;
+    // The first frames include shader linking and texture upload, so they are not counted. Five frames are enough to tell a fast device from a slow one.
+    if (n.current <= 3) return;
     sum.current += dt;
-    if (n.current >= 26) {
+    if (n.current >= 8) {
       done.current = true;
-      const avg = sum.current / 20;
-      if (avg > 0.075) setMode("still");
-      else if (avg > 0.034) setMode("calm");
+      const avg = sum.current / 5;
+      setMode(avg > 0.06 ? "still" : avg > 0.036 ? "calm" : avg > 0.021 ? "smooth" : "full");
     }
   });
   useEffect(() => {
-    const move = () => invalidate();
+    // In "still" mode a frame is drawn when the pointer moves; at most about ten a second, so a slow device is never flooded.
+    let last = 0;
+    const move = () => {
+      const now = performance.now();
+      if (now - last < 100) return;
+      last = now;
+      invalidate();
+    };
     window.addEventListener("pointermove", move, { passive: true });
     return () => window.removeEventListener("pointermove", move);
   }, [invalidate]);
   return null;
 }
 
-/** Draws at most about 30 frames a second: the scene animates slowly, so half the frames cost half the main-thread time and look the same. */
+/** Draws on a timer instead of every display frame: the scene animates slowly, so fewer frames cost less main-thread time and look the same. */
 function Pulse({ on, every }: { on: boolean; every: number }) {
   const invalidate = useThree((t) => t.invalidate);
   useEffect(() => {
@@ -444,37 +500,42 @@ function Pulse({ on, every }: { on: boolean; every: number }) {
   return null;
 }
 
-const FLAGS = typeof location === "undefined" ? "" : location.search;
-const flag = (k: string) => FLAGS.includes(k);
-
 export default function RobotScene({ lite = false, active = true, logos = [], onReady }: { lite?: boolean; active?: boolean; logos?: SceneLogo[]; onReady?: () => void }) {
   const [warm, setWarm] = useState(false);
-  const [mode, setMode] = useState<Mode>("full");
-  // The scene is built in steps (robot, then logos, then the cube, then particles) so no single piece of start-up work blocks the page for long.
+  const [mode, setMode] = useState<Mode>("probe");
+  // The scene is built in steps (robot, then logos, then the cube and trail, then particles) so no single piece of start-up work blocks the page for long.
   const [stage, setStage] = useState(0);
   useEffect(() => {
     if (!warm) return;
-    const ids = [250, 600, 950].map((ms, i) => window.setTimeout(() => setStage(i + 1), ms));
+    const ids = [200, 500, 800].map((ms, i) => window.setTimeout(() => setStage(i + 1), ms));
     return () => ids.forEach(clearTimeout);
   }, [warm]);
+  const live = active && warm;
+  const timed = mode === "smooth" || mode === "calm";
+  const slots = lite ? SLOTS_LITE : SLOTS;
   return (
     <Canvas
       eventSource={typeof document === "undefined" ? undefined : document.documentElement}
       eventPrefix="client"
-      frameloop={active && warm ? (mode === "full" ? "always" : "demand") : "never"}
-      dpr={mode === "full" ? (lite ? [1, 1.5] : [1, 1.75]) : 1}
-      camera={{ position: [0, 0.5, lite ? 10.4 : 8.9], fov: 38 }}
+      frameloop={live ? (mode === "probe" || mode === "full" ? "always" : "demand") : "never"}
+      dpr={mode === "full" ? (lite ? [1, 1.5] : [1, 1.5]) : 1}
+      camera={{ position: [0, 0.5, lite ? 10.4 : 9.4], fov: 38 }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-          >
-      <Pulse on={active && warm && mode === "calm"} every={100} />
-      <Governor on={active && warm} setMode={setMode} />
+    >
+      <Pulse on={live && timed} every={mode === "calm" ? 66 : 33} />
+      <Governor on={live} setMode={setMode} />
       <Warm onWarm={() => { setWarm(true); onReady?.(); }} />
-      {stage >= 3 && <Sparkles count={lite ? 40 : 90} scale={[9, 6, 4]} size={lite ? 2.5 : 3.2} speed={0.35} opacity={0.85} color="#a8e8ff" />}
-      <Robot lite={lite} />
-      {stage >= 2 && <AiCube lite={lite} />}
-      {stage >= 1 && logos.slice(0, SLOTS.length).map((l, i) => (
-        <LogoTile key={l.id} logo={l} pos={(lite ? SLOTS_LITE : SLOTS)[i].pos} size={(lite ? SLOTS_LITE : SLOTS)[i].size} depth={(lite ? SLOTS_LITE : SLOTS)[i].depth} phase={i * 1.3} />
-      ))}
+      {/* the whole scene sits a little right of the canvas centre, because the canvas reaches further to the left (towards the headline) than to the right */}
+      <group position={[lite ? 0.12 : 0.35, 0, 0]}>
+        {stage >= 3 && <Sparkles count={lite ? 36 : 80} scale={[9, 6, 4]} size={lite ? 2.5 : 3.2} speed={0.35} opacity={0.85} color="#a8e8ff" />}
+        <Robot lite={lite} />
+        {stage >= 2 && <AiCube lite={lite} />}
+        {stage >= 1 && logos.slice(0, slots.length).map((l, i) => (
+          <LogoTile key={l.id} logo={l} pos={slots[i].pos} size={slots[i].size} depth={slots[i].depth} phase={i * 1.3} />
+        ))}
+      </group>
+      {/* the trail works in world coordinates, so it stays outside the shifted group */}
+      {stage >= 2 && <Trail />}
     </Canvas>
   );
 }

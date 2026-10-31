@@ -73,10 +73,11 @@ export default function Home() {
     <>
       <section id="hero" className="relative isolate">
         <HeroVisual webgl={false} />
-        <div className="relative mx-auto grid min-h-[min(88vh,820px)] max-w-7xl items-center gap-8 px-5 pb-16 pt-12 lg:grid-cols-[1.1fr_1fr]">
-          <div>
-            <span className="eyebrow">The AI tool magazine and price directory</span>
-            <h1 className="hero-title mt-6 text-[clamp(2.4rem,4.9vw,4.4rem)] font-extrabold leading-[1] tracking-[-0.035em] text-white">
+        {/* On a phone the order is headline, robot, then search and buttons, so the robot is on the first screen; on desktop the text sits left and the robot right. */}
+        <div className="relative mx-auto grid min-h-[min(88vh,820px)] max-w-7xl grid-cols-1 content-center px-5 pb-14 pt-6 max-lg:min-h-0 max-lg:pb-12 md:pt-12 lg:grid-cols-[1.22fr_1fr] lg:gap-x-6 lg:pb-16">
+          <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
+            <span className="eyebrow max-sm:!px-3 max-sm:!text-[0.68rem] max-sm:!tracking-[0.1em]">The AI tool magazine and price directory</span>
+            <h1 className="hero-title mt-4 text-[clamp(2.05rem,4.1vw,3.9rem)] font-extrabold leading-[1] tracking-[-0.035em] text-white md:mt-6">
               <Word i={0}>Discover</Word>
               <Word i={1}>the</Word>
               <Word i={2}>Best</Word>
@@ -85,16 +86,20 @@ export default function Home() {
                 AI Tools
               </span>{" "}
               <Word i={4}>in</Word>
-              <Word i={5}>One</Word>
-              <Word i={6}>Place</Word>
+              <span className="whitespace-nowrap">
+                <Word i={5}>One</Word>
+                <Word i={6}>Place</Word>
+              </span>
             </h1>
-            <p className="mt-7 max-w-xl text-lg text-soft md:text-xl">
+            <p className="mt-3 max-w-xl text-base text-soft md:mt-7 md:text-xl lg:max-w-[26rem] xl:max-w-xl">
               {TOOLS.length} tools, every plan and price read from the official page, with the date we checked it. Search by the job you need done.
             </p>
+          </div>
+          <div className="max-lg:order-last lg:col-start-1 lg:row-start-2 lg:self-start">
             <div className="max-w-2xl">
               <HeroSearch suggestions={SUGGESTIONS} />
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3 md:mt-8">
               <Link prefetch={false} href="/tools/" className="btn-primary">
                 Explore Tools <span aria-hidden="true">→</span>
               </Link>
@@ -103,7 +108,9 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <HeroOrbit total={TOOLS.length} verified={VERIFIED} />
+          <div className="mt-2 max-lg:mb-16 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+            <HeroOrbit total={TOOLS.length} verified={VERIFIED} />
+          </div>
         </div>
       </section>
 

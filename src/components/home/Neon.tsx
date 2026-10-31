@@ -36,7 +36,7 @@ export function HeroOrbit({ total, verified }: { total: number; verified: number
         ) : null;
       })}
       stat={
-        <div className="panel !absolute bottom-[-9%] left-1/2 w-[46%] max-w-[230px] -translate-x-1/2 rotate-[-2deg] p-4 max-md:bottom-[-19%] max-md:w-[64%] max-md:p-3">
+        <div className="panel !absolute bottom-[-9%] left-1/2 w-[46%] max-w-[230px] -translate-x-1/2 rotate-[-2deg] p-4 max-md:bottom-[-17%] max-md:w-[54%] max-md:p-2.5">
           <p className="font-display text-4xl font-extrabold leading-none text-white sm:text-5xl">{total}</p>
           <p className="mt-1 text-sm font-semibold text-soft">AI tools indexed</p>
           <p className="mt-0.5 text-xs text-muted">{verified} with fully verified prices</p>
