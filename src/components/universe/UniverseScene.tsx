@@ -13,6 +13,10 @@ export type UniverseLink = { a: string; b: string; n: number };
 
 type Hover = { kind: "category" | "tool"; label: string; sub: string; color: string; pos: THREE.Vector3 } | null;
 
+// One geometry and one material shared by every tool dot (up to 14 per category), instead of a new pair for each of the ~100 dots.
+const DOT_GEOMETRY = new THREE.SphereGeometry(0.052, 8, 8);
+const DOT_MATERIAL = new THREE.MeshBasicMaterial({ color: "#ffffff", toneMapped: false });
+
 function toolOrbit(index: number, total: number, radius: number) {
   const a = (index / Math.max(1, total)) * Math.PI * 2;
   const tilt = ((index % 3) - 1) * 0.5;
@@ -71,6 +75,8 @@ function CategoryNode({ item, pos, lite, onSelect, onSelectTool, setHover }: { i
             <mesh
               key={t.id}
               position={p}
+              geometry={DOT_GEOMETRY}
+              material={DOT_MATERIAL}
               onPointerOver={(e) => {
                 e.stopPropagation();
                 const wp = new THREE.Vector3();
@@ -88,8 +94,6 @@ function CategoryNode({ item, pos, lite, onSelect, onSelectTool, setHover }: { i
                 onSelectTool(t.id);
               }}
             >
-              <sphereGeometry args={[0.052, 8, 8]} />
-              <meshBasicMaterial color="#ffffff" toneMapped={false} />
             </mesh>
           );
         })}
