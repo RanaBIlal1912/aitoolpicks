@@ -80,20 +80,20 @@ export default function PricingHub() {
       </p>
 
       <div className="table-wrap glass mt-3">
-        <table className="cmp">
+        <table className="cmp cmp-stack" role="table">
           <caption className="sr-only">Pricing for AI tools, in each merchant&rsquo;s own currency</caption>
-          <thead>
-            <tr>
-              <th scope="col">Tool</th>
-              <th scope="col">Free access</th>
-              <th scope="col">Plans and prices (merchant currency)</th>
-              <th scope="col">Status</th>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader">Tool</th>
+              <th scope="col" role="columnheader">Free access</th>
+              <th scope="col" role="columnheader">Plans and prices (merchant currency)</th>
+              <th scope="col" role="columnheader">Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody role="rowgroup">
             {rows.map((t) => (
-              <tr key={t.id}>
-                <th scope="row" className="!w-[24%]">
+              <tr key={t.id} role="row">
+                <th scope="row" role="rowheader" className="sm:!w-[24%]">
                   <span className="flex items-center gap-3">
                     <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
                     <span className="min-w-0">
@@ -104,8 +104,8 @@ export default function PricingHub() {
                     </span>
                   </span>
                 </th>
-                <td>{t.freePlan === true ? "Yes" : t.freePlan === false ? "No" : <span className="text-muted">Not stated</span>}</td>
-                <td>
+                <td role="cell" data-label="Free access">{t.freePlan === true ? "Yes" : t.freePlan === false ? "No" : <span className="text-muted">Not stated</span>}</td>
+                <td role="cell" data-label="Plans and prices">
                   {t.plans.length ? (
                     <ul className="space-y-0.5 text-sm">
                       {t.plans.slice(0, 4).map((p) => (
@@ -119,10 +119,10 @@ export default function PricingHub() {
                     <span className="text-muted">Not captured</span>
                   )}
                 </td>
-                <td className="text-sm">
+                <td role="cell" data-label="Status" className="text-sm">
                   <span className={`font-semibold ${STATUS_CLS[t.pricingStatus]}`}>{STATUS[t.pricingStatus]}</span>
                   <span className="block text-xs text-muted">checked {formatChecked(t.checked)}</span>
-                  <a href={t.pricingSource} target="_blank" rel="noopener noreferrer" className="text-xs text-[#9db4d6] underline">
+                  <a href={t.pricingSource} target="_blank" rel="noopener noreferrer" className="inline-block py-2 text-xs text-[#9db4d6] underline">
                     Official pricing ↗
                     <span className="sr-only"> for {t.name}</span>
                   </a>

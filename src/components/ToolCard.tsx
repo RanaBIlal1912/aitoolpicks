@@ -106,7 +106,7 @@ export default function ToolCard({
           Visit site
         </AffLink>
         {onToggleCompare && (
-          <label className="ml-auto flex cursor-pointer items-center gap-2 text-sm text-soft">
+          <label className="ml-auto flex min-h-10 cursor-pointer items-center gap-2 text-sm text-soft">
             <input
               type="checkbox"
               aria-label={`Compare ${tool.name}`}
