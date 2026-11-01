@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { motionLimit, onOptIn, optedIn, optIn, type MotionLimit } from "@/lib/motion3d";
 
 export type SceneLogo = { id: string; src: string; tile: "light" | "dark" };
 
@@ -91,16 +92,24 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
   const cv = useRef<HTMLCanvasElement>(null);
   const [gl, setGl] = useState(false);
   const [ready, setReady] = useState(false);
+  const [limit, setLimit] = useState<MotionLimit>(null);
   // The latest logo list, read when the worker starts. Keeping it out of the effect's dependencies matters: a canvas can be handed to a worker only once, so if the
   // parent re-rendered (the router does this when it prefetches links) with a new array, re-running the effect would end the worker and then fail on the same canvas.
   const logosRef = useRef(logos);
   logosRef.current = logos;
 
   useEffect(() => {
-    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     const can = typeof Worker !== "undefined" && typeof OffscreenCanvas !== "undefined" && "transferControlToOffscreen" in HTMLCanvasElement.prototype;
-    if (calm || saver || !can) return;
+    if (!can) return;
+    // Reduced motion and data saving keep the flat robot unless the visitor switches the 3D on (remembered in this browser).
+    const why = motionLimit();
+    if (why && !optedIn()) {
+      setLimit(why);
+      return onOptIn(() => {
+        setLimit(null);
+        setGl(true);
+      });
+    }
     // The flat robot is already on screen. The 3D one starts about 2.7 s after the page has loaded (once the browser is idle), or on the first
     // interaction (move, touch, key, scroll), whichever comes first, so first paint and early input never compete with start-up.
     const idle = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
@@ -168,7 +177,7 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
       // The hero is a single column below 1024px, so the compact scene (robot centred, cube close) is the one that fits there.
       const lite = !matchMedia("(min-width: 1024px)").matches;
       const forced = /[?&]robot=3d/.test(location.search);
-      wk.postMessage({ type: "init", canvas: off, w: Math.round(r.width), h: Math.round(r.height), dpr: window.devicePixelRatio || 1, lite, forced, logos: list.map((l, i) => ({ id: l.id, bitmap: bitmaps[i] })) }, [off, ...bitmaps]);
+      wk.postMessage({ type: "init", canvas: off, w: Math.round(r.width), h: Math.round(r.height), dpr: window.devicePixelRatio || 1, lite, forced, touch: matchMedia("(hover: none)").matches, logos: list.map((l, i) => ({ id: l.id, bitmap: bitmaps[i] })) }, [off, ...bitmaps]);
 
       const ro = new ResizeObserver(() => {
         const b = canvas.getBoundingClientRect();
@@ -193,9 +202,9 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
       let pending = false;
       let px = 0;
       let py = 0;
-      const move = (ev: PointerEvent) => {
-        px = (ev.clientX / window.innerWidth) * 2 - 1;
-        py = -((ev.clientY / window.innerHeight) * 2 - 1);
+      const aim = (x: number, y: number) => {
+        px = (x / window.innerWidth) * 2 - 1;
+        py = -((y / window.innerHeight) * 2 - 1);
         if (pending) return;
         pending = true;
         requestAnimationFrame(() => {
@@ -203,8 +212,20 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
           wk.postMessage({ type: "pointer", x: px, y: py });
         });
       };
+      const move = (ev: PointerEvent) => aim(ev.clientX, ev.clientY);
+      // On a phone the browser takes a dragging finger for a scroll and cancels the pointer after one move, but touch events keep coming, so the robot follows those.
+      const touch = (ev: TouchEvent) => {
+        const t = ev.touches[0];
+        if (t) aim(t.clientX, t.clientY);
+      };
       window.addEventListener("pointermove", move, { passive: true });
-      cleanups.push(() => window.removeEventListener("pointermove", move));
+      window.addEventListener("touchstart", touch, { passive: true });
+      window.addEventListener("touchmove", touch, { passive: true });
+      cleanups.push(() => {
+        window.removeEventListener("pointermove", move);
+        window.removeEventListener("touchstart", touch);
+        window.removeEventListener("touchmove", touch);
+      });
     })();
     return () => {
       dead = true;
@@ -226,6 +247,11 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
       )}
       <div className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>{tiles}</div>
       {stat}
+      {limit && (
+        <button type="button" onClick={optIn} className="btn-ghost btn-sm absolute bottom-1 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap" title={limit === "reduced-motion" ? "Your device asks for reduced motion, so the 3D robot is off." : "Data saving is on, so the 3D robot is off."}>
+          ▶ Turn on 3D animation
+        </button>
+      )}
     </div>
   );
 }

@@ -34,4 +34,14 @@ describe("responsive layout guards", () => {
     expect(hero).toMatch(/\},\s*\[gl\]\);/);
     expect(hero).not.toMatch(/\},\s*\[gl,\s*logos\]\);/);
   });
+
+  it("lets touch steer the robot, offers an opt-in to the 3D scenes, and never freezes the worker", () => {
+    const hero = read("src/components/home/RobotHero.tsx");
+    expect(hero).toContain('"touchmove"');
+    expect(hero).toContain("optIn");
+    expect(read("src/components/universe/UniverseSection.tsx")).toContain("optIn");
+    const worker = read("src/components/hero/robot.worker.ts");
+    expect(worker).not.toMatch(/\?\s*"still"/);
+    expect(worker).toContain("nextProbe");
+  });
 });

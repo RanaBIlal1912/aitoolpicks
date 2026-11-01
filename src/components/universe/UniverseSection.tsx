@@ -7,6 +7,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { withBase } from "@/lib/site";
 import { CATEGORIES, TOOLS, toolsInCategory } from "@/data/tools";
 import { catColors } from "@/data/palette";
+import { motionLimit, onOptIn, optedIn, optIn, type MotionLimit } from "@/lib/motion3d";
 
 const UniverseScene = dynamic(() => import("./UniverseScene"), { ssr: false });
 
@@ -56,13 +57,26 @@ export default function UniverseSection() {
   const [ready, setReady] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lite, setLite] = useState(false);
+  const [enabled, setEnabled] = useState(false);
+  const [limit, setLimit] = useState<MotionLimit>(null);
+
+  // Reduced motion and data saving keep the flat map unless the visitor switches the 3D on (remembered in this browser).
+  useEffect(() => {
+    const why = motionLimit();
+    if (!why || optedIn()) {
+      setEnabled(true);
+      return;
+    }
+    setLimit(why);
+    return onOptIn(() => {
+      setLimit(null);
+      setEnabled(true);
+    });
+  }, []);
 
   useEffect(() => {
     const el = box.current;
-    if (!el) return;
-    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    if (calm || saver) return;
+    if (!el || !enabled) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
     // The static SVG map is always there. The 3D code loads once the section is near the screen, after a short pause so a fast scroll past it costs nothing.
     let timer = 0;
@@ -89,7 +103,7 @@ export default function UniverseSection() {
       io.disconnect();
       clearTimeout(timer);
     };
-  }, []);
+  }, [enabled]);
 
   // The scene only draws frames while the box is on screen; scrolled away, it costs nothing.
   useEffect(() => {
@@ -146,7 +160,16 @@ export default function UniverseSection() {
             <UniverseScene items={ITEMS} links={LINKS} lite={lite} active={visible} onSelect={(slug) => router.push(`/tools/category/${slug}/`)} onSelectTool={(id) => router.push(`/tools/${id}/`)} />
           </div>
         )}
-        {!ready && <p className="absolute bottom-3 left-0 right-0 px-6 text-center text-xs text-muted">Showing the flat map. {on ? "Loading the 3D version…" : "The 3D version loads as you scroll here."}</p>}
+        {!ready && (
+          <div className="absolute bottom-3 left-0 right-0 flex flex-col items-center gap-2 px-6 text-center text-xs text-muted">
+            <p>{limit ? (limit === "reduced-motion" ? "Showing the flat map because your device asks for reduced motion." : "Showing the flat map because data saving is on.") : `Showing the flat map. ${on ? "Loading the 3D version…" : "The 3D version loads as you scroll here."}`}</p>
+            {limit && (
+              <button type="button" onClick={optIn} className="btn-ghost btn-sm">
+                ▶ Turn on 3D animation
+              </button>
+            )}
+          </div>
+        )}
       </div>
       <ul className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-5" aria-label="Categories">
         {ITEMS.map((i) => (
