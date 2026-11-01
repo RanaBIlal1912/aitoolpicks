@@ -108,7 +108,7 @@ export default async function CategoryPage({ params }: Props) {
             </ul>
           </section>
         ))}
-        <div className="mt-12 flex flex-wrap gap-2" aria-label="Other categories">
+        <div role="group" className="mt-12 flex flex-wrap gap-2" aria-label="Other categories">
           {CATEGORIES.filter((x) => x.slug !== c.slug).map((x) => (
             <Link key={x.slug} href={`/tools/category/${x.slug}/`} className="chip" style={{ borderColor: `${catColors(x.slug)[0]}99` }}>
               <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: catColors(x.slug)[0], boxShadow: `0 0 8px ${catColors(x.slug)[0]}` }} />

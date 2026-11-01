@@ -56,7 +56,7 @@ export default async function TopicPage({ params }: Props) {
             <ArticleCard key={a.slug} a={a} />
           ))}
         </div>
-        <div className="mt-12 flex flex-wrap gap-2" aria-label="Other topics">
+        <div role="group" className="mt-12 flex flex-wrap gap-2" aria-label="Other topics">
           {TOPICS.filter((x) => x.id !== t.id).map((x) => (
             <Link key={x.id} href={`/blog/topic/${x.id}/`} className="chip">
               {x.label}

@@ -39,28 +39,31 @@ h2,
 
 html {
   background: var(--color-bg);
+  /* Keep keyboard focus clear of the sticky header (69px) at the top and the compare bar at the bottom when the browser scrolls a focused element into view. */
+  scroll-padding-top: 5.5rem;
+  scroll-padding-bottom: 6rem;
 }
 
-/* Large monitors, TVs and ultrawide screens: the interface is built in rem, so raising the root size scales the whole layout (container width, type, spacing)
+/* Large monitors, TVs and ultrawide screens: the interface is built in rem, so raising the root size (as a percentage, so a visitor's own default font size still counts) scales the whole layout (container width, type, spacing)
    instead of leaving it as a narrow column in the middle of the screen. Phones, tablets and laptops keep the default 16px. */
 @media (min-width: 1920px) {
   html {
-    font-size: 17px;
+    font-size: 106.25%;
   }
 }
 @media (min-width: 2400px) {
   html {
-    font-size: 19px;
+    font-size: 118.75%;
   }
 }
 @media (min-width: 3000px) {
   html {
-    font-size: 22px;
+    font-size: 137.5%;
   }
 }
 @media (min-width: 3600px) {
   html {
-    font-size: 24px;
+    font-size: 150%;
   }
 }
 
@@ -69,6 +72,13 @@ html {
 @layer base {
   .grid > * {
     min-width: 0;
+  }
+  /* Readable line length: running text stops at about 90 characters per line however wide its card or column is. Utilities such as max-w-* still win. */
+  main p {
+    max-width: 90ch;
+  }
+  .text-center > p {
+    margin-inline: auto;
   }
 }
 
@@ -185,6 +195,9 @@ a {
   color: transparent;
 }
 
+.chip[aria-pressed="true"] .text-muted {
+  color: rgba(255, 255, 255, 0.92);
+}
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -379,6 +392,10 @@ select.cur option {
   font-weight: 800;
 }
 
+.table-wrap:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
 .table-wrap {
   position: relative; /* keeps visually hidden text inside cells from widening the page */
   overflow-x: auto;
@@ -1050,6 +1067,8 @@ main {
   --panel-line: rgba(110, 130, 255, 0.28);
   --panel-glow: 0 0 0 1px rgba(110, 130, 255, 0.1) inset, 0 22px 54px -26px rgba(80, 60, 255, 0.55);
   --grad-neon: linear-gradient(120deg, #8b5cff 0%, #3d7bff 55%, #22d3ee 100%);
+  /* The same violet, blue and cyan, deep enough that white 14 to 16px text keeps at least 4.5:1 across the whole button (the bright cyan end gave 2:1). */
+  --grad-neon-ink: linear-gradient(120deg, #7a4cf5 0%, #3a63e8 55%, #0c78a8 100%);
   --grad-text: linear-gradient(90deg, #22d3ee 0%, #3d7bff 45%, #a56bff 100%);
 }
 body::before {
@@ -1076,7 +1095,7 @@ body::before {
   border-radius: 999px;
 }
 .btn-primary {
-  background: var(--grad-neon);
+  background: var(--grad-neon-ink);
   box-shadow: 0 0 22px -2px rgba(110, 90, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .btn-primary:hover {
@@ -1102,14 +1121,14 @@ body::before {
 }
 .chip[aria-pressed="true"],
 .chip[aria-current="true"] {
-  background: var(--grad-neon);
+  background: var(--grad-neon-ink);
   border-color: transparent;
   box-shadow: 0 0 18px -4px rgba(110, 90, 255, 0.8);
 }
 .eyebrow {
   border-color: rgba(34, 211, 238, 0.45);
   background: linear-gradient(120deg, rgba(139, 92, 255, 0.22), rgba(34, 211, 238, 0.12));
-  color: #e6e0ff;
+  color: #f4f1ff;
 }
 .tool-card,
 .tile {

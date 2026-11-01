@@ -16,7 +16,7 @@ const LINK =
 function NavLink({ href, label, pathname }: { href: string; label: string; pathname: string }) {
   const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href);
   return (
-    <Link href={href} aria-current={active ? "page" : undefined} className={`${LINK} ${active ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white shadow-[0_0_22px_-6px_rgba(110,90,255,0.9)]" : "text-soft hover:bg-white/5 hover:text-white"}`}>
+    <Link href={href} aria-current={active ? "page" : undefined} className={`${LINK} ${active ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white shadow-[0_0_22px_-6px_rgba(110,90,255,0.9)]" : "text-[#eef0fb] hover:bg-white/5 hover:text-white"}`}>
       {label}
     </Link>
   );
@@ -76,7 +76,7 @@ function MoreMenu({ pathname }: { pathname: string }) {
         aria-expanded={open}
         aria-controls="more-menu"
         onClick={() => setOpen((v) => !v)}
-        className={`${LINK} gap-1.5 ${active || open ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white" : "text-soft hover:bg-white/5 hover:text-white"}`}
+        className={`${LINK} gap-1.5 ${active || open ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white" : "text-[#eef0fb] hover:bg-white/5 hover:text-white"}`}
       >
         More
         <svg width="10" height="6" viewBox="0 0 12 8" aria-hidden="true" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
@@ -148,7 +148,6 @@ export default function Header() {
         <Link
           href="/"
           className="flex items-center gap-2.5 rounded-lg font-extrabold tracking-tight text-white no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
-          aria-label={`${SITE.name} home`}
         >
           <span className="flex max-[379px]:[&>svg]:h-8 max-[379px]:[&>svg]:w-8">
             <BrandMark size={38} gradientId="brand-header" />
@@ -156,6 +155,7 @@ export default function Header() {
           <span className="flex flex-col leading-tight">
             <span className="whitespace-nowrap text-[1.15rem] max-[379px]:text-[1rem]">{SITE.name}</span>
             <span className="hidden text-[0.68rem] font-medium tracking-wide text-muted sm:block lg:hidden xl:block">Discover · Compare · Choose</span>
+            <span className="sr-only">, home</span>
           </span>
         </Link>
 

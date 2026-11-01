@@ -88,7 +88,7 @@ export const CAT: Record<string, { c1: string; c2: string; d: string }> = {
   web: { c1: "#2563eb", c2: "#164e63", d: "M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" },
   "open-source": { c1: "#475569", c2: "#1e293b", d: "M9 7L4 12l5 5M15 7l5 5-5 5" },
   support: { c1: "#db2777", c2: "#831843", d: "M4 14v-2a8 8 0 0116 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 2-2 3-5 3" },
-  analytics: { c1: "#10b981", c2: "#065f46", d: "M4 20V10M10 20V4M16 20v-8M22 20H2" },
+  analytics: { c1: "#059669", c2: "#065f46", d: "M4 20V10M10 20V4M16 20v-8M22 20H2" },
 };
 
 export function CategoryGrid() {
@@ -103,7 +103,7 @@ export function CategoryGrid() {
                 <path d={k.d} />
               </svg>
               <span>{c.short}</span>
-              <span className="text-[0.72rem] font-medium text-white/80">{toolsInCategory(c.slug).length} tools</span>
+              <span className="text-[0.72rem] font-medium text-white">{toolsInCategory(c.slug).length} tools</span>
             </Link>
           </li>
         );
@@ -151,6 +151,7 @@ export function FeaturedTools({ ids }: { ids: string[] }) {
           <span className="mt-auto w-fit rounded-md bg-green/15 px-2 py-0.5 text-xs font-bold text-green">{PRICING_MODEL_LABEL[t.pricingModel] ?? "Not verified"}</span>
           <Link href={`/tools/${t.id}/`} prefetch={false} className="btn-primary btn-sm w-full">
             View details <span aria-hidden="true">→</span>
+            <span className="sr-only"> for {t.name}</span>
           </Link>
         </li>
       ))}

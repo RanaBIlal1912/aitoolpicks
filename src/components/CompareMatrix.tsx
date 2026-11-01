@@ -119,7 +119,9 @@ export default function CompareMatrix() {
           <caption className="sr-only">Comparison of {tools.map((t) => t.name).join(", ")}</caption>
           <thead>
             <tr>
-              <th scope="col">&nbsp;</th>
+              <th scope="col">
+                <span className="sr-only">Detail</span>
+              </th>
               {tools.map((t) => (
                 <th key={t.id} scope="col">
                   {t.name}

@@ -53,6 +53,7 @@ export default function SavedList({ mode }: { mode: "favorites" | "recent" }) {
               </button>
             </div>
           </div>
+          <h2 className="sr-only">{mode === "favorites" ? "Saved tools" : "Recently viewed tools"}</h2>
           <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {tools.map((t) => (
               <li key={t.id}>

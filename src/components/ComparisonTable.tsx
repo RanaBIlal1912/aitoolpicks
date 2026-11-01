@@ -6,15 +6,18 @@ function renderCell(c: Cell) {
 }
 
 export default function ComparisonTable({ c }: { c: Comparison }) {
+  // A table wider than the screen scrolls inside its own box; the box is focusable and named so keyboard users can scroll it.
   return (
-    <div className="table-wrap glass my-8">
+    <div className="table-wrap glass my-8" role="region" aria-label="Comparison table" tabIndex={0}>
       <table className="cmp">
         <caption className="sr-only">
           {c.leftLabel} compared with {c.rightLabel}
         </caption>
         <thead>
           <tr>
-            <th scope="col">&nbsp;</th>
+            <th scope="col">
+              <span className="sr-only">Detail</span>
+            </th>
             <th scope="col">{c.leftLabel}</th>
             <th scope="col">{c.rightLabel}</th>
           </tr>

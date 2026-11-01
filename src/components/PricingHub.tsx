@@ -124,6 +124,7 @@ export default function PricingHub() {
                   <span className="block text-xs text-muted">checked {formatChecked(t.checked)}</span>
                   <a href={t.pricingSource} target="_blank" rel="noopener noreferrer" className="text-xs text-[#9db4d6] underline">
                     Official pricing ↗
+                    <span className="sr-only"> for {t.name}</span>
                   </a>
                 </td>
               </tr>

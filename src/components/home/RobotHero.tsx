@@ -140,7 +140,14 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
     const cleanups: (() => void)[] = [];
     (async () => {
       const list = logosRef.current;
-      const bitmaps = await Promise.all(list.map(tileBitmap));
+      let bitmaps: ImageBitmap[];
+      try {
+        bitmaps = await Promise.all(list.map(tileBitmap));
+      } catch {
+        // A browser that cannot make bitmaps from a canvas (older Safari) keeps the flat robot.
+        if (!dead) setGl(false);
+        return;
+      }
       if (dead) return;
       const off = canvas.transferControlToOffscreen();
       canvas.dataset.offscreen = "1";
