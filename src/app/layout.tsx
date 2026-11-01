@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Bricolage_Grotesque, Newsreader } from "next/font/google";
 import { SITE, absUrl, withBase } from "@/lib/site";
+import { fitDescription } from "@/lib/meta";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,7 +15,7 @@ const editorial = Newsreader({ subsets: ["latin"], variable: "--font-newsreader"
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE.url}/`),
   title: { default: `${SITE.name}: find AI tools and their real prices`, template: `%s | ${SITE.name}` },
-  description: SITE.description,
+  description: fitDescription(SITE.description),
   applicationName: SITE.name,
   alternates: { canonical: absUrl("/") },
   // Static files in public/brand (made by `npm run brand` from one mark). Paths include the GitHub Pages base path.

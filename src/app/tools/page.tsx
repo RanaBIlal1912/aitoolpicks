@@ -9,7 +9,7 @@ import { absUrl } from "@/lib/site";
 export const metadata = pageMeta({
   title: "AI tools directory: search, filter and compare pricing",
   description:
-    "Search AI assistants, coding tools, video, image, audio, writing, research, marketing and automation tools. Filter by category and pricing model, sort and compare plans.",
+    "Search AI assistants, coding, video, image, audio, writing, research, marketing and automation tools. Filter by category and pricing model, then compare plans.",
   path: "/tools/",
 });
 

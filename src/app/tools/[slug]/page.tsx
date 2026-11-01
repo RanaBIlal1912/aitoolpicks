@@ -40,7 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!t) return {};
   const m = pageMeta({
     title: `${t.name} pricing, plans and features`,
-    description: `${t.tagline}. ${t.description}`.slice(0, 190),
+    // Some records open their description with the tagline; do not say it twice.
+    description: t.description.startsWith(t.tagline) ? t.description : `${t.tagline}. ${t.description}`,
     path: `/tools/${slug}/`,
   });
   const cover = getCategory(t.category)?.cover ?? "chip";

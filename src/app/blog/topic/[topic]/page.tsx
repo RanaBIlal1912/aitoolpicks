@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!t) return {};
   const m = pageMeta({
     title: `${t.label}: guides and how-tos`,
-    description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for people choosing and using AI tools.`.slice(0, 180),
+    description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for people choosing and using AI tools.`,
     path: `/blog/topic/${topic}/`,
   });
   return m;

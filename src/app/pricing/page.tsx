@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata = pageMeta({
   title: "AI tool pricing compared: plans, free tiers and what is verified",
   description:
-    "One table of AI tool plans and prices, in each merchant's own currency, with free-plan details, verification status, last-checked dates and links to the official pricing pages.",
+    "One table of AI tool plans and prices in each merchant's own currency, with free-plan details, verification status, check dates and official pricing links.",
   path: "/pricing/",
 });
 

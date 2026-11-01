@@ -5,6 +5,7 @@ import { NEWS } from "@/data/news";
 import { CATEGORIES, TOOLS, getTool } from "@/data/tools";
 import { ROUNDUPS } from "@/data/roundups";
 import { SITE, absUrl } from "@/lib/site";
+import { fitDescription } from "@/lib/meta";
 import { getTrending } from "@/lib/trending";
 import ArticleCard from "@/components/ArticleCard";
 import HeroSearch from "@/components/HeroSearch";
@@ -19,20 +20,21 @@ import { BlogPanel, CategoryGrid, CtaPanel, FeaturedTools, HeroOrbit, NewsPanel,
 import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, PhotoBand, VersusTiles } from "@/components/home/Sections";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
+const DESC = fitDescription(SITE.description);
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
-  description: SITE.description,
+  description: DESC,
   alternates: { canonical: absUrl("/") },
   openGraph: {
     title: TITLE,
-    description: SITE.description,
+    description: DESC,
     url: absUrl("/"),
     siteName: SITE.name,
     type: "website",
     images: [{ url: absUrl("/brand/og.png"), width: 1200, height: 630, alt: "AI Tool Picks: find the AI tool that fits, and what it really costs" }],
   },
-  twitter: { card: "summary_large_image", title: TITLE, description: SITE.description, images: [absUrl("/brand/og.png")] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: [absUrl("/brand/og.png")] },
 };
 
 // Popular tasks: plain phrases that the local search understands (see src/lib/search.ts).

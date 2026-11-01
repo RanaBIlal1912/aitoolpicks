@@ -8,7 +8,7 @@ import { absUrl } from "@/lib/site";
 export const metadata = pageMeta({
   title: "About AI Tool Picks: our mission and how we choose tools",
   description:
-    "AI Tool Picks is an independent directory and magazine for AI tools, with official prices, comparisons and dated news. Learn how we choose tools and how the site earns money.",
+    "An independent directory and magazine for AI tools, with official prices, comparisons and dated news. Learn how we choose tools and how the site earns money.",
   path: "/about/",
 });
 

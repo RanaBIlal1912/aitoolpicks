@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = pageMeta({
   title: "AI Tool Reviews: pros, cons and who each tool suits",
   description:
-    "Documentation-based overviews of AI tools with strengths, limitations, use cases, alternatives and prices checked against official pages. None are scored or hands-on tested.",
+    "Documentation-based AI tool overviews with strengths, limitations, use cases, alternatives and prices checked against official pages. Not scored or tested hands-on.",
   path: "/reviews/",
 });
 

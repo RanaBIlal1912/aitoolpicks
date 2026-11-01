@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const r = getReview(slug);
   if (!r) return {};
-  const m = pageMeta({ title: r.title, description: r.summary.slice(0, 158), path: `/reviews/${slug}/`, type: "article", publishedTime: SITE.updated });
+  const m = pageMeta({ title: r.title, description: r.summary, path: `/reviews/${slug}/`, type: "article", publishedTime: SITE.updated });
   return m;
 }
 

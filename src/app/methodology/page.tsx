@@ -6,7 +6,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata = pageMeta({
   title: "Methodology: how we verify tools, prices and news",
   description:
-    "How AI Tool Picks collects tool records, verifies pricing from official pages, labels unverified data, handles currency estimates, tracks changes and chooses news items.",
+    "How AI Tool Picks collects tool records, verifies pricing from official pages, labels unverified data, handles currency estimates and chooses news items.",
   path: "/methodology/",
 });
 
