@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import LegalPage from "@/components/LegalPage";
+import { ANALYTICS_ENABLED } from "@/lib/analytics";
 
 export const metadata = pageMeta({
   title: "Privacy Policy",
@@ -16,12 +17,16 @@ export default function PrivacyPage() {
       title="Privacy policy"
       lead="We collect as little as possible. This page explains what that means in practice."
       path="/privacy/"
-      updated="30 October 2026"
+      updated="1 November 2026"
     >
       <h2>Summary</h2>
       <ul>
         <li>No accounts, no sign-up and no advertising networks.</li>
-        <li>We do not currently run analytics or tracking scripts.</li>
+        {ANALYTICS_ENABLED ? (
+          <li>We use Google Analytics to count visits, but only if you say yes. It stays off until you choose, and &ldquo;No thanks&rdquo; keeps it off.</li>
+        ) : (
+          <li>We do not currently run analytics or tracking scripts.</li>
+        )}
         <li>Your currency choice, saved tools and recently viewed tools are stored only in your own browser, never on our servers.</li>
       </ul>
 
@@ -31,6 +36,34 @@ export default function PrivacyPage() {
         recent exchange rates so we do not fetch them on every page, the tools you choose to save (heart button), and the tool pages you recently viewed (up to 12). The saved and recent lists never leave your device: there are no accounts and nothing is synchronised. Clear them on the Saved tools and Recently viewed pages, or in your browser settings. You can clear this at any time in your browser settings. The
         site works without it.
       </p>
+
+      {ANALYTICS_ENABLED && (
+        <>
+          <h2>Analytics (only with your consent)</h2>
+          <p>
+            The first time you visit, a notice asks whether we may use Google Analytics 4 to measure visits. Until you press &ldquo;Allow analytics&rdquo;, nothing from Google is loaded and nothing is sent. If you press
+            &ldquo;No thanks&rdquo;, or your browser sends a Global Privacy Control or Do Not Track signal, it stays off and we do not ask again. Your choice is kept in your browser&rsquo;s local storage.
+          </p>
+          <ul>
+            <li>
+              <strong>What is measured:</strong> pages viewed, how you arrived (for example a search engine or another site), which outbound tool links you click, scroll depth, approximate location (country or city, from your IP
+              address, which Google does not store), and the kind of device and browser.
+            </li>
+            <li>
+              <strong>Cookies:</strong> if you allow analytics, Google sets first-party cookies (<code>_ga</code> and one starting <code>_ga_</code>) that give your browser a random ID so repeat visits can be told apart. They last up to two years.
+            </li>
+            <li>
+              <strong>Not used:</strong> advertising features, Google signals and ad personalisation are switched off, and we do not link analytics to any account, because there are none.
+            </li>
+            <li>
+              <strong>Who processes it:</strong> Google LLC (and its group companies), which can process the data outside your country, including in the United States. See Google&rsquo;s privacy policy.
+            </li>
+            <li>
+              <strong>Changing your mind:</strong> use &ldquo;Analytics settings&rdquo; in the footer, or clear this site&rsquo;s data and cookies in your browser. Turning it off stops new data being sent and removes the Google cookies from this site.
+            </li>
+          </ul>
+        </>
+      )}
 
       <h2>Third parties your browser contacts</h2>
       <ul>
@@ -69,7 +102,7 @@ export default function PrivacyPage() {
 
       <h2>Changes</h2>
       <p>
-        If we add analytics, advertising or anything else that collects data, we will update this page first and explain what and why.
+        If we add advertising or anything else that collects data, we will update this page first and explain what and why.
       </p>
     </LegalPage>
   );

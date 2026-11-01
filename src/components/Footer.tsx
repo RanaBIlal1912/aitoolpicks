@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FOOTER_LINKS, NAV, SITE } from "@/lib/site";
 import RateNote from "./RateNote";
+import { ConsentLink } from "./ConsentBanner";
 import { BrandMark } from "@/lib/brand";
 import { CATEGORIES, TOOLS } from "@/data/tools";
 
@@ -79,6 +80,9 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {SITE.name}. Product names belong to their owners; we are not affiliated with
             the tools we cover unless we say so. Prices and features change, so check each official site before you pay.
+          </p>
+          <p>
+            <ConsentLink />
           </p>
         </div>
       </div>
