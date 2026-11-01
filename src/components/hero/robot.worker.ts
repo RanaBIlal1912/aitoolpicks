@@ -7,7 +7,7 @@ import * as THREE from "three";
 // sphere, so it needs no lights or environment map and stays cheap on modest graphics hardware.
 
 type Msg =
-  | { type: "init"; canvas: OffscreenCanvas; w: number; h: number; dpr: number; lite: boolean; forced: boolean; logos: { id: string; bitmap: ImageBitmap }[] }
+  | { type: "init"; canvas: OffscreenCanvas; w: number; h: number; dpr: number; lite: boolean; forced: boolean; touch?: boolean; logos: { id: string; bitmap: ImageBitmap }[] }
   | { type: "size"; w: number; h: number; dpr: number }
   | { type: "pointer"; x: number; y: number }
   | { type: "active"; on: boolean };
@@ -335,7 +335,11 @@ function start(init: Extract<Msg, { type: "init" }>) {
   const vc = new THREE.Vector3();
 
   // ---- state
-  const ptr = { x: 0, y: 0 };
+  const ptr = { x: 0, y: 0, ax: 0, ay: 0 };
+  // Phones have no hovering pointer, so when nobody has touched the hero for a moment the robot looks around by itself (mouse devices keep following the mouse only).
+  const touch = !!init.touch;
+  let lastInput = -1e9;
+  let idleMix = 0;
   let w = init.w;
   let h = init.h;
   let dpr = init.dpr;
@@ -358,6 +362,8 @@ function start(init: Extract<Msg, { type: "init" }>) {
   let nFrames = 0;
   let sum = 0;
   let readySent = false;
+  let nextProbe = 0;
+  let probes = 0;
   let elapsed = 0;
   let prev = performance.now();
   const tick = () => {
@@ -369,11 +375,20 @@ function start(init: Extract<Msg, { type: "init" }>) {
   };
 
   const animate = (t: number, dt: number) => {
+    if (touch) {
+      idleMix += ((t - lastInput > 2.5 ? 1 : 0) - idleMix) * Math.min(1, dt * 1.2);
+      // ptr stays where the finger left it; the idle drift is blended over it.
+      ptr.ax = ptr.x + (Math.sin(t * 0.45) * 0.55 - ptr.x) * idleMix;
+      ptr.ay = ptr.y + (Math.sin(t * 0.33 + 1) * 0.3 - ptr.y) * idleMix;
+    } else {
+      ptr.ax = ptr.x;
+      ptr.ay = ptr.y;
+    }
     robot.root.position.y = -0.85 + Math.sin(t * 1.2) * 0.1;
-    robot.root.rotation.y += (-0.3 + ptr.x * 0.3 - robot.root.rotation.y) * Math.min(1, dt * 2.5);
+    robot.root.rotation.y += (-0.3 + ptr.ax * 0.3 - robot.root.rotation.y) * Math.min(1, dt * 2.5);
     robot.root.rotation.z = Math.sin(t * 0.8) * 0.02;
-    robot.head.rotation.y += (ptr.x * 0.45 - robot.head.rotation.y) * Math.min(1, dt * 4);
-    robot.head.rotation.x += (-ptr.y * 0.25 - robot.head.rotation.x) * Math.min(1, dt * 4);
+    robot.head.rotation.y += (ptr.ax * 0.45 - robot.head.rotation.y) * Math.min(1, dt * 4);
+    robot.head.rotation.x += (-ptr.ay * 0.25 - robot.head.rotation.x) * Math.min(1, dt * 4);
     robot.hand.rotation.z = -0.25 + Math.sin(t * 2.2) * 0.07;
     robot.ring.rotation.z += dt * 0.5;
     robot.ring2.rotation.z -= dt * 0.3;
@@ -384,10 +399,10 @@ function start(init: Extract<Msg, { type: "init" }>) {
 
     for (const { g, s, phase } of tiles) {
       const tt = t + phase;
-      g.position.x = s.pos[0] + Math.sin(tt * 0.7) * 0.1 + ptr.x * s.depth * 0.16;
-      g.position.y = s.pos[1] + Math.sin(tt * 1.1) * 0.14 + ptr.y * s.depth * 0.14;
+      g.position.x = s.pos[0] + Math.sin(tt * 0.7) * 0.1 + ptr.ax * s.depth * 0.16;
+      g.position.y = s.pos[1] + Math.sin(tt * 1.1) * 0.14 + ptr.ay * s.depth * 0.14;
       g.position.z = s.pos[2];
-      g.rotation.y = Math.sin(tt * 0.6) * 0.35 + ptr.x * 0.2;
+      g.rotation.y = Math.sin(tt * 0.6) * 0.35 + ptr.ax * 0.2;
       g.rotation.x = Math.cos(tt * 0.5) * 0.12;
     }
 
@@ -449,16 +464,26 @@ function start(init: Extract<Msg, { type: "init" }>) {
       ctx.postMessage({ type: "ready" });
     }
     // The first frames include shader linking and texture upload, so they are not counted. Five frames tell a fast device from a slow one.
+    // The check is repeated (the first one runs while the page is still busy starting up), so a device can move up or down; the scene never freezes.
     if (mode === "probe") {
       nFrames++;
       if (lastFrame && nFrames > 3) sum += (now - lastFrame) / 1000;
       lastFrame = now;
       if (nFrames >= 8) {
         const avg = sum / 4;
-        mode = avg > 0.06 ? "still" : avg > 0.036 ? "calm" : avg > 0.021 ? "smooth" : "full";
-        fullQuality = mode === "full";
-        if (fullQuality) applySize();
+        mode = avg > 0.036 ? "calm" : avg > 0.021 ? "smooth" : "full";
+        const q = mode === "full";
+        if (q !== fullQuality) {
+          fullQuality = q;
+          applySize();
+        }
+        nextProbe = now + (probes++ < 2 ? 4000 : 12000);
       }
+    } else if (now > nextProbe) {
+      mode = "probe";
+      nFrames = 0;
+      sum = 0;
+      lastFrame = 0;
     }
     if (mode !== "still") schedule();
   }
@@ -474,6 +499,7 @@ function start(init: Extract<Msg, { type: "init" }>) {
     if (m.type === "pointer") {
       ptr.x = m.x;
       ptr.y = m.y;
+      lastInput = elapsed;
       if (mode === "still" && !dirty) {
         dirty = true;
         schedule();
