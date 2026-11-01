@@ -26,8 +26,9 @@ const built = fs.existsSync(path.join(process.cwd(), "out/index.html"));
 describe.skipIf(!built)("built meta descriptions", () => {
   const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
   const dec = (s: string) => s.replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/&quot;/g, '"');
-  const pages = walk(path.join(process.cwd(), "out")).filter((f) => f.endsWith("index.html") && !f.includes("_not-found"));
   it("are at most 160 characters and match Open Graph and Twitter", () => {
+    // Read inside the test: a skipped describe still runs its body, and out/ does not exist before the build (as in CI).
+    const pages = walk(path.join(process.cwd(), "out")).filter((f) => f.endsWith("index.html") && !f.includes("_not-found"));
     for (const f of pages) {
       const h = fs.readFileSync(f, "utf8");
       if (h.includes("This page has moved")) continue;
