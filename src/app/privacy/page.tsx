@@ -2,6 +2,7 @@ import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import LegalPage from "@/components/LegalPage";
 import { ANALYTICS_ENABLED } from "@/lib/analytics";
+import { SITE } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Privacy Policy",
@@ -39,10 +40,16 @@ export default function PrivacyPage() {
 
       {ANALYTICS_ENABLED && (
         <>
+          <p>
+            Apart from those four things, the only other things stored on your device are your analytics choice (in local storage) and, only if you allow analytics, Google&rsquo;s cookies. Both are described below.
+          </p>
           <h2>Analytics (only with your consent)</h2>
           <p>
             The first time you visit, a notice asks whether we may use Google Analytics 4 to measure visits. Until you press &ldquo;Allow analytics&rdquo;, nothing from Google is loaded and nothing is sent. If you press
-            &ldquo;No thanks&rdquo;, or your browser sends a Global Privacy Control or Do Not Track signal, it stays off and we do not ask again. Your choice is kept in your browser&rsquo;s local storage.
+            &ldquo;No thanks&rdquo;, or your browser sends a Global Privacy Control or Do Not Track signal, it stays off and we do not ask again. Your choice is kept in your browser&rsquo;s local storage for up to 13 months, and then we ask again.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> your consent (Article 6(1)(a) of the GDPR, and the equivalent in similar laws). Saying no, or withdrawing consent later, has no effect on how you can use the site.
           </p>
           <ul>
             <li>
@@ -56,7 +63,15 @@ export default function PrivacyPage() {
               <strong>Not used:</strong> advertising features, Google signals and ad personalisation are switched off, and we do not link analytics to any account, because there are none.
             </li>
             <li>
-              <strong>Who processes it:</strong> Google LLC (and its group companies), which can process the data outside your country, including in the United States. See Google&rsquo;s privacy policy.
+              <strong>Who processes it:</strong> Google LLC (and its group companies) processes it for us. Google can process the data outside your country, including in the United States, and describes the safeguards it uses for such transfers in its
+              own privacy policy and data processing terms.
+            </li>
+            <li>
+              <strong>How long it is kept:</strong> Google Analytics deletes event-level data after 2 months and data tied to a browser ID after 14 months. Totals and trends in aggregated reports are kept.
+            </li>
+            <li>
+              <strong>Your rights:</strong> under the GDPR and similar laws you can ask to see, correct, delete, restrict or take a copy of data about you, object to its use, and complain to your local data-protection authority. Analytics uses a random browser ID, not your name, so we can only
+              find your data if you tell us the ID in your <code>_ga</code> cookie. To ask, open a request on the <Link href="/contact/">contact page</Link> without any private details, say it is a privacy request, and we will arrange a private way to answer.
             </li>
             <li>
               <strong>Changing your mind:</strong> use &ldquo;Analytics settings&rdquo; in the footer, or clear this site&rsquo;s data and cookies in your browser. Turning it off stops new data being sent and removes the Google cookies from this site.
@@ -67,6 +82,12 @@ export default function PrivacyPage() {
 
       <h2>Third parties your browser contacts</h2>
       <ul>
+        {ANALYTICS_ENABLED && (
+          <li>
+            <strong>Google Analytics (only if you allow it).</strong> Your browser then contacts <code>www.googletagmanager.com</code> and <code>www.google-analytics.com</code>. Those requests carry your IP address and browser details, as with any
+            website. See the analytics section above.
+          </li>
+        )}
         <li>
           <strong>Exchange-rate services.</strong> To show currency estimates, your browser requests rates from{" "}
           <code>open.er-api.com</code> and, if that fails, <code>cdn.jsdelivr.net</code>. Those services can see your IP address and
@@ -83,6 +104,15 @@ export default function PrivacyPage() {
           not control this.
         </li>
       </ul>
+
+      <h2>Who runs this site</h2>
+      <p>
+        AI Tool Picks is an independent site run by its owner, who decides why and how any data described here is used. The source code and public issue tracker are at{" "}
+        <a href={SITE.repo} target="_blank" rel="noopener noreferrer">
+          github.com/RanaBIlal1912/aitoolpicks
+        </a>
+        .
+      </p>
 
       <h2>Contacting us</h2>
       <p>

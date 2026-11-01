@@ -24,13 +24,16 @@ Nothing below is enabled yet. Affiliate links are empty, analytics is off, and t
 3. Submit `sitemap.xml` (it lists every route). `robots.txt` already points to it.
 4. After a few days, check Coverage for pages "Discovered, not indexed" and the Core Web Vitals report.
 
-## 4. Analytics (evaluation only)
+## 4. Analytics (Google Analytics 4, consent first, off by default)
 
-`src/lib/analytics.ts` is a disabled no-op hook and outbound buttons carry `data-cta` attributes. To enable something:
+`src/lib/analytics.ts` and `src/components/ConsentBanner.tsx` implement GA4 behind a consent banner. It is **off** until `NEXT_PUBLIC_GA_ID` is set at build time; with it unset there is no banner, no script, no cookie and no request.
 
-- Prefer a cookieless, privacy-friendly tool (for example Plausible, Umami or Cloudflare Web Analytics) over cookie-based analytics.
-- Update `/privacy/` first: name the provider, what is collected and why. If you use cookies or identifiers where the law requires consent, add a consent notice.
-- Then set `ANALYTICS_ENABLED = true` and wire the provider in `track()`.
+- **GA property:** "AI Tool Picks", measurement ID `G-K80FTMJB15`, in the Analytics account "Default Account for Firebase" (shared with the unrelated "Prime Tech" property; never use that property's ID here). In GA, data retention is 2 months for event data and 14 months for user data; Google signals and user-provided data collection are off. If you change those, update `/privacy/` (the "How long it is kept" line).
+- **To switch it on:** add `env: NEXT_PUBLIC_GA_ID: G-K80FTMJB15` to the `npm run build` step in `.github/workflows/deploy.yml` only. Do not set it for the whole job: `npm test` expects it unset. Deploy only after you have reviewed the banner and `/privacy/` (both change with the variable).
+- **How it behaves:** nothing from Google loads until the visitor presses Allow; No thanks, or a Global Privacy Control / Do Not Track signal, keeps it off; withdrawing consent reloads the page and clears Google's cookies for this site's path only. The choice is asked again after 13 months. Page views are sent on each route change by `pageView()`.
+- **Custom events:** `track()` sends `outbound_click` with `tool`, `kind` and `placement`. To report on them, register those as event-scoped custom dimensions in GA (Admin, Custom definitions).
+- **Testing without polluting GA:** a local build with the ID sends real hits. Block `google-analytics.com/g/collect` in your test tool, or leave the ID unset.
+- **Before using a custom domain:** nothing to change in the code (cookie paths and domains are handled), but re-check the GA data stream URL.
 
 ## 5. Contact
 

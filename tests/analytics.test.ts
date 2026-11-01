@@ -1,40 +1,165 @@
-import fs from "node:fs";
-import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const read = (p: string) => fs.readFileSync(path.join(process.cwd(), p), "utf8");
+type Mod = typeof import("@/lib/analytics");
 
-describe("analytics consent", () => {
-  afterEach(() => {
-    vi.unstubAllEnvs();
-    vi.resetModules();
+/** A browser stand-in: just enough window, document, navigator and storage to run the consent code in Node. */
+function browser(opts: { stored?: string; gpc?: boolean; dnt?: boolean; storageThrows?: boolean; host?: string } = {}) {
+  const cookies: string[] = [];
+  const scripts: { src?: string }[] = [];
+  const store = new Map<string, string>(opts.stored ? [["aitp-consent", opts.stored]] : []);
+  const win: Record<string, unknown> = {};
+  vi.stubGlobal("window", win);
+  vi.stubGlobal("navigator", { globalPrivacyControl: opts.gpc, doNotTrack: opts.dnt ? "1" : null });
+  vi.stubGlobal("location", { hostname: opts.host ?? "ranabilal1912.github.io", pathname: "/aitoolpicks/", search: "", href: "https://ranabilal1912.github.io/aitoolpicks/" });
+  vi.stubGlobal("localStorage", {
+    getItem: (k: string) => {
+      if (opts.storageThrows) throw new Error("blocked");
+      return store.get(k) ?? null;
+    },
+    setItem: (k: string, v: string) => {
+      if (opts.storageThrows) throw new Error("blocked");
+      store.set(k, v);
+    },
+  });
+  vi.stubGlobal("document", {
+    title: "Home",
+    set cookie(v: string) {
+      cookies.push(v);
+    },
+    createElement: () => ({}) as { src?: string },
+    head: { appendChild: (s: { src?: string }) => scripts.push(s) },
+  });
+  return { cookies, scripts, store, win };
+}
+
+async function load(id: string | undefined, base = "/aitoolpicks"): Promise<Mod> {
+  vi.resetModules();
+  vi.stubEnv("NEXT_PUBLIC_BASE_PATH", base);
+  if (id !== undefined) vi.stubEnv("NEXT_PUBLIC_GA_ID", id);
+  return import("@/lib/analytics");
+}
+
+const ID = "G-ABC123XYZ9";
+const calls = (win: Record<string, unknown>) => ((win.dataLayer as unknown[]) ?? []).map((a) => Array.from(a as ArrayLike<unknown>));
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
+  vi.resetModules();
+});
+
+describe("analytics is off unless configured", () => {
+  it("needs a valid measurement ID at build time", async () => {
+    expect((await load(undefined)).ANALYTICS_ENABLED).toBe(false);
+    for (const bad of ["", "abc", "UA-12345-1", "G-"]) expect((await load(bad)).ANALYTICS_ENABLED).toBe(false);
+    expect((await load(ID)).ANALYTICS_ENABLED).toBe(true);
   });
 
-  it("is off unless a valid measurement ID is set at build time", async () => {
-    expect((await import("@/lib/analytics")).ANALYTICS_ENABLED).toBe(false);
-    for (const bad of ["abc", "UA-12345-1", "G-"]) {
-      vi.resetModules();
-      vi.stubEnv("NEXT_PUBLIC_GA_ID", bad);
-      expect((await import("@/lib/analytics")).ANALYTICS_ENABLED).toBe(false);
+  it("never loads Google's script or sends anything when disabled, whatever the stored choice", async () => {
+    const b = browser({ stored: `granted|${Date.now()}` });
+    const m = await load(undefined);
+    m.loadGa();
+    m.setConsent("granted");
+    m.pageView();
+    m.track("outbound_click", { tool: "x", kind: "official" });
+    expect(b.scripts).toHaveLength(0);
+    expect(b.win.gtag).toBeUndefined();
+    expect(b.win.dataLayer).toBeUndefined();
+  });
+});
+
+describe("consent", () => {
+  it("asks first: nothing loads until the visitor allows it", async () => {
+    const b = browser();
+    const m = await load(ID);
+    expect(m.readConsent()).toBeNull();
+    m.pageView();
+    m.track("outbound_click", { tool: "x", kind: "official" });
+    expect(b.scripts).toHaveLength(0);
+    expect(b.win.gtag).toBeUndefined();
+  });
+
+  it("loads Google's tag once, after Allow, with ads features off and cookies kept to this site's path", async () => {
+    const b = browser();
+    const m = await load(ID);
+    expect(m.setConsent("granted")).toBe(false);
+    m.loadGa();
+    expect(b.scripts).toHaveLength(1);
+    expect(b.scripts[0].src).toBe(`https://www.googletagmanager.com/gtag/js?id=${ID}`);
+    const cfg = calls(b.win).find((c) => c[0] === "config");
+    expect(cfg?.[1]).toBe(ID);
+    expect(cfg?.[2]).toMatchObject({ send_page_view: false, cookie_path: "/aitoolpicks", allow_google_signals: false, allow_ad_personalization_signals: false });
+    expect(calls(b.win).find((c) => c[0] === "consent")?.[2]).toMatchObject({ ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
+    expect(b.store.get("aitp-consent")).toMatch(/^granted\|\d+$/);
+  });
+
+  it("sends one page view per address, and custom events, only while allowed", async () => {
+    const b = browser();
+    const m = await load(ID);
+    m.setConsent("granted");
+    m.pageView();
+    m.pageView();
+    expect(calls(b.win).filter((c) => c[0] === "event" && c[1] === "page_view")).toHaveLength(1);
+    m.track("outbound_click", { tool: "claude", kind: "affiliate", placement: "hero" });
+    expect(calls(b.win).some((c) => c[1] === "outbound_click" && (c[2] as { tool: string }).tool === "claude")).toBe(true);
+  });
+
+  it("No thanks first: nothing loads and no reload is needed", async () => {
+    const b = browser();
+    const m = await load(ID);
+    expect(m.setConsent("denied")).toBe(false);
+    expect(b.scripts).toHaveLength(0);
+    expect(m.readConsent()).toBe("denied");
+  });
+
+  it("No thanks after Allow: stops, clears only this site's cookies, and asks for a reload", async () => {
+    const b = browser();
+    const m = await load(ID);
+    m.setConsent("granted");
+    const before = calls(b.win).length;
+    expect(m.setConsent("denied")).toBe(true);
+    expect(b.win[`ga-disable-${ID}`]).toBe(true);
+    m.pageView();
+    m.track("outbound_click", { tool: "x", kind: "official" });
+    expect(calls(b.win)).toHaveLength(before);
+    expect(b.cookies.some((c) => c.startsWith("_ga=; expires=Thu, 01 Jan 1970"))).toBe(true);
+    expect(b.cookies.some((c) => c.startsWith("_ga_ABC123XYZ9="))).toBe(true);
+    // Never "/": project sites on one github.io origin share it, and other sites' cookies must be left alone.
+    expect(b.cookies.every((c) => c.includes("path=/aitoolpicks"))).toBe(true);
+  });
+
+  it("clears cookies whatever domain scope Google gave them (custom domain)", async () => {
+    const b = browser({ host: "www.example.com" });
+    const m = await load(ID, "");
+    m.expireGaCookies();
+    for (const d of [null, "www.example.com", ".www.example.com", "example.com", ".example.com"])
+      expect(b.cookies.some((c) => c.startsWith("_ga=;") && c.includes("path=/") && (d ? c.endsWith(`domain=${d}`) : !c.includes("domain=")))).toBe(true);
+  });
+
+  it("honours Global Privacy Control and Do Not Track even over a stored yes", async () => {
+    for (const o of [{ gpc: true }, { dnt: true }]) {
+      browser({ ...o, stored: `granted|${Date.now()}` });
+      expect((await load(ID)).readConsent()).toBe("denied");
     }
-    vi.resetModules();
-    vi.stubEnv("NEXT_PUBLIC_GA_ID", "G-ABC123XYZ9");
-    expect((await import("@/lib/analytics")).ANALYTICS_ENABLED).toBe(true);
   });
 
-  it("never loads Google's script from anywhere except after consent, and keeps ads features off", () => {
-    const src = read("src/lib/analytics.ts");
-    expect(src.match(/googletagmanager\.com/g)).toHaveLength(1);
-    expect(src).toContain("allow_google_signals: false");
-    expect(src).toContain('ad_storage: "denied"');
-    expect(read("src/components/ConsentBanner.tsx")).toContain('decide("denied")');
-    // The only caller of loadGa outside setConsent is the banner, and only when the stored choice is "granted".
-    expect(read("src/components/ConsentBanner.tsx")).toMatch(/if \(c === "granted"\) loadGa\(\)/);
+  it("asks again after 13 months, and ignores damaged values", async () => {
+    const day = 24 * 3600 * 1000;
+    browser({ stored: `granted|${Date.now() - 394 * day}` });
+    expect((await load(ID)).readConsent()).toBe("granted");
+    browser({ stored: `granted|${Date.now() - 396 * day}` });
+    expect((await load(ID)).readConsent()).toBeNull();
+    for (const bad of ["granted", "yes|1", "granted|abc", "|"]) {
+      browser({ stored: bad });
+      expect((await load(ID)).readConsent()).toBeNull();
+    }
   });
 
-  it("describes analytics on the privacy page only when it is enabled", () => {
-    const p = read("src/app/privacy/page.tsx");
-    expect(p).toContain("ANALYTICS_ENABLED");
-    expect(p).toContain("We do not currently run analytics or tracking scripts.");
+  it("survives blocked storage", async () => {
+    const b = browser({ storageThrows: true });
+    const m = await load(ID);
+    expect(m.readConsent()).toBeNull();
+    expect(() => m.setConsent("granted")).not.toThrow();
+    expect(b.scripts).toHaveLength(1);
   });
 });
