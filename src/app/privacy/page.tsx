@@ -11,6 +11,13 @@ export const metadata = pageMeta({
   path: "/privacy/",
 });
 
+/** The owner's private contact, as given: an email address or an https link becomes a link, anything else is shown as plain text. */
+function PrivacyContact({ value }: { value: string }) {
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return <a href={`mailto:${value}`}>{value}</a>;
+  if (/^https:\/\/\S+$/.test(value)) return <a href={value}>{value}</a>;
+  return <>{value}</>;
+}
+
 export default function PrivacyPage() {
   return (
     <LegalPage
@@ -54,8 +61,8 @@ export default function PrivacyPage() {
           <ul>
             <li>
               <strong>What is measured:</strong> pages viewed, how you arrived (for example a search engine or another site), clicks on links that leave this site (including the tool links), whether you scroll to the bottom of a page, approximate
-              location (country or city, worked out from your IP address; Google states that it does not log or store IP addresses for Google Analytics 4), and the kind of device and browser. We have switched off Google&rsquo;s optional
-              measuring of form use, file downloads, video and on-site search.
+              location (worked out from your IP address; Google states that it does not log or store IP addresses for Google Analytics 4), and the kind of device, browser and operating system. We have switched off Google&rsquo;s optional
+              collection of finer location and device detail (city, device brand and model, screen size, and exact browser and system versions) and its optional measuring of form use, file downloads, video and on-site search.
             </li>
             <li>
               <strong>Cookies:</strong> if you allow analytics, Google sets first-party cookies (<code>_ga</code> and one starting <code>_ga_</code>) that give your browser a random ID so repeat visits can be told apart. Google sets them for up to two years; browsers such as Chrome and Edge cut that to about 13 months.
@@ -64,15 +71,27 @@ export default function PrivacyPage() {
               <strong>Not used:</strong> advertising features, Google signals and ad personalisation are switched off, and we do not link analytics to any account, because there are none.
             </li>
             <li>
-              <strong>Who processes it:</strong> Google LLC (and its group companies) processes it for us. Google can process the data outside your country, including in the United States, and describes the safeguards it uses for such transfers in its
-              own privacy policy and data processing terms.
+              <strong>Who provides it:</strong> Google LLC (and its group companies) provides Google Analytics and handles the data it collects. Google can process the data outside your country, including in the United States, and describes the safeguards it uses for such transfers in its
+              own privacy policy and terms.
+            </li>
+            <li>
+              <strong>What Google may do with it:</strong> in our Google Analytics account, Google may use aggregated, de-identified measurement data to produce modelled data and benchmarks, and Google&rsquo;s technical-support staff may access the data when they are helping us fix a problem. Google is
+              not allowed to use the data to improve its own products and services, and it is not joined to signed-in Google accounts (Google signals are off).
             </li>
             <li>
               <strong>How long it is kept:</strong> Google Analytics deletes event-level data after 2 months. Data tied to a browser ID is deleted 14 months after that browser&rsquo;s last visit (each new visit restarts the 14 months). Totals and trends in aggregated reports are kept.
             </li>
             <li>
               <strong>Your rights:</strong> under the GDPR and similar laws you can ask to see, correct, delete, restrict or take a copy of data about you, object to its use, and complain to your local data-protection authority. Analytics uses a random browser ID, not your name, so we can only
-              find your data if you tell us the ID in your <code>_ga</code> cookie. To ask, open a request on the <Link href="/contact/">contact page</Link> without any private details, say it is a privacy request, and we will arrange a private way to answer.
+              find your data if you tell us the ID in your <code>_ga</code> cookie. {SITE.privacyContact ? (
+                <>
+                  To ask, contact <PrivacyContact value={SITE.privacyContact} />.
+                </>
+              ) : (
+                <>
+                  To ask, open a request on the <Link href="/contact/">contact page</Link> without any private details, say it is a privacy request, and we will arrange a private way to answer.
+                </>
+              )}
             </li>
             <li>
               <strong>Changing your mind:</strong> use &ldquo;Analytics settings&rdquo; in the footer, or clear this site&rsquo;s data and cookies in your browser. Turning it off stops new data being sent and removes the Google cookies from this site.
@@ -107,8 +126,20 @@ export default function PrivacyPage() {
       </ul>
 
       <h2>Who runs this site</h2>
+      {SITE.operatorName && (
+        <p>
+          AI Tool Picks is run by <strong>{SITE.operatorName}</strong>, who decides why and how any data described here is used.
+          {SITE.privacyContact && (
+            <>
+              {" "}
+              For privacy requests, contact <PrivacyContact value={SITE.privacyContact} />.
+            </>
+          )}
+        </p>
+      )}
       <p>
-        AI Tool Picks is an independent site run by its owner, who decides why and how any data described here is used. The source code and public issue tracker are at{" "}
+        {SITE.operatorName ? "" : "AI Tool Picks is an independent site run by its owner, who decides why and how any data described here is used. "}
+        The source code and public issue tracker are at{" "}
         <a href={SITE.repo} target="_blank" rel="noopener noreferrer">
           github.com/RanaBIlal1912/aitoolpicks
         </a>

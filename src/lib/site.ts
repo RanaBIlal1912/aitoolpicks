@@ -8,6 +8,9 @@ export const SITE = {
   repo: "https://github.com/RanaBIlal1912/aitoolpicks",
   // Optional public contact address. Left empty on purpose: the contact page falls back to GitHub issues.
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
+  // Who runs the site, and a private way to reach them about personal data. Both are empty on purpose: they are the owner's to supply, and analytics cannot be switched on until they are set.
+  operatorName: (process.env.NEXT_PUBLIC_OPERATOR_NAME ?? "").trim(),
+  privacyContact: (process.env.NEXT_PUBLIC_PRIVACY_CONTACT ?? "").trim(),
   updated: "2026-10-30",
 } as const;
 

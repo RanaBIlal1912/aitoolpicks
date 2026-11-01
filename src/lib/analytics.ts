@@ -5,8 +5,14 @@
 // Ads features are switched off (no Google signals, no ad personalisation). The /privacy/ page describes this and changes with ANALYTICS_ENABLED.
 import { SITE } from "@/lib/site";
 
-export const GA_ID = (process.env.NEXT_PUBLIC_GA_ID ?? "").trim();
-export const ANALYTICS_ENABLED = /^G-[A-Z0-9]{6,}$/.test(GA_ID);
+const RAW_ID = (process.env.NEXT_PUBLIC_GA_ID ?? "").trim();
+/**
+ * Four things must all be true, so analytics cannot go live by accident: a valid measurement ID, the operator's name and a private privacy contact (both set by the owner,
+ * and shown on /privacy/), and the owner's explicit sign-off (NEXT_PUBLIC_ANALYTICS_APPROVED=yes) after the legal and account decisions in docs/LAUNCH_CHECKLIST.md.
+ */
+export const ANALYTICS_ENABLED = /^G-[A-Z0-9]{6,}$/.test(RAW_ID) && SITE.operatorName !== "" && SITE.privacyContact !== "" && (process.env.NEXT_PUBLIC_ANALYTICS_APPROVED ?? "").trim() === "yes";
+/** Everything below uses this, which is empty unless analytics is fully enabled. (A build given the ID alone still contains the ID text, but nothing reads it.) */
+export const GA_ID = ANALYTICS_ENABLED ? RAW_ID : "";
 
 export type Consent = "granted" | "denied" | null;
 export type CtaEvent = { tool: string; kind: "official" | "affiliate"; placement?: string };

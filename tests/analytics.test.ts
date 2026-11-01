@@ -32,10 +32,14 @@ function browser(opts: { stored?: string; gpc?: boolean; dnt?: boolean; storageT
   return { cookies, scripts, store, win };
 }
 
-async function load(id: string | undefined, base = "/aitoolpicks"): Promise<Mod> {
+/** `gates` are the other three things analytics needs: operator name, private contact and the owner's sign-off. */
+const ALL_GATES = { NEXT_PUBLIC_OPERATOR_NAME: "Test Operator", NEXT_PUBLIC_PRIVACY_CONTACT: "privacy@example.test", NEXT_PUBLIC_ANALYTICS_APPROVED: "yes" };
+
+async function load(id: string | undefined, base = "/aitoolpicks", gates: Record<string, string> = ALL_GATES): Promise<Mod> {
   vi.resetModules();
   vi.stubEnv("NEXT_PUBLIC_BASE_PATH", base);
   if (id !== undefined) vi.stubEnv("NEXT_PUBLIC_GA_ID", id);
+  for (const [k, v] of Object.entries(gates)) vi.stubEnv(k, v);
   return import("@/lib/analytics");
 }
 
@@ -53,6 +57,18 @@ describe("analytics is off unless configured", () => {
     expect((await load(undefined)).ANALYTICS_ENABLED).toBe(false);
     for (const bad of ["", "abc", "UA-12345-1", "G-"]) expect((await load(bad)).ANALYTICS_ENABLED).toBe(false);
     expect((await load(ID)).ANALYTICS_ENABLED).toBe(true);
+  });
+
+  it("cannot go live from the measurement ID alone: it also needs the operator's name, a private contact and the owner's sign-off", async () => {
+    expect((await load(ID, "/aitoolpicks", {})).ANALYTICS_ENABLED).toBe(false);
+    for (const missing of Object.keys(ALL_GATES)) {
+      const gates = { ...ALL_GATES, [missing]: "" };
+      expect((await load(ID, "/aitoolpicks", gates)).ANALYTICS_ENABLED).toBe(false);
+    }
+    // Sign-off must be exactly "yes".
+    expect((await load(ID, "/aitoolpicks", { ...ALL_GATES, NEXT_PUBLIC_ANALYTICS_APPROVED: "true" })).ANALYTICS_ENABLED).toBe(false);
+    // Spaces alone are not a name or a contact.
+    expect((await load(ID, "/aitoolpicks", { ...ALL_GATES, NEXT_PUBLIC_OPERATOR_NAME: "   " })).ANALYTICS_ENABLED).toBe(false);
   });
 
   it("never loads Google's script or sends anything when disabled, whatever the stored choice", async () => {
