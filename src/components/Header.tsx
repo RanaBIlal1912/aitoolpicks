@@ -84,7 +84,7 @@ function MoreMenu({ pathname }: { pathname: string }) {
         </svg>
       </button>
       {open && (
-        <ul id="more-menu" className="glass absolute right-0 top-full z-50 mt-2 w-56 rounded-xl p-1.5 shadow-2xl">
+        <ul id="more-menu" className="glass absolute right-0 top-full z-50 mt-2 w-56 rounded-xl p-1.5 shadow-2xl backdrop-blur-xl">
           {MORE.map((m) => (
             <li key={m.href}>
               <Link

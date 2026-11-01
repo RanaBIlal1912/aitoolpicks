@@ -160,7 +160,7 @@ export function CategoryRail() {
           <li key={c.slug} className="snap-start">
             <Link prefetch={false}
               href={`/tools/category/${c.slug}/`}
-              className="group relative flex h-[210px] w-[250px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-5 no-underline transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
+              className="group relative flex h-[13.125rem] w-[15.625rem] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-5 no-underline transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
               style={{ background: `linear-gradient(150deg, ${a}40, #0f1226 55%, ${b}26)` }}
             >
               <span aria-hidden="true" className="absolute inset-0 opacity-35 mix-blend-luminosity transition-opacity duration-300 group-hover:opacity-55">
@@ -276,7 +276,7 @@ export function GuidesRail({ guides }: { guides: Article[] }) {
   return (
     <ul className="rail -mx-5 flex snap-x gap-5 overflow-x-auto px-5 pb-4">
       {guides.map((a) => (
-        <li key={a.slug} className="w-[300px] shrink-0 snap-start md:w-[340px]">
+        <li key={a.slug} className="w-[18.75rem] shrink-0 snap-start md:w-[21.25rem]">
           <ArticleCard a={a} />
         </li>
       ))}

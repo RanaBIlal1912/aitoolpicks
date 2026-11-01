@@ -41,6 +41,37 @@ html {
   background: var(--color-bg);
 }
 
+/* Large monitors, TVs and ultrawide screens: the interface is built in rem, so raising the root size scales the whole layout (container width, type, spacing)
+   instead of leaving it as a narrow column in the middle of the screen. Phones, tablets and laptops keep the default 16px. */
+@media (min-width: 1920px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media (min-width: 2400px) {
+  html {
+    font-size: 19px;
+  }
+}
+@media (min-width: 3000px) {
+  html {
+    font-size: 22px;
+  }
+}
+@media (min-width: 3600px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/* A grid item may shrink below its content's minimum width. Without this, one long unbreakable line (a truncated tagline, a URL, a price) makes the whole
+   column wider than the screen on a phone. Utilities such as min-w-* still win because this is in the base layer. */
+@layer base {
+  .grid > * {
+    min-width: 0;
+  }
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -49,7 +80,7 @@ body {
   background: transparent;
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -978,7 +1009,8 @@ main {
 }
 @media (min-width: 1100px) {
   .ph-aside {
-    right: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));
+    /* Sits in the free space to the right of the headline. The offset grows with the screen up to 6rem and no further; unbounded it drifted into the text on wide monitors. */
+    right: min(max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem)), 6rem);
   }
 }
 
@@ -1390,12 +1422,15 @@ table.cmp tbody tr:hover th {
   border-color: rgba(34, 211, 238, 0.55);
   box-shadow: 0 0 34px -8px rgba(34, 211, 238, 0.5), 0 26px 50px -24px rgba(5, 6, 30, 0.9);
 }
-.panel,
-.glass,
-.news-card,
-.tile,
-.versus {
-  position: relative;
+/* In the components layer so a utility such as absolute, fixed or sticky on the same element still wins (the More menu is .glass and absolute). */
+@layer components {
+  .panel,
+  .glass,
+  .news-card,
+  .tile,
+  .versus {
+    position: relative;
+  }
 }
 .panel::after,
 .news-card::after,

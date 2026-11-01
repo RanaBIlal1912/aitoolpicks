@@ -89,7 +89,7 @@ export default function PageHeader({
         )}
         {children && <div className="relative">{children}</div>}
         {aside && (
-          <div aria-hidden="true" className="ph-aside pointer-events-none absolute right-8 top-1/2 hidden -translate-y-1/2 md:grid">
+          <div aria-hidden="true" className="ph-aside pointer-events-none absolute right-8 top-1/2 hidden -translate-y-1/2 lg:grid">
             {aside}
           </div>
         )}

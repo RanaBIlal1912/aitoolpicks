@@ -17,7 +17,7 @@ export default function ArticleCard({ a, featured = false }: { a: Article; featu
       }`}
       style={{ ["--hue" as string]: featured ? 255 : 220 }}
     >
-      <div className={`cover-frame !rounded-none !border-0 ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[320px]" : "aspect-[16/9]"}`}>
+      <div className={`cover-frame !rounded-none !border-0 ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[20rem]" : "aspect-[16/9]"}`}>
         <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
           <ArticleCover topic={a.topic} tools={a.tools} seed={a.slug} priority={featured} />
         </div>

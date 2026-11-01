@@ -91,6 +91,10 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
   const cv = useRef<HTMLCanvasElement>(null);
   const [gl, setGl] = useState(false);
   const [ready, setReady] = useState(false);
+  // The latest logo list, read when the worker starts. Keeping it out of the effect's dependencies matters: a canvas can be handed to a worker only once, so if the
+  // parent re-rendered (the router does this when it prefetches links) with a new array, re-running the effect would end the worker and then fail on the same canvas.
+  const logosRef = useRef(logos);
+  logosRef.current = logos;
 
   useEffect(() => {
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -130,14 +134,16 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
   // Hand the canvas to the worker and keep it told about size, pointer and visibility.
   useEffect(() => {
     const canvas = cv.current;
-    if (!gl || !canvas) return;
+    if (!gl || !canvas || canvas.dataset.offscreen) return;
     let dead = false;
     let worker: Worker | null = null;
     const cleanups: (() => void)[] = [];
     (async () => {
-      const bitmaps = await Promise.all(logos.map(tileBitmap));
+      const list = logosRef.current;
+      const bitmaps = await Promise.all(list.map(tileBitmap));
       if (dead) return;
       const off = canvas.transferControlToOffscreen();
+      canvas.dataset.offscreen = "1";
       const wk = new Worker(new URL("../hero/robot.worker.ts", import.meta.url), { type: "module" });
       worker = wk;
       wk.onmessage = (e: MessageEvent<{ type: string }>) => {
@@ -152,9 +158,10 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
         setGl(false);
       };
       const r = canvas.getBoundingClientRect();
-      const lite = !matchMedia("(min-width: 768px)").matches;
+      // The hero is a single column below 1024px, so the compact scene (robot centred, cube close) is the one that fits there.
+      const lite = !matchMedia("(min-width: 1024px)").matches;
       const forced = /[?&]robot=3d/.test(location.search);
-      wk.postMessage({ type: "init", canvas: off, w: Math.round(r.width), h: Math.round(r.height), dpr: window.devicePixelRatio || 1, lite, forced, logos: logos.map((l, i) => ({ id: l.id, bitmap: bitmaps[i] })) }, [off, ...bitmaps]);
+      wk.postMessage({ type: "init", canvas: off, w: Math.round(r.width), h: Math.round(r.height), dpr: window.devicePixelRatio || 1, lite, forced, logos: list.map((l, i) => ({ id: l.id, bitmap: bitmaps[i] })) }, [off, ...bitmaps]);
 
       const ro = new ResizeObserver(() => {
         const b = canvas.getBoundingClientRect();
@@ -197,7 +204,7 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
       cleanups.forEach((f) => f());
       worker?.terminate();
     };
-  }, [gl, logos]);
+  }, [gl]);
 
   return (
     <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[560px]">
@@ -206,7 +213,7 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
         <RobotSvg />
       </div>
       {gl && (
-        <div className="hero-canvas pointer-events-none absolute -bottom-[14%] -left-[26%] -top-[14%] right-0 max-md:-bottom-[8%] max-md:-left-[5%] max-md:-top-[8%]" aria-hidden="true">
+        <div className="hero-canvas pointer-events-none absolute -bottom-[14%] -left-[26%] -top-[14%] right-0 max-lg:-bottom-[8%] max-lg:-left-[5%] max-lg:-top-[8%]" aria-hidden="true">
           <canvas ref={cv} className="block h-full w-full" />
         </div>
       )}
