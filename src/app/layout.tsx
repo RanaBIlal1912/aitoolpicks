@@ -58,12 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        {/* Early in the page so keyboard and screen-reader users reach the analytics choice at once; it is positioned at the bottom of the screen by CSS. */}
+        <ConsentBanner />
         <Providers>
           <ScrollProgress />
           <Header />
           <main id="main">{children}</main>
           <Footer />
-          <ConsentBanner />
         </Providers>
         <JsonLd
           data={{

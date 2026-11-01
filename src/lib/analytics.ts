@@ -105,10 +105,13 @@ export function setConsent(v: "granted" | "denied"): boolean {
   return stopGa();
 }
 
-/** One page view for the current URL (the tag is loaded with automatic page views off). */
+/**
+ * One page view for the current page (the tag is loaded with automatic page views off). A page is its path: a change that only alters the query string
+ * (a filter, or the compare page adding ?ids=) is the same page and is not counted again.
+ */
 export function pageView() {
   if (!ANALYTICS_ENABLED || !granted) return;
-  const here = location.pathname + location.search;
+  const here = location.pathname;
   if (here === lastSent) return;
   lastSent = here;
   gw().gtag?.("event", "page_view", { page_title: document.title, page_location: location.href, page_path: location.pathname });

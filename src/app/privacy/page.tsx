@@ -46,18 +46,19 @@ export default function PrivacyPage() {
           <h2>Analytics (only with your consent)</h2>
           <p>
             The first time you visit, a notice asks whether we may use Google Analytics 4 to measure visits. Until you press &ldquo;Allow analytics&rdquo;, nothing from Google is loaded and nothing is sent. If you press
-            &ldquo;No thanks&rdquo;, or your browser sends a Global Privacy Control or Do Not Track signal, it stays off and we do not ask again. Your choice is kept in your browser&rsquo;s local storage for up to 13 months, and then we ask again.
+            &ldquo;No thanks&rdquo;, or your browser sends a Global Privacy Control or Do Not Track signal, it stays off and we do not ask again until your saved choice runs out. Your choice is kept in your browser&rsquo;s local storage for up to 13 months, and then we ask again.
           </p>
           <p>
             <strong>Legal basis:</strong> your consent (Article 6(1)(a) of the GDPR, and the equivalent in similar laws). Saying no, or withdrawing consent later, has no effect on how you can use the site.
           </p>
           <ul>
             <li>
-              <strong>What is measured:</strong> pages viewed, how you arrived (for example a search engine or another site), which outbound tool links you click, scroll depth, approximate location (country or city, from your IP
-              address, which Google does not store), and the kind of device and browser.
+              <strong>What is measured:</strong> pages viewed, how you arrived (for example a search engine or another site), clicks on links that leave this site (including the tool links), whether you scroll to the bottom of a page, approximate
+              location (country or city, worked out from your IP address; Google states that it does not log or store IP addresses for Google Analytics 4), and the kind of device and browser. We have switched off Google&rsquo;s optional
+              measuring of form use, file downloads, video and on-site search.
             </li>
             <li>
-              <strong>Cookies:</strong> if you allow analytics, Google sets first-party cookies (<code>_ga</code> and one starting <code>_ga_</code>) that give your browser a random ID so repeat visits can be told apart. They last up to two years.
+              <strong>Cookies:</strong> if you allow analytics, Google sets first-party cookies (<code>_ga</code> and one starting <code>_ga_</code>) that give your browser a random ID so repeat visits can be told apart. Google sets them for up to two years; browsers such as Chrome and Edge cut that to about 13 months.
             </li>
             <li>
               <strong>Not used:</strong> advertising features, Google signals and ad personalisation are switched off, and we do not link analytics to any account, because there are none.
@@ -67,7 +68,7 @@ export default function PrivacyPage() {
               own privacy policy and data processing terms.
             </li>
             <li>
-              <strong>How long it is kept:</strong> Google Analytics deletes event-level data after 2 months and data tied to a browser ID after 14 months. Totals and trends in aggregated reports are kept.
+              <strong>How long it is kept:</strong> Google Analytics deletes event-level data after 2 months. Data tied to a browser ID is deleted 14 months after that browser&rsquo;s last visit (each new visit restarts the 14 months). Totals and trends in aggregated reports are kept.
             </li>
             <li>
               <strong>Your rights:</strong> under the GDPR and similar laws you can ask to see, correct, delete, restrict or take a copy of data about you, object to its use, and complain to your local data-protection authority. Analytics uses a random browser ID, not your name, so we can only

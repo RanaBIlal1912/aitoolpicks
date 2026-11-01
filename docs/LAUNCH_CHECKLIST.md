@@ -33,6 +33,14 @@ Nothing below is enabled yet. Affiliate links are empty, analytics is off, and t
 - **How it behaves:** nothing from Google loads until the visitor presses Allow; No thanks, or a Global Privacy Control / Do Not Track signal, keeps it off; withdrawing consent reloads the page and clears Google's cookies for this site's path only. The choice is asked again after 13 months. Page views are sent on each route change by `pageView()`.
 - **Custom events:** `track()` sends `outbound_click` with `tool`, `kind` and `placement`. To report on them, register those as event-scoped custom dimensions in GA (Admin, Custom definitions).
 - **Testing without polluting GA:** a local build with the ID sends real hits. Block `google-analytics.com/g/collect` in your test tool, or leave the ID unset.
+- **GA stream settings the site depends on (Admin, Data streams, Enhanced measurement):** only Page views, Scrolls and Outbound clicks are on; site search, form interactions, video engagement and file downloads are off, and "Page changes based on browser history events" is off because the site sends its own page views. If you turn any of these back on, update `/privacy/` (and turn the history setting back on only if you remove `pageView()`, or every page change is counted twice).
+- **What counts as a page view:** a change of path. A change that only alters the query string (filters, the compare page adding `?ids=`) is the same page and is not counted again. Two path changes within 120 ms count only the last.
+- **Owner actions before enabling analytics (not done, and not something the code can do):**
+  1. In GA, Admin, Account details: accept the **Data Processing Terms**. They show as **not accepted** on the account. The account also holds the unrelated "Prime Tech" property, so decide this for the whole account.
+  2. Decide who is named as the operator on `/privacy/` and give a private way to contact them. The text currently names no one and the contact page is a public GitHub issue.
+  3. Have `/privacy/` reviewed by someone qualified in the law of the countries your visitors come from.
+  4. Check the other Data Sharing Settings on that account page (Google products and services, modeling, technical support, recommendations) and set them as you want.
+  5. Test traffic from `localhost` is already in the property; ignore or filter hostname `localhost` in reports.
 - **Before using a custom domain:** nothing to change in the code (cookie paths and domains are handled), but re-check the GA data stream URL.
 
 ## 5. Contact

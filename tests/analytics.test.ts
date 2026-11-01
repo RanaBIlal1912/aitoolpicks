@@ -93,13 +93,24 @@ describe("consent", () => {
     expect(b.store.get("aitp-consent")).toMatch(/^granted\|\d+$/);
   });
 
-  it("sends one page view per address, and custom events, only while allowed", async () => {
+  it("sends one page view per page (path), and custom events, only while allowed", async () => {
     const b = browser();
     const m = await load(ID);
     m.setConsent("granted");
+    const views = () => calls(b.win).filter((c) => c[0] === "event" && c[1] === "page_view");
     m.pageView();
     m.pageView();
-    expect(calls(b.win).filter((c) => c[0] === "event" && c[1] === "page_view")).toHaveLength(1);
+    expect(views()).toHaveLength(1);
+    // A query-only change is the same page.
+    (location as unknown as { search: string }).search = "?ids=a,b";
+    m.pageView();
+    expect(views()).toHaveLength(1);
+    // A new path is a new page, and going back to an earlier one counts again.
+    (location as unknown as { pathname: string }).pathname = "/aitoolpicks/tools/";
+    m.pageView();
+    (location as unknown as { pathname: string }).pathname = "/aitoolpicks/";
+    m.pageView();
+    expect(views()).toHaveLength(3);
     m.track("outbound_click", { tool: "claude", kind: "affiliate", placement: "hero" });
     expect(calls(b.win).some((c) => c[1] === "outbound_click" && (c[2] as { tool: string }).tool === "claude")).toBe(true);
   });
