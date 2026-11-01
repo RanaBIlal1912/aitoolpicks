@@ -37,6 +37,7 @@ export default function AffLink({
       onClick={() => track("outbound_click", { tool: id, kind: aff ? "affiliate" : "official" })}
     >
       {label}
+      {children ? <span className="sr-only"> for {name}</span> : null}
       <span className="sr-only"> (opens in a new tab{aff ? ", affiliate link" : ""})</span>
     </a>
   );

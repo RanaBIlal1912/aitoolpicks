@@ -1,0 +1,38 @@
+# Premium design polish (branch feature/futuristic-full-website-redesign)
+
+* Hero: glossy 3D robot lit by a procedural studio environment, six product logos as textured tiles at different depths drifting with the pointer, sparkles, electric-blue/violet atmosphere and a cyan swoosh. The flat SVG robot shows first. The 3D scene starts on the visitor's first pointer move, scroll, touch or key press (or after 20 s) because building it takes the main thread for a while; it is skipped for reduced motion and data saving, pauses off screen and is removed after 4 s out of view.
+* Card system: shared panel/glass/lift styles (`card-lift`, `.panel`, `.news-card`, `.versus`, `.plan-card`, `.feature-card`), glowing borders, hover lift (disabled for reduced motion).
+* Page compositions: neon banner on every page; category pages with their own colour and icon; tool pages with an at-a-glance row (pricing model, free plan, lowest listed paid plan, check date), feature cards and plan cards; blog index with a large featured guide beside two side cards; About rebuilt as mission panel, audience cards, five pillar cards and three info panels (all original text); AI Universe with glossy nodes, hub glow, orbit ring, studio reflections and sparkles.
+* Local Lighthouse (mobile profile, this machine's production build, 3 runs each, medians): Home 83, Blog 92, News 97, Tool 95; CLS 0 except one 0.002. These are local runs against a local server, not comparable with the live-site runs in docs/LIGHTHOUSE.md, and Lighthouse never triggers the 3D robot (no pointer input).
+* Checks: 91 tests, static audit (323 pages), 324 routes x 2 viewports with 0 failures, home click-through 23/23.
+
+## Round 2: brighter hero, bigger robot, faster 3D start (2026-10-31)
+
+* Hero atmosphere: electric-blue and violet light across the hero, magenta bloom, cyan swoosh (closer to the reference's vivid blue).
+* Robot: larger, bigger glowing "AI" chest panel, a floating glass "AI" cube, six larger logo tiles at different depths, polished painted-matcap shading, sparkles. A phone arrangement pulls every tile inside a 375 px screen; the stat card sits under the robot.
+* Loading: the 3D scene now starts when the page has loaded and the browser is idle (about half a second after load), not on first interaction. Start-up is split into steps (robot, logos, cube, particles), shaders compile off the main thread where the browser supports it, and a governor watches the first frames: a device that cannot keep up drops to a few frames a second or to a still picture that updates when the pointer moves. A flat SVG robot shows first and stays for reduced motion, data saving, no WebGL and software rendering.
+* Why not the earlier reflection-map version: building a lit-room reflection map and compiling physical shaders blocked the main thread for seconds on a modest GPU (Lighthouse TBT 12 s). Replacing them with painted matcaps and staging the work cut Home TBT to about 4 s.
+* Local Lighthouse (mobile profile, this machine, 3 runs, medians): Home 64 (TBT about 4.0 s, LCP 1.8 s, CLS 0), Blog 90, News 95, Tool 90. Home was 83 before the 3D hero started automatically; the difference is the real cost of animating the robot on a modest GPU under 4x CPU throttling. With the 3D skipped (reduced motion, software rendering, no WebGL) Home is back near 83.
+
+## Hero round 3 (targeted fixes)
+
+- Desktop: the 3D canvas no longer reaches past the right edge of the hero (it extends left, towards the headline, with soft edge fades), the scene is shifted to compensate, and every tile and the AI cube sit inside the visible area even at the widest pointer movement. A glowing point-trail follows the robot's fingertip to the cube. The headline is two lines ("Discover the Best / AI Tools in One Place") with `text-wrap: balance` and "One Place" kept together.
+- Phone: order is headline, robot, then search, chips (three) and buttons, so the robot starts on the first screen; smaller eyebrow, paragraph, search and stat card.
+- 3D start: about 2.7 s after the page has loaded (browser idle), or on the first pointer move, touch, key press or scroll, whichever is first. The flat robot is on screen from the first paint.
+- Workload: 128 px matcap textures without mipmaps, fewer geometry segments, lighter rings, 1x resolution while probing, a five-frame device check that picks full (60 fps, up to 1.5x), smooth (about 30 fps), calm (about 15 fps) or still, and a throttled pointer redraw in still mode.
+- Measured (local Lighthouse, mobile, 3 runs): Home median 63, TBT about 3.8 s. Delaying the start does not hide the work from the lab, which waits for the page to settle; the remaining cost is loading and starting WebGL on the main thread of a weak integrated GPU.
+
+## Hero round 4: 3D in a web worker
+
+- The robot scene now lives in `src/components/hero/robot.worker.ts` (plain three.js, same geometry, matcap shading, tiles, cube, light trail and sparkles). The page gives the worker an `OffscreenCanvas`; scene building, shader compiling and drawing no longer run on the main thread. The old r3f `RobotScene` was removed (the AI Universe still uses r3f).
+- The main thread only loads the six logo images, draws each tile once into a bitmap (the worker has no DOM to decode SVG with), transfers them, and forwards size, pointer and visibility messages.
+- The worker checks WebGL and the renderer name itself, so the page no longer creates a throwaway WebGL context. No Worker or OffscreenCanvas support, no WebGL, a software renderer (unless `?robot=3d`), reduced motion or data saving all keep the flat SVG robot.
+- Frame pacing lives in the worker: a five-frame device check picks full (60 fps, up to 1.5x), smooth (about 30 fps), calm (about 15 fps) or still (redraw on pointer move).
+- Local Lighthouse (mobile, Home): runs 55, 79, 79 and 81, 80, 76, 77; TBT 0.6 to 0.8 s except one 10.8 s outlier (a single long main-thread task, not seen again in six more runs).
+
+## Round 5: header widths, layout blowouts and the Lighthouse outlier
+
+- Header: no wrapping or overflow at 320 to 1440 px. Nav links never wrap (`whitespace-nowrap`), the tagline hides between 1024 and 1279 px to make room, and under 380 px the brand mark, currency select and menu button are slightly smaller.
+- Two grid lists let a long single-line row push their column wider than the screen (the home "latest" list on phones, "Tools in the news" at 1024 px); both columns are now `minmax(0, 1fr)`. Panel headings on the home page wrap their "View all" button on very narrow screens.
+- Outlier cause: a sampling profile of an outlier load showed about 1 s of self time in one function, normally about 30 ms: the AI Universe section's mount effect, which created a throwaway WebGL context just to test support. Asking the graphics process for a context at page start can stall the main thread for up to a second when that process is busy, which is rare and random (roughly 1 in 6 to 1 in 20 loads here). The check now runs only when the section is near the screen (and on the Ecosystem page, when it is engaged). The hero tile bitmaps also use a CPU-backed canvas so they never wait on the graphics process.
+- After the change: 40 consecutive profiled loads without a heavy function, and Lighthouse Home runs of 73, 80 and 77 (median 77, TBT about 0.7 s, LCP 1.7 s, CLS 0).

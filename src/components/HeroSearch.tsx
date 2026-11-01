@@ -5,7 +5,7 @@ import { withBase } from "@/lib/site";
  */
 export default function HeroSearch({ suggestions }: { suggestions: { label: string; q: string }[] }) {
   return (
-    <div className="mt-9 max-w-xl">
+    <div className="mt-5 max-w-xl md:mt-9">
       <form action={withBase("/tools/")} method="get" role="search" className="relative">
         <label htmlFor="hero-q" className="sr-only">
           Search AI tools
@@ -20,17 +20,17 @@ export default function HeroSearch({ suggestions }: { suggestions: { label: stri
           type="search"
           autoComplete="off"
           placeholder="Search tools: video editor, coding agent, transcription"
-          className="h-14 w-full rounded-2xl border border-white/15 bg-[#11152A]/80 pl-13 pr-32 text-base text-white placeholder:text-muted focus:border-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/60"
+          className="h-12 w-full rounded-2xl border border-white/15 bg-[#11152A]/80 pl-13 pr-28 text-base md:h-14 md:pr-32 text-white placeholder:text-muted focus:border-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/60"
           style={{ paddingLeft: "3.25rem" }}
         />
         <button type="submit" className="btn-primary btn-sm absolute right-2 top-1/2 -translate-y-1/2">
           Search
         </button>
       </form>
-      <p className="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted">
+      <p className="mt-3 flex flex-wrap items-center gap-2 text-sm text-muted md:mt-4">
         <span>Popular:</span>
-        {suggestions.map((s) => (
-          <a key={s.q} href={withBase(`/tools/?q=${encodeURIComponent(s.q)}`)} className="chip !py-1 !text-[0.85rem]">
+        {suggestions.map((s, i) => (
+          <a key={s.q} href={withBase(`/tools/?q=${encodeURIComponent(s.q)}`)} className={`chip !py-1 !text-[0.85rem] ${i >= 3 ? "max-sm:hidden" : ""}`}>
             {s.label}
           </a>
         ))}

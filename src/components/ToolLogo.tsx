@@ -12,7 +12,8 @@ export default function ToolLogo({ id, name, hue, size = 48, alt = "" }: { id: s
     return (
       <span
         className="grid shrink-0 place-items-center overflow-hidden ring-1 ring-inset ring-black/10"
-        style={{ width: size, height: size, borderRadius: radius, background: logo.tile === "light" ? "#f4f5f9" : "#10131f", padding: pad }}
+        // forcedColorAdjust: in Windows high-contrast mode the tile keeps its own colours, so a dark logo is not drawn black on black.
+        style={{ width: size, height: size, borderRadius: radius, background: logo.tile === "light" ? "#f4f5f9" : "#10131f", padding: pad, forcedColorAdjust: "none" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

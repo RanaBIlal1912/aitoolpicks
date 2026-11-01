@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata = pageMeta({
   title: "AI tool pricing compared: plans, free tiers and what is verified",
   description:
-    "One table of AI tool plans and prices, in each merchant's own currency, with free-plan details, verification status, last-checked dates and links to the official pricing pages.",
+    "One table of AI tool plans and prices in each merchant's own currency, with free-plan details, verification status, check dates and official pricing links.",
   path: "/pricing/",
 });
 
@@ -31,7 +31,7 @@ export default function PricingPage() {
         crumbs={[{ name: "Pricing", href: "/pricing/" }]}
       />
       <PricingHub />
-      <section className="mx-auto mt-16 max-w-6xl px-5" aria-labelledby="incomplete-title">
+      <section className="mx-auto mt-16 max-w-7xl px-5" aria-labelledby="incomplete-title">
         <h2 id="incomplete-title" className="section-title text-white">
           Incomplete pricing records ({RECORDS.filter((r) => r.pricing.status !== "verified").length})
         </h2>

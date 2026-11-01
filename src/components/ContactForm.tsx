@@ -20,6 +20,7 @@ export default function ContactForm() {
     e.preventDefault();
     if (message.trim().length < 10) {
       setError("Please write at least a short sentence so we can help.");
+      document.getElementById("c-msg")?.focus();
       return;
     }
     setError("");

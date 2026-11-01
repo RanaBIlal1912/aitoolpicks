@@ -109,6 +109,7 @@ export default function ToolCard({
           <label className="ml-auto flex cursor-pointer items-center gap-2 text-sm text-soft">
             <input
               type="checkbox"
+              aria-label={`Compare ${tool.name}`}
               checked={!!selected}
               disabled={disableCompare && !selected}
               onChange={() => onToggleCompare(tool.id)}

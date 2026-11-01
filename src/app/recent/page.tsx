@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <PageHeader variant="studio" eyebrow="Your browser" title="Recently viewed tools" lead="Tools you looked at recently. Kept only on this device." crumbs={[{ name: "Recently viewed tools", href: "/recent/" }]} />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <SavedList mode="recent" />
       </div>
     </>

@@ -38,7 +38,7 @@ function StaticMap() {
     const spokes = pos.map((p) => `<line x1="${cx}" y1="${cy}" x2="${p.x.toFixed(1)}" y2="${p.y.toFixed(1)}" stroke="rgba(141,123,255,.18)" stroke-width=".2"/>`).join("");
     const nodes = ITEMS.map((it, i) => {
       const p = pos[i], r = 2.2 + Math.sqrt(it.count) * 0.75;
-      return `<a href="${withBase(`/tools/category/${it.slug}/`)}" aria-label="${it.label}, ${it.count} tools"><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${(r * 1.9).toFixed(1)}" fill="${it.color}" opacity=".13"/><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}" fill="${it.color}"/><text x="${p.x.toFixed(1)}" y="${(p.y + r + 3.4).toFixed(1)}" text-anchor="middle" font-size="2.6" font-weight="700" fill="#fff">${it.label}</text><text x="${p.x.toFixed(1)}" y="${(p.y + r + 6.2).toFixed(1)}" text-anchor="middle" font-size="2.1" fill="#a9afc8">${it.count} tools</text></a>`;
+      return `<a href="${withBase(`/tools/category/${it.slug}/`)}" aria-label="${it.label} ${it.count} tools"><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${(r * 1.9).toFixed(1)}" fill="${it.color}" opacity=".13"/><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}" fill="${it.color}"/><text x="${p.x.toFixed(1)}" y="${(p.y + r + 3.4).toFixed(1)}" text-anchor="middle" font-size="2.6" font-weight="700" fill="#fff">${it.label}</text> <text x="${p.x.toFixed(1)}" y="${(p.y + r + 6.2).toFixed(1)}" text-anchor="middle" font-size="2.1" fill="#a9afc8">${it.count} tools</text></a>`;
     }).join("");
     return `${spokes}${lines}<circle cx="${cx}" cy="${cy}" r="11" fill="rgba(117,75,255,.25)"/><circle cx="${cx}" cy="${cy}" r="5" fill="#754bff"/><text x="${cx}" y="${cy + 1}" text-anchor="middle" font-size="2.6" font-weight="800" fill="#fff">AI</text>${nodes}`;
   }, []);
@@ -62,14 +62,7 @@ export default function UniverseSection() {
     if (!el) return;
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    let gl = false;
-    try {
-      const c = document.createElement("canvas");
-      gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
-    } catch {
-      gl = false;
-    }
-    if (calm || saver || !gl) return;
+    if (calm || saver) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
     // The static SVG map is always there. The 3D code loads once the section is near the screen, after a short pause so a fast scroll past it costs nothing.
     let timer = 0;
@@ -77,7 +70,16 @@ export default function UniverseSection() {
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
           io.disconnect();
-          timer = window.setTimeout(() => setOn(true), 600);
+          timer = window.setTimeout(() => {
+            let gl = false;
+            try {
+              const c = document.createElement("canvas");
+              gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
+            } catch {
+              gl = false;
+            }
+            if (gl) setOn(true);
+          }, 600);
         }
       },
       { rootMargin: "200px 0px" },

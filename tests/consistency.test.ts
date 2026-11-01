@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { CATEGORIES, TOOLS } from "../src/data/tools";
+import { CATEGORIES, TOOLS, toolsInCategory } from "../src/data/tools";
 import { ARTICLES } from "../src/data/articles";
 import { NEWS } from "../src/data/news";
 
@@ -45,6 +45,20 @@ describe.skipIf(!built)("the built pages state the same numbers", () => {
     const t = text("")!;
     expect(t).toContain(`${TOOLS.length} tools`);
     expect(t).toContain(`${verified} with fully verified prices`);
+  });
+  it("home stat strip and category tiles use the same counts as the category pages", () => {
+    const home = text("")!;
+    expect(home).toContain(`${TOOLS.length} AI tools`);
+    expect(home).toContain(`${CATEGORIES.length} Categories`);
+    expect(home).toContain(`${verified} Verified prices`);
+    for (const c of CATEGORIES) {
+      const n = toolsInCategory(c.slug).length;
+      expect(home, c.slug).toContain(`${c.short} ${n} tools`);
+      const page = text(`tools/category/${c.slug}`)!;
+      expect(page, c.slug).toContain(`${n} ${n === 1 ? "tool listed" : "tools listed"}`);
+      const v = toolsInCategory(c.slug).filter((t) => t.pricingStatus === "verified").length;
+      expect(page, c.slug).toContain(`${v} prices verified`);
+    }
   });
   it("pricing page", () => {
     const t = text("pricing")!;

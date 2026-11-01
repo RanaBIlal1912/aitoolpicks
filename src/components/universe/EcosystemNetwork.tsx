@@ -49,21 +49,24 @@ export default function EcosystemNetwork() {
     const el = box.current;
     if (!el) return;
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let gl = false;
-    try {
-      const c = document.createElement("canvas");
-      gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
-    } catch {
-      gl = false;
-    }
-    if (calm || !gl) return;
+    if (calm) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
     let stop = () => {};
     const io = new IntersectionObserver(
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
           io.disconnect();
-          stop = whenEngaged(() => setOn(true), 10000);
+          stop = whenEngaged(() => {
+            // checked only now: a throwaway WebGL context created at page start can stall the main thread while the graphics process is busy
+            let gl = false;
+            try {
+              const c = document.createElement("canvas");
+              gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
+            } catch {
+              gl = false;
+            }
+            if (gl) setOn(true);
+          }, 10000);
         }
       },
       { rootMargin: "300px 0px" },

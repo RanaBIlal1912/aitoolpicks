@@ -39,6 +39,47 @@ h2,
 
 html {
   background: var(--color-bg);
+  /* Keep keyboard focus clear of the sticky header (69px) at the top and the compare bar at the bottom when the browser scrolls a focused element into view. */
+  scroll-padding-top: 5.5rem;
+  scroll-padding-bottom: 6rem;
+}
+
+/* Large monitors, TVs and ultrawide screens: the interface is built in rem, so raising the root size (as a percentage, so a visitor's own default font size still counts) scales the whole layout (container width, type, spacing)
+   instead of leaving it as a narrow column in the middle of the screen. Phones, tablets and laptops keep the default 16px. */
+@media (min-width: 1920px) {
+  html {
+    font-size: 106.25%;
+  }
+}
+@media (min-width: 2400px) {
+  html {
+    font-size: 118.75%;
+  }
+}
+@media (min-width: 3000px) {
+  html {
+    font-size: 137.5%;
+  }
+}
+@media (min-width: 3600px) {
+  html {
+    font-size: 150%;
+  }
+}
+
+/* A grid item may shrink below its content's minimum width. Without this, one long unbreakable line (a truncated tagline, a URL, a price) makes the whole
+   column wider than the screen on a phone. Utilities such as min-w-* still win because this is in the base layer. */
+@layer base {
+  .grid > * {
+    min-width: 0;
+  }
+  /* Readable line length: running text stops at about 90 characters per line however wide its card or column is. Utilities such as max-w-* still win. */
+  main p {
+    max-width: 90ch;
+  }
+  .text-center > p {
+    margin-inline: auto;
+  }
 }
 
 body {
@@ -49,7 +90,7 @@ body {
   background: transparent;
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -154,6 +195,9 @@ a {
   color: transparent;
 }
 
+.chip[aria-pressed="true"] .text-muted {
+  color: rgba(255, 255, 255, 0.92);
+}
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -330,6 +374,12 @@ select.cur {
   font-size: 16px;
   cursor: pointer;
 }
+@media (max-width: 379px) {
+  select.cur {
+    padding: 6px 26px 6px 10px;
+    background-position: right 9px center;
+  }
+}
 select.cur option {
   background: #0d1124;
   color: #eceffd;
@@ -342,6 +392,10 @@ select.cur option {
   font-weight: 800;
 }
 
+.table-wrap:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
 .table-wrap {
   position: relative; /* keeps visually hidden text inside cells from widening the page */
   overflow-x: auto;
@@ -806,6 +860,16 @@ main {
 }
 
 /* ---------- home redesign ---------- */
+.hero-title {
+  text-wrap: balance;
+}
+/* The 3D canvas is a little larger than the robot box so tiles can float around it; its outer few percent fade out so a soft glow never ends in a hard edge. */
+.hero-canvas {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
+}
 .hero-title .word {
   display: inline-block;
   opacity: 0;
@@ -869,16 +933,14 @@ main {
   flex-shrink: 0;
 }
 
-/* Light "paper" surface for the news section: a deliberate break in tone */
+/* Deep neon band behind the news section */
 .paper {
   background:
-    radial-gradient(900px 400px at 100% 0%, rgba(117, 75, 255, 0.14), transparent 70%),
-    radial-gradient(700px 400px at 0% 100%, rgba(37, 198, 232, 0.14), transparent 70%),
-    #efeff7;
-}
-.paper ::selection {
-  background: rgba(117, 75, 255, 0.3);
-  color: #0b0d1c;
+    radial-gradient(900px 420px at 100% 0%, rgba(139, 92, 255, 0.3), transparent 70%),
+    radial-gradient(700px 420px at 0% 100%, rgba(34, 211, 238, 0.2), transparent 70%),
+    linear-gradient(180deg, #0c1038, #0a0c2a);
+  border-block: 1px solid var(--panel-line);
+  box-shadow: 0 0 80px -40px rgba(110, 90, 255, 0.6) inset;
 }
 
 .section-title {
@@ -964,7 +1026,8 @@ main {
 }
 @media (min-width: 1100px) {
   .ph-aside {
-    right: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));
+    /* Sits in the free space to the right of the headline. The offset grows with the screen up to 6rem and no further; unbounded it drifted into the text on wide monitors. */
+    right: min(max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem)), 6rem);
   }
 }
 
@@ -989,4 +1052,493 @@ main {
 .cv-foot {
   content-visibility: auto;
   contain-intrinsic-size: auto 560px;
+}
+
+/* =====================================================================================================================
+   NEON PLATFORM LAYER
+   One set of tokens and overrides that every page inherits: deep navy space, neon purple / electric blue / cyan, glowing borders,
+   pill buttons and saturated gradients. Components keep their class names, so every route picks this up without per-page work.
+   ===================================================================================================================== */
+:root {
+  --neon-purple: #8b5cff;
+  --neon-blue: #3d7bff;
+  --neon-cyan: #22d3ee;
+  --neon-pink: #ff4fd8;
+  --panel-line: rgba(110, 130, 255, 0.28);
+  --panel-glow: 0 0 0 1px rgba(110, 130, 255, 0.1) inset, 0 22px 54px -26px rgba(80, 60, 255, 0.55);
+  --grad-neon: linear-gradient(120deg, #8b5cff 0%, #3d7bff 55%, #22d3ee 100%);
+  /* The same violet, blue and cyan, deep enough that white 14 to 16px text keeps at least 4.5:1 across the whole button (the bright cyan end gave 2:1). */
+  --grad-neon-ink: linear-gradient(120deg, #7a4cf5 0%, #3a63e8 55%, #0c78a8 100%);
+  --grad-text: linear-gradient(90deg, #22d3ee 0%, #3d7bff 45%, #a56bff 100%);
+}
+body::before {
+  background:
+    radial-gradient(760px 520px at 8% -4%, rgba(139, 92, 255, 0.46), transparent 62%),
+    radial-gradient(700px 500px at 96% 6%, rgba(34, 211, 238, 0.28), transparent 62%),
+    radial-gradient(680px 500px at 50% 108%, rgba(61, 123, 255, 0.26), transparent 64%);
+}
+.gradient-text {
+  background: var(--grad-text);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: none;
+}
+.glass {
+  background: linear-gradient(180deg, rgba(24, 28, 70, 0.78), rgba(14, 17, 44, 0.84));
+  border: 1px solid var(--panel-line);
+  box-shadow: var(--panel-glow);
+}
+.btn-primary,
+.btn-ghost {
+  border-radius: 999px;
+}
+.btn-primary {
+  background: var(--grad-neon-ink);
+  box-shadow: 0 0 22px -2px rgba(110, 90, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 34px 0 rgba(90, 120, 255, 0.85), 0 0 0 1px rgba(34, 211, 238, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-ghost {
+  background: rgba(20, 24, 66, 0.55);
+  border: 1.5px solid rgba(139, 92, 255, 0.75);
+  box-shadow: 0 0 18px -6px rgba(139, 92, 255, 0.7), inset 0 0 14px -8px rgba(139, 92, 255, 0.8);
+}
+.btn-ghost:hover {
+  background: rgba(60, 50, 160, 0.4);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 24px -4px rgba(34, 211, 238, 0.6);
+}
+.chip {
+  border-color: rgba(110, 130, 255, 0.3);
+  background: rgba(30, 36, 96, 0.4);
+}
+.chip:hover {
+  border-color: rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 16px -6px rgba(34, 211, 238, 0.7);
+}
+.chip[aria-pressed="true"],
+.chip[aria-current="true"] {
+  background: var(--grad-neon-ink);
+  border-color: transparent;
+  box-shadow: 0 0 18px -4px rgba(110, 90, 255, 0.8);
+}
+.eyebrow {
+  border-color: rgba(34, 211, 238, 0.45);
+  background: linear-gradient(120deg, rgba(139, 92, 255, 0.22), rgba(34, 211, 238, 0.12));
+  color: #f4f1ff;
+}
+.tool-card,
+.tile {
+  border-color: var(--panel-line);
+}
+.tool-card:hover,
+.tool-card:focus-within,
+.tile:hover,
+.tile:focus-within {
+  border-color: rgba(34, 211, 238, 0.65);
+  box-shadow: 0 0 28px -8px rgba(34, 211, 238, 0.55), 0 22px 44px -22px rgba(0, 0, 0, 0.7);
+}
+.page-head h1 {
+  text-shadow: 0 0 40px rgba(120, 100, 255, 0.35);
+}
+.kicker {
+  color: var(--neon-cyan);
+}
+
+/* Home: stat strip, panels and neon tiles (see components/home/Neon.tsx) */
+.panel {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid var(--panel-line);
+  background: linear-gradient(180deg, rgba(22, 26, 74, 0.72), rgba(12, 15, 42, 0.86));
+  box-shadow: var(--panel-glow);
+}
+.panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 12px;
+}
+.panel-head > div {
+  min-width: 0;
+}
+.ico-badge {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--grad-neon);
+  box-shadow: 0 0 20px -4px rgba(110, 90, 255, 0.8);
+  color: #fff;
+}
+.cat-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 112px;
+  padding: 14px 8px;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.86rem;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(155deg, var(--c1), var(--c2));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 14px 30px -18px var(--c1);
+  transition: transform 0.2s, box-shadow 0.25s;
+}
+.cat-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 26px -2px var(--c1);
+}
+.cat-tile svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+}
+.stat-strip {
+  border-radius: 22px;
+  border: 1px solid var(--panel-line);
+  background: linear-gradient(90deg, rgba(30, 36, 110, 0.7), rgba(14, 18, 58, 0.8));
+  box-shadow: var(--panel-glow);
+}
+.orb {
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.5), transparent 18%),
+    radial-gradient(circle at 50% 55%, #6d4bff 0%, #2b2fb8 55%, #0b0e3a 100%);
+  box-shadow: 0 0 80px 10px rgba(110, 90, 255, 0.55), 0 0 160px 30px rgba(34, 211, 238, 0.22);
+}
+.orbit-ring {
+  border: 2px solid rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.5), inset 0 0 24px rgba(139, 92, 255, 0.4);
+  border-radius: 50%;
+  transform: rotateX(72deg);
+}
+
+/* Footer, page-header figures and form controls pick up the same neon treatment */
+footer.cv-foot {
+  border-top: 1px solid var(--panel-line);
+  background: linear-gradient(180deg, rgba(20, 22, 70, 0.55), rgba(6, 8, 26, 0.9));
+  box-shadow: 0 -30px 60px -40px rgba(110, 90, 255, 0.55);
+}
+.ph-stats dd {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+input,
+select,
+textarea {
+  border-color: rgba(110, 130, 255, 0.3);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.25), 0 0 18px -4px rgba(34, 211, 238, 0.6);
+}
+table.cmp thead th {
+  background: linear-gradient(180deg, rgba(60, 50, 170, 0.45), rgba(24, 28, 90, 0.5));
+}
+
+/* ---------- Neon page banner (PageHeader) ---------- */
+.page-head {
+  --ph-a: 139, 92, 255;
+  --ph-b: 34, 211, 238;
+}
+.page-head.ph-magazine { --ph-a: 255, 79, 216; --ph-b: 139, 92, 255; }
+.page-head.ph-lab { --ph-a: 34, 211, 238; --ph-b: 61, 123, 255; }
+.page-head.ph-directory { --ph-a: 61, 123, 255; --ph-b: 34, 211, 238; }
+.page-head.ph-studio { --ph-a: 255, 150, 60; --ph-b: 255, 79, 216; }
+.page-head::before {
+  display: none;
+}
+.hero-banner {
+  border: 1px solid rgba(var(--ph-a), 0.45);
+  background:
+    radial-gradient(520px 260px at 92% 0%, rgba(var(--ph-b), 0.28), transparent 70%),
+    radial-gradient(560px 300px at 0% 100%, rgba(var(--ph-a), 0.3), transparent 70%),
+    linear-gradient(135deg, rgba(20, 24, 74, 0.92), rgba(9, 11, 36, 0.95));
+  box-shadow: 0 0 0 1px rgba(var(--ph-b), 0.12) inset, 0 30px 70px -34px rgba(var(--ph-a), 0.7);
+}
+.hb-orb {
+  position: absolute;
+  right: -90px;
+  top: -110px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.35), transparent 22%), radial-gradient(circle, rgba(var(--ph-a), 0.7), rgba(var(--ph-b), 0.15) 62%, transparent 70%);
+  filter: blur(2px);
+  opacity: 0.75;
+}
+.hb-ring {
+  position: absolute;
+  right: -40px;
+  top: 40px;
+  width: 300px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(var(--ph-b), 0.6);
+  box-shadow: 0 0 22px rgba(var(--ph-b), 0.55);
+  transform: rotate(-14deg);
+}
+.hero-banner h1::after {
+  background: linear-gradient(90deg, rgb(var(--ph-a)), rgb(var(--ph-b)));
+  box-shadow: 0 0 14px rgba(var(--ph-b), 0.8);
+}
+.ph-stat {
+  min-width: 108px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(var(--ph-b), 0.35);
+  background: rgba(8, 10, 40, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.ph-stat dd {
+  background: linear-gradient(90deg, rgb(var(--ph-b)), #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 640px) {
+  .hb-orb { width: 220px; height: 220px; right: -80px; top: -80px; }
+  .hb-ring { display: none; }
+}
+
+/* ---------- Neon components used on inner pages ---------- */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-title::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 0.95em;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #22d3ee, #8b5cff);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.7);
+}
+.tool-card {
+  border-radius: 26px !important;
+  background: linear-gradient(170deg, rgba(26, 30, 88, 0.85), rgba(10, 12, 38, 0.92)) !important;
+  border: 1px solid var(--panel-line) !important;
+  box-shadow: var(--panel-glow);
+}
+.tool-card:hover,
+.tool-card:focus-within {
+  transform: translateY(-3px);
+}
+.plan-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.25s, border-color 0.25s;
+}
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--grad-neon);
+  box-shadow: 0 0 16px rgba(110, 90, 255, 0.8);
+}
+.plan-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 30px -8px rgba(34, 211, 238, 0.55);
+}
+.plan-card .text-2xl {
+  background: linear-gradient(90deg, #fff, #9fe9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.feature-card {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--panel-line);
+  background: linear-gradient(160deg, rgba(28, 32, 92, 0.6), rgba(10, 12, 40, 0.8));
+}
+.news-card {
+  border-color: var(--panel-line) !important;
+  background: linear-gradient(170deg, rgba(24, 28, 84, 0.8), rgba(10, 12, 38, 0.92)) !important;
+  box-shadow: var(--panel-glow);
+}
+.news-card:hover,
+.news-card:focus-within {
+  border-color: rgba(34, 211, 238, 0.6) !important;
+  box-shadow: 0 0 30px -8px rgba(34, 211, 238, 0.5);
+}
+.cover-frame {
+  border: 1px solid var(--panel-line);
+  box-shadow: 0 0 40px -18px rgba(110, 90, 255, 0.8);
+}
+.table-wrap {
+  border-radius: 22px;
+  border: 1px solid var(--panel-line);
+  box-shadow: var(--panel-glow);
+}
+table.cmp tbody tr:hover td,
+table.cmp tbody tr:hover th {
+  background: rgba(60, 60, 190, 0.18);
+}
+/* Prose pages (articles, legal, methodology): neon headings, link and quote treatment */
+.prose-article h2 {
+  position: relative;
+  padding-left: 18px;
+}
+.prose-article h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 5px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #22d3ee, #8b5cff);
+}
+.prose-article a {
+  color: #7de3ff;
+}
+.prose-article blockquote {
+  border-left: 4px solid #8b5cff;
+  background: rgba(60, 50, 170, 0.18);
+  border-radius: 0 16px 16px 0;
+}
+.ph-stat dd {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffffff, rgb(var(--ph-b)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(var(--ph-b), 0.55));
+}
+
+/* The static network behind the hero recedes so the robot is the focus */
+#hero .hero-net {
+  opacity: 0.35;
+}
+
+
+/* ---------- Premium card system: depth, glow and lift shared by every card ---------- */
+.card-lift {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+  will-change: transform;
+}
+.card-lift:hover,
+.card-lift:focus-within {
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 0 34px -8px rgba(34, 211, 238, 0.5), 0 26px 50px -24px rgba(5, 6, 30, 0.9);
+}
+/* In the components layer so a utility such as absolute, fixed or sticky on the same element still wins (the More menu is .glass and absolute). */
+@layer components {
+  .panel,
+  .glass,
+  .news-card,
+  .tile,
+  .versus {
+    position: relative;
+  }
+}
+.panel::after,
+.news-card::after,
+.versus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 32%, transparent 70%, rgba(34, 211, 238, 0.07));
+}
+.news-card,
+.tile,
+.versus {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+}
+.news-card:hover,
+.tile:hover,
+.versus:hover {
+  transform: translateY(-4px);
+}
+.versus {
+  border-color: var(--panel-line) !important;
+  box-shadow: var(--panel-glow);
+}
+.versus:hover {
+  border-color: rgba(34, 211, 238, 0.6) !important;
+  box-shadow: 0 0 36px -8px rgba(139, 92, 255, 0.7);
+}
+.toc {
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid var(--panel-line);
+  background: linear-gradient(170deg, rgba(24, 28, 84, 0.7), rgba(10, 12, 38, 0.85));
+  box-shadow: var(--panel-glow);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .news-card,
+  .tile,
+  .versus {
+    transition: none;
+  }
+  .card-lift:hover,
+  .news-card:hover,
+  .tile:hover,
+  .versus:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Hero atmosphere: electric blue and violet light behind the robot, a magenta bloom and a cyan swoosh ---------- */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: -80px 0 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 640px at 74% 42%, rgba(70, 110, 255, 0.85), transparent 66%),
+    radial-gradient(620px 480px at 96% 84%, rgba(255, 79, 216, 0.5), transparent 70%),
+    radial-gradient(700px 460px at 56% 4%, rgba(34, 211, 238, 0.45), transparent 70%),
+    radial-gradient(600px 420px at 8% 100%, rgba(139, 92, 255, 0.5), transparent 70%),
+    linear-gradient(112deg, rgba(9, 14, 70, 0.9) 0%, rgba(22, 36, 150, 0.55) 46%, rgba(86, 44, 200, 0.5) 78%, rgba(160, 50, 200, 0.35) 100%);
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  right: -160px;
+  bottom: 40px;
+  width: 980px;
+  height: 260px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0), #22d3ee 40%, #8b5cff 75%, rgba(255, 79, 216, 0)) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) padding-box exclude, linear-gradient(#000 0 0);
+  opacity: 0.9;
+  transform: rotate(-16deg);
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.8));
+}
+@media (max-width: 1023px) {
+  #hero::after {
+    display: none;
+  }
+}
+#hero {
+  overflow-x: clip;
 }

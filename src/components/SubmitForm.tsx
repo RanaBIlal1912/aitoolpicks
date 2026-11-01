@@ -116,7 +116,9 @@ export default function SubmitForm() {
     window.open(url, "_blank", "noopener,noreferrer");
   }
 
-  const err = (k: keyof Values) => ({ "aria-invalid": errors[k] ? true : undefined, "aria-describedby": errors[k] ? `sub-${k}-err` : `sub-${k}-hint` }) as const;
+  // Only some fields have a hint line; pointing aria-describedby at a hint that is not on the page is invalid.
+  const HINTED: (keyof Values)[] = ["website", "pricingUrl", "description", "features", "email"];
+  const err = (k: keyof Values) => ({ "aria-invalid": errors[k] ? true : undefined, "aria-describedby": errors[k] ? `sub-${k}-err` : HINTED.includes(k) ? `sub-${k}-hint` : undefined }) as const;
 
   return (
     <form onSubmit={submit} noValidate className="glass rounded-[26px] p-6 md:p-8" aria-labelledby="submit-title">

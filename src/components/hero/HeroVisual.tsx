@@ -35,7 +35,7 @@ function StaticNetwork() {
  * Full-bleed layer behind the home hero. The SVG network and the floating logos are plain markup and always shown; the WebGL network loads on screens
  * where it is allowed (not for reduced motion or data saving, and only after the visitor first interacts or ten seconds pass) and fades in over it.
  */
-export default function HeroVisual() {
+export default function HeroVisual({ webgl: allowGl = true }: { webgl?: boolean }) {
   const [engaged, setEngaged] = useState(false);
   const [inView, setInView] = useState(true);
   const [webgl, setWebgl] = useState(false);
@@ -44,7 +44,7 @@ export default function HeroVisual() {
   useEffect(() => {
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    if (calm || saver) return;
+    if (calm || saver || !allowGl) return;
     let canvas = false;
     try {
       const c = document.createElement("canvas");
@@ -55,7 +55,7 @@ export default function HeroVisual() {
     if (!canvas) return;
     setLite(!matchMedia("(min-width: 768px)").matches);
     return whenEngaged(() => setEngaged(true), 60000);
-  }, []);
+  }, [allowGl]);
 
   // Track whether the hero is on screen. The scene draws frames only while it is; a visitor who has scrolled down to the map does not also get a second
   // WebGL scene running behind them. After four seconds out of view the scene is removed altogether (the static network shows again) and comes back on return.

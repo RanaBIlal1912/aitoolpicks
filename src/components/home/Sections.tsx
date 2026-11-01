@@ -131,7 +131,7 @@ export function PhotoBand({ checked, total }: { checked: number; total: number }
       <div className="absolute inset-0 -z-10">
         <Photo id="server-aisle" decorative sizes="(min-width: 1152px) 1152px, 100vw" className="object-[50%_60%]" />
       </div>
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#090B18] via-[#090B18]/85 to-[#090B18]/20" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#090B18] via-[#090B18]/85 to-[#090B18]/20 max-md:from-[#090B18]/90 max-md:via-[#090B18]/88 max-md:to-[#090B18]/80" />
       <div className="max-w-xl px-7 py-14 md:px-14 md:py-20">
         <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan">Read from the source</p>
         <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-white md:text-5xl">Prices come from the official page, not from a press release.</h2>
@@ -142,7 +142,7 @@ export function PhotoBand({ checked, total }: { checked: number; total: number }
           See the verification report
         </Link>
       </div>
-      <span className="absolute bottom-2 right-3 rounded bg-black/55 px-1.5 py-0.5 text-[0.65rem] text-white/80 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
+      <span className="absolute bottom-2 right-3 rounded bg-black/70 px-1.5 py-0.5 text-[0.65rem] text-white/90 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
     </section>
   );
 }
@@ -160,13 +160,13 @@ export function CategoryRail() {
           <li key={c.slug} className="snap-start">
             <Link prefetch={false}
               href={`/tools/category/${c.slug}/`}
-              className="group relative flex h-[210px] w-[250px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-5 no-underline transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
+              className="group relative flex h-[13.125rem] w-[15.625rem] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-5 no-underline transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"
               style={{ background: `linear-gradient(150deg, ${a}40, #0f1226 55%, ${b}26)` }}
             >
               <span aria-hidden="true" className="absolute inset-0 opacity-35 mix-blend-luminosity transition-opacity duration-300 group-hover:opacity-55">
                 <Photo id={CAT_PHOTOS[ci % CAT_PHOTOS.length]} decorative sizes="250px" />
               </span>
-              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0f1226] via-[#0f1226]/55 to-transparent" />
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0f1226] via-[#0f1226]/72 to-transparent" />
               <span aria-hidden="true" className="absolute -right-6 -top-6 h-28 w-28 rounded-full opacity-40 blur-2xl transition-opacity group-hover:opacity-70" style={{ background: a }} />
               <span className="relative flex -space-x-2">
                 {tools.slice(0, 4).map((t) => (
@@ -192,7 +192,7 @@ export function CategoryRail() {
 /** Free-plan tools as a ledger: one line each, logo, name, what it is. */
 export function FreeLedger({ tools }: { tools: Tool[] }) {
   return (
-    <ul className="grid gap-x-10 md:grid-cols-2">
+    <ul className="grid grid-cols-[minmax(0,1fr)] gap-x-10 md:grid-cols-2">
       {tools.map((t, i) => (
         <li key={t.id} className="border-b border-white/10">
           <Link prefetch={false} href={`/tools/${t.id}/`} className="group flex items-center gap-4 py-4 no-underline">
@@ -229,19 +229,19 @@ export function AddedTimeline({ tools }: { tools: Tool[] }) {
   );
 }
 
-/** News on a light "paper" surface: a deliberate change of tone, laid out like a front page. */
+/** News laid out like a front page, on a deeper neon band. */
 export function NewsPaper({ news }: { news: NewsItem[] }) {
   const [lead, ...rest] = news;
   return (
-    <section className="paper relative left-1/2 w-screen -translate-x-1/2 px-5 py-20 text-[#0b0d1c]">
-      <div className="mx-auto max-w-6xl">
-        <Head n="04" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="All news" tone="light" />
+    <section className="paper relative left-1/2 w-screen -translate-x-1/2 px-5 py-20 text-white">
+      <div className="mx-auto max-w-7xl">
+        <Head n="04" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="All news" />
         <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <article>
             <div className="aspect-[16/10] overflow-hidden rounded-2xl">
               <NewsVisual n={lead} priority={false} sizes="(min-width: 1024px) 700px, 100vw" />
             </div>
-            <p className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-violet-700">
+            <p className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-cyan">
               {lead.kind} · {formatDate(lead.date)}
             </p>
             <h3 className="mt-2 font-serif text-3xl font-bold leading-tight tracking-tight md:text-4xl">
@@ -249,12 +249,12 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
                 {lead.title}
               </Link>
             </h3>
-            <p className="mt-3 max-w-2xl text-[#3b3f58]">{lead.summary}</p>
+            <p className="mt-3 max-w-2xl text-soft">{lead.summary}</p>
           </article>
-          <ul className="divide-y divide-black/10 self-start">
+          <ul className="divide-y divide-white/10 self-start">
             {rest.slice(0, 4).map((n) => (
               <li key={n.slug} className="py-5 first:pt-0">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-violet-700">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-cyan">
                   {n.kind} · {formatDate(n.date)}
                 </p>
                 <h3 className="mt-1.5 font-serif text-xl font-bold leading-snug">
@@ -262,7 +262,7 @@ export function NewsPaper({ news }: { news: NewsItem[] }) {
                     {n.title}
                   </Link>
                 </h3>
-                <p className="mt-1 line-clamp-2 text-sm text-[#4a4e68]">{n.source}</p>
+                <p className="mt-1 line-clamp-2 text-sm text-muted">{n.source}</p>
               </li>
             ))}
           </ul>
@@ -276,7 +276,7 @@ export function GuidesRail({ guides }: { guides: Article[] }) {
   return (
     <ul className="rail -mx-5 flex snap-x gap-5 overflow-x-auto px-5 pb-4">
       {guides.map((a) => (
-        <li key={a.slug} className="w-[300px] shrink-0 snap-start md:w-[340px]">
+        <li key={a.slug} className="w-[18.75rem] shrink-0 snap-start md:w-[21.25rem]">
           <ArticleCard a={a} />
         </li>
       ))}
@@ -295,7 +295,7 @@ export function VersusTiles() {
         const [la] = left ? catColors(left.category) : ["#754BFF"];
         const [ra] = right ? catColors(right.category) : ["#25C6E8"];
         return (
-          <Link prefetch={false} key={c.slug} href={`/compare/${c.slug}/`} className="group relative overflow-hidden rounded-3xl border border-white/10 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
+          <Link prefetch={false} key={c.slug} href={`/compare/${c.slug}/`} className="versus card-lift group relative overflow-hidden rounded-3xl border border-white/10 no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
             <span aria-hidden="true" className="absolute inset-0" style={{ background: `linear-gradient(100deg, ${la}44 0%, #0d1024 48%, #0d1024 52%, ${ra}44 100%)` }} />
             <div className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-6 pb-4 pt-8">
               <div className="flex flex-col items-center gap-3 text-center">

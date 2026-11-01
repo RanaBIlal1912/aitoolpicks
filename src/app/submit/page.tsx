@@ -18,7 +18,7 @@ export default function SubmitPage() {
         lead="Know a useful AI product that is missing? Tell us about it. A person checks every suggestion against the product's official website and pricing page before anything is added."
         crumbs={[{ name: "Submit a tool", href: "/submit/" }]}
       />
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 lg:grid-cols-[1.6fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[1.6fr_1fr]">
         <SubmitForm />
         <aside className="space-y-5 text-sm text-soft" aria-label="How submissions work">
           <div className="glass rounded-[22px] p-6">

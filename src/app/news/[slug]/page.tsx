@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const n = getNews(slug);
   if (!n) return {};
-  const m = pageMeta({ title: n.title, description: n.summary.slice(0, 180), path: `/news/${slug}/` });
+  const m = pageMeta({ title: n.title, description: n.summary, path: `/news/${slug}/` });
   const img = newsImage(slug);
   if (img) m.openGraph = { ...m.openGraph, images: [{ url: absUrl(img.src), width: img.width, height: img.height, alt: img.alt }] };
   return m;

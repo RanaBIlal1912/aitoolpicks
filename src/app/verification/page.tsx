@@ -22,7 +22,7 @@ export default function VerificationPage() {
         lead="Each record was checked by opening the vendor's own site and pricing page in a browser. Where a page hid a price, or a toggle could not be read, the record says so instead of guessing."
         crumbs={[{ name: "Verification", href: "/verification/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <p className="text-soft">
           {rows.length} tools checked: {count("verified")} verified, {count("partial")} partially verified. Prices are shown in the currency the vendor displayed, and the billing period is
           stated only when the page states it. See the{" "}
@@ -41,7 +41,7 @@ export default function VerificationPage() {
                 <span className={`text-sm font-semibold ${VERIFICATION_CLASS[r.verification.status]}`}>{VERIFICATION_LABEL[r.verification.status]}</span>
                 <span className="text-xs text-muted">checked {formatChecked(r.verification.checked)}</span>
               </div>
-              <p className="mt-2 text-sm text-soft">{r.verification.notes}</p>
+              <p className="mt-2 max-w-3xl text-sm text-soft">{r.verification.notes}</p>
               <p className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs">
                 <a href={r.verification.officialUrl} target="_blank" rel="noopener noreferrer" className="underline">
                   Official site ↗

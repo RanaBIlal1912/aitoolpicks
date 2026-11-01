@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!t) return {};
   const m = pageMeta({
     title: `${t.label}: guides and how-tos`,
-    description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for people choosing and using AI tools.`.slice(0, 180),
+    description: `${t.blurb} Practical guides on ${t.label.toLowerCase()} for people choosing and using AI tools.`,
     path: `/blog/topic/${topic}/`,
   });
   return m;
@@ -44,7 +44,7 @@ export default async function TopicPage({ params }: Props) {
           { name: t.label, href: `/blog/topic/${topic}/` },
         ]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <h2 className="sr-only">Guides on {t.label.toLowerCase()}</h2>
         {first && (
           <div className="mb-6">
@@ -56,7 +56,7 @@ export default async function TopicPage({ params }: Props) {
             <ArticleCard key={a.slug} a={a} />
           ))}
         </div>
-        <div className="mt-12 flex flex-wrap gap-2" aria-label="Other topics">
+        <div role="group" className="mt-12 flex flex-wrap gap-2" aria-label="Other topics">
           {TOPICS.filter((x) => x.id !== t.id).map((x) => (
             <Link key={x.id} href={`/blog/topic/${x.id}/`} className="chip">
               {x.label}

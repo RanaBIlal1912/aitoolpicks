@@ -18,7 +18,7 @@ export default function ContactPage() {
         lead="We read every message. Corrections to prices or facts are the most useful thing you can send."
         crumbs={[{ name: "Contact", href: "/contact/" }]}
       />
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 lg:grid-cols-[1.4fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[1.4fr_1fr]">
         <ContactForm />
         <aside className="space-y-5" aria-label="Other ways to reach us">
           <div className="glass rounded-[22px] p-6">

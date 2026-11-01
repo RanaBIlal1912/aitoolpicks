@@ -104,7 +104,7 @@ export default function NewsCard({ n, variant = "row" }: { n: NewsItem; variant?
           target="_blank"
           rel="noopener noreferrer"
           className="relative z-10 mt-auto w-fit pt-1 text-sm font-bold text-[#9db4d6] no-underline hover:underline"
-          aria-label={`Read the original: ${n.title} (opens in a new tab)`}
+          aria-label={`Original at ${n.source}: ${n.title} (opens in a new tab)`}
         >
           Original at {n.source} ↗
         </a>

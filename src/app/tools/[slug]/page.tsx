@@ -40,7 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!t) return {};
   const m = pageMeta({
     title: `${t.name} pricing, plans and features`,
-    description: `${t.tagline}. ${t.description}`.slice(0, 190),
+    // Some records open their description with the tagline; do not say it twice.
+    description: t.description.startsWith(t.tagline) ? t.description : `${t.tagline}. ${t.description}`,
     path: `/tools/${slug}/`,
   });
   const cover = getCategory(t.category)?.cover ?? "chip";
@@ -53,7 +54,7 @@ function List({ title, items, tone }: { title: string; items: string[]; tone: "g
   const mark = tone === "good" ? "✓" : tone === "warn" ? "!" : "•";
   const color = tone === "good" ? "text-emerald-300" : tone === "warn" ? "text-amber" : "text-muted";
   return (
-    <div className="glass rounded-[22px] p-6">
+    <div className="panel p-6">
       <h3 className={`text-lg font-bold ${tone === "plain" ? "text-white" : color}`}>{title}</h3>
       <ul className="mt-3 space-y-2.5">
         {items.map((g) => (
@@ -79,6 +80,7 @@ export default async function ToolPage({ params }: Props) {
   const comparisons = COMPARISONS.filter((c) => c.leftTool === t.id || c.rightTool === t.id);
   const alts = alternativesFor(t.id, 4);
   const logo = logoFor(t.id);
+  const lowest = t.pricing.plans.filter((p) => typeof p.monthly === "number" && p.monthly > 0).sort((a, b) => (a.monthly as number) - (b.monthly as number))[0];
   const logoNote = logo ? (logo.status === "ok" ? undefined : `Logo: ${t.name}’s own site icon, shown at a small size.`) : "No verified logo yet, so a letter mark is shown.";
   const news = newsForTool(t.id).slice(0, 3);
   const sub = cat?.subs.find((s) => s.slug === t.subcategory);
@@ -88,6 +90,7 @@ export default async function ToolPage({ params }: Props) {
     <>
       <PageHeader
         accent={catColors(t.category)[0]}
+        tint={catColors(t.category)}
         aside={
           <div className="relative grid h-[260px] w-[260px] place-items-center">
             <span className="absolute inset-0 rounded-full opacity-60 blur-3xl" style={{ background: catColors(t.category)[0] }} />
@@ -131,7 +134,22 @@ export default async function ToolPage({ params }: Props) {
         </p>
       </PageHeader>
 
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
+        <ul className="mb-10 grid grid-cols-2 gap-4 lg:grid-cols-4" aria-label={`${t.name} at a glance`}>
+          {[
+            ["Pricing model", PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model],
+            ["Free plan", t.pricing.free ? (t.pricing.free.available ? "Available" : "None") : "Not stated"],
+            ["Lowest listed paid plan", lowest ? `${lowest.currency} ${lowest.monthly}/mo` : "No monthly price listed"],
+            ["Pricing checked", formatChecked(t.pricing.checked)],
+          ].map(([k, v]) => (
+            <li key={k} className="panel card-lift p-5">
+              <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">{k}</p>
+              <p className="mt-2 font-display text-xl font-extrabold leading-tight text-white">{v}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mx-auto max-w-7xl px-5">
         <ToolShot id={t.id} name={t.name} className="mb-12 max-w-3xl" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div className="min-w-0 space-y-12">
@@ -139,7 +157,8 @@ export default async function ToolPage({ params }: Props) {
               <h2 className="section-title text-white">Features</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {t.features.map((f) => (
-                  <li key={f} className="glass rounded-2xl px-5 py-4 text-soft">
+                  <li key={f} className="feature-card flex gap-3 text-soft">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" className="mt-0.5 shrink-0" fill="none" stroke="#22d3ee" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
                     {f}
                   </li>
                 ))}
@@ -217,7 +236,7 @@ export default async function ToolPage({ params }: Props) {
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start" aria-label={`${t.name} quick facts`}>
-            <div className="glass flex items-center gap-4 rounded-[22px] p-5">
+            <div className="panel flex items-center gap-4 p-5">
               <ToolLogo id={t.id} name={t.name} hue={t.hue} size={64} alt={`${t.name} logo`} />
               <div className="min-w-0">
                 <p className="font-bold text-white">{t.name}</p>
@@ -227,7 +246,7 @@ export default async function ToolPage({ params }: Props) {
               </div>
             </div>
             {logoNote && <p className="-mt-3 text-xs text-muted">{logoNote}</p>}
-            <div className="glass rounded-[22px] p-6">
+            <div className="panel p-6">
               <h2 className="kicker">Quick facts</h2>
               <dl className="mt-4 space-y-4 text-[0.97rem]">
                 <div>

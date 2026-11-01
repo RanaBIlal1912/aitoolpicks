@@ -28,7 +28,7 @@ class Boundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   render() {
     if (!this.state.failed) return this.props.children;
     return (
-      <div role="alert" className="glass mx-auto mt-6 max-w-6xl rounded-[22px] p-8 text-center">
+      <div role="alert" className="glass mx-auto mt-6 max-w-7xl rounded-[22px] p-8 text-center">
         <p className="text-lg font-semibold text-white">The directory could not load.</p>
         <p className="mt-2 text-muted">Reload the page, or browse by category from the home page.</p>
         <button type="button" className="btn-primary btn-sm mt-4" onClick={() => location.reload()}>
@@ -136,7 +136,7 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
   const active = JSON.stringify(f) !== JSON.stringify(NO_FILTERS);
 
   return (
-    <section aria-labelledby="dir-title" aria-busy={!ready} className="mx-auto max-w-6xl px-5">
+    <section aria-labelledby="dir-title" aria-busy={!ready} className="mx-auto max-w-7xl px-5">
       <h2 id="dir-title" className="sr-only">
         Browse and search tools
       </h2>

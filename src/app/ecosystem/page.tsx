@@ -10,7 +10,7 @@ import { formatDate } from "@/components/NewsCard";
 
 export const metadata = pageMeta({
   title: "AI ecosystem: companies, models and open-source projects",
-  description: "Explore the companies behind the AI tools in our catalog, the models we have verified, and open-source projects, with sources and the relationships our records state.",
+  description: "Explore the companies behind the AI tools in our catalog, verified models and open-source projects, with sources and the relationships our records state.",
   path: "/ecosystem/",
 });
 
@@ -24,7 +24,7 @@ export default function EcosystemPage() {
         lead="Companies, models and open-source projects, linked only where our records or an official source state the relationship. This is a small, verified map, not a complete one."
         crumbs={[{ name: "Ecosystem", href: "/ecosystem/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <EcosystemNetwork />
         <div className="mt-16" />
         <section aria-labelledby="models-title">
@@ -146,8 +146,8 @@ export default function EcosystemPage() {
             What is not here yet
           </h2>
           <p className="mt-2 max-w-3xl text-soft">
-            Most model-to-model, funding and ownership relationships are missing on purpose: we add them only with a source. Each company page lists its catalog products; the full plan and
-            data needed are in <code>docs/ECOSYSTEM.md</code>.
+            Most model-to-model, funding and ownership relationships are missing on purpose: we add them only with a source. Each company page lists its catalog products. If you know of a relationship that an
+            official source confirms, <Link href="/contact/" className="underline hover:text-white">tell us on the contact page</Link>.
           </p>
         </section>
       </div>

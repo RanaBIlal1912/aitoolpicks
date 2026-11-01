@@ -25,7 +25,7 @@ export default function BestIndex() {
         lead="Each guide groups tools by who they suit and quotes plan prices exactly as the vendor publishes them. Where we could not verify a price, we say so."
         crumbs={[{ name: "Best-of guides", href: "/best/" }]}
       />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-7xl px-5">
         <ul className="grid gap-6 md:grid-cols-2">
           {ROUNDUPS.map((r, i) => {
             const cat = getCategory(r.category);
