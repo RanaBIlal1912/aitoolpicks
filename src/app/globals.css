@@ -449,6 +449,66 @@ table.cmp thead th:first-child {
     min-width: 11rem;
   }
 }
+/* The pricing table on a phone: each tool becomes one stacked block (name, then labelled free access, plans and status) instead of four columns that need sideways scrolling to reach the prices. */
+@media (max-width: 639px) {
+  table.cmp-stack {
+    min-width: 0;
+  }
+  table.cmp-stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  table.cmp-stack,
+  table.cmp-stack tbody,
+  table.cmp-stack tr,
+  table.cmp-stack tbody th,
+  table.cmp-stack td {
+    display: block;
+  }
+  table.cmp-stack tr {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  table.cmp-stack tbody tr:last-child {
+    border-bottom: 0;
+  }
+  table.cmp-stack tbody th {
+    position: static;
+    width: auto;
+    min-width: 0;
+    padding: 0 0 6px;
+    border: 0;
+    background: none;
+    font-size: 1rem;
+  }
+  table.cmp-stack td {
+    min-width: 0;
+    padding: 8px 0 4px;
+    border: 0;
+  }
+  table.cmp-stack td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+}
+@media (pointer: coarse) {
+  /* Breadcrumb links are small text; give them a thumb-sized hit area without changing the layout. */
+  nav[aria-label="Breadcrumb"] a {
+    display: inline-block;
+    padding-block: 0.5rem;
+    margin-block: -0.5rem;
+  }
+}
 table.cmp tr.cmp-diff td,
 table.cmp tr.cmp-diff th {
   background: rgba(214, 180, 106, 0.06);
