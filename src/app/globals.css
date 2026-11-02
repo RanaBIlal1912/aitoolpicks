@@ -513,8 +513,16 @@ table.cmp thead th:first-child {
   aside a:not([class*="btn"]),
   main nav a:not([class*="btn"]),
   main p a:not([class*="btn"]),
-  main li a:not([class*="btn"]) {
+  main li a:not([class*="btn"]),
+  main td a:not([class*="btn"]),
+  main th a:not([class*="btn"]) {
     padding-block: 0.7rem;
+  }
+  /* Save (heart) and other toggle buttons: at least thumb-sized. */
+  button[aria-pressed] {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    justify-content: center;
   }
 }
 table.cmp tr.cmp-diff td,
