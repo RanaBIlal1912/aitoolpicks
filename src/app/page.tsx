@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { ARTICLES } from "@/data/articles";
 import { NEWS } from "@/data/news";
@@ -10,6 +9,8 @@ import HeroVisual from "@/components/hero/HeroVisual";
 import JsonLd from "@/components/JsonLd";
 import { HeroOrbit } from "@/components/home/Neon";
 import { LatestBlog, LatestNews } from "@/components/home/Latest";
+import { LogoRibbon } from "@/components/home/Sections";
+import Reveal from "@/components/Reveal";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
 const DESC = fitDescription(SITE.description);
@@ -41,15 +42,15 @@ function Word({ children, i }: { children: string; i: number }) {
 
 export default function Home() {
   // Newest first, from the same lists the Blog and News pages use.
-  const blog = ARTICLES.slice(0, 3);
-  const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+  const blog = ARTICLES.slice(0, 4);
+  const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 
   return (
     <>
       <section id="hero" className="relative isolate">
         <HeroVisual webgl={false} />
         {/* On a phone the order is headline, robot, then search, so the robot is on the first screen; on desktop the text sits left and the robot right. */}
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 content-center px-5 pb-8 pt-6 md:pt-10 lg:min-h-[min(60vh,520px)] lg:grid-cols-[1.22fr_1fr] lg:gap-x-6 lg:pb-10">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 content-center px-5 pb-12 pt-8 md:pt-14 lg:min-h-[min(72vh,640px)] lg:grid-cols-[1.22fr_1fr] lg:gap-x-6 lg:pb-14">
           <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
             <span className="eyebrow max-sm:!px-3 max-sm:!text-[0.68rem] max-sm:!tracking-[0.1em]">The AI tool magazine and price directory</span>
             <h1 className="hero-title mt-4 text-[clamp(2.05rem,4.1vw,3.9rem)] font-extrabold leading-[1] tracking-[-0.035em] text-white md:mt-6">
@@ -66,10 +67,10 @@ export default function Home() {
                 <Word i={6}>Place</Word>
               </span>
             </h1>
-            <p className="mt-3 max-w-xl text-base text-soft md:mt-5 md:text-lg">{TOOLS.length} tools, with every plan and price read from the official page.</p>
+            <p className="mt-3 max-w-xl text-base text-soft md:mt-6 md:text-xl">{TOOLS.length} tools, with every plan and price read from the official page.</p>
           </div>
           <div className="max-lg:order-last lg:col-start-1 lg:row-start-2 lg:self-start">
-            <div className="max-w-2xl">
+            <div className="mt-1 max-w-2xl">
               <HeroSearch />
             </div>
           </div>
@@ -79,17 +80,17 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl space-y-5 px-5 pb-4">
-        <LatestBlog items={blog} />
-        <LatestNews items={news} />
-        <p className="pt-6 text-sm text-muted">
-          Some links on this site are affiliate links. If you buy through them we may earn a commission at no extra cost to you, and it never changes what we write.{" "}
-          <Link prefetch={false} href="/affiliate-disclosure/" className="text-soft underline">
-            Read the disclosure
-          </Link>
-          .
-        </p>
+      <LogoRibbon />
+
+      <div className="mx-auto max-w-7xl px-5">
+        <Reveal as="section" className="pt-20 cv-section">
+          <LatestBlog items={blog} />
+        </Reveal>
       </div>
+
+      <Reveal className="mt-20 overflow-x-clip">
+        <LatestNews items={news} />
+      </Reveal>
 
       <JsonLd
         data={{

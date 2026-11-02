@@ -235,7 +235,7 @@ export default function RobotHero({ tiles, logos }: { tiles: ReactNode; logos: S
   }, [gl]);
 
   return (
-    <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[420px]">
+    <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[500px]">
       <span aria-hidden="true" className="orb absolute left-1/2 top-[52%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60" />
       <div className={`absolute inset-[4%] transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>
         <RobotSvg />
