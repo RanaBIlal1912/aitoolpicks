@@ -46,11 +46,10 @@ describe.skipIf(!built)("the built pages state the same numbers", () => {
     expect(t).toContain(`${TOOLS.length} tools`);
     expect(t).toContain(`${verified} with fully verified prices`);
   });
-  it("home stat strip and category tiles use the same counts as the category pages", () => {
+  it("home hero card and category tiles use the same counts as the category pages", () => {
     const home = text("")!;
     expect(home).toContain(`${TOOLS.length} AI tools`);
-    expect(home).toContain(`${CATEGORIES.length} Categories`);
-    expect(home).toContain(`${verified} Verified prices`);
+    expect(home).toContain(`${verified} with fully verified prices`);
     for (const c of CATEGORIES) {
       const n = toolsInCategory(c.slug).length;
       expect(home, c.slug).toContain(`${c.short} ${n} tools`);

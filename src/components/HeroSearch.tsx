@@ -3,7 +3,7 @@ import { withBase } from "@/lib/site";
 /**
  * Search box for the home page. A plain GET form to the directory, so it works without JavaScript and the directory reads ?q=.
  */
-export default function HeroSearch({ suggestions }: { suggestions: { label: string; q: string }[] }) {
+export default function HeroSearch() {
   return (
     <div className="mt-5 max-w-xl md:mt-9">
       <form action={withBase("/tools/")} method="get" role="search" className="relative">
@@ -27,14 +27,6 @@ export default function HeroSearch({ suggestions }: { suggestions: { label: stri
           Search
         </button>
       </form>
-      <p className="mt-3 flex flex-wrap items-center gap-2 text-sm text-muted md:mt-4">
-        <span>Popular:</span>
-        {suggestions.map((s, i) => (
-          <a key={s.q} href={withBase(`/tools/?q=${encodeURIComponent(s.q)}`)} className={`chip !py-1 !text-[0.85rem] ${i >= 3 ? "max-sm:hidden" : ""}`}>
-            {s.label}
-          </a>
-        ))}
-      </p>
     </div>
   );
 }
