@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NewsItem } from "@/data/news";
 import type { Article } from "@/data/articles";
-import ArticleCard, { ArticleSide } from "../ArticleCard";
+import ArticleCard from "../ArticleCard";
 import NewsVisual from "../NewsVisual";
 import { formatDate } from "../NewsCard";
 import { Head } from "./Sections";
@@ -25,15 +25,15 @@ export function LatestBlog({ items }: { items: Article[] }) {
   const [lead, ...rest] = items;
   return (
     <section aria-label="Latest blog posts">
-      <Head n="01" eyebrow="From the blog" title="Latest guides" lead="Practical, plain-English reading on choosing and using AI tools." href="/blog/" cta="Explore All Articles" />
+      <Head n="04" eyebrow="From the blog" title="Latest guides" lead="Practical, plain-English reading on choosing and using AI tools." href="/blog/" cta="Explore All Articles" />
       {!lead ? (
         <Empty what="blog posts" href="/blog/" cta="Visit the blog" />
       ) : (
-        <div className="grid gap-5 lg:grid-cols-[1.25fr_1fr]">
-          <ArticleCard a={lead} />
-          <div className="flex flex-col gap-5">
-            {rest.map((a) => (
-              <ArticleSide key={a.slug} a={a} />
+        <div className="space-y-5">
+          <ArticleCard a={lead} featured />
+          <div className="grid gap-5 md:grid-cols-2">
+            {rest.slice(0, 2).map((a) => (
+              <ArticleCard key={a.slug} a={a} />
             ))}
           </div>
         </div>
@@ -51,7 +51,7 @@ export function LatestNews({ items }: { items: NewsItem[] }) {
   return (
     <section aria-label="Latest AI news" className="paper relative left-1/2 w-screen -translate-x-1/2 py-16 text-white md:py-20">
       <div className="mx-auto max-w-7xl px-5">
-        <Head n="02" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="View All News" />
+        <Head n="05" eyebrow="AI news" title="What happened, and why it matters" lead="Edited by hand, each story with its original source." href="/news/" cta="View All News" />
         {!lead ? (
           <Empty what="news" href="/news/" cta="Visit the news page" />
         ) : (

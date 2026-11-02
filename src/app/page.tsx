@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ARTICLES } from "@/data/articles";
 import { NEWS } from "@/data/news";
 import { TOOLS } from "@/data/tools";
+import { getNewsBuzz, getTrending } from "@/lib/trending";
 import { SITE, absUrl } from "@/lib/site";
 import { fitDescription } from "@/lib/meta";
 import HeroSearch from "@/components/HeroSearch";
@@ -9,7 +10,8 @@ import HeroVisual from "@/components/hero/HeroVisual";
 import JsonLd from "@/components/JsonLd";
 import { HeroOrbit } from "@/components/home/Neon";
 import { LatestBlog, LatestNews } from "@/components/home/Latest";
-import { LogoRibbon } from "@/components/home/Sections";
+import { AddedTimeline, CategoryRail, FeaturedBento, Head, LogoRibbon } from "@/components/home/Sections";
+import { FinalCta, TrendingTools } from "@/components/home/Discover";
 import Reveal from "@/components/Reveal";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
@@ -42,8 +44,11 @@ function Word({ children, i }: { children: string; i: number }) {
 
 export default function Home() {
   // Newest first, from the same lists the Blog and News pages use.
-  const blog = ARTICLES.slice(0, 4);
-  const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+  const blog = ARTICLES.slice(0, 3);
+  const news = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+  const picks = ["claude", "github-copilot", "runway", "elevenlabs", "perplexity"];
+  // Recently added: newest records first. This is "added to our directory", not "released by the vendor".
+  const recent = [...TOOLS].sort((a, b) => b.added.localeCompare(a.added) || a.name.localeCompare(b.name)).slice(0, 6);
 
   return (
     <>
@@ -84,13 +89,38 @@ export default function Home() {
 
       <div className="mx-auto max-w-7xl px-5">
         <Reveal as="section" className="pt-20 cv-section">
+          <TrendingTools measured={getTrending()} buzz={getNewsBuzz()} />
+        </Reveal>
+
+        <Reveal as="section" className="pt-24 cv-section">
+          <Head n="02" eyebrow="Editor's picks" title="Where to start" lead="Well-documented tools across the jobs people use AI for." href="/tools/" cta="Browse every tool" />
+          <FeaturedBento ids={picks} />
+        </Reveal>
+
+        <Reveal as="section" className="pt-24 cv-section">
+          <Head n="03" eyebrow="New in the directory" title="Recently added" lead="Newest records first. This shows when we added a tool, not when the vendor released it." href="/tools/" cta="Explore the full directory" />
+          <AddedTimeline tools={recent} />
+        </Reveal>
+
+        <Reveal as="section" className="pt-24 cv-section">
           <LatestBlog items={blog} />
         </Reveal>
       </div>
 
-      <Reveal className="mt-20 overflow-x-clip">
+      <Reveal className="mt-24 overflow-x-clip">
         <LatestNews items={news} />
       </Reveal>
+
+      <div className="mx-auto max-w-7xl px-5">
+        <Reveal as="section" className="pt-24 cv-section">
+          <Head n="06" eyebrow="Discover" title="Explore categories" href="/tools/" cta="Search all tools" />
+          <CategoryRail />
+        </Reveal>
+
+        <Reveal as="section" className="pt-20 cv-section">
+          <FinalCta />
+        </Reveal>
+      </div>
 
       <JsonLd
         data={{
