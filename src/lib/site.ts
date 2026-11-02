@@ -29,8 +29,9 @@ export const NAV = [
   { href: "/pricing/", label: "Pricing", feature: false },
 ] as const;
 
-/** Secondary pages. Not in the header (it carries only the main links); the footer lists them so every page stays reachable. */
+/** Secondary pages: the header's "More" menu, and the footer lists them too so every page stays reachable. */
 export const MORE = [
+  { href: "/reviews/", label: "Reviews" },
   { href: "/best/", label: "Best-of guides" },
   { href: "/ecosystem/", label: "AI ecosystem" },
   { href: "/favorites/", label: "Saved tools" },
