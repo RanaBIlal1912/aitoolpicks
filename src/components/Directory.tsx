@@ -6,6 +6,8 @@ import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS } from "@/data/tools";
 import { NO_FILTERS, filterTools, page, sortTools, type Filters, type Sort } from "@/lib/directory";
 import { TASK_SUGGESTIONS, searchTools } from "@/lib/search";
 import ToolCard from "./ToolCard";
+import { useCurrency } from "./CurrencyProvider";
+import { convert, format } from "@/lib/currency";
 
 const MODELS = ["freemium", "free", "free-trial", "paid", "usage-based"] as const;
 const MAX_COMPARE = 3;
@@ -48,6 +50,9 @@ function Toggle({ pressed, onClick, children }: { pressed: boolean; onClick: () 
 }
 
 function DirectoryInner({ initialCategory }: { initialCategory: string }) {
+  const { currency, liveRates } = useCurrency();
+  // The filter works on US-dollar prices; the label adds the visitor's currency when a real rate is available.
+  const approx = (usd: number) => (currency !== "USD" && liveRates ? ` (≈ ${format(convert(usd, currency, liveRates), currency)})` : "");
   const [f, setF] = useState<Filters>({ ...NO_FILTERS, cats: initialCategory === "all" ? [] : [initialCategory] });
   const [sort, setSort] = useState<Sort>("relevance");
   const [pages, setPages] = useState(1);
@@ -250,7 +255,7 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
                 <option value="">any price</option>
                 {PRICE_STEPS.map((n) => (
                   <option key={n} value={n}>
-                    ${n}/month or less
+                    ${n}/month or less{approx(n)}
                   </option>
                 ))}
               </select>

@@ -24,6 +24,8 @@ import AlternativeList from "@/components/AlternativeList";
 import { alternativesFor } from "@/lib/alternatives";
 import FavoriteButton, { RecentTracker } from "@/components/FavoriteButton";
 import Reveal from "@/components/Reveal";
+import PriceText from "@/components/PriceText";
+import { format } from "@/lib/currency";
 import JsonLd from "@/components/JsonLd";
 import { VERIFICATION_CLASS, VERIFICATION_LABEL } from "@/lib/verification";
 
@@ -139,10 +141,10 @@ export default async function ToolPage({ params }: Props) {
           {[
             ["Pricing model", PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model],
             ["Free plan", t.pricing.free ? (t.pricing.free.available ? "Available" : "None") : "Not stated"],
-            ["Lowest listed paid plan", lowest ? `${lowest.currency} ${lowest.monthly}/mo` : "No monthly price listed"],
+            ["Lowest listed paid plan", lowest ? <PriceText key="lowest" text={`${format(lowest.monthly as number, lowest.currency)}/mo`} /> : "No monthly price listed"],
             ["Pricing checked", formatChecked(t.pricing.checked)],
           ].map(([k, v]) => (
-            <li key={k} className="panel card-lift p-5">
+            <li key={k as string} className="panel card-lift p-5">
               <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">{k}</p>
               <p className="mt-2 font-display text-xl font-extrabold leading-tight text-white">{v}</p>
             </li>

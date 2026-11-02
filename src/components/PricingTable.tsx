@@ -12,14 +12,14 @@ function unitText(unit: string): string {
   return unit === "per month" ? "per month" : unit;
 }
 
-function Money({ amount, plan, cur, rates, live }: { amount: number; plan: Plan; cur: ReturnType<typeof useCurrency>["currency"]; rates: ReturnType<typeof useCurrency>["rates"]; live: boolean }) {
-  const est = cur !== plan.currency && amount > 0 ? format(convertBetween(amount, plan.currency, cur, rates), cur) : null;
+function Money({ amount, plan, cur, rates }: { amount: number; plan: Plan; cur: ReturnType<typeof useCurrency>["currency"]; rates: ReturnType<typeof useCurrency>["liveRates"] }) {
+  const est = rates && cur !== plan.currency && amount > 0 ? format(convertBetween(amount, plan.currency, cur, rates), cur) : null;
   return (
     <>
       <span className="text-2xl font-extrabold tracking-tight text-white">{format(amount, plan.currency)}</span>
       {est && (
         <span className="ml-2 text-sm text-muted">
-          ≈ {est} <span className="text-xs">({live ? "estimate" : "approx. estimate"})</span>
+          ≈ {est} <span className="text-xs">(estimate)</span>
         </span>
       )}
     </>
@@ -27,7 +27,7 @@ function Money({ amount, plan, cur, rates, live }: { amount: number; plan: Plan;
 }
 
 function PlanCard({ plan }: { plan: Plan }) {
-  const { currency, rates, meta } = useCurrency();
+  const { currency, liveRates } = useCurrency();
   const free = plan.monthly === 0 && plan.annual === undefined;
   const priced = plan.monthly !== undefined || plan.annual !== undefined;
   return (
@@ -41,13 +41,13 @@ function PlanCard({ plan }: { plan: Plan }) {
         {free && <p className="text-2xl font-extrabold text-white">Free</p>}
         {!free && plan.monthly !== undefined && (
           <p>
-            <Money amount={plan.monthly} plan={plan} cur={currency} rates={rates} live={meta.live} />
+            <Money amount={plan.monthly} plan={plan} cur={currency} rates={liveRates} />
             <span className="ml-1 text-sm text-muted">{unitText(plan.unit)}, billed monthly</span>
           </p>
         )}
         {!free && plan.annual !== undefined && (
           <p>
-            <Money amount={plan.annual} plan={plan} cur={currency} rates={rates} live={meta.live} />
+            <Money amount={plan.annual} plan={plan} cur={currency} rates={liveRates} />
             <span className="ml-1 text-sm text-muted">
               {unitText(plan.unit)}, billed annually{plan.annualTotal !== undefined ? ` (${format(plan.annualTotal, plan.currency)} per year)` : ""}
             </span>
@@ -55,7 +55,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         )}
         {!free && !priced && plan.annualTotal !== undefined && (
           <p>
-            <Money amount={plan.annualTotal} plan={plan} cur={currency} rates={rates} live={meta.live} />
+            <Money amount={plan.annualTotal} plan={plan} cur={currency} rates={liveRates} />
             <span className="ml-1 text-sm text-muted">per year</span>
           </p>
         )}

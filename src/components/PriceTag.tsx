@@ -9,12 +9,12 @@ import { useCurrency } from "./CurrencyProvider";
  * clearly labelled estimate in the visitor's display currency. Shows nothing invented when we have no verified price.
  */
 export default function PriceTag({ id, compact = false }: { id: string; compact?: boolean }) {
-  const { currency, rates, meta } = useCurrency();
+  const { currency, liveRates, meta } = useCurrency();
   const p = PRICES[id];
   if (!p) return <span className="text-muted">No single headline price recorded. See the plans on the tool page or the official pricing page.</span>;
 
   const official = `${format(p.amount, p.currency)} per ${p.per}`;
-  const est = currency === p.currency ? null : format(convertBetween(p.amount, p.currency, currency, rates), currency);
+  const est = currency === p.currency || !liveRates ? null : format(convertBetween(p.amount, p.currency, currency, liveRates), currency);
 
   if (compact) {
     return (
@@ -33,10 +33,10 @@ export default function PriceTag({ id, compact = false }: { id: string; compact?
         {est ? (
           <>
             Estimate in {currency}: ≈ {est}
-            {meta.live ? ` (rates of ${meta.date})` : " (approximate rate)"}. The merchant charges in {p.currency}.
+            {` (rates of ${meta.date})`}. The merchant charges in {p.currency}.
           </>
         ) : (
-          "Shown in the merchant's own currency."
+          currency === p.currency ? "Shown in the merchant's own currency." : `Shown in ${p.currency}, the merchant's own currency: no live exchange rate is available for an estimate in ${currency}.`
         )}{" "}
         <a href={p.source} target="_blank" rel="noopener noreferrer" className="underline">
           Official pricing page

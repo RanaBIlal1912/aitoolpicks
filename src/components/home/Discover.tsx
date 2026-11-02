@@ -4,6 +4,7 @@ import { catColors } from "@/data/palette";
 import type { NewsBuzz, Trending } from "@/lib/trending";
 import ToolLogo from "../ToolLogo";
 import { Head } from "./Sections";
+import PriceText from "../PriceText";
 
 function PriceChips({ tool }: { tool: Tool }) {
   // Prices are shown only when the pricing record is fully verified against the vendor's page.
@@ -12,7 +13,7 @@ function PriceChips({ tool }: { tool: Tool }) {
     <ul className="flex flex-wrap gap-1.5">
       {tool.plans.slice(0, 2).map((p) => (
         <li key={p.name} className="rounded-lg border border-white/12 bg-black/25 px-2.5 py-1 text-xs">
-          {p.price === p.name ? <b className="text-white">{p.name}</b> : (<><span className="text-muted">{p.name}</span> <b className="text-white">{p.price}</b></>)}
+          {p.price === p.name ? <b className="text-white">{p.name}</b> : (<><span className="text-muted">{p.name}</span> <b className="text-white"><PriceText text={p.price} /></b></>)}
         </li>
       ))}
     </ul>

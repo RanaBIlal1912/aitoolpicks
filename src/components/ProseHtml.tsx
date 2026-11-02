@@ -13,7 +13,7 @@ import { useCurrency } from "./CurrencyProvider";
  */
 export default function ProseHtml({ html }: { html: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { currency, rates, meta, country } = useCurrency();
+  const { currency, liveRates, meta, country } = useCurrency();
 
   useEffect(() => {
     const root = ref.current;
@@ -41,11 +41,13 @@ export default function ProseHtml({ html }: { html: string }) {
       const est =
         currency === p.currency
           ? "Shown in the merchant's own currency."
-          : `Estimate in ${currency}: about ${format(convertBetween(p.amount, p.currency, currency, rates), currency)}${meta.live ? ` (rates of ${meta.date})` : " (approximate rate)"}. The merchant charges in ${p.currency}.`;
+          : liveRates
+            ? `Estimate in ${currency}: about ${format(convertBetween(p.amount, p.currency, currency, liveRates), currency)} (rates of ${meta.date}). The merchant charges in ${p.currency}.`
+            : `Shown in ${p.currency}, the merchant's own currency: no live exchange rate is available for an estimate in ${currency}.`;
       el.textContent = `Official price: ${merchant}, checked ${PRICES_AS_OF}. ${est}`;
       el.hidden = false;
     });
-  }, [currency, rates, meta, country, html]);
+  }, [currency, liveRates, meta, country, html]);
 
   return <div ref={ref} className="prose-article" dangerouslySetInnerHTML={{ __html: html }} />;
 }

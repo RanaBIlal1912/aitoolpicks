@@ -1,20 +1,18 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
 import {
-  CODES,
   FALLBACK,
   RATE_SOURCES,
   currencyForCountry,
   detectCountry,
-  isCurrency,
   validRates,
   type CurrencyCode,
   type Rates,
 } from "@/lib/currency";
+import { PICK_KEY, currencyStore } from "@/lib/currency-store";
 
 const CACHE_KEY = "aitp_rates_v2";
-const PICK_KEY = "aitp_currency_v2";
 const MAX_AGE = 12 * 3600 * 1000;
 
 export type RateMeta = { source: string; date: string; credit: string; live: boolean };
@@ -23,6 +21,8 @@ type Ctx = {
   currency: CurrencyCode;
   setCurrency: (c: CurrencyCode) => void;
   rates: Rates;
+  /** The rates to convert with, or null when only the built-in approximations are available. Estimates are shown only when this is set; prices are never converted with made-up rates. */
+  liveRates: Rates | null;
   meta: RateMeta;
   country: string;
 };
@@ -33,6 +33,7 @@ const CurrencyContext = createContext<Ctx>({
   currency: "USD",
   setCurrency: () => {},
   rates: FALLBACK.rates,
+  liveRates: null,
   meta: FALLBACK_META,
   country: "",
 });
@@ -98,7 +99,8 @@ async function loadRates(): Promise<Cached | null> {
 }
 
 export function CurrencyProvider({ children }: { children: ReactNode }) {
-  const [currency, setCur] = useState<CurrencyCode>("USD");
+  // The display currency lives in one shared store (src/lib/currency-store.ts); every component reads it from here.
+  const currency = useSyncExternalStore(currencyStore.subscribe, currencyStore.getSnapshot, currencyStore.getServerSnapshot);
   const [rates, setRates] = useState<Rates>(FALLBACK.rates);
   const [meta, setMeta] = useState<RateMeta>(FALLBACK_META);
   const [country, setCountry] = useState("");
@@ -123,24 +125,26 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     }
     const c = detectCountry(langs, tz);
     setCountry(c);
-    const saved = read(PICK_KEY);
-    setCur(isCurrency(saved) ? saved : (currencyForCountry(c) ?? "USD"));
+    currencyStore.init(currencyForCountry(c) ?? "USD");
     apply(readCache());
+    // Another tab changed the choice: follow it here too.
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === PICK_KEY) currencyStore.syncFromStorage(e.newValue);
+    };
+    window.addEventListener("storage", onStorage);
     let alive = true;
     loadRates()
       .then((r) => alive && apply(r))
       .catch(() => {});
     return () => {
       alive = false;
+      window.removeEventListener("storage", onStorage);
     };
   }, [apply]);
 
-  const setCurrency = useCallback((c: CurrencyCode) => {
-    if (!CODES.includes(c)) return;
-    setCur(c);
-    write(PICK_KEY, c);
-  }, []);
+  const setCurrency = useCallback((c: CurrencyCode) => currencyStore.set(c), []);
 
-  const value = useMemo(() => ({ currency, setCurrency, rates, meta, country }), [currency, setCurrency, rates, meta, country]);
+  const liveRates = meta.live ? rates : null;
+  const value = useMemo(() => ({ currency, setCurrency, rates, liveRates, meta, country }), [currency, setCurrency, rates, liveRates, meta, country]);
   return <CurrencyContext.Provider value={value}>{children}</CurrencyContext.Provider>;
 }
