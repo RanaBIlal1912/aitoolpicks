@@ -7,10 +7,14 @@ export function shortTitle(title: string, max = 48): string {
   if (t.length <= max) return t;
   const cut = t.slice(0, max + 1);
   const at = cut.lastIndexOf(" ");
-  return cut
-    .slice(0, at > 20 ? at : max)
-    .replace(/[\s:,;.\-–]+$/, "")
-    .replace(/(\s+(and|or|the|a|an|to|of|with|for|in|on|is|are|that|who|what))+$/i, "");
+  const dangling = /(\s+(and|or|the|a|an|to|of|with|for|in|on|is|are|that|who|what|through|into|about|across|over|via|can|could|will|would|now|its|their|has|have|more|adds))+$/i;
+  let out = cut.slice(0, at > 20 ? at : max);
+  // Trim trailing punctuation and dangling words until neither changes the title.
+  for (let prev = ""; prev !== out; ) {
+    prev = out;
+    out = out.replace(/[\s:,;.\-–]+$/, "").replace(dangling, "");
+  }
+  return out;
 }
 
 const TRAILING_WORDS = /(\s+(and|or|the|a|an|to|of|with|for|in|on|is|are|that|who|what|which|plus|its|their|from|by|as|at))+$/i;
