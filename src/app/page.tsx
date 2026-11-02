@@ -37,17 +37,6 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: [absUrl("/brand/og.png")] },
 };
 
-// Popular tasks: plain phrases that the local search understands (see src/lib/search.ts).
-const SUGGESTIONS = [
-  { label: "Create videos", q: "create professional videos" },
-  { label: "Code with AI", q: "AI coding assistant" },
-  { label: "Transcribe meetings", q: "transcribe meetings" },
-  { label: "Product images", q: "generate product images" },
-  { label: "Research papers", q: "research academic papers" },
-  { label: "Build a website", q: "build a website" },
-  { label: "Voiceovers", q: "create AI voiceovers" },
-];
-
 function Word({ children, i }: { children: string; i: number }) {
   return (
     <>
@@ -99,7 +88,7 @@ export default function Home() {
           </div>
           <div className="max-lg:order-last lg:col-start-1 lg:row-start-2 lg:self-start">
             <div className="max-w-2xl">
-              <HeroSearch suggestions={SUGGESTIONS} />
+              <HeroSearch />
             </div>
             <div className="mt-5 flex flex-wrap gap-3 md:mt-8">
               <Link prefetch={false} href="/tools/" className="btn-primary">
