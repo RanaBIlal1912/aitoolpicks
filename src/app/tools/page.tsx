@@ -1,6 +1,5 @@
 import { pageMeta } from "@/lib/meta";
-import { CATEGORIES, TOOLS } from "@/data/tools";
-import PageHeader from "@/components/PageHeader";
+import { TOOLS } from "@/data/tools";
 import Directory from "@/components/Directory";
 import JsonLd from "@/components/JsonLd";
 import { absUrl } from "@/lib/site";
@@ -13,21 +12,21 @@ export const metadata = pageMeta({
 });
 
 export default function ToolsPage() {
-  const verified = TOOLS.filter((t) => t.pricingStatus === "verified").length;
   return (
     <>
-      <PageHeader
-        variant="directory"
-        eyebrow="Directory"
-        title={
-          <>
-            Find the right AI tool, <span className="gradient-text">and what it really costs</span>
-          </>
-        }
-        lead={`${TOOLS.length} tools across ${CATEGORIES.length} categories, with the vendor's own plans and prices, the date we checked them and a link to the source. Pricing is fully verified for ${verified} of them; the rest are labelled.`}
-        crumbs={[{ name: "Tools", href: "/tools/" }]}
+      {/* The directory is just the search and the results. The page keeps its heading for search engines and screen readers, and its breadcrumb data. */}
+      <h1 className="sr-only">AI tools directory: find the right AI tool, and what it really costs</h1>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+            { "@type": "ListItem", position: 2, name: "Tools", item: absUrl("/tools/") },
+          ],
+        }}
       />
-
+      <div className="pt-10 md:pt-14" />
       <Directory />
 
       <JsonLd

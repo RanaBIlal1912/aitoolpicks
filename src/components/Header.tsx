@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { MORE, NAV, SITE } from "@/lib/site";
+import { NAV, SITE } from "@/lib/site";
 import { BrandMark } from "@/lib/brand";
 import { CODES, CURRENCIES, type CurrencyCode } from "@/lib/currency";
 import { useCurrency } from "./CurrencyProvider";
@@ -41,64 +41,6 @@ function CurrencySelect({ id }: { id: string }) {
         ))}
       </select>
     </label>
-  );
-}
-
-function MoreMenu({ pathname }: { pathname: string }) {
-  const [open, setOpen] = useState(false);
-  const wrap = useRef<HTMLDivElement>(null);
-  const button = useRef<HTMLButtonElement>(null);
-  useEffect(() => setOpen(false), [pathname]);
-  useEffect(() => {
-    if (!open) return;
-    const away = (e: MouseEvent) => {
-      if (wrap.current && !wrap.current.contains(e.target as Node)) setOpen(false);
-    };
-    const esc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        button.current?.focus();
-      }
-    };
-    document.addEventListener("mousedown", away);
-    document.addEventListener("keydown", esc);
-    return () => {
-      document.removeEventListener("mousedown", away);
-      document.removeEventListener("keydown", esc);
-    };
-  }, [open]);
-  const active = MORE.some((m) => pathname.startsWith(m.href));
-  return (
-    <div ref={wrap} className="relative">
-      <button
-        ref={button}
-        type="button"
-        aria-expanded={open}
-        aria-controls="more-menu"
-        onClick={() => setOpen((v) => !v)}
-        className={`${LINK} gap-1.5 ${active || open ? "border-violet/70 bg-gradient-to-r from-violet/30 to-electric/25 text-white" : "text-[#eef0fb] hover:bg-white/5 hover:text-white"}`}
-      >
-        More
-        <svg width="10" height="6" viewBox="0 0 12 8" aria-hidden="true" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
-          <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      </button>
-      {open && (
-        <ul id="more-menu" className="glass absolute right-0 top-full z-50 mt-2 w-56 rounded-xl p-1.5 shadow-2xl backdrop-blur-xl">
-          {MORE.map((m) => (
-            <li key={m.href}>
-              <Link
-                href={m.href}
-                aria-current={pathname.startsWith(m.href) ? "page" : undefined}
-                className="block rounded-lg px-3.5 py-2.5 text-soft no-underline transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan aria-[current=page]:text-white"
-              >
-                {m.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
   );
 }
 
@@ -164,7 +106,6 @@ export default function Header() {
           {NAV.map((n) => (
             <NavLink key={n.href} href={n.href} label={n.label} pathname={pathname} />
           ))}
-          <MoreMenu pathname={pathname} />
         </nav>
 
         <div className="flex items-center gap-2 max-[379px]:gap-1.5">
@@ -204,7 +145,7 @@ export default function Header() {
             className="sheet-in fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto border-t border-white/10 bg-[#090B18]/97 backdrop-blur-xl lg:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto flex max-w-7xl flex-col px-5 py-4">
-              {[{ href: "/", label: "Home" }, ...NAV, ...MORE].map((n) => {
+              {[{ href: "/", label: "Home" }, ...NAV].map((n) => {
                 const active = n.href === "/" ? pathname === "/" : pathname.startsWith(n.href);
                 return (
                   <Link

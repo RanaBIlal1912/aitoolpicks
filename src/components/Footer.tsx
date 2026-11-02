@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FOOTER_LINKS, NAV, SITE } from "@/lib/site";
+import { EXPLORE_LINKS, FOOTER_LINKS, SITE } from "@/lib/site";
 import RateNote from "./RateNote";
 import { BrandMark } from "@/lib/brand";
 import { CATEGORIES, TOOLS } from "@/data/tools";
@@ -51,7 +51,7 @@ export default function Footer() {
         <nav aria-label="Explore">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">Explore</p>
           <ul className="mt-4 space-y-2">
-            {[...NAV, { href: "/best/", label: "Best-of guides", feature: false }].map((n) => (
+            {EXPLORE_LINKS.map((n) => (
               <li key={n.href}>
                 <Link prefetch={false} href={n.href} className="text-soft no-underline hover:text-white">
                   {n.label}

@@ -11,7 +11,7 @@ import { ROUNDUPS } from "@/data/roundups";
 import { COVERS, COVER_IDS, coverPath } from "@/data/covers";
 import { AFFILIATE_LINKS } from "@/lib/affiliate";
 import { PRICES } from "@/lib/prices";
-import { MORE, NAV } from "@/lib/site";
+import { EXPLORE_LINKS, MORE, NAV } from "@/lib/site";
 
 const KNOWN_ROUTES = new Set(["/", "/about/", "/affiliate-disclosure/", "/pricing/", "/tools/", "/compare/", ...ARTICLES.map((a) => a.href)]);
 const WORDS = (html: string) => html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
@@ -160,7 +160,9 @@ describe("navigation and news", () => {
   it("puts Blog and AI News first in the main navigation and links the pricing hub", () => {
     expect(NAV[0].href).toBe("/blog/");
     expect(NAV[1].href).toBe("/news/");
-    expect(NAV.map((n) => n.href)).toEqual(expect.arrayContaining(["/tools/", "/reviews/", "/compare/", "/pricing/"]));
+    expect(NAV.map((n) => n.href)).toEqual(["/blog/", "/news/", "/tools/", "/compare/", "/pricing/"]);
+    // Reviews and the other secondary pages are not in the header, but the footer keeps every page reachable.
+    expect(EXPLORE_LINKS.map((n) => n.href)).toEqual(expect.arrayContaining(["/reviews/", "/best/", "/ecosystem/", "/submit/", "/favorites/", "/recent/"]));
     expect(MORE.map((n) => n.href)).toEqual(expect.arrayContaining(["/best/", "/methodology/", "/about/", "/contact/"]));
   });
 

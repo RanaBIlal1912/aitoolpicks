@@ -38,8 +38,9 @@ const built = fs.existsSync(path.join(root, "out/index.html"));
 describe.skipIf(!built)("the built pages state the same numbers", () => {
   it("tools directory", () => {
     const t = text("tools")!;
-    expect(t).toContain(`${TOOLS.length} tools across ${CATEGORIES.length} categories`);
-    expect(t).toContain(`fully verified for ${verified} of them`);
+    // The directory page is the search and the results; it states the catalog size in its own count line.
+    expect(t).toContain(`${TOOLS.length} in the directory`);
+    for (const c of CATEGORIES) expect(t, c.slug).toContain(`${c.short.replace(/&/g, "&amp;")} ${toolsInCategory(c.slug).length}`);
   });
   it("home page", () => {
     const t = text("")!;
