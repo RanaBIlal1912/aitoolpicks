@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { COMPANIES, getCompany } from "@/data/companies";
+import { CATEGORIES } from "@/data/tools";
 import { pageMeta } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import ToolLogo from "@/components/ToolLogo";
@@ -25,6 +26,10 @@ export default async function CompanyPage({ params }: Props) {
   const { slug } = await params;
   const c = getCompany(slug);
   if (!c) notFound();
+  const verified = c.tools.filter((t) => t.pricingStatus === "verified").length;
+  const free = c.tools.filter((t) => t.freePlan === true).length;
+  const cats = CATEGORIES.filter((k) => c.tools.some((t) => t.category === k.slug));
+  const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? "" : "s"}`;
   return (
     <>
       <PageHeader
@@ -37,7 +42,18 @@ export default async function CompanyPage({ params }: Props) {
         ]}
       />
       <div className="mx-auto max-w-7xl px-5">
-        <section aria-labelledby="prod-title">
+        <section aria-labelledby="glance-title">
+          <h2 id="glance-title" className="section-title text-white">
+            At a glance
+          </h2>
+          <p className="mt-4 max-w-3xl text-soft">
+            {c.name} has {plural(c.tools.length, "product")} in our catalog
+            {cats.length > 0 ? `, across ${cats.map((k) => k.label).join(", ")}` : ""}. Pricing is verified from the official page for {verified} of them
+            {free > 0 ? `, and a free plan is documented for ${free}` : ""}. Each product page lists its plans, limits and what we could not confirm, with the date we last checked.
+          </p>
+        </section>
+
+        <section className="mt-12" aria-labelledby="prod-title">
           <h2 id="prod-title" className="section-title text-white">
             Products
           </h2>
@@ -98,6 +114,33 @@ export default async function CompanyPage({ params }: Props) {
             </ul>
           </section>
         )}
+
+        <section className="mt-12" aria-labelledby="explore-title">
+          <h2 id="explore-title" className="section-title text-white">
+            Keep exploring
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-3 text-sm">
+            {c.tools.map((t) => (
+              <li key={t.id}>
+                <Link href={`/tools/${t.id}/alternatives/`} className="underline">
+                  Alternatives to {t.name}
+                </Link>
+              </li>
+            ))}
+            {cats.map((k) => (
+              <li key={k.slug}>
+                <Link href={`/tools/category/${k.slug}/`} className="underline">
+                  All {k.label} tools
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/compare/" className="underline">
+                Compare tools side by side
+              </Link>
+            </li>
+          </ul>
+        </section>
 
         <p className="mt-12 text-sm text-muted">
           <Link href="/ecosystem/" className="underline">
