@@ -76,6 +76,8 @@ export type ToolRecord = {
   hue: number;
   review?: string;
   subcategory?: string;
+  /** One line saying what the tool does. Used instead of the first feature when that is a plan or billing item. */
+  keyFeature?: string;
   profile?: ToolProfile;
   added: string;
   openSource?: { status: "open-source" | "source-available" | "open-weights" | "proprietary"; note: string; source: string };

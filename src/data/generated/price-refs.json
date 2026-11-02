@@ -85,9 +85,9 @@
   "amount": 16,
   "currency": "USD",
   "per": "seat per month",
-  "billing": "billing cycle not labelled",
+  "billing": "billed annually",
   "source": "https://www.figma.com/pricing/",
-  "checked": "2026-10-30"
+  "checked": "2026-11-02"
  },
  "firefly": {
   "plan": "Firefly Standard",

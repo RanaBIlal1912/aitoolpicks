@@ -119,5 +119,6 @@
     "notes": "Product active. The page shows Free $0; Premium $16; Team $15 and Business $25 per user/month (Team and Business need 2 users); Enterprise by sales. The pricing toggle (Monthly / Annually, save 25%+) could not be switched, so the page text does not say which billing period these figures belong to; an earlier check also saw $20, $19 and $34. Kept partial.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Records and transcribes calls with instant AI summaries"
 }

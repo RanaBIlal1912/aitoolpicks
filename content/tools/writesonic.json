@@ -144,5 +144,6 @@
     "notes": "Product active (now positioned as an AI search visibility platform). USD per month, billed annually: Starter $79 (saves $240 a year), Basic $199 (saves $600), Growth $399 (saves $1,200); Enterprise custom. The Monthly toggle was not read, so monthly-billing prices are not recorded.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "AI search visibility and content platform"
 }

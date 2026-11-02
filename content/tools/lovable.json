@@ -119,5 +119,6 @@
     "notes": "Product active. Page shows a Monthly / Yearly (2 months free) toggle with Monthly figures: Free $0 (no card needed); Pro $25/month with 100 monthly credits; Business $50/month with 100 Business credits; Enterprise volume-based with a platform fee. Yearly prices were not read. Corrected: Pro and Business prices were previously not captured.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Describe an app and have AI build it"
 }

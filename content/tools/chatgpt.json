@@ -195,5 +195,118 @@
     "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees: Free PKR 0, Go PKR 1,400/month, Plus PKR 5,700/month, Pro from PKR 27,999/month (three usage tiers). Business and Enterprise sit on a separate tab that was not read. The USD figures kept here ($20 Plus; $100/$200/$500 Pro tiers) come from an earlier check and were not shown in this browser, so they stay partially verified.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "One assistant to chat, work and code in",
+    "capabilities": [
+      {
+        "title": "Get help with everyday questions",
+        "text": "Explain concepts, draft messaging, search the web, compare options and think through a decision."
+      },
+      {
+        "title": "Turn rough notes into polished writing",
+        "text": "Draft messages, notes, plans, stories and posts, and keep editing as your thinking develops."
+      },
+      {
+        "title": "Finish work tasks start to finish",
+        "text": "ChatGPT Work can create and edit docs, slide decks, spreadsheets, charts, PDFs and other deliverables using the tools and apps you already use."
+      },
+      {
+        "title": "Write, test and review code",
+        "text": "Codex is the coding agent that sits alongside ChatGPT, from understanding and planning to writing, testing, reviewing and shipping code."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Chat",
+        "text": "The everyday mode: questions, learning, ideas and web search."
+      },
+      {
+        "name": "ChatGPT Work",
+        "text": "Creates and edits documents, decks, spreadsheets and charts from your own files and apps."
+      },
+      {
+        "name": "Codex",
+        "text": "A coding agent for understanding a project and for writing, debugging and reviewing code."
+      },
+      {
+        "name": "Images",
+        "text": "Create images from a prompt, explore visual directions, or generate graphic designs for flyers and branding."
+      },
+      {
+        "name": "Voice",
+        "text": "Talk with ChatGPT in real time to brainstorm, practise or learn when speaking is easier than typing."
+      },
+      {
+        "name": "Connected work apps",
+        "text": "Connect to internal files and apps such as Gmail and Slack to build deliverables and automate tasks."
+      },
+      {
+        "name": "Privacy and safety controls",
+        "text": "You choose how your data is used, and Parental Controls let parents set safeguards for teen users."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Everyday users",
+        "text": "Chat is described as being for questions, learning and everyday help."
+      },
+      {
+        "who": "Professionals and teams",
+        "text": "ChatGPT Work is for completing work tasks, with Business and Enterprise plans for organisations."
+      },
+      {
+        "who": "Developers and technical workers",
+        "text": "Codex covers coding and technical work."
+      },
+      {
+        "who": "Families",
+        "text": "Parental Controls are offered for teen users."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Draft a plan from rough notes",
+        "text": "Paste your thoughts and ask for a clear, polished version you can keep editing."
+      },
+      {
+        "title": "Build a deck or spreadsheet from your own files",
+        "text": "Use ChatGPT Work with the apps you already use to produce the finished document."
+      },
+      {
+        "title": "Debug code or learn a project",
+        "text": "Write, debug and improve code, or ask how a software project works."
+      },
+      {
+        "title": "Make a flyer or branding visual",
+        "text": "Describe the design and explore visual directions before you settle on one."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try ChatGPT",
+        "text": "Use the Try ChatGPT button on the site, or download the app."
+      },
+      {
+        "step": "Check which plan has what",
+        "text": "The site notes that the new experience is available to all plans on macOS and Windows desktop, and to Plus, Pro, Business, Enterprise and Edu on web and mobile."
+      },
+      {
+        "step": "Choose a plan",
+        "text": "ChatGPT is offered in plans for personal use and for business and enterprise."
+      },
+      {
+        "step": "Set your privacy choices",
+        "text": "Decide how your data may be used from the privacy controls."
+      }
+    ],
+    "sources": [
+      {
+        "label": "ChatGPT overview",
+        "url": "https://openai.com/chatgpt/overview/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

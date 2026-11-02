@@ -113,5 +113,6 @@
     "notes": "Product active (visual automation; credits are the billing unit). The pricing page FAQ confirms the Free plan has 1,000 credits per month, and that Core, Pro and Teams are paid plans (annual payment is cheaper than monthly; Enterprise accepts wire transfer). The plan cards and their prices are not present in the page text this browser could read, so no paid price is recorded. Needs manual review.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Visual automation platform for connecting apps"
 }

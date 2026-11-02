@@ -191,7 +191,7 @@ export default async function ToolPage({ params }: Props) {
                 ) : (
                   <div className="glass rounded-[22px] p-6 text-soft">
                     <p>{t.description}</p>
-                    <p className="mt-3 text-sm text-muted">Key feature: {t.features[0] ?? t.tagline}</p>
+                    <p className="mt-3 text-sm text-muted">Key feature: {t.keyFeature ?? t.features[0] ?? t.tagline}</p>
                   </div>
                 )}
                 <ToolShot id={t.id} name={t.name} className="mt-6 max-w-2xl" />

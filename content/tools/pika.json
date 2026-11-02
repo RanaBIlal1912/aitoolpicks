@@ -157,5 +157,6 @@
     "notes": "Product active. Monthly view, USD: Free (no monthly credits, credit packs only), Starter $10/month with 900 credits, Creator $35/month with 3,150 credits; a Yearly toggle (save 20%) exists. Fancy and Enterprise were not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "AI video and image generation"
 }

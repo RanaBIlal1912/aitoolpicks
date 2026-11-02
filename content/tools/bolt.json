@@ -137,5 +137,6 @@
     "notes": "Product active (AI app and website builder). Free $0, Pro $25/month billed monthly, Teams $30/member/month billed monthly, Enterprise custom annual contract. A yearly toggle (save up to 28%) exists; yearly prices were not read. Pro now lists 10M tokens/month with rollover, 100 MB uploads, 1M web requests per month; the page says taxes are extra.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Browser-based AI app builder: prompt, run and deploy full-stack apps"
 }

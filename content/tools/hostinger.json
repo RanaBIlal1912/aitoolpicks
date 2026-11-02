@@ -138,5 +138,6 @@
     "notes": "Company active. The Websites tab shows a Black Friday offer: Premium is $2.49/month only on a 48-month plan (list $12.19; 'today you pay $119.52 for 48 months; renews at $10.99/month'). Corrected: $2.49 was stored as a plain monthly price, but it is a promotional 48-month price and the renewal rate is much higher. Other plans (Unlimited, Cloud Startup, Agency) were not visible in the part read, so their stored prices are unconfirmed.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Web hosting, VPS and a website builder for first-time site owners"
 }

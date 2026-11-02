@@ -49,6 +49,16 @@ describe("researched tool profiles", () => {
   });
 });
 
+describe("the key feature line", () => {
+  it("says what the tool does, not what a plan includes", () => {
+    const billing = /(plans?|credits?|seats?|allowance|executions|billed|priced|metered|per (month|token|minute|outcome|user))/i;
+    for (const r of RECORDS) {
+      const kf = r.keyFeature ?? r.features[0];
+      expect(kf, `${r.id}: "${kf}"`).not.toMatch(billing);
+    }
+  });
+});
+
 describe("alternatives and related tools", () => {
   it("never repeat a tool: not itself, not each other, not twice", () => {
     for (const t of TOOLS) {
@@ -63,9 +73,28 @@ describe("alternatives and related tools", () => {
     }
   });
 
-  it("finds related tools for most tools", () => {
-    const withRelated = TOOLS.filter((t) => relatedFor(t.id, alternativesFor(t.id, 4).map((a) => a.tool.id), 4).length > 0);
-    expect(withRelated.length).toBeGreaterThanOrEqual(Math.floor(TOOLS.length * 0.9));
+  it("only suggests tools that are close: the same subcategory, or the same or a shared category", () => {
+    for (const t of TOOLS) {
+      const alts = alternativesFor(t.id, 4).map((a) => a.tool.id);
+      for (const r of relatedFor(t.id, alts, 4)) {
+        const sameCat = r.category === t.category;
+        const sharedSecond = r.categories.some((c) => c !== t.category && t.categories.includes(c));
+        expect(sameCat || sharedSecond, `${t.id} -> ${r.id}`).toBe(true);
+      }
+    }
+  });
+
+  it("does not repeat the known bad pairings from the audit", () => {
+    const rel = (id: string) => relatedFor(id, alternativesFor(id, 4).map((a) => a.tool.id), 4).map((x) => x.id);
+    expect(rel("intercom")).not.toContain("surfer");
+    expect(rel("intercom")).not.toContain("writesonic");
+    expect(rel("surfer")).not.toContain("intercom");
+    expect(rel("hex")).not.toContain("cursor");
+    expect(rel("hex")).not.toContain("replit");
+    expect(rel("langchain")).not.toContain("github-copilot");
+    expect(rel("langchain")).not.toContain("whisper");
+    expect(rel("deepgram")).not.toContain("suno");
+    expect(rel("deepgram")).not.toContain("langsmith");
   });
 });
 
