@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS, getTool, toolsInCategory } from "@/data/tools";
-import { NEWS } from "@/data/news";
+import { LISTED_NEWS } from "@/data/news";
 import type { Article } from "@/data/articles";
 import ToolLogo from "../ToolLogo";
 import NewsVisual from "../NewsVisual";
@@ -12,15 +12,17 @@ import { logoFor } from "@/data/logos";
 import { withBase } from "@/lib/site";
 
 /** Hero artwork: the 3D robot with real product logos floating around it. */
-export function HeroOrbit() {
-  const tiles: { id: string; pos: string; size: number; delay: string }[] = [
-    { id: "chatgpt", pos: "left-[4%] top-[8%]", size: 62, delay: "0s" },
-    { id: "midjourney", pos: "right-[18%] top-[0%]", size: 64, delay: "-1.5s" },
-    { id: "gemini", pos: "right-[0%] top-[18%]", size: 58, delay: "-3s" },
-    { id: "notion", pos: "left-[0%] top-[44%]", size: 56, delay: "-2s" },
-    { id: "canva", pos: "right-[4%] top-[48%]", size: 58, delay: "-4s" },
-    { id: "figma", pos: "left-[12%] bottom-[8%]", size: 54, delay: "-2.5s" },
+/** `ids` are the tools shown as floating logos, one per slot; the page chooses them so none repeats a tool shown in another section. */
+export function HeroOrbit({ ids }: { ids: string[] }) {
+  const SLOTS = [
+    { pos: "left-[4%] top-[8%]", size: 62, delay: "0s" },
+    { pos: "right-[18%] top-[0%]", size: 64, delay: "-1.5s" },
+    { pos: "right-[0%] top-[18%]", size: 58, delay: "-3s" },
+    { pos: "left-[0%] top-[44%]", size: 56, delay: "-2s" },
+    { pos: "right-[4%] top-[48%]", size: 58, delay: "-4s" },
+    { pos: "left-[12%] bottom-[8%]", size: 54, delay: "-2.5s" },
   ];
+  const tiles = ids.slice(0, SLOTS.length).map((id, i) => ({ id, ...SLOTS[i] }));
   return (
     <RobotHero
       logos={tiles.flatMap((t) => {
@@ -127,7 +129,7 @@ export function FeaturedTools({ ids }: { ids: string[] }) {
 }
 
 export function NewsPanel() {
-  const list = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
+  const list = [...LISTED_NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2);
   return (
     <div className="panel p-5">
       <PanelHead icon={<path d="M4 5h13v14H6a2 2 0 01-2-2zM17 9h3v8a2 2 0 01-2 2M8 9h6M8 13h6" />} title="Latest AI News" sub="From the original sources" href="/news/" cta="View all news" />

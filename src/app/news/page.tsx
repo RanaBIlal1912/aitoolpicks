@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
-import { NEWS, NEWS_CHECKED, NEWS_KINDS, NEWS_TAGS, topStories } from "@/data/news";
+import { LISTED_NEWS, NEWS_CHECKED, NEWS_KINDS, NEWS_TAGS, topStories } from "@/data/news";
 import { getTool } from "@/data/tools";
 import { SITE, absUrl, withBase } from "@/lib/site";
 import PageHeader from "@/components/PageHeader";
@@ -18,19 +18,19 @@ meta.alternates = { ...meta.alternates, types: { "application/rss+xml": absUrl("
 export const metadata = meta;
 
 export default function NewsPage() {
-  const all = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
+  const all = [...LISTED_NEWS].sort((a, b) => b.date.localeCompare(a.date));
   const top = topStories(4);
   const [lead, ...side] = top;
   const popular = all.filter((n) => n.importance >= 2).slice(0, 4);
 
   const toolCounts = new Map<string, number>();
-  for (const n of NEWS) for (const t of n.tools ?? []) toolCounts.set(t, (toolCounts.get(t) ?? 0) + 1);
+  for (const n of LISTED_NEWS) for (const t of n.tools ?? []) toolCounts.set(t, (toolCounts.get(t) ?? 0) + 1);
   const toolsInNews = [...toolCounts.entries()]
     .sort((a, b) => b[1] - a[1])
     .map(([id]) => getTool(id))
     .filter((t): t is NonNullable<typeof t> => !!t)
     .slice(0, 8);
-  const topicCounts = NEWS_TAGS.map((t) => [t, NEWS.filter((n) => n.tag === t).length] as const).filter(([, c]) => c > 0);
+  const topicCounts = NEWS_TAGS.map((t) => [t, LISTED_NEWS.filter((n) => n.tag === t).length] as const).filter(([, c]) => c > 0);
 
   return (
     <>
@@ -85,7 +85,7 @@ export default function NewsPage() {
             </ul>
             <h3 className="mt-6 text-sm font-bold uppercase tracking-[0.12em] text-muted">By type</h3>
             <ul className="mt-3 flex flex-wrap gap-2">
-              {NEWS_KINDS.filter((k) => NEWS.some((n) => n.kind === k)).map((k) => (
+              {NEWS_KINDS.filter((k) => LISTED_NEWS.some((n) => n.kind === k)).map((k) => (
                 <li key={k}>
                   <a href={withBase(`/news/?type=${encodeURIComponent(k)}`)} className="chip">
                     {k}

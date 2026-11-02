@@ -1,4 +1,4 @@
-import { NEWS } from "@/data/news";
+import { LISTED_NEWS } from "@/data/news";
 import { SITE, absUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -7,7 +7,7 @@ const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 
 /** A real subscription mechanism: an RSS feed of the stories already published on /news/ (summary, our note and a link to the source). */
 export function GET() {
-  const items = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
+  const items = [...LISTED_NEWS].sort((a, b) => b.date.localeCompare(a.date));
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>

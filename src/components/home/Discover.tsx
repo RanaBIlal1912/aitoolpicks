@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PRICING_MODEL_LABEL, TOOLS, getCategory, getTool, type Tool } from "@/data/tools";
 import { catColors } from "@/data/palette";
-import type { NewsBuzz, Trending } from "@/lib/trending";
+import type { TrendingRow } from "@/lib/home-tools";
 import ToolLogo from "../ToolLogo";
 import { Head } from "./Sections";
 
@@ -20,17 +20,11 @@ function PriceChips({ tool }: { tool: Tool }) {
 }
 
 /**
- * Trending tools. Two honest sources, in this order: measured page views (content/trending.json, when it exists) or the number of
- * news stories on this site that mention the tool. The basis is printed on the section, and the card badge says which one it is.
+ * Trending tools. The page decides the rows (see allocateHomeTools): measured page views when content/trending.json exists, otherwise the
+ * number of news stories on this site that mention the tool. `lead` states the basis, and each badge says which one it is.
  */
-export function TrendingTools({ measured, buzz }: { measured: Trending | null; buzz: NewsBuzz[] | null }) {
-  const rows = measured
-    ? measured.items.map((i) => ({ id: i.id, badge: `${i.views} views` }))
-    : (buzz ?? []).map((b) => ({ id: b.id, badge: `In ${b.stories} news ${b.stories === 1 ? "story" : "stories"}` }));
+export function TrendingTools({ rows, lead }: { rows: TrendingRow[]; lead: string }) {
   if (rows.length === 0) return null;
-  const lead = measured
-    ? `Measured page views from ${measured.period.from} to ${measured.period.to} (${measured.source}).`
-    : "Ranked by how many news stories on this site mention each tool. This is coverage in our own feed, not page-view or usage data.";
   return (
     <section aria-label="Trending AI tools">
       <Head n="01" eyebrow="Trending" title="Trending AI tools" lead={lead} href="/tools/" cta="Browse all tools" />

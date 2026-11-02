@@ -37,23 +37,29 @@ export function Head({ n, eyebrow, title, lead, href, cta, tone = "dark" }: { n:
 }
 
 /** A slow ribbon of the real product logos in the catalog. Pure CSS animation; paused for reduced motion. */
-export function LogoRibbon() {
-  const list = TOOLS.filter((t) => t.openSource !== "open-source").slice(0, 20);
-  const row = (suffix: string) =>
-    list.map((t) => (
-      <li key={t.id + suffix} className="shrink-0">
-        <Link prefetch={false} href={`/tools/${t.id}/`} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] py-2 pl-2 pr-5 no-underline transition-colors hover:border-white/30 hover:bg-white/[0.08]">
-          <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
-          <span className="text-sm font-semibold text-soft">{t.name}</span>
-        </Link>
-      </li>
-    ));
+export function LogoRibbon({ tools: list }: { tools: Tool[] }) {
+  // The track holds the list twice so the loop is seamless. The second copy is decoration only: no links, hidden from assistive tech,
+  // so each tool has one link and is announced once.
   return (
     <section aria-label="Tools in the directory" className="relative border-y border-white/10 bg-black/20 py-5">
       <div className="marquee">
         <ul className="marquee-track">
-          {row("a")}
-          {row("b")}
+          {list.map((t) => (
+            <li key={t.id} className="shrink-0">
+              <Link prefetch={false} href={`/tools/${t.id}/`} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] py-2 pl-2 pr-5 no-underline transition-colors hover:border-white/30 hover:bg-white/[0.08]">
+                <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
+                <span className="text-sm font-semibold text-soft">{t.name}</span>
+              </Link>
+            </li>
+          ))}
+          {list.map((t) => (
+            <li key={t.id + "-loop"} aria-hidden="true" className="shrink-0">
+              <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] py-2 pl-2 pr-5">
+                <ToolLogo id={t.id} name={t.name} hue={t.hue} size={36} />
+                <span className="text-sm font-semibold text-soft">{t.name}</span>
+              </span>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
@@ -150,7 +156,7 @@ export function PhotoBand({ checked, total }: { checked: number; total: number }
 /** Horizontal, snap-scrolling category cards with the real logos of the tools inside. */
 const CAT_PHOTOS: PhotoId[] = ["circuit-blue", "light-dark-room", "server-aisle", "silicon-wafer", "fibre-switch", "circuit-macro", "processor-tweezers", "cable-network"];
 
-export function CategoryRail() {
+export function CategoryRail({ logos = true }: { logos?: boolean }) {
   return (
     <ul className="rail -mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-4" aria-label="Categories">
       {CATEGORIES.map((c, ci) => {
@@ -168,13 +174,17 @@ export function CategoryRail() {
               </span>
               <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0f1226] via-[#0f1226]/72 to-transparent" />
               <span aria-hidden="true" className="absolute -right-6 -top-6 h-28 w-28 rounded-full opacity-40 blur-2xl transition-opacity group-hover:opacity-70" style={{ background: a }} />
-              <span className="relative flex -space-x-2">
-                {tools.slice(0, 4).map((t) => (
-                  <span key={t.id} className="rounded-xl ring-2 ring-[#0f1226]">
-                    <ToolLogo id={t.id} name={t.name} hue={t.hue} size={38} />
-                  </span>
-                ))}
-              </span>
+              {logos ? (
+                <span className="relative flex -space-x-2">
+                  {tools.slice(0, 4).map((t) => (
+                    <span key={t.id} className="rounded-xl ring-2 ring-[#0f1226]">
+                      <ToolLogo id={t.id} name={t.name} hue={t.hue} size={38} />
+                    </span>
+                  ))}
+                </span>
+              ) : (
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 font-display text-lg font-extrabold text-white">{String(ci + 1).padStart(2, "0")}</span>
+              )}
               <span className="relative">
                 <span className="block font-display text-xl font-bold leading-tight text-white">{c.label}</span>
                 <span className="mt-1 block text-sm text-soft">

@@ -3,7 +3,7 @@ import { ARTICLES } from "@/data/articles";
 import { REVIEWS } from "@/data/reviews";
 import { COMPARISONS } from "@/data/compare";
 import { CATEGORIES, TOOLS } from "@/data/tools";
-import { NEWS } from "@/data/news";
+import { LISTED_NEWS } from "@/data/news";
 import { ROUNDUPS } from "@/data/roundups";
 import { TOPICS } from "@/data/articles";
 import { COMPANIES } from "@/data/companies";
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...TOOLS.map((t) => `/tools/${t.id}/`),
     ...TOOLS.map((t) => `/tools/${t.id}/alternatives/`),
     ...COMPANIES.map((c) => `/ecosystem/companies/${c.slug}/`),
-    ...NEWS.map((n) => `/news/${n.slug}/`),
+    ...LISTED_NEWS.map((n) => `/news/${n.slug}/`),
     ...ROUNDUPS.map((r) => `/best/${r.slug}/`),
     ...CATEGORIES.map((c) => `/tools/category/${c.slug}/`),
     ...TOPICS.map((t) => `/blog/topic/${t.id}/`),
