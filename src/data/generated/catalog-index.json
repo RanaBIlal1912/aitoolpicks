@@ -733,10 +733,10 @@
   "openSource": null,
   "added": "2026-10-29",
   "pricingModel": "freemium",
-  "pricingStatus": "partial",
-  "fromUsd": 16,
+  "pricingStatus": "verified",
+  "fromUsd": 20,
   "verified": "2026-10-30",
-  "checked": "2026-10-30",
+  "checked": "2026-11-02",
   "pricingSource": "https://www.figma.com/pricing/",
   "plans": [
    {
@@ -745,7 +745,7 @@
    },
    {
     "name": "Professional (Full seat)",
-    "price": "$16/seat/mo"
+    "price": "$20/seat/mo monthly · $16/seat/mo yearly"
    },
    {
     "name": "Organization (Full seat)",
