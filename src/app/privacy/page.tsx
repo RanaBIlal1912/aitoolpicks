@@ -60,7 +60,7 @@ export default function PrivacyPage() {
           </p>
           <ul>
             <li>
-              <strong>What is measured:</strong> pages viewed, how you arrived (for example a search engine or another site), clicks on links that leave this site (including the tool links), whether you scroll to the bottom of a page, approximate
+              <strong>What is measured:</strong> pages viewed, how you arrived (for example a search engine or another site), clicks on our &ldquo;Visit&rdquo; and &ldquo;Try&rdquo; buttons that take you to a tool&rsquo;s website (which tool, and whether the link is an affiliate link; other links that leave this site are not counted), whether you scroll to the bottom of a page, approximate
               location (worked out from your IP address; Google states that it does not log or store IP addresses for Google Analytics 4), and the kind of device, browser and operating system. We have switched off Google&rsquo;s optional
               collection of finer location and device detail (city, device brand and model, screen size, and exact browser and system versions) and its optional measuring of form use, file downloads, video and on-site search.
             </li>
