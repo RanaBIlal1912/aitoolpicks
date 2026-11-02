@@ -508,6 +508,14 @@ table.cmp thead th:first-child {
     padding-block: 0.5rem;
     margin-block: -0.5rem;
   }
+  /* Small text links in footers, sidebars, nav lists and body copy: vertical padding on an inline link widens the tap area to about 44px without moving anything. */
+  footer a:not([class*="btn"]),
+  aside a:not([class*="btn"]),
+  main nav a:not([class*="btn"]),
+  main p a:not([class*="btn"]),
+  main li a:not([class*="btn"]) {
+    padding-block: 0.7rem;
+  }
 }
 table.cmp tr.cmp-diff td,
 table.cmp tr.cmp-diff th {
