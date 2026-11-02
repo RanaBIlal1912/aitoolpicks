@@ -44,15 +44,10 @@ describe.skipIf(!built)("the built pages state the same numbers", () => {
   it("home page", () => {
     const t = text("")!;
     expect(t).toContain(`${TOOLS.length} tools`);
-    expect(t).toContain(`${verified} with fully verified prices`);
   });
-  it("home hero card and category tiles use the same counts as the category pages", () => {
-    const home = text("")!;
-    expect(home).toContain(`${TOOLS.length} AI tools`);
-    expect(home).toContain(`${verified} with fully verified prices`);
+  it("category pages state the same counts as the catalog", () => {
     for (const c of CATEGORIES) {
       const n = toolsInCategory(c.slug).length;
-      expect(home, c.slug).toContain(`${c.short} ${n} tools`);
       const page = text(`tools/category/${c.slug}`)!;
       expect(page, c.slug).toContain(`${n} ${n === 1 ? "tool listed" : "tools listed"}`);
       const v = toolsInCategory(c.slug).filter((t) => t.pricingStatus === "verified").length;

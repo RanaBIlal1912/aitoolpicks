@@ -87,7 +87,7 @@ function RobotSvg() {
  * building or drawing runs on the main thread of the page; it starts about 2.7 s after load or on the first interaction, and fades in over the SVG.
  * Reduced motion, data saving, no worker or OffscreenCanvas support, no WebGL, or a software-only renderer all keep the flat robot.
  */
-export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; stat: ReactNode; logos: SceneLogo[] }) {
+export default function RobotHero({ tiles, logos }: { tiles: ReactNode; logos: SceneLogo[] }) {
   const box = useRef<HTMLDivElement>(null);
   const cv = useRef<HTMLCanvasElement>(null);
   const [gl, setGl] = useState(false);
@@ -235,7 +235,7 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
   }, [gl]);
 
   return (
-    <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[560px]">
+    <div ref={box} className="relative mx-auto aspect-[1/1.02] w-full max-w-[420px]">
       <span aria-hidden="true" className="orb absolute left-1/2 top-[52%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60" />
       <div className={`absolute inset-[4%] transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>
         <RobotSvg />
@@ -246,7 +246,6 @@ export default function RobotHero({ tiles, stat, logos }: { tiles: ReactNode; st
         </div>
       )}
       <div className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>{tiles}</div>
-      {stat}
       {limit && (
         <button type="button" onClick={optIn} className="btn-ghost btn-sm absolute bottom-1 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap" title={limit === "reduced-motion" ? "Your device asks for reduced motion, so the 3D robot is off." : "Data saving is on, so the 3D robot is off."}>
           ▶ Turn on 3D animation
