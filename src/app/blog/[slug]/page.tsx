@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { GUIDES, getArticle, getArticleParts, articlesInTopic, TOPICS } from "@/data/articles";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
+import { getTool } from "@/data/tools";
+import ToolLogo from "@/components/ToolLogo";
 import PageHeader from "@/components/PageHeader";
 import ProseHtml from "@/components/ProseHtml";
 import ArticleCard, { formatDate } from "@/components/ArticleCard";
@@ -37,6 +39,7 @@ export default async function GuidePage({ params }: Props) {
     .concat(GUIDES.filter((x) => x.topic !== a.topic))
     .slice(0, 3);
 
+  const guideTools = a.tools.map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t);
   return (
     <>
       <PageHeader
@@ -78,7 +81,30 @@ export default async function GuidePage({ params }: Props) {
               <ProseHtml html={html} />
             </div>
           </div>
-          <aside className="hidden lg:block">
+          {guideTools.length > 0 && (
+            <section className="min-w-0 max-w-3xl lg:col-start-1" aria-labelledby="guide-tools">
+              <h2 id="guide-tools" className="section-title text-white">
+                Tools in this guide
+              </h2>
+              <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+                {guideTools.map((t) => (
+                  <li key={t.id} className="glass flex items-center gap-4 rounded-2xl p-4">
+                    <ToolLogo id={t.id} name={t.name} hue={t.hue} size={44} />
+                    <div className="min-w-0">
+                      <Link href={`/tools/${t.id}/`} className="font-bold text-white no-underline hover:underline">
+                        {t.name}
+                      </Link>
+                      <p className="truncate text-sm text-muted">{t.tagline}</p>
+                      <Link href={`/tools/${t.id}/alternatives/`} className="text-xs text-soft underline">
+                        Alternatives
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+          <aside className="hidden lg:block lg:row-span-2 lg:col-start-2 lg:row-start-1">
             <div className="sticky top-24">
               <Toc items={toc} />
             </div>
