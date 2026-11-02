@@ -81,5 +81,102 @@
     "notes": "Project active. The repository page describes it as 'Build resilient agents.' and shows the MIT license. No pricing: open-source software.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An agent runtime and low-level orchestration framework",
+    "capabilities": [
+      {
+        "title": "Add human-in-the-loop checks",
+        "text": "Add moderation and quality controls that steer and approve agent actions."
+      },
+      {
+        "title": "Build flexible agent workflows",
+        "text": "Low-level primitives support single-agent, multi-agent and hierarchical control flows in one framework."
+      },
+      {
+        "title": "Remember across sessions",
+        "text": "Built-in memory stores conversation histories and keeps context."
+      },
+      {
+        "title": "Stream what the agent is doing",
+        "text": "First-class token-by-token streaming shows reasoning and actions in real time."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Human-in-the-loop",
+        "text": "Checks that approve or redirect an agent before it acts."
+      },
+      {
+        "name": "Control flows",
+        "text": "Single-agent, multi-agent and hierarchical designs."
+      },
+      {
+        "name": "Persistent memory",
+        "text": "Keeps context from one interaction to the next."
+      },
+      {
+        "name": "Streaming",
+        "text": "Designed with streaming workflows in mind."
+      },
+      {
+        "name": "MIT licence",
+        "text": "Open-source and free to use."
+      },
+      {
+        "name": "LangChain Academy course",
+        "text": "An Introduction to LangGraph covers state, memory and human-in-the-loop."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers who want fine-grained control",
+        "text": "The framework is low-level by design."
+      },
+      {
+        "who": "Developers who want high-level abstractions",
+        "text": "The page says it serves both."
+      },
+      {
+        "who": "Companies with task-specific needs",
+        "text": "For cases where a single black-box architecture does not fit."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Conversational agents",
+        "text": "Customer quotes on the page mention these."
+      },
+      {
+        "title": "Complex task automation",
+        "text": "Agents that work through multi-step jobs."
+      },
+      {
+        "title": "Multi-actor workflows",
+        "text": "Several agents cooperating on one outcome."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Open the GitHub repository",
+        "text": "Linked from the Start building button."
+      },
+      {
+        "step": "Read the documentation",
+        "text": "Linked from Read the docs; installation steps live there."
+      },
+      {
+        "step": "Take the course",
+        "text": "The LangChain Academy Introduction to LangGraph."
+      }
+    ],
+    "sources": [
+      {
+        "label": "LangGraph overview",
+        "url": "https://www.langchain.com/langgraph",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

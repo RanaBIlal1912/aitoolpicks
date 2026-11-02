@@ -120,5 +120,9 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Describe an app and have AI build it"
+  "keyFeature": "Describe an app and have AI build it",
+  "profileBlocked": {
+    "reason": "The official homepage at lovable.dev loads its content with scripts and showed only a one-line heading when read ('Build something Lovable'), so there was nothing to base a profile on.",
+    "checked": "2026-11-02"
+  }
 }

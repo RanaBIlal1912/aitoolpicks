@@ -159,5 +159,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Generative AI for images, video, audio and translation"
+  "keyFeature": "Generative AI for images, video, audio and translation",
+  "profile": {
+    "headline": "Adobe's creative app for generating and editing images, video, audio and vectors",
+    "capabilities": [
+      {
+        "title": "Generate images in many styles",
+        "text": "From text, an existing image or a sketch, in styles such as graphic design, drawing, pixel art, anime art and sticker."
+      },
+      {
+        "title": "Edit photos with AI",
+        "text": "Remove a background, an object or a person, upscale an image, expand it, or generate a new background."
+      },
+      {
+        "title": "Make and translate video",
+        "text": "Generate video from text or an image, create talking avatars and animation, edit and upscale video, and translate it."
+      },
+      {
+        "title": "Make audio",
+        "text": "Generate speech and character voices, dub with AI, and generate music and sound effects."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Firefly Boards",
+        "text": "An infinite-canvas workspace for ideation and collaboration."
+      },
+      {
+        "name": "Vision, storyboard and mood boards",
+        "text": "Generate boards to explore a concept."
+      },
+      {
+        "name": "Firefly AI Assistant",
+        "text": "Picks the right tool from a description of what you want."
+      },
+      {
+        "name": "Firefly Custom Models",
+        "text": "Train a model on your own images (public beta, per the page)."
+      },
+      {
+        "name": "Partner models",
+        "text": "The page lists models from Adobe, Google, OpenAI, Runway, Kling AI, Luma AI, Topaz and ElevenLabs."
+      },
+      {
+        "name": "Mobile apps",
+        "text": "Firefly also runs as a mobile app on iOS and Android."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Designers and art directors",
+        "text": "Brand identity exploration and concept mood boarding."
+      },
+      {
+        "who": "Photographers",
+        "text": "Photo editing tools such as object removal and upscaling."
+      },
+      {
+        "who": "Video editors",
+        "text": "B-roll, sound design and translation of finished videos."
+      },
+      {
+        "who": "Marketers and social creators",
+        "text": "Campaign assets and social media content."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Create campaign assets",
+        "text": "Generate and adapt images for a campaign."
+      },
+      {
+        "title": "Make social media content",
+        "text": "Produce graphics and short videos for each platform."
+      },
+      {
+        "title": "Add B-roll and sound design",
+        "text": "Generate footage and sound effects to fill gaps in a cut."
+      },
+      {
+        "title": "Translate a video",
+        "text": "Create versions in several languages."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Open Firefly",
+        "text": "Select Create now or Try Firefly now on the page."
+      },
+      {
+        "step": "Choose image or video",
+        "text": "Pick what you want to make."
+      },
+      {
+        "step": "Enter a prompt and pick a model",
+        "text": "Then select Generate."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Adobe Firefly",
+        "url": "https://www.adobe.com/products/firefly.html",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

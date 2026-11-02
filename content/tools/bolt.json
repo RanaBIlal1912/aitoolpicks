@@ -138,5 +138,114 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Browser-based AI app builder: prompt, run and deploy full-stack apps"
+  "keyFeature": "Browser-based AI app builder: prompt, run and deploy full-stack apps",
+  "profile": {
+    "headline": "Build websites, apps and prototypes by chatting with AI",
+    "capabilities": [
+      {
+        "title": "Describe what you want to build",
+        "text": "Type your idea in the prompt box, then choose Plan or Build now."
+      },
+      {
+        "title": "Pick the kind of project",
+        "text": "Website, New Slides, App or Prototype, or start from Figma, GitHub or a team template."
+      },
+      {
+        "title": "Let the agent check its own work",
+        "text": "Bolt tests, refactors and iterates automatically to cut down on errors."
+      },
+      {
+        "title": "Publish from the same place",
+        "text": "Bolt Cloud includes hosting with analytics and custom domains, databases, user management and authentication, and SEO optimisation."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Bolt Agent",
+        "text": "Routes each task to a model, with a Standard setting for general development and a Max mode for Pro users."
+      },
+      {
+        "name": "Bolt Cloud",
+        "text": "Hosting, unlimited databases, authentication and custom domains in one account."
+      },
+      {
+        "name": "Your own design system",
+        "text": "Build with your design system so the result stays on-brand."
+      },
+      {
+        "name": "Larger projects",
+        "text": "Built-in context management is meant to keep bigger projects workable."
+      },
+      {
+        "name": "Templates",
+        "text": "Production-ready starting points such as dashboards, storefronts and portfolios."
+      },
+      {
+        "name": "Import paths",
+        "text": "Start from a Figma file, a GitHub repository or a team template."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Product managers",
+        "text": "Turn an idea into a prototype to test with the team."
+      },
+      {
+        "who": "Entrepreneurs and marketers",
+        "text": "Launch a landing or campaign page with hosting and SEO included."
+      },
+      {
+        "who": "Agencies",
+        "text": "Deliver more client projects without adding headcount."
+      },
+      {
+        "who": "Small businesses and students",
+        "text": "Build a custom app without a developer, or turn a class project into a working app."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Prototype an idea",
+        "text": "Test a product concept with your team before any engineering time."
+      },
+      {
+        "title": "Launch a campaign page",
+        "text": "Ship a landing page with SEO and hosting already included."
+      },
+      {
+        "title": "Build an internal tool",
+        "text": "A small business can make a custom app without hiring a developer."
+      },
+      {
+        "title": "Finish a side project",
+        "text": "Turn a project into something that runs."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Describe the project",
+        "text": "Write what you want in the prompt box."
+      },
+      {
+        "step": "Choose Plan or Build now",
+        "text": "Plan first if you want to shape the approach."
+      },
+      {
+        "step": "Pick a starting point",
+        "text": "Website, New Slides, App or Prototype, or import from Figma, GitHub or a team template."
+      },
+      {
+        "step": "Sign in",
+        "text": "The site invites you to start building for free."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Bolt homepage",
+        "url": "https://bolt.new",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

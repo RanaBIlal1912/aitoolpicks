@@ -22,10 +22,16 @@ export function ProfileSection({ id, eyebrow, title, lead, children }: { id?: st
 const ICON = "M5 12l4.5 4.5L19 7";
 
 /** Shown on a tool without a researched profile, so the page says what is and is not there. */
-export function ProfileNotice({ name }: { name: string }) {
+export function ProfileNotice({ name, blocked }: { name: string; blocked?: { reason: string; checked: string } }) {
   return (
     <p className="glass rounded-2xl p-4 text-sm text-soft">
       A detailed profile of {name} has not been researched yet. This page shows what its verified record states; nothing has been filled in beyond that.
+      {blocked && (
+        <>
+          {" "}
+          <strong className="text-white">Why:</strong> {blocked.reason} (tried {formatChecked(blocked.checked)}).
+        </>
+      )}
     </p>
   );
 }

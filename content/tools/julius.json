@@ -143,5 +143,9 @@
     "notes": "Product active (now an AI workspace for analysis, research and creation). USD: Plus $20, Pro $45, Business $450 per month; the page has an Annual Billing (save 20%) / Monthly Billing toggle that could not be switched, so the billing period behind these figures is unconfirmed. Plus 2,000 credits a month, Pro 5,000, Business 60,000.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profileBlocked": {
+    "reason": "The official site at julius.ai blocks automated reading (HTTP 403) and, opened in a browser, shows only a prompt box and a list of template names (Excel, slides, website, video, image, browser agent), with no description of what the product does or who it is for.",
+    "checked": "2026-11-02"
   }
 }

@@ -120,5 +120,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Records and transcribes calls with instant AI summaries"
+  "keyFeature": "Records and transcribes calls with instant AI summaries",
+  "profile": {
+    "headline": "An AI notetaker that records and summarises your meetings, with or without a bot",
+    "capabilities": [
+      {
+        "title": "Capture notes your way",
+        "text": "Take notes with or without a bot joining the call."
+      },
+      {
+        "title": "Get summaries shortly after a call",
+        "text": "AI summaries are ready soon after the meeting ends."
+      },
+      {
+        "title": "Search what was said",
+        "text": "Searchable transcripts keep action items, key moments and context for later."
+      },
+      {
+        "title": "Ask across past conversations",
+        "text": "Ask Fathom searches earlier calls and gives summaries tailored to your team's priorities."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Topic monitoring",
+        "text": "Automatically tracks key topics so critical moments are not missed."
+      },
+      {
+        "name": "AI Scorecards",
+        "text": "Follow-up metrics and real-time coaching moments."
+      },
+      {
+        "name": "App integrations",
+        "text": "Works with Google Meet, Zoom, Microsoft Teams, Gmail, Slack, Asana, Salesforce, HubSpot and Notion."
+      },
+      {
+        "name": "Automatic syncing",
+        "text": "Notes and action items sync to the connected tools."
+      },
+      {
+        "name": "API, MCP and Zapier",
+        "text": "A public API and MCP, plus a Zapier integration."
+      },
+      {
+        "name": "Security",
+        "text": "The site lists SOC 2 Type II, GDPR, HIPAA compliance and SSO with SCIM."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Individuals",
+        "text": "The page frames it around clarity, momentum and ease for one person."
+      },
+      {
+        "who": "Teams",
+        "text": "Shared visibility into customer conversations, internal syncs and strategy calls."
+      },
+      {
+        "who": "Sales and customer success",
+        "text": "Capture context, update the CRM and surface risks and opportunities."
+      },
+      {
+        "who": "HR and product teams",
+        "text": "Interview evaluation, and tracking feature requests and satisfaction."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Update the CRM after a sales call",
+        "text": "Capture the context and sync notes automatically."
+      },
+      {
+        "title": "Spot churn risk",
+        "text": "Surface risks and trends across customer conversations."
+      },
+      {
+        "title": "Track marketing sentiment",
+        "text": "Watch for changes in how users talk about the product."
+      },
+      {
+        "title": "Evaluate a candidate",
+        "text": "Streamline interviews with searchable notes."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up free",
+        "text": "Use the Get started button on the homepage."
+      },
+      {
+        "step": "Try the team edition",
+        "text": "Select the option for your team, which leads to the team sign-in."
+      },
+      {
+        "step": "Or book a demo",
+        "text": "The homepage offers a demonstration."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fathom homepage",
+        "url": "https://fathom.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

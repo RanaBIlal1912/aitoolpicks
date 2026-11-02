@@ -108,5 +108,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Runs open models through a serverless API and dedicated GPU deployments"
+  "keyFeature": "Runs open models through a serverless API and dedicated GPU deployments",
+  "profile": {
+    "headline": "A platform for running, combining and training open models",
+    "capabilities": [
+      {
+        "title": "Run open models in production",
+        "text": "Run the latest open models and your own, starting serverless and reserving throughput as you grow."
+      },
+      {
+        "title": "Choose where it runs",
+        "text": "Use your cloud or Fireworks', through a single endpoint across 30+ regions with data residency."
+      },
+      {
+        "title": "Route between models",
+        "text": "Model ensembling routes between models at each turn to balance accuracy and cost."
+      },
+      {
+        "title": "Train on your own data",
+        "text": "Train models on your data while keeping control of your AI and data."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Inference",
+        "text": "Serverless and reserved capacity for open models."
+      },
+      {
+        "name": "Model ensembling",
+        "text": "Switch between models per step of a task."
+      },
+      {
+        "name": "Training",
+        "text": "Fine-tune models on domain-specific data."
+      },
+      {
+        "name": "Fireworks Lab",
+        "text": "Named as a product area; the homepage gives no details."
+      },
+      {
+        "name": "Region and residency options",
+        "text": "One endpoint over 30+ regions."
+      },
+      {
+        "name": "Certifications listed",
+        "text": "SOC 2 Type 2, ISO 27001, ISO 27701 and ISO 42001."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Enterprises",
+        "text": "Organisations that want to own their AI instead of depending only on closed frontier models."
+      },
+      {
+        "who": "Startups and developers",
+        "text": "Teams building products on open models."
+      },
+      {
+        "who": "Multi-model organisations",
+        "text": "Companies that route work across several models."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Run an open model where it meets your bar",
+        "text": "Put an open model into production once it performs well enough."
+      },
+      {
+        "title": "Balance quality and cost",
+        "text": "Route each request to the model that fits it."
+      },
+      {
+        "title": "Fine-tune for a domain",
+        "text": "Train on your own domain-specific data."
+      },
+      {
+        "title": "Power code assistance or enterprise RAG",
+        "text": "Two of the solution areas the site lists, with conversational AI, agentic systems, search and multimodal."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up",
+        "text": "Use the Get started link on the homepage."
+      },
+      {
+        "step": "Browse the model library",
+        "text": "Run an open model; the site says this can start in minutes."
+      },
+      {
+        "step": "Read the docs",
+        "text": "For deeper setup."
+      },
+      {
+        "step": "Larger deployments",
+        "text": "Use the Talk to experts option."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fireworks AI homepage",
+        "url": "https://fireworks.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

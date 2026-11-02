@@ -79,6 +79,8 @@ export type ToolRecord = {
   /** One line saying what the tool does. Used instead of the first feature when that is a plan or billing item. */
   keyFeature?: string;
   profile?: ToolProfile;
+  /** Set when the vendor's official pages could not be researched, with the reason and the date it was tried. Shown on the tool page instead of a profile. */
+  profileBlocked?: { reason: string; checked: string };
   added: string;
   openSource?: { status: "open-source" | "source-available" | "open-weights" | "proprietary"; note: string; source: string };
   verified: string;

@@ -123,5 +123,106 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Tracing, evaluating and deploying AI applications"
+  "keyFeature": "Tracing, evaluating and deploying AI applications",
+  "profile": {
+    "headline": "A platform for observing, evaluating and deploying AI agents",
+    "capabilities": [
+      {
+        "title": "See what your agents are doing",
+        "text": "Observability traces agents step by step so you can open any run."
+      },
+      {
+        "title": "Score and improve performance",
+        "text": "Evaluation turns expert review into standardised evals."
+      },
+      {
+        "title": "Ship and run agents in production",
+        "text": "Deployment offers 30+ Agent Server endpoints and one deployment pattern across an organisation."
+      },
+      {
+        "title": "Run agent-written code safely",
+        "text": "Sandboxes execute agent-generated code in isolation."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Engine",
+        "text": "Detects production issues, helps find root causes and feeds fixes back into the eval loop."
+      },
+      {
+        "name": "LLM Gateway",
+        "text": "Controls model calls, spend and sensitive data."
+      },
+      {
+        "name": "Online evals and alerts",
+        "text": "Dashboards and alerts for cost, latency, errors and tool behaviour."
+      },
+      {
+        "name": "Human approval",
+        "text": "Sensitive agent actions can require a person's sign-off."
+      },
+      {
+        "name": "SmithDB",
+        "text": "Query traces quickly."
+      },
+      {
+        "name": "Flexible hosting",
+        "text": "SaaS, bring-your-own-cloud or self-hosted."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Agent builders",
+        "text": "Teams that ship agents and need to see how they behave."
+      },
+      {
+        "who": "Engineering teams",
+        "text": "Groups that run evaluation and deployment as a routine."
+      },
+      {
+        "who": "Enterprises",
+        "text": "The site cites thousands of active customers and Fortune 10 companies."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Trace a failing run",
+        "text": "Open the run and read the steps the agent took."
+      },
+      {
+        "title": "Turn review into evals",
+        "text": "Convert expert feedback into tests you can rerun."
+      },
+      {
+        "title": "Watch production cost and latency",
+        "text": "Use dashboards and alerts after launch."
+      },
+      {
+        "title": "Control model spend",
+        "text": "Route calls through the gateway with limits."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start building",
+        "text": "The button opens LangSmith at smith.langchain.com."
+      },
+      {
+        "step": "Read the LangSmith documentation",
+        "text": "The setup guides are on docs.langchain.com."
+      },
+      {
+        "step": "Talk to the vendor",
+        "text": "The site offers a demo for larger organisations."
+      }
+    ],
+    "sources": [
+      {
+        "label": "LangChain platform overview",
+        "url": "https://www.langchain.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

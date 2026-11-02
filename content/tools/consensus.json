@@ -119,5 +119,110 @@
     "notes": "Product active. Individual plans read on the Monthly and Annual views: Free $0; Pro $20/month or $144/year ($12/month equivalent); Deep $65/month or $540/year ($45/month equivalent). Team and Enterprise are on a separate tab and were not read. Previously stored as partial with no prices; corrected.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A search engine for scientific papers that gives answers with the evidence behind them",
+    "capabilities": [
+      {
+        "title": "Search a very large body of research",
+        "text": "Search covers more than 400 million scientific papers."
+      },
+      {
+        "title": "Get a synthesised answer",
+        "text": "Pro Search and Deep Search return AI answers built from the papers they found."
+      },
+      {
+        "title": "See how much researchers agree",
+        "text": "The Consensus Meter shows the level of scientific agreement on yes/no questions."
+      },
+      {
+        "title": "Question a single paper",
+        "text": "Ask Paper lets you chat with any paper."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Study Snapshots",
+        "text": "Summaries of a study's key findings and methodology."
+      },
+      {
+        "name": "Citation Graph",
+        "text": "Shows how papers relate to each other."
+      },
+      {
+        "name": "Citation export",
+        "text": "Export references in RIS, BibTeX and CSV."
+      },
+      {
+        "name": "Collections",
+        "text": "Organise the papers you collect into a research library."
+      },
+      {
+        "name": "Search controls",
+        "text": "Sources, Skills, Deep and Filter controls sit in the search interface."
+      },
+      {
+        "name": "Browser support",
+        "text": "Works in Chrome, Safari, Firefox and Edge."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Anyone checking a yes/no question against research",
+        "text": "The Consensus Meter is built for exactly that. The homepage does not name its audience, so these groups follow from the features it lists."
+      },
+      {
+        "who": "People reading individual papers",
+        "text": "Ask Paper and Study Snapshots help with a single study."
+      },
+      {
+        "who": "Writers who need references",
+        "text": "Citation export in RIS, BibTeX and CSV feeds reference managers."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Test a claim",
+        "text": "Ask a yes/no question and read the Consensus Meter before you rely on it."
+      },
+      {
+        "title": "Skim a study",
+        "text": "Open a Study Snapshot to see the findings and methods quickly."
+      },
+      {
+        "title": "Follow the citations",
+        "text": "Use the Citation Graph to trace how related papers connect."
+      },
+      {
+        "title": "Build a reference list",
+        "text": "Save papers to a collection and export the citations."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Open the search page",
+        "text": "The homepage invites you to start your research from the search box."
+      },
+      {
+        "step": "Ask a question",
+        "text": "Use plain wording, or switch to Pro Search or Deep Search."
+      },
+      {
+        "step": "Open results",
+        "text": "Read the Study Snapshot, or chat with the paper using Ask Paper."
+      },
+      {
+        "step": "Save and export",
+        "text": "Add papers to a collection and export citations when you write."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Consensus homepage",
+        "url": "https://consensus.app",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

@@ -68,5 +68,115 @@
     "notes": "Product active (homepage: 'the premier neocloud for fast inference'). The stored pricing URL now redirects to the homepage, and console.groq.com/docs/pricing returns 404, so no price list could be read. No prices are recorded. Needs manual review: find the current pricing page from the signed-in console.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Fast LLM inference through an OpenAI-compatible API",
+    "capabilities": [
+      {
+        "title": "Call models with familiar SDKs",
+        "text": "Point an OpenAI SDK at Groq's base URL and call a model."
+      },
+      {
+        "title": "Generate and transcribe",
+        "text": "Text generation, speech to text, text to speech, OCR and image recognition, and reasoning."
+      },
+      {
+        "title": "Return structured results",
+        "text": "Structured Outputs, plus Prompt Caching and Content Moderation."
+      },
+      {
+        "title": "Give models tools",
+        "text": "Tool Use, built-in Code Execution and Browser Search for GPT OSS models, Remote Tools and MCP, and Google Workspace connectors."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Service tiers",
+        "text": "Performance Tier, Flex Processing and Batch Processing."
+      },
+      {
+        "name": "LoRA Inference",
+        "text": "Listed under advanced features."
+      },
+      {
+        "name": "Coding integrations",
+        "text": "Factory Droid, OpenCode, Kilo Code, Roo Code and Cline."
+      },
+      {
+        "name": "Production readiness",
+        "text": "A production checklist, latency guidance, security onboarding and Prometheus metrics."
+      },
+      {
+        "name": "Account controls",
+        "text": "Spend Limits, Projects, Model Permissions and Your Data settings."
+      },
+      {
+        "name": "Developer resources",
+        "text": "SDK libraries, API reference, models list, rate limits, error codes and a changelog."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers already using OpenAI SDKs",
+        "text": "The API is OpenAI-compatible, so existing code needs little change. The page does not name an audience, so these groups follow from what it documents."
+      },
+      {
+        "who": "Teams building agents",
+        "text": "Tool use, MCP and connectors are documented."
+      },
+      {
+        "who": "Teams moving to production",
+        "text": "Spend limits, projects, model permissions and a production checklist are documented."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Swap an existing OpenAI call",
+        "text": "Change the base URL and key, and keep your SDK."
+      },
+      {
+        "title": "Transcribe or speak",
+        "text": "Use the speech to text and text to speech endpoints."
+      },
+      {
+        "title": "Run code or search as part of an answer",
+        "text": "Use the built-in tools with GPT OSS models."
+      },
+      {
+        "title": "Process work in bulk",
+        "text": "Use Batch Processing instead of live calls."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Create an API key",
+        "text": "Store it in the GROQ_API_KEY environment variable."
+      },
+      {
+        "step": "Point an OpenAI SDK at Groq",
+        "text": "Use the base URL https://api.groq.com/openai/v1."
+      },
+      {
+        "step": "Call a model",
+        "text": "The docs show JavaScript, Python and curl examples."
+      },
+      {
+        "step": "Read the Quickstart and Models pages",
+        "text": "The Playground is linked too."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Groq developer docs",
+        "url": "https://console.groq.com/docs/overview",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "Groq homepage",
+        "url": "https://groq.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

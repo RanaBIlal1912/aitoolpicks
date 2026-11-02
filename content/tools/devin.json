@@ -149,5 +149,106 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "AI coding agents and an editor"
+  "keyFeature": "AI coding agents and an editor",
+  "profile": {
+    "headline": "An autonomous software engineer that works in the cloud or on your machine",
+    "capabilities": [
+      {
+        "title": "Take on an engineering task end to end",
+        "text": "Devin plans a feature, fixes bugs or performs a security scan, and keeps going until the pull request is ready to merge."
+      },
+      {
+        "title": "Test its own work",
+        "text": "It runs on its own Windows, Mac and Linux virtual machines, tests in its own browser and records itself clicking through what it built."
+      },
+      {
+        "title": "Run many tasks in parallel",
+        "text": "A big task can be split across parallel cloud agents, which Devin manages and reports back on."
+      },
+      {
+        "title": "Respond where your team talks",
+        "text": "Tag Devin in Slack, Teams and similar tools; it reads the thread and answers follow-ups."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Automations",
+        "text": "Set Devin to handle bugs, failed CI and alerts as they arrive."
+      },
+      {
+        "name": "Wiki",
+        "text": "Maps a codebase and its architecture, and updates diagrams and code maps as the code changes."
+      },
+      {
+        "name": "Review",
+        "text": "Reviews pull requests and explains its own analysis of a change."
+      },
+      {
+        "name": "Sessions",
+        "text": "Each task is a session you can pin, follow and join as a teammate."
+      },
+      {
+        "name": "Works when you close your laptop",
+        "text": "Long tasks continue in the cloud."
+      },
+      {
+        "name": "Choice of models",
+        "text": "The site shows a model picker, including a mode that pairs a lead model with a cheaper helper."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Engineering teams",
+        "text": "The site is written for teams that want a teammate that opens pull requests."
+      },
+      {
+        "who": "Teams on call",
+        "text": "Alert and incident response is shown with a PagerDuty example."
+      },
+      {
+        "who": "Maintainers of large codebases",
+        "text": "Dependency upgrades and architecture documentation are among the examples."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Add enterprise single sign-on",
+        "text": "The site's main example adds SAML SSO following existing authentication patterns, then tests it in the browser."
+      },
+      {
+        "title": "Fix a bug reported in Slack",
+        "text": "Devin fixes it and adds a regression test, then links the pull request."
+      },
+      {
+        "title": "Respond to a production alert",
+        "text": "Devin finds the deployment behind an error spike and prepares a fix."
+      },
+      {
+        "title": "Keep dependencies current",
+        "text": "Weekly upgrades of frameworks such as React and Next.js, each ending in a pull request."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Get started or book a demo",
+        "text": "Both buttons are on the homepage."
+      },
+      {
+        "step": "Give Devin a task",
+        "text": "Plan a feature, fix bugs or run a security scan, or @-mention Devin in Slack or Teams."
+      },
+      {
+        "step": "Review the pull request",
+        "text": "Check what it changed, the tests it ran and the recording of its browser session."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Devin homepage",
+        "url": "https://devin.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

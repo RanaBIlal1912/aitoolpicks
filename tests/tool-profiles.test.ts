@@ -49,6 +49,24 @@ describe("researched tool profiles", () => {
   });
 });
 
+describe("tools whose official pages could not be researched", () => {
+  const blocked = RECORDS.filter((r) => r.profileBlocked);
+  it("carry a reason and a date, and never also a profile", () => {
+    expect(blocked.map((r) => r.id).sort()).toEqual(expect.arrayContaining(["julius", "lovable", "perplexity"]));
+    for (const r of blocked) {
+      expect(r.profile, r.id).toBeUndefined();
+      expect(r.profileBlocked!.reason.length, r.id).toBeGreaterThan(30);
+    }
+  });
+  it.skipIf(!built)("show the reason on the page instead of a profile", () => {
+    for (const r of blocked) {
+      const h = page(r.id)!;
+      expect(h, r.id).toContain("has not been researched yet");
+      expect(h, r.id).toContain("Why:");
+    }
+  });
+});
+
 describe("the key feature line", () => {
   it("says what the tool does, not what a plan includes", () => {
     const billing = /(plans?|credits?|seats?|allowance|executions|billed|priced|metered|per (month|token|minute|outcome|user))/i;
