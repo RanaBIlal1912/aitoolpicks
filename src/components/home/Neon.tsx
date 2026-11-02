@@ -11,8 +11,8 @@ import RobotHero from "./RobotHero";
 import { logoFor } from "@/data/logos";
 import { withBase } from "@/lib/site";
 
-/** Hero artwork: the 3D robot with real product logos floating around it and a card with the catalog counts. */
-export function HeroOrbit({ total, verified }: { total: number; verified: number }) {
+/** Hero artwork: the 3D robot with real product logos floating around it. */
+export function HeroOrbit() {
   const tiles: { id: string; pos: string; size: number; delay: string }[] = [
     { id: "chatgpt", pos: "left-[4%] top-[8%]", size: 62, delay: "0s" },
     { id: "midjourney", pos: "right-[18%] top-[0%]", size: 64, delay: "-1.5s" },
@@ -35,13 +35,6 @@ export function HeroOrbit({ total, verified }: { total: number; verified: number
           </span>
         ) : null;
       })}
-      stat={
-        <div className="panel !absolute bottom-[-9%] left-1/2 w-[46%] max-w-[230px] -translate-x-1/2 rotate-[-2deg] p-4 max-md:bottom-[-17%] max-md:w-[54%] max-md:p-2.5">
-          <p className="font-display text-4xl font-extrabold leading-none text-white sm:text-5xl">{total}</p>
-          <p className="mt-1 text-sm font-semibold text-soft">AI tools indexed</p>
-          <p className="mt-0.5 text-xs text-muted">{verified} with fully verified prices</p>
-        </div>
-      }
     />
   );
 }
