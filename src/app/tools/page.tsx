@@ -27,7 +27,7 @@ export default function ToolsPage() {
         }}
       />
       <div className="pt-10 md:pt-14" />
-      <Directory />
+      <Directory searchOnly />
 
       <JsonLd
         data={{

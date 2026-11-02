@@ -49,7 +49,7 @@ function Toggle({ pressed, onClick, children }: { pressed: boolean; onClick: () 
   );
 }
 
-function DirectoryInner({ initialCategory }: { initialCategory: string }) {
+function DirectoryInner({ initialCategory, searchOnly }: { initialCategory: string; searchOnly: boolean }) {
   const { currency, liveRates } = useCurrency();
   // The filter works on US-dollar prices; the label adds the visitor's currency when a real rate is available.
   const approx = (usd: number) => (currency !== "USD" && liveRates ? ` (≈ ${format(convert(usd, currency, liveRates), currency)})` : "");
@@ -171,6 +171,7 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
               className="h-12 w-full rounded-2xl border border-white/12 bg-black/30 pl-11 pr-4 text-base text-white placeholder:text-muted focus:border-brand focus:outline-none"
             />
           </div>
+          {!searchOnly && (
           <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
             <label htmlFor="tool-sort" className="text-sm text-muted">
               Sort by
@@ -183,9 +184,10 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
               ))}
             </select>
           </div>
+          )}
         </div>
 
-        {!searching && (
+        {!searching && !searchOnly && (
           <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-muted">
             <span>Try:</span>
             {TASK_SUGGESTIONS.slice(0, 6).map((s) => (
@@ -196,6 +198,8 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
           </div>
         )}
 
+        {!searchOnly && (
+        <>
         <fieldset className="mt-4">
           <legend className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">Categories (choose any)</legend>
           <div className="flex flex-wrap gap-2">
@@ -263,6 +267,8 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
           </div>
           {f.maxUsd !== null && <p className="mt-2 text-xs text-muted">The price filter uses each tool&rsquo;s lowest documented USD price; tools priced only in other currencies or by usage are not included.</p>}
         </fieldset>
+        </>
+        )}
       </div>
 
       <p className="mt-6 text-sm text-muted" role="status" aria-live="polite">
@@ -340,10 +346,11 @@ function DirectoryInner({ initialCategory }: { initialCategory: string }) {
   );
 }
 
-export default function Directory({ initialCategory = "all" }: { initialCategory?: string }) {
+/** `searchOnly` shows just the search box and the results (no sort, suggestions, category or pricing filters). */
+export default function Directory({ initialCategory = "all", searchOnly = false }: { initialCategory?: string; searchOnly?: boolean }) {
   return (
     <Boundary>
-      <DirectoryInner initialCategory={initialCategory} />
+      <DirectoryInner initialCategory={initialCategory} searchOnly={searchOnly} />
     </Boundary>
   );
 }
