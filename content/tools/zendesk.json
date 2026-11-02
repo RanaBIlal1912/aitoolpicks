@@ -128,5 +128,114 @@
     "notes": "Product active. Customer Service view, per agent/month paid yearly: Support Team $19, Suite Team $55, Suite Professional $115, Suite Enterprise + Copilot by sales. Add-ons: Copilot $50, Workforce Engagement Bundle $50, Contact Center $83 per agent/month paid yearly. Monthly-billing prices ($25, $69, $149) are from an earlier check and were not re-seen.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI-first service platform for customer and employee requests",
+    "capabilities": [
+      {
+        "title": "Resolve requests with AI agents",
+        "text": "AI agents resolve issues autonomously on any channel."
+      },
+      {
+        "title": "Help your human agents",
+        "text": "Zendesk AI automates common requests, suggests replies and summaries, and routes work; Copilot is a proactive assistant for service teams."
+      },
+      {
+        "title": "Handle every channel in one place",
+        "text": "Customer Service manages and resolves inquiries across all channels."
+      },
+      {
+        "title": "Serve employees too",
+        "text": "Employee Service resolves internal requests, including IT service management."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Contact Center",
+        "text": "AI-powered voice and digital service in a unified system."
+      },
+      {
+        "name": "Messaging, ticketing and knowledge base",
+        "text": "Live chat, tickets and self-service content."
+      },
+      {
+        "name": "Quality assurance",
+        "text": "Built-in QA scoring for AI interactions."
+      },
+      {
+        "name": "Workforce Management",
+        "text": "Forecasts, staffs and manages agent schedules."
+      },
+      {
+        "name": "Marketplace",
+        "text": "More than 1,800 apps, partners and integrations."
+      },
+      {
+        "name": "Standalone AI agents",
+        "text": "Self-improving agents through Forethought by Zendesk that work with an existing service platform."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Startups",
+        "text": "The site says qualified startups can get up to two years free."
+      },
+      {
+        "who": "Small teams",
+        "text": "The platform is offered to teams of all sizes."
+      },
+      {
+        "who": "Enterprises",
+        "text": "Enterprise security and AI governance are highlighted."
+      },
+      {
+        "who": "Government and education",
+        "text": "Both appear among the industries named."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Cope with volume spikes",
+        "text": "Automate a high volume of customer interactions, including around the clock."
+      },
+      {
+        "title": "Handle employee IT and HR requests",
+        "text": "Run internal service alongside customer support."
+      },
+      {
+        "title": "Run a voice contact centre",
+        "text": "AI authentication and routine resolutions on the phone."
+      },
+      {
+        "title": "Build a self-service knowledge base",
+        "text": "Let customers find answers without a ticket."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start a 14-day free trial",
+        "text": "The site says no credit card is needed."
+      },
+      {
+        "step": "Sign up with a work email",
+        "text": "Connect customer email and apps and invite team members."
+      },
+      {
+        "step": "Connect your knowledge and launch an AI agent",
+        "text": "The site says this needs no scripting or developers."
+      },
+      {
+        "step": "Optional extras",
+        "text": "Request a demo, review plans, or try the AI ROI calculator."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Zendesk homepage",
+        "url": "https://www.zendesk.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

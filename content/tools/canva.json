@@ -127,8 +127,8 @@
     "status": "partial",
     "officialUrl": "https://www.canva.com/",
     "pricingUrl": "https://www.canva.com/pricing/",
-    "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees on the Yearly view: Free Rs 0, Pro Rs 9,200 per year for one person, Business Rs 16,000 per year per person; Enterprise is contact sales. Pro and Business show a free-trial button. The Monthly view was not read, and USD prices were not seen, so this stays partially verified.",
-    "checked": "2026-10-30",
+    "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees on the Yearly view: Free Rs 0, Pro Rs 9,200 per year for one person, Business Rs 16,000 per year per person; Enterprise is contact sales. Pro and Business show a free-trial button. Re-checked on 2 Nov 2026: the Pakistan view still shows Free Rs 0, Pro Rs 9,200 per year and Business Rs 16,000 per year per person (Enterprise: get in touch), and clicking the Monthly toggle did not change the figures shown, so a monthly price could not be read. No USD prices appear for a Pakistan visitor, so it stays partially verified.",
+    "checked": "2026-11-02",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
   "profile": {

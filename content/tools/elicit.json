@@ -138,5 +138,110 @@
     "notes": "Product active. Basic is free; Pro $49 per user per month billed as $588 annually (save 35%); Scale $229 per user per month billed as $2,748 annually (save 39%); Enterprise custom. The Monthly toggle was not read, so monthly-billing prices remain unstated.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI research assistant for finding, screening and synthesising papers",
+    "capabilities": [
+      {
+        "title": "Generate research reports",
+        "text": "Briefs produced by a process inspired by systematic reviews, where you can change which papers and information they cover."
+      },
+      {
+        "title": "Run systematic literature reviews",
+        "text": "Elicit automates screening and data extraction and partially supports search and report generation."
+      },
+      {
+        "title": "Keep a library of sources",
+        "text": "Stores and organises sources for reuse in later projects."
+      },
+      {
+        "title": "Stay current",
+        "text": "Routines track new research so your work does not go out of date."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Elicit Research Agent",
+        "text": "Described as an AI environment built for high-stakes decisions."
+      },
+      {
+        "name": "Sentence-level citations",
+        "text": "AI-generated claims link back to the underlying sources."
+      },
+      {
+        "name": "Scale",
+        "text": "Finds up to 1,000 relevant papers and analyses up to 20,000 data points at once."
+      },
+      {
+        "name": "Interactive tables",
+        "text": "Rich tables and multi-step workflows, beyond a chat window."
+      },
+      {
+        "name": "Paper Search",
+        "text": "Listed as a solution area on the site."
+      },
+      {
+        "name": "API and MCP",
+        "text": "Bring Elicit's capabilities into agents and workflows."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Academic researchers",
+        "text": "Academia is one of the sectors named."
+      },
+      {
+        "who": "Pharmaceutical and medical-device teams",
+        "text": "Both are named, with examples about new drugs and safe products."
+      },
+      {
+        "who": "Policy and government teams",
+        "text": "The site cites evidence-based policy making."
+      },
+      {
+        "who": "Industrial and software researchers",
+        "text": "The site links example reports from materials and software work."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Bring a drug to patients faster",
+        "text": "The site's pharma example."
+      },
+      {
+        "title": "Design a safe, effective product",
+        "text": "The medical-device example."
+      },
+      {
+        "title": "Make evidence-based policy",
+        "text": "The policy example."
+      },
+      {
+        "title": "Speed up a systematic review",
+        "text": "Researchers on the site report large time savings on reviews."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try it or sign up",
+        "text": "Use the Try now or Sign up button."
+      },
+      {
+        "step": "Enter a research question",
+        "text": "Elicit searches academic papers and can produce a structured report with citations."
+      },
+      {
+        "step": "Check what it costs",
+        "text": "The homepage does not answer whether Elicit is free, so look at the pricing page or talk to sales."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Elicit homepage",
+        "url": "https://elicit.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

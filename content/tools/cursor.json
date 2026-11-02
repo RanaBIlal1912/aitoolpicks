@@ -43,7 +43,7 @@
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-30",
+    "checked": "2026-11-02",
     "source": "https://cursor.com/pricing",
     "plans": [
       {
@@ -166,8 +166,8 @@
     "status": "partial",
     "officialUrl": "https://cursor.com/",
     "pricingUrl": "https://cursor.com/pricing",
-    "notes": "Product active (AI coding agent). The page's structured data lists Plus $8, Premium $30, Super $100, Ultra $200 and Teams $30 in USD, matching the stored prices. The pricing page text now describes a usage pool shared across Cursor and Grok, Plus as Grok-models-only, and third-party models at API list price; it is unusual and the visible plan cards could not be read cleanly, so the allowance details are unconfirmed. Needs manual review.",
-    "checked": "2026-10-30",
+    "notes": "Product active (AI coding agent). Re-read on 2 Nov 2026 in the built-in browser, both the Individual and Teams tabs: Free $0, Plus $8, Premium $30, Super $100 and Ultra $200 per month, and Teams $30 per month, match the stored prices; Enterprise is contact-sales. Prices exclude taxes, and third-party model usage is billed separately. It stays partial because the page text is unusual (it mixes in social-network features and a usage pool shared with Grok), Plus is limited to Grok models, the Teams price does not say whether it is per seat, and the usage allowances are stated only as multiples of Plus. Needs manual review.",
+    "checked": "2026-11-02",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
   "profile": {

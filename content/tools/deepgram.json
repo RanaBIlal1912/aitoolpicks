@@ -109,5 +109,106 @@
     "notes": "Product active. Pay as you go with $200 free credit (no card, no expiry); Growth from $4,000/year in prepaid credits (up to 20% off); Enterprise custom. Streaming speech-to-text rates were read; the pre-recorded tab was not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A voice AI platform: speech-to-text, text-to-speech and voice agents",
+    "capabilities": [
+      {
+        "title": "Turn speech into text in real time",
+        "text": "Speech-to-Text converts natural speech to text as it is spoken."
+      },
+      {
+        "title": "Turn text into speech",
+        "text": "Text-to-Speech offers 45+ languages and 100+ voice profiles, in batch or streaming."
+      },
+      {
+        "title": "Build voice agents",
+        "text": "The Voice Agent API supports function calling and spoken responses."
+      },
+      {
+        "title": "Coordinate models and systems",
+        "text": "LLM orchestration, business logic for multi-step workflows, and connections to outside systems keep one voice flow consistent."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Speech-to-Text",
+        "text": "Real-time transcription; the page also mentions Flux STT."
+      },
+      {
+        "name": "Text-to-Speech",
+        "text": "Batch and streaming endpoints, including a WebSocket for streaming."
+      },
+      {
+        "name": "Voice Agent API",
+        "text": "Spoken responses and function calling for agents."
+      },
+      {
+        "name": "LLM orchestration",
+        "text": "Coordinates across language models for consistent voice and text output."
+      },
+      {
+        "name": "Business logic",
+        "text": "Handles multi-step workflows with transparent decision-making."
+      },
+      {
+        "name": "Enterprise plans",
+        "text": "For large volumes, data or deployment requirements, and support needs."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers",
+        "text": "The page cites a community of more than 650,000 developers."
+      },
+      {
+        "who": "Enterprises",
+        "text": "Over 5,000 organisations are mentioned."
+      },
+      {
+        "who": "Contact-centre providers",
+        "text": "The page includes a testimonial from a contact-centre provider."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Compare voices side by side",
+        "text": "Listen to text-to-speech voices before you choose one."
+      },
+      {
+        "title": "Add spoken replies to a chatbot",
+        "text": "Give an existing chatbot a voice."
+      },
+      {
+        "title": "Stream an LLM's answer as audio",
+        "text": "Feed model output into text-to-speech while the audio plays."
+      },
+      {
+        "title": "Build a voice receptionist",
+        "text": "An agent that books appointments and confirms details first."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up for pay as you go",
+        "text": "The page says it needs no credit card and includes a free starting credit."
+      },
+      {
+        "step": "Follow the Build in minutes examples",
+        "text": "Short code examples show text-to-speech and agent calls."
+      },
+      {
+        "step": "Ask the community or an expert",
+        "text": "Join the Discord community or speak with a voice AI expert."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Deepgram homepage",
+        "url": "https://deepgram.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
