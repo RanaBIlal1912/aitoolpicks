@@ -46,32 +46,6 @@ export function HeroOrbit({ total, verified }: { total: number; verified: number
   );
 }
 
-/** Only figures we can stand behind: counts from the catalog and how the records are made. */
-export function StatStrip({ total, categories, verified }: { total: number; categories: number; verified: number }) {
-  const items: [ReactNode, string, string][] = [
-    [<path key="a" d="M14 6l4 4-9 9H5v-4zM13 7l4 4" />, `${total}`, "AI tools"],
-    [<path key="b" d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />, `${categories}`, "Categories"],
-    [<path key="c" d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6zM9 12l2.2 2.2L15.5 10" />, `${verified}`, "Verified prices"],
-    [<path key="d" d="M13 3L5 14h6l-1 7 8-11h-6z" />, "Official", "Prices from vendor pages"],
-    [<path key="e" d="M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z" />, "Dated", "Every record shows its check date"],
-  ];
-  return (
-    <ul className="stat-strip grid grid-cols-2 gap-y-5 px-3 py-5 sm:px-6 md:grid-cols-5">
-      {items.map(([icon, n, l], i) => (
-        <li key={l} className={`flex items-center gap-3 px-3 ${i > 0 ? "md:border-l md:border-white/10" : ""}`}>
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#6fb7ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 drop-shadow-[0_0_8px_rgba(80,160,255,0.8)]">
-            {icon}
-          </svg>
-          <span>
-            <b className="block font-display text-xl font-extrabold leading-tight text-white">{n}</b>
-            <span className="block text-xs text-soft">{l}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 // One icon and colour pair per category slug. Colours are decoration only.
 export const CAT: Record<string, { c1: string; c2: string; d: string }> = {
   assistants: { c1: "#2563eb", c2: "#1e3a8a", d: "M4 5h16v10H9l-4 4v-4H4zM8 10h.01M12 10h.01M16 10h.01" },

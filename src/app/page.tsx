@@ -16,7 +16,7 @@ import UniverseSection from "@/components/universe/UniverseSection";
 import ToolLogo from "@/components/ToolLogo";
 import { RecentStrip } from "@/components/SavedList";
 import JsonLd from "@/components/JsonLd";
-import { BlogPanel, CategoryGrid, CtaPanel, FeaturedTools, HeroOrbit, NewsPanel, PanelHead, StatStrip } from "@/components/home/Neon";
+import { BlogPanel, CategoryGrid, CtaPanel, FeaturedTools, HeroOrbit, NewsPanel, PanelHead } from "@/components/home/Neon";
 import { AddedTimeline, CategoryRail, EcosystemBand, FeaturedBento, FreeLedger, GuidesRail, Head, LogoRibbon, NewsPaper, PhotoBand, VersusTiles } from "@/components/home/Sections";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
@@ -117,7 +117,6 @@ export default function Home() {
       </section>
 
       <div className="mx-auto max-w-7xl px-5">
-        <StatStrip total={TOOLS.length} categories={CATEGORIES.length} verified={VERIFIED} />
         <div className="mt-6 grid gap-5 lg:grid-cols-[1.05fr_1fr]">
           <section className="panel p-5" aria-label="Popular categories">
             <PanelHead icon={<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />} title="Popular Categories" sub="Browse AI tools by category" href="/tools/" cta="View all tools" />
