@@ -35,11 +35,62 @@
   "pricing": {
     "status": "partial",
     "model": "usage-based",
-    "checked": "2026-10-30",
-    "source": "https://groq.com/pricing",
-    "plans": [],
+    "checked": "2026-11-02",
+    "source": "https://console.groq.com/docs/models",
+    "plans": [
+      {
+        "name": "GPT OSS 120B",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per 1M tokens",
+        "note": "$0.15 per 1M input tokens and $0.60 per 1M output tokens"
+      },
+      {
+        "name": "GPT OSS 20B",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per 1M tokens",
+        "note": "$0.075 per 1M input tokens and $0.30 per 1M output tokens"
+      },
+      {
+        "name": "Qwen3.8 27B (preview)",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per 1M tokens",
+        "note": "$0.80 per 1M input tokens and $4.00 per 1M output tokens"
+      },
+      {
+        "name": "Whisper Large V3",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per hour of audio",
+        "note": "$0.111 per hour of audio"
+      },
+      {
+        "name": "Whisper Large V3 Turbo",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per hour of audio",
+        "note": "$0.04 per hour of audio"
+      },
+      {
+        "name": "Orpheus text-to-speech (preview)",
+        "audience": "api",
+        "currency": "USD",
+        "unit": "per 1M characters",
+        "note": "$22.00 per 1M characters for English and $40.00 per 1M characters for Arabic (Saudi)"
+      },
+      {
+        "name": "Llama and other enterprise models",
+        "audience": "enterprise",
+        "currency": "USD",
+        "unit": "per request volume",
+        "custom": true,
+        "note": "Llama 3.1 8B, Llama 3.3 70B, Muse Spark Open and MiniMax M2.7 are listed as Contact Sales"
+      }
+    ],
     "notes": [
-      "The page we read described the company but listed no prices. Check the official page for current plans and per-token rates."
+      "Prices are per model, read from the Supported Models table in Groq's own documentation, because groq.com/pricing now redirects to the homepage. The same table mentions a Developer plan with rate limits; free-tier and plan terms were not found on a readable page."
     ]
   },
   "sources": [
@@ -65,9 +116,9 @@
     "status": "partial",
     "officialUrl": "https://groq.com/",
     "pricingUrl": "https://groq.com/pricing",
-    "notes": "Product active (homepage: 'the premier neocloud for fast inference'). The stored pricing URL now redirects to the homepage, and console.groq.com/docs/pricing returns 404, so no price list could be read. No prices are recorded. Needs manual review: find the current pricing page from the signed-in console.",
-    "checked": "2026-10-30",
-    "method": "Opened in the Claude desktop built-in browser; page text read"
+    "notes": "Product active. groq.com/pricing redirects to the homepage, but Groq's documentation lists per-model prices: GPT OSS 120B $0.15 input and $0.60 output per 1M tokens, GPT OSS 20B $0.075 and $0.30, Qwen3.8 27B (preview) $0.80 and $4.00, Whisper Large V3 $0.111 and Turbo $0.04 per hour, Orpheus $22.00 (English) and $40.00 (Arabic) per 1M characters, and several Llama and other models marked Contact Sales. It stays partial because plan names, a free tier and the Developer plan's terms are not on a readable page.",
+    "checked": "2026-11-02",
+    "method": "Opened in the Claude desktop built-in browser; the Supported Models table at console.groq.com/docs/models was read row by row"
   },
   "profile": {
     "headline": "Fast LLM inference through an OpenAI-compatible API",

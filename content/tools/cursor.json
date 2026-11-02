@@ -134,7 +134,7 @@
       "available": true,
       "details": "Limited AI usage, limited agent requests and limited chat requests (card text)."
     },
-    "regional": "Prices exclude taxes. The page says usage is a pool shared across Cursor and Grok that refreshes weekly, with optional top-ups. Annual pricing: not stated.",
+    "regional": "Prices shown on the pricing page exclude taxes and third-party model usage is billed separately. For a Pakistan visitor, the owner's screenshots of the subscription modal show rupee prices: monthly Plus PKR 2,200 (introductory PKR 1,650 for six months), Premium PKR 8,300 (PKR 4,150 for the first month), Super PKR 28,000 (PKR 14,000 first month) and Ultra PKR 56,000 (PKR 28,000 first month); on annual billing Plus PKR 22,000, Premium PKR 83,000, Super PKR 280,000 and Ultra PKR 560,000 per year. Those rupee amounts are in proportion to the USD prices above.",
     "notes": [
       "Allowances refresh weekly. Third-party model usage is billed separately at API list price."
     ],
@@ -168,7 +168,7 @@
     "pricingUrl": "https://cursor.com/pricing",
     "notes": "Product active (AI coding agent). Re-read on 2 Nov 2026 in the built-in browser, both the Individual and Teams tabs: Free $0, Plus $8, Premium $30, Super $100 and Ultra $200 per month, and Teams $30 per month, match the stored prices; Enterprise is contact-sales. Prices exclude taxes, and third-party model usage is billed separately. It stays partial because the page text is unusual (it mixes in social-network features and a usage pool shared with Grok), Plus is limited to Grok models, the Teams price does not say whether it is per seat, and the usage allowances are stated only as multiples of Plus. Needs manual review.",
     "checked": "2026-11-02",
-    "method": "Opened in the Claude desktop built-in browser; page text read"
+    "method": "Opened in the Claude desktop built-in browser (Individual and Teams tabs read), plus screenshots of the subscription modal supplied by the site owner"
   },
   "profile": {
     "headline": "A coding agent for building software",
