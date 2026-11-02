@@ -121,8 +121,118 @@
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
   "keyFeature": "Describe an app and have AI build it",
-  "profileBlocked": {
-    "reason": "The official homepage at lovable.dev loads its content with scripts and showed only a one-line heading when read ('Build something Lovable'), so there was nothing to base a profile on.",
-    "checked": "2026-11-02"
+  "profile": {
+    "headline": "Describe an app in plain language and get working, editable software",
+    "capabilities": [
+      {
+        "title": "Build a full-stack app from a description",
+        "text": "Lovable generates the frontend, backend, database, authentication and integrations from a natural-language prompt."
+      },
+      {
+        "title": "Keep the code",
+        "text": "Each project produces a codebase that can sync to GitHub, GitLab or Bitbucket, so it can join an existing engineering workflow."
+      },
+      {
+        "title": "Iterate in a chat beside a live preview",
+        "text": "Ask for one change at a time, point at an element in the preview, or edit text inline."
+      },
+      {
+        "title": "Publish to a live address",
+        "text": "One click on Publish deploys the app to a lovable.app URL, and later changes go live when you publish them again."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Workspaces and projects",
+        "text": "A workspace holds projects, members, billing and a shared pool of credits; each project is one app."
+      },
+      {
+        "name": "Chats",
+        "text": "Conversations outside a project for thinking through ideas, which can send work to a project when something needs building."
+      },
+      {
+        "name": "Connectors",
+        "text": "Link your apps to the rest of your stack without writing integration code."
+      },
+      {
+        "name": "Templates",
+        "text": "Start from a ready-made app and remix it on any plan."
+      },
+      {
+        "name": "Security and governance",
+        "text": "Workspace roles, two-factor authentication, SSO, SCIM, audit logs and built-in security checks."
+      },
+      {
+        "name": "Desktop, mobile and chat apps",
+        "text": "Build from the desktop or mobile app, in Slack or Telegram, or from ChatGPT and other AI tools through the Lovable MCP server."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Teams in companies",
+        "text": "Product, operations, sales, marketing and finance teams replacing spreadsheets and per-seat software with their own apps."
+      },
+      {
+        "who": "Developers and agencies",
+        "text": "Technical teams setting up projects and prototypes, and agencies delivering client work where code ownership matters."
+      },
+      {
+        "who": "Founders and independent makers",
+        "text": "People launching products or side projects on their own."
+      },
+      {
+        "who": "Students and educators",
+        "text": "Coursework, learning projects and experiments."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Validate an idea with a working prototype",
+        "text": "Build a prototype with real data and logic before engineering commits to it."
+      },
+      {
+        "title": "Replace a spreadsheet with an internal tool",
+        "text": "Describe the workflow and let Lovable build a dashboard or admin panel around it."
+      },
+      {
+        "title": "Launch a landing page or portfolio",
+        "text": "Generate a marketing site, then publish it to a live URL."
+      },
+      {
+        "title": "Build a small SaaS product",
+        "text": "Add login, a database and payments as follow-up prompts once the first version works."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Create an account",
+        "text": "Sign up with email, Google, GitHub or Apple; the account comes with a personal workspace on the free plan."
+      },
+      {
+        "step": "Describe your app",
+        "text": "Type a prompt into the box on the dashboard, or attach a screenshot or mockup as a visual reference."
+      },
+      {
+        "step": "Refine one change at a time",
+        "text": "Check the preview after each request, including the mobile view."
+      },
+      {
+        "step": "Publish and share",
+        "text": "Click Publish, adjust the suggested address, and send the link."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Welcome to Lovable",
+        "url": "https://docs.lovable.dev/introduction/welcome",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "Quick start",
+        "url": "https://docs.lovable.dev/introduction/getting-started",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

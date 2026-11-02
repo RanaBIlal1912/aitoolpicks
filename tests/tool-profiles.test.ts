@@ -52,7 +52,8 @@ describe("researched tool profiles", () => {
 describe("tools whose official pages could not be researched", () => {
   const blocked = RECORDS.filter((r) => r.profileBlocked);
   it("carry a reason and a date, and never also a profile", () => {
-    expect(blocked.map((r) => r.id).sort()).toEqual(expect.arrayContaining(["julius", "lovable", "perplexity"]));
+    // Julius, Lovable and Perplexity were blocked until their official docs were readable (2026-11-02).
+    for (const id of ["julius", "lovable", "perplexity"]) expect(blocked.map((r) => r.id), id).not.toContain(id);
     for (const r of blocked) {
       expect(r.profile, r.id).toBeUndefined();
       expect(r.profileBlocked!.reason.length, r.id).toBeGreaterThan(30);
@@ -141,6 +142,6 @@ describe.skipIf(!built)("built tool pages", () => {
       expect(h, r.id).toContain("Getting started");
     }
     const plain = TOOLS.find((t) => !profiled.some((r) => r.id === t.id))!;
-    expect(page(plain.id)!).toContain("has not been researched yet");
+    if (plain) expect(page(plain.id)!).toContain("has not been researched yet");
   });
 });

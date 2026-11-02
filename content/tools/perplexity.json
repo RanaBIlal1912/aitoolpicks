@@ -149,8 +149,123 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "profileBlocked": {
-    "reason": "Perplexity's help-centre pages describe it only as an AI search engine that gives cited answers and tells you to simply ask a question; there are no audience, use-case or getting-started details to build a profile from, and its main site needs a sign-in to see more.",
-    "checked": "2026-11-02"
+  "profile": {
+    "headline": "An AI search engine that answers with sources you can open",
+    "capabilities": [
+      {
+        "title": "Get a direct answer with citations",
+        "text": "Ask a question and Perplexity searches the web, then writes a conversational answer with links to the original sources so you can check it."
+      },
+      {
+        "title": "Go deeper on complex questions",
+        "text": "Pro Search is applied automatically for multi-step reasoning and detailed research, and Research mode combines models to produce longer reports."
+      },
+      {
+        "title": "Choose the model behind the answer",
+        "text": "Best mode picks a model for you, and paid plans let you choose from a list of advanced models from different providers."
+      },
+      {
+        "title": "Ask about your own files",
+        "text": "Upload PDFs, CSVs, audio, video and images and explore their contents in the same conversation."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Search with citations",
+        "text": "Every answer carries links to the pages it drew from."
+      },
+      {
+        "name": "Research mode",
+        "text": "Autonomous, multi-step analysis that returns a comprehensive report on a complex topic."
+      },
+      {
+        "name": "Create files and apps",
+        "text": "Builds reports, spreadsheets, dashboards and simple web applications on your behalf."
+      },
+      {
+        "name": "Image and video generation",
+        "text": "Generate images and videos from a prompt on paid plans, with video limited on Pro."
+      },
+      {
+        "name": "Projects",
+        "text": "Keep related files and conversations together, with team collaboration on Enterprise plans."
+      },
+      {
+        "name": "Comet",
+        "text": "Perplexity's own browser, covered in its own section of the Help Center."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Researchers and students",
+        "text": "Cited answers and Research mode suit anyone gathering information on an unfamiliar topic, and an Education Pro plan is offered to verified students and educators."
+      },
+      {
+        "who": "Professionals",
+        "text": "Pro adds file analysis, extra uploads and the Create files and apps tool for day-to-day work."
+      },
+      {
+        "who": "Teams and organisations",
+        "text": "Enterprise Pro and Enterprise Max add admin controls, shared Projects and stricter data privacy."
+      },
+      {
+        "who": "Developers",
+        "text": "A separate API Platform provides web-grounded answers and search results for your own products."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Get oriented on a new topic",
+        "text": "Ask a plain question and follow the citations to the sources worth reading in full."
+      },
+      {
+        "title": "Produce a researched report",
+        "text": "Switch to Research mode for a longer write-up that pulls from many pages."
+      },
+      {
+        "title": "Analyse a document or spreadsheet",
+        "text": "Upload a file and ask questions about what it contains."
+      },
+      {
+        "title": "Turn research into a deliverable",
+        "text": "Use Create files and apps to produce a spreadsheet, dashboard or presentation from your findings."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Ask a question",
+        "text": "Type it into the search box on perplexity.ai; no setup is needed to begin."
+      },
+      {
+        "step": "Open the sources",
+        "text": "Click the citations to confirm that a summary read each page correctly."
+      },
+      {
+        "step": "Switch modes or models",
+        "text": "Use the search box to move between Best, Research and model choices within a session."
+      },
+      {
+        "step": "Compare the plans",
+        "text": "The Help Center article on choosing a plan sets out Standard, Pro, Max, Education Pro and Enterprise."
+      }
+    ],
+    "sources": [
+      {
+        "label": "What is Perplexity?",
+        "url": "https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "What is Perplexity Pro?",
+        "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "Which plan is right for you?",
+        "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

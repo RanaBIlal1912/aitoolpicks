@@ -156,7 +156,7 @@
   "pricingStatus": "partial",
   "fromUsd": 20,
   "verified": "2026-10-30",
-  "checked": "2026-10-30",
+  "checked": "2026-11-02",
   "pricingSource": "https://chatgpt.com/pricing",
   "plans": [
    {
@@ -352,7 +352,7 @@
   "pricingStatus": "partial",
   "fromUsd": 8,
   "verified": "2026-10-30",
-  "checked": "2026-10-30",
+  "checked": "2026-11-02",
   "pricingSource": "https://cursor.com/pricing",
   "plans": [
    {
@@ -966,7 +966,7 @@
   "pricingStatus": "partial",
   "fromUsd": null,
   "verified": "2026-10-30",
-  "checked": "2026-10-30",
+  "checked": "2026-11-02",
   "pricingSource": "https://gemini.google/subscriptions/",
   "plans": [
    {
@@ -1144,9 +1144,34 @@
   "pricingStatus": "partial",
   "fromUsd": null,
   "verified": "2026-10-30",
-  "checked": "2026-10-30",
-  "pricingSource": "https://groq.com/pricing",
-  "plans": []
+  "checked": "2026-11-02",
+  "pricingSource": "https://console.groq.com/docs/models",
+  "plans": [
+   {
+    "name": "GPT OSS 120B",
+    "price": "See note"
+   },
+   {
+    "name": "GPT OSS 20B",
+    "price": "See note"
+   },
+   {
+    "name": "Qwen3.8 27B (preview)",
+    "price": "See note"
+   },
+   {
+    "name": "Whisper Large V3",
+    "price": "See note"
+   },
+   {
+    "name": "Whisper Large V3 Turbo",
+    "price": "See note"
+   },
+   {
+    "name": "Orpheus text-to-speech (preview)",
+    "price": "See note"
+   }
+  ]
  },
  {
   "id": "hex",
