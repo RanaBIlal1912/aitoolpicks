@@ -29,14 +29,15 @@ export function TrendingTools({ rows, lead }: { rows: TrendingRow[]; lead: strin
   return (
     <section aria-label="Trending AI tools">
       <Head n="01" eyebrow="Trending" title="Trending AI tools" lead={lead} href="/tools/" cta="Browse all tools" />
-      <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {/* On a phone the six cards sit in a swipeable row (about one screen tall instead of six); from tablet width up they are the grid they always were. */}
+      <ol className="rail -mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
         {rows.map((r, i) => {
           const t = getTool(r.id);
           if (!t) return null;
           const [a, b] = catColors(t.category);
           const cat = getCategory(t.category);
           return (
-            <li key={t.id}>
+            <li key={t.id} className="w-[82%] shrink-0 snap-start md:w-auto">
               {/* The whole card is one link: the title link stretches over the card (.tile a.tile-link::after). Nothing inside the card may be positioned and stacked above that overlay, so the decoration sits behind (-z-10) and the content is plain flow. */}
               <article className="tile group isolate flex h-full cursor-pointer flex-col gap-4 p-6 transition-transform duration-300 hover:-translate-y-1">
                 <span aria-hidden="true" className="absolute inset-x-0 top-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${a}, ${b})` }} />

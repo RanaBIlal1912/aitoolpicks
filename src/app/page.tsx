@@ -87,36 +87,36 @@ export default function Home() {
       <LogoRibbon tools={home.ribbon} />
 
       <div className="mx-auto max-w-7xl px-5">
-        <Reveal as="section" className="pt-20 cv-section">
+        <Reveal as="section" className="pt-12 md:pt-20 cv-section">
           {home.trending && <TrendingTools rows={home.trending.rows} lead={home.trending.lead} />}
         </Reveal>
 
-        <Reveal as="section" className="pt-24 cv-section">
+        <Reveal as="section" className="pt-14 md:pt-24 cv-section">
           <Head n="02" eyebrow="Editor's picks" title="Where to start" lead="Well-documented tools across the jobs people use AI for." href="/tools/" cta="Browse every tool" />
           <FeaturedBento ids={home.picks} />
         </Reveal>
 
-        <Reveal as="section" className="pt-24 cv-section">
+        <Reveal as="section" className="pt-14 md:pt-24 cv-section">
           <Head n="03" eyebrow="New in the directory" title="Recently added" lead="Newest records first. This shows when we added a tool, not when the vendor released it." href="/tools/" cta="Explore the full directory" />
           <AddedTimeline tools={home.recent} />
         </Reveal>
 
-        <Reveal as="section" className="pt-24 cv-section">
+        <Reveal as="section" className="pt-14 md:pt-24 cv-section">
           <LatestBlog items={blog} />
         </Reveal>
       </div>
 
-      <Reveal className="mt-24 overflow-x-clip">
+      <Reveal className="mt-14 overflow-x-clip md:mt-24">
         <LatestNews items={news} />
       </Reveal>
 
       <div className="mx-auto max-w-7xl px-5">
-        <Reveal as="section" className="pt-24 cv-section">
+        <Reveal as="section" className="pt-14 md:pt-24 cv-section">
           <Head n="06" eyebrow="Discover" title="Explore categories" href="/tools/" cta="Search all tools" />
           <CategoryRail logos={false} />
         </Reveal>
 
-        <Reveal as="section" className="pt-20 cv-section">
+        <Reveal as="section" className="pt-12 md:pt-20 cv-section">
           <FinalCta />
         </Reveal>
       </div>

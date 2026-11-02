@@ -86,8 +86,8 @@ export function FeaturedBento({ ids }: { ids: string[] }) {
   if (!lead) return null;
   const [a, b] = catColors(lead.category);
   return (
-    <div className="grid gap-5 lg:grid-cols-4 lg:grid-rows-2">
-      <article className="tile isolate flex cursor-pointer flex-col justify-between gap-8 p-8 md:p-10 lg:col-span-2 lg:row-span-2" style={{ minHeight: 420 }}>
+    <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:grid-rows-2">
+      <article className="tile isolate flex cursor-pointer flex-col justify-between gap-8 p-8 md:p-10 col-span-2 lg:row-span-2 lg:min-h-[420px]">
         <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-70" style={{ background: `radial-gradient(520px 360px at 85% 0%, ${a}55, transparent 70%), radial-gradient(420px 300px at 0% 100%, ${b}33, transparent 70%)` }} />
         <div>
           <ToolLogo id={lead.id} name={lead.name} hue={lead.hue} size={84} />
@@ -225,7 +225,7 @@ export function FreeLedger({ tools }: { tools: Tool[] }) {
 /** Newest records as a dated timeline. */
 export function AddedTimeline({ tools }: { tools: Tool[] }) {
   return (
-    <ol className="relative grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+    <ol className="relative grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-6">
       {tools.map((t) => (
         <li key={t.id} className="relative">
           <time dateTime={t.added} className="mb-3 block text-xs font-bold uppercase tracking-[0.14em] text-cyan">{formatDate(t.added)}</time>

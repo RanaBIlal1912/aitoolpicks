@@ -46,7 +46,7 @@
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-30",
+    "checked": "2026-11-02",
     "source": "https://chatgpt.com/pricing",
     "free": {
       "available": true,
@@ -68,7 +68,7 @@
         "audience": "individual",
         "currency": "USD",
         "unit": "per month",
-        "note": "Billed monthly. Displayed as PKR 1,400 per month for a Pakistan visitor; the USD price was not shown. The page says this plan may include ads.",
+        "note": "Billed monthly. Displayed as PKR 1,400 per month, inclusive of VAT, for a Pakistan visitor; the USD price was not shown. The page says this plan may include ads.",
         "highlights": [
           "More messages, uploads, image creation and voice chats than Free",
           "Longer memory",
@@ -88,7 +88,7 @@
           "Projects, scheduled tasks and custom GPTs",
           "Expanded Codex usage"
         ],
-        "note": "Displayed as PKR 5,700 per month for a Pakistan visitor; the USD $20 figure is from an earlier check and was not re-seen in this browser."
+        "note": "Displayed as PKR 5,700 per month for a Pakistan visitor; the owner's screenshot shows a limited-time offer of PKR 0 for the first month, continuing at PKR 5,700 per month from 2 Dec 2026. The USD $20 figure is from an earlier check and was not re-seen in this browser."
       },
       {
         "name": "Pro 100",
@@ -131,7 +131,7 @@
         "audience": "business",
         "currency": "USD",
         "unit": "per user per month",
-        "note": "Priced per user, starting at 2 users, with monthly and annual options. The price was not captured."
+        "note": "Priced per user, starting at 2 users (teams of 2 to 200), with monthly and annual options. For a Pakistan visitor on 2 Nov 2026: Standard seat PKR 5,600 per month on annual billing or PKR 7,000 billed monthly; Premium seat PKR 28,000 or PKR 35,000. The USD prices were not shown."
       },
       {
         "name": "Enterprise",
@@ -146,7 +146,7 @@
       "summary": "API usage is billed separately from ChatGPT plans.",
       "source": "https://chatgpt.com/pricing"
     },
-    "regional": "Purchases are made in USD; local-currency billing exists in a limited set of countries (OpenAI help center). Tax may apply.",
+    "regional": "Purchases are made in USD; local-currency billing exists in a limited set of countries (OpenAI help center). For a Pakistan visitor the pricing page shows rupees, and the owner's screenshot labels Go (PKR 1,400) and Pro (PKR 27,999 for the lowest of three usage tiers) as inclusive of VAT. Tax may apply.",
     "reference": {
       "plan": "Plus",
       "amount": 20,
@@ -192,9 +192,9 @@
     "status": "partial",
     "officialUrl": "https://chatgpt.com/",
     "pricingUrl": "https://chatgpt.com/pricing/",
-    "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees: Free PKR 0, Go PKR 1,400/month, Plus PKR 5,700/month, Pro from PKR 27,999/month (three usage tiers). Business and Enterprise sit on a separate tab that was not read. The USD figures kept here ($20 Plus; $100/$200/$500 Pro tiers) come from an earlier check and were not shown in this browser, so they stay partially verified.",
-    "checked": "2026-10-30",
-    "method": "Opened in the Claude desktop built-in browser; page text read"
+    "notes": "Product active. Re-read on 2 Nov 2026 in the built-in browser, including the Business & Enterprise tab. For a Pakistan visitor everything is shown in rupees: Free PKR 0, Go PKR 1,400, Plus PKR 5,700 and Pro from PKR 27,999 per month (three usage tiers); Business Standard seat PKR 5,600 per month on annual billing or PKR 7,000 billed monthly, Premium seat PKR 28,000 or PKR 35,000; Enterprise by contacting sales. The USD figures kept here ($20 Plus; $100/$200/$500 Pro tiers) come from an earlier check and cannot be seen from Pakistan, and the page changes by country, so the record stays partially verified. The owner's screenshot confirms PKR 1,400 (Go, inclusive of VAT), PKR 27,999 (Pro, inclusive of VAT, usage tiers 100, 200 and 500) and a limited-time Plus offer of PKR 0 for one month before PKR 5,700 per month.",
+    "checked": "2026-11-02",
+    "method": "Opened in the Claude desktop built-in browser (Individual and Business & Enterprise tabs read), plus a screenshot of the pricing page supplied by the site owner"
   },
   "profile": {
     "headline": "One assistant to chat, work and code in",

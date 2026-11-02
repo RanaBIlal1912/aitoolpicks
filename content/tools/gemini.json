@@ -44,7 +44,7 @@
   "pricing": {
     "status": "partial",
     "model": "freemium",
-    "checked": "2026-10-30",
+    "checked": "2026-11-02",
     "source": "https://gemini.google/subscriptions/",
     "plans": [
       {
@@ -99,7 +99,7 @@
           "10,000 or 25,000 Google Flow credits by tier",
           "Storage starting at 20 TB"
         ],
-        "note": "Starting price in Pakistani rupees (5x AI Pro usage); a 20x tier is shown at Rs 55,900 per month"
+        "note": "Starting price in Pakistani rupees (5x AI Pro usage) on gemini.google/subscriptions; the Google AI plans page shown in the owner's screenshot lists AI Ultra at Rs 27,900 per month with a 5x/20x limits switch, so the two official pages disagree and the amount is not settled"
       },
       {
         "name": "Gemini Enterprise Business",
@@ -110,7 +110,8 @@
         "highlights": [
           "For up to 300 seats",
           "25 GiB pooled storage per seat"
-        ]
+        ],
+        "note": "Shown as a starting price of $21 per seat per month, for up to 300 seats"
       },
       {
         "name": "Gemini Enterprise Standard/Plus",
@@ -121,7 +122,8 @@
         "highlights": [
           "Unlimited seats",
           "Up to 75 GiB pooled storage per seat"
-        ]
+        ],
+        "note": "Shown as a starting price of $30 per seat per month; contact sales"
       }
     ],
     "free": {
@@ -133,7 +135,7 @@
       "summary": "Google AI Studio is free to start, with paid tiers for higher limits. The Gemini platform is pay-as-you-go. Per-token rates were not shown on the page we read.",
       "source": "https://gemini.google/subscriptions/"
     },
-    "regional": "Consumer prices on the page we read were shown in Pakistani rupees (the page localises by country), so the US price is not recorded here. Plan availability varies by country (footnotes cite 140+, 150+ or 160+ countries). Annual pricing is not stated for any plan.",
+    "regional": "Consumer prices are localised by country (shown here in Pakistani rupees), so the US price is not recorded. The Google AI plans page in the owner's screenshot also shows annual options: AI Plus Rs 14,000 per year (saves Rs 2,800) and AI Pro Rs 55,900 per year (saves Rs 11,300); AI Ultra is monthly billing only. Plan availability varies by country. Annual pricing was not on the other page we read.",
     "notes": [
       "Consumer plan prices differ by country. Check the official page for the price in your country."
     ]
@@ -163,9 +165,9 @@
     "status": "partial",
     "officialUrl": "https://gemini.google.com/",
     "pricingUrl": "https://gemini.google/subscriptions/",
-    "notes": "Product active. The page opened in Urdu for Pakistan and shows Free Rs 0, Google AI Plus Rs 1,400 per month, Google AI Pro Rs 5,600 per month (PKR), matching the stored figures; Pro includes 4x Free usage limits and Plus 2x. The Business and Developer tabs were not read, so the stored Gemini Enterprise USD prices are unconfirmed in this check. Pakistan prices only.",
-    "checked": "2026-10-30",
-    "method": "Opened in the Claude desktop built-in browser; page text read"
+    "notes": "Product active. gemini.google/subscriptions (Pakistan): Free Rs 0, Google AI Plus Rs 1,400, Google AI Pro Rs 5,600, Google AI Ultra Rs 21,999 (5x AI Pro usage) and a 20x tier at Rs 55,900 per month; Business tab (USD): Gemini Enterprise Business from $21 and Standard/Plus from $30 per seat per month. The owner's screenshots of the Google AI plans page show Plus Rs 1,400 and Pro Rs 5,600 per month (matching), annual Plus Rs 14,000 and Pro Rs 55,900 per year, but AI Ultra at Rs 27,900 per month with a 5x/20x switch, which does not match Rs 21,999. Because the two pages disagree on Ultra, the record stays partially verified.",
+    "checked": "2026-11-02",
+    "method": "Opened in the Claude desktop built-in browser (Urdu page for Pakistan; Personal, Business and Developer tabs read), plus screenshots of Google's AI plans page supplied by the site owner"
   },
   "profile": {
     "headline": "Google's AI assistant for writing, learning, coding and creating",
