@@ -154,5 +154,115 @@
     "notes": "Product active. The official plan comparison lists monthly $10 / $30 / $60 / $120 and annual $96 / $288 / $576 / $1,152 (i.e. $8 / $24 / $48 / $96 a month) for Basic, Standard, Pro, Mega; extra GPU time $4/hour; companies above $1,000,000 USD gross revenue per year must use Pro or Mega. There is no free plan on this page.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Image generation from a prompt, with controls for style and detail",
+    "capabilities": [
+      {
+        "title": "Generate images from a text prompt",
+        "text": "Type your prompt in the Imagine bar, on the Midjourney website or in Discord."
+      },
+      {
+        "title": "Choose the model version",
+        "text": "Add a version parameter to a prompt, or set a default version in the settings panel; each version handles prompts and styles differently."
+      },
+      {
+        "title": "Get higher-resolution images",
+        "text": "HD images produce 2K results without upscaling, using more GPU time than standard images."
+      },
+      {
+        "title": "Edit and extend images",
+        "text": "The Edit Model, along with pan, zoom out and vary-region tools, changes or extends an existing image."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Personalization",
+        "text": "Learns your aesthetic tastes so results can match your style."
+      },
+      {
+        "name": "Moodboards",
+        "text": "Listed as a supported feature in the documentation's feature chart."
+      },
+      {
+        "name": "Style and image references",
+        "text": "Style Reference, Style Reference Codes and image prompts guide a result with an example."
+      },
+      {
+        "name": "Raw mode",
+        "text": "Turn on Raw to remove default styling for closer prompt adherence."
+      },
+      {
+        "name": "Niji models",
+        "text": "A series developed with Spellbrush that focuses on anime, Eastern aesthetics and illustrative styles."
+      },
+      {
+        "name": "Speed modes",
+        "text": "Relax, Fast and Turbo modes are listed in the documentation's feature chart."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Anime and illustration fans",
+        "text": "The Niji models focus on anime and illustrative styles."
+      },
+      {
+        "who": "People who want a consistent look",
+        "text": "Personalization, Moodboards and style references help repeat an aesthetic."
+      },
+      {
+        "who": "Discord users",
+        "text": "Prompts can be run in Discord as well as on the website."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Explore visual ideas from a sentence",
+        "text": "Describe a scene and compare what different versions produce."
+      },
+      {
+        "title": "Make repeatable characters in an anime style",
+        "text": "The Niji documentation says a newer Niji version follows prompts more closely for specific designs or repeatable characters."
+      },
+      {
+        "title": "Produce higher-resolution images directly",
+        "text": "Turn on HD to generate 2K images without a separate upscale step."
+      },
+      {
+        "title": "Adjust part of an image",
+        "text": "Use the Edit Model to change or extend an image you already made."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up",
+        "text": "Create an account on midjourney.com; the site offers Sign up and Log in."
+      },
+      {
+        "step": "Write a prompt",
+        "text": "Type it in the Imagine bar on the website or in Discord."
+      },
+      {
+        "step": "Pick a version",
+        "text": "Add a version parameter to your prompt, or choose a default in the settings panel."
+      },
+      {
+        "step": "Try HD",
+        "text": "Switch on HD images in the settings panel or with the HD parameter."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Midjourney documentation: Version",
+        "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "Midjourney homepage",
+        "url": "https://www.midjourney.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

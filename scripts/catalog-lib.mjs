@@ -48,6 +48,7 @@ export function validateTool(t, ctx) {
   if (!ctx.categories.has(t.category)) at(`unknown category ${t.category}`);
   if (!Array.isArray(t.categories) || !t.categories.includes(t.category) || !t.categories.every((c) => ctx.categories.has(c))) at("categories must include the primary category and only known slugs");
   for (const k of ["features", "useCases", "audience", "strengths", "limitations"]) if (!isList(t[k])) at(`${k} must be a non-empty list of strings`);
+  if (t.keyFeature !== undefined && !isStr(t.keyFeature, 8)) at("keyFeature must be a short capability sentence");
   if (!Array.isArray(t.alternatives)) at("alternatives must be a list");
   else for (const a of t.alternatives) if (!ctx.ids.has(a) || a === t.id) at(`bad alternative ${a}`);
   if (!ISO.test(t.verified ?? "")) at("verified must be an ISO date");
@@ -182,7 +183,7 @@ export function buildIndex(tools) {
     officialUrl: t.website,
     hue: t.hue,
     ...(t.review ? { review: t.review } : {}),
-    keyFeature: t.features[0],
+    keyFeature: t.keyFeature ?? t.features[0],
     freePlan: freeFlag(t),
     trial: Boolean(t.pricing.trial),
     openSource: t.openSource ? t.openSource.status : null,

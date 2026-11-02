@@ -148,5 +148,6 @@
     "notes": "Product active (now an editor plus cloud agents). Free $0; Pro $20/month; Max $200/month; Teams is $80/month for the team plan plus $40/month per full developer seat (up to 200 users); Enterprise by demo. Corrected: Teams was stored as $40 per user only; the $80 team base was missing. Paid plans have daily and weekly usage allowances; extra usage is bought at API pricing.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "AI coding agents and an editor"
 }

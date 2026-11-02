@@ -146,5 +146,6 @@
     "notes": "Product active. Annual view, shown in USD this time: Starter $20/month billed annually (2.5k executions), Pro $50 (10k), Business $800 (40k, self-hosted only); Enterprise custom. A Monthly toggle exists but was not read. An earlier check showed euros (EUR 20 / 50 / 667), so the displayed currency and the Business price differ by visit; the stored EUR figures are replaced by the USD figures seen now.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Workflow automation you can self-host"
 }

@@ -137,5 +137,6 @@
     "notes": "Product active. USD, excluding tax: Free $0 ($5 one-time credits for new users, 7 messages a day); Plus $30 per user/month ($30 of monthly credits plus $2 free daily credits; an unlabelled $90 figure sits beside it); Business $100 per user/month; Enterprise custom. Model token rates match the stored ones.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Generates interfaces and apps with AI"
 }

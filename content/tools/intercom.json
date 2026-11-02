@@ -116,5 +116,6 @@
     "notes": "Product active. Pricing is marked 'Pay annually': Essential $29 list ($19 shown to new customers, 'save 35%'), Advanced $85, Expert $132 per seat/month; Fin AI Agent $0.99 per outcome; 14-day cardless free trial. Corrected: these are annual-billing prices, not an unlabelled period.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
-  }
+  },
+  "keyFeature": "Customer service platform with the Fin AI agent"
 }

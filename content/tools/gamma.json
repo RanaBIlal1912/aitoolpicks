@@ -147,5 +147,114 @@
     "notes": "Product active. Individual tab, annual view: Plus $9, Pro $18, Ultra $90 per seat/month ($108 / $216 / $1,080 billed annually); the monthly figures ($12 / $25 / $100) are from an earlier check and were not re-seen. Free: 400 credits at signup. Monthly credits: Plus 1,500, Pro 4,000, Ultra 20,000. Business tab not read. Prices subject to tax.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Presentations, documents and websites with an AI agent that knows your goal",
+    "capabilities": [
+      {
+        "title": "Start from a conversation",
+        "text": "The agent starts with a conversation, builds an outline first so you shape the story, and iterates in chat beside your deck."
+      },
+      {
+        "title": "Get a look that fits the story",
+        "text": "Describe a style, attach inspiration, or let Gamma choose a look matched to your content, audience and brand."
+      },
+      {
+        "title": "Edit any way you like",
+        "text": "Ask the agent for changes, drop in smart layouts, or move anything freely in freeform design mode."
+      },
+      {
+        "title": "Bring your content in and send it out",
+        "text": "Import PowerPoint and PDF with formatting intact, pull content from Slack, Notion, Dropbox and more, and export to PowerPoint, PDF and other formats."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Presentations",
+        "text": "Decks with clean export to PowerPoint, PDF and more."
+      },
+      {
+        "name": "Documents",
+        "text": "One-pagers to white papers, structured and visual."
+      },
+      {
+        "name": "Social media visuals",
+        "text": "Carousels and graphics sized for each platform, in your brand."
+      },
+      {
+        "name": "Websites",
+        "text": "Prompt it, publish it and share the link."
+      },
+      {
+        "name": "API",
+        "text": "Automate creation and editing inside your own product."
+      },
+      {
+        "name": "Built-in AI images",
+        "text": "Infographics, illustrations and on-brand visuals, editable where you work."
+      },
+      {
+        "name": "Custom instructions and brand controls",
+        "text": "Workspace templates and brand controls keep the output consistent."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Solopreneurs and startups",
+        "text": "The site lists solopreneurs and startups among its users."
+      },
+      {
+        "who": "Universities and educators",
+        "text": "Gamma names top-tier universities, and educators appear among its customer quotes."
+      },
+      {
+        "who": "Large companies",
+        "text": "The site mentions customers such as IBM, Mastercard and Novartis helping shape the product."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Build a pitch or sales deck",
+        "text": "Shape the outline in conversation, pick a style, and export to PowerPoint."
+      },
+      {
+        "title": "Write a one-pager or white paper",
+        "text": "Produce a structured, on-brand document ready to share."
+      },
+      {
+        "title": "Make social carousels",
+        "text": "Create graphics sized for each platform in your brand."
+      },
+      {
+        "title": "Publish a quick website",
+        "text": "Turn a prompt into a live site and share the link."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start for free",
+        "text": "Use the Start for free button on gamma.app."
+      },
+      {
+        "step": "Begin with a conversation",
+        "text": "Tell the agent your goal and review the outline it proposes."
+      },
+      {
+        "step": "Choose a look",
+        "text": "Describe a style or attach inspiration."
+      },
+      {
+        "step": "Refine and share",
+        "text": "Edit by asking, dragging or dropping a layout, then export or share a link."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gamma homepage",
+        "url": "https://gamma.app",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

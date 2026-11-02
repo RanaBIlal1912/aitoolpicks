@@ -130,5 +130,110 @@
     "notes": "Product active. The pricing page opened for a Pakistan visitor in rupees on the Yearly view: Free Rs 0, Pro Rs 9,200 per year for one person, Business Rs 16,000 per year per person; Enterprise is contact sales. Pro and Business show a free-trial button. The Monthly view was not read, and USD prices were not seen, so this stays partially verified.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A visual suite for designing posts, videos, presentations and more",
+    "capabilities": [
+      {
+        "title": "Make AI-powered social posts, videos and presentations",
+        "text": "Canva's own line: make AI-powered social posts, videos, presentations and more."
+      },
+      {
+        "title": "Fix and prepare images",
+        "text": "Clean up photos with Magic Eraser, remove image backgrounds in one click, and sharpen photos with Image Upscaler."
+      },
+      {
+        "title": "Turn an image into an editable layout",
+        "text": "Magic Layers converts an image into an editable layout."
+      },
+      {
+        "title": "Write with AI help",
+        "text": "Magic Write is Canva's tool for improving your writing."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Magic Resize",
+        "text": "Resize a design instantly for any channel."
+      },
+      {
+        "name": "Brand Kit",
+        "text": "Keep presentations and posts on-brand."
+      },
+      {
+        "name": "Presentations and animations",
+        "text": "Create presentations and bring them to life with animations."
+      },
+      {
+        "name": "Video editor and templates",
+        "text": "Turn clips into content, with trending video templates and studio-quality stock videos."
+      },
+      {
+        "name": "AI captions",
+        "text": "Boost engagement with AI-powered captions on video."
+      },
+      {
+        "name": "Apps",
+        "text": "Use Canva with your favourite apps."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Everyone",
+        "text": "Canva calls itself a Visual Suite for Everyone."
+      },
+      {
+        "who": "Small businesses",
+        "text": "Canva Business is described as built for small businesses with big aspirations."
+      },
+      {
+        "who": "Large organisations",
+        "text": "Canva Enterprise is an end-to-end platform for large organisations."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Build a presentation from a template",
+        "text": "Start from a presentation template and add animations."
+      },
+      {
+        "title": "Publish one design in many sizes",
+        "text": "Use Magic Resize to adapt a design for each channel."
+      },
+      {
+        "title": "Clean up a product photo",
+        "text": "Remove the background or an unwanted object, then upscale the image."
+      },
+      {
+        "title": "Make a short video",
+        "text": "Start from a trending video template and add AI captions."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start designing",
+        "text": "Use the Get started for free button on canva.com."
+      },
+      {
+        "step": "Pick a template",
+        "text": "Browse templates for presentations, social posts and video."
+      },
+      {
+        "step": "Add your brand",
+        "text": "Set up a Brand Kit so designs stay on-brand."
+      },
+      {
+        "step": "Look at Business or Enterprise",
+        "text": "Teams can explore Canva Business or Canva Enterprise."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Canva homepage",
+        "url": "https://www.canva.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
