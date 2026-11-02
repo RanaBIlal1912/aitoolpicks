@@ -169,5 +169,110 @@
     "notes": "Product active (AI coding agent). The page's structured data lists Plus $8, Premium $30, Super $100, Ultra $200 and Teams $30 in USD, matching the stored prices. The pricing page text now describes a usage pool shared across Cursor and Grok, Plus as Grok-models-only, and third-party models at API list price; it is unusual and the visible plan cards could not be read cleanly, so the allowance details are unconfirmed. Needs manual review.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A coding agent for building software",
+    "capabilities": [
+      {
+        "title": "Hand off a task and review the result",
+        "text": "Agents work on their own computers to build, test and demo a feature end to end, then show you the finished work."
+      },
+      {
+        "title": "Run many agents at once",
+        "text": "Teams can launch agents that work in parallel on tasks that take hours or days."
+      },
+      {
+        "title": "Work where your team already works",
+        "text": "Use Cursor Desktop, the Cursor CLI, the Slack integration, or have it review GitHub pull requests."
+      },
+      {
+        "title": "Pick the model for the job",
+        "text": "Choose from models by OpenAI, Anthropic, Gemini, SpaceXAI and Cursor itself, as the site lists them."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Autonomous agents",
+        "text": "Agents that build, test and demonstrate their own work instead of only suggesting code."
+      },
+      {
+        "name": "Parallel agents",
+        "text": "Several agents on separate tasks at the same time, for larger pieces of work."
+      },
+      {
+        "name": "CLI",
+        "text": "Install the command-line version with a single curl command."
+      },
+      {
+        "name": "Slack and GitHub",
+        "text": "Start work from Slack and get help reviewing pull requests."
+      },
+      {
+        "name": "Model choice",
+        "text": "Models from several providers are available in one place."
+      },
+      {
+        "name": "Enterprise security",
+        "text": "The site lists SOC 2, ISO 27001 and ISO 42001 certifications for business customers."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Software developers",
+        "text": "The main audience: people who write and ship code every day."
+      },
+      {
+        "who": "Engineering teams",
+        "text": "Teams that want to hand tasks to agents and review the output together."
+      },
+      {
+        "who": "Enterprises",
+        "text": "The site offers demos and contact with sales for large organisations."
+      },
+      {
+        "who": "Students",
+        "text": "The site mentions Students as a group, without describing the offer in detail."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Build a landing page or dashboard",
+        "text": "Start from documents or research data and have an agent produce an interactive page."
+      },
+      {
+        "title": "Add a feature to an existing tool",
+        "text": "Implement an algorithm in a specialist tool and fix a parser, as shown in the site's examples."
+      },
+      {
+        "title": "Clear small team requests",
+        "text": "Link changelog entries, add rate limits or fix a sign-in redirect."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Download Cursor",
+        "text": "The site's download button lists macOS."
+      },
+      {
+        "step": "Sign in",
+        "text": "Use Get started to log in or create an account at the dashboard."
+      },
+      {
+        "step": "Or use the command line",
+        "text": "The CLI installs with: curl https://cursor.com/install -fsS | bash"
+      },
+      {
+        "step": "For a company",
+        "text": "Request a demo or contact sales."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Cursor homepage",
+        "url": "https://cursor.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

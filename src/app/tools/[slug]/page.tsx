@@ -24,6 +24,8 @@ import AlternativeList from "@/components/AlternativeList";
 import { alternativesFor } from "@/lib/alternatives";
 import FavoriteButton, { RecentTracker } from "@/components/FavoriteButton";
 import Reveal from "@/components/Reveal";
+import { AudienceGrid, Capabilities, FeatureCards, ProfileNotice, ProfileSection, ProfileSources, RelatedGrid, Scenarios, Steps } from "@/components/tool/Profile";
+import { relatedFor } from "@/lib/related";
 import PriceText from "@/components/PriceText";
 import { format } from "@/lib/currency";
 import JsonLd from "@/components/JsonLd";
@@ -81,6 +83,10 @@ export default async function ToolPage({ params }: Props) {
   const guides = articlesMentioning(t.id);
   const comparisons = COMPARISONS.filter((c) => c.leftTool === t.id || c.rightTool === t.id);
   const alts = alternativesFor(t.id, 4);
+  // Related tools never repeat the tool itself or one of the alternatives shown above them.
+  const relatedTools = relatedFor(t.id, alts.map((a) => a.tool.id), 4);
+  const profile = t.profile;
+  const accent = catColors(t.category);
   const logo = logoFor(t.id);
   const lowest = t.pricing.plans.filter((p) => typeof p.monthly === "number" && p.monthly > 0).sort((a, b) => (a.monthly as number) - (b.monthly as number))[0];
   const logoNote = logo ? (logo.status === "ok" ? undefined : `Logo: ${t.name}’s own site icon, shown at a small size.`) : "No verified logo yet, so a letter mark is shown.";
@@ -110,7 +116,12 @@ export default async function ToolPage({ params }: Props) {
             {t.name}
           </span>
         }
-        lead={`${t.tagline}. ${t.description}`}
+        lead={
+          <>
+            <span className="block font-semibold text-white">{profile?.headline ?? t.tagline}</span>
+            <span className="mt-2 block">{t.description}</span>
+          </>
+        }
         crumbs={[
           { name: "Tools", href: "/tools/" },
           { name: cat?.label ?? t.category, href: `/tools/category/${t.category}/` },
@@ -118,7 +129,25 @@ export default async function ToolPage({ params }: Props) {
         ]}
       >
         <RecentTracker id={t.id} />
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+        <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${t.name} tags`}>
+          <li>
+            <Link href={`/tools/category/${t.category}/`} className="chip no-underline">
+              {cat?.label}
+            </Link>
+          </li>
+          {sub && <li className="chip">{sub.label}</li>}
+          <li className="chip">{PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model}</li>
+          {t.openSource && <li className="chip">{OPEN_LABEL[t.openSource.status]}</li>}
+          {t.platforms?.slice(0, 3).map((p) => (
+            <li key={p} className="chip">
+              {p}
+            </li>
+          ))}
+          <li className={`rounded-full border px-3 py-1.5 text-xs font-bold ${t.pricing.status === "verified" ? "border-emerald-400/40 bg-emerald-400/10 text-emerald-200" : "border-amber-400/40 bg-amber-400/10 text-amber-200"}`}>
+            {t.pricing.status === "verified" ? "Pricing verified" : t.pricing.status === "partial" ? "Pricing partly verified" : "Pricing not verified"}
+          </li>
+        </ul>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
           <AffLink id={t.id} className="btn-primary" />
           <FavoriteButton id={t.id} name={t.name} label className="!py-2.5" />
           <a href={t.pricing.source} target="_blank" rel="noopener noreferrer" className="btn-ghost">
@@ -151,37 +180,67 @@ export default async function ToolPage({ params }: Props) {
         </ul>
       </div>
       <div className="mx-auto max-w-7xl px-5">
-        <ToolShot id={t.id} name={t.name} className="mb-12 max-w-3xl" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div className="min-w-0 space-y-12">
+            {!profile && <ProfileNotice name={t.name} />}
+
             <Reveal as="section">
-              <h2 className="section-title text-white">Features</h2>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {t.features.map((f) => (
-                  <li key={f} className="feature-card flex gap-3 text-soft">
-                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" className="mt-0.5 shrink-0" fill="none" stroke="#22d3ee" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              {t.platforms && <p className="mt-4 text-sm text-muted">Platforms: {t.platforms.join(", ")}</p>}
-              {t.integrations && <p className="mt-1 text-sm text-muted">Integrations: {t.integrations.join(", ")}</p>}
+              <ProfileSection id="what" eyebrow="What it does" title={`What can you do with ${t.name}?`}>
+                {profile ? (
+                  <Capabilities items={profile.capabilities} accent={accent[0]} />
+                ) : (
+                  <div className="glass rounded-[22px] p-6 text-soft">
+                    <p>{t.description}</p>
+                    <p className="mt-3 text-sm text-muted">Key feature: {t.features[0] ?? t.tagline}</p>
+                  </div>
+                )}
+                <ToolShot id={t.id} name={t.name} className="mt-6 max-w-2xl" />
+              </ProfileSection>
             </Reveal>
 
             <Reveal as="section">
-              <div className="grid gap-6 md:grid-cols-2">
-                <List title="Use cases" items={t.useCases} tone="plain" />
-                <List title="Intended for" items={t.audience} tone="plain" />
-                <List title="Strengths" items={t.strengths} tone="good" />
-                <List title="Limitations and restrictions" items={t.limitations} tone="warn" />
-              </div>
+              <ProfileSection id="features" eyebrow="Key features" title="What it includes">
+                <FeatureCards cards={profile?.featureCards} plain={t.features} accent={accent} />
+                {t.platforms && <p className="mt-4 text-sm text-muted">Platforms: {t.platforms.join(", ")}</p>}
+                {t.integrations && <p className="mt-1 text-sm text-muted">Integrations: {t.integrations.join(", ")}</p>}
+              </ProfileSection>
             </Reveal>
+
+            <Reveal as="section">
+              <ProfileSection id="audience" eyebrow="Who it is for" title={`Who is ${t.name} for?`}>
+                <AudienceGrid items={profile?.audienceDetail} plain={t.audience} />
+              </ProfileSection>
+            </Reveal>
+
+            <Reveal as="section">
+              <ProfileSection id="use-cases" eyebrow="In practice" title="Real use cases">
+                {profile ? <Scenarios items={profile.scenarios} /> : <List title="What people use it for" items={t.useCases} tone="plain" />}
+              </ProfileSection>
+            </Reveal>
+
+            {profile && (
+              <Reveal as="section">
+                <ProfileSection id="how" eyebrow="How it works" title="Getting started">
+                  <Steps items={profile.gettingStarted} />
+                  <ProfileSources profile={profile} />
+                </ProfileSection>
+              </Reveal>
+            )}
 
             <Reveal as="section">
               <h2 className="section-title mb-5 text-white" id="pricing">
                 Plans and pricing
               </h2>
               <PricingTable pricing={t.pricing} name={t.name} />
+            </Reveal>
+
+            <Reveal as="section">
+              <ProfileSection id="pros-cons" eyebrow="Honest view" title="Advantages and limitations" lead="From the vendor's own pages and our verification of them, not from user reviews.">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <List title="Advantages" items={t.strengths} tone="good" />
+                  <List title="Limitations and restrictions" items={t.limitations} tone="warn" />
+                </div>
+              </ProfileSection>
             </Reveal>
 
             {t.openSource && (
@@ -207,6 +266,14 @@ export default async function ToolPage({ params }: Props) {
                 <div className="mt-5">
                   <AlternativeList baseId={t.id} baseName={t.name} items={alts} />
                 </div>
+              </Reveal>
+            )}
+
+            {relatedTools.length > 0 && (
+              <Reveal as="section">
+                <ProfileSection id="related" eyebrow="Keep exploring" title="Related tools" lead={`Other tools from the same category or kind of work as ${t.name}, apart from the alternatives above.`}>
+                  <RelatedGrid tools={relatedTools} />
+                </ProfileSection>
               </Reveal>
             )}
 
