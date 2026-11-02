@@ -15,7 +15,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://chatgpt.com/pricing",
-  "checked": "2026-10-30"
+  "checked": "2026-11-02"
  },
  "claude": {
   "plan": "Pro",
@@ -42,7 +42,7 @@
   "per": "month",
   "billing": "monthly",
   "source": "https://cursor.com/pricing",
-  "checked": "2026-10-30"
+  "checked": "2026-11-02"
  },
  "deepl": {
   "plan": "Individual",

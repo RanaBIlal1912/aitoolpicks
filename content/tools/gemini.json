@@ -99,7 +99,7 @@
           "10,000 or 25,000 Google Flow credits by tier",
           "Storage starting at 20 TB"
         ],
-        "note": "Starting price in Pakistani rupees (5x AI Pro usage) on gemini.google/subscriptions; the Google AI plans page shown in the owner's screenshot lists AI Ultra at Rs 27,900 per month with a 5x/20x limits switch, so the two official pages disagree and the amount is not settled"
+        "note": "Rs 21,999 per month is the 5x tier price on gemini.google/subscriptions and one.google.com/about/google-ai-plans (both public, Pakistan). The signed-in Google One page (one.google.com/ai) shows AI Ultra as 'Starting at PKR 27,900 per month'. Google does not explain the difference on any page we read, so the amount is not settled; confirm at checkout"
       },
       {
         "name": "Gemini Enterprise Business",
@@ -135,7 +135,7 @@
       "summary": "Google AI Studio is free to start, with paid tiers for higher limits. The Gemini platform is pay-as-you-go. Per-token rates were not shown on the page we read.",
       "source": "https://gemini.google/subscriptions/"
     },
-    "regional": "Consumer prices are localised by country (shown here in Pakistani rupees), so the US price is not recorded. The Google AI plans page in the owner's screenshot also shows annual options: AI Plus Rs 14,000 per year (saves Rs 2,800) and AI Pro Rs 55,900 per year (saves Rs 11,300); AI Ultra is monthly billing only. Plan availability varies by country. Annual pricing was not on the other page we read.",
+    "regional": "Consumer prices are localised by country (shown here in Pakistani rupees), so the US price is not recorded. The signed-in Google One page (one.google.com/ai, read in Chrome on 2026-11-02) shows annual options: AI Plus Rs 14,000 per year (saves Rs 2,800) and AI Pro Rs 55,900 per year (saves Rs 11,300); AI Ultra is monthly billing only. Plan availability varies by country. Annual pricing was not on the public pages we read.",
     "notes": [
       "Consumer plan prices differ by country. Check the official page for the price in your country."
     ]
@@ -165,9 +165,9 @@
     "status": "partial",
     "officialUrl": "https://gemini.google.com/",
     "pricingUrl": "https://gemini.google/subscriptions/",
-    "notes": "Product active. gemini.google/subscriptions (Pakistan): Free Rs 0, Google AI Plus Rs 1,400, Google AI Pro Rs 5,600, Google AI Ultra Rs 21,999 (5x AI Pro usage) and a 20x tier at Rs 55,900 per month; Business tab (USD): Gemini Enterprise Business from $21 and Standard/Plus from $30 per seat per month. The owner's screenshots of the Google AI plans page show Plus Rs 1,400 and Pro Rs 5,600 per month (matching), annual Plus Rs 14,000 and Pro Rs 55,900 per year, but AI Ultra at Rs 27,900 per month with a 5x/20x switch, which does not match Rs 21,999. Because the two pages disagree on Ultra, the record stays partially verified.",
+    "notes": "Product active. gemini.google/subscriptions (Pakistan): Free Rs 0, Google AI Plus Rs 1,400, Google AI Pro Rs 5,600, Google AI Ultra Rs 21,999 (5x AI Pro usage) and a 20x tier at Rs 55,900 per month; Business tab (USD): Gemini Enterprise Business from $21 and Standard/Plus from $30 per seat per month. one.google.com/about/google-ai-plans (public, Chrome, Pakistan) matches it: Ultra 5x Rs 21,999 and 20x Rs 55,900 per month. The signed-in Google One page one.google.com/ai (Chrome, signed-in account, Pakistan) matches Plus Rs 1,400 and Pro Rs 5,600 per month and shows annual Plus Rs 14,000 and Pro Rs 55,900 per year, but shows AI Ultra as 'Starting at PKR 27,900 per month' (monthly billing only). No tax or VAT wording was found on that page, and Plus and Pro are identical across surfaces, so tax alone does not explain the gap. We could not find an official explanation (different plan, regional offer or outdated price), so the record stays partially verified and both Ultra figures are documented.",
     "checked": "2026-11-02",
-    "method": "Opened in the Claude desktop built-in browser (Urdu page for Pakistan; Personal, Business and Developer tabs read), plus screenshots of Google's AI plans page supplied by the site owner"
+    "method": "Opened in the Claude desktop built-in browser (Personal, Business and Developer tabs read) and, on 2026-11-02, in the owner's real Chrome (Pakistan, Asia/Karachi): gemini.google/subscriptions, one.google.com/about/google-ai-plans and the signed-in one.google.com/ai page including its Annual toggle; no checkout or payment step was opened"
   },
   "profile": {
     "headline": "Google's AI assistant for writing, learning, coding and creating",

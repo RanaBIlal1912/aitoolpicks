@@ -144,8 +144,114 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "profileBlocked": {
-    "reason": "The official site at julius.ai blocks automated reading (HTTP 403) and, opened in a browser, shows only a prompt box and a list of template names (Excel, slides, website, video, image, browser agent), with no description of what the product does or who it is for.",
-    "checked": "2026-11-02"
+  "profile": {
+    "headline": "An AI workspace for analysing data and creating presentations, sites, images and video",
+    "capabilities": [
+      {
+        "title": "Analyse data and research",
+        "text": "Explore files, run analyses, visualise results and get answers with citations."
+      },
+      {
+        "title": "Create presentations",
+        "text": "Turn an idea, prompt or source material into a presentation."
+      },
+      {
+        "title": "Build reports and dashboards",
+        "text": "Produce shareable reports and dashboards from your data and research."
+      },
+      {
+        "title": "Build websites and web apps",
+        "text": "Create responsive sites, interactive tools and working web experiences."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Browser agent",
+        "text": "Marked as new on the homepage; the pricing page describes browser and parallel agents for research and web tasks."
+      },
+      {
+        "name": "Excel and slides modes",
+        "text": "Pick Excel or Slides from the prompt bar to start in that format."
+      },
+      {
+        "name": "Image and video generation",
+        "text": "Generate images and video from text or images, then refine them in the same workspace."
+      },
+      {
+        "name": "Templates",
+        "text": "Ready-made starting points such as board update, QBR, investor update and product launch."
+      },
+      {
+        "name": "Custom brand templates",
+        "text": "Announced on the homepage as live."
+      },
+      {
+        "name": "Data connectors",
+        "text": "Business plans connect to databases and warehouses such as Postgres, BigQuery and Snowflake."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Analysts and data-minded professionals",
+        "text": "Plans are described as being for everyday analysis, research and advanced analysis."
+      },
+      {
+        "who": "Teams",
+        "text": "The Business plan is for creating, analysing and collaborating together, with teammates invited to a shared workspace."
+      },
+      {
+        "who": "Creators and marketers",
+        "text": "Presentations, websites, images and video are part of the same workspace."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Prepare a quarterly business review",
+        "text": "Start from a QBR or performance report template and fill it from your data."
+      },
+      {
+        "title": "Analyse an uploaded file",
+        "text": "Ask questions of a spreadsheet or document and get charts back."
+      },
+      {
+        "title": "Put together an investor update",
+        "text": "Use a template to draft slides from your source material."
+      },
+      {
+        "title": "Publish a small site",
+        "text": "Build a website and publish it on a Julius domain."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Open the workspace",
+        "text": "Type a request into the prompt box on julius.ai; signup is prompted when you submit."
+      },
+      {
+        "step": "Pick a mode",
+        "text": "Choose from the options under the prompt such as Excel, Slides, Image or Video."
+      },
+      {
+        "step": "Try a template",
+        "text": "Browse the template list for a starting point close to your task."
+      },
+      {
+        "step": "Review the plans",
+        "text": "The pricing page compares credits, models and limits between plans."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Julius homepage",
+        "url": "https://julius.ai",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "Julius plans and features",
+        "url": "https://julius.ai/pricing",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
