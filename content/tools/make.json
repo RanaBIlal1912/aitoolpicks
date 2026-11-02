@@ -114,5 +114,106 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Visual automation platform for connecting apps"
+  "keyFeature": "Visual automation platform for connecting apps",
+  "profile": {
+    "headline": "Visual automation with AI agents, built by prompting or drag and drop",
+    "capabilities": [
+      {
+        "title": "Build an automation your way",
+        "text": "Create workflows by prompting, by dragging and dropping modules, or through MCP."
+      },
+      {
+        "title": "Set goals for AI agents",
+        "text": "Give an agent a goal, tools and limits, and view its reasoning."
+      },
+      {
+        "title": "Run Make from your AI assistant",
+        "text": "The Make MCP Server lets you build and run automations from Claude, ChatGPT or Gemini."
+      },
+      {
+        "title": "Add code when you need control",
+        "text": "Use JavaScript or Python inside a scenario."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Workflow Builder",
+        "text": "The visual canvas where scenarios are built, tested and debugged."
+      },
+      {
+        "name": "AI Agents",
+        "text": "Agents that work towards a goal using the tools you give them."
+      },
+      {
+        "name": "3,500+ app integrations",
+        "text": "Connect apps out of the box, and add a custom integration for any app with an API."
+      },
+      {
+        "name": "Observability",
+        "text": "Monitor your stack live, including third-party resources."
+      },
+      {
+        "name": "Governance",
+        "text": "Role-based access, audit logs and real-time analytics."
+      },
+      {
+        "name": "Security",
+        "text": "The site lists GDPR compliance, SOC 2 Type II and SOC 3, encryption and SSO."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Non-developers",
+        "text": "Build by prompting, drag-and-drop or from an AI chat."
+      },
+      {
+        "who": "Developers",
+        "text": "Add custom code and custom integrations where needed."
+      },
+      {
+        "who": "Teams across a company",
+        "text": "Marketing, sales, operations, IT, finance and customer experience teams are named."
+      },
+      {
+        "who": "Executives and change leaders",
+        "text": "The site describes roles that view all automations and follow team activity."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Connect dealership interactions",
+        "text": "A customer example on the site describes an AI voice agent built with Make."
+      },
+      {
+        "title": "Scale up automations across a company",
+        "text": "A customer on the site reports more than 100 automated processes."
+      },
+      {
+        "title": "Let a large team build quickly",
+        "text": "Another customer says its 300+ employees can innovate in hours, not weeks."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try Make free",
+        "text": "Sign up for the free plan; the site says no credit card is needed and the plan has no time limit."
+      },
+      {
+        "step": "Build your first automation",
+        "text": "Start by prompting, dragging in modules, or working from an AI chat."
+      },
+      {
+        "step": "Scale up",
+        "text": "For larger deployments, talk to sales or review the paid plans."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Make homepage",
+        "url": "https://www.make.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

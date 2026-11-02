@@ -73,13 +73,12 @@ describe("alternatives and related tools", () => {
     }
   });
 
-  it("only suggests tools that are close: the same subcategory, or the same or a shared category", () => {
+  it("only suggests the same kind of tool: the same subcategory (or the same category when the tool has no subcategory)", () => {
     for (const t of TOOLS) {
       const alts = alternativesFor(t.id, 4).map((a) => a.tool.id);
       for (const r of relatedFor(t.id, alts, 4)) {
-        const sameCat = r.category === t.category;
-        const sharedSecond = r.categories.some((c) => c !== t.category && t.categories.includes(c));
-        expect(sameCat || sharedSecond, `${t.id} -> ${r.id}`).toBe(true);
+        expect(r.category, `${t.id} -> ${r.id}`).toBe(t.category);
+        if (t.subcategory) expect(r.subcategory, `${t.id} -> ${r.id}`).toBe(t.subcategory);
       }
     }
   });
@@ -95,6 +94,9 @@ describe("alternatives and related tools", () => {
     expect(rel("langchain")).not.toContain("whisper");
     expect(rel("deepgram")).not.toContain("suno");
     expect(rel("deepgram")).not.toContain("langsmith");
+    expect(rel("gamma")).not.toContain("deepl");
+    expect(rel("grammarly")).not.toContain("gamma");
+    expect(rel("cursor")).not.toContain("v0");
   });
 });
 

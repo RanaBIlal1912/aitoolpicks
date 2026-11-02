@@ -160,5 +160,114 @@
     "notes": "Product active. For Individuals, Monthly view: Free $0 (3 watermarked videos/month, 1 minute each); Creator $29/month (600 credits, 1080p, no branding); Pro $49/month (1,000 credits, 4K, videos up to 30 minutes). A Yearly toggle ('2 months free') exists. The For Businesses tab was not re-read, so Business $149 is from an earlier check.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Make videos from text with AI avatars, voices and translation",
+    "capabilities": [
+      {
+        "title": "Generate a video from a prompt",
+        "text": "Video Agent creates a video from a text prompt, with motion graphics and other elements still editable afterwards."
+      },
+      {
+        "title": "Present with an avatar",
+        "text": "Choose an avatar, enter a script, pick a voice and language, then generate and export."
+      },
+      {
+        "title": "Translate existing videos",
+        "text": "Translate into 175+ languages and dialects with voice cloning, lip-sync and a brand glossary."
+      },
+      {
+        "title": "Turn a deck into video",
+        "text": "PPT/PDF to Video makes each slide a scene with an avatar and voiceover."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Avatar V",
+        "text": "Keeps an avatar's identity consistent across videos, with lip-sync, gestures and several camera angles."
+      },
+      {
+        "name": "AI Studio",
+        "text": "A text-based editor where you control script, tone, gestures and emotion."
+      },
+      {
+        "name": "Team tools",
+        "text": "Comments, tagging, multi-user editing, Brand Kit, auto captions and B-roll."
+      },
+      {
+        "name": "Other ways to start",
+        "text": "Text to Video, Image to Video and Audio to Video."
+      },
+      {
+        "name": "Custom avatars with verification",
+        "text": "A custom avatar needs on-camera identity verification from the person shown."
+      },
+      {
+        "name": "Moderation",
+        "text": "The platform scans for policy violations and includes moderation."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Creators",
+        "text": "Social content and courses."
+      },
+      {
+        "who": "Marketing teams and agencies",
+        "text": "Explainers, product demos and promos."
+      },
+      {
+        "who": "E-learning and L&D teams",
+        "text": "Training, onboarding and compliance videos."
+      },
+      {
+        "who": "Localisation and sales outreach teams",
+        "text": "Translated videos and personalised outreach."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Translate a video for new markets",
+        "text": "Keep the speaker's voice and re-sync the lips in another language."
+      },
+      {
+        "title": "Turn a podcast into a video",
+        "text": "Convert audio into video with an avatar."
+      },
+      {
+        "title": "Make an onboarding video",
+        "text": "Start from a script and export a finished training video."
+      },
+      {
+        "title": "Send personalised sales outreach",
+        "text": "Create videos tailored to a prospect."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Get started for free",
+        "text": "The site says a free plan supports text-to-video and AI-generated video creation."
+      },
+      {
+        "step": "Choose an avatar and add a script",
+        "text": "Or upload a deck, or a short clip or image to use yourself as the avatar."
+      },
+      {
+        "step": "Pick a voice and language",
+        "text": "Then adjust visuals and branding."
+      },
+      {
+        "step": "Generate and export",
+        "text": "Download the finished video."
+      }
+    ],
+    "sources": [
+      {
+        "label": "HeyGen homepage",
+        "url": "https://www.heygen.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

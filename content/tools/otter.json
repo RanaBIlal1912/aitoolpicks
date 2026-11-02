@@ -138,5 +138,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Records and transcribes meetings and conversations"
+  "keyFeature": "Records and transcribes meetings and conversations",
+  "profile": {
+    "headline": "Meeting transcripts, summaries and answers across your conversations",
+    "capabilities": [
+      {
+        "title": "Capture conversations from anywhere",
+        "text": "Record from a Mac or Windows desktop, from mobile, or from a browser."
+      },
+      {
+        "title": "Read the transcript as people speak",
+        "text": "Live transcription with several languages and speaker recognition."
+      },
+      {
+        "title": "Get the summary and next steps",
+        "text": "Instant summaries with decisions, action items and insights."
+      },
+      {
+        "title": "Ask questions across your meetings",
+        "text": "Otter AI Chat searches your meetings and connected apps to answer questions and help create follow-ups and reports."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Bot-free desktop app",
+        "text": "Record directly from your desktop without a bot joining the call."
+      },
+      {
+        "name": "Pre-call briefings",
+        "text": "Briefing documents with earlier discussions and action items, delivered before a meeting."
+      },
+      {
+        "name": "Live-Assist coaching",
+        "text": "Real-time prompts during calls based on conversation history and company playbooks."
+      },
+      {
+        "name": "CRM sync",
+        "text": "Deal details, notes and next steps are extracted and synced to your CRM."
+      },
+      {
+        "name": "Channels",
+        "text": "Group meetings by team, project or topic for shared access."
+      },
+      {
+        "name": "MCP Server",
+        "text": "Lets ChatGPT, Claude and other AI chat tools securely use your meeting knowledge."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Sales teams",
+        "text": "Call notes, live coaching tips, automated follow-ups and CRM sync."
+      },
+      {
+        "who": "Students and educators",
+        "text": "Capture lectures and study sessions as searchable notes and summaries."
+      },
+      {
+        "who": "Journalists and media teams",
+        "text": "Interview transcription and help organising thoughts into content."
+      },
+      {
+        "who": "Recruiters",
+        "text": "Real-time help during interviews and structured candidate insights, with notes synced to Greenhouse."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Capture a sales call",
+        "text": "Get call notes and push the deal details to your CRM."
+      },
+      {
+        "title": "Record a lecture",
+        "text": "Keep searchable notes and a summary for studying."
+      },
+      {
+        "title": "Transcribe an interview",
+        "text": "Turn a recorded conversation into text you can search and quote."
+      },
+      {
+        "title": "Prepare for a meeting",
+        "text": "Read the briefing with earlier discussions and open action items first."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start for free",
+        "text": "Use the Start for free button to sign up."
+      },
+      {
+        "step": "Choose a plan",
+        "text": "The site lists Basic, Business and Enterprise; the Enterprise plan is by contacting sales."
+      },
+      {
+        "step": "Connect your tools",
+        "text": "Link your calendar and meeting tools, or install the desktop app, mobile apps or Chrome extension."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Otter.ai homepage",
+        "url": "https://otter.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

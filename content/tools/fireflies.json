@@ -130,5 +130,110 @@
     "notes": "Product active. Page opened with a Monthly/Annual toggle (save up to 44%). Billed annually per seat/month: Pro $10, Business $19, Enterprise $39 (annual only). A second, higher figure sits beside Pro ($18) and Business ($29) and is most likely the monthly-billing price, but the Monthly view could not be toggled so it is not recorded as a price. Corrected: plan prices and Free limits were previously missing.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI assistant that records meetings, summarises them and makes them searchable",
+    "capabilities": [
+      {
+        "title": "Transcribe and record meetings",
+        "text": "Transcripts in 100+ languages with speaker recognition and automatic language detection."
+      },
+      {
+        "title": "Get an AI summary",
+        "text": "Overview, bullet points, action items and custom notes for each conversation."
+      },
+      {
+        "title": "Search past conversations",
+        "text": "AI-powered search finds what was said in earlier meetings."
+      },
+      {
+        "title": "Get help during the meeting",
+        "text": "Live Assist gives real-time suggestions, coaching and answers."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Conversation Intelligence",
+        "text": "Speaker talk-time, AI filters, sentiment analysis and topic trackers."
+      },
+      {
+        "name": "AI Skills",
+        "text": "More than 200 skills for tasks such as extracting details, writing follow-up emails and scoring candidates."
+      },
+      {
+        "name": "Voice Agents",
+        "text": "Run screening, discovery or check-in calls that each end with a transcript and summary."
+      },
+      {
+        "name": "Fireflies MCP",
+        "text": "Brings meeting insights into AI tools such as Claude and ChatGPT."
+      },
+      {
+        "name": "Many ways to capture",
+        "text": "Mobile app, desktop app, dialers and API, or upload an audio or video file."
+      },
+      {
+        "name": "Collaboration tools",
+        "text": "Channels, user groups, comments and bookmarks, soundbites and downloads."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Sales and recruiting teams",
+        "text": "The site lists both, with CRM and applicant-tracking integrations."
+      },
+      {
+        "who": "Marketing and user research",
+        "text": "Both are named among the teams that use it."
+      },
+      {
+        "who": "Engineering and finance",
+        "text": "Named alongside healthcare, media and venture capital."
+      },
+      {
+        "who": "Regulated organisations",
+        "text": "Healthcare (HIPAA BAA) and education (FERPA DSA) needs are available on Enterprise with Private Storage."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Fill in the CRM",
+        "text": "Add notes and call logs to the CRM automatically."
+      },
+      {
+        "title": "Create follow-up tasks",
+        "text": "Send tasks to a project management tool after a meeting."
+      },
+      {
+        "title": "Send interview notes to an ATS",
+        "text": "Pass meeting notes to Greenhouse or Lever."
+      },
+      {
+        "title": "Watch team participation",
+        "text": "Track speaking time and sentiment across meetings."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start on the free plan",
+        "text": "The site says it includes transcription, summaries and search, with no credit card required."
+      },
+      {
+        "step": "Connect your meetings",
+        "text": "Link Zoom, Google Meet, Microsoft Teams or Gmail, or use the mobile, desktop or API options."
+      },
+      {
+        "step": "Know when it joins",
+        "text": "Fireflies joins meetings when invited or according to your auto-record settings, and participants can see that recording is on."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fireflies.ai homepage",
+        "url": "https://fireflies.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
