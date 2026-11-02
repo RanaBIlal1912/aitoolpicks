@@ -102,5 +102,110 @@
     "notes": "Product active. Pay-as-you-go: most models billed by run time on the hardware used, some per input and output (flux-1.1-pro $0.04 per image, flux-dev $0.025, flux-schnell $3.00 per thousand images, deepseek-r1 $3.75 per million input tokens). No subscription tiers; enterprise by sales. Hardware per-second rates were not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Run, fine-tune and deploy machine-learning models with one API call",
+    "capabilities": [
+      {
+        "title": "Run thousands of public models",
+        "text": "Use community-published models, such as image models, through a single API call."
+      },
+      {
+        "title": "Fine-tune a model on your data",
+        "text": "Train an existing model to produce a specific style or subject."
+      },
+      {
+        "title": "Deploy your own model",
+        "text": "Package it with Cog, the open-source packaging tool, and Replicate builds an API server and runs it in the cloud."
+      },
+      {
+        "title": "Scale automatically",
+        "text": "The platform scales up with traffic and down to zero when there is none."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "One line of code",
+        "text": "Call replicate.run with a model name and an input."
+      },
+      {
+        "name": "Cog",
+        "text": "Open-source tooling for packaging models."
+      },
+      {
+        "name": "Logging and monitoring",
+        "text": "Metrics on performance and logs for debugging single predictions."
+      },
+      {
+        "name": "Model catalogue",
+        "text": "Browse models for images, speech, music and video."
+      },
+      {
+        "name": "Push a model",
+        "text": "Publish your own model for others to use."
+      },
+      {
+        "name": "Enterprise plans",
+        "text": "Dedicated plans are offered for enterprises."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers and product teams",
+        "text": "Add an AI feature without being machine-learning experts."
+      },
+      {
+        "who": "Model creators",
+        "text": "Share and publish models through Push a model."
+      },
+      {
+        "who": "Enterprises",
+        "text": "Dedicated plans are available."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Generate images, speech or music",
+        "text": "Call a public model from your app."
+      },
+      {
+        "title": "Restore or caption images",
+        "text": "Use models listed for those jobs."
+      },
+      {
+        "title": "Create video from images",
+        "text": "Run an image-to-video model."
+      },
+      {
+        "title": "Run a large language model",
+        "text": "Call one through the same API."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up for a free account",
+        "text": "Then pick a client: Node, Python or HTTP."
+      },
+      {
+        "step": "Set your API token",
+        "text": "For example in an environment variable."
+      },
+      {
+        "step": "Call a model",
+        "text": "Pass a model name and an input object."
+      },
+      {
+        "step": "Explore the catalogue and docs",
+        "text": "For more models and options."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Replicate homepage",
+        "url": "https://replicate.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

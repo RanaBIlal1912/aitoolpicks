@@ -86,5 +86,106 @@
     "notes": "Project active (high-throughput, memory-efficient inference and serving engine for LLMs). Apache-2.0 license shown. No pricing: open-source software.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Fast, easy serving of large language models",
+    "capabilities": [
+      {
+        "title": "Serve models with high throughput",
+        "text": "State-of-the-art throughput using PagedAttention, continuous batching, chunked prefill and prefix caching."
+      },
+      {
+        "title": "Run many model types",
+        "text": "200+ Hugging Face architectures, from decoder-only and mixture-of-experts models to multimodal, embedding and reward models."
+      },
+      {
+        "title": "Fit models on your hardware",
+        "text": "Quantisation including FP8, INT8, INT4, GPTQ, AWQ and GGUF, and several forms of parallelism."
+      },
+      {
+        "title": "Expose a standard API",
+        "text": "An OpenAI-compatible server, plus an Anthropic Messages API and gRPC."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Speculative decoding",
+        "text": "n-gram, suffix, EAGLE and DFlash methods."
+      },
+      {
+        "name": "Structured outputs",
+        "text": "Through xgrammar or guidance."
+      },
+      {
+        "name": "Tool calling and reasoning parsers",
+        "text": "For agent-style use."
+      },
+      {
+        "name": "Multi-LoRA",
+        "text": "For dense and mixture-of-experts layers."
+      },
+      {
+        "name": "Wide hardware support",
+        "text": "NVIDIA and AMD GPUs and several CPUs, with plugins for TPUs, Gaudi and other accelerators."
+      },
+      {
+        "name": "Open community",
+        "text": "Started at UC Berkeley and maintained by many institutions and over 2,000 contributors."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "People running open models",
+        "text": "Start from the Quickstart Guide."
+      },
+      {
+        "who": "People building applications on vLLM",
+        "text": "Start from the User Guide."
+      },
+      {
+        "who": "People developing vLLM itself",
+        "text": "Start from the Developer Guide."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Serve a Hugging Face model",
+        "text": "Use the integrated model support."
+      },
+      {
+        "title": "Run a large mixture-of-experts model",
+        "text": "Split it across GPUs with expert and tensor parallelism."
+      },
+      {
+        "title": "Serve many fine-tunes",
+        "text": "Use multi-LoRA."
+      },
+      {
+        "title": "Return JSON that follows a schema",
+        "text": "Use structured outputs."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "To run models",
+        "text": "Open the Quickstart Guide."
+      },
+      {
+        "step": "To build an application",
+        "text": "Open the User Guide."
+      },
+      {
+        "step": "To work on vLLM",
+        "text": "Open the Developer Guide."
+      }
+    ],
+    "sources": [
+      {
+        "label": "vLLM documentation",
+        "url": "https://docs.vllm.ai/en/latest/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

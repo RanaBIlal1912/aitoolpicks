@@ -82,5 +82,106 @@
     "notes": "Project active (LLM inference in C/C++; about 132.8k stars; recent commits). MIT license shown. No pricing: open-source software.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Run language models on your own hardware with plain C/C++",
+    "capabilities": [
+      {
+        "title": "Run models locally or in the cloud",
+        "text": "The project's stated aim is LLM and VLM inference with minimal setup and strong performance across a wide range of hardware."
+      },
+      {
+        "title": "Fit larger models in less memory",
+        "text": "Integer quantisation from 1.5-bit to 8-bit speeds up inference and lowers memory use."
+      },
+      {
+        "title": "Use CPU and GPU together",
+        "text": "Hybrid inference partly accelerates models that are larger than the GPU's memory."
+      },
+      {
+        "title": "Serve an API",
+        "text": "An OpenAI-compatible API server and a built-in web UI are included."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "No dependencies",
+        "text": "A plain C/C++ implementation."
+      },
+      {
+        "name": "Apple silicon support",
+        "text": "A first-class target, using ARM NEON, Accelerate and Metal."
+      },
+      {
+        "name": "x86 and RISC-V",
+        "text": "AVX, AVX2, AVX512 and AMX on x86; several RISC-V extensions."
+      },
+      {
+        "name": "Many GPU backends",
+        "text": "CUDA, HIP, MUSA, Vulkan, SYCL, OpenCL and WebGPU."
+      },
+      {
+        "name": "Command-line tools",
+        "text": "cli, completion, server and GBNF grammars."
+      },
+      {
+        "name": "Multimodal use",
+        "text": "Shown with a vision-language model session in the CLI."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "People who want to run models offline",
+        "text": "Local inference with small setup is the project's goal. The page does not name an audience, so these groups follow from what it documents."
+      },
+      {
+        "who": "Developers needing an API",
+        "text": "The server speaks an OpenAI-compatible API."
+      },
+      {
+        "who": "Contributors",
+        "text": "The page invites pull requests and lists maintainers and collaborators."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Run a model straight from Hugging Face",
+        "text": "Use the CLI with a Hugging Face model name."
+      },
+      {
+        "title": "Launch a local API server",
+        "text": "Start the server and point an OpenAI-style client at it."
+      },
+      {
+        "title": "Chat in the built-in web UI",
+        "text": "Use the browser interface that ships with the server."
+      },
+      {
+        "title": "Try a vision-language model",
+        "text": "The page shows a VLM session in the CLI."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Install it",
+        "text": "Use the install script, visit llama.app, use Docker, download a pre-built binary, or build from source."
+      },
+      {
+        "step": "Run a model",
+        "text": "Run the CLI with a Hugging Face model, for example a small Qwen GGUF model."
+      },
+      {
+        "step": "Start the server",
+        "text": "Launch the API server with the same model."
+      }
+    ],
+    "sources": [
+      {
+        "label": "llama.cpp repository",
+        "url": "https://github.com/ggml-org/llama.cpp",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

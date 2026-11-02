@@ -145,5 +145,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "AI search visibility and content platform"
+  "keyFeature": "AI search visibility and content platform",
+  "profile": {
+    "headline": "An AI search platform that tracks how brands appear in AI answers and acts on it",
+    "capabilities": [
+      {
+        "title": "Track AI visibility daily",
+        "text": "Run brand or topic prompts across AI platforms and see visibility, citations and sentiment."
+      },
+      {
+        "title": "Know what to do this week",
+        "text": "The Action Center ranks opportunities and surfaces the five to ten actions that matter."
+      },
+      {
+        "title": "Rewrite pages so AI can cite them",
+        "text": "An AI agent adds FAQ blocks, comparison tables and self-contained passages."
+      },
+      {
+        "title": "Measure the result",
+        "text": "Each fix is checked at day 14 and day 28 for citation share, AI traffic, conversions and pipeline."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "AI Search Dataset",
+        "text": "More than 2 billion AI conversations across 8 platforms and 50+ markets, updated weekly."
+      },
+      {
+        "name": "External citations",
+        "text": "Finds Reddit threads, YouTube videos and listicles that cite competitors and drafts outreach."
+      },
+      {
+        "name": "AI crawler audit",
+        "text": "Checks robots.txt, schema, indexing and broken pages from AI bot visits, with one-click fixes."
+      },
+      {
+        "name": "Unified SEO and AI view",
+        "text": "SEO and AI visibility tracked together with unified scores."
+      },
+      {
+        "name": "Integrations",
+        "text": "Google Analytics, Search Console, Looker Studio, Keyword Planner, WordPress, APIs and MCP."
+      },
+      {
+        "name": "The AI Search Loop",
+        "text": "Track, Prioritise, Act, Measure, Repeat."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Enterprises",
+        "text": "Multi-brand tracking, executive reporting, approval workflows and a dedicated strategist."
+      },
+      {
+        "who": "Agencies",
+        "text": "White-label reporting and multi-client management."
+      },
+      {
+        "who": "Growth teams",
+        "text": "Prioritised actions with built-in execution."
+      },
+      {
+        "who": "E-commerce brands",
+        "text": "Product-level tracking and attribution for ChatGPT Shopping."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Find answers that recommend competitors",
+        "text": "See which AI answers name rivals instead of you."
+      },
+      {
+        "title": "Fix a product page for AI engines",
+        "text": "Improve its schema, FAQs and answer placement."
+      },
+      {
+        "title": "Earn mentions where AI tools look",
+        "text": "Reddit, YouTube and listicle sites."
+      },
+      {
+        "title": "Attribute revenue to AI search",
+        "text": "Connect visibility to pipeline."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start a 7-day free trial",
+        "text": "The site says no credit card is required."
+      },
+      {
+        "step": "Or book a demo",
+        "text": "Talk to an AI search strategist about blind spots, an action plan and how to measure ROI."
+      },
+      {
+        "step": "Pick prompts to track",
+        "text": "Choose them yourself or let the platform recommend them."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Writesonic homepage",
+        "url": "https://writesonic.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

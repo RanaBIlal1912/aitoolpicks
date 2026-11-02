@@ -137,5 +137,114 @@
     "notes": "Product active. Free tier read: 25+ free models, 4 free providers, 5 workspaces, 50 requests a day, community support. The Standard (5.5%) and Business (8%) credit-purchase fees on the stored record are from an earlier check; the page's FAQ, which holds them, was not expanded.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "One API for hundreds of language models from many providers",
+    "capabilities": [
+      {
+        "title": "Use any model through one endpoint",
+        "text": "Every chat model accepts the same request shape, and you pick the model with a model parameter."
+      },
+      {
+        "title": "Stay up through outages",
+        "text": "Automatic fallbacks route around provider outages and rate limits."
+      },
+      {
+        "title": "Compare models",
+        "text": "The Models, Compare, Rankings and Benchmarks pages compare price, context length, latency and usage."
+      },
+      {
+        "title": "Go beyond text",
+        "text": "Image, video, speech-to-text and text-to-speech models are available through the same platform."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Cost tracking",
+        "text": "Listed as a core feature across providers."
+      },
+      {
+        "name": "Free models",
+        "text": "Models with the free variant, and a router that picks one for you, with daily rate limits."
+      },
+      {
+        "name": "EU in-region routing",
+        "text": "OpenRouter Business can send prompts and completions only to European providers."
+      },
+      {
+        "name": "Enterprise controls",
+        "text": "SSO and SCIM, zero data retention, budgets and spend alerts, and an SLA."
+      },
+      {
+        "name": "MCP server and skills",
+        "text": "Support for coding agents."
+      },
+      {
+        "name": "Ori tools",
+        "text": "Ori Harness runs agent command-line tools on OpenRouter; Ori Eval runs your own prompts to compare models."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers",
+        "text": "One key, one bill and one SDK for many models."
+      },
+      {
+        "who": "Teams that want to switch models freely",
+        "text": "Change a model name without changing code."
+      },
+      {
+        "who": "Organisations with reliability needs",
+        "text": "Fallbacks and regional routing."
+      },
+      {
+        "who": "Researchers and journalists",
+        "text": "The Data and State of AI pages are offered to them."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Send one prompt to several models",
+        "text": "Compare their answers side by side."
+      },
+      {
+        "title": "Keep an app running during an outage",
+        "text": "Fall back to another provider."
+      },
+      {
+        "title": "Add voice or image features",
+        "text": "Use the speech and media models on the same platform."
+      },
+      {
+        "title": "Choose a model for a project",
+        "text": "Run your own prompts through Ori Eval."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up",
+        "text": "No sales contact is needed."
+      },
+      {
+        "step": "Create an API key",
+        "text": "In your account settings."
+      },
+      {
+        "step": "Send a request",
+        "text": "Call the chat completions endpoint with a model name."
+      },
+      {
+        "step": "Try a free model",
+        "text": "Use a free variant or the free router to start without cost."
+      }
+    ],
+    "sources": [
+      {
+        "label": "OpenRouter homepage",
+        "url": "https://openrouter.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

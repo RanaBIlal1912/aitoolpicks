@@ -114,5 +114,106 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Inference, fine-tuning and GPU clusters for open models"
+  "keyFeature": "Inference, fine-tuning and GPU clusters for open models",
+  "profile": {
+    "headline": "An AI cloud for running, scaling and customising open-source models",
+    "capabilities": [
+      {
+        "title": "Run open models on demand",
+        "text": "Serverless Inference needs no infrastructure to manage."
+      },
+      {
+        "title": "Process big jobs asynchronously",
+        "text": "Batch Inference handles large workloads, up to 30 billion tokens per model."
+      },
+      {
+        "title": "Reserve capacity",
+        "text": "Provisioned Throughput offers committed capacity and a 99% uptime SLA."
+      },
+      {
+        "title": "Tune a model",
+        "text": "Fine-Tuning adapts open models without you managing training infrastructure."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Dedicated inference",
+        "text": "Deploy models on dedicated infrastructure or containers, including GPU infrastructure for video, audio and image models."
+      },
+      {
+        "name": "Accelerated Compute",
+        "text": "Self-serve clusters that can scale to thousands of GPUs."
+      },
+      {
+        "name": "Sandbox",
+        "text": "Code sandboxes for AI apps and agents."
+      },
+      {
+        "name": "Managed Storage",
+        "text": "Object storage and parallel filesystems with zero egress fees."
+      },
+      {
+        "name": "Model library",
+        "text": "Open-source models for text, image, video, code and voice."
+      },
+      {
+        "name": "Together Research",
+        "text": "Work on kernels, inference, agents and model architectures."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Teams building AI products",
+        "text": "From early experiments to large scale."
+      },
+      {
+        "who": "AI-native companies",
+        "text": "The site names customers such as Cursor and Decagon."
+      },
+      {
+        "who": "Teams that need speed and control",
+        "text": "Dedicated and reserved options."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Run a production AI application",
+        "text": "Including real-time and voice AI."
+      },
+      {
+        "title": "Process a large batch",
+        "text": "Submit it for asynchronous inference."
+      },
+      {
+        "title": "Deploy generative media models",
+        "text": "Video, audio and image."
+      },
+      {
+        "title": "Fine-tune to cut hallucinations",
+        "text": "Improve accuracy and control behaviour."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start building",
+        "text": "The button opens the API platform at api.together.ai."
+      },
+      {
+        "step": "Browse or try models",
+        "text": "Use the model library."
+      },
+      {
+        "step": "Ask an expert",
+        "text": "The site offers contact for enterprise needs."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Together AI homepage",
+        "url": "https://www.together.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

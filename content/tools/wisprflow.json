@@ -129,5 +129,114 @@
     "notes": "Product active. The page has a Monthly / Annual (20% discount) toggle and shows Free $0 (2,000 words a week on desktop), Pro $12 per user/month, Growth $18 per user/month, Enterprise custom. The toggle could not be switched, so it is not confirmed that these are annual-billing figures; the stored monthly figure for Pro ($15) is from an earlier check.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Voice dictation that types polished text into any app, plus meeting notes",
+    "capabilities": [
+      {
+        "title": "Speak instead of typing",
+        "text": "Flow turns speech into clear, polished writing in any app where you can type."
+      },
+      {
+        "title": "Clean up as you speak",
+        "text": "It removes filler words, adds punctuation, formats lists and emails, and applies corrections you make mid-sentence."
+      },
+      {
+        "title": "Dictate in 100+ languages",
+        "text": "Selecting the language you speak gives the best accuracy."
+      },
+      {
+        "title": "Record meetings",
+        "text": "Notetaker produces a transcript with speakers named, a topic-based summary and next steps."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Works in every app",
+        "text": "No plugins; it types wherever your cursor is."
+      },
+      {
+        "name": "Personal vocabulary",
+        "text": "Learns names, acronyms and jargon, and you can add words yourself."
+      },
+      {
+        "name": "Snippets",
+        "text": "Speak a shortcut and it expands into saved text."
+      },
+      {
+        "name": "Style settings",
+        "text": "A different tone for messages, work chats and emails."
+      },
+      {
+        "name": "Apps for four platforms",
+        "text": "Mac, Windows, iPhone and Android."
+      },
+      {
+        "name": "Privacy",
+        "text": "The site says data is never sold, and lists SOC 2 Type II, HIPAA and ISO 27001."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers and creators",
+        "text": "Dictate into code editors, terminals and AI tools."
+      },
+      {
+        "who": "Leaders, marketers and sales teams",
+        "text": "Draft messages and emails quickly."
+      },
+      {
+        "who": "Students and customer support teams",
+        "text": "Named on the site."
+      },
+      {
+        "who": "Lawyers and accessibility users",
+        "text": "Both groups are listed among Wispr Flow users."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Write a message without typing",
+        "text": "Dictate into Gmail, Slack or iMessage."
+      },
+      {
+        "title": "Prompt an AI tool by voice",
+        "text": "Speak into ChatGPT, Claude or Cursor."
+      },
+      {
+        "title": "Expand a shortcut",
+        "text": "Say a snippet name to insert an email or a link."
+      },
+      {
+        "title": "Capture a meeting",
+        "text": "Record a Zoom, Meet, Teams or in-person meeting."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Download Flow",
+        "text": "For your device, using the free download."
+      },
+      {
+        "step": "Choose your language",
+        "text": "And deselect the languages you do not speak."
+      },
+      {
+        "step": "Use the built-in microphone",
+        "text": "The site advises against Bluetooth earbuds for dictation."
+      },
+      {
+        "step": "Speak in any app",
+        "text": "Add names or terms to your vocabulary as needed."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Wispr Flow homepage",
+        "url": "https://wisprflow.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

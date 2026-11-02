@@ -125,5 +125,110 @@
     "notes": "Product active. Basic $12/month and Pro $40/month, both billed yearly (save $96 and $120), each with a 7-day free trial; Pro adds API access and larger collections (10,000 papers); Enterprise custom. The monthly-billing price is not shown.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Research search that shows whether later studies support or contradict a paper",
+    "capabilities": [
+      {
+        "title": "Search full text, not only abstracts",
+        "text": "Search across 300M+ articles, preprints, books, patents and datasets."
+      },
+      {
+        "title": "See how research was cited",
+        "text": "Smart Citations show whether later work supports, challenges or merely mentions a paper, claim, method, journal, author, institution or funder."
+      },
+      {
+        "title": "Ask a question and get a cited answer",
+        "text": "AssistantAI answers from the literature, and every claim links to the specific sentence in the specific paper."
+      },
+      {
+        "title": "Organise and monitor papers",
+        "text": "Collections track the papers you care about."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "AssistantAI",
+        "text": "An AI assistant grounded in research."
+      },
+      {
+        "name": "Full-text citation search",
+        "text": "Goes beyond abstracts."
+      },
+      {
+        "name": "Zotero plugin",
+        "text": "Adds citation data to Zotero."
+      },
+      {
+        "name": "Browser extension",
+        "text": "Shows citation badges on pages you visit."
+      },
+      {
+        "name": "MCP",
+        "text": "Connects AI agents such as Claude and ChatGPT to scite."
+      },
+      {
+        "name": "API and Holdings",
+        "text": "Programmatic data access, and full-text access through your library."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Researchers",
+        "text": "The site cites over two million users."
+      },
+      {
+        "who": "Students",
+        "text": "Named alongside researchers and industry experts."
+      },
+      {
+        "who": "Universities and organisations",
+        "text": "The site lists institutions and companies among its users."
+      },
+      {
+        "who": "Teams building their own tools",
+        "text": "Through the API."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Find work to cite",
+        "text": "Look for related papers while writing."
+      },
+      {
+        "title": "Check whether a finding holds up",
+        "text": "See whether other studies affirm or dispute it."
+      },
+      {
+        "title": "Place a paper in context",
+        "text": "See the wider literature around it."
+      },
+      {
+        "title": "Trace an idea to its application",
+        "text": "Follow it through patents, clinical trials, grants, preprints and datasets."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start a free trial or book a demo",
+        "text": "Both are on the site."
+      },
+      {
+        "step": "Connect it to your workflow",
+        "text": "Zotero plugin, browser extension or MCP."
+      },
+      {
+        "step": "Search and ask",
+        "text": "Try full-text search or AssistantAI."
+      }
+    ],
+    "sources": [
+      {
+        "label": "scite homepage",
+        "url": "https://scite.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
