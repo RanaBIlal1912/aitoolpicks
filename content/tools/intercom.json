@@ -117,5 +117,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Customer service platform with the Fin AI agent"
+  "keyFeature": "Customer service platform with the Fin AI agent",
+  "profile": {
+    "headline": "A customer service platform with a helpdesk and the Fin AI Agent",
+    "capabilities": [
+      {
+        "title": "Let an AI agent handle conversations",
+        "text": "Fin AI Agent is trained on your knowledge, processes and policies and works across phone, email, chat and Slack."
+      },
+      {
+        "title": "Work in one inbox",
+        "text": "The Intercom helpdesk has an omnichannel inbox with Copilot alongside the human team."
+      },
+      {
+        "title": "Test before going live",
+        "text": "AI-driven Simulations run multi-step conversations before Fin talks to customers."
+      },
+      {
+        "title": "Get approval inside a conversation",
+        "text": "Fin can ask a teammate for approval or information, such as before a refund reply, and then finish the conversation."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Copilot 2 in the Inbox",
+        "text": "Works before the team asks, connects to existing tools and handles admin tasks."
+      },
+      {
+        "name": "Ticketing built for collaboration",
+        "text": "Covers customer issues, back-office work and tracker tickets for widespread problems."
+      },
+      {
+        "name": "Knowledge Hub",
+        "text": "One place for the content that powers Fin, human agents and self-serve support."
+      },
+      {
+        "name": "Auto-translation",
+        "text": "Translates customer conversations, shown with a Spanish example."
+      },
+      {
+        "name": "Product tours and checklists",
+        "text": "In-context messages that onboard, educate and notify customers."
+      },
+      {
+        "name": "Integrations",
+        "text": "Tools such as Slack, Shopify and GitHub, with Fin acting through APIs or MCP."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Customer support and service teams",
+        "text": "The main audience, with companies such as Anthropic, Clay and Lightspeed named."
+      },
+      {
+        "who": "Teams onboarding customers",
+        "text": "Product tours and onboarding checklists are part of the helpdesk."
+      },
+      {
+        "who": "Teams serving several languages",
+        "text": "Auto-translation works inside the inbox."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Troubleshoot a sign-in problem",
+        "text": "Fin works on a desktop app sign-in issue before handing off to a person."
+      },
+      {
+        "title": "Handle address change requests",
+        "text": "Customers follow progress with a ticket status card."
+      },
+      {
+        "title": "Guide new users",
+        "text": "Product tours and checklists, shown with a banking app example."
+      },
+      {
+        "title": "Reply across languages",
+        "text": "Translate a Spanish-language conversation inside the inbox."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start a free trial or view the demo",
+        "text": "The page says the trial lasts 14 days and needs no credit card."
+      },
+      {
+        "step": "Train Fin on your content",
+        "text": "Use your knowledge, processes and policies, and test with Simulations."
+      },
+      {
+        "step": "Deploy across channels",
+        "text": "Phone, email, chat and Slack."
+      },
+      {
+        "step": "Check the pricing",
+        "text": "The site shows a combined seat and per-outcome price, with spending limits, and a sales contact."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Intercom homepage",
+        "url": "https://www.intercom.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

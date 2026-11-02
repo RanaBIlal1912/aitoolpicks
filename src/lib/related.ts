@@ -1,6 +1,5 @@
 // "Related tools" on a tool page: other tools of the same kind, chosen from the catalog's own fields and shown only when they are genuinely close.
-// A related tool shares the subcategory (or the primary category when the tool has no subcategory), or shares a wider category together with several words
-// in what the two tools are used for. Never the tool itself and never a tool already shown as an alternative on the same page, so no tool appears twice. When nothing close exists the
+// A related tool is the same kind of tool: it shares the subcategory (or the primary category when the tool has no subcategory). Never the tool itself and never a tool already shown as an alternative on the same page, so no tool appears twice. When nothing close exists the
 // page shows no related section rather than an unrelated tool.
 import { getDetail } from "@/data/detail";
 import { TOOLS, getTool, type Tool } from "@/data/tools";
@@ -21,9 +20,9 @@ export function relatedFor(id: string, exclude: Iterable<string> = [], limit = 4
       const sharedSecond = t.categories.some((c) => c !== base.category && base.categories.includes(c));
       const use = words((getDetail(t.id)?.useCases ?? []).join(" ") + " " + t.bestFor);
       const overlap = [...use].filter((w) => baseUse.has(w)).length;
-      // Close enough. When the tool has a subcategory (for example "Customer support" inside Marketing), only that subcategory counts as the same kind
-      // of tool; the wider category then needs real overlap in what the tools are used for.
-      const close = base.subcategory ? sameSub || ((sameCat || sharedSecond) && overlap >= 3) : sameCat || (sharedSecond && overlap >= 3);
+      // Close enough means the same kind of tool. A shared wider category or overlapping words alone are not enough (they pair unrelated tools,
+      // for example a presentation maker with a translator), so a tool with no close neighbours shows no related section.
+      const close = base.subcategory ? sameSub : sameCat;
       const score = (sameSub ? 6 : 0) + (sameCat ? 4 : 0) + (sharedSecond ? 1 : 0) + Math.min(3, overlap);
       return { t, score, close };
     })

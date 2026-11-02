@@ -138,5 +138,110 @@
     "notes": "Product active. Page toggles Monthly / Yearly (save up to 4 months); the Yearly view shows Basic $0 (500 credits a month), Starter $29 struck to $18 a month ($216 billed yearly, 15,000 credits a year), Pro $89 struck to $64 a month ($768 billed yearly, 72,000 credits a year), Enterprise custom. Corrected: stored Starter $19/$14 and Pro annual $59 were out of date; the first-month promotions were not shown this time.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "AI video for business teams, with avatars, translation and dubbing",
+    "capabilities": [
+      {
+        "title": "Make a video from a script",
+        "text": "AI Avatars present your script on screen."
+      },
+      {
+        "title": "Turn a document into video",
+        "text": "The Assistant can create a video from a dropped file or a pasted URL."
+      },
+      {
+        "title": "Translate and dub",
+        "text": "Translate or dub a video into more than 140 languages, with glossary controls for consistent terms."
+      },
+      {
+        "title": "Record and narrate your screen",
+        "text": "The AI Screen Recorder records and narrates your screen."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Brand Kits, roles and approval",
+        "text": "Keep videos on-brand and approve them before they go live."
+      },
+      {
+        "name": "Flexible publishing",
+        "text": "Publish as a link, an embed or a SCORM package; edits update everywhere the video is shared."
+      },
+      {
+        "name": "Built-in analytics",
+        "text": "See views, clicks and completion rates."
+      },
+      {
+        "name": "Roleplay Sessions",
+        "text": "Practise conversations such as sales and discovery calls with avatars."
+      },
+      {
+        "name": "Survey Sessions",
+        "text": "Conversational surveys for employee insights, customer insights and lead qualification."
+      },
+      {
+        "name": "API",
+        "text": "Interactive Avatars in your own product, plus dubbing and video creation by API."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Learning and development teams",
+        "text": "Technical, compliance and sales training videos."
+      },
+      {
+        "who": "HR and onboarding teams",
+        "text": "Onboarding and employee development."
+      },
+      {
+        "who": "Sales enablement and marketing",
+        "text": "Sales training and product videos."
+      },
+      {
+        "who": "IT, security and knowledge management",
+        "text": "SOP videos and internal communications."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Compliance training",
+        "text": "Make a training video from a policy document and update it later in one place."
+      },
+      {
+        "title": "Onboarding videos",
+        "text": "Welcome new staff with a consistent avatar presenter."
+      },
+      {
+        "title": "Product videos in many languages",
+        "text": "Dub one video into other languages with a glossary for product terms."
+      },
+      {
+        "title": "Sales role play",
+        "text": "Practise a discovery call with an avatar."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Get started for free",
+        "text": "The site says the Basic plan is free with no credit card, with 500 credits a month, up to 10 minutes of video."
+      },
+      {
+        "step": "Create a video",
+        "text": "Write a script, or drop in a document or URL for the Assistant."
+      },
+      {
+        "step": "For a company",
+        "text": "Book a demo for custom pricing and a walkthrough."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Synthesia homepage",
+        "url": "https://www.synthesia.io",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

@@ -133,5 +133,106 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Generates songs from text"
+  "keyFeature": "Generates songs from text",
+  "profile": {
+    "headline": "Describe a song and get a full track with vocals and production",
+    "capabilities": [
+      {
+        "title": "Create a complete song from a description",
+        "text": "Give a genre, mood, theme or your own lyrics and Suno builds a full track in under a minute; instrumentals are possible too."
+      },
+      {
+        "title": "Remix a track",
+        "text": "Change a song's style, rewrite its lyrics, or rebuild it around your own recording."
+      },
+      {
+        "title": "Split a song into stems",
+        "text": "Stem separation divides a song into vocal and instrument stems."
+      },
+      {
+        "title": "Sing with your own voice",
+        "text": "Record a few seconds of your voice and it can sing what you write in any style."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Suno Studio",
+        "text": "A browser-based digital audio workstation for arranging, editing and mixing songs, with multitrack editing and MIDI export."
+      },
+      {
+        "name": "Custom models",
+        "text": "Train a model on your own recordings."
+      },
+      {
+        "name": "Creation controls",
+        "text": "Voices, Inspo, exclusions, vocal gender, and weirdness and style sliders."
+      },
+      {
+        "name": "Music library",
+        "text": "Browse songs by genre, mood and occasion."
+      },
+      {
+        "name": "Song Editor and audio uploads",
+        "text": "Listed on the Pro plan, with uploads of up to 8 minutes."
+      },
+      {
+        "name": "Mobile apps",
+        "text": "Available on iOS and Android."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "First-time creators",
+        "text": "The site says it serves people making music for the first time."
+      },
+      {
+        "who": "Professional producers and songwriters",
+        "text": "Studio, stems and remix tools are aimed at people who work with audio."
+      },
+      {
+        "who": "Content creators",
+        "text": "Named as a key audience, for music to go with videos and podcasts."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Write a song for fun",
+        "text": "Try a prompt such as chill lo-fi beat about rainy mornings and refine the result."
+      },
+      {
+        "title": "Make music for content",
+        "text": "The site says Pro plan users can create royalty-free music for YouTube, podcasts or ads."
+      },
+      {
+        "title": "Remake a track",
+        "text": "Remix a song into another style or rewrite its lyrics."
+      },
+      {
+        "title": "Build a beat",
+        "text": "Create and arrange parts, then export MIDI from Studio."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Go to suno.com",
+        "text": "Join for free; the site says no credit card is required."
+      },
+      {
+        "step": "Describe the song",
+        "text": "Include a genre, mood, theme or your own lyrics."
+      },
+      {
+        "step": "Click Create",
+        "text": "Then regenerate, extend or refine the result."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Suno homepage",
+        "url": "https://suno.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

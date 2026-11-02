@@ -126,5 +126,114 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "A hub for open models, datasets and Spaces apps"
+  "keyFeature": "A hub for open models, datasets and Spaces apps",
+  "profile": {
+    "headline": "The open hub for models, datasets and AI apps",
+    "capabilities": [
+      {
+        "title": "Find and use open models",
+        "text": "The Model Hub hosts models for LLM, text, vision and audio tasks, each with a model card describing limitations and biases."
+      },
+      {
+        "title": "Share and explore datasets",
+        "text": "More than 500,000 public datasets, with Data Studio to look inside them in the browser and streaming for very large ones."
+      },
+      {
+        "title": "Host a demo app",
+        "text": "Spaces hosts interactive ML demos built with Gradio, Streamlit, static HTML or Docker."
+      },
+      {
+        "title": "Call models through an API",
+        "text": "Inference Providers offers a serverless API for programmatic access to models."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Git-based repositories",
+        "text": "Versioning, commit history, diffs and branches for models, datasets and Spaces."
+      },
+      {
+        "name": "ZeroGPU Spaces",
+        "text": "GPU power for demos, provided dynamically only when needed."
+      },
+      {
+        "name": "Storage Buckets",
+        "text": "S3-like object storage for large mutable files such as training checkpoints and logs."
+      },
+      {
+        "name": "Organizations",
+        "text": "Group accounts, manage repositories and set roles for companies, universities and non-profits."
+      },
+      {
+        "name": "Security controls",
+        "text": "User access tokens, access control for organisations, commit signing and malware scanning."
+      },
+      {
+        "name": "Agent tooling",
+        "text": "The docs list a Hugging Face CLI for AI agents and an MCP server."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "The open machine learning community",
+        "text": "The Hub is described as the reference platform for open ML."
+      },
+      {
+        "who": "Companies, universities and non-profits",
+        "text": "Organizations let them group accounts and manage their work."
+      },
+      {
+        "who": "Educators",
+        "text": "Hugging Face for Classrooms supports collaborative organisations for students."
+      },
+      {
+        "who": "Private teams",
+        "text": "The Hub also works as a collaboration platform for internal and private teams."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Publish a model with a model card",
+        "text": "Upload the model and document its limitations and biases."
+      },
+      {
+        "title": "Showcase a project in a Space",
+        "text": "Build a demo app to show stakeholders or to grow your ML portfolio."
+      },
+      {
+        "title": "Stream a very large dataset",
+        "text": "Access data that does not fit on your computer without downloading all of it."
+      },
+      {
+        "title": "Store training checkpoints",
+        "text": "Keep logs and intermediate files in a Storage Bucket."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Create an account",
+        "text": "Sign up on the Hub; the docs ask you to read the Code of Conduct and Content Guidelines."
+      },
+      {
+        "step": "Explore",
+        "text": "Browse models, datasets and Spaces to see what the community has shared."
+      },
+      {
+        "step": "Upload your work",
+        "text": "Follow the Models, Datasets or Spaces documentation to publish your own."
+      },
+      {
+        "step": "Work with a team",
+        "text": "Create or join an organisation to share repositories and set access."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Hugging Face Hub documentation",
+        "url": "https://huggingface.co/docs/hub/index",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

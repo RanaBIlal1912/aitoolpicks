@@ -139,5 +139,114 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Web hosting, VPS and a website builder for first-time site owners"
+  "keyFeature": "Web hosting, VPS and a website builder for first-time site owners",
+  "profile": {
+    "headline": "Hosting, domains and an AI builder for putting a business online",
+    "capabilities": [
+      {
+        "title": "Describe a site and have AI build it",
+        "text": "AI Builder creates websites, online stores or custom apps from a description, then you refine them in AI chat or with drag-and-drop."
+      },
+      {
+        "title": "Host a website, store or blog",
+        "text": "Hosting plans such as Premium, Unlimited and Cloud Startup cover websites, stores and blogs."
+      },
+      {
+        "title": "Get more power when you need it",
+        "text": "VPS hosting gives full root access and Cloud hosting gives more resources."
+      },
+      {
+        "title": "Let an assistant look after the site",
+        "text": "Hostinger Agent helps migrate, fix, edit and manage sites, and is included with every plan."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "WordPress hosting and templates",
+        "text": "For people who want more hands-on control."
+      },
+      {
+        "name": "Web app deployment",
+        "text": "Deploy Node.js apps from GitHub or a code editor."
+      },
+      {
+        "name": "Business Email and domains",
+        "text": "Mailboxes and domain registration under the same account."
+      },
+      {
+        "name": "Automations",
+        "text": "OpenClaw, Hermes Agent and self-hosted n8n deploy in one click."
+      },
+      {
+        "name": "Hostinger Connector",
+        "text": "Links your account to coding tools such as Cursor and VS Code through MCP."
+      },
+      {
+        "name": "Agency hosting",
+        "text": "For managing client sites."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "People starting a business online",
+        "text": "Hostinger describes itself as a platform that lets anyone build, run and grow a business online."
+      },
+      {
+        "who": "Non-technical users",
+        "text": "The site says AI can do most of the technical work."
+      },
+      {
+        "who": "Agencies",
+        "text": "Agency hosting is for managing websites for clients."
+      },
+      {
+        "who": "Developers",
+        "text": "Those who want full control can use VPS, WordPress or custom code."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Put a local business online",
+        "text": "The site's examples include a restaurant, a bakery, a veterinary practice and a beauty brand."
+      },
+      {
+        "title": "Show your work",
+        "text": "Build a portfolio or booking site."
+      },
+      {
+        "title": "Sell products",
+        "text": "Open an online store and run email campaigns."
+      },
+      {
+        "title": "Move an existing site",
+        "text": "The page offers free migration of an existing site."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Describe what you want",
+        "text": "Tell AI Builder what you need, or pick a template."
+      },
+      {
+        "step": "Refine the site",
+        "text": "Use AI chat or drag-and-drop, or build with WordPress or custom code."
+      },
+      {
+        "step": "Ask the Agent for a plan",
+        "text": "Hostinger Agent can suggest a site plan and domain ideas; the page says this is free with no signup."
+      },
+      {
+        "step": "Choose a plan",
+        "text": "The page says yearly plans include a free domain for one year."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Hostinger homepage",
+        "url": "https://www.hostinger.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

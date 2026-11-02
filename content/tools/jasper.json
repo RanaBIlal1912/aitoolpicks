@@ -111,5 +111,106 @@
     "notes": "Product active. The pricing FAQ states Pro is $59/month billed yearly or $69/month billed monthly, and Business is custom. A free trial is offered; the trial length was not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI platform for marketing teams, with brand knowledge built in",
+    "capabilities": [
+      {
+        "title": "Work in one marketing workspace",
+        "text": "Canvas is the workspace where marketers work with Jasper."
+      },
+      {
+        "title": "Keep output on-brand",
+        "text": "Jasper IQ stores brand and company knowledge, including Brand Voice, Visual Guidelines, Style Guide, Product IQ and a Knowledge base."
+      },
+      {
+        "title": "Use agents for marketing tasks",
+        "text": "Purpose-built agents cover work such as GEO, research and translation, with a library of more agents."
+      },
+      {
+        "title": "See how AI answer engines describe your brand",
+        "text": "GEO and AI Optimization measures brand visibility in AI answers, finds gaps and generates brand-governed content."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "AI Studio",
+        "text": "Build custom agents and deploy them across the workspace."
+      },
+      {
+        "name": "Content pipelines and Jasper Grid",
+        "text": "Scale content production and adapt campaigns across regions and languages."
+      },
+      {
+        "name": "Image Pipelines and Image APIs",
+        "text": "On-brand product imagery, with tasks such as background removal and upscaling."
+      },
+      {
+        "name": "API, MCP and integrations",
+        "text": "Connect Jasper to the rest of your stack and bring performance data back as context."
+      },
+      {
+        "name": "Diagnostics",
+        "text": "A GEO Diagnostic and a Brand Compliance Diagnostic scan visibility and governance."
+      },
+      {
+        "name": "Trust Foundation",
+        "text": "Security, governance and compliance."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Content and brand marketers",
+        "text": "Content, brand, and PR and communications marketers are all named."
+      },
+      {
+        "who": "Performance and product marketers",
+        "text": "Both roles are named on the site."
+      },
+      {
+        "who": "Regulated industries",
+        "text": "Financial services and healthcare and life sciences are named among the industries."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Monitor how AI tools describe your brand",
+        "text": "Then produce content to close visibility gaps."
+      },
+      {
+        "title": "Write SEO and AEO content",
+        "text": "Content that aims to rank and build authority."
+      },
+      {
+        "title": "Personalise campaigns",
+        "text": "Target specific accounts, contacts, leads or opportunities."
+      },
+      {
+        "title": "Localise a campaign",
+        "text": "Adapt content for different regions and audiences."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start a free trial or ask for a demo",
+        "text": "Both are offered on the site."
+      },
+      {
+        "step": "Work with a Forward Deployed Expert",
+        "text": "They identify the best starting point and assess your data and systems."
+      },
+      {
+        "step": "Define success and build the first workflow",
+        "text": "The experts help set the goal and the first agent or pipeline."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Jasper homepage",
+        "url": "https://www.jasper.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

@@ -121,5 +121,110 @@
     "notes": "Product active. Page has Monthly / Yearly (up to 10% off) view: Core $20/month or $18/month billed annually; Pro $100/month or $90/month billed annually (credit tiers at $215, $425, $825 and $2,000 a month are offered for larger Pro usage); Enterprise custom. Taxes extra. The Core and Pro monthly prices are now confirmed by the struck-through figures.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Describe an app and let an agent build and publish it",
+    "capabilities": [
+      {
+        "title": "Turn an idea into an app",
+        "text": "Describe a project and the Agent writes the code, evolves it and publishes it."
+      },
+      {
+        "title": "Ask in chat",
+        "text": "Replit chat is a conversational way to request what you need."
+      },
+      {
+        "title": "Tweak the design visually",
+        "text": "The Infinite Canvas lets you explore and adjust designs, then apply them to your app."
+      },
+      {
+        "title": "Build many kinds of project",
+        "text": "Build types include website, mobile, design, slides, animation, data visualisation, 3D game, document and spreadsheet."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Agent",
+        "text": "Builds, runs and publishes what you describe."
+      },
+      {
+        "name": "Free Mode",
+        "text": "Brainstorm and create at no cost, with limits on chat hours and projects by plan."
+      },
+      {
+        "name": "Intelligent Model Routing",
+        "text": "Selects the best model for each task."
+      },
+      {
+        "name": "Full-stack infrastructure",
+        "text": "Built-in authentication, database, hosting and monitoring."
+      },
+      {
+        "name": "100+ integrations",
+        "text": "Including OpenAI, Stripe and Google Workspace."
+      },
+      {
+        "name": "Enterprise controls",
+        "text": "SSO and SAML, SOC 2, admin controls and audit logs on the Enterprise plan."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Founders",
+        "text": "Named first among the roles the site is written for."
+      },
+      {
+        "who": "Product managers and designers",
+        "text": "Both roles are listed, with design tools on the canvas."
+      },
+      {
+        "who": "Engineers and operations teams",
+        "text": "The site also lists engineers and operations."
+      },
+      {
+        "who": "Government",
+        "text": "Listed as a sector."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Build a B2B project management app",
+        "text": "One of the examples on the site."
+      },
+      {
+        "title": "Make a freelance client portal",
+        "text": "Another example on the site."
+      },
+      {
+        "title": "Create an AI sales assistant",
+        "text": "A third example on the site."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up or try Free Mode",
+        "text": "Start without paying."
+      },
+      {
+        "step": "Describe your idea",
+        "text": "Use plain language, or pick a build type such as Website or Mobile."
+      },
+      {
+        "step": "Build with the Agent",
+        "text": "Refine through chat or the canvas."
+      },
+      {
+        "step": "Publish",
+        "text": "Publish the project from Replit."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Replit homepage",
+        "url": "https://replit.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

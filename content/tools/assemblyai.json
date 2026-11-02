@@ -113,5 +113,110 @@
     "notes": "Product active (speech-to-text, understanding and text-to-speech APIs). Pricing page lists pay-as-you-go per-hour rates and a custom tier. Corrected: the free tier is now described as up to 185 hours of pre-recorded and 333 hours of streaming transcription (the old '$50 credit' wording was not on the page). Streaming per-hour prices sit on a separate tab that was not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Voice AI infrastructure for developers who transcribe, understand and act on speech",
+    "capabilities": [
+      {
+        "title": "Transcribe recorded audio and video",
+        "text": "The pre-recorded Speech-to-Text API handles files."
+      },
+      {
+        "title": "Transcribe live audio",
+        "text": "The real-time API covers voice agents, captions and agent assist."
+      },
+      {
+        "title": "Build speech-to-speech agents",
+        "text": "The Voice Agent API works over a single WebSocket."
+      },
+      {
+        "title": "Pull structured insight from transcripts",
+        "text": "The Speech Understanding API extracts structured information from what was said."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Pre-recorded Speech-to-Text API",
+        "text": "Accurate transcripts of audio and video files."
+      },
+      {
+        "name": "Real-time Speech-to-Text API",
+        "text": "Low-delay transcription for live use."
+      },
+      {
+        "name": "Voice Agent API",
+        "text": "Speech-to-speech agents over one WebSocket."
+      },
+      {
+        "name": "Speech Understanding API",
+        "text": "Structured insights from transcripts."
+      },
+      {
+        "name": "Guardrails",
+        "text": "PII redaction, profanity filtering and content moderation."
+      },
+      {
+        "name": "LLM Gateway",
+        "text": "Applies frontier language models to voice workflows."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers building voice products",
+        "text": "The site is written for developers who add speech to their own applications."
+      },
+      {
+        "who": "Teams that need accurate recognition",
+        "text": "Accurate speech recognition and scalable infrastructure are the stated focus."
+      },
+      {
+        "who": "Teams working with sensitive audio",
+        "text": "Guardrails cover redaction of personal information and content moderation."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Live captions",
+        "text": "Caption a live stream or a meeting as people speak."
+      },
+      {
+        "title": "Agent assist",
+        "text": "Give support agents live help while they are on a call."
+      },
+      {
+        "title": "Voice agents",
+        "text": "Build a spoken assistant on the real-time or Voice Agent API."
+      },
+      {
+        "title": "Redact personal details",
+        "text": "Remove PII from transcripts before they are stored or shared."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Read the products overview",
+        "text": "The site points new visitors to the overview of its APIs."
+      },
+      {
+        "step": "Pick the speech-to-text API",
+        "text": "Choose pre-recorded or streaming speech-to-text for your case."
+      },
+      {
+        "step": "Look at the Voice Agent API",
+        "text": "Use it if you want speech-to-speech agents."
+      },
+      {
+        "step": "Check pricing and the developer docs",
+        "text": "Both are linked from the site."
+      }
+    ],
+    "sources": [
+      {
+        "label": "AssemblyAI homepage",
+        "url": "https://www.assemblyai.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

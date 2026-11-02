@@ -149,5 +149,110 @@
     "notes": "Product active. Subscription tab, USD: Plus $20/month ($180 billed annually), Pro $60/month ($504 billed annually), Team $30 per user/month ($240 billed annually); Enterprise postpaid by contact; pay-as-you-go credits at 1 cent each. Priority credits: Plus 2,400, Pro 7,500, Team 3,600 per user per month.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Image generation known for readable text, with editing apps and an API",
+    "capabilities": [
+      {
+        "title": "Create and edit in one workspace",
+        "text": "Ideogram Creative moves from first prompt to finished asset with its models, Ideogram Studio and purpose-built apps."
+      },
+      {
+        "title": "Get readable type in images",
+        "text": "The site stresses prompt fidelity and crystal-clear type in every layout."
+      },
+      {
+        "title": "Add image generation to a product",
+        "text": "The Ideogram API handles image and video models through one endpoint."
+      },
+      {
+        "title": "Use it from your agents",
+        "text": "Connect Ideogram to Claude, Cursor and other MCP clients so agents can generate, edit and train."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Creative apps",
+        "text": "The list includes Precise Edit, Ad Resizer, Background Remover, Colorways, Material Swap and Object Remover."
+      },
+      {
+        "name": "Several models",
+        "text": "Ideogram Vector, Ideogram 4.5, 4.0 and 3.0 are listed."
+      },
+      {
+        "name": "Custom image models",
+        "text": "Listed among the models and tools on the site."
+      },
+      {
+        "name": "One API",
+        "text": "Authentication, billing and integrations stay in place, and you switch models by changing one string."
+      },
+      {
+        "name": "iPhone app",
+        "text": "Listed alongside the web apps."
+      },
+      {
+        "name": "Enterprise",
+        "text": "Enterprise-grade security, legal indemnification, unlimited seats, custom SSO and dedicated support."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Creative teams and agencies",
+        "text": "The Enterprise section is written for teams producing visual work at scale."
+      },
+      {
+        "who": "Developers",
+        "text": "The API is for adding image generation and editing to a product."
+      },
+      {
+        "who": "Teams that use AI agents",
+        "text": "The MCP connection brings generation into agent workflows."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Make a poster with real lettering",
+        "text": "The site's own API example asks for a poster for a summer design conference."
+      },
+      {
+        "title": "Prepare a product image",
+        "text": "Use the listed apps such as Background Remover, Colorways and Material Swap."
+      },
+      {
+        "title": "Adapt an ad",
+        "text": "The Ad Resizer app is listed for resizing ads."
+      },
+      {
+        "title": "Automate image work in an agent",
+        "text": "Call Ideogram through MCP from a tool such as Cursor or Claude."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Get started",
+        "text": "Use the Get started button on ideogram.ai."
+      },
+      {
+        "step": "Start creating",
+        "text": "Open Ideogram Creative and try the apps."
+      },
+      {
+        "step": "Developers: use the API",
+        "text": "Build with the API and read the docs."
+      },
+      {
+        "step": "For a company",
+        "text": "The site offers a demo request and a sales contact for Enterprise."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ideogram homepage",
+        "url": "https://ideogram.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

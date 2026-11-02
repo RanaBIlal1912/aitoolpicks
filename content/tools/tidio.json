@@ -138,5 +138,110 @@
     "notes": "Product active. Free plan (50 billable conversations, 7-day trial) confirmed. The paid cards sit behind a Monthly / Annually (2 months free) toggle: Starter shows $24.17 a month, which equals $29 less 2 months free, so it is an annual-equivalent figure rather than a monthly price. Corrected: the stored Starter $24.17 and Growth $49.17 were labelled monthly; they are now recorded as annual-equivalent and the monthly prices are marked not captured.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Customer chat, an AI agent and sales flows for online stores",
+    "capabilities": [
+      {
+        "title": "Answer shoppers with an AI agent",
+        "text": "Lyro answers questions using your store data: FAQs, order status, product details, website content and brand guidelines."
+      },
+      {
+        "title": "Recommend products in chat",
+        "text": "Lyro shows product cards and can take real-time actions with Smart Actions, such as order updates and lead qualification."
+      },
+      {
+        "title": "Start chats at the right moment",
+        "text": "Sales Flows open chats from behavioural triggers, cart nudges and exit intent."
+      },
+      {
+        "title": "Answer on every channel in one inbox",
+        "text": "Help Desk brings live chat, email, WhatsApp, Instagram and Facebook Messenger together."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Smart redirections",
+        "text": "When Lyro is unsure it says so and passes the conversation to a person with context."
+      },
+      {
+        "name": "Sales Flows templates",
+        "text": "A drag-and-drop canvas with 40+ ecommerce templates and no code."
+      },
+      {
+        "name": "Order management",
+        "text": "Preview carts, check order history and offer discounts without leaving the conversation."
+      },
+      {
+        "name": "Sales analytics",
+        "text": "Attributes sales, leads and satisfaction to conversations, by channel and by operator."
+      },
+      {
+        "name": "Customisation and integrations",
+        "text": "Widget branding and language controls, 120+ integrations, Zapier and an OpenAPI."
+      },
+      {
+        "name": "Compliance",
+        "text": "The site lists GDPR, AI Pact, CCPA and SOC 2."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Online stores",
+        "text": "Businesses that sell through conversations, especially ecommerce brands."
+      },
+      {
+        "who": "Shopify, WordPress and Wix sites",
+        "text": "These platforms are named for the free plan."
+      },
+      {
+        "who": "Larger companies",
+        "text": "The site mentions custom AI agents, priority service levels and deeper integrations."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Answer order and product questions",
+        "text": "Let the AI agent handle repeat questions automatically."
+      },
+      {
+        "title": "Recover abandoned carts",
+        "text": "Trigger a chat on exit intent or a cart nudge."
+      },
+      {
+        "title": "Capture leads in a conversation",
+        "text": "Qualify visitors while they chat."
+      },
+      {
+        "title": "Hand off hard cases",
+        "text": "Route complex conversations from the AI to a person."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start for free",
+        "text": "Register in the Tidio panel; the page says no credit card is required."
+      },
+      {
+        "step": "Add it to your site",
+        "text": "Shopify, WordPress and Wix are named."
+      },
+      {
+        "step": "Build a flow from a template",
+        "text": "Pick an ecommerce template on the canvas."
+      },
+      {
+        "step": "Scale up",
+        "text": "The page offers a sales contact for larger needs and says you can cancel in two clicks."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Tidio homepage",
+        "url": "https://www.tidio.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
