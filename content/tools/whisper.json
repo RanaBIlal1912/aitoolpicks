@@ -82,5 +82,110 @@
     "notes": "Project active (about 111.6k stars; recent commit). MIT license shown. No pricing: open-source software; OpenAI's hosted transcription API is billed separately.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A general-purpose speech recognition model you run yourself",
+    "capabilities": [
+      {
+        "title": "Transcribe speech",
+        "text": "Multilingual speech recognition from audio files."
+      },
+      {
+        "title": "Translate to English",
+        "text": "Speech translation turns non-English speech into English text."
+      },
+      {
+        "title": "Identify the language",
+        "text": "Spoken language identification."
+      },
+      {
+        "title": "Handle long recordings",
+        "text": "Long files are transcribed with a sliding 30-second window."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Six model sizes",
+        "text": "From tiny to large, plus a turbo model."
+      },
+      {
+        "name": "English-only models",
+        "text": "The .en models tend to do better for English, especially the smaller ones."
+      },
+      {
+        "name": "Turbo",
+        "text": "An optimised version of large-v3 with faster speed and minimal accuracy loss; it is not trained for translation."
+      },
+      {
+        "name": "Voice activity detection",
+        "text": "Listed among the tasks the model was trained on."
+      },
+      {
+        "name": "Command line and Python",
+        "text": "Use a whisper command or load a model in Python."
+      },
+      {
+        "name": "MIT licence",
+        "text": "Released openly."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers",
+        "text": "Install it with pip and call it from Python. The page does not name an audience, so these groups follow from how it is used."
+      },
+      {
+        "who": "People with English-only needs",
+        "text": "The English-only models suit them."
+      },
+      {
+        "who": "Community builders",
+        "text": "The page invites sharing of web demos, integrations and ports."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Transcribe an audio file",
+        "text": "Run the command-line tool on it."
+      },
+      {
+        "title": "Translate foreign speech into English",
+        "text": "Use a medium or large model."
+      },
+      {
+        "title": "Detect the language of a clip",
+        "text": "Use the lower-level Python access."
+      },
+      {
+        "title": "Trade accuracy for speed",
+        "text": "Pick a smaller model."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Install the package",
+        "text": "pip install -U openai-whisper, with a recent Python."
+      },
+      {
+        "step": "Install ffmpeg",
+        "text": "Use your system's package manager."
+      },
+      {
+        "step": "Run it",
+        "text": "Use the command-line tool with a model name, or load a model in Python and call transcribe."
+      },
+      {
+        "step": "Fix common install errors",
+        "text": "You may need Rust for tiktoken or setuptools-rust on some platforms."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Whisper repository",
+        "url": "https://github.com/openai/whisper",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

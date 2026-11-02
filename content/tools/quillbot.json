@@ -124,5 +124,114 @@
     "notes": "Product active. Free $0; Premium $4.17 per month billed annually (USD); Team plan on a separate page with no price. The monthly-billing price is not stated.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "AI tools for writing, originality checks, images and PDFs in one place",
+    "capabilities": [
+      {
+        "title": "Rewrite and polish text",
+        "text": "The Paraphraser rewrites text, the Grammar Checker fixes grammar and spelling, and the Humanizer makes text sound natural."
+      },
+      {
+        "title": "Condense and translate",
+        "text": "The Summarizer condenses text quickly and the Translator translates it."
+      },
+      {
+        "title": "Check originality",
+        "text": "AI Detector, AI Image Detector, Plagiarism Checker and Citation Generator."
+      },
+      {
+        "title": "Create content",
+        "text": "Presentation Creator, Cover Letter Generator, Social Media Post Writer and an Image Generator."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "AI Chat",
+        "text": "Brainstorm, write and get answers."
+      },
+      {
+        "name": "ChatPDF and PDF tools",
+        "text": "Ask questions about a PDF, merge, split, reorder, rotate and convert it."
+      },
+      {
+        "name": "Image tools",
+        "text": "Background Remover, AI Image Editor and Image Converter."
+      },
+      {
+        "name": "File converters",
+        "text": "Word, Excel and PowerPoint converters."
+      },
+      {
+        "name": "Extensions and apps",
+        "text": "Chrome, Edge, Safari and Word add-ons, plus iOS, Android, macOS and Windows apps."
+      },
+      {
+        "name": "Example prompts",
+        "text": "The home page suggests creating a pitch deck, a resume or an Instagram post."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Students and academics",
+        "text": "Improve writing, visuals and presentations whether teaching or learning."
+      },
+      {
+        "who": "Job seekers",
+        "text": "Create resumes and cover letters tailored to each job."
+      },
+      {
+        "who": "Professionals",
+        "text": "Perfect briefs, pitches and reports."
+      },
+      {
+        "who": "Business owners",
+        "text": "Publish more content to several clients without losing quality."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Tighten a paragraph",
+        "text": "Paste it into the Paraphraser or Grammar Checker."
+      },
+      {
+        "title": "Build a resume for an internship",
+        "text": "The site's own example prompt does just that."
+      },
+      {
+        "title": "Announce a product on Instagram",
+        "text": "Another example prompt on the home page."
+      },
+      {
+        "title": "Check a draft before submitting",
+        "text": "Run the plagiarism and AI detectors."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Write, paste or upload",
+        "text": "Start in the box on the home page."
+      },
+      {
+        "step": "Pick a tool",
+        "text": "Paraphraser, AI Humanizer, AI Detector and more."
+      },
+      {
+        "step": "Install it where you write",
+        "text": "Add the Chrome, Edge, Safari or Word extension."
+      },
+      {
+        "step": "Sign up",
+        "text": "The site says signing up is free."
+      }
+    ],
+    "sources": [
+      {
+        "label": "QuillBot homepage",
+        "url": "https://quillbot.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

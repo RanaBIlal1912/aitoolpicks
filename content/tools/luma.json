@@ -159,5 +159,106 @@
     "notes": "Product active. Monthly view, USD: Plus $30, Pro $90, Ultra $300 per month with 10,000 / 40,000 / 150,000 credits; Team and Enterprise by contact. A Yearly toggle (save up to 20%) exists; yearly prices were not re-read. Per-generation credit costs are listed on the page.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A creative platform where agents generate and refine video, image, audio and text",
+    "capabilities": [
+      {
+        "title": "Let an agent explore directions",
+        "text": "The Luma agent researches, generates and refines across video, image, audio and text while keeping a brand's look consistent."
+      },
+      {
+        "title": "Direct a video shot",
+        "text": "Ray3.2 gives control over every frame, continuity across cuts and cinematic finishing."
+      },
+      {
+        "title": "Carry a style or character through assets",
+        "text": "UNI-1 brings style references, character references and visual grounding into each asset."
+      },
+      {
+        "title": "Reuse a workflow",
+        "text": "Luma Skills lets you build a creative workflow once and run it again."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Luma agent",
+        "text": "Produces many variants quickly, and the site says ten directions can be ready before a morning meeting."
+      },
+      {
+        "name": "Ray3.2",
+        "text": "A video model for directing shots."
+      },
+      {
+        "name": "UNI-1",
+        "text": "A model that keeps references consistent across assets."
+      },
+      {
+        "name": "Luma Skills",
+        "text": "Saved creative workflows."
+      },
+      {
+        "name": "Developer access",
+        "text": "The site lists API access to its Ray and Uni models."
+      },
+      {
+        "name": "Learning Center",
+        "text": "Workflows, best practices and guidance for using the agent."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Creative teams",
+        "text": "The site presents it as a tool for teams that make creative work."
+      },
+      {
+        "who": "Brands and agencies",
+        "text": "It names agencies and companies such as Serviceplan, Dentsu, Publicis Groupe and Mazda."
+      },
+      {
+        "who": "Developers",
+        "text": "Model APIs are listed for people building their own products."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Make product launch videos",
+        "text": "The site shows sneaker ad variations in 16:9 and 9:16."
+      },
+      {
+        "title": "Storyboard a brand spot",
+        "text": "Plan shots with cinematic lighting."
+      },
+      {
+        "title": "Render a floor plan as a walkthrough",
+        "text": "Turn a plan into a sunlit interior."
+      },
+      {
+        "title": "Animate podcast clips",
+        "text": "Turn clips into short-form videos."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try for free",
+        "text": "The button opens the app at app.lumalabs.ai."
+      },
+      {
+        "step": "Open the Learning Center",
+        "text": "It explains workflows and best practices for the agent."
+      },
+      {
+        "step": "Describe what you want to make",
+        "text": "Ask the agent for directions and variants."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Luma homepage",
+        "url": "https://lumalabs.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

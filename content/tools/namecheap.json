@@ -110,5 +110,110 @@
     "notes": "Company active. The domain price page showed promotional first-year prices that differ from the stored ones: .com $6.48/yr for new customers (instead of $14.98), .net $11.68 with a promo code (instead of $14.98), .org $8.48 (instead of $12.98); .ai register $89.98, renew $114.98, transfer $99.98 matches. Promotions change often; renewal prices were read only for .ai. Hosting and email products were not read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Domains, hosting, email and security for getting a site online",
+    "capabilities": [
+      {
+        "title": "Register or transfer a domain",
+        "text": "Search for a name with the domain generator, or transfer one you already own."
+      },
+      {
+        "title": "Host a website",
+        "text": "Choose shared, VPS, dedicated or managed WordPress hosting, or use Site Maker to put a personal site online."
+      },
+      {
+        "title": "Send mail from your own domain",
+        "text": "Business email with a built-in calendar and an AI email assistant."
+      },
+      {
+        "title": "Secure the site",
+        "text": "SSL certificates, PremiumDNS and a VPN, with two-factor authentication free on every account."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "EasyWP",
+        "text": "Managed hosting for WordPress."
+      },
+      {
+        "name": "Stellar shared hosting",
+        "text": "Shared hosting with AI website tools, multiple sites, cPanel, 30 mailboxes and free SSL."
+      },
+      {
+        "name": "Private Email",
+        "text": "More storage and inboxes for teams on the move."
+      },
+      {
+        "name": "FastVPN",
+        "text": "Encrypted browsing with quick set-up on TV by QR code."
+      },
+      {
+        "name": "Apps",
+        "text": "Logo Maker, a visual suite and a CDN."
+      },
+      {
+        "name": "Business Starter Kit",
+        "text": "A US offer that bundles LLC registration, a domain and a website, where you pay state fees."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "People starting a business online",
+        "text": "The home page opens with starting a business and moving from a domain to a live site."
+      },
+      {
+        "who": "First-time site owners",
+        "text": "First site support and Guru Guides walk you through everything from your first domain."
+      },
+      {
+        "who": "People who already own a domain elsewhere",
+        "text": "Transfers are described as free and easy, and carry over remaining time."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Claim a name",
+        "text": "Search for an available domain and register it."
+      },
+      {
+        "title": "Launch a WordPress site",
+        "text": "Use EasyWP's managed hosting."
+      },
+      {
+        "title": "Get a professional address",
+        "text": "Add email at your own domain."
+      },
+      {
+        "title": "Move a domain over",
+        "text": "Transfer it from another registrar."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Search for a domain",
+        "text": "Use the search box on the home page."
+      },
+      {
+        "step": "Pick hosting",
+        "text": "Choose from shared, VPS, dedicated or managed WordPress, or try Site Maker."
+      },
+      {
+        "step": "Add email and security",
+        "text": "Both are offered as add-ons."
+      },
+      {
+        "step": "Use the guides",
+        "text": "First site support covers the basics."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Namecheap homepage",
+        "url": "https://www.namecheap.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

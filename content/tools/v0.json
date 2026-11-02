@@ -138,5 +138,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "Generates interfaces and apps with AI"
+  "keyFeature": "Generates interfaces and apps with AI",
+  "profile": {
+    "headline": "An AI agent that builds real code, full-stack apps and agents from a prompt",
+    "capabilities": [
+      {
+        "title": "Build from a description",
+        "text": "Describe your idea in your preferred language, then ship features, refine designs, update copy and create live prototypes."
+      },
+      {
+        "title": "Make interfaces from sketches",
+        "text": "Create high-fidelity UIs from wireframes or mockups."
+      },
+      {
+        "title": "Connect a backend",
+        "text": "Build data-driven applications."
+      },
+      {
+        "title": "Deploy or open a pull request",
+        "text": "Deploy to Vercel infrastructure with one click, or open a pull request for review."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Intelligent agent",
+        "text": "Can search the web, inspect sites, fix errors and connect external tools."
+      },
+      {
+        "name": "Automatic error fixing",
+        "text": "Intelligent diagnostics for errors in your code."
+      },
+      {
+        "name": "Real-time preview",
+        "text": "A live view of the app with visual progress for agent actions."
+      },
+      {
+        "name": "Stack support",
+        "text": "Next.js, Tailwind and shadcn/ui, extensible with your own APIs, databases and components."
+      },
+      {
+        "name": "Prompt engineering guide",
+        "text": "Recommended for building faster."
+      },
+      {
+        "name": "Quickstart",
+        "text": "A tutorial for your first project."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Product managers and designers",
+        "text": "Prototype and refine UI."
+      },
+      {
+        "who": "Engineers and data scientists",
+        "text": "Build apps and dashboards."
+      },
+      {
+        "who": "Marketing teams and content creators",
+        "text": "Landing pages and interactive content."
+      },
+      {
+        "who": "Founders and educators",
+        "text": "Also named on the site."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Make a landing page or dashboard",
+        "text": "From a prompt."
+      },
+      {
+        "title": "Clone a page from a screenshot or Figma file",
+        "text": "Reproduce a design as code."
+      },
+      {
+        "title": "Collect feedback into a database",
+        "text": "A form whose submissions are stored."
+      },
+      {
+        "title": "Build a support chatbot or knowledge base",
+        "text": "A searchable one."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Follow the Quickstart",
+        "text": "It walks through creating your first project."
+      },
+      {
+        "step": "Read the prompt engineering guide",
+        "text": "To build faster."
+      },
+      {
+        "step": "Check the FAQs",
+        "text": "For common questions."
+      }
+    ],
+    "sources": [
+      {
+        "label": "v0 homepage",
+        "url": "https://v0.app",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

@@ -83,5 +83,102 @@
     "notes": "Project active. The repository page describes it as 'The agent engineering platform' and shows the MIT license. No pricing: open-source software; hosted LangSmith is a separate product.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An open-source framework for starting agents with any model provider",
+    "capabilities": [
+      {
+        "title": "Start an agent quickly",
+        "text": "LangChain is the quick-start framework: begin from templates with any model provider."
+      },
+      {
+        "title": "Use proven patterns or customise them",
+        "text": "Build with established agent patterns, or tailor them."
+      },
+      {
+        "title": "Keep control of the pieces",
+        "text": "You choose your own harness, context, memory and model."
+      },
+      {
+        "title": "Grow into the rest of the stack",
+        "text": "Move to langgraph for low-level control or deepagents for long-running work."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Any model provider",
+        "text": "The framework is described as working with any model provider."
+      },
+      {
+        "name": "Templates",
+        "text": "Quick starts for common agent shapes."
+      },
+      {
+        "name": "deepagents",
+        "text": "A sibling framework for long-running agents on complex tasks."
+      },
+      {
+        "name": "langgraph",
+        "text": "A sibling framework for agents with low-level control."
+      },
+      {
+        "name": "LangSmith",
+        "text": "The paid platform for observing, evaluating and deploying agents built with these frameworks."
+      },
+      {
+        "name": "Docs and Academy",
+        "text": "Documentation at docs.langchain.com and the LangChain Academy courses."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Agent builders",
+        "text": "Developers who want a fast route from idea to a working agent."
+      },
+      {
+        "who": "Engineering teams",
+        "text": "Teams that need to own their harness, memory and model choice."
+      },
+      {
+        "who": "Enterprises",
+        "text": "The company cites large customers for its wider platform."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Build a support assistant",
+        "text": "A customer story on the site describes an assistant that cut case resolution time substantially."
+      },
+      {
+        "title": "Automate order processing",
+        "text": "Another customer story reports thousands of orders handled automatically each day."
+      },
+      {
+        "title": "Orchestrate agents across stages",
+        "text": "A third describes coordinating agents across several customer stages."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Choose a framework",
+        "text": "langchain for quick starts, langgraph for low-level control, or deepagents for long-running work."
+      },
+      {
+        "step": "Read the documentation",
+        "text": "At docs.langchain.com."
+      },
+      {
+        "step": "Learn with LangChain Academy",
+        "text": "Courses for building and testing agents."
+      }
+    ],
+    "sources": [
+      {
+        "label": "LangChain homepage",
+        "url": "https://www.langchain.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

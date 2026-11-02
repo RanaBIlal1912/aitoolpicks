@@ -144,5 +144,110 @@
     "notes": "Product active. Pricing URL now redirects to /copilot/solutions/individuals. Monthly view: Microsoft 365 Personal $9.99, Family $12.99, Premium $19.99, Pro $99.99 (monthly billing only); one-month free trial on Personal, Family and Premium. A Yearly toggle (save up to 17%) exists; yearly prices were not read. Prices shown in $ without a currency code.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "AI help inside Word, Excel, PowerPoint and Outlook, for individuals",
+    "capabilities": [
+      {
+        "title": "Get a first draft in Word",
+        "text": "Prompt with the task, add or upload notes, and refine in chat."
+      },
+      {
+        "title": "Find insights in Excel data",
+        "text": "Describe the task, attach data and adjust the result through chat."
+      },
+      {
+        "title": "Go from prompt to presentation",
+        "text": "In PowerPoint, outline the flow, describe visuals and generate slides."
+      },
+      {
+        "title": "Keep on top of your inbox",
+        "text": "Outlook summaries help you stay organised and see next steps."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Cowork",
+        "text": "An AI collaborator in the Microsoft Copilot app that plans and completes multi-step tasks while you stay in control."
+      },
+      {
+        "name": "Researcher",
+        "text": "Finds, synthesises and explains information."
+      },
+      {
+        "name": "Analyst",
+        "text": "Turns raw numbers into insight."
+      },
+      {
+        "name": "AI Restyle in OneDrive",
+        "text": "AI-powered editing to give photos new looks and styles."
+      },
+      {
+        "name": "The Microsoft Copilot app",
+        "text": "One place to chat, create and edit content, manage projects and find files on the go."
+      },
+      {
+        "name": "Conditions the page states",
+        "text": "Copilot in Excel needs AutoSave, so the file must be saved to OneDrive; AI features are for the subscription owner and cannot be shared; availability varies by device and language."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Individuals with a Microsoft 365 plan",
+        "text": "Copilot in the apps needs a Personal, Family or Premium subscription."
+      },
+      {
+        "who": "College students",
+        "text": "The page mentions special offers for eligible students."
+      },
+      {
+        "who": "Employees of eligible employers",
+        "text": "A Workplace Discount Program is mentioned."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Draft a document from notes",
+        "text": "Upload your notes and have Copilot produce a first Word draft."
+      },
+      {
+        "title": "Analyse a spreadsheet",
+        "text": "Attach data and ask for the insight in plain language."
+      },
+      {
+        "title": "Build a deck",
+        "text": "Let Copilot reference a file to create a PowerPoint presentation."
+      },
+      {
+        "title": "Catch up on email",
+        "text": "Read a summary of the inbox and what to do next."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start the free trial",
+        "text": "The page describes a one-month free trial of Microsoft 365 Premium."
+      },
+      {
+        "step": "Learn the basics",
+        "text": "The Copilot learning center has short videos for Word, Excel, Outlook and other apps."
+      },
+      {
+        "step": "Install the app",
+        "text": "Optionally download the Microsoft Copilot app."
+      },
+      {
+        "step": "Sign in",
+        "text": "Use your Microsoft account to manage the subscription."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Microsoft Copilot for individuals",
+        "url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

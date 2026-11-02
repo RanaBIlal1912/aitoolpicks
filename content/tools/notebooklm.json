@@ -112,5 +112,106 @@
     "notes": "Product active but renamed: notebooklm.google now redirects to notebook.google, titled 'Gemini Notebook', and the help page is 'Learn about Gemini Notebook's plans'. The Standard tier is free with a Gmail account; Plus, Pro and Ultra tiers come with Google AI plans (see Gemini for the Pakistan prices of Plus and Pro). Notebook and source limits per tier were not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A research and thinking partner that answers from the sources you give it",
+    "capabilities": [
+      {
+        "title": "Ask about anything in your sources",
+        "text": "Responses are always grounded in the information you provide."
+      },
+      {
+        "title": "Listen to a summary",
+        "text": "Audio Overviews read a summary of your sources aloud, with interactive options."
+      },
+      {
+        "title": "Learn from public notebooks",
+        "text": "Featured public notebooks let you ask questions and generate summaries to see how others use it."
+      },
+      {
+        "title": "Use your notes more efficiently",
+        "text": "The site says the product exists so you can use your notes more efficiently."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Grounded answers",
+        "text": "The product answers from the documents in a notebook."
+      },
+      {
+        "name": "Audio Overviews",
+        "text": "A spoken summary of your sources."
+      },
+      {
+        "name": "Featured public notebooks",
+        "text": "Starter notebooks such as the complete works of Shakespeare and a set of corporate earnings reports."
+      },
+      {
+        "name": "Built with Gemini models",
+        "text": "The site says it is built with the latest Gemini models."
+      },
+      {
+        "name": "Privacy stance",
+        "text": "Organisation and school data is never used to train the models, and individual data is not used unless you share feedback."
+      },
+      {
+        "name": "Renamed",
+        "text": "The site now calls the product Gemini Notebook and has an FAQ asking whether it is the same product as NotebookLM."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Individuals",
+        "text": "Personal users are covered by the privacy statement."
+      },
+      {
+        "who": "Schools",
+        "text": "The site names schools as organisations whose data stays private."
+      },
+      {
+        "who": "Organisations",
+        "text": "Company data is stated not to train the models."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Study a large body of text",
+        "text": "A public notebook holds the complete works of Shakespeare as dozens of sources."
+      },
+      {
+        "title": "Digest a pile of reports",
+        "text": "A public notebook covers earnings reports for 50 large corporations across hundreds of sources."
+      },
+      {
+        "title": "Follow a theme across articles",
+        "text": "A public notebook gathers sources on healthy ageing."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try Gemini Notebook",
+        "text": "Use the button on the site."
+      },
+      {
+        "step": "Add your sources",
+        "text": "Notebooks are built from the information you provide."
+      },
+      {
+        "step": "Ask questions",
+        "text": "Or open a featured public notebook to see how it works."
+      },
+      {
+        "step": "Try an Audio Overview",
+        "text": "Hear a summary read aloud."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gemini Notebook (NotebookLM)",
+        "url": "https://notebook.google/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

@@ -158,5 +158,106 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "AI video and image generation"
+  "keyFeature": "AI video and image generation",
+  "profile": {
+    "headline": "A creative platform for video, image and audio with many models in one place",
+    "capabilities": [
+      {
+        "title": "Make video from a clip to a multi-shot piece",
+        "text": "Video Studio generates anything from a short clip to a 30-second multi-shot video."
+      },
+      {
+        "title": "Lengthen a clip",
+        "text": "Extend Video makes a clip longer by generating extra frames."
+      },
+      {
+        "title": "Create and edit images",
+        "text": "Image Studio gives creative control, and Edit Image swaps, removes or restyles elements."
+      },
+      {
+        "title": "Score and voice a clip",
+        "text": "Pika Soundtrack adds music, ambience and foley matched to the action."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Character Studio",
+        "text": "Creates a character you can reuse across creations."
+      },
+      {
+        "name": "Color Grade",
+        "text": "Adjusts colour, contrast and mood in photos or clips."
+      },
+      {
+        "name": "Product Shot",
+        "text": "Styled product images without a photoshoot."
+      },
+      {
+        "name": "Music, Speech and SFX studios",
+        "text": "Three audio apps for music, voiceover and sound effects."
+      },
+      {
+        "name": "Several models",
+        "text": "The site lists Pika's own models and models from other providers for video, image and audio."
+      },
+      {
+        "name": "Developer membership",
+        "text": "Access to multiple models through one API."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Ad creatives and marketers",
+        "text": "Both are named on the site."
+      },
+      {
+        "who": "Editors and filmmakers",
+        "text": "Video Studio, Extend Video and Color Grade serve them."
+      },
+      {
+        "who": "Developers",
+        "text": "A developer membership offers one API for several models."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Craft one specific image",
+        "text": "Use Image Studio for fine control."
+      },
+      {
+        "title": "Give footage a look",
+        "text": "Apply a grade with Color Grade."
+      },
+      {
+        "title": "Add a voiceover for social media",
+        "text": "Use Speech Studio."
+      },
+      {
+        "title": "Score a clip",
+        "text": "Use Pika Soundtrack to match sound to the picture."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try Pika",
+        "text": "Use the sign-up button, or log in if you have an account."
+      },
+      {
+        "step": "Browse community templates",
+        "text": "The site links to templates made by other users."
+      },
+      {
+        "step": "Use the Help Center",
+        "text": "The page does not describe the steps after sign-up, so the Help Center is the place to look."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pika homepage",
+        "url": "https://pika.art",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

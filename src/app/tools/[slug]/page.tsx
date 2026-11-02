@@ -182,7 +182,7 @@ export default async function ToolPage({ params }: Props) {
       <div className="mx-auto max-w-7xl px-5">
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div className="min-w-0 space-y-12">
-            {!profile && <ProfileNotice name={t.name} />}
+            {!profile && <ProfileNotice name={t.name} blocked={t.profileBlocked} />}
 
             <Reveal as="section">
               <ProfileSection id="what" eyebrow="What it does" title={`What can you do with ${t.name}?`}>

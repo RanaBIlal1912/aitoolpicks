@@ -167,5 +167,107 @@
     "notes": "Product active. Pay as you go $0 (local models, 3 concurrent cloud requests); Pro $20/month or $200/year billed annually ($60 of monthly usage credits); Team early access $500/month ($1,000 of shared monthly credits, unlimited users); Enterprise custom. The Max tier price was not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Run open models on your own machine, or in the cloud, with a simple command line",
+    "capabilities": [
+      {
+        "title": "Run models locally or in the cloud",
+        "text": "Access the latest open models with complete privacy; the site says prompts are never stored or trained on."
+      },
+      {
+        "title": "Chat with a model in one command",
+        "text": "Run a model from the Ollama library straight from the terminal."
+      },
+      {
+        "title": "Connect coding tools",
+        "text": "Launch tools such as Claude Code, Codex, Copilot CLI and OpenCode against your models."
+      },
+      {
+        "title": "Build on a REST API",
+        "text": "Endpoints run and manage models, with Python and JavaScript client libraries."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Model library",
+        "text": "Browse models at ollama.com/library."
+      },
+      {
+        "name": "Launch integrations",
+        "text": "Start a coding tool with a single launch command."
+      },
+      {
+        "name": "OpenClaw assistant",
+        "text": "An assistant that the README says can run across WhatsApp, Telegram, Slack and Discord."
+      },
+      {
+        "name": "Client libraries",
+        "text": "ollama-python and ollama-js."
+      },
+      {
+        "name": "Modelfile and importing",
+        "text": "Reference pages for importing and customising models."
+      },
+      {
+        "name": "Open source",
+        "text": "The project is MIT-licensed and built on llama.cpp."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Developers",
+        "text": "The libraries, REST API and docs are written for people building applications. The pages do not name an audience, so these groups follow from what they document."
+      },
+      {
+        "who": "People who want models to stay private",
+        "text": "Local running is the privacy argument the site makes."
+      },
+      {
+        "who": "Users of coding agents",
+        "text": "Several coding tools can be pointed at local models."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Chat with a local model",
+        "text": "Run one command in the terminal."
+      },
+      {
+        "title": "Point a coding agent at local models",
+        "text": "Launch the tool through Ollama."
+      },
+      {
+        "title": "Add a model to an app",
+        "text": "Call the REST API from Python or JavaScript."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Install Ollama",
+        "text": "Use the installer or install script for macOS, Windows or Linux, or the Docker image."
+      },
+      {
+        "step": "Run a model",
+        "text": "Type a run command with a model name from the library."
+      },
+      {
+        "step": "Read the docs",
+        "text": "The CLI, REST API and Modelfile references are at docs.ollama.com."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ollama homepage",
+        "url": "https://ollama.com",
+        "checked": "2026-11-02"
+      },
+      {
+        "label": "Ollama repository",
+        "url": "https://github.com/ollama/ollama",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

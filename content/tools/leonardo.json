@@ -167,5 +167,110 @@
     "notes": "Product active. Solo plans in USD, ex. tax: Free $0 (150 fast tokens/day), Essential $12, Premium $30, Ultimate $60 per month; Team Starter $72/month ($24 per seat). Fast tokens per month: Essential 8,500, Premium 25,000, Ultimate 60,000. The Pay Yearly / Pay Monthly toggle (up to 20% off) still does not change the displayed figures, so the billing period is unconfirmed.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A creator-first platform for making and editing images and video with AI",
+    "capabilities": [
+      {
+        "title": "Create images from prompts or custom models",
+        "text": "Generate high-quality visuals from simple prompts or from models tailored to your own aesthetic."
+      },
+      {
+        "title": "Bring visuals into motion",
+        "text": "Turn static ideas into video with animation and motion tools for storytelling, social and product use."
+      },
+      {
+        "title": "Edit without starting over",
+        "text": "Edit images and video while keeping characters, composition, style and intent intact."
+      },
+      {
+        "title": "Raise quality at any size",
+        "text": "Boost resolution and clarity so assets are ready for print and high-resolution displays."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Image generation",
+        "text": "Visuals from prompts, built to scale across concepts and styles."
+      },
+      {
+        "name": "Custom models",
+        "text": "Create images tailored to your own look."
+      },
+      {
+        "name": "Video and motion tools",
+        "text": "Animation aimed at storytelling, social and product experiences."
+      },
+      {
+        "name": "Precision editing",
+        "text": "Refine and adjust a result instead of regenerating it."
+      },
+      {
+        "name": "Upscaling",
+        "text": "Higher resolution and clarity without losing detail."
+      },
+      {
+        "name": "Developer API",
+        "text": "A separate route for building the platform into your own product."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Digital artists and multidisciplinary artists",
+        "text": "The site's artist stories feature people from both groups."
+      },
+      {
+        "who": "Filmmakers",
+        "text": "A filmmaker is among the featured creators, and the video tools target storytelling."
+      },
+      {
+        "who": "Content creators",
+        "text": "Social and product content is named as a use for the motion tools."
+      },
+      {
+        "who": "Developers",
+        "text": "The Developer API link is at the top of the page."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Explore a visual concept",
+        "text": "Try several styles from simple prompts."
+      },
+      {
+        "title": "Animate a still",
+        "text": "Turn an image into a short moving clip."
+      },
+      {
+        "title": "Fix a detail without losing the rest",
+        "text": "Edit one element and keep the characters and composition."
+      },
+      {
+        "title": "Prepare a print-ready asset",
+        "text": "Upscale an image before sending it to print."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Press Start now",
+        "text": "The button sits next to each of the four main capabilities."
+      },
+      {
+        "step": "Choose what to make",
+        "text": "Create images, bring visuals into motion, edit, or upscale."
+      },
+      {
+        "step": "Developers can use the API",
+        "text": "A Developer API link is in the header."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Leonardo.Ai homepage",
+        "url": "https://leonardo.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

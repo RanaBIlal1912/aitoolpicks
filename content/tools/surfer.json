@@ -146,5 +146,110 @@
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
   },
-  "keyFeature": "SEO and AI search visibility platform"
+  "keyFeature": "SEO and AI search visibility platform",
+  "profile": {
+    "headline": "An AI visibility platform for ranking in Google and appearing in AI answers",
+    "capabilities": [
+      {
+        "title": "Check what AI says about your brand",
+        "text": "Analyze AI Visibility shows what leading AI models say about you, finds answers that favour competitors and gives an action plan."
+      },
+      {
+        "title": "Audit existing content",
+        "text": "Find underperforming pages and get a prioritised list of low-effort fixes."
+      },
+      {
+        "title": "Write and optimise with live guidelines",
+        "text": "Generate outlines, write and edit with AI, and get real-time SEO and AI-search guidance."
+      },
+      {
+        "title": "Find competitive gaps",
+        "text": "Review competitors' strategies and get a content plan built around topical authority."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Prioritised action list",
+        "text": "Gaps, drops and opportunities ranked by expected visibility impact."
+      },
+      {
+        "name": "Re-optimization loop",
+        "text": "Alerts when a page slips or an AI answer changes which brands it mentions."
+      },
+      {
+        "name": "Brand-aligned content at scale",
+        "text": "Templates and custom voices built from your brand details."
+      },
+      {
+        "name": "Surfer MCP",
+        "text": "Connects Surfer to your existing tools."
+      },
+      {
+        "name": "Editor, Content Score and Topical Map",
+        "text": "Core writing and planning tools listed on the site."
+      },
+      {
+        "name": "Free AI visibility report",
+        "text": "Available without signing up, to see if your brand is the answer in AI results."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "SEO specialists and marketing managers",
+        "text": "The first roles the site names."
+      },
+      {
+        "who": "Content managers and writers",
+        "text": "Briefs, a live editor and content scoring."
+      },
+      {
+        "who": "Agencies and in-house teams",
+        "text": "Named alongside eCommerce businesses and enterprises."
+      },
+      {
+        "who": "Brand and PR managers",
+        "text": "Concerned with how AI tools describe the brand."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "See whether AI tools mention you",
+        "text": "Then fix answers that name competitors instead."
+      },
+      {
+        "title": "Triage older pages",
+        "text": "Decide which pages that lost rankings to update first."
+      },
+      {
+        "title": "Brief a writer",
+        "text": "Give them the terms, structure and length that top results use."
+      },
+      {
+        "title": "Keep several markets consistent",
+        "text": "Run one SEO workflow across languages."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start for free",
+        "text": "Use Start for Free or Try Surfer Platform."
+      },
+      {
+        "step": "Or run a free check first",
+        "text": "Get an AI visibility report without signing up."
+      },
+      {
+        "step": "For a large organisation",
+        "text": "Book a demo."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Surfer homepage",
+        "url": "https://surfer.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
+  }
 }

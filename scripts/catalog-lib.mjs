@@ -70,6 +70,10 @@ export function validateTool(t, ctx) {
   }
   if (!Array.isArray(t.sources) || t.sources.length < 1) at("needs at least one source");
   else for (const s of t.sources) if (!isStr(s.label) || !HTTPS.test(s.url ?? "") || !ISO.test(s.checked ?? "")) at(`bad source ${JSON.stringify(s)}`);
+  if (t.profileBlocked !== undefined) {
+    if (t.profile !== undefined) at("profileBlocked and profile cannot both be set");
+    if (!isStr(t.profileBlocked.reason, 30) || !ISO.test(t.profileBlocked.checked ?? "")) at("profileBlocked needs a reason and an ISO date");
+  }
   if (t.profile !== undefined) {
     const p = t.profile;
     const items = (k, keys) => {

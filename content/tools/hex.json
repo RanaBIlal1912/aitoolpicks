@@ -114,5 +114,106 @@
     "notes": "Product active (Hex 4.0 announced). Community free; Professional $36 and Team $75 per editor/month (Team: 14 days free); Enterprise custom. The page does not say whether prices are monthly or annual billing, so it stays partial.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI analytics platform for notebooks, self-serve questions and data apps",
+    "capabilities": [
+      {
+        "title": "Build analyses with an agent",
+        "text": "The Notebook Agent builds analyses and charts in agentic notebooks."
+      },
+      {
+        "title": "Ask questions in plain language",
+        "text": "Threads is conversational analytics for questions about your data."
+      },
+      {
+        "title": "Explore data without code",
+        "text": "Explore gives business users self-serve data exploration."
+      },
+      {
+        "title": "Share results as apps",
+        "text": "Publish generative dashboards and interactive data apps, with an App Agent for questions inside them."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Context Studio and Context Engine",
+        "text": "Manage the business definitions and models that ground AI answers, and see where context is missing."
+      },
+      {
+        "name": "Evals",
+        "text": "Test changes before production and measure their effect on agent accuracy, comparing price and quality across models."
+      },
+      {
+        "name": "Slack and MCP",
+        "text": "Query Hex from Slack or from assistants such as Claude, ChatGPT and Codex."
+      },
+      {
+        "name": "Governance and observability",
+        "text": "Enterprise permissions and thread-level visibility into token spend."
+      },
+      {
+        "name": "Model choice",
+        "text": "Supports several models, including open-source ones."
+      },
+      {
+        "name": "Data stack integrations",
+        "text": "Warehouses and databases, dbt metadata, GitHub and GitLab export, and Airflow, Dagster and Prefect."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Data teams",
+        "text": "Deep analysis and code-based work."
+      },
+      {
+        "who": "Business users",
+        "text": "Answers to their own questions without SQL or Python."
+      },
+      {
+        "who": "Teams using chat tools",
+        "text": "Query governed data from an assistant while keeping one trusted data layer."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Move from static dashboards to self-serve",
+        "text": "Replace a traditional BI report with conversational analytics."
+      },
+      {
+        "title": "Build a shared context layer",
+        "text": "Give agents trusted definitions to reason from."
+      },
+      {
+        "title": "Answer a question from Slack",
+        "text": "Keep the data governed while people ask in chat."
+      },
+      {
+        "title": "Embed a dashboard",
+        "text": "Put interactive analysis where your teams already work."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up free",
+        "text": "Use Get started for free at app.hex.tech, or request a demo."
+      },
+      {
+        "step": "Connect your data warehouse",
+        "text": "Hex reads from it."
+      },
+      {
+        "step": "Optional: set up the MCP server",
+        "text": "Use Hex from your AI assistant; the page links a setup guide."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Hex homepage",
+        "url": "https://hex.tech",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
