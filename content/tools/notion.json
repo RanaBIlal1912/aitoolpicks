@@ -145,5 +145,110 @@
     "notes": "Product active. USD, per seat/month: Free $0, Plus $10, Business $20 (recommended; includes 1,500 Standard and 500 Select credits a month), Enterprise custom; Pay monthly / Pay yearly toggle (save up to 20%) was not switched, so the yearly price is not recorded.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "One workspace where your team and AI agents work together",
+    "capabilities": [
+      {
+        "title": "Capture everything in one place",
+        "text": "Notion describes itself as a single system of record for what your team knows and does."
+      },
+      {
+        "title": "Find answers quickly, with citations",
+        "text": "Ask a question and get an answer that shows where it came from."
+      },
+      {
+        "title": "Automate work with agents",
+        "text": "Agents keep routine work running around the clock."
+      },
+      {
+        "title": "Work alongside AI agents",
+        "text": "The page presents Notion as a workspace where teams and agents work together."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Capture",
+        "text": "Bring notes, documents and the rest of your team's information into one system of record."
+      },
+      {
+        "name": "Find",
+        "text": "Get answers across your workspace quickly, with citations."
+      },
+      {
+        "name": "Automate",
+        "text": "Use agents to keep work moving, from reporting to triage."
+      },
+      {
+        "name": "Templates",
+        "text": "Start from ready-made templates instead of a blank page."
+      },
+      {
+        "name": "Learning resources",
+        "text": "Product tours, the Academy and the Help Center are linked from the Notion product page."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Enterprises",
+        "text": "Notion has a dedicated enterprise section on its product page."
+      },
+      {
+        "who": "Small businesses",
+        "text": "A small-business section covers teams that want one tool to run the company."
+      },
+      {
+        "who": "Startups",
+        "text": "The product page has a startup section and cites startups among its customers."
+      },
+      {
+        "who": "Developers",
+        "text": "A developer section covers building your own tools on Notion."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Triage product feedback",
+        "text": "Let an agent sort incoming feedback instead of doing it by hand."
+      },
+      {
+        "title": "Resolve support tickets in Slack",
+        "text": "Use an agent to work through support requests that arrive in Slack."
+      },
+      {
+        "title": "Respond to security alerts faster",
+        "text": "Automate the first steps when an alert comes in."
+      },
+      {
+        "title": "Automate weekly reporting",
+        "text": "Have the weekly report put together on a schedule."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up free",
+        "text": "Use the Get Notion free button, or download the app."
+      },
+      {
+        "step": "Look at templates and tours",
+        "text": "Browse Templates and the Product tours to see how teams set it up."
+      },
+      {
+        "step": "Learn more",
+        "text": "The Academy and Help Center explain the product in more depth."
+      },
+      {
+        "step": "For a company",
+        "text": "Request a demo to talk to sales."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Notion product page",
+        "url": "https://www.notion.com/product",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }
