@@ -873,6 +873,10 @@ main {
 .tile a.tile-link:focus-visible {
   outline: none;
 }
+/* A tile with a stretched link is clickable anywhere, so say so with the pointer. */
+.tile:has(a.tile-link) {
+  cursor: pointer;
+}
 @media (prefers-reduced-motion: reduce) {
   .tile {
     transition: none;

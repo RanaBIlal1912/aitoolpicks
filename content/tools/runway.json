@@ -156,5 +156,110 @@
     "notes": "Product active. Individual tab: Free $0 (125 one-time credits, 5 GB); Standard $15 monthly or $12 a month billed annually (625 credits); Pro $35 or $28 (2,250 credits); Max $95 or $76 (9,500 credits, credits roll over one month). Team & Enterprise and API tabs not read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A creative studio for video, images and audio, plus an API for developers",
+    "capabilities": [
+      {
+        "title": "Generate and edit video, images and audio",
+        "text": "Runway Creative is a cloud-based workspace for all three in one place."
+      },
+      {
+        "title": "Make and publish ads",
+        "text": "Runway Ads connects to Meta, Google and TikTok, generates on-brand variants and publishes the ones your team approves."
+      },
+      {
+        "title": "Build your own creative apps",
+        "text": "App Studio lets you build custom creative apps with no code."
+      },
+      {
+        "title": "Build with the models through an API",
+        "text": "Runway Dev is an API platform for developers, with models from Runway and other labs."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Runway Creative",
+        "text": "The creative platform for generating and editing video, images and audio."
+      },
+      {
+        "name": "Runway Ads",
+        "text": "Ad variants for Meta, Google and TikTok; the site says it is on every paid plan."
+      },
+      {
+        "name": "App Studio",
+        "text": "No-code custom creative apps."
+      },
+      {
+        "name": "Runway Dev",
+        "text": "An API platform with a Model Router, Workflows, Recipes and Characters."
+      },
+      {
+        "name": "Runway Robotics",
+        "text": "A toolkit for running robot policy inference through photorealistic simulation."
+      },
+      {
+        "name": "iOS and Android apps",
+        "text": "Use Runway on your phone."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Individual creators and creative teams",
+        "text": "Runway Creative is for individuals and teams of all sizes."
+      },
+      {
+        "who": "Developers",
+        "text": "Runway Dev is the API platform for building with the models."
+      },
+      {
+        "who": "Robotics teams",
+        "text": "Runway Robotics is aimed at robotics work and synthetic data."
+      },
+      {
+        "who": "Brands, agencies and studios",
+        "text": "The site says its partners include top brands, companies, agencies and studios."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Produce on-brand ad variants",
+        "text": "Generate variations and publish the approved ones."
+      },
+      {
+        "title": "Make video, images and audio in one workspace",
+        "text": "Keep a creative project in a single place instead of several tools."
+      },
+      {
+        "title": "Build a creative app without code",
+        "text": "Turn a repeatable creative process into a small app."
+      },
+      {
+        "title": "Produce output at scale through the API",
+        "text": "Call the models from your own product."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try Runway Creative free",
+        "text": "Use the Try Runway for free button at app.runwayml.com, or download the iPhone or Android app."
+      },
+      {
+        "step": "Developers: get an API key",
+        "text": "Create a key on the Dev platform and read the documentation."
+      },
+      {
+        "step": "Robotics and enterprise",
+        "text": "Request access or contact sales."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Runway homepage",
+        "url": "https://runway.com/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

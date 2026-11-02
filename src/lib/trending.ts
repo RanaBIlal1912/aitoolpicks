@@ -2,7 +2,7 @@
 // the site collects no usage data. Fallback: how many of the site's own news stories mention a tool (getNewsBuzz), which is counted from src/data/news.ts. Nothing here generates numbers.
 import fs from "node:fs";
 import path from "node:path";
-import { NEWS } from "@/data/news";
+import { LISTED_NEWS } from "@/data/news";
 import { getTool } from "@/data/tools";
 
 export type Trending = { period: { from: string; to: string }; source: string; method: string; items: { id: string; views: number }[] };
@@ -25,7 +25,7 @@ export type NewsBuzz = { id: string; stories: number; latest: string };
 /** Tools ranked by how many news stories on this site mention them (ties: most recent story first). Null when fewer than 3 tools qualify. */
 export function getNewsBuzz(limit = 6): NewsBuzz[] | null {
   const by = new Map<string, NewsBuzz>();
-  for (const n of NEWS) {
+  for (const n of LISTED_NEWS) {
     for (const id of n.tools ?? []) {
       if (!getTool(id)) continue;
       const cur = by.get(id) ?? { id, stories: 0, latest: "" };

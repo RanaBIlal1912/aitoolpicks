@@ -143,5 +143,114 @@
     "notes": "Product active. The page opened on the Annual view ('Saving up to 35% with annual billing') and shows two figures per plan: Hobbyist $16 and $24, Creator $24 and $35, Business $50 and $65 per person/month. The Monthly view could not be toggled, so the page text does not label which figure is which; the lower figure is most likely the annual price. Plan allowances read: Hobbyist 10 media hours and 400 AI credits per month, Creator 30 hours and 800 credits, Business 40 hours and 1,500 credits.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Edit video and audio by editing the transcript",
+    "capabilities": [
+      {
+        "title": "Edit by deleting words",
+        "text": "Delete a word in the transcript and the matching footage goes with it; move a sentence and the video moves too."
+      },
+      {
+        "title": "Let the AI assistant do a first cut",
+        "text": "Underlord can turn a raw recording into a tight cut or handle specific editing tasks on request."
+      },
+      {
+        "title": "Clean up the sound and the take",
+        "text": "Studio Sound, Edit for Clarity, Remove Filler Words and Remove Retakes are listed on the site."
+      },
+      {
+        "title": "Create content from a recording",
+        "text": "Create Clips, Captions, Show notes, YouTube descriptions and Translation are listed."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Underlord",
+        "text": "An AI assistant for editing tasks."
+      },
+      {
+        "name": "Transcription",
+        "text": "Automatic transcripts that you edit like text."
+      },
+      {
+        "name": "Podcasting",
+        "text": "Multitrack audio editing handled like editing text."
+      },
+      {
+        "name": "Screen recorder and Rooms",
+        "text": "Record your screen, or record remotely with other people."
+      },
+      {
+        "name": "AI speech and Avatars",
+        "text": "Voice cloning or stock AI voices, and AI Avatars."
+      },
+      {
+        "name": "API and MCP",
+        "text": "Edit through code or from inside an AI assistant."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Podcasters and creators",
+        "text": "Text-based editing makes cutting audio and video approachable, including for beginners."
+      },
+      {
+        "who": "Marketing and sales teams",
+        "text": "The site names marketing, sales and sales enablement."
+      },
+      {
+        "who": "Learning and support teams",
+        "text": "Learning and development, customer success and customer support teams are named."
+      },
+      {
+        "who": "Media and tech companies",
+        "text": "The site lists enterprises such as Amazon, Canva and Salesforce among its customers."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Marketing videos and product demos",
+        "text": "Cut a recording down by editing its text."
+      },
+      {
+        "title": "Webinar recordings",
+        "text": "Remove filler words and retakes, then create clips."
+      },
+      {
+        "title": "Tutorials and educational videos",
+        "text": "Record your screen and tidy the result from the transcript."
+      },
+      {
+        "title": "Case studies",
+        "text": "Turn a recorded interview into a finished video with captions."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up",
+        "text": "Create an account at web.descript.com; the site says there is a free plan with no credit card."
+      },
+      {
+        "step": "Add a recording",
+        "text": "Drop in video, audio or a recording such as a Zoom call."
+      },
+      {
+        "step": "Edit the text",
+        "text": "Descript transcribes it, and editing the words edits the video."
+      },
+      {
+        "step": "Fine-tune on the timeline",
+        "text": "Use the timeline when you need more control."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Descript homepage",
+        "url": "https://www.descript.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

@@ -158,5 +158,102 @@
     "notes": "Product active. Individuals tab, USD: Free $0 (2,000 completions a month), Pro $10, Pro+ $39, Max $100 per user/month. Included monthly credits: Pro $15, Pro+ $70, Max $200. Business tab not re-read.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI coding agent built into the place your code already lives",
+    "capabilities": [
+      {
+        "title": "Start from an issue or pull request",
+        "text": "Open a session with the task, the discussion and the repository context already connected."
+      },
+      {
+        "title": "Run several tasks in parallel",
+        "text": "Give each task its own session and follow all of them from one view."
+      },
+      {
+        "title": "Review code before it ships",
+        "text": "Find code quality and security issues in local changes before you open a pull request, then choose which findings to act on."
+      },
+      {
+        "title": "Automate recurring work",
+        "text": "Run reusable agent tasks on demand, on a schedule or from supported triggers."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Copilot cloud agent",
+        "text": "Hand follow-up changes from a pull request review to the agent."
+      },
+      {
+        "name": "Model choice",
+        "text": "Let Copilot pick a model per task, choose one yourself, bring your own API key, or run local models with Ollama and Foundry Local."
+      },
+      {
+        "name": "Many places to work",
+        "text": "Use the Copilot desktop app, the CLI, editors such as Visual Studio Code, Visual Studio, JetBrains IDEs, Xcode, Neovim, Eclipse and Zed, plus Slack, Teams, GitHub Mobile and the web."
+      },
+      {
+        "name": "Extend Copilot",
+        "text": "Add repository instructions and skills, Copilot Connectors for external data and tools, and MCP servers and plugins."
+      },
+      {
+        "name": "Continue across surfaces",
+        "text": "Check on or resume long-running tasks from the app, CLI, editor, github.com or GitHub Mobile."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Individual developers",
+        "text": "The Free, Pro, Pro+ and Max plans are for individuals."
+      },
+      {
+        "who": "Teams and startups",
+        "text": "The Business plan is for organisations that want to share Copilot across a team."
+      },
+      {
+        "who": "Large organisations",
+        "text": "The Enterprise plan is described for scaling Copilot across a company."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Morning issue triage",
+        "text": "A daily automation reviews recently opened or updated issues and suggests priority, effort and owner."
+      },
+      {
+        "title": "Track several issues at once",
+        "text": "Run parallel sessions, one per issue, and follow them together."
+      },
+      {
+        "title": "Catch a bug in review",
+        "text": "The page shows a review that flags a possible race condition in a session cache and suggests a thread-safe map."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Pick where to use it",
+        "text": "Download the desktop app, install the CLI, or open Copilot in an editor such as VS Code."
+      },
+      {
+        "step": "Start a session",
+        "text": "Begin from an issue, a pull request or a repository."
+      },
+      {
+        "step": "Follow a quickstart",
+        "text": "GitHub Docs, the Copilot App training and tutorials walk through the basics."
+      },
+      {
+        "step": "Start on the free plan",
+        "text": "The page says you can begin on the Free plan with no credit card."
+      }
+    ],
+    "sources": [
+      {
+        "label": "GitHub Copilot features",
+        "url": "https://github.com/features/copilot",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

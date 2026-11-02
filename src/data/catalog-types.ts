@@ -39,6 +39,21 @@ export type Pricing = {
 
 export type SourceLink = { label: string; url: string; type: "pricing" | "official" | "news" | "docs"; checked: string };
 
+/**
+ * Researched, tool-specific explanation shown on the tool page. Optional: only written from the vendor's own pages (see `sources`), never filled with
+ * generic text. A tool without one shows only what its verified record already says.
+ */
+export type ToolProfile = {
+  headline: string;
+  capabilities: { title: string; text: string }[];
+  featureCards: { name: string; text: string }[];
+  audienceDetail: { who: string; text: string }[];
+  scenarios: { title: string; text: string }[];
+  gettingStarted: { step: string; text: string }[];
+  sources: { label: string; url: string; checked: string }[];
+  researched: string;
+};
+
 export type ToolRecord = {
   id: string;
   name: string;
@@ -61,6 +76,7 @@ export type ToolRecord = {
   hue: number;
   review?: string;
   subcategory?: string;
+  profile?: ToolProfile;
   added: string;
   openSource?: { status: "open-source" | "source-available" | "open-weights" | "proprietary"; note: string; source: string };
   verified: string;

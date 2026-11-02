@@ -166,5 +166,106 @@
     "notes": "Product active. The page opened in Urdu for Pakistan and shows Free Rs 0, Google AI Plus Rs 1,400 per month, Google AI Pro Rs 5,600 per month (PKR), matching the stored figures; Pro includes 4x Free usage limits and Plus 2x. The Business and Developer tabs were not read, so the stored Gemini Enterprise USD prices are unconfirmed in this check. Pakistan prices only.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Google's AI assistant for writing, learning, coding and creating",
+    "capabilities": [
+      {
+        "title": "Help with everyday writing and planning",
+        "text": "The Gemini page shows it drafting emails and brainstorming ideas for an upcoming event."
+      },
+      {
+        "title": "Explain hard ideas",
+        "text": "It can simplify complex concepts and surface related insights about a topic or an image."
+      },
+      {
+        "title": "Work through code",
+        "text": "The page shows it helping with coding tasks, including debugging a difficult problem."
+      },
+      {
+        "title": "Plan and illustrate content",
+        "text": "It can draft an outline for something like a blog post and create images to illustrate it."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Gemini Live",
+        "text": "Listed on the Gemini page as one of the app's features for talking with it."
+      },
+      {
+        "name": "Image and video generation",
+        "text": "The Gemini page lists image generation and video generation among its capabilities."
+      },
+      {
+        "name": "Music generation",
+        "text": "Music generation is named on the Gemini page as a creative feature."
+      },
+      {
+        "name": "Deep Research",
+        "text": "Deep Research is one of the named features of the Gemini app."
+      },
+      {
+        "name": "Google Search and extensions",
+        "text": "Gemini can use Google Search and extensions such as Workspace, Maps and YouTube, which you can turn on or off."
+      },
+      {
+        "name": "Gems",
+        "text": "Customise Gemini with specific instructions so it acts as a subject-matter expert. The page says this was coming soon, so check that it is available to you."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "General users",
+        "text": "The page describes Gemini as a versatile tool for people who want to be more productive, more creative and more curious."
+      },
+      {
+        "who": "Students",
+        "text": "Students is one of the named areas on the Gemini page, for learning difficult concepts."
+      },
+      {
+        "who": "People who code",
+        "text": "Coding help and debugging are among the example uses."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Summarise a long research document",
+        "text": "Upload the document and ask for a summary; the page notes that file uploads are part of Gemini Advanced."
+      },
+      {
+        "title": "Debug a difficult coding problem",
+        "text": "Describe the problem and ask Gemini to help you work through it."
+      },
+      {
+        "title": "Plan a blog post",
+        "text": "Ask for an outline and for illustrations to go with it."
+      },
+      {
+        "title": "Prepare for an event",
+        "text": "Brainstorm ideas and draft the emails that go with them."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Open Gemini",
+        "text": "Use the Try Gemini button to get the mobile app, or open the web app at gemini.google.com/app."
+      },
+      {
+        "step": "Ask for something specific",
+        "text": "Start with one of the example tasks, such as an email, an outline or a code question."
+      },
+      {
+        "step": "Choose your extensions",
+        "text": "Decide whether Gemini may use Google Search and extensions such as Workspace, Maps and YouTube."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gemini overview",
+        "url": "https://gemini.google/overview/",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

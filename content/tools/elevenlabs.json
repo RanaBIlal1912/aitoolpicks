@@ -187,5 +187,110 @@
     "notes": "Product active. Monthly billing view (prices exclude taxes): Free $0 with 10k credits; Starter $6 regular (first month $1 until Nov 1); Creator $22 regular (first month $11); Pro $99; Scale $299 with 3 seats; Business $990 with 10 seats; Enterprise custom. Credits per month: Starter 30k, Creator 121k, Pro 600k, Scale 1.8M, Business 6M. Corrected: Starter and Creator regular monthly prices were previously not captured. The Yearly view was not re-read; the stored annual figures come from an earlier check.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "AI voice, music and sound, plus agents that can talk",
+    "capabilities": [
+      {
+        "title": "Turn text into natural speech",
+        "text": "Text-to-speech in more than 90 languages with controllable, expressive output."
+      },
+      {
+        "title": "Choose or create a voice",
+        "text": "A library of more than 17,500 voices, plus voice cloning and voice design from a text prompt."
+      },
+      {
+        "title": "Make music and sound effects",
+        "text": "Generate music from a written prompt, with vocals or instrumentals, and create or browse sound effects."
+      },
+      {
+        "title": "Transcribe and dub",
+        "text": "Speech-to-text with speaker labels and timestamps, and dubbing into other languages."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "ElevenCreative",
+        "text": "Generates speech, video, music and sound effects, with an all-in-one editor for podcasts, audiobooks and voiceovers."
+      },
+      {
+        "name": "ElevenAgents",
+        "text": "Configure, deploy and monitor voice and chat agents across phone, chat, email and WhatsApp, with analytics, testing and guardrails."
+      },
+      {
+        "name": "ElevenAPI",
+        "text": "APIs and SDKs for text-to-speech, speech-to-text and music."
+      },
+      {
+        "name": "Choice of speech models",
+        "text": "Eleven Flash for low latency, Eleven Multilingual, and Eleven v4 for emotional control."
+      },
+      {
+        "name": "Voice cloning and design",
+        "text": "Clone a voice or design a new one from a text description."
+      },
+      {
+        "name": "Commercial rights vary",
+        "text": "The site notes that the commercial rights for music depend on the subscription tier, so check your plan before publishing."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Creators",
+        "text": "Podcasters, audiobook producers and video makers who need voiceover, music or sound effects."
+      },
+      {
+        "who": "Developers",
+        "text": "Teams adding speech, transcription or voice agents to their own products through the API."
+      },
+      {
+        "who": "Enterprises",
+        "text": "Companies building customer-facing voice and chat agents; the site names telecom, fintech, gaming and delivery customers."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Narrate an audiobook or podcast",
+        "text": "Generate narration and edit it in the all-in-one editor."
+      },
+      {
+        "title": "Voice characters",
+        "text": "Create character voices for games, cartoons and learning apps."
+      },
+      {
+        "title": "Localise content",
+        "text": "Dub and translate audio for audiences in other languages."
+      },
+      {
+        "title": "Answer customers by voice",
+        "text": "Deploy a support agent that works on the phone and in chat."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Create an account",
+        "text": "Sign up on the site, or contact sales for enterprise needs."
+      },
+      {
+        "step": "Try a voice",
+        "text": "Generate speech or music in the app and pick a voice from the library."
+      },
+      {
+        "step": "Build an agent",
+        "text": "Create an AI agent in the app for voice or chat."
+      },
+      {
+        "step": "Developers: use the API",
+        "text": "The docs show creating a client with an API key and calling the text-to-speech convert method with a voice ID and model."
+      }
+    ],
+    "sources": [
+      {
+        "label": "ElevenLabs homepage",
+        "url": "https://elevenlabs.io",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

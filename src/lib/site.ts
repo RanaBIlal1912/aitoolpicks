@@ -25,13 +25,13 @@ export const NAV = [
   { href: "/blog/", label: "Blog", feature: true },
   { href: "/news/", label: "AI News", feature: true },
   { href: "/tools/", label: "Tools", feature: false },
-  { href: "/reviews/", label: "Reviews", feature: false },
   { href: "/compare/", label: "Compare", feature: false },
   { href: "/pricing/", label: "Pricing", feature: false },
 ] as const;
 
-/** Secondary links shown in the "More" menu and the footer. */
+/** Secondary pages: the header's "More" menu, and the footer lists them too so every page stays reachable. */
 export const MORE = [
+  { href: "/reviews/", label: "Reviews" },
   { href: "/best/", label: "Best-of guides" },
   { href: "/ecosystem/", label: "AI ecosystem" },
   { href: "/favorites/", label: "Saved tools" },
@@ -40,6 +40,17 @@ export const MORE = [
   { href: "/methodology/", label: "Methodology" },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
+] as const;
+
+/** The footer's Explore column: the main links plus the secondary pages people look for. */
+export const EXPLORE_LINKS = [
+  ...NAV,
+  { href: "/reviews/", label: "Reviews", feature: false },
+  { href: "/best/", label: "Best-of guides", feature: false },
+  { href: "/ecosystem/", label: "AI ecosystem", feature: false },
+  { href: "/submit/", label: "Submit a tool", feature: false },
+  { href: "/favorites/", label: "Saved tools", feature: false },
+  { href: "/recent/", label: "Recently viewed", feature: false },
 ] as const;
 
 export const FOOTER_LINKS = [

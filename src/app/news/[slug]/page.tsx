@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { NEWS, getNews } from "@/data/news";
+import { LISTED_NEWS, NEWS, alsoReportedBy, getNews } from "@/data/news";
 import { getTool } from "@/data/tools";
 import { pageMeta } from "@/lib/meta";
 import { SITE, absUrl } from "@/lib/site";
@@ -25,6 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!n) return {};
   const m = pageMeta({ title: n.title, description: n.summary, path: `/news/${slug}/` });
   const img = newsImage(slug);
+  // A second report of a story we already list points search engines at the main item.
+  if (n.sameStoryAs) m.alternates = { ...m.alternates, canonical: absUrl(`/news/${n.sameStoryAs}/`) };
   if (img) m.openGraph = { ...m.openGraph, images: [{ url: absUrl(img.src), width: img.width, height: img.height, alt: img.alt }] };
   return m;
 }
@@ -35,7 +37,9 @@ export default async function NewsItemPage({ params }: Props) {
   if (!n) notFound();
   const image = newsImage(n.slug);
   const tools = (n.tools ?? []).map((id) => getTool(id)).filter((t): t is NonNullable<typeof t> => !!t);
-  const more = NEWS.filter((x) => x.slug !== n.slug && (x.tag === n.tag || x.tools?.some((t) => n.tools?.includes(t))))
+  const primary = n.sameStoryAs ? getNews(n.sameStoryAs) : undefined;
+  const alsoBy = alsoReportedBy(n.slug);
+  const more = LISTED_NEWS.filter((x) => x.slug !== n.slug && (x.tag === n.tag || x.tools?.some((t) => n.tools?.includes(t))))
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 2);
 
@@ -74,6 +78,11 @@ export default async function NewsItemPage({ params }: Props) {
             )}
           </figcaption>
         </figure>
+        {primary && (
+          <p className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-soft">
+            This is another report of a story we list once, under <Link href={`/news/${primary.slug}/`} className="underline">{primary.title}</Link> ({primary.source}).
+          </p>
+        )}
         <section aria-labelledby="summary" className="glass rounded-[22px] p-7">
           <h2 id="summary" className="kicker">
             What the source says
@@ -91,6 +100,19 @@ export default async function NewsItemPage({ params }: Props) {
             Why it may matter
           </h2>
           <p className="mt-3 text-soft">{n.matters}</p>
+          {alsoBy.length > 0 && (
+            <p className="mt-3 text-sm text-soft">
+              Also reported by:{" "}
+              {alsoBy.map((x, i) => (
+                <span key={x.slug}>
+                  {i > 0 ? ", " : ""}
+                  <a href={x.url} target="_blank" rel="noopener noreferrer" className="underline">
+                    {x.source} ↗
+                  </a>
+                </span>
+              ))}
+            </p>
+          )}
           <p className="mt-3 text-sm text-muted">This note is our interpretation, written for people choosing tools. It is not a claim made by the source.</p>
         </section>
 

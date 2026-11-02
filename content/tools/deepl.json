@@ -152,5 +152,114 @@
     "notes": "Product active. /en/pricing redirects to /en/pro. Translator tab, Annual view, shown in USD for a Pakistan visitor: Individual $8.74/month billed annually, Team $28.74 per user/month billed annually, Business $57.49 per user/month billed annually, Enterprise custom; Individual and Team show a 30-day free trial. An earlier check with Germany selected showed EUR 7.49 / 24.99 / 49.99, so prices differ by region. The Monthly view and the free consumer tier were not re-read. API tab: Developer free (1M characters one-time), Growth $26.00/month billed annually plus usage.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Translate text, documents and speech, and polish what you write",
+    "capabilities": [
+      {
+        "title": "Translate text and files",
+        "text": "Translate text, or whole PDF, Word and PowerPoint files while keeping the original formatting and layout."
+      },
+      {
+        "title": "Translate speech",
+        "text": "DeepL Voice offers real-time translation for virtual meetings and in-person conversations."
+      },
+      {
+        "title": "Improve business writing",
+        "text": "DeepL Write adapts style and tone to a brand and a target audience."
+      },
+      {
+        "title": "Cover more than a hundred languages",
+        "text": "The site invites you to explore its 100+ languages."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "DeepL Translator",
+        "text": "Text and file translation, with a free version on the site."
+      },
+      {
+        "name": "DeepL Voice",
+        "text": "Real-time speech translation for meetings and conversations."
+      },
+      {
+        "name": "DeepL Write",
+        "text": "Writing help with style and tone adaptations."
+      },
+      {
+        "name": "Glossaries, Rules and the Customization Hub",
+        "text": "Pro features for consistent, enterprise-grade translation."
+      },
+      {
+        "name": "DeepL API",
+        "text": "Add DeepL to your own systems, with a free API key and a quick-start guide."
+      },
+      {
+        "name": "Apps and integrations",
+        "text": "Desktop apps, browser extensions for Chrome and Firefox, add-ins for Word, PowerPoint and Outlook, and Google Workspace and Microsoft 365 integrations."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Localisation and marketing teams",
+        "text": "Translate campaigns and keep wording consistent with glossaries."
+      },
+      {
+        "who": "Legal and professional services",
+        "text": "The site names legal and professional services among its industries."
+      },
+      {
+        "who": "Customer service and sales",
+        "text": "Support and sales teams can talk across languages."
+      },
+      {
+        "who": "Developers",
+        "text": "The API brings translation into existing systems."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Translate a contract or report",
+        "text": "Upload the file and keep its layout."
+      },
+      {
+        "title": "Support a customer in another language",
+        "text": "The site shows a support agent speaking German and Italian with voice translation."
+      },
+      {
+        "title": "Write for a new market",
+        "text": "Adapt tone and style for the audience you are entering."
+      },
+      {
+        "title": "Expand globally",
+        "text": "Translate internal communication and marketing material for new regions."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Try the free translator",
+        "text": "Use the text and file translation tools on the DeepL site."
+      },
+      {
+        "step": "Start a Pro trial",
+        "text": "Begin a free trial of the Pro plan for the advanced features."
+      },
+      {
+        "step": "Developers: get an API key",
+        "text": "Take a free API key and follow the quick-start guide."
+      },
+      {
+        "step": "For a company",
+        "text": "Contact sales for enterprise needs."
+      }
+    ],
+    "sources": [
+      {
+        "label": "DeepL Translator",
+        "url": "https://www.deepl.com/en/translator",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

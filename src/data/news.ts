@@ -24,6 +24,8 @@ export type NewsItem = {
   dateFromUrl?: boolean;
   /** Plain-language note on why it may matter to people choosing tools. Interpretation, not a claim from the source. */
   matters: string;
+  /** Set when this item reports a story already listed under another item (slug of that primary item). Such items stay reachable at their own address but are left out of lists, feeds and counts. */
+  sameStoryAs?: string;
 };
 
 export const NEWS: NewsItem[] = [
@@ -198,6 +200,7 @@ export const NEWS: NewsItem[] = [
     tag: "Models",
     summary: "TechCrunch reports that Mistral AI released the weights of its trillion-parameter model, which it positions for cybersecurity. Hugging Face published its own announcement the same day.",
     tools: ["mistral", "huggingface"],
+    sameStoryAs: "mistral-large-4-on-hugging-face",
     dateFromUrl: true,
     matters:
       "Published weights mean teams can run the model on their own infrastructure, subject to the licence. It is a developer concern more than a consumer one.",
@@ -284,12 +287,20 @@ export function getNews(slug: string): NewsItem | undefined {
   return NEWS.find((n) => n.slug === slug);
 }
 
+/** One entry per real-world story: what lists, feeds, counts and the home page use. */
+export const LISTED_NEWS: NewsItem[] = NEWS.filter((n) => !n.sameStoryAs);
+
+/** Other reports of the same story as the given (primary) item. */
+export function alsoReportedBy(slug: string): NewsItem[] {
+  return NEWS.filter((n) => n.sameStoryAs === slug);
+}
+
 export function newsForTool(id: string): NewsItem[] {
-  return NEWS.filter((n) => n.tools?.includes(id)).sort((a, b) => b.date.localeCompare(a.date));
+  return LISTED_NEWS.filter((n) => n.tools?.includes(id)).sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function topStories(n = 4): NewsItem[] {
-  return [...NEWS].sort((a, b) => b.importance - a.importance || b.date.localeCompare(a.date)).slice(0, n);
+  return [...LISTED_NEWS].sort((a, b) => b.importance - a.importance || b.date.localeCompare(a.date)).slice(0, n);
 }
 
 export function monthOf(n: NewsItem): string {

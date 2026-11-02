@@ -138,5 +138,110 @@
     "notes": "Product active; prices in USD. Starter free (150 AI credits a day, up to 500 a month). Professional full seat $16/mo (dev $12, collab $3) behind a Monthly/Annual toggle whose selected state is not labelled; Organization full seat $55/mo and Enterprise full seat $90/mo, both labelled billed annually. Per-month AI credits: Professional full seat 3,000, Organization 3,500, Enterprise 4,250.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "A collaborative design canvas for product teams",
+    "capabilities": [
+      {
+        "title": "Design and prototype in one place",
+        "text": "Figma Design covers designing and prototyping together."
+      },
+      {
+        "title": "Go from design to code",
+        "text": "Dev Mode turns designs into code, and Figma Make generates code from prompts."
+      },
+      {
+        "title": "Brainstorm and diagram with the team",
+        "text": "FigJam is a digital whiteboard for collaboration."
+      },
+      {
+        "title": "Add motion and publish",
+        "text": "Figma Motion adds animation to designs, and Figma Sites (Beta) publishes responsive websites."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Figma Design",
+        "text": "Design and prototype in one workspace."
+      },
+      {
+        "name": "Dev Mode",
+        "text": "Turns designs into code for engineers."
+      },
+      {
+        "name": "Figma Make",
+        "text": "Generates code from a prompt."
+      },
+      {
+        "name": "FigJam",
+        "text": "A whiteboard for brainstorming, diagrams and planning."
+      },
+      {
+        "name": "Figma Slides and Draw",
+        "text": "Co-create presentations, and use vector illustration tools."
+      },
+      {
+        "name": "Figma agent",
+        "text": "A built-in assistant that can add motion, document design systems and implement feedback."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Designers",
+        "text": "Design systems, prototyping, UX and web design, and wireframing."
+      },
+      {
+        "who": "Engineers",
+        "text": "Design handoff and turning designs into code."
+      },
+      {
+        "who": "Product managers",
+        "text": "Product development and planning, from whiteboard to ship."
+      },
+      {
+        "who": "Organisations",
+        "text": "Enterprise, education and government customers are named on the site."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Build a design system",
+        "text": "Keep components and styles in one shared place for the whole team."
+      },
+      {
+        "title": "Wireframe and prototype",
+        "text": "Sketch a flow, then make it clickable for testing."
+      },
+      {
+        "title": "Run a planning session",
+        "text": "Use online whiteboarding for brainstorming, diagramming and agile workflows."
+      },
+      {
+        "title": "Start from a template",
+        "text": "Use ready-made templates for UI kits, websites, mobile apps, presentations and more."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up free",
+        "text": "Use the Get started for free button."
+      },
+      {
+        "step": "Start from a template",
+        "text": "Browse the templates for UI kits, websites, mobile apps and presentations."
+      },
+      {
+        "step": "For a company",
+        "text": "Contact sales for an organisation-wide plan."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Figma homepage",
+        "url": "https://www.figma.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

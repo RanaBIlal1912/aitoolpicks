@@ -180,5 +180,122 @@
     "notes": "Product active. Individual tab: Free $0; Pro $17/month on annual billing ($200 billed up front) or $20 billed monthly; Max from $100/month (5x and 20x tiers), monthly billing only. Team & Enterprise tab: Standard seat $20 annual / $25 monthly; Premium seat $100 annual / $125 monthly; Enterprise US$20 per seat per month billed annually, 20 seat minimum, plus usage at API rates. Prices exclude tax.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "An AI assistant you hand tasks to, not just questions",
+    "capabilities": [
+      {
+        "title": "Hand it a task, not just a question",
+        "text": "Claude can mine data, pull information together and make a first draft for you to review."
+      },
+      {
+        "title": "Turn ideas into finished work",
+        "text": "It can produce decks, working prototypes, financial models and editable drafts."
+      },
+      {
+        "title": "Work with the files you already have",
+        "text": "It works with Word, Excel, PowerPoint, PDFs, CSVs and more."
+      },
+      {
+        "title": "Build visuals",
+        "text": "It creates charts, diagrams, interactive visuals, artifacts and designs."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Connectors to your apps",
+        "text": "Link Claude to tools such as Slack, Gmail, Google Calendar, Salesforce, Amplitude, BigQuery and Gong so it can work with the information that lives there."
+      },
+      {
+        "name": "Memory, projects and saved instructions",
+        "text": "Context carries across conversations, so you do not have to explain the same background each time."
+      },
+      {
+        "name": "Edits you can review",
+        "text": "Changes show up as tracked changes or highlighted cells, and Claude can ask before it acts."
+      },
+      {
+        "name": "Tasks that keep running",
+        "text": "Hand work off from your phone and Claude keeps going in the cloud; tasks can run on a schedule or in parallel."
+      },
+      {
+        "name": "Skills, plugins and custom connectors",
+        "text": "Add capabilities with skills, plugins and your own connectors or MCP servers."
+      },
+      {
+        "name": "Permissions and admin controls",
+        "text": "Team and Enterprise plans add access controls and admin tools."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Marketing",
+        "text": "Campaign readouts and social asset sets."
+      },
+      {
+        "who": "Sales",
+        "text": "Call preparation and CRM updates."
+      },
+      {
+        "who": "Finance",
+        "text": "Budget reforecasts, month-end close and earnings comparisons."
+      },
+      {
+        "who": "Human resources",
+        "text": "Merit analysis and job description checks."
+      },
+      {
+        "who": "Legal",
+        "text": "Contract redlines, legal research and deposition preparation."
+      },
+      {
+        "who": "Product",
+        "text": "Meeting action tracking, feedback digests and metrics dashboards."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Prepare for a sales call",
+        "text": "Pull together what you know about the account and update the CRM afterwards."
+      },
+      {
+        "title": "Close the month",
+        "text": "Work through a month-end close or an H2 budget reforecast and review the result as tracked changes."
+      },
+      {
+        "title": "Review a contract",
+        "text": "Get contract redlines and background legal research as a first pass for a person to check."
+      },
+      {
+        "title": "Digest customer feedback",
+        "text": "Turn a pile of feedback into a digest and a metrics dashboard."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Open Claude",
+        "text": "Go to claude.ai, or download the web, desktop or mobile apps."
+      },
+      {
+        "step": "Describe the outcome",
+        "text": "Say what you want in plain language and point Claude to the files and tools it should use."
+      },
+      {
+        "step": "Connect your apps",
+        "text": "Add the apps you already use from the Connectors page."
+      },
+      {
+        "step": "Look for a starting point",
+        "text": "Browse the use cases on the product page, or ask Claude where to start."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Claude product overview",
+        "url": "https://claude.com/product/overview",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

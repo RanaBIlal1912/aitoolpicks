@@ -124,5 +124,102 @@
     "notes": "Product active. Basic $0, Business $14, Enterprise $35, all per user per month; the page does not state a billing period, so none is claimed. Business adds unlimited meeting history, advanced integrations, API access and MCP.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Meeting notes without a meeting bot",
+    "capabilities": [
+      {
+        "title": "Capture the meeting without a bot",
+        "text": "Granola listens to your computer's audio, so no bot joins the call. The site says it works with Zoom, Google Meet, Teams and other meeting apps."
+      },
+      {
+        "title": "Get ready before the meeting",
+        "text": "It syncs with your calendar and prepares a Brief for external meetings: attendees, earlier discussion and current priorities."
+      },
+      {
+        "title": "Write less, get clearer notes",
+        "text": "You type your own notes during the meeting and Granola uses the meeting context to turn them into clearer, personalised notes."
+      },
+      {
+        "title": "Leave with the follow-ups done",
+        "text": "Notes, action items and follow-ups are ready when the meeting ends, with shortcuts such as List actions, Write follow-up email and Draft project plan."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Granola Chat",
+        "text": "Ask questions across your meetings, for example what you committed to this week."
+      },
+      {
+        "name": "Meeting Briefs",
+        "text": "A short preparation for external meetings built from your calendar."
+      },
+      {
+        "name": "iOS and Android apps",
+        "text": "Use it for in-person meetings, walking meetings and phone calls, with voice typing."
+      },
+      {
+        "name": "Private by default",
+        "text": "Notes are private unless you choose to share them with participants."
+      },
+      {
+        "name": "MCP connector",
+        "text": "Connect Granola to AI apps such as Claude, OpenAI and Cursor so they can use your meeting notes."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Professionals in back-to-back meetings",
+        "text": "The product is aimed at people who spend the day in calls and want notes and actions handled."
+      },
+      {
+        "who": "Sales teams",
+        "text": "The site links to a sales use-case page and mentions deal reviews."
+      },
+      {
+        "who": "Product managers",
+        "text": "The site links to a product management use-case page."
+      },
+      {
+        "who": "Teams with regular syncs",
+        "text": "Stand-ups and go-to-market syncs are named as examples."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Stand-ups and team syncs",
+        "text": "Keep your own notes short and let Granola produce the clear version and the action list."
+      },
+      {
+        "title": "Deal reviews",
+        "text": "Walk into an external meeting with a Brief, then send the follow-up email it drafts."
+      },
+      {
+        "title": "Looking back across meetings",
+        "text": "Ask Granola Chat what was decided or promised instead of searching old notes."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Download Granola",
+        "text": "It is free to download for macOS, Windows, iOS and Android."
+      },
+      {
+        "step": "Connect your calendar",
+        "text": "This lets Granola detect upcoming meetings and prepare Briefs."
+      },
+      {
+        "step": "Take notes in your next meeting",
+        "text": "Write as you normally would, then review the generated notes and action items."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Granola homepage",
+        "url": "https://www.granola.ai",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

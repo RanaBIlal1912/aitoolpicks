@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { CATEGORIES, TOOLS, toolsInCategory } from "../src/data/tools";
 import { ARTICLES } from "../src/data/articles";
-import { NEWS } from "../src/data/news";
+import { LISTED_NEWS } from "../src/data/news";
 
 const root = process.cwd();
 const files = fs.readdirSync(path.join(root, "content/tools")).filter((f) => f.endsWith(".json"));
@@ -38,8 +38,8 @@ const built = fs.existsSync(path.join(root, "out/index.html"));
 describe.skipIf(!built)("the built pages state the same numbers", () => {
   it("tools directory", () => {
     const t = text("tools")!;
-    expect(t).toContain(`${TOOLS.length} tools across ${CATEGORIES.length} categories`);
-    expect(t).toContain(`fully verified for ${verified} of them`);
+    // The directory page is only the search box and the results; it states the catalog size in its own count line.
+    expect(t).toContain(`${TOOLS.length} in the directory`);
   });
   it("home page", () => {
     const t = text("")!;
@@ -56,20 +56,20 @@ describe.skipIf(!built)("the built pages state the same numbers", () => {
   });
   it("pricing page", () => {
     const t = text("pricing")!;
-    expect(t).toContain(`${verified} verified`);
+    expect(t).toContain(`${verified} are fully verified`);
     expect(t).toContain(`${TOOLS.length} tools`);
   });
   it("blog and news", () => {
-    // The list shows every article: guides plus the two comparison articles that live under /compare/.
-    expect(text("blog")!).toContain(`${ARTICLES.length} guides`);
-    expect(text("news")!).toContain(`${NEWS.length} stories`);
+    // The featured three (blog) and the four top stories (news) are shown above the lists, so the lists leave them out.
+    expect(text("blog")!).toContain(`${ARTICLES.length - 3} guides`);
+    expect(text("news")!).toContain(`${LISTED_NEWS.length - 4} stories`);
   });
   it("sitemap lists every tool, guide and story once", () => {
     const xml = fs.readFileSync(path.join(root, "out/sitemap.xml"), "utf8");
     const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
     expect(new Set(locs).size).toBe(locs.length);
     for (const t of TOOLS) expect(locs.some((l) => l.endsWith(`/tools/${t.id}/`)), t.id).toBe(true);
-    expect(locs.filter((l) => /\/news\/[^/]+\/$/.test(l)).length).toBe(NEWS.length);
+    expect(locs.filter((l) => /\/news\/[^/]+\/$/.test(l)).length).toBe(LISTED_NEWS.length);
     expect(locs.filter((l) => /\/blog\/[^/]+\/$/.test(l)).length).toBe(guides);
   });
 });

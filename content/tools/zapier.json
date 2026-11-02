@@ -130,5 +130,98 @@
     "notes": "Product active. Page has Pay monthly / Pay yearly (save 33%) and a task tier selector; the figures read are 'starting from': Free $0 (100 tasks a month), Professional from $19.99/month, Team from $69/month (25 users, SAML SSO), Enterprise by sales. They match the stored annual prices; the stored monthly prices ($29.99, $103.50) were not re-seen.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Connect AI to the apps your business already uses",
+    "capabilities": [
+      {
+        "title": "Connect AI to your apps",
+        "text": "Zapier links assistants such as Claude and ChatGPT to more than 9,000 apps through MCP, or lets you build custom AI apps with its SDK."
+      },
+      {
+        "title": "Let agents act across your tools",
+        "text": "Agents can score leads, process documents, route tickets and handle requests."
+      },
+      {
+        "title": "Control what AI can do",
+        "text": "Action Restrictions, Domain Restrictions and App Access Controls limit where AI can act."
+      },
+      {
+        "title": "See what happened",
+        "text": "Asset History, AI Guardrails and Log Streaming to tools such as Datadog or Splunk give visibility."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "MCP and the Zapier SDK",
+        "text": "Two ways to connect AI to the apps Zapier supports."
+      },
+      {
+        "name": "Bring Your Own Model",
+        "text": "Use your own model, including through Amazon Bedrock."
+      },
+      {
+        "name": "Workspaces and role-based access",
+        "text": "Give each team its own workspace and set who can do what."
+      },
+      {
+        "name": "Guided Templates",
+        "text": "Start teams from approved templates."
+      },
+      {
+        "name": "Security and compliance",
+        "text": "The site lists SOC 2 Type II, SOC 3, GDPR and CCPA compliance, plus SSO, SCIM and VPC Peering."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Business teams",
+        "text": "Teams that want to automate routine work across the apps they already use."
+      },
+      {
+        "who": "IT and security leaders",
+        "text": "The control, visibility and security features are aimed at people who govern AI use."
+      },
+      {
+        "who": "Developers",
+        "text": "The SDK and MCP let developers build custom AI apps."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Score and route leads",
+        "text": "Have an agent score new leads and send them to the right person."
+      },
+      {
+        "title": "Handle support tickets",
+        "text": "Route and resolve tickets with AI; customers on the site report large numbers resolved automatically."
+      },
+      {
+        "title": "Process documents",
+        "text": "Pull information out of documents and pass it to the next app."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Start free",
+        "text": "Use the Start free button to sign up."
+      },
+      {
+        "step": "Connect your apps",
+        "text": "Choose the apps you want to link; the site says setup takes minutes."
+      },
+      {
+        "step": "For a company",
+        "text": "Talk to sales about control and governance features."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Zapier homepage",
+        "url": "https://zapier.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

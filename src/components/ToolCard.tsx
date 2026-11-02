@@ -7,6 +7,7 @@ import AffLink from "./AffLink";
 import TiltCard from "./TiltCard";
 import ToolLogo from "./ToolLogo";
 import FavoriteButton from "./FavoriteButton";
+import PriceText from "./PriceText";
 
 const STATUS = {
   verified: { label: "Pricing verified", cls: "border-emerald-400/30 bg-emerald-400/10 text-emerald-200" },
@@ -91,7 +92,7 @@ export default function ToolCard({
         {tool.plans.slice(0, 3).map((p) => (
           <div key={p.name} className="flex justify-between gap-3">
             <dt className="truncate text-muted">{p.name}</dt>
-            <dd className="text-right text-soft">{p.price}</dd>
+            <dd className="text-right text-soft"><PriceText text={p.price} /></dd>
           </div>
         ))}
       </dl>

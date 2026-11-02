@@ -69,6 +69,22 @@ export function validateTool(t, ctx) {
   }
   if (!Array.isArray(t.sources) || t.sources.length < 1) at("needs at least one source");
   else for (const s of t.sources) if (!isStr(s.label) || !HTTPS.test(s.url ?? "") || !ISO.test(s.checked ?? "")) at(`bad source ${JSON.stringify(s)}`);
+  if (t.profile !== undefined) {
+    const p = t.profile;
+    const items = (k, keys) => {
+      if (!Array.isArray(p[k]) || p[k].length < 1) return at(`profile.${k} must be a non-empty list`);
+      for (const it of p[k]) for (const key of keys) if (!isStr(it?.[key], 3)) at(`profile.${k}: every item needs ${key}`);
+    };
+    if (!isStr(p.headline, 10)) at("profile.headline must be a sentence");
+    items("capabilities", ["title", "text"]);
+    items("featureCards", ["name", "text"]);
+    items("audienceDetail", ["who", "text"]);
+    items("scenarios", ["title", "text"]);
+    items("gettingStarted", ["step", "text"]);
+    if (!ISO.test(p.researched ?? "")) at("profile.researched must be an ISO date");
+    if (!Array.isArray(p.sources) || p.sources.length < 1) at("profile needs at least one official source");
+    else for (const s of p.sources) if (!isStr(s.label) || !HTTPS.test(s.url ?? "") || !ISO.test(s.checked ?? "")) at(`profile: bad source ${JSON.stringify(s)}`);
+  }
   if (!Number.isFinite(t.hue)) at("hue must be a number");
   const blob = JSON.stringify(t).toLowerCase();
   for (const bad of ["lorem", "todo", "tbd", "placeholder"]) if (blob.includes(bad)) at(`contains "${bad}"`);

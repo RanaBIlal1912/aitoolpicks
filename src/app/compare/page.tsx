@@ -19,7 +19,6 @@ export default function ComparePage() {
     <>
       <PageHeader
         variant="lab"
-        stats={[[String(COMPARISONS.length), "full comparisons"], ["2", "tools side by side"], ["0", "invented scores"]]}
         eyebrow="Compare"
         title={
           <>

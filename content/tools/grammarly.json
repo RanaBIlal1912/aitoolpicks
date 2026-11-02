@@ -133,5 +133,106 @@
     "notes": "Product active (the page now mentions availability through Superhuman Go). Free $0 with 100 AI prompts; Pro shows $12 USD with no billing-period label, a $0-today free trial (reminder 2 days before it ends) and 2,000 AI prompts; Enterprise by sales. Because the Pro billing period is unlabelled, it stays partial.",
     "checked": "2026-10-30",
     "method": "Opened in the Claude desktop built-in browser; page text read"
+  },
+  "profile": {
+    "headline": "Writing help that checks grammar, tone and how your reader will take it",
+    "capabilities": [
+      {
+        "title": "Fix and polish your writing",
+        "text": "Proofreading refines grammar, structure and clarity, and paragraph rewrites improve flow with one click."
+      },
+      {
+        "title": "Match the tone to the audience",
+        "text": "Tone suggestions adapt a message to its context."
+      },
+      {
+        "title": "See your text through a reader's eyes",
+        "text": "Reader Reactions reviews your writing from your audience's point of view."
+      },
+      {
+        "title": "Check for AI-written text",
+        "text": "An AI Detector agent identifies AI-generated text and the areas you may want to revise."
+      }
+    ],
+    "featureCards": [
+      {
+        "name": "Humanizer agent",
+        "text": "Adds personality to writing that reads flat."
+      },
+      {
+        "name": "Plagiarism Checker and Citation tools",
+        "text": "The site lists a Plagiarism Checker, a Citation Generator and a Citation Finder."
+      },
+      {
+        "name": "Paraphrasing and Translator",
+        "text": "Rewrite a passage in other words, or translate it."
+      },
+      {
+        "name": "AI Chat and AI Grader",
+        "text": "Ask for help in a chat, or have a draft graded."
+      },
+      {
+        "name": "Team style tools",
+        "text": "Style Guide, Snippets, Analytics and Brand Tones help a team write consistently."
+      },
+      {
+        "name": "Works where you write",
+        "text": "Install it on the desktop, as a browser extension, on mobile, or in Microsoft Office and Google Docs."
+      }
+    ],
+    "audienceDetail": [
+      {
+        "who": "Individuals",
+        "text": "Anyone who wants clearer writing in email, documents and messages."
+      },
+      {
+        "who": "Students and schools",
+        "text": "Citation and grading tools are aimed at education."
+      },
+      {
+        "who": "Business teams",
+        "text": "The site names customer support, marketing, IT, sales and HR teams."
+      },
+      {
+        "who": "Large organisations",
+        "text": "The Enterprise plan adds dedicated support and controls such as roles and permissions."
+      }
+    ],
+    "scenarios": [
+      {
+        "title": "Make a message clearer",
+        "text": "Shorten and sharpen an email before you send it."
+      },
+      {
+        "title": "Write in the brand's voice",
+        "text": "The site shows a support team following a brand style guide."
+      },
+      {
+        "title": "Check an AI-assisted draft",
+        "text": "Find the parts that read as AI-generated and revise them."
+      }
+    ],
+    "gettingStarted": [
+      {
+        "step": "Sign up free",
+        "text": "Use the Sign up button with an email address or a Google account."
+      },
+      {
+        "step": "Install it where you write",
+        "text": "Add the desktop app, the browser extension, the mobile keyboard, or the add-in for Microsoft Office or Google Docs."
+      },
+      {
+        "step": "For a company",
+        "text": "Request a demo or contact sales for the Enterprise plan."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Grammarly homepage",
+        "url": "https://www.grammarly.com",
+        "checked": "2026-11-02"
+      }
+    ],
+    "researched": "2026-11-02"
   }
 }

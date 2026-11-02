@@ -2,7 +2,7 @@
 // models come from content/models.json (each with a source), and relationships are the ones the records state: which company makes which tool,
 // which tools a model is supported by, which news stories mention a company's tools. Nothing here is inferred.
 import models from "../../content/models.json";
-import { NEWS, type NewsItem } from "./news";
+import { LISTED_NEWS, type NewsItem } from "./news";
 import { TOOLS } from "./tools";
 import type { Tool } from "./catalog-types";
 
@@ -35,7 +35,7 @@ export const COMPANIES: Company[] = (() => {
       name,
       tools,
       models: MODELS.filter((m) => m.company === name),
-      news: NEWS.filter((n) => n.tools?.some((id) => tools.some((t) => t.id === id))).sort((a, b) => b.date.localeCompare(a.date)),
+      news: LISTED_NEWS.filter((n) => n.tools?.some((id) => tools.some((t) => t.id === id))).sort((a, b) => b.date.localeCompare(a.date)),
       openSource: tools.filter((t) => t.openSource && t.openSource !== "proprietary"),
     }))
     .sort((a, b) => b.tools.length - a.tools.length || a.name.localeCompare(b.name));

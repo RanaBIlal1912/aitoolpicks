@@ -20,7 +20,6 @@ export default function PricingPage() {
     <>
       <PageHeader
         variant="lab"
-        stats={[[String(TOOLS.length), "tools"], [String(v), "verified"], [String(p), "partly verified"], [String(u), "not verified"]]}
         eyebrow="Pricing"
         title={
           <>
