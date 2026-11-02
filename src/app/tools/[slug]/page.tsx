@@ -103,7 +103,6 @@ export default async function ToolPage({ params }: Props) {
             </span>
           </div>
         }
-        stats={[[PRICING_MODEL_LABEL[t.pricing.model] ?? t.pricing.model, "pricing model"], [String(t.pricing.plans.length), "plans listed"], [t.verification.status === "verified" ? "Verified" : "Partly verified", "pricing record"]]}
         eyebrow={cat?.label ?? "Tool"}
         title={
           <span className="flex items-center gap-4">

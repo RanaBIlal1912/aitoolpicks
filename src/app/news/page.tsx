@@ -21,7 +21,9 @@ export default function NewsPage() {
   const all = [...LISTED_NEWS].sort((a, b) => b.date.localeCompare(a.date));
   const top = topStories(4);
   const [lead, ...side] = top;
-  const popular = all.filter((n) => n.importance >= 2).slice(0, 4);
+  // The feed below leaves out the top stories shown above, so no story appears twice on the page.
+  const topSlugs = new Set(top.map((n) => n.slug));
+  const feed = all.filter((n) => !topSlugs.has(n.slug));
 
   const toolCounts = new Map<string, number>();
   for (const n of LISTED_NEWS) for (const t of n.tools ?? []) toolCounts.set(t, (toolCounts.get(t) ?? 0) + 1);
@@ -68,49 +70,10 @@ export default function NewsPage() {
         </section>
 
         <div className="mt-16">
-          <NewsFeed items={all} tags={NEWS_TAGS} kinds={NEWS_KINDS} />
+          <NewsFeed items={feed} tags={NEWS_TAGS} kinds={NEWS_KINDS} />
         </div>
 
-        <section className="mt-20 grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-3" aria-label="More ways into the news">
-          <div className="glass min-w-0 rounded-[22px] p-6">
-            <h2 className="text-lg font-bold text-white">Browse by topic</h2>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {topicCounts.map(([t, c]) => (
-                <li key={t}>
-                  <a href={withBase(`/news/?topic=${encodeURIComponent(t)}`)} className="chip">
-                    {t} <span className="text-xs text-muted">{c}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <h3 className="mt-6 text-sm font-bold uppercase tracking-[0.12em] text-muted">By type</h3>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {NEWS_KINDS.filter((k) => LISTED_NEWS.some((n) => n.kind === k)).map((k) => (
-                <li key={k}>
-                  <a href={withBase(`/news/?type=${encodeURIComponent(k)}`)} className="chip">
-                    {k}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="glass min-w-0 rounded-[22px] p-6">
-            <h2 className="text-lg font-bold text-white">Important recent coverage</h2>
-            <ul className="mt-4 divide-y divide-white/10">
-              {popular.map((n) => (
-                <li key={n.slug} className="py-3 first:pt-0 last:pb-0">
-                  <Link href={`/news/${n.slug}/`} className="font-serif font-bold leading-snug text-white no-underline hover:underline">
-                    {n.title}
-                  </Link>
-                  <p className="mt-1 text-xs text-muted">
-                    {n.source} · {formatDate(n.date)}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+        <section className="mt-20 grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-2" aria-label="More ways into the news">
           <div className="glass min-w-0 rounded-[22px] p-6">
             <h2 className="text-lg font-bold text-white">Tools in the news</h2>
             <ul className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-3">
@@ -125,23 +88,22 @@ export default function NewsPage() {
               ))}
             </ul>
           </div>
-        </section>
-
-        <section className="glass mt-8 rounded-[22px] p-6 md:p-8" aria-labelledby="follow-title">
-          <h2 id="follow-title" className="text-lg font-bold text-white">
-            Follow the news
-          </h2>
-          <p className="mt-2 max-w-2xl text-soft">
-            There is no email newsletter, so there is no sign-up form. You can follow new stories with the RSS feed in any feed reader, or watch the project on
-            GitHub.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <a href={withBase("/news/feed.xml")} className="btn-primary btn-sm">
-              RSS feed
-            </a>
-            <a href={SITE.repo} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
-              Watch on GitHub ↗
-            </a>
+          <div className="glass min-w-0 rounded-[22px] p-6" aria-labelledby="follow-title" role="group">
+            <h2 id="follow-title" className="text-lg font-bold text-white">
+              Follow the news
+            </h2>
+            <p className="mt-2 max-w-2xl text-soft">
+              There is no email newsletter, so there is no sign-up form. You can follow new stories with the RSS feed in any feed reader, or watch the project on
+              GitHub.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a href={withBase("/news/feed.xml")} className="btn-primary btn-sm">
+                RSS feed
+              </a>
+              <a href={SITE.repo} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
+                Watch on GitHub ↗
+              </a>
+            </div>
           </div>
         </section>
       </div>

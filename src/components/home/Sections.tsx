@@ -87,9 +87,9 @@ export function FeaturedBento({ ids }: { ids: string[] }) {
   const [a, b] = catColors(lead.category);
   return (
     <div className="grid gap-5 lg:grid-cols-4 lg:grid-rows-2">
-      <article className="tile relative flex flex-col justify-between gap-8 p-8 md:p-10 lg:col-span-2 lg:row-span-2" style={{ minHeight: 420 }}>
-        <span aria-hidden="true" className="absolute inset-0 opacity-70" style={{ background: `radial-gradient(520px 360px at 85% 0%, ${a}55, transparent 70%), radial-gradient(420px 300px at 0% 100%, ${b}33, transparent 70%)` }} />
-        <div className="relative">
+      <article className="tile isolate flex cursor-pointer flex-col justify-between gap-8 p-8 md:p-10 lg:col-span-2 lg:row-span-2" style={{ minHeight: 420 }}>
+        <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-70" style={{ background: `radial-gradient(520px 360px at 85% 0%, ${a}55, transparent 70%), radial-gradient(420px 300px at 0% 100%, ${b}33, transparent 70%)` }} />
+        <div>
           <ToolLogo id={lead.id} name={lead.name} hue={lead.hue} size={84} />
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-cyan">{getCategory(lead.category)?.short} · {lead.vendor}</p>
           <h3 className="mt-2 font-display text-4xl font-extrabold tracking-tight text-white md:text-5xl">
@@ -101,7 +101,7 @@ export function FeaturedBento({ ids }: { ids: string[] }) {
           <p className="mt-4 max-w-md text-lg text-soft">{lead.tagline}</p>
           <p className="mt-2 max-w-md text-sm text-muted">{lead.keyFeature}</p>
         </div>
-        <div className="relative space-y-4">
+        <div className="space-y-4">
           <PlanChips tool={lead} max={4} />
           <p className="text-sm font-bold text-white">
             Plans, limits and sources <span aria-hidden="true">→</span>

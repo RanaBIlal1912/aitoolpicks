@@ -56,13 +56,13 @@ describe.skipIf(!built)("the built pages state the same numbers", () => {
   });
   it("pricing page", () => {
     const t = text("pricing")!;
-    expect(t).toContain(`${verified} verified`);
+    expect(t).toContain(`${verified} are fully verified`);
     expect(t).toContain(`${TOOLS.length} tools`);
   });
   it("blog and news", () => {
-    // The list shows every article: guides plus the two comparison articles that live under /compare/.
-    expect(text("blog")!).toContain(`${ARTICLES.length} guides`);
-    expect(text("news")!).toContain(`${LISTED_NEWS.length} stories`);
+    // The featured three (blog) and the four top stories (news) are shown above the lists, so the lists leave them out.
+    expect(text("blog")!).toContain(`${ARTICLES.length - 3} guides`);
+    expect(text("news")!).toContain(`${LISTED_NEWS.length - 4} stories`);
   });
   it("sitemap lists every tool, guide and story once", () => {
     const xml = fs.readFileSync(path.join(root, "out/sitemap.xml"), "utf8");

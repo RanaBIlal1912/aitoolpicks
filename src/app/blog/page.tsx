@@ -16,6 +16,10 @@ export const metadata = meta;
 
 export default function BlogPage() {
   const lead = GUIDES.find((g) => g.slug === "best-ai-writing-tools") ?? GUIDES[0];
+  const side = GUIDES.filter((g) => g.slug !== lead.slug && !g.region).slice(0, 2);
+  // The featured three are shown above, so the full list leaves them out: no guide appears twice on the page.
+  const featured = new Set([lead.slug, ...side.map((g) => g.slug)]);
+  const rest = ARTICLES.filter((a) => !featured.has(a.slug));
   return (
     <>
       <PageHeader variant="magazine"
@@ -33,7 +37,7 @@ export default function BlogPage() {
         <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
           <ArticleCard a={lead} featured />
           <div className="flex flex-col gap-6">
-            {GUIDES.filter((g) => g.slug !== lead.slug && !g.region).slice(0, 2).map((g) => (
+            {side.map((g) => (
               <ArticleSide key={g.slug} a={g} />
             ))}
           </div>
@@ -48,8 +52,8 @@ export default function BlogPage() {
         </div>
       </div>
       <div className="mt-12">
-        <BlogList topics={TOPICS.map((t) => ({ id: t.id, label: t.label }))} total={ARTICLES.length}>
-          {ARTICLES.map((a) => (
+        <BlogList topics={TOPICS.map((t) => ({ id: t.id, label: t.label }))} total={rest.length}>
+          {rest.map((a) => (
             <li key={a.slug} className="cv-auto" data-topic={a.topic} data-text={`${a.title} ${a.blurb} ${a.cat}`.toLowerCase()}>
               <ArticleCard a={a} />
             </li>

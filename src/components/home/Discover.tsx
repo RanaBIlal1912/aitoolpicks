@@ -37,13 +37,14 @@ export function TrendingTools({ rows, lead }: { rows: TrendingRow[]; lead: strin
           const cat = getCategory(t.category);
           return (
             <li key={t.id}>
-              <article className="tile group relative flex h-full flex-col gap-4 p-6 transition-transform duration-300 hover:-translate-y-1">
+              {/* The whole card is one link: the title link stretches over the card (.tile a.tile-link::after). Nothing inside the card may be positioned and stacked above that overlay, so the decoration sits behind (-z-10) and the content is plain flow. */}
+              <article className="tile group isolate flex h-full cursor-pointer flex-col gap-4 p-6 transition-transform duration-300 hover:-translate-y-1">
                 <span aria-hidden="true" className="absolute inset-x-0 top-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${a}, ${b})` }} />
-                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full opacity-25 blur-2xl transition-opacity duration-500 group-hover:opacity-60" style={{ background: a }} />
-                <span aria-hidden="true" className="absolute right-5 top-4 font-display text-5xl font-extrabold leading-none text-white/10">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 -z-10 h-36 w-36 rounded-full opacity-25 blur-2xl transition-opacity duration-500 group-hover:opacity-60" style={{ background: a }} />
+                <span aria-hidden="true" className="pointer-events-none absolute right-5 top-4 -z-10 font-display text-5xl font-extrabold leading-none text-white/10">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="relative flex items-center gap-3">
+                <div className="flex items-center gap-3">
                   <ToolLogo id={t.id} name={t.name} hue={t.hue} size={52} />
                   <div className="min-w-0">
                     <h3 className="font-display text-xl font-bold leading-tight text-white">
@@ -55,12 +56,12 @@ export function TrendingTools({ rows, lead }: { rows: TrendingRow[]; lead: strin
                     <p className="truncate text-sm text-muted">{t.vendor}</p>
                   </div>
                 </div>
-                <span className="relative inline-flex w-fit items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-3 py-1 text-xs font-bold text-[#a8ecff]">
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-3 py-1 text-xs font-bold text-[#a8ecff]">
                   <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-cyan" />
                   {r.badge}
                 </span>
-                <p className="relative line-clamp-2 text-[0.95rem] text-soft">{t.tagline}</p>
-                <div className="relative mt-auto space-y-3">
+                <p className="line-clamp-2 text-[0.95rem] text-soft">{t.tagline}</p>
+                <div className="mt-auto space-y-3">
                   <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
                     {cat && (
                       <span className="rounded-full border px-2.5 py-1 text-white" style={{ background: `${a}26`, borderColor: `${a}80` }}>
