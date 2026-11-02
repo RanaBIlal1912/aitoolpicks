@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS } from "@/data/tools";
 import { formatChecked } from "@/lib/dates";
 import ToolLogo from "./ToolLogo";
+import PriceText from "./PriceText";
 
 const STATUS = { verified: "Verified", partial: "Partly verified", unverified: "Not verified" } as const;
 const STATUS_CLS = { verified: "text-emerald-300", partial: "text-amber", unverified: "text-muted" } as const;
@@ -110,7 +111,7 @@ export default function PricingHub() {
                     <ul className="space-y-0.5 text-sm">
                       {t.plans.slice(0, 4).map((p) => (
                         <li key={p.name}>
-                          <span className="text-muted">{p.name}:</span> {p.price}
+                          <span className="text-muted">{p.name}:</span> <PriceText text={p.price} />
                         </li>
                       ))}
                       {t.plans.length > 4 && <li className="text-muted">+ {t.plans.length - 4} more</li>}

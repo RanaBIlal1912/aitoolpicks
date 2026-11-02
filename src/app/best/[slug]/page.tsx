@@ -12,6 +12,7 @@ import Reveal from "@/components/Reveal";
 import ToolLogo from "@/components/ToolLogo";
 import { formatChecked } from "@/lib/dates";
 import JsonLd from "@/components/JsonLd";
+import PriceText from "@/components/PriceText";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -107,7 +108,7 @@ export default async function RoundupPage({ params }: Props) {
                     {tool.plans.slice(0, 4).map((p) => (
                       <div key={p.name} className="flex justify-between gap-3 border-b border-white/5 py-1">
                         <dt className="text-muted">{p.name}</dt>
-                        <dd className="text-right text-soft">{p.price}</dd>
+                        <dd className="text-right text-soft"><PriceText text={p.price} /></dd>
                       </div>
                     ))}
                   </dl>

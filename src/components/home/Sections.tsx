@@ -14,6 +14,7 @@ import NewsVisual from "../NewsVisual";
 import Photo from "../Photo";
 import type { PhotoId } from "@/data/photos";
 import ToolLogo from "../ToolLogo";
+import PriceText from "../PriceText";
 
 /** Section heading with a large index number, used instead of one repeated eyebrow + title pattern. */
 export function Head({ n, eyebrow, title, lead, href, cta, tone = "dark" }: { n: string; eyebrow: string; title: ReactNode; lead?: string; href?: string; cta?: string; tone?: "dark" | "light" }) {
@@ -71,7 +72,7 @@ function PlanChips({ tool, max = 3 }: { tool: Tool; max?: number }) {
     <ul className="flex flex-wrap gap-2">
       {tool.plans.slice(0, max).map((p) => (
         <li key={p.name} className="rounded-xl border border-white/12 bg-black/25 px-3 py-1.5 text-xs">
-          <span className="text-muted">{p.name}</span> <b className="text-white">{p.price}</b>
+          <span className="text-muted">{p.name}</span> <b className="text-white"><PriceText text={p.price} /></b>
         </li>
       ))}
     </ul>

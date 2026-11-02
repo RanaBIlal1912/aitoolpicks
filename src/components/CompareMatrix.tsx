@@ -6,6 +6,7 @@ import { PRICING_MODEL_LABEL, TOOLS, getCategory, getTool } from "@/data/tools";
 import AffLink from "./AffLink";
 import { formatChecked } from "@/lib/dates";
 import { getDetail } from "@/data/detail";
+import PriceText from "./PriceText";
 
 const DEFAULT_IDS = ["claude", "mistral"];
 
@@ -161,7 +162,7 @@ export default function CompareMatrix() {
                   <ul key={t.id} className="space-y-1">
                     {t.plans.map((p) => (
                       <li key={p.name}>
-                        <span className="text-muted">{p.name}:</span> {p.price}
+                        <span className="text-muted">{p.name}:</span> <PriceText text={p.price} />
                       </li>
                     ))}
                   </ul>

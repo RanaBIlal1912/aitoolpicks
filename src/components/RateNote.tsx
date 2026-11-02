@@ -21,9 +21,7 @@ export default function RateNote() {
         </>
       ) : (
         <>
-          Live exchange rates were unavailable, so {CURRENCIES[currency].label} amounts are{" "}
-          <strong className="text-soft">approximate estimates</strong> from USD (rates of {meta.date}). Your checkout price may
-          differ.
+          Live exchange rates are unavailable right now, so prices are shown in each merchant&apos;s own currency without a {CURRENCIES[currency].label} estimate. Your checkout price may differ.
         </>
       )}
     </p>
