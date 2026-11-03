@@ -7,3 +7,5 @@ next-env.d.ts
 !.env.example
 .DS_Store
 backups/
+admin/.next/
+admin/AGENTS.md

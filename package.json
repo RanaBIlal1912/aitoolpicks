@@ -29,7 +29,10 @@
     "migrate:backup": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/migrate/backup.ts",
     "migrate:catalogue": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/migrate/catalogue.ts",
     "auth:seed": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth/seed-access.ts",
-    "auth:bootstrap-owner": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth/bootstrap-owner.ts"
+    "auth:bootstrap-owner": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth/bootstrap-owner.ts",
+    "admin:dev": "next dev admin -p 3100",
+    "admin:build": "next build admin",
+    "admin:start": "next start admin -p 3100"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
