@@ -6,9 +6,10 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import { createSql } from "../../src/server/db/client.ts";
-import { importCatalogue } from "../../src/server/import/catalogue.ts";
+import { importAll } from "../../src/server/import/content.ts";
+import { loadContent } from "../../src/server/import/content-source.ts";
 import { loadSource, SourceError } from "../../src/server/import/source.ts";
-import { reportMarkdown, verifyCatalogue } from "../../src/server/import/verify.ts";
+import { reportMarkdown, verifyCatalogue, verifyContent } from "../../src/server/import/verify.ts";
 import { databaseEnvOrExit, hostOf, isLocal } from "../db/env.ts";
 
 const args = process.argv.slice(2);
@@ -21,8 +22,10 @@ if (!isLocal(env.url) && !has(`--confirm=${host}`)) {
 }
 
 let src;
+let content;
 try {
   src = loadSource(process.cwd());
+  content = loadContent(process.cwd(), src);
 } catch (e) {
   if (e instanceof SourceError) {
     console.error(e.message);
@@ -33,13 +36,13 @@ try {
 const sql = createSql(env.url, { ssl: env.DATABASE_SSL, max: 1, applicationName: "aitoolpicks-import" });
 try {
   if (!has("--verify")) {
-    const r = await importCatalogue(sql, src, { dryRun: has("--dry-run") });
+    const { catalogue: r, content: c } = await importAll(sql, src, content, { dryRun: has("--dry-run") });
     console.log(`${r.dryRun ? "DRY RUN (nothing written)" : "Imported"} into ${host}:`);
-    for (const [k, v] of Object.entries(r.groups)) console.log(`  ${k.padEnd(18)} inserted ${v.inserted}, updated ${v.updated}, unchanged ${v.unchanged}`);
+    for (const [k, v] of [...Object.entries(r.groups), ...Object.entries(c.groups)]) console.log(`  ${k.padEnd(18)} inserted ${v.inserted}, updated ${v.updated}, unchanged ${v.unchanged}`);
     for (const [k, v] of Object.entries(r.extra)) if (v.length) console.log(`  in the database but not in the files (kept): ${k}: ${v.join(", ")}`);
   }
   if (!has("--dry-run")) {
-    const report = await verifyCatalogue(sql, src);
+    const report = await verifyContent(sql, content, await verifyCatalogue(sql, src));
     for (const c of report.checks) console.log(`  [${c.ok ? "pass" : "FAIL"}] ${c.name}: ${c.detail}`);
     console.log(report.ok ? "Verification passed." : "Verification FAILED.");
     if (has("--report")) {

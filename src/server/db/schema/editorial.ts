@@ -37,6 +37,10 @@ export const blogPosts = pgTable(
     icon: text("icon").notNull().default(""),
     /** The label shown on cards (the "cat" field in articles.json). */
     categoryLabel: text("category_label").notNull().default(""),
+    /** Country the guide is written for (field `region` in articles.json), when it is not general. */
+    region: text("region"),
+    /** Position in the original file; the site keeps that order for items that share a date. */
+    sortOrder: integer("sort_order").notNull().default(0),
     /** Sanitised HTML (decision D-13). Keeps the data-aff and data-price attributes the pages rely on. */
     bodyHtml: text("body_html").notNull(),
     authorId: fkCol("author_id").references(() => authors.id, { onDelete: "set null" }),
@@ -73,6 +77,8 @@ export const comparisons = pgTable(
     slug: slug(),
     blogPostId: fkCol("blog_post_id").notNull().references(() => blogPosts.id, { onDelete: "restrict" }),
     leftLabel: text("left_label").notNull(),
+    /** Position in the original file; the site keeps that order for items that share a date. */
+    sortOrder: integer("sort_order").notNull().default(0),
     rightLabel: text("right_label").notNull(),
     leftToolId: fkCol("left_tool_id").references(() => tools.id, { onDelete: "set null" }),
     rightToolId: fkCol("right_tool_id").references(() => tools.id, { onDelete: "set null" }),
@@ -118,6 +124,8 @@ export const newsItems = pgTable(
     matters: text("matters").notNull().default(""),
     /** Set when this item reports a story already listed under another item. */
     sameStoryAsId: fkCol("same_story_as_id").references((): AnyPgColumn => newsItems.id, { onDelete: "set null" }),
+    /** Position in the original file; the site keeps that order for items that share a date. */
+    sortOrder: integer("sort_order").notNull().default(0),
     sourceVerifiedAt: date("source_verified_at"),
     sourceVerifiedBy: fkCol("source_verified_by").references(() => teamMembers.id, { onDelete: "set null" }),
     image: jsonb("image"),
@@ -141,6 +149,7 @@ export const newsTools = pgTable(
   {
     newsItemId: fkCol("news_item_id").notNull().references(() => newsItems.id, { onDelete: "cascade" }),
     toolId: fkCol("tool_id").notNull().references(() => tools.id, { onDelete: "cascade" }),
+    position: integer("position").notNull().default(1),
   },
   (t) => [primaryKey({ columns: [t.newsItemId, t.toolId] }), index("news_tools_tool_idx").on(t.toolId)],
 );
@@ -155,6 +164,8 @@ export const roundups = pgTable(
     categoryId: fkCol("category_id").references(() => categories.id, { onDelete: "set null" }),
     intro: text("intro").array().notNull().default(sql`'{}'::text[]`),
     criteria: text("criteria").array().notNull().default(sql`'{}'::text[]`),
+    /** Position in the original file; the site keeps that order for items that share a date. */
+    sortOrder: integer("sort_order").notNull().default(0),
     note: text("note"),
     ...contentColumns(),
   },
@@ -184,6 +195,10 @@ export const models = pgTable(
     summary: text("summary").notNull(),
     licence: text("licence").notNull(),
     toolNote: text("tool_note").notNull().default(""),
+    /** Position in the original file; the site keeps that order for items that share a date. */
+    sortOrder: integer("sort_order").notNull().default(0),
+    /** The news story that announced the model (field `news` in models.json). */
+    newsItemId: fkCol("news_item_id").references(() => newsItems.id, { onDelete: "set null" }),
     details: text("details").array().notNull().default(sql`'{}'::text[]`),
     /** [{ label, url, checked }] */
     sources: jsonb("sources").notNull().default(sql`'[]'::jsonb`),
@@ -197,6 +212,7 @@ export const modelTools = pgTable(
   {
     modelId: fkCol("model_id").notNull().references(() => models.id, { onDelete: "cascade" }),
     toolId: fkCol("tool_id").notNull().references(() => tools.id, { onDelete: "cascade" }),
+    position: integer("position").notNull().default(1),
   },
   (t) => [primaryKey({ columns: [t.modelId, t.toolId] }), index("model_tools_tool_idx").on(t.toolId)],
 );

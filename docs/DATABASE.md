@@ -55,26 +55,32 @@ The migration creates three login-less roles if they do not exist: `anon` and `a
 
 Data import (phase 4), login and roles seeding (phase 5), the admin dashboard (phase 6), analytics collection (phase 7), health and deploy routes, and anything on Vercel (phase 8). The `/api/health` routes cannot exist yet because Route Handlers that read the request are not supported by a static export.
 
-## Data import (phase 4): catalogue
+## Data import (phase 4): catalogue and editorial content
 
-The catalogue in `content/` (tools, categories, affiliate programmes) can be imported into the database. The files are only read; the website still builds from them.
+Everything the website shows from files can be imported into the database: the catalogue (companies, categories, 69 tools with plans, sources, categories and alternatives, 15 affiliate programmes) and the editorial content (9 models, 30 articles with their HTML, 2 comparisons, 17 reviews, 17 news items with images, 6 roundups with 29 picks, 32 legacy redirects). The files are only read; the website still builds from them.
 
 | Command | What it does |
 | --- | --- |
 | `npm run migrate:backup` | Copies `content/` and `src/data/*.ts` to `backups/<timestamp>/` (git-ignored) with a SHA-256 manifest, and re-hashes each copy. Run before every import. |
-| `npm run migrate:catalogue -- --dry-run` | Runs the whole import inside a transaction and rolls it back; prints what would be inserted, updated or left alone. |
+| `npm run migrate:catalogue -- --dry-run` | Runs the whole import in one transaction and rolls it back; prints what would be inserted, updated or left alone, even on an empty database. |
 | `npm run migrate:catalogue` | Imports, then verifies. A database that is not on this computer needs `--confirm=<host>`. |
 | `npm run migrate:catalogue -- --verify --report` | Verifies only and writes `reports/migration-verification.json` and `.md`. |
 
 How it behaves:
 
-- **Repeatable.** Rows are matched by slug. A tool is rewritten only if its exported form differs from its file, so a second run changes nothing (`unchanged` counts).
-- **Atomic.** One transaction; any error leaves the database as it was.
-- **Non-destructive.** Nothing is deleted. Rows that are in the database but not in the files are listed as "kept".
-- **Strict.** The files are validated with Zod first; an unknown field or a broken cross reference stops the import before the database is touched.
-- **Verified by round trip.** The database is exported back to the original JSON shape and compared with the files field by field: all 69 tools, 15 categories with 36 subcategories, 15 affiliate programmes. Also checked: counts equal the files (and the Phase 1 audit), relationships, tool slugs equal the file ids, no affiliate link exists and nothing is approved.
-- **Affiliate safety.** The importer never writes `affiliate_links`. A programme keeps the status in `affiliate.json`.
+- **Repeatable.** Rows are matched by slug and rewritten only when they differ from their file (or their position changed), so a second run changes nothing.
+- **Atomic.** One transaction for everything; any error leaves the database as it was.
+- **Non-destructive.** Nothing is deleted. Catalogue rows that are in the database but not in the files are listed as "kept".
+- **Strict.** The files are validated with Zod first. An unknown field or a broken cross reference (an unknown tool in a news item, an article button pointing at a missing tool, a review for a tool that is not there) stops the import before the database is touched. The TypeScript data files (`news.ts`, `roundups.ts`, `compare.ts`, the inline reviews in `reviews.ts`) are read by parsing them, not by running the site.
+- **Verified by round trip.** The database is exported back to the original shape and compared with the files field by field, including order: tools, categories, affiliate programmes, models, article metadata and HTML, comparisons, reviews, news with images, roundups with picks, redirects. Also checked: counts equal the files and the Phase 1 audit, relationships, tool slugs equal file ids, every review is documentation with no testing record, every review link on a tool resolves, nothing is approved and no affiliate link exists.
+- **Affiliate safety.** The importer never writes `affiliate_links`.
 
-Imported tools are `published`, dated by their `added` field. Companies are the `vendor` of each tool. Not imported yet (later steps): reviews (the `review` field on 5 tools is left out of the comparison), articles, comparisons, news, roundups, models, media, redirects.
+Imported items are `published`, dated by the file (tools: `added`; news: its date; articles: `date`, or 2026-10-29 as the site does). Article bodies are stored with Unix line endings so the database does not depend on the machine that imported them. A model is linked to the news item that announced it (`models.news_item_id`). The tools an article mentions are derived from its `data-aff` buttons, as the site does.
 
-The migration `0002` adds `tools.catalog_verified_on` (the `verified` date shown in listings differs from `verification.checked` for 6 tools), `tool_sources.position` (one tool cites the same address twice) and `tool_categories.position` (21 tools list categories in a different order than the categories file).
+Migrations `0002` and `0003` add what the real data needed:
+
+- `tools.catalog_verified_on` (6 tools show a listing date different from their verification date) and `tools.review_slug`.
+- `tool_sources.position` (one tool cites the same address twice) and `tool_categories.position` (21 tools list categories in a different order than the categories file).
+- `blog_posts.region`, `sort_order` on blog posts, news, models, roundups, reviews and comparisons, and `position` on `news_tools` and `model_tools`, because the site keeps file order for items that share a date.
+
+**Not imported yet:** media assets (logos, tool and news images are files in `public/`; the `media_assets` table is empty), site settings, and render parity (building all 320 pages from the database and comparing them with the JSON build). Those belong to later steps.

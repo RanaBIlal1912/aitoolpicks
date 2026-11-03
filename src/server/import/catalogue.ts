@@ -30,13 +30,8 @@ export function canonical(v: unknown): string {
   return JSON.stringify(norm(v));
 }
 
-/**
- * The form two tools are compared in. `review` is excluded until reviews are imported (they link to tools by slug).
- */
-export const comparable = (t: ToolJson) => {
-  const { review: _review, ...rest } = t;
-  return rest;
-};
+/** The form two tools are compared in: everything the file holds. */
+export const comparable = (t: ToolJson) => t;
 
 // ---------------------------------------------------------------------------------------------------------------------------------
 // Export: database -> original JSON shape
@@ -83,7 +78,7 @@ export async function exportTools(sql: Tx): Promise<ToolJson[]> {
       verified: t.catalog_verified_t,
       status: t.product_status,
       added: t.added_t,
-      ...omitEmpty({ platforms: t.platforms, aliases: t.aliases, keyFeature: t.key_feature, logoSite: t.logo_site }),
+      ...omitEmpty({ platforms: t.platforms, aliases: t.aliases, keyFeature: t.key_feature, logoSite: t.logo_site, review: t.review_slug }),
       ...(t.open_source_status ? { openSource: { status: t.open_source_status, note: t.open_source_note, source: t.open_source_source } } : {}),
       profile: t.profile,
       pricing: {
@@ -153,7 +148,7 @@ async function writeChildren(tx: Tx, toolId: string, t: ToolJson, catId: (slug: 
 function toolRow(t: ToolJson, companyId: string, primaryId: string, subId: string, tx: Tx) {
   return {
     name: t.name, company_id: companyId, primary_category_id: primaryId, subcategory_id: subId, product_status: t.status, tagline: t.tagline, description: t.description,
-    website_url: t.website, hue: t.hue, platforms: arr(t.platforms), aliases: arr(t.aliases), key_feature: t.keyFeature ?? null, logo_site: t.logoSite ?? null,
+    website_url: t.website, hue: t.hue, platforms: arr(t.platforms), aliases: arr(t.aliases), key_feature: t.keyFeature ?? null, logo_site: t.logoSite ?? null, review_slug: t.review ?? null,
     open_source_status: t.openSource?.status ?? null, open_source_note: t.openSource?.note ?? null, open_source_source: t.openSource?.source ?? null, added_on: t.added,
     features: t.features, use_cases: t.useCases, audience: t.audience, strengths: t.strengths, limitations: t.limitations,
     profile: tx.json(t.profile as never),

@@ -30,6 +30,8 @@ export const reviews = pgTable(
     reviewerName: text("reviewer_name").notNull().default("AI Tool Picks editors"),
     /** When the facts on the page were last checked against the vendor's pages. */
     factsCheckedAt: date("facts_checked_at"),
+    /** Position in the original file; the site keeps that order for items that share a date. */
+    sortOrder: integer("sort_order").notNull().default(0),
     ...contentColumns(),
   },
   (t) => [

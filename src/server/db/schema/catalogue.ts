@@ -74,6 +74,8 @@ export const tools = pgTable(
     aliases: text("aliases").array().notNull().default(sql`'{}'::text[]`),
     keyFeature: text("key_feature"),
     logoSite: text("logo_site"),
+    /** Slug of the review the tool's JSON record points at (field `review`); the review row itself links back through reviews.tool_id. */
+    reviewSlug: text("review_slug"),
     isFeatured: boolean("is_featured").notNull().default(false),
     openSourceStatus: openSourceStatus("open_source_status"),
     openSourceNote: text("open_source_note"),
