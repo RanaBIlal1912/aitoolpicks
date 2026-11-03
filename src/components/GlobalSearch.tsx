@@ -31,16 +31,11 @@ export default function GlobalSearch({ docs }: { docs: ContentDoc[] }) {
   // The long hint is cut off on a phone, so small screens get a shorter one. The server renders the long one; this only runs in the browser.
   const [hint, setHint] = useState(0);
   useEffect(() => {
-    const narrow = matchMedia("(max-width: 520px)");
-    const tiny = matchMedia("(max-width: 360px)");
-    const set = () => setHint(tiny.matches ? 2 : narrow.matches ? 1 : 0);
+    const queries = ["(max-width: 640px)", "(max-width: 520px)", "(max-width: 360px)"].map((q) => matchMedia(q));
+    const set = () => setHint(queries.filter((m) => m.matches).length);
     set();
-    narrow.addEventListener("change", set);
-    tiny.addEventListener("change", set);
-    return () => {
-      narrow.removeEventListener("change", set);
-      tiny.removeEventListener("change", set);
-    };
+    queries.forEach((m) => m.addEventListener("change", set));
+    return () => queries.forEach((m) => m.removeEventListener("change", set));
   }, []);
   const [active, setActive] = useState(0);
 
@@ -105,7 +100,7 @@ export default function GlobalSearch({ docs }: { docs: ContentDoc[] }) {
           aria-controls={`${uid}-list`}
           aria-autocomplete="list"
           aria-activedescendant={showList && results[active] ? `${uid}-opt-${active}` : undefined}
-          placeholder={["Search tools, guides and news: ChatGPT, video editor, transcription", "Search tools or guides", "Search AI tools"][hint]}
+          placeholder={["Search tools, guides and news: try ChatGPT", "Search tools, guides and news", "Search tools or guides", "Search AI tools"][hint]}
           value={q}
           onChange={(e) => {
             setQ(e.target.value);
