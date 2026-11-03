@@ -3,8 +3,8 @@
 Honest reviews, comparisons and guides to AI tools for freelancers and small businesses.
 Live site: https://ranabilal1912.github.io/aitoolpicks/
 
-Built with **Next.js 16 (static export), React 19, TypeScript, Tailwind CSS 4, Framer Motion and React Three Fiber / Three.js**.
-Every page is pre-rendered to plain HTML for SEO and speed. The 3D hero loads only after the page has finished loading.
+Built with **Next.js 16 (static export), React 19, TypeScript, Tailwind CSS 4 and Three.js (with React Three Fiber on one page)**.
+Every page is pre-rendered to plain HTML for SEO and speed. Two things use WebGL, both loaded after the page: the home hero's 3D robot (drawn by a Web Worker) and the Ecosystem page's 3D network. See [`docs/3D.md`](docs/3D.md).
 
 ## Run it
 
@@ -56,8 +56,9 @@ Changing the display currency never changes a link; a link can optionally differ
 
 ## Images and 3D
 
-- The site no longer loads any WebGL. The old 3D scene was removed from the pages; `src/lib/scene` and `npm run covers` remain only for the optional cover renders in
-  `public/images/covers/`, which no page uses now.
+- **3D:** WebGL is used in two places only, the home hero robot (`RobotHero` + `robot.worker.ts`, OffscreenCanvas in a worker, flat SVG robot as the fallback) and the Ecosystem network
+  (`EcosystemNetwork`, lazy-loaded when scrolled to). Reduced motion and data saving keep both off until the visitor opts in. Full detail, triggers and fallbacks: [`docs/3D.md`](docs/3D.md).
+  `src/lib/scene` and `npm run covers` are for offline cover renders only; no page imports them.
 - **Tool logos:** `npm run logos` downloads each product's own icon from its official website into `public/logos/` and records source, format, size and review status in
   `content/logos.json` (`--curl` uses the system curl for sites that refuse Node; `--fallback` tries a favicon service and flags the result `needs-review`). Components call
   `logoFor()` in `src/data/logos.ts`; never hard-code a logo path.

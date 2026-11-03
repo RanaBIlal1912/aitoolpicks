@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="relative isolate z-20">
-        <HeroVisual webgl={false} />
+        <HeroVisual />
         {/* On a phone the order is headline, robot, then search, so the robot is on the first screen; on desktop the text sits left and the robot right. */}
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 content-center px-5 pb-12 pt-8 md:pt-14 lg:min-h-[min(72vh,640px)] lg:grid-cols-[1.22fr_1fr] lg:gap-x-6 lg:pb-14">
           <div className="lg:col-start-1 lg:row-start-1 lg:self-end">

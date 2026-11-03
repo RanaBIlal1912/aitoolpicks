@@ -22,7 +22,6 @@
     "predev": "node scripts/build-catalog.mjs"
   },
   "devDependencies": {
-    "@react-three/fiber": "^9.8.2",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
@@ -30,15 +29,16 @@
     "@types/three": "^0.186.0",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.3",
-    "three": "^0.186.1",
     "typescript": "^7.0.2",
     "vitest": "^5.0.5"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
     "next": "^16.4.3",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
   },
   "engines": {
     "node": ">=20.9"

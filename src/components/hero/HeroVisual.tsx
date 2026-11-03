@@ -1,13 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import { getTool } from "@/data/tools";
 import { constellation } from "@/lib/constellation";
 import ToolLogo from "../ToolLogo";
-import { whenEngaged } from "@/lib/engage";
-
-const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 // Real product logos that drift around the network. They link nothing and carry no claim; they only show the kind of products the directory covers.
 const FLOATERS: { id: string; pos: string; delay: string }[] = [
@@ -32,63 +28,18 @@ function StaticNetwork() {
 }
 
 /**
- * Full-bleed layer behind the home hero. The SVG network and the floating logos are plain markup and always shown; the WebGL network loads on screens
- * where it is allowed (not for reduced motion or data saving, and only after the visitor first interacts or ten seconds pass) and fades in over it.
+ * Full-bleed layer behind the home hero. It is plain markup only (the SVG network and the floating logos), so it costs no JavaScript to draw.
+ * The real 3D robot is separate: see RobotHero, which draws it in a web worker on top of the hero artwork.
  */
-export default function HeroVisual({ webgl: allowGl = true }: { webgl?: boolean }) {
-  const [engaged, setEngaged] = useState(false);
-  const [inView, setInView] = useState(true);
-  const [webgl, setWebgl] = useState(false);
-  const [lite, setLite] = useState(false);
-  const root = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saver = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    if (calm || saver || !allowGl) return;
-    let canvas = false;
-    try {
-      const c = document.createElement("canvas");
-      canvas = !!(c.getContext("webgl2") || c.getContext("webgl"));
-    } catch {
-      canvas = false;
-    }
-    if (!canvas) return;
-    setLite(!matchMedia("(min-width: 768px)").matches);
-    return whenEngaged(() => setEngaged(true), 60000);
-  }, [allowGl]);
-
-  // Track whether the hero is on screen. The scene draws frames only while it is; a visitor who has scrolled down to the map does not also get a second
-  // WebGL scene running behind them. After four seconds out of view the scene is removed altogether (the static network shows again) and comes back on return.
-  useEffect(() => {
-    const el = root.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting));
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  useEffect(() => {
-    if (!engaged) return;
-    if (inView) {
-      setWebgl(true);
-      return;
-    }
-    const t = window.setTimeout(() => setWebgl(false), 4000);
-    return () => clearTimeout(t);
-  }, [engaged, inView]);
-
+export default function HeroVisual() {
   return (
-    <div ref={root} className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <div className="hero-orb absolute right-[-6%] top-[8%] h-[80%] w-[62%] rounded-full" />
-      <div className={`absolute inset-0 transition-opacity duration-700 ${webgl ? "opacity-0" : "opacity-100"}`}>
+      <div className="absolute inset-0">
         <StaticNetwork />
       </div>
-      {webgl && (
-        <div className="hero-canvas pointer-events-auto absolute inset-0 touch-pan-y opacity-60 md:opacity-85">
-          <HeroScene lite={lite} active={inView} />
-        </div>
-      )}
       <div className="absolute inset-0">
-        {FLOATERS.slice(0, lite ? 3 : 5).map((f) => {
+        {FLOATERS.map((f) => {
           const t = getTool(f.id);
           return t ? (
             <span key={f.id} className={`float-y absolute ${f.pos} hidden rounded-2xl shadow-xl shadow-black/40 ring-1 ring-white/20 sm:block lg:hidden`} style={{ animationDelay: f.delay }}>
