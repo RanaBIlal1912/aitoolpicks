@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | A | Keep GitHub Pages for the public site; run the database and admin as a separate app that triggers rebuilds | Lowest risk but two deployments, two domains, and the public form and analytics endpoints still need a server. Rejected for complexity. |
 | **B** | **One Next.js app on Vercel**: public pages statically generated from the database at build time, admin and API as server code in the same project | **Recommended and approved in principle.** |
-| C | Self-hosted server or container | More operating work (patching, TLS, backups, scaling) for no benefit at this size. Rejected. |
+| C | Self-hosted server (a virtual machine we would run ourselves) | More operating work (patching, TLS, backups, scaling) for no benefit at this size. Rejected. |
 | D | Cloudflare (OpenNext) with another Postgres | Less vendor lock-in, but Next 16 support is less turnkey and the stack changes more. Kept as a fallback if Vercel's terms or prices become a problem. |
 
 Vendor lock-in is limited on purpose: the database is plain PostgreSQL accessed through Drizzle (portable to any Postgres host), roles and permissions live in our own tables, and the only Supabase-specific pieces are Auth and Storage, each behind a small interface.

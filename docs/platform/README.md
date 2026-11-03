@@ -1,6 +1,6 @@
 # AI Tool Picks platform upgrade: architecture (Phase 2)
 
-Status: **design only**. No code, dependency, configuration, migration or deployment has been added by this phase. Everything here is proposed work until you approve it.
+Status: this folder is the **Phase 2 design**. Phases 3 to 8 have since built it on this branch (database, import, authentication, admin, analytics and verification, hosting preparation) and where the design and the code differ, the code and its tests are authoritative. The outcome of every phase, what was verified and what was not is in [../PLATFORM_FINAL_REPORT.md](../PLATFORM_FINAL_REPORT.md). Nothing has been deployed.
 
 Branch: `feat/platform-architecture` (from `feat/site-improvements` at `ee74d15`). Phase 1 audit findings are summarised in [01-architecture.md](01-architecture.md#1-starting-point-facts-from-the-phase-1-audit).
 
