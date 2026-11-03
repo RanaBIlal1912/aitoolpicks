@@ -1,6 +1,14 @@
 # 2. Database design (PostgreSQL, Drizzle ORM)
 
-Design only. No migration has been created. Sizes come from the Phase 1 data inventory, so the whole dataset is about 1 MB of JSON; indexing is for correctness and admin filtering, not for scale.
+**Phase 3 status: implemented.** The schema is in `src/server/db/schema/` and `drizzle/` (see [../DATABASE.md](../DATABASE.md)); where this document and the code differ, the code and its tests are authoritative. Differences found while building it:
+
+- `categories`: slugs are unique among top-level categories and unique within one parent (two partial unique indexes), because the real data reuses a subcategory slug under different parents; labels are unique the same way. Two levels at most.
+- `tools` has `primary_category_id` and `subcategory_id`; `tool_categories` lists every category and has no `is_primary` column. A tool has exactly one primary category (deferred constraint).
+- `tools` carries `open_source_*` columns and a `product_status` enum; blog posts use the 15 topics the site already uses.
+- Sensitive changes record `requires_second_person`, and the database refuses approval by the same person who proposed the change.
+- Tooling: `typescript` is pinned to the 6.x line (`@typescript/typescript6`) because typescript-eslint does not support TypeScript 7 yet.
+
+Original design note: no migration existed when this was written. Sizes come from the Phase 1 data inventory, so the whole dataset is about 1 MB of JSON; indexing is for correctness and admin filtering, not for scale.
 
 ## 1. Conventions
 
