@@ -13,6 +13,11 @@ const available = pg().available;
 
 /** A sign-in provider whose tokens are plain words: "token:<name>" maps to a user set up by the test. */
 class FakeProvider implements AuthProvider {
+  async signInWithPassword() { return null; }
+  async refreshSession() { return null; }
+  async signOut() {}
+  async sendRecovery() {}
+  async updatePassword() { return false; }
   users = new Map<string, AuthUser>();
   down = false;
   invites: string[] = [];
