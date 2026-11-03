@@ -73,6 +73,8 @@ export const runtimeEnvSchema = z.object({
   /** Analytics stay off unless this is explicitly true. */
   ANALYTICS_ENABLED: bool.default(false),
   ANALYTICS_SALT: optional(z.string().min(16, "must be at least 16 characters")),
+  /** Count unique visitors with a daily-rotating salted hash (decision D-07). Off unless explicitly true. */
+  ANALYTICS_VISITOR_HASH: bool.default(false),
   CRON_SECRET: optional(z.string().min(16, "must be at least 16 characters")),
   HEALTH_SECRET: optional(z.string().min(16, "must be at least 16 characters")),
   SENTRY_DSN: optional(httpsUrl),

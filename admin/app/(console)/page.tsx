@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTENT, overview, type ContentKind } from "../../../src/server/admin/queries.ts";
+import { attentionCounts } from "../../../src/server/admin/verification.ts";
 import { runHealth } from "../../../src/server/db/health.ts";
 import { expectedTablesFromSql, readJournalWhen } from "../../../src/server/db/migrations.ts";
 import { Badge, Flash, fmt, pick, Table } from "../../components/ui.tsx";
@@ -14,6 +15,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
   const member = await requirePage("/");
   const deps = getDeps();
   const data = await overview(deps.sql, member);
+  const attention = await attentionCounts(deps.sql, member);
   const health = member.permissions.has("system:health") ? await runHealth(deps.sql, { expectedMigrations: readJournalWhen(), expectedTables: expectedTablesFromSql() }) : null;
   return (
     <>
@@ -34,6 +36,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
             );
           })}
           {data.newSubmissions !== null && <Link href="/submissions" className="stat" style={{ textDecoration: "none", color: "inherit" }}><b>{data.newSubmissions}</b>New submissions</Link>}
+          {attention && <Link href="/verification" className="stat" style={{ textDecoration: "none", color: "inherit" }}><b>{attention.error + attention.warning}</b>Data checks need attention<div className="muted">{attention.error} error(s), {attention.warning} warning(s), {attention.queue} waiting for a person</div></Link>}
           {data.pricingUnverified !== null && <div className="stat"><b>{data.pricingUnverified}</b>Tools without fully verified pricing</div>}
         </div>
       )}

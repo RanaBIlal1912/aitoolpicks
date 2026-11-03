@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-11-03T15:44:37.966Z",
+  "source": "127.0.0.1",
+  "kind": "links",
+  "counts": {
+    "error": 0,
+    "warning": 0,
+    "info": 10
+  },
+  "byCheck": {
+    "link": {
+      "error": 0,
+      "warning": 0,
+      "info": 10
+    }
+  },
+  "findings": [
+    {
+      "id": "link:tool:canva:official_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "canva",
+      "message": "https://www.canva.com/ refused an automated check (403), so it could not be tested.",
+      "field": "official_url"
+    },
+    {
+      "id": "link:tool:canva:pricing_source_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "canva",
+      "message": "https://www.canva.com/pricing/ refused an automated check (403), so it could not be tested.",
+      "field": "pricing_source_url"
+    },
+    {
+      "id": "link:tool:canva:pricing_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "canva",
+      "message": "https://www.canva.com/pricing/ refused an automated check (403), so it could not be tested.",
+      "field": "pricing_url"
+    },
+    {
+      "id": "link:tool:canva:source",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "canva",
+      "message": "https://www.canva.com/pricing/ refused an automated check (403), so it could not be tested.",
+      "field": "source"
+    },
+    {
+      "id": "link:tool:canva:source",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "canva",
+      "message": "https://www.canva.com refused an automated check (403), so it could not be tested.",
+      "field": "source"
+    },
+    {
+      "id": "link:tool:canva:website_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "canva",
+      "message": "https://www.canva.com refused an automated check (403), so it could not be tested.",
+      "field": "website_url"
+    },
+    {
+      "id": "link:tool:chatgpt:official_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "chatgpt",
+      "message": "https://chatgpt.com/ refused an automated check (403), so it could not be tested.",
+      "field": "official_url"
+    },
+    {
+      "id": "link:tool:chatgpt:pricing_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "chatgpt",
+      "message": "https://chatgpt.com/pricing/ refused an automated check (403), so it could not be tested.",
+      "field": "pricing_url"
+    },
+    {
+      "id": "link:tool:chatgpt:source",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "chatgpt",
+      "message": "https://chatgpt.com refused an automated check (403), so it could not be tested.",
+      "field": "source"
+    },
+    {
+      "id": "link:tool:chatgpt:website_url",
+      "check": "link",
+      "severity": "info",
+      "entityType": "tool",
+      "entityId": "chatgpt",
+      "message": "https://chatgpt.com refused an automated check (403), so it could not be tested.",
+      "field": "website_url"
+    }
+  ],
+  "humanReviewQueue": []
+}

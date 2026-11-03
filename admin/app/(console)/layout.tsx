@@ -11,6 +11,7 @@ const SECTIONS: { href: string; label: string; permission?: string }[] = [
   { href: "/news", label: "AI News", permission: "news:read" },
   { href: "/affiliate", label: "Affiliate", permission: "affiliate:read" },
   { href: "/submissions", label: "Submissions", permission: "submissions:read" },
+  { href: "/verification", label: "Verification", permission: "verification:read" },
   { href: "/analytics", label: "Analytics", permission: "analytics:read" },
   { href: "/team", label: "Team", permission: "team:read" },
   { href: "/settings", label: "Settings", permission: "settings:read" },

@@ -42,6 +42,7 @@ export const PERMISSIONS: Record<string, { description: string; grants: Grants }
   "reviews:update": { description: "Edit a review", grants: { owner: "all", admin: "all", reviewer: "all", contributor: "own_drafts" } },
   "reviews:publish": { description: "Publish a review (a second approver is needed for sensitive changes)", grants: { owner: "all", admin: "all", reviewer: "all" } },
   "reviews:archive": { description: "Archive a review", grants: ALL_STAFF },
+  "verification:read": { description: "See the data verification findings and the review queue", grants: { owner: "all", admin: "all", editor: "all", reviewer: "all" } },
   "verification:write": { description: "Record a human verification of a tool", grants: { owner: "all", admin: "all", reviewer: "all" } },
 
   "blog:read": { description: "See articles, including drafts", grants: staffPlus({ contributor: "all" }) },
