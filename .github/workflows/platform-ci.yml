@@ -1,0 +1,46 @@
+# Checks for the platform work. This workflow only tests and builds: it deploys nothing and has no access to any secret, database or hosting account.
+# The existing "Deploy to GitHub Pages" workflow is unchanged and still runs only on main.
+name: Platform checks
+
+on:
+  push:
+    branches: ["feat/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      # The database tests start their own throw-away PostgreSQL server, so they only need the server programs installed.
+      - name: Install PostgreSQL programs
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends postgresql postgresql-client
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - name: Migration history is consistent
+        run: npx drizzle-kit check
+      - name: Build for GitHub Pages (static export)
+        run: npm run build
+      - name: Build for Vercel (server mode, nothing is deployed)
+        run: rm -rf .next && DEPLOY_TARGET=vercel NEXT_PUBLIC_SITE_URL=https://example.com npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+      - name: Build the admin app
+        run: DATABASE_URL=postgres://postgres@127.0.0.1:1/unused npm run admin:build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"

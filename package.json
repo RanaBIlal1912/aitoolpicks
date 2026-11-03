@@ -36,7 +36,9 @@
     "verify:data": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify/run.ts data",
     "verify:links": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify/run.ts links",
     "verify:site": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify/run.ts site",
-    "analytics:nightly": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/analytics/nightly.ts"
+    "analytics:nightly": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/analytics/nightly.ts",
+    "db:backup": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/db/backup.ts",
+    "db:restore-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/db/restore-check.ts"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

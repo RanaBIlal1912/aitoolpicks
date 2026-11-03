@@ -4,6 +4,12 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// On a server host (Vercel) the old .html addresses are real permanent redirects configured in next.config.mjs, and there is no out/ folder.
+if (process.env.VERCEL === "1" || process.env.DEPLOY_TARGET === "vercel") {
+  console.log("legacy-redirects: skipped (server host serves real redirects)");
+  process.exit(0);
+}
+
 const out = path.resolve("out");
 // Same default as next.config.mjs: the site is served under /aitoolpicks on GitHub Pages.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/aitoolpicks";

@@ -9,10 +9,12 @@ const read = (p: string) => fs.readFileSync(path.join(root, p), "utf8");
 const walk = (dir: string): string[] =>
   fs.readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${dir}/${e.name}`) : [`${dir}/${e.name}`]));
 
-describe("the public website does not use the server code yet", () => {
+describe("the public website uses the server code only through the Vercel-only routes", () => {
+  // src/app/api/**/route.vercel.ts exist only in the Vercel build (pageExtensions in next.config.mjs); tests/hosting.test.ts checks that no other file under src/app imports server code.
+  const vercelOnly = (f: string) => /^src\/app\/api\/.+\/route\.vercel\.ts$/.test(f);
   it("no page, component or library file imports src/server", () => {
     for (const dir of ["src/app", "src/components", "src/lib", "src/data"]) {
-      for (const f of walk(dir).filter((x) => /\.(ts|tsx)$/.test(x))) {
+      for (const f of walk(dir).filter((x) => /\.(ts|tsx)$/.test(x) && !vercelOnly(x))) {
         expect(read(f), f).not.toMatch(/from ["'](@\/server|(\.\.?\/)+server)\//);
       }
     }

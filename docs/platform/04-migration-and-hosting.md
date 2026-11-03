@@ -1,6 +1,6 @@
 # 4. Data migration and hosting migration
 
-Design only. The public site stays on GitHub Pages and is not touched until you approve Phase 8.
+Design document. **Phase 8 status:** the repository is prepared for this migration and the steps are written as a runbook in [../HOSTING.md](../HOSTING.md); nothing has been deployed. The public site stays on GitHub Pages until you approve the individual cutover steps.
 
 ## 1. Data migration strategy (Phase 4)
 
