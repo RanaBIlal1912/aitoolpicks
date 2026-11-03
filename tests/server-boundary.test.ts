@@ -29,6 +29,28 @@ describe("the public website does not use the server code yet", () => {
   });
 });
 
+describe("authentication code", () => {
+  it("the Next.js entry for authentication carries the server-only guard", () => {
+    expect(read("src/server/auth/server.ts")).toMatch(/^import "server-only";/m);
+  });
+
+  it("the service-role key is read in one place (the environment schema) and passed to one other (the Supabase provider)", () => {
+    const users = walk("src").filter((f) => /\.(ts|tsx)$/.test(f) && /SERVICE_ROLE|serviceRoleKey/.test(read(f)));
+    expect(users.sort()).toEqual(["src/server/auth/provider.ts", "src/server/auth/server.ts", "src/server/env.ts"]);
+  });
+
+  it("no page, component or library file imports the authentication code or the Supabase service", () => {
+    for (const dir of ["src/app", "src/components", "src/lib", "src/data"]) {
+      for (const f of walk(dir).filter((x) => /\.(ts|tsx)$/.test(x))) expect(read(f), f).not.toMatch(/server\/auth|@supabase\//);
+    }
+  });
+
+  it("no Supabase client library is installed (the provider uses fetch)", () => {
+    const pkg = JSON.parse(read("package.json")) as { dependencies?: Record<string, string>; devDependencies?: Record<string, string> };
+    expect(Object.keys({ ...pkg.dependencies, ...pkg.devDependencies }).filter((n) => n.startsWith("@supabase/"))).toEqual([]);
+  });
+});
+
 describe("secrets", () => {
   it("no environment variable that holds a secret is exposed to the browser (NEXT_PUBLIC_ prefix)", () => {
     const files = [...walk("src"), ...walk("scripts"), ".env.example", "next.config.mjs", "drizzle.config.ts"].filter((f) => /\.(ts|tsx|mjs|js|example|json)$/.test(f));

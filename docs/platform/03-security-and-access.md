@@ -9,7 +9,7 @@ Only internal team accounts. **Public sign-up is switched off.** The OWNER invit
 - **Auth provider:** Supabase Auth (decision D-03). If it ever has to be replaced, only `src/server/auth/` changes, because roles, permissions and members live in our own tables.
 - **Invitation email:** Supabase's built-in sender is limited to **2 emails per hour per project** (official rate-limit page), so a custom SMTP provider is required before inviting a team (D-10).
 - **Auth endpoint limits** (official, defaults): sign-in, sign-up, recovery, magic link and OTP 30 requests per 5 minutes per IP; token refresh 150 per 5 minutes per IP.
-- **Multi-factor authentication:** recommended for OWNER and ADMIN. Supabase support for it and its cost **have not been verified yet**; this is a Phase 5 research item, not an assumption.
+- **Multi-factor authentication:** recommended for OWNER and ADMIN. Phase 5 result (official pages, 2026-11-03): Supabase supports an authenticator app (TOTP) and phone messaging; phone MFA is a paid add-on of about $75 per month plus SMS charges; whether TOTP is free on every plan is **not stated on the pages read and is not verified**. The code enforces a second factor for owners and admins when `AUTH_REQUIRE_MFA=true`; it is off until the team has enrolled one.
 
 ## 2. Session handling
 
@@ -18,7 +18,7 @@ Only internal team accounts. **Public sign-up is switched off.** The OWNER invit
   1. `src/proxy.ts` (matcher: `/admin/:path*`) redirects visitors with no session cookie to the login page. This is a convenience, **not** the security boundary.
   2. Every admin page, Server Action and Route Handler calls `requireMember(permission)` from a `server-only` module. It validates the session with the auth server (not just by reading the cookie), loads the member and role from the database, rejects `disabled` members, and checks the permission. A request without a valid session gets 401; without the permission 403.
 - A disabled member loses access on the next request (the check hits the database every time, not a cached token claim).
-- Idle timeout and absolute lifetime values will be chosen in Phase 5 and written into settings.
+- Idle timeout and absolute lifetime: Supabase offers a session time-box and an inactivity timeout on the **Pro plan and up only** (official sessions page); they apply at the next token refresh, and the access token lives 1 hour by default. On the Free plan the per-request database check above is what ends a disabled member's access. Implemented in Phase 5: see [../AUTH.md](../AUTH.md).
 
 ## 3. Roles and permissions
 

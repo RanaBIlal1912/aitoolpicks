@@ -27,7 +27,9 @@
     "db:health": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/db/health.ts",
     "lint": "eslint .",
     "migrate:backup": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/migrate/backup.ts",
-    "migrate:catalogue": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/migrate/catalogue.ts"
+    "migrate:catalogue": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/migrate/catalogue.ts",
+    "auth:seed": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth/seed-access.ts",
+    "auth:bootstrap-owner": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth/bootstrap-owner.ts"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

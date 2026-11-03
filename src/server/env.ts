@@ -54,6 +54,12 @@ export const authEnvSchema = z.object({
   SUPABASE_ANON_KEY: z.string().min(20, "looks too short to be a key"),
   /** Server only. Bypasses every access rule, so it is never exposed to the browser and never logged. */
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(20, "looks too short to be a key"),
+  /** Owners and admins must sign in with a second factor. Leave off until the team has enrolled one (Supabase MFA). */
+  AUTH_REQUIRE_MFA: bool.default(false),
+  /** Salt for the hashed IP address in audit rows. Without it no IP information is stored at all. */
+  AUDIT_IP_SALT: optional(z.string().min(16, "must be at least 16 characters")),
+  /** Salt for the rate-limit keys (hashed e-mail addresses and IPs). */
+  RATE_LIMIT_SALT: optional(z.string().min(16, "must be at least 16 characters")),
 });
 
 /** Site and runtime switches (Phase 8). All have safe defaults. */
