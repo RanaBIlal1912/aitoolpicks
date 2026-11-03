@@ -117,9 +117,38 @@ function Dolly({ distance }: { distance: number }) {
   return null;
 }
 
-export default function EcosystemScene({ nodes, edges, distance, onSelect, selected }: { nodes: GNode[]; edges: GEdge[]; distance: number; onSelect: (n: GNode) => void; selected: string | null }) {
+export default function EcosystemScene({
+  nodes,
+  edges,
+  distance,
+  onSelect,
+  selected,
+  active,
+  onLost,
+}: {
+  nodes: GNode[];
+  edges: GEdge[];
+  distance: number;
+  onSelect: (n: GNode) => void;
+  selected: string | null;
+  /** False while the section is off screen: the scene then draws no frames at all, so it costs no GPU time. */
+  active: boolean;
+  /** The device took the graphics context away (a phone short of memory); the page shows its fallback. */
+  onLost: () => void;
+}) {
   return (
-    <Canvas dpr={[1, 1.5]} camera={{ position: [0, 2, 15], fov: 45 }} gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}>
+    <Canvas
+      frameloop={active ? "always" : "never"}
+      dpr={[1, 1.5]}
+      camera={{ position: [0, 2, 15], fov: 45 }}
+      gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}
+      onCreated={({ gl }) => {
+        gl.domElement.addEventListener("webglcontextlost", (e) => {
+          e.preventDefault();
+          onLost();
+        });
+      }}
+    >
       <ambientLight intensity={0.8} />
       <directionalLight position={[4, 5, 6]} intensity={2} />
       <pointLight position={[-6, -3, 4]} intensity={28} color="#25C6E8" />

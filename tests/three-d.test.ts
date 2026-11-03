@@ -50,3 +50,38 @@ describe("3D and WebGL are documented as they really are", () => {
     for (const d of ["three", "@react-three/fiber", "@react-three/drei"]) expect(pkg.dependencies[d], d).toBeTruthy();
   });
 });
+
+describe("the 3D scenes survive a weak or interrupted phone", () => {
+  it("the hero worker tells the page when the graphics context is lost, and recovers when it returns", () => {
+    const w = read("src/components/hero/robot.worker.ts");
+    expect(w).toContain("webglcontextlost");
+    expect(w).toContain("webglcontextrestored");
+    expect(w).toContain('type: "lost"');
+    expect(w).toContain("isContextLost()");
+    expect(read("src/components/home/RobotHero.tsx")).toMatch(/"lost"\)\s*setReady\(false\)/);
+  });
+
+  it("the hero worker draws nothing while the hero is off screen, and exposes a frame counter", () => {
+    const w = read("src/components/hero/robot.worker.ts");
+    expect(w).toMatch(/m\.type === "active"[\s\S]*?else stop\(\)/);
+    expect(w).toContain("__frames");
+  });
+
+  it("the ecosystem scene stops drawing off screen, shows a fallback if it fails, and does not trap a phone's vertical swipe", () => {
+    const n = read("src/components/universe/EcosystemNetwork.tsx");
+    const sc = read("src/components/universe/EcosystemScene.tsx");
+    expect(sc).toMatch(/frameloop=\{active \? "always" : "never"\}/);
+    expect(sc).toContain("webglcontextlost");
+    expect(n).toContain("SceneBoundary");
+    expect(n).toContain("IntersectionObserver");
+    expect(n).toContain("eco-scene");
+    expect(read("src/app/globals.css")).toMatch(/\.eco-scene canvas,\s*\.eco-scene div\s*\{\s*touch-action: pan-y !important;/);
+  });
+
+  it("the ecosystem frame height comes from CSS, so it cannot shift the page when the script starts", () => {
+    const n = read("src/components/universe/EcosystemNetwork.tsx");
+    expect(n).toContain("h-[380px]");
+    expect(n).toContain("md:h-[560px]");
+    expect(n).not.toMatch(/style=\{\{ height:/);
+  });
+});

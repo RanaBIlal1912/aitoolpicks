@@ -142,7 +142,7 @@ export function NewsPanel() {
                 <NewsVisual n={n} small sizes="140px" logos={1} />
               </div>
               <div className="min-w-0">
-                <span className="rounded-md bg-violet/30 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wide text-[#d9ccff]">{n.kind}</span>
+                <span className="rounded-md bg-violet/30 px-2 py-0.5 text-[0.72rem] font-bold uppercase tracking-wide text-[#d9ccff]">{n.kind}</span>
                 <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-white group-hover:underline">{n.title}</h3>
                 <p className="mt-1 text-xs text-muted">
                   {formatDate(n.date)} · {n.source}

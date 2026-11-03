@@ -5,7 +5,7 @@ Nothing below is enabled yet. Affiliate links are empty, analytics is off, and t
 ## 1. Affiliate programmes (you must do these)
 
 - Apply to each programme with the site's real URL. Do not describe approval anywhere until you have it.
-- When a programme approves you, paste the tracking URL into `src/lib/affiliate.ts` for that tool id. The button then switches to a `rel="sponsored nofollow"` link automatically.
+- When a programme approves you, set that tool to `"status": "approved"` in `content/affiliate.json` and paste the tracking URL into `link` (README: "Affiliate links and approval workflow"). The button then switches to a `rel="sponsored nofollow"` link automatically.
 - Keep `/affiliate-disclosure/` accurate. It already says links may be affiliate links; update the list of programmes only when real.
 
 ## 2. Custom domain migration

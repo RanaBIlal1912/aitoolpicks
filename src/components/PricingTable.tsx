@@ -34,7 +34,7 @@ function PlanCard({ plan }: { plan: Plan }) {
     <li className="glass plan-card flex h-full flex-col rounded-[22px] p-6">
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-lg font-bold text-white">{plan.name}</h3>
-        <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wide text-muted">{AUDIENCE[plan.audience]}</span>
+        <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[0.72rem] font-semibold uppercase tracking-wide text-muted">{AUDIENCE[plan.audience]}</span>
       </div>
 
       <div className="mt-3 space-y-2">

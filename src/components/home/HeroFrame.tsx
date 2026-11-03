@@ -29,7 +29,7 @@ export default function HeroFrame({ total, verified }: { total: number; verified
           </span>
         ))}
       </div>
-      <p className="absolute -bottom-6 right-0 text-[0.65rem] text-muted">Photos: Denny Müller, İsmail Enes Ayhan / Unsplash</p>
+      <p className="absolute -bottom-6 right-0 text-[0.72rem] text-muted">Photos: Denny Müller, İsmail Enes Ayhan / Unsplash</p>
     </div>
   );
 }

@@ -39,7 +39,27 @@ export type ReviewTrust = {
 };
 
 export const DEFAULT_REVIEWER = "AI Tool Picks editors";
-const DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+/** A real calendar date written YYYY-MM-DD. "2026-02-31" and "2026-13-01" match the pattern but are not dates, so the date is rebuilt and compared. */
+export function isRealDate(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  if (!m) return false;
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const t = new Date(Date.UTC(y, mo - 1, d));
+  return t.getUTCFullYear() === y && t.getUTCMonth() === mo - 1 && t.getUTCDate() === d;
+}
+
+/** A usable https address: https scheme, a host with a dot, no credentials. Rejects http, other schemes and "https://". */
+export function isHttpsUrl(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  try {
+    const u = new URL(value.trim());
+    return u.protocol === "https:" && u.hostname.includes(".") && !u.username && !u.password;
+  } catch {
+    return false;
+  }
+}
 
 export const METHOD_LABEL: Record<ReviewMethod, string> = {
   documentation: "Editorial research",
@@ -62,16 +82,21 @@ export function trustProblems(r: ReviewTrust, today: string, fileExists: (src: s
   if (!t) return ["a hands-on review needs a testing record"];
   for (const k of ["testedBy", "role", "plan", "region", "conflicts"] as const) if (!t[k]?.trim()) p.push(`testing.${k} is empty`);
   for (const k of ["testedFrom", "testedTo"] as const) {
-    if (!DATE.test(t[k] ?? "")) p.push(`testing.${k} must be a date (YYYY-MM-DD)`);
-    else if (t[k] > today) p.push(`testing.${k} is in the future`);
+    if (!isRealDate(t[k])) p.push(`testing.${k} must be a real calendar date (YYYY-MM-DD)`);
+    else if (isRealDate(today) && t[k] > today) p.push(`testing.${k} is in the future`);
   }
-  if (DATE.test(t.testedFrom ?? "") && DATE.test(t.testedTo ?? "") && t.testedTo < t.testedFrom) p.push("testing.testedTo is before testing.testedFrom");
+  if (isRealDate(t.testedFrom) && isRealDate(t.testedTo) && t.testedTo < t.testedFrom) p.push("testing.testedTo is before testing.testedFrom");
   if (t.hours !== undefined && !(t.hours > 0)) p.push("testing.hours must be positive");
   if (!t.tasks?.length || t.tasks.some((x) => !x.task?.trim() || !x.result?.trim())) p.push("list at least one task, each with what was run and what it produced");
   if (!t.worked?.length) p.push("say what worked");
   if (!t.failed?.length) p.push("say what failed or needed manual fixing (write that nothing failed only if it is true)");
   if (!t.evidence?.length) p.push("attach at least one piece of evidence");
-  for (const e of t.evidence ?? []) if (!e.label?.trim() || (e.url && !/^https:\/\//.test(e.url))) p.push(`evidence "${e.label}" needs a label and an https address`);
+  // Every item needs a label; an address, where given, must be a real https one; and at least one item must link to evidence a reader can open.
+  for (const e of t.evidence ?? []) {
+    if (!e.label?.trim()) p.push("every evidence item needs a label");
+    if (e.url !== undefined && !isHttpsUrl(e.url)) p.push(`evidence "${e.label}" has an address that is not a valid https URL`);
+  }
+  if (t.evidence?.length && !t.evidence.some((e) => isHttpsUrl(e.url))) p.push("at least one evidence item must link to a valid https URL");
   for (const s of t.screenshots ?? []) {
     if (!s.alt?.trim() || !s.caption?.trim()) p.push(`screenshot ${s.src} needs alt text and a caption`);
     if (!fileExists(s.src)) p.push(`screenshot ${s.src} does not exist in public/`);

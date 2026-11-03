@@ -82,7 +82,7 @@ export default function PageHeader({
             {stats.map(([n, l]) => (
               <div key={l} className="ph-stat">
                 <dd className="font-display text-2xl font-extrabold leading-none tracking-tight">{n}</dd>
-                <dt className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted">{l}</dt>
+                <dt className="mt-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-muted">{l}</dt>
               </div>
             ))}
           </dl>

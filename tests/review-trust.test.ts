@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { REVIEWS } from "../src/data/reviews";
 import { TOOLS } from "../src/data/tools";
-import { DEFAULT_REVIEWER, METHOD_LABEL, reviewerOf, trustProblems, type HandsOnTest, type ReviewTrust } from "../src/lib/review-trust";
+import { DEFAULT_REVIEWER, METHOD_LABEL, isHttpsUrl, isRealDate, reviewerOf, trustProblems, type HandsOnTest, type ReviewTrust } from "../src/lib/review-trust";
 
 const root = process.cwd();
 const TODAY = "2026-11-03";
@@ -73,6 +73,22 @@ describe("the rules that stop a false hands-on label", () => {
     ["nothing that failed", { failed: [] }],
     ["no evidence", { evidence: [] }],
     ["evidence over http", { evidence: [{ label: "Log", url: "http://example.com" }] }],
+    ["evidence with no address at all", { evidence: [{ label: "My notes" }] }],
+    ["no evidence item has an address", { evidence: [{ label: "My notes" }, { label: "Chat log" }] }],
+    ["one https item cannot excuse a broken one", { evidence: [{ label: "Log", url: "https://example.com/log" }, { label: "Bad", url: "http://example.com/x" }] }],
+    ["evidence address is not a URL", { evidence: [{ label: "Log", url: "not a url" }] }],
+    ["evidence address has no host", { evidence: [{ label: "Log", url: "https://" }] }],
+    ["evidence address is a script", { evidence: [{ label: "Log", url: "javascript:alert(1)" }] }],
+    ["evidence address is a host with no dot", { evidence: [{ label: "Log", url: "https://localhost/x" }] }],
+    ["evidence address carries a password", { evidence: [{ label: "Log", url: "https://user:pw@example.com/x" }] }],
+    ["evidence with a blank label", { evidence: [{ label: " ", url: "https://example.com/log" }] }],
+    ["start date 2026-02-31", { testedFrom: "2026-02-31" }],
+    ["end date 2026-02-31", { testedTo: "2026-02-31" }],
+    ["month 13", { testedFrom: "2026-13-01" }],
+    ["month 00", { testedFrom: "2026-00-10" }],
+    ["day 00", { testedFrom: "2026-10-00" }],
+    ["April 31", { testedTo: "2026-04-31" }],
+    ["29 February in a non-leap year", { testedFrom: "2026-02-29" }],
     ["negative hours", { hours: -1 }],
     ["screenshot without alt text", { screenshots: [{ src: "/shots/a.png", alt: "", caption: "A" }] }],
   ];
@@ -81,6 +97,28 @@ describe("the rules that stop a false hands-on label", () => {
       expect(trustProblems({ method: "hands-on", testing: { ...test, ...patch } }, TODAY, () => true), name).not.toEqual([]);
     });
   }
+
+  it("accepts a real leap day and rejects the same day in a non-leap year", () => {
+    expect(trustProblems({ method: "hands-on", testing: { ...test, testedFrom: "2024-02-29", testedTo: "2024-03-02" } }, TODAY)).toEqual([]);
+    expect(trustProblems({ method: "hands-on", testing: { ...test, testedFrom: "2025-02-29", testedTo: "2025-03-02" } }, TODAY)).not.toEqual([]);
+  });
+
+  it("names the invalid date in its message", () => {
+    const msgs = trustProblems({ method: "hands-on", testing: { ...test, testedFrom: "2026-02-31" } }, TODAY);
+    expect(msgs).toEqual(["testing.testedFrom must be a real calendar date (YYYY-MM-DD)"]);
+  });
+
+  it("accepts a testing record where only one of several evidence items has an address", () => {
+    const r: ReviewTrust = { method: "hands-on", testing: { ...test, evidence: [{ label: "Paper notes" }, { label: "Prompt log", url: "https://example.com/log" }] } };
+    expect(trustProblems(r, TODAY)).toEqual([]);
+  });
+
+  it("isRealDate and isHttpsUrl behave as the rules assume", () => {
+    for (const ok of ["2026-10-27", "2024-02-29", "2000-02-29"]) expect(isRealDate(ok), ok).toBe(true);
+    for (const bad of ["2026-02-31", "2026-2-3", "2026-10-27T00:00", "", "2100-02-29", 20261027, null, undefined]) expect(isRealDate(bad), String(bad)).toBe(false);
+    for (const ok of ["https://example.com", "https://a.example.org/x?y=1#z"]) expect(isHttpsUrl(ok), ok).toBe(true);
+    for (const bad of ["http://example.com", "https://", "ftp://example.com", "example.com", "https://localhost", "", undefined, 5]) expect(isHttpsUrl(bad), String(bad)).toBe(false);
+  });
 
   it("rejects a screenshot that is not in public/", () => {
     const r: ReviewTrust = { method: "hands-on", testing: { ...test, screenshots: [{ src: "/shots/none.png", alt: "Output", caption: "Output" }] } };

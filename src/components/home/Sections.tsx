@@ -150,7 +150,7 @@ export function PhotoBand({ checked, total }: { checked: number; total: number }
           See the verification report
         </Link>
       </div>
-      <span className="absolute bottom-2 right-3 rounded bg-black/70 px-1.5 py-0.5 text-[0.65rem] text-white/90 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
+      <span className="absolute bottom-2 right-3 rounded bg-black/70 px-1.5 py-0.5 text-[0.72rem] text-white/90 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
     </section>
   );
 }

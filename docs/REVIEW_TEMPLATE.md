@@ -42,12 +42,12 @@ A `"hands-on"` review must also carry a `testing` record, and `tests/review-trus
 | --- | --- |
 | `testedBy`, `role` | A named person and their relationship to the product |
 | `plan`, `region` | The plan used (and whether it was paid) and the account region |
-| `testedFrom`, `testedTo` | Real dates, not in the future, in order; `hours` optional |
+| `testedFrom`, `testedTo` | Real calendar dates (`2026-02-31` fails), not in the future, in order; `hours` optional |
 | `tasks` | At least one task, each with what was run and what it produced |
 | `worked`, `failed` | Both required: say what worked and what failed or needed fixing |
 | `notReproduced` | Optional: vendor claims that could not be reproduced |
 | `conflicts` | An explicit statement, even if it is "None" |
-| `evidence` | At least one item with a label (https address if it is online) |
+| `evidence` | At least one item, each with a label; any address must be a valid `https` URL (`http` fails), and **at least one item must have a valid https URL** |
 | `screenshots` | Optional; the tester's own, in `public/`, each with alt text and a caption |
 
 A `"documentation"` review must **not** have a `testing` record. The page header shows the label, the writer or tester, and the date the underlying facts were last checked (the tool record's verified date, not the site's last build). No review shows a score, stars or a rating, and no structured data claims one.

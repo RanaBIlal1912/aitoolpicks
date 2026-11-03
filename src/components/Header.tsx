@@ -154,7 +154,7 @@ export default function Header() {
           </span>
           <span className="flex flex-col leading-tight">
             <span className="whitespace-nowrap text-[1.15rem] max-[379px]:text-[1rem]">{SITE.name}</span>
-            <span className="hidden text-[0.68rem] font-medium tracking-wide text-muted sm:block lg:hidden xl:block">Discover · Compare · Choose</span>
+            <span className="hidden text-[0.72rem] font-medium tracking-wide text-muted sm:block lg:hidden xl:block">Discover · Compare · Choose</span>
             <span className="sr-only">, home</span>
           </span>
         </Link>

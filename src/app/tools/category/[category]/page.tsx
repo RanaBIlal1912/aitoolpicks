@@ -66,7 +66,7 @@ export default async function CategoryPage({ params }: Props) {
           ].map(([n, l]) => (
             <div key={l} className="ph-stat">
               <dd className="font-display text-2xl font-extrabold leading-none">{n}</dd>
-              <dt className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted">{l}</dt>
+              <dt className="mt-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-muted">{l}</dt>
             </div>
           ))}
         </dl>

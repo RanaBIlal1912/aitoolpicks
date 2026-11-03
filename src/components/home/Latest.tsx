@@ -79,7 +79,7 @@ export function LatestNews({ items }: { items: NewsItem[] }) {
                       <NewsVisual n={n} small sizes="96px" logos={1} />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cyan">
+                      <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-cyan">
                         {n.kind} · <time dateTime={n.date}>{formatDate(n.date)}</time>
                       </p>
                       <h3 className="mt-1 font-serif text-lg font-bold leading-snug text-white group-hover:underline">{n.title}</h3>

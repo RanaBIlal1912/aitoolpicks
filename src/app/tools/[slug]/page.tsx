@@ -173,7 +173,7 @@ export default async function ToolPage({ params }: Props) {
             ["Pricing checked", formatChecked(t.pricing.checked)],
           ].map(([k, v]) => (
             <li key={k as string} className="panel card-lift p-5">
-              <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">{k}</p>
+              <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-muted">{k}</p>
               <p className="mt-2 font-display text-xl font-extrabold leading-tight text-white">{v}</p>
             </li>
           ))}
@@ -206,20 +206,20 @@ export default async function ToolPage({ params }: Props) {
               </ProfileSection>
             </Reveal>
 
-            <Reveal as="section">
+            <Reveal as="section" className="cv-auto">
               <ProfileSection id="audience" eyebrow="Who it is for" title={`Who is ${t.name} for?`}>
                 <AudienceGrid items={profile?.audienceDetail} plain={t.audience} />
               </ProfileSection>
             </Reveal>
 
-            <Reveal as="section">
+            <Reveal as="section" className="cv-auto">
               <ProfileSection id="use-cases" eyebrow="In practice" title="Real use cases">
                 {profile ? <Scenarios items={profile.scenarios} /> : <List title="What people use it for" items={t.useCases} tone="plain" />}
               </ProfileSection>
             </Reveal>
 
             {profile && (
-              <Reveal as="section">
+              <Reveal as="section" className="cv-auto">
                 <ProfileSection id="how" eyebrow="How it works" title="Getting started">
                   <Steps items={profile.gettingStarted} />
                   <ProfileSources profile={profile} />
@@ -227,14 +227,14 @@ export default async function ToolPage({ params }: Props) {
               </Reveal>
             )}
 
-            <Reveal as="section">
+            <Reveal as="section" className="cv-auto">
               <h2 className="section-title mb-5 text-white" id="pricing">
                 Plans and pricing
               </h2>
               <PricingTable pricing={t.pricing} name={t.name} />
             </Reveal>
 
-            <Reveal as="section">
+            <Reveal as="section" className="cv-auto">
               <ProfileSection id="pros-cons" eyebrow="Honest view" title="Advantages and limitations" lead="From the vendor's own pages and our verification of them, not from user reviews.">
                 <div className="grid gap-6 md:grid-cols-2">
                   <List title="Advantages" items={t.strengths} tone="good" />
@@ -244,7 +244,7 @@ export default async function ToolPage({ params }: Props) {
             </Reveal>
 
             {t.openSource && (
-              <Reveal as="section">
+              <Reveal as="section" className="cv-auto">
                 <h2 className="section-title text-white">Licence and openness</h2>
                 <p className="glass mt-4 rounded-2xl p-5 text-soft">
                   <strong className="text-white">{OPEN_LABEL[t.openSource.status]}.</strong> {t.openSource.note}.{" "}
@@ -256,7 +256,7 @@ export default async function ToolPage({ params }: Props) {
             )}
 
             {alts.length > 0 && (
-              <Reveal as="section">
+              <Reveal as="section" className="cv-auto">
                 <div className="flex flex-wrap items-end justify-between gap-3">
                   <h2 className="section-title text-white">Alternatives to {t.name}</h2>
                   <Link href={`/tools/${t.id}/alternatives/`} className="btn-ghost btn-sm">
@@ -270,7 +270,7 @@ export default async function ToolPage({ params }: Props) {
             )}
 
             {relatedTools.length > 0 && (
-              <Reveal as="section">
+              <Reveal as="section" className="cv-auto">
                 <ProfileSection id="related" eyebrow="Keep exploring" title="Related tools" lead={`Other tools from the same category or kind of work as ${t.name}, apart from the alternatives above.`}>
                   <RelatedGrid tools={relatedTools} />
                 </ProfileSection>
@@ -278,7 +278,7 @@ export default async function ToolPage({ params }: Props) {
             )}
 
             {news.length > 0 && (
-              <Reveal as="section">
+              <Reveal as="section" className="cv-auto">
                 <h2 className="section-title text-white">Recent news about {t.name}</h2>
                 <ul className="mt-5 grid gap-6 md:grid-cols-2">
                   {news.map((n) => (
@@ -291,7 +291,7 @@ export default async function ToolPage({ params }: Props) {
             )}
 
             {related.length > 0 && (
-              <Reveal as="section">
+              <Reveal as="section" className="cv-auto">
                 <h2 className="section-title text-white">Guides that mention {t.name}</h2>
                 <div className="mt-5 grid gap-6 md:grid-cols-2">
                   {related.map((s) => {

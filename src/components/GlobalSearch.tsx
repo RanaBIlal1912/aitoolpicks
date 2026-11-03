@@ -28,6 +28,20 @@ export default function GlobalSearch({ docs }: { docs: ContentDoc[] }) {
   const [q, setQ] = useState("");
   const [results, setResults] = useState<SiteResult[]>([]);
   const [open, setOpen] = useState(false);
+  // The long hint is cut off on a phone, so small screens get a shorter one. The server renders the long one; this only runs in the browser.
+  const [hint, setHint] = useState(0);
+  useEffect(() => {
+    const narrow = matchMedia("(max-width: 520px)");
+    const tiny = matchMedia("(max-width: 360px)");
+    const set = () => setHint(tiny.matches ? 2 : narrow.matches ? 1 : 0);
+    set();
+    narrow.addEventListener("change", set);
+    tiny.addEventListener("change", set);
+    return () => {
+      narrow.removeEventListener("change", set);
+      tiny.removeEventListener("change", set);
+    };
+  }, []);
   const [active, setActive] = useState(0);
 
   const run = async (value: string) => {
@@ -91,7 +105,7 @@ export default function GlobalSearch({ docs }: { docs: ContentDoc[] }) {
           aria-controls={`${uid}-list`}
           aria-autocomplete="list"
           aria-activedescendant={showList && results[active] ? `${uid}-opt-${active}` : undefined}
-          placeholder="Search tools, guides and news: ChatGPT, video editor, transcription"
+          placeholder={["Search tools, guides and news: ChatGPT, video editor, transcription", "Search tools or guides", "Search AI tools"][hint]}
           value={q}
           onChange={(e) => {
             setQ(e.target.value);
@@ -142,7 +156,7 @@ export default function GlobalSearch({ docs }: { docs: ContentDoc[] }) {
                 onClick={() => setOpen(false)}
                 className={`flex items-start gap-3 rounded-xl px-3 py-2.5 no-underline transition-colors ${i === active ? "bg-white/10" : "hover:bg-white/5"}`}
               >
-                <span className={`mt-0.5 shrink-0 rounded-md border px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide ${BADGE[r.type]}`}>{LABEL[r.type]}</span>
+                <span className={`mt-0.5 shrink-0 rounded-md border px-2 py-0.5 text-[0.72rem] font-bold uppercase tracking-wide ${BADGE[r.type]}`}>{LABEL[r.type]}</span>
                 <span className="min-w-0">
                   <span className="block font-semibold leading-snug text-white">{r.title}</span>
                   <span className="mt-0.5 line-clamp-2 block text-sm text-muted">{r.description}</span>
