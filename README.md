@@ -114,7 +114,7 @@ Add items to `src/data/news.ts` only after reading the original source. The full
 
 ### Docs
 
-`docs/NEWS_WORKFLOW.md`, `docs/REVIEW_TEMPLATE.md` (documentation-based vs hands-on reviews), `docs/LAUNCH_CHECKLIST.md` (affiliate, custom domain, Search Console, analytics),
+`docs/3D.md` (every 3D and WebGL part), `docs/MOBILE_AUDIT_PHASE6.md` (responsive, mobile 3D and journey audit with evidence), `docs/LIGHTHOUSE.md` (measured scores), `docs/NEWS_WORKFLOW.md`, `docs/REVIEW_TEMPLATE.md` (documentation-based vs hands-on reviews), `docs/LAUNCH_CHECKLIST.md` (affiliate, custom domain, Search Console, analytics),
 `docs/ASSETS_REPORT.md` and `docs/LIGHTHOUSE.md`.
 
 ## Tests
