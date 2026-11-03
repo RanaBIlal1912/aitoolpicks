@@ -1,0 +1,20 @@
+{
+  "_about": "The only place affiliate status and links are stored. Status is one of: approved (we hold an official link; set `link`), pending (we applied and are waiting; no link yet), unavailable (the official page says we cannot join), ordinary (no affiliate relationship; buttons go to the official site). A tool with no entry is ordinary. A link is used ONLY when status is approved. Never invent a link. Details and sources: docs/AFFILIATE_PROGRAMS.md. Regenerate docs/AFFILIATE_STATUS.md with `npm run affiliate:report`.",
+  "programs": {
+    "surfer": { "status": "ordinary", "programme": { "network": "PartnerStack", "applyUrl": "https://surferseo.partnerstack.com/?group=tier1starter", "checked": "2026-11-02" }, "note": "Programme exists and fits the site; not applied for." },
+    "elevenlabs": { "status": "ordinary", "programme": { "network": "PartnerStack", "applyUrl": "https://elevenlabs.io/app/home?affiliate=true", "checked": "2026-11-02" }, "note": "Programme exists; not applied for." },
+    "writesonic": { "status": "ordinary", "programme": { "network": "FirstPromoter", "applyUrl": "https://affiliates.writesonic.com", "checked": "2026-11-02" }, "note": "Programme exists; payout method for Pakistan not stated; not applied for." },
+    "hostinger": { "status": "ordinary", "programme": { "network": "Hostinger (own programme)", "applyUrl": "https://affiliates.hostinger.com", "checked": "2026-11-02" }, "note": "Applications can be rejected for locations outside its focus regions; not applied for." },
+    "make": { "status": "ordinary", "programme": { "network": "Make (own programme)", "applyUrl": "https://make.com/en/affiliate", "checked": "2026-11-02" }, "note": "Pays only through Wise, which the Wise Pakistan page says residents cannot open; not applied for." },
+    "synthesia": { "status": "ordinary", "programme": { "network": "Rewardful", "applyUrl": "https://synthesia.io/partners/affiliates", "checked": "2026-11-02" }, "note": "Programme exists; not applied for." },
+    "descript": { "status": "ordinary", "programme": { "network": "PartnerStack", "applyUrl": "https://www.descript.com/affiliate-terms", "checked": "2026-11-02" }, "note": "Programme exists; not applied for." },
+    "namecheap": { "status": "ordinary", "programme": { "network": "Impact or CJ", "applyUrl": "https://namecheap.com/support/knowledgebase/article.aspx/10143/55/namecheap-affiliate-program-beginners-guide", "checked": "2026-11-02" }, "note": "Commission not stated on its own page; not applied for." },
+    "lovable": { "status": "ordinary", "programme": { "network": "Impact", "applyUrl": "https://lovable.dev/affiliates", "checked": "2026-11-02" }, "note": "Programme exists; terms partly unstated; not applied for." },
+    "canva": { "status": "ordinary", "note": "Help pages say the programme runs on Impact, but its page could not be read (HTTP 403); unverified." },
+    "grammarly": { "status": "ordinary", "note": "Only directory sources found; unverified." },
+    "zapier": { "status": "ordinary", "note": "No confirmed affiliate programme (a staff comment in January 2025 said none exists)." },
+    "heygen": { "status": "unavailable", "note": "Its official page requires 5,000+ followers on one platform and original video content; blog or SEO-only promotion is not allowed.", "source": "https://www.heygen.com/affiliate", "checked": "2026-11-02" },
+    "notion": { "status": "unavailable", "note": "Its official page says the programme is not accepting new affiliates.", "source": "https://www.notion.com/affiliates", "checked": "2026-11-02" },
+    "jasper": { "status": "unavailable", "note": "Its official page offers an agency Solutions Partner programme and says independent affiliates are not eligible.", "source": "https://www.jasper.ai/partners", "checked": "2026-11-02" }
+  }
+}

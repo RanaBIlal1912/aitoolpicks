@@ -100,3 +100,24 @@ describe("search ranking details", () => {
     expect(ids[0]).not.toBe("mistral");
   });
 });
+
+import { normalizeUrl, submissionText } from "@/components/SubmitForm";
+
+describe("submit form helpers", () => {
+  it("adds https:// to bare addresses and leaves everything else alone", () => {
+    expect(normalizeUrl("acme.com")).toBe("https://acme.com");
+    expect(normalizeUrl(" www.acme.com/pricing ")).toBe("https://www.acme.com/pricing");
+    expect(normalizeUrl("https://acme.com")).toBe("https://acme.com");
+    expect(normalizeUrl("http://acme.com")).toBe("http://acme.com");
+    expect(normalizeUrl("javascript:alert(1)")).toBe("javascript:alert(1)");
+    expect(normalizeUrl("not a url")).toBe("not a url");
+    expect(normalizeUrl("")).toBe("");
+  });
+  it("builds a plain-text copy of the submission with every field", () => {
+    const t = submissionText({ name: "Acme AI", website: "https://acme.example", company: "Acme", category: CATEGORIES[0].slug, description: "Drafts replies.", features: "Tone", pricingUrl: "https://acme.example/pricing", email: "secret@x.example", submitter: "", extra: "" });
+    expect(t).toContain("Tool submission: Acme AI");
+    expect(t).toContain("Official pricing page: https://acme.example/pricing");
+    expect(t).toContain("Submitted by: -");
+    expect(t).not.toContain("secret@x.example");
+  });
+});

@@ -19,7 +19,8 @@
     "assets:report": "node scripts/assets-report.mjs",
     "catalog:report": "node scripts/build-catalog.mjs --report",
     "prebuild": "node scripts/build-catalog.mjs",
-    "predev": "node scripts/build-catalog.mjs"
+    "predev": "node scripts/build-catalog.mjs",
+    "affiliate:report": "node scripts/affiliate-report.mjs"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

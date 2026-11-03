@@ -2,6 +2,7 @@ import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import SubmitForm from "@/components/SubmitForm";
+import { SITE } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Submit an AI tool",
@@ -21,6 +22,15 @@ export default function SubmitPage() {
       <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[1.6fr_1fr]">
         <SubmitForm />
         <aside className="space-y-5 text-sm text-soft" aria-label="How submissions work">
+          <div className="glass rounded-[22px] p-6">
+            <h2 className="text-lg font-bold text-white">Before you start</h2>
+            <p className="mt-2">
+              <strong className="text-white">Yes, a GitHub account is needed to send a suggestion.</strong> It is free and takes a couple of minutes at{" "}
+              <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer" className="underline">github.com/signup</a>. You only need it for the last step.
+              {SITE.contactEmail ? " If you would rather not use GitHub, use the contact page and we will take it from there." : " There is no private form or public email yet, so GitHub is the only route today."}
+            </p>
+            <p className="mt-3">Have ready: the product&rsquo;s official website and its official pricing page, a sentence on what it does, and its main features.</p>
+          </div>
           <div className="glass rounded-[22px] p-6">
             <h2 className="text-lg font-bold text-white">How it works</h2>
             <ol className="mt-3 list-decimal space-y-2 pl-5">

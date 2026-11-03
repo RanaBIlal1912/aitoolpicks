@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { resolveAffiliate } from "@/lib/affiliate";
+import { affiliateStatus, resolveAffiliate } from "@/lib/affiliate";
+import { track } from "@/lib/analytics";
 import { convertBetween, format } from "@/lib/currency";
 import { PRICES, PRICES_AS_OF } from "@/lib/prices";
 import links from "@/data/generated/tool-links.json";
@@ -29,6 +30,11 @@ export default function ProseHtml({ html }: { html: string }) {
       a.target = "_blank";
       a.rel = aff ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer";
       a.title = aff ? "Affiliate link" : "Official site";
+      a.dataset.affiliate = aff ? "true" : "false";
+      // Re-running this effect must not stack listeners: a property handler is replaced, not added.
+      const clicked = () => track("outbound_click", { tool: id, kind: aff ? "affiliate" : "official", status: affiliateStatus(id), placement: "article" });
+      a.onclick = clicked;
+      a.onauxclick = clicked;
     });
 
     root.querySelectorAll<HTMLElement>("[data-price]").forEach((el) => {
