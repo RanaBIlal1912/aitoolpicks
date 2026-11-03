@@ -10,7 +10,9 @@ type Msg =
   | { type: "init"; canvas: OffscreenCanvas; w: number; h: number; dpr: number; lite: boolean; forced: boolean; touch?: boolean; logos: { id: string; bitmap: ImageBitmap }[] }
   | { type: "size"; w: number; h: number; dpr: number }
   | { type: "pointer"; x: number; y: number }
-  | { type: "active"; on: boolean };
+  | { type: "active"; on: boolean }
+  // Only honoured when the page was opened with ?robot=3d: loses the graphics context on purpose and restores it, so recovery can be tested.
+  | { type: "test-lose" };
 
 type Scope = {
   postMessage(m: unknown): void;
@@ -345,8 +347,10 @@ function start(init: Extract<Msg, { type: "init" }>) {
   let dpr = init.dpr;
   let fullQuality = false;
   const applySize = () => {
-    renderer.setPixelRatio(fullQuality ? Math.min(dpr, 1.5) : 1);
+    // A phone-sized canvas is small, so a sharper pixel ratio costs little. The adaptive loop below drops back to 1 on a device that cannot keep up.
+    renderer.setPixelRatio(fullQuality ? Math.min(dpr, w * h <= 520 * 560 ? 2 : 1.5) : 1);
     renderer.setSize(Math.max(1, w), Math.max(1, h), false);
+    (ctx as unknown as { __px?: string }).__px = `${canvas.width}x${canvas.height}@${renderer.getPixelRatio()}`;
     camera.aspect = Math.max(1, w) / Math.max(1, h);
     camera.updateProjectionMatrix();
   };
@@ -363,6 +367,7 @@ function start(init: Extract<Msg, { type: "init" }>) {
   let sum = 0;
   let readySent = false;
   let nextProbe = 0;
+  let lost = false;
   let probes = 0;
   let elapsed = 0;
   let prev = performance.now();
@@ -446,6 +451,11 @@ function start(init: Extract<Msg, { type: "init" }>) {
     raf = 0;
     timer = 0;
     if (!active) return;
+    // A lost graphics context (a phone short of memory, or a tab that was in the background) draws nothing. Never report "ready" for one, and never draw into it.
+    if (lost || gl.isContextLost()) {
+      if (!readySent && !lost) ctx.postMessage({ type: "unsupported" });
+      return;
+    }
     const every = mode === "calm" ? 66 : mode === "smooth" ? 33 : 0;
     if (mode === "still") {
       if (!dirty) return;
@@ -458,6 +468,8 @@ function start(init: Extract<Msg, { type: "init" }>) {
     const dt = tick();
     animate(elapsed, dt);
     renderer.render(scene, camera);
+    // Read by tests (and by anyone in DevTools) to see whether the scene is drawing: it must stop counting while the hero is off screen.
+    (ctx as unknown as { __frames?: number }).__frames = ((ctx as unknown as { __frames?: number }).__frames ?? 0) + 1;
 
     if (!readySent) {
       readySent = true;
@@ -494,6 +506,19 @@ function start(init: Extract<Msg, { type: "init" }>) {
     schedule();
   };
 
+  // If the device takes the graphics context away, tell the page at once so the flat robot comes back instead of a blank canvas, and bring the 3D robot back when it is returned.
+  canvas.addEventListener("webglcontextlost", () => {
+    lost = true;
+    stop();
+    ctx.postMessage({ type: "lost" });
+  });
+  canvas.addEventListener("webglcontextrestored", () => {
+    lost = false;
+    readySent = false;
+    applySize();
+    wake();
+  });
+
   ctx.onmessage = (ev) => {
     const m = ev.data;
     if (m.type === "pointer") {
@@ -511,6 +536,12 @@ function start(init: Extract<Msg, { type: "init" }>) {
       applySize();
       dirty = true;
       schedule();
+    } else if (m.type === "test-lose") {
+      if (forced) {
+        const ext = gl.getExtension("WEBGL_lose_context");
+        ext?.loseContext();
+        setTimeout(() => ext?.restoreContext(), 700);
+      }
     } else if (m.type === "active") {
       active = m.on;
       if (active) {

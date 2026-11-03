@@ -10,6 +10,7 @@ import { formatDate } from "../ArticleCard";
 import RobotHero from "./RobotHero";
 import { logoFor } from "@/data/logos";
 import { withBase } from "@/lib/site";
+import { STATS } from "@/lib/stats";
 
 /** Hero artwork: the 3D robot with real product logos floating around it. */
 /** `ids` are the tools shown as floating logos, one per slot; the page chooses them so none repeats a tool shown in another section. */
@@ -141,7 +142,7 @@ export function NewsPanel() {
                 <NewsVisual n={n} small sizes="140px" logos={1} />
               </div>
               <div className="min-w-0">
-                <span className="rounded-md bg-violet/30 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wide text-[#d9ccff]">{n.kind}</span>
+                <span className="rounded-md bg-violet/30 px-2 py-0.5 text-[0.72rem] font-bold uppercase tracking-wide text-[#d9ccff]">{n.kind}</span>
                 <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-white group-hover:underline">{n.title}</h3>
                 <p className="mt-1 text-xs text-muted">
                   {formatDate(n.date)} · {n.source}
@@ -184,7 +185,7 @@ export function CtaPanel() {
   return (
     <div className="panel relative overflow-hidden p-6" style={{ background: "linear-gradient(135deg, rgba(80,50,220,0.85), rgba(30,40,150,0.9))" }}>
       <h2 className="font-display text-2xl font-extrabold text-white">Find the right tool, at the right price</h2>
-      <p className="mt-1 max-w-[16rem] text-sm text-white/80">Compare plans read from the vendors&apos; own pages. {TOOLS.length} tools, every record dated.</p>
+      <p className="mt-1 max-w-[16rem] text-sm text-white/80">Compare plans read from the vendors&apos; own pages. {STATS.tools} tools, every record dated.</p>
       <Link href="/tools/" prefetch={false} className="btn-ghost mt-5 inline-flex">
         Start exploring now <span aria-hidden="true">→</span>
       </Link>

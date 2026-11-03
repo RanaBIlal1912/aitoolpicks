@@ -3,11 +3,12 @@
 // Prices are never typed here: they come from lib/prices.ts so there is one verified source.
 import extra from "../../content/reviews-extra.json";
 
-/** "documentation": written from the vendor's pages and our catalog record. "hands-on": a named person tested the product (see docs/REVIEW_TEMPLATE.md). Only the first exists today. */
-export type ReviewMethod = "documentation" | "hands-on";
+import type { ReviewTrust } from "../lib/review-trust";
 
-export type Review = {
-  method?: ReviewMethod;
+export type { ReviewMethod, HandsOnTest } from "../lib/review-trust";
+
+/** `method` is required on every review. "documentation" is editorial research; "hands-on" needs a complete `testing` record (rules: lib/review-trust.ts). Only "documentation" exists today. */
+export type Review = ReviewTrust & {
   slug: string;
   toolId: string;
   title: string;
@@ -24,6 +25,7 @@ export type Review = {
 export const REVIEWS: Review[] = [
   ...(extra as Review[]),
   {
+    method: "documentation",
     slug: "chatgpt",
     toolId: "chatgpt",
     title: "ChatGPT overview: a flexible assistant, if you check its work",
@@ -52,6 +54,7 @@ export const REVIEWS: Review[] = [
       "A strong first-draft and brainstorming partner. Check the current plans on the official site, always review what it writes, and only pay if you hit limits on paid work.",
   },
   {
+    method: "documentation",
     slug: "grammarly",
     toolId: "grammarly",
     title: "Grammarly overview: a safety net for your writing",
@@ -79,6 +82,7 @@ export const REVIEWS: Review[] = [
       "Worth installing the free version if you send written messages to clients or teachers. Upgrade only if you use the advanced suggestions often.",
   },
   {
+    method: "documentation",
     slug: "notion",
     toolId: "notion",
     title: "Notion overview: one workspace for notes, tasks and clients",
@@ -106,6 +110,7 @@ export const REVIEWS: Review[] = [
       "Start with one page and one table. If you keep using it for a month, it is worth growing; if not, you have lost nothing.",
   },
   {
+    method: "documentation",
     slug: "canva",
     toolId: "canva",
     title: "Canva overview: quick, clean design without design skills",
@@ -133,6 +138,7 @@ export const REVIEWS: Review[] = [
       "Use the free plan for two weeks and note what blocks you. Pay only when a specific paid feature clearly saves time.",
   },
   {
+    method: "documentation",
     slug: "hostinger",
     toolId: "hostinger",
     title: "Hostinger overview: a beginner-friendly place to host a first site",

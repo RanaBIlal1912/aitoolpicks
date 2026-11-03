@@ -476,6 +476,11 @@ table.cmp thead th:first-child {
   table.cmp-stack tbody tr:last-child {
     border-bottom: 0;
   }
+  /* 69 stacked rows is a long page; rows below the screen are skipped until they are scrolled near (their size is remembered once drawn). */
+  table.cmp-stack tbody tr {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 400px;
+  }
   table.cmp-stack tbody th {
     position: static;
     width: auto;
@@ -494,7 +499,7 @@ table.cmp thead th:first-child {
     content: attr(data-label);
     display: block;
     margin-bottom: 3px;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -515,8 +520,16 @@ table.cmp thead th:first-child {
   main p a:not([class*="btn"]),
   main li a:not([class*="btn"]),
   main td a:not([class*="btn"]),
-  main th a:not([class*="btn"]) {
+  main th a:not([class*="btn"]),
+  main figcaption a,
+  main small a,
+  main a.inline-block:not([class*="btn"]) {
     padding-block: 0.7rem;
+  }
+  /* A very short name ("v0", "Hex") would otherwise be narrower than a fingertip. Headline links that stretch over their whole card are left alone. */
+  main a.no-underline:not(.news-link):not(.tile-link):not([class*="btn"]) {
+    display: inline-block;
+    min-width: 2rem;
   }
   /* Save (heart) and other toggle buttons: at least thumb-sized. */
   button[aria-pressed] {
@@ -618,7 +631,7 @@ table.cmp tbody tr:last-child td {
   background: rgba(251, 191, 36, 0.15);
   border: 1px solid rgba(251, 191, 36, 0.4);
   color: #fcd679;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1615,4 +1628,10 @@ table.cmp tbody tr:hover th {
 }
 #hero {
   overflow-x: clip;
+}
+
+/* The 3D library sets touch-action: none on its container and the orbit controls on the canvas, which traps a phone's vertical swipe inside the 3D view. Vertical swipes scroll the page; horizontal drags still rotate it. */
+.eco-scene canvas,
+.eco-scene div {
+  touch-action: pan-y !important;
 }

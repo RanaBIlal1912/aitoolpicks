@@ -3,6 +3,7 @@ import { EXPLORE_LINKS, FOOTER_LINKS, SITE } from "@/lib/site";
 import RateNote from "./RateNote";
 import { BrandMark } from "@/lib/brand";
 import { CATEGORIES, TOOLS } from "@/data/tools";
+import { STATS } from "@/lib/stats";
 
 export default function Footer() {
   return (
@@ -17,8 +18,8 @@ export default function Footer() {
             {SITE.tagline}. We say who each tool is good for, and who should skip it.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            <span className="chip">{TOOLS.length} tools</span>
-            <span className="chip">{CATEGORIES.length} categories</span>
+            <span className="chip">{STATS.tools} tools</span>
+            <span className="chip">{STATS.categories} categories</span>
             <a href={SITE.repo} target="_blank" rel="noopener noreferrer" className="chip no-underline">
               GitHub ↗
             </a>
@@ -43,7 +44,7 @@ export default function Footer() {
             ))}
             <li>
               <Link prefetch={false} href="/tools/" className="font-semibold text-cyan no-underline hover:text-white">
-                All {CATEGORIES.length} categories →
+                All {STATS.categories} categories →
               </Link>
             </li>
           </ul>

@@ -62,7 +62,7 @@ This ranks fit and the clarity of published terms. **Only the PartnerStack progr
 4. **Descript, Synthesia, Namecheap, Lovable:** lower or one-off rewards, or payout support for Pakistan unconfirmed (Descript is payable via PartnerStack but pays a one-time $25).
 5. **Make:** best commission among these, but its only payout route is Wise, which is closed to Pakistan residents. Treat as unavailable unless you can confirm otherwise.
 6. **Canva, Grammarly:** apply only after you can read their current terms.
-7. Apply only with the real site URL (`https://ranabilal1912.github.io/aitoolpicks/`). Do not describe approval anywhere until you have it. When a programme approves you, paste the tracking URL into `src/lib/affiliate.ts` for that tool id and update `/affiliate-disclosure/` to list real programmes only.
+7. Apply only with the real site URL (`https://ranabilal1912.github.io/aitoolpicks/`). Do not describe approval anywhere until you have it. When a programme approves you, set that tool's status to `approved` and paste the tracking URL into `link` in `content/affiliate.json` (see the README), then update `/affiliate-disclosure/` to list real programmes only.
 
 ## Sources
 

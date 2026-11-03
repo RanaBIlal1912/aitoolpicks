@@ -55,7 +55,7 @@ export default function ArticleCover({ topic, tools = [], small = false, seed = 
           </svg>
         )}
       </div>
-      {!small && <span className="absolute bottom-2 left-3 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white/80">{label}</span>}
+      {!small && <span className="absolute bottom-2 left-3 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/80">{label}</span>}
     </div>
   );
 }

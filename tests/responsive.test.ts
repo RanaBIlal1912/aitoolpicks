@@ -39,7 +39,7 @@ describe("responsive layout guards", () => {
     const hero = read("src/components/home/RobotHero.tsx");
     expect(hero).toContain('"touchmove"');
     expect(hero).toContain("optIn");
-    expect(read("src/components/universe/UniverseSection.tsx")).toContain("optIn");
+    expect(read("src/components/universe/EcosystemNetwork.tsx")).toContain("optIn");
     const worker = read("src/components/hero/robot.worker.ts");
     expect(worker).not.toMatch(/\?\s*"still"/);
     expect(worker).toContain("nextProbe");

@@ -164,6 +164,8 @@ export default function RobotHero({ tiles, logos }: { tiles: ReactNode; logos: S
       worker = wk;
       wk.onmessage = (e: MessageEvent<{ type: string }>) => {
         if (e.data.type === "ready") setReady(true);
+        // The device took the graphics context away: show the flat robot again until the worker says it is back.
+        else if (e.data.type === "lost") setReady(false);
         else if (e.data.type === "unsupported") {
           wk.terminate();
           setGl(false);
@@ -177,6 +179,8 @@ export default function RobotHero({ tiles, logos }: { tiles: ReactNode; logos: S
       // The hero is a single column below 1024px, so the compact scene (robot centred, cube close) is the one that fits there.
       const lite = !matchMedia("(min-width: 1024px)").matches;
       const forced = /[?&]robot=3d/.test(location.search);
+      // Test hook, present only when the page was opened with ?robot=3d.
+      if (forced) (window as Window & { __robotWorker?: Worker }).__robotWorker = wk;
       wk.postMessage({ type: "init", canvas: off, w: Math.round(r.width), h: Math.round(r.height), dpr: window.devicePixelRatio || 1, lite, forced, touch: matchMedia("(hover: none)").matches, logos: list.map((l, i) => ({ id: l.id, bitmap: bitmaps[i] })) }, [off, ...bitmaps]);
 
       const ro = new ResizeObserver(() => {

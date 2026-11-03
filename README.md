@@ -3,8 +3,8 @@
 Honest reviews, comparisons and guides to AI tools for freelancers and small businesses.
 Live site: https://ranabilal1912.github.io/aitoolpicks/
 
-Built with **Next.js 16 (static export), React 19, TypeScript, Tailwind CSS 4, Framer Motion and React Three Fiber / Three.js**.
-Every page is pre-rendered to plain HTML for SEO and speed. The 3D hero loads only after the page has finished loading.
+Built with **Next.js 16 (static export), React 19, TypeScript, Tailwind CSS 4 and Three.js (with React Three Fiber on one page)**.
+Every page is pre-rendered to plain HTML for SEO and speed. Two things use WebGL, both loaded after the page: the home hero's 3D robot (drawn by a Web Worker) and the Ecosystem page's 3D network. See [`docs/3D.md`](docs/3D.md).
 
 ## Run it
 
@@ -28,7 +28,7 @@ Using a custom domain later: set `NEXT_PUBLIC_SITE_URL` (for example `https://ex
 
 | What | File |
 | --- | --- |
-| Affiliate links (empty until a programme approves you) | `src/lib/affiliate.ts` |
+| Affiliate status and links (the only place; nothing is approved yet) | `content/affiliate.json` (read by `src/lib/affiliate.ts`) |
 | Headline reference prices (generated from the tool records) | `src/data/generated/price-refs.json` |
 | Currencies, rate sources and fallback rates | `src/lib/currency.ts` |
 | Tool records (one JSON file per tool) | `content/tools/*.json` |
@@ -42,11 +42,26 @@ Using a custom domain later: set `NEXT_PUBLIC_SITE_URL` (for example `https://ex
 | Cover images (3D renders) | `public/images/covers/`, `src/data/covers.ts` |
 | Public contact email (optional) | `NEXT_PUBLIC_CONTACT_EMAIL` (see `.env.example`) |
 
-### Adding an affiliate link
+### Affiliate links and approval workflow
 
-Open `src/lib/affiliate.ts` and paste the official link your programme gave you, for example `grammarly: "https://..."`.
-Only `https` links are accepted. Until a link is set, the button goes to the tool's official site (no commission, no `sponsored` tag).
-Changing the display currency never changes a link; a link can optionally differ by country (`{ default: "...", GB: "..." }`).
+Everything about affiliates lives in `content/affiliate.json`. `src/lib/affiliate.ts` only reads it; do not paste links into code.
+
+Each tool has one status, and a tool with no entry is **ordinary** (no affiliate relationship):
+
+| Status | Meaning | Does the button use an affiliate link? |
+| --- | --- | --- |
+| `approved` | A programme approved you and gave you an official link (put it in `link`) | Yes: "Try <tool>", `rel="sponsored nofollow"`, marked as an affiliate link |
+| `pending` | You applied and are waiting | No, the official site |
+| `unavailable` | The programme's own page says you cannot join (give the reason and source) | No, the official site |
+| `ordinary` | No relationship, or a programme exists but nobody has applied (optional `programme` block with the apply page) | No, the official site |
+
+1. Apply on the programme's own page (the apply pages and research are in `docs/AFFILIATE_PROGRAMS.md`). Set the tool to `pending` once you have applied.
+2. Only when the programme approves you: set `"status": "approved"` and paste the official link into `link`. A `link` on any other status is rejected by `tests/affiliate.test.ts`, so a link typed early can never go live.
+3. Only `https` links are accepted. A link can differ by country: `"link": { "default": "https://...", "GB": "https://..." }`. Changing the display currency never changes a link.
+4. Update the first-ever approval test in `tests/affiliate.test.ts` (it asserts that nothing is approved today) and keep `/affiliate-disclosure/` accurate.
+5. Run `npm run affiliate:report` to regenerate `docs/AFFILIATE_STATUS.md` (approved, pending, unavailable, and the programmes still needing an application).
+
+Until a tool is `approved`, its button goes to the tool's official site with no commission and no `sponsored` tag. Outbound clicks fire a browser event (`aitp:outbound`) and send nothing anywhere while analytics is off (`src/lib/analytics.ts`).
 
 ### Rules the site follows
 
@@ -56,8 +71,9 @@ Changing the display currency never changes a link; a link can optionally differ
 
 ## Images and 3D
 
-- The site no longer loads any WebGL. The old 3D scene was removed from the pages; `src/lib/scene` and `npm run covers` remain only for the optional cover renders in
-  `public/images/covers/`, which no page uses now.
+- **3D:** WebGL is used in two places only, the home hero robot (`RobotHero` + `robot.worker.ts`, OffscreenCanvas in a worker, flat SVG robot as the fallback) and the Ecosystem network
+  (`EcosystemNetwork`, lazy-loaded when scrolled to). Reduced motion and data saving keep both off until the visitor opts in. Full detail, triggers and fallbacks: [`docs/3D.md`](docs/3D.md).
+  `src/lib/scene` and `npm run covers` are for offline cover renders only; no page imports them.
 - **Tool logos:** `npm run logos` downloads each product's own icon from its official website into `public/logos/` and records source, format, size and review status in
   `content/logos.json` (`--curl` uses the system curl for sites that refuse Node; `--fallback` tries a favicon service and flags the result `needs-review`). Components call
   `logoFor()` in `src/data/logos.ts`; never hard-code a logo path.
@@ -83,7 +99,7 @@ Rules the validator enforces (`npm run catalog`):
 ### Add a tool
 
 1. Copy a similar file in `content/tools/`, rename it to the new id and fill it in from the vendor's pages. Do not guess.
-2. Add an empty slot for it in `src/lib/affiliate.ts` (a real affiliate link only when a programme has approved you).
+2. Nothing to add for affiliates: a tool with no entry in `content/affiliate.json` is an ordinary link. Add an entry only to record a programme (see above).
 3. Run `npm run check`. It validates the record, regenerates `src/data/generated/*.json` and builds the site.
 
 ### Re-check prices
@@ -98,12 +114,12 @@ Add items to `src/data/news.ts` only after reading the original source. The full
 
 ### Docs
 
-`docs/NEWS_WORKFLOW.md`, `docs/REVIEW_TEMPLATE.md` (documentation-based vs hands-on reviews), `docs/LAUNCH_CHECKLIST.md` (affiliate, custom domain, Search Console, analytics),
+`docs/3D.md` (every 3D and WebGL part), `docs/MOBILE_AUDIT_PHASE6.md` (responsive, mobile 3D and journey audit with evidence), `docs/LIGHTHOUSE.md` (measured scores), `docs/NEWS_WORKFLOW.md`, `docs/REVIEW_TEMPLATE.md` (documentation-based vs hands-on reviews), `docs/LAUNCH_CHECKLIST.md` (affiliate, custom domain, Search Console, analytics),
 `docs/ASSETS_REPORT.md` and `docs/LIGHTHOUSE.md`.
 
 ## Tests
 
-`npm test` checks currency maths and rate parsing, affiliate-link rules, every article and internal link, the catalog validator
+`npm test` checks currency maths and rate parsing, the affiliate registry rules (no link unless approved), review-trust rules, every article and internal link, the catalog validator
 (including negative cases), that unverified tools never show a price, news data, navigation, covers and that generated files are up to date.
 
 ## Known limits

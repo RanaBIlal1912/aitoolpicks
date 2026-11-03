@@ -63,7 +63,7 @@ export default function NewsCard({ n, variant = "row" }: { n: NewsItem; variant?
         </div>
         <div className="flex min-w-0 flex-col gap-1.5">
           <div className="flex flex-wrap items-center gap-x-3 text-xs">
-            <span className="kicker !text-[0.68rem]">{n.kind}</span>
+            <span className="kicker !text-[0.72rem]">{n.kind}</span>
             <time dateTime={n.date} className="byline">
               {formatDate(n.date)}
             </time>

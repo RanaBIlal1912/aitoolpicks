@@ -2,13 +2,28 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Component, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { COMPANIES, MODELS } from "@/data/companies";
 import { catColors } from "@/data/palette";
 import { whenEngaged } from "@/lib/engage";
+import { motionLimit, onOptIn, optedIn, optIn, type MotionLimit } from "@/lib/motion3d";
 import type { GEdge, GNode } from "./EcosystemScene";
 
 const EcosystemScene = dynamic(() => import("./EcosystemScene"), { ssr: false });
+
+/** If the scene cannot start (no graphics memory left, a driver error), show the fallback instead of letting the error take the whole page down. */
+class SceneBoundary extends Component<{ onFail: () => void; children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch() {
+    this.props.onFail();
+  }
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
 
 /** Builds the graph from verified records only. */
 function build(): { nodes: GNode[]; edges: GEdge[] } {
@@ -41,31 +56,44 @@ export default function EcosystemNetwork() {
   const graph = useMemo(build, []);
   const box = useRef<HTMLDivElement>(null);
   const [on, setOn] = useState(false);
-  const [lite, setLite] = useState(false);
   const [distance, setDistance] = useState(15);
   const [sel, setSel] = useState<GNode | null>(null);
+  const [limit, setLimit] = useState<MotionLimit>(null);
+  const [visible, setVisible] = useState(true);
+  const [failed, setFailed] = useState(false);
+  const [noGl, setNoGl] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     const el = box.current;
     if (!el) return;
-    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (calm) return;
-    setLite(!matchMedia("(min-width: 768px)").matches);
+    const webgl = () => {
+      // checked only when the scene is about to start: a throwaway WebGL context created at page start can stall the main thread while the graphics process is busy
+      try {
+        const c = document.createElement("canvas");
+        return !!(c.getContext("webgl2") || c.getContext("webgl"));
+      } catch {
+        return false;
+      }
+    };
+    // Reduced motion and data saving keep the scene off until the visitor switches it on (remembered in this browser, shared with the home hero).
+    const why = motionLimit();
+    if (why && !optedIn()) {
+      setLimit(why);
+      return onOptIn(() => {
+        setLimit(null);
+        if (webgl()) setOn(true);
+        else setNoGl(true);
+      });
+    }
     let stop = () => {};
     const io = new IntersectionObserver(
       (es) => {
         if (es.some((e) => e.isIntersecting)) {
           io.disconnect();
           stop = whenEngaged(() => {
-            // checked only now: a throwaway WebGL context created at page start can stall the main thread while the graphics process is busy
-            let gl = false;
-            try {
-              const c = document.createElement("canvas");
-              gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
-            } catch {
-              gl = false;
-            }
-            if (gl) setOn(true);
+            if (webgl()) setOn(true);
+            else setNoGl(true);
           }, 10000);
         }
       },
@@ -78,6 +106,15 @@ export default function EcosystemNetwork() {
     };
   }, []);
 
+  // The scene draws frames only while the section is on screen, so scrolling away leaves the GPU idle.
+  useEffect(() => {
+    const el = box.current;
+    if (!el || !on) return;
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, [on]);
+
   const related = sel ? graph.edges.filter((e) => e.a === sel.id || e.b === sel.id).length : 0;
 
   return (
@@ -86,19 +123,50 @@ export default function EcosystemNetwork() {
         The network
       </h2>
       <p className="mt-2 max-w-2xl text-sm text-muted">
-        {graph.nodes.filter((n) => n.kind === "company").length} companies, {graph.nodes.filter((n) => n.kind === "tool").length} products and {graph.nodes.filter((n) => n.kind === "model").length} verified model, joined only where a record states the
+        {graph.nodes.filter((n) => n.kind === "company").length} companies, {graph.nodes.filter((n) => n.kind === "tool").length} products and {graph.nodes.filter((n) => n.kind === "model").length} verified {graph.nodes.filter((n) => n.kind === "model").length === 1 ? "model" : "models"}, joined only where a record states the
         relationship. Drag to rotate, click a node for details.
       </p>
-      <div ref={box} className="relative mt-5 overflow-hidden rounded-[28px] border border-white/10 bg-[#11152A]/70" style={{ height: lite ? 380 : 560 }}>
+      <div ref={box} className="relative mt-5 h-[380px] overflow-hidden rounded-[28px] border border-white/10 bg-[#11152A]/70 md:h-[560px]">
         <div aria-hidden="true" className="absolute inset-0" style={{ background: "radial-gradient(60% 60% at 50% 50%, rgba(37,198,232,.14), transparent 70%)" }} />
-        {on ? (
-          <div className="absolute inset-0 touch-pan-y" role="presentation">
-            <EcosystemScene nodes={graph.nodes} edges={graph.edges} distance={distance} selected={sel?.id ?? null} onSelect={setSel} />
+        {on && !failed ? (
+          <div className="eco-scene absolute inset-0 touch-pan-y" role="presentation">
+            <SceneBoundary key={attempt} onFail={() => setFailed(true)}>
+              <EcosystemScene nodes={graph.nodes} edges={graph.edges} distance={distance} selected={sel?.id ?? null} onSelect={setSel} active={visible} onLost={() => setFailed(true)} />
+            </SceneBoundary>
+          </div>
+        ) : failed ? (
+          <div className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted">
+            <div>
+              <p>The 3D network stopped, usually because the device ran short of graphics memory. The lists below carry the same information.</p>
+              <button
+                type="button"
+                className="btn-ghost btn-sm mt-4"
+                onClick={() => {
+                  setFailed(false);
+                  setAttempt((n) => n + 1);
+                }}
+              >
+                Try the 3D network again
+              </button>
+            </div>
           </div>
         ) : (
-          <p className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted">The 3D network loads as you scroll. The lists below carry the same information.</p>
+          <div className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted">
+            {limit ? (
+              <div>
+                <p>{limit === "reduced-motion" ? "Your device asks for reduced motion, so the 3D network is off." : "Data saving is on, so the 3D network is off."} The lists below carry the same information.</p>
+                <button type="button" onClick={optIn} className="btn-ghost btn-sm mt-4">
+                  Show the 3D network
+                </button>
+              </div>
+            ) : noGl ? (
+              <p>This browser or device cannot show the 3D network (WebGL is not available). The lists below carry the same information.</p>
+            ) : (
+              <p>The 3D network loads as you scroll. The lists below carry the same information.</p>
+            )}
+          </div>
         )}
-        {on && (
+        {on && !failed && (
           <div className="absolute right-3 top-3 flex flex-col gap-2">
             <button type="button" className="chip !min-h-9 !px-3" aria-label="Zoom in" onClick={() => setDistance((d) => Math.max(8, d - 3))}>
               +

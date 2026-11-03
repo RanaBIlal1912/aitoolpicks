@@ -133,10 +133,6 @@ describe("prices and affiliate links", () => {
       for (const u of urls) expect(u === "" || /^https:\/\//.test(u), id).toBe(true);
     }
   });
-
-  it("has an affiliate slot for every tool, so a real link can be added without code changes elsewhere", () => {
-    for (const t of TOOLS) expect(t.id in AFFILIATE_LINKS, t.id).toBe(true);
-  });
 });
 
 describe("cover images", () => {

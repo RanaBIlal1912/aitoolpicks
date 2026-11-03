@@ -5,6 +5,7 @@ import type { TrendingRow } from "@/lib/home-tools";
 import ToolLogo from "../ToolLogo";
 import { Head } from "./Sections";
 import PriceText from "../PriceText";
+import { STATS } from "@/lib/stats";
 
 function PriceChips({ tool }: { tool: Tool }) {
   // Prices are shown only when the pricing record is fully verified against the vendor's page.
@@ -95,7 +96,7 @@ export function FinalCta() {
         <span className="eyebrow">The full directory</span>
         <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">Find the right AI tool, at the right price</h2>
         <p className="mt-4 text-lg text-white/85">
-          Search all {TOOLS.length} tools, compare plans read from the vendors&apos; own pages, and see the date we checked each one.
+          Search all {STATS.tools} tools, compare plans read from the vendors&apos; own pages, and see the date we checked each one.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link prefetch={false} href="/tools/" className="btn-primary">

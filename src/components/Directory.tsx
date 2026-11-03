@@ -8,6 +8,7 @@ import { TASK_SUGGESTIONS, searchTools } from "@/lib/search";
 import ToolCard from "./ToolCard";
 import { useCurrency } from "./CurrencyProvider";
 import { convert, format } from "@/lib/currency";
+import { STATS } from "@/lib/stats";
 
 const MODELS = ["freemium", "free", "free-trial", "paid", "usage-based"] as const;
 const MAX_COMPARE = 3;
@@ -204,7 +205,7 @@ function DirectoryInner({ initialCategory, searchOnly }: { initialCategory: stri
           <legend className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-muted">Categories (choose any)</legend>
           <div className="flex flex-wrap gap-2">
             <Toggle pressed={f.cats.length === 0} onClick={() => set({ cats: [], sub: "all" })}>
-              All <span className="text-xs text-muted">{TOOLS.length}</span>
+              All <span className="text-xs text-muted">{STATS.tools}</span>
             </Toggle>
             {CATEGORIES.map((c) => (
               <Toggle key={c.slug} pressed={f.cats.includes(c.slug)} onClick={() => toggleCat(c.slug)}>
@@ -272,7 +273,7 @@ function DirectoryInner({ initialCategory, searchOnly }: { initialCategory: stri
       </div>
 
       <p className="mt-6 text-sm text-muted" role="status" aria-live="polite">
-        Showing {items.length} of {results.length} {searching ? "matching" : "listed"} tools ({TOOLS.length} in the directory)
+        Showing {items.length} of {results.length} {searching ? "matching" : "listed"} tools ({STATS.tools} in the directory)
         {active ? (
           <>
             {" "}

@@ -3,7 +3,57 @@
 Lighthouse (npx, latest) in headless Chrome against the static build served locally by `python -m http.server`; one run per page and form factor, so expect several points of
 run-to-run variation. Mobile uses Lighthouse's default simulated slow 4G and 4x CPU slowdown. **No physical phone was tested.**
 
-## Latest runs (2026-10-30, after the real-3D redesign; 3D starts on first interaction or after 10 s)
+## Phase 6 (2026-11-03): interleaved before/after, three or more runs each
+
+**Method.** Lighthouse (all four categories) in headless Chrome against two production builds served by the same local server code with gzip: the build before Phase 6 (`9d2f2a6`) and the build after (`feat/site-improvements`). Mobile uses Lighthouse's simulated slow 4G and 4x CPU slowdown; desktop uses its desktop preset. The runs were **interleaved** (before, after, before, after) so both builds saw the same machine conditions. The computer is a desktop PC; **no physical phone was tested.**
+
+**Why interleaving matters.** Lighthouse records a CPU benchmark with every run. Separate sessions on this machine ranged from 680 to 1,360, so a run in a slow session cannot be compared with one in a fast session. A first, non-interleaved before/after set looked like a large gain on the Ecosystem page (mobile 86 to 93) and the home page (75 to 83) but its benchmark index also rose from about 770 to about 1,200, so that gain was **not** attributable to the code and is not claimed. Only the interleaved results below are used.
+
+### Mobile (median of the runs; individual runs in brackets)
+
+| Page | Runs each | Performance | LCP | TBT | Speed Index | CLS |
+| --- | --- | --- | --- | --- | --- | --- |
+| Tool page (ChatGPT) | 3 | **83 to 88** (84, 82, 83 to 86, 88, 88) | 1,349 to 1,227 ms | **561 to 390 ms** (506, 589, 561 to 465, 367, 390) | 4,621 to 4,486 ms | 0 to 0 |
+| Home | 3 | 84 to 84 (82, 84, 87 to 86, 83, 84) | 1,748 to 1,173 ms, but the before runs ranged 1,177 to 2,201 ms (one on a slow-CPU spike, benchmark 682), so no change is claimed | 494 to 485 ms | 4,738 to 4,725 ms | 0 to 0 |
+| Ecosystem | 7 | 92 to 92 (96, 88, 94, 90, 88, 93, 92 to 94, 91, 92, 90, 91, 91, 94) | 1,189 to 1,200 ms | 312 to 295 ms | 4,255 to 4,313 ms | 0 to 0 |
+
+Accessibility 100, Best practices 100 and SEO 92 in every run on every page, before and after.
+
+### Desktop (home, 3 runs each)
+
+| Performance | LCP | TBT | Speed Index | CLS |
+| --- | --- | --- | --- | --- |
+| 99 to 99 (99, 99, 99 to 99, 99, 98) | 379 to 338 ms (all three after runs are below all three before runs) | 44 to 44 ms | 1,297 to 1,272 ms | 0.001 to 0.000 |
+
+### What the measurements prove, and what they do not
+
+- **Proven:** the tool page improved on mobile (every after run scored higher than every before run; TBT about 30% lower). This matches a controlled same-browser test at 4x CPU slowdown, where `content-visibility` cut layout and style time from 2.9 s to 1.8 s on the tool page and from 2.0 s to 1.2 s on the pricing page.
+- **Not proven:** any change on the home page, the Ecosystem page or desktop. The differences are inside run-to-run variation. Nothing was claimed there.
+- **Not run:** Lighthouse on the pricing page or the other routes after the change.
+
+### Effect of starting the 3D robot (home, mobile, 3 runs each)
+
+| | Performance | TBT | Speed Index |
+| --- | --- | --- | --- |
+| 3D worker allowed | 83 (83, 86, 71) | 543 ms | 4,845 ms |
+| 3D worker blocked (`--blocked-url-patterns=*turbopack-worker*`) | 84 (84, 87, 83) | 528 ms | 4,667 ms |
+
+The robot starts about 2.7 s after load. In the trace it shows as one long task of about 280 ms at roughly 3.8 s plus a 120 ms task; Lighthouse's score is not measurably different with it (the 71 is one outlier run). So 3D initialisation is not the cause of the mobile score.
+
+### Where the mobile time actually goes (Lighthouse trace, 4x CPU)
+
+| Page | Main-thread work | Largest scripts |
+| --- | --- | --- |
+| Home | Other 1,377 ms; Style and layout 1,247 ms; Script evaluation 1,078 ms; Rendering 253 ms; Parse and compile 146 ms | the shared React and Next chunk (`3wbm-...js`, 224 KB, about 830 ms of scripting) |
+| Tool page | Script evaluation 1,341 ms; Style and layout 777 ms; Other 697 ms | the same chunk (about 650 ms), the app chunk (274 ms) and the router runtime (332 ms) |
+
+The longest tasks are 340 to 350 ms at about 1.0 s, most likely hydration (inferred from timing, not from a profile of the tasks). Unused JavaScript is only 25 KB, nothing is render-blocking, CLS is 0 and each page ships about 670 to 700 KB of script (about 200 KB gzipped), identical before and after. The three.js code (a 714 KB chunk, plus the worker) is not referenced by the home page HTML and loads only on demand. The remaining cost is the React and Next runtime plus hydrating a page with 800 to 1,250 elements. `@react-three/drei` is used only for `OrbitControls` on the Ecosystem page; replacing it with three's own controls could trim that page's on-demand chunk but is not needed for the scores and was not done.
+
+### SEO score of 92
+
+Lighthouse reports one failure, `robots.txt`, because the site lives under `/aitoolpicks/` and a `robots.txt` is only read at the host root. It needs a custom domain; it is not a code issue and appears on the live site too.
+
+## Earlier runs, kept for history (2026-10-30, after the real-3D redesign; 3D starts on first interaction or after 10 s)
 
 | Page | Form factor | Performance | Accessibility | Best practices | SEO | LCP | TBT |
 | --- | --- | --- | --- | --- | --- | --- | --- |

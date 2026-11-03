@@ -13,6 +13,7 @@ import { LatestBlog, LatestNews } from "@/components/home/Latest";
 import { AddedTimeline, CategoryRail, FeaturedBento, Head, LogoRibbon } from "@/components/home/Sections";
 import { FinalCta, TrendingTools } from "@/components/home/Discover";
 import Reveal from "@/components/Reveal";
+import { STATS } from "@/lib/stats";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
 const DESC = fitDescription(SITE.description);
@@ -52,11 +53,11 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="relative isolate z-20">
-        <HeroVisual webgl={false} />
+        <HeroVisual />
         {/* On a phone the order is headline, robot, then search, so the robot is on the first screen; on desktop the text sits left and the robot right. */}
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 content-center px-5 pb-12 pt-8 md:pt-14 lg:min-h-[min(72vh,640px)] lg:grid-cols-[1.22fr_1fr] lg:gap-x-6 lg:pb-14">
           <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
-            <span className="eyebrow max-sm:!px-3 max-sm:!text-[0.68rem] max-sm:!tracking-[0.1em]">The AI tool magazine and price directory</span>
+            <span className="eyebrow max-sm:!px-3 max-sm:!text-[0.72rem] max-sm:!tracking-[0.1em]">The AI tool magazine and price directory</span>
             <h1 className="hero-title mt-4 text-[clamp(2.05rem,4.1vw,3.9rem)] font-extrabold leading-[1] tracking-[-0.035em] text-white md:mt-6">
               <Word i={0}>Discover</Word>
               <Word i={1}>the</Word>
@@ -71,7 +72,7 @@ export default function Home() {
                 <Word i={6}>Place</Word>
               </span>
             </h1>
-            <p className="mt-3 max-w-xl text-base text-soft md:mt-6 md:text-xl">{TOOLS.length} tools, with every plan and price read from the official page.</p>
+            <p className="mt-3 max-w-xl text-base text-soft md:mt-6 md:text-xl">{STATS.tools} tools, with every plan and price read from the official page.</p>
           </div>
           <div className="max-lg:order-last lg:col-start-1 lg:row-start-2 lg:self-start">
             <div className="mt-1 max-w-2xl">

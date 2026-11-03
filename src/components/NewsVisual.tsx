@@ -47,7 +47,7 @@ export default function NewsVisual({ n, className = "", priority = false, sizes 
           decoding="async"
           className="h-full w-full object-cover"
         />
-        {!small && <span className="absolute bottom-2 right-2 rounded bg-black/70 px-1.5 py-0.5 text-[0.65rem] font-medium text-white/90 backdrop-blur-sm">Image: {img.credit}</span>}
+        {!small && <span className="absolute bottom-2 right-2 rounded bg-black/70 px-1.5 py-0.5 text-[0.72rem] font-medium text-white/90 backdrop-blur-sm">Image: {img.credit}</span>}
       </div>
     );
   }
@@ -77,7 +77,7 @@ export default function NewsVisual({ n, className = "", priority = false, sizes 
           </svg>
         )}
       </div>
-      {!small && <span className="absolute bottom-2 left-3 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white/80">{n.kind}</span>}
+      {!small && <span className="absolute bottom-2 left-3 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/80">{n.kind}</span>}
     </div>
   );
 }

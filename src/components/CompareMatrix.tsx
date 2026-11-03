@@ -34,7 +34,7 @@ function Row({ label, cells, values }: { label: string; cells: React.ReactNode[]
     <tr className={differs ? "cmp-diff" : undefined}>
       <th scope="row">
         {label}
-        {differs && <span className="mt-1 block text-[0.68rem] font-bold uppercase tracking-[0.1em] text-amber">Differs</span>}
+        {differs && <span className="mt-1 block text-[0.72rem] font-bold uppercase tracking-[0.1em] text-amber">Differs</span>}
       </th>
       {cells.map((c, i) => (
         <td key={i}>{c}</td>

@@ -11,6 +11,9 @@ import AffLink from "@/components/AffLink";
 import PriceTag from "@/components/PriceTag";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/Reveal";
+import ReviewMethod, { MethodBadge } from "@/components/ReviewMethod";
+import { reviewerOf } from "@/lib/review-trust";
+import { formatChecked } from "@/lib/dates";
 import { getCategory } from "@/data/tools";
 
 export const dynamicParams = false;
@@ -24,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const r = getReview(slug);
   if (!r) return {};
-  const m = pageMeta({ title: r.title, description: r.summary, path: `/reviews/${slug}/`, type: "article", publishedTime: SITE.updated });
+  const m = pageMeta({ title: r.title, description: r.summary, path: `/reviews/${slug}/`, type: "article" });
   return m;
 }
 
@@ -57,7 +60,7 @@ export default async function ReviewPage({ params }: Props) {
   return (
     <>
       <PageHeader
-        eyebrow={`${getCategory(tool.category)?.label ?? tool.category} · Overview`}
+        eyebrow={`${getCategory(tool.category)?.label ?? tool.category} · ${r.method === "hands-on" ? "Hands-on review" : "Overview"}`}
         title={r.title}
         lead={r.summary}
         crumbs={[
@@ -67,42 +70,21 @@ export default async function ReviewPage({ params }: Props) {
       >
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <AffLink id={tool.id} className="btn-primary" />
-          <span className="text-sm text-muted">Updated {SITE.updated}</span>
+          <MethodBadge method={r.method} />
+          <span className="text-sm text-muted">By {reviewerOf(r)} · facts last checked {tool.verified ? formatChecked(tool.verified) : "not recorded"}</span>
         </div>
       </PageHeader>
 
       <div className="mx-auto max-w-5xl px-5">
-        <div className="mb-4 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm" role="note">
-          <span className="rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.1em] text-cyan">Documentation-based</span>
-          <span className="text-muted">
-            Written from the vendor&rsquo;s official pages and our catalog record. No one tested this product for this page, and it has no score. A hands-on review would say who tested it and when.
-          </span>
-        </div>
         <p className="glass rounded-2xl border-l-4 border-l-amber px-5 py-3 text-sm text-muted">
-          This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. This is an editorial
-          overview, not lab testing.{" "}
+          This page contains affiliate links. We may earn a commission if you sign up, at no extra cost to you. {r.method === "hands-on" ? "This review is based on hands-on testing, described below." : "This is an editorial overview, not lab testing."}{" "}
           <Link href="/affiliate-disclosure/" className="text-soft underline">
             Disclosure
           </Link>
         </p>
 
         <Reveal as="section" className="mt-8">
-          <div className="glass rounded-[22px] p-6">
-            <h2 className="text-lg font-bold text-white">How this overview was prepared</h2>
-            <p className="mt-2 text-soft">
-              This is a documentation-based overview. We read the vendor&rsquo;s official pages and compare them with other public sources. We
-              have not run lab benchmarks, and statements about quality or speed are not test results. Prices come from the{" "}
-              <Link href={`/tools/${tool.id}/`} className="underline">
-                {tool.name} tool page
-              </Link>
-              , which lists each source and the date it was checked
-              {tool.verified ? ` (record verified ${tool.verified})` : ""}. See the{" "}
-              <Link href="/methodology/" className="underline">
-                methodology
-              </Link>
-              .
-            </p>
-          </div>
+          <ReviewMethod r={r} tool={tool} />
         </Reveal>
 
         <Reveal as="section" className="mt-10">
@@ -179,11 +161,11 @@ export default async function ReviewPage({ params }: Props) {
           "@type": "Article",
           headline: r.title,
           description: r.summary,
-          datePublished: SITE.updated,
-          dateModified: SITE.updated,
+          // The date the facts were last checked against the vendor's pages. No publication date is claimed because none is recorded.
+          dateModified: tool.verified || undefined,
           image: absUrl("/brand/og.png"),
           mainEntityOfPage: absUrl(`/reviews/${slug}/`),
-          author: { "@type": "Organization", name: SITE.name },
+          author: r.method === "hands-on" && r.testing ? { "@type": "Person", name: r.testing.testedBy } : { "@type": "Organization", name: SITE.name },
           publisher: { "@type": "Organization", name: SITE.name },
           about: { "@type": "SoftwareApplication", name: tool.name, url: tool.officialUrl },
         }}

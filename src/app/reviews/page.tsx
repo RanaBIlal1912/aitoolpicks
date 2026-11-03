@@ -2,6 +2,7 @@ import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import { REVIEWS } from "@/data/reviews";
 import { getCategory, getTool } from "@/data/tools";
+import { METHOD_LABEL } from "@/lib/review-trust";
 import ToolLogo from "@/components/ToolLogo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
@@ -24,8 +25,8 @@ export default function ReviewsPage() {
       />
       <div className="mx-auto max-w-7xl px-5">
         <p className="glass rounded-2xl border-l-4 border-l-cyan px-5 py-3 text-sm text-muted">
-          <strong className="text-soft">How we review:</strong> these are editorial overviews based on each product&rsquo;s own public
-          documentation and widely known behaviour. We have not run lab tests, and we never present an overview as hands-on testing.
+          <strong className="text-soft">How we review:</strong> {REVIEWS.filter((r) => r.method === "documentation").length} of {REVIEWS.length} pages are editorial research, written from each product&rsquo;s own public
+          documentation. {REVIEWS.some((r) => r.method === "hands-on") ? `${REVIEWS.filter((r) => r.method === "hands-on").length} are hands-on tests, each with the tester, dates and evidence on its page.` : "None is a hands-on test yet."} We only use the hands-on label when a named person tested the product and the page shows who, when and how.
         </p>
         {(() => {
           const [first, ...others] = REVIEWS;
@@ -44,7 +45,7 @@ export default function ReviewsPage() {
                     </div>
                   </div>
                   <div className="p-8 md:p-12">
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan">Featured overview · {getCategory(ft.category)?.short}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan">{first.method === "hands-on" ? "Featured hands-on review" : "Featured overview"} · {getCategory(ft.category)?.short} · {METHOD_LABEL[first.method]}</p>
                     <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">{first.title}</h2>
                     <p className="mt-4 text-soft">{first.summary}</p>
                     <span className="mt-6 inline-block text-sm font-bold text-soft group-hover:text-white">Read the overview →</span>
@@ -60,7 +61,7 @@ export default function ReviewsPage() {
                         <span aria-hidden="true" data-n={String(i + 2).padStart(2, "0")} className="idx font-display text-3xl font-extrabold text-white/15 md:w-14" />
                         <ToolLogo id={t.id} name={t.name} hue={t.hue} size={48} />
                         <span className="min-w-0">
-                          <span className="block text-xs font-bold uppercase tracking-[0.14em] text-cyan">{getCategory(t.category)?.short} · Documentation-based</span>
+                          <span className="block text-xs font-bold uppercase tracking-[0.14em] text-cyan">{getCategory(t.category)?.short} · {METHOD_LABEL[r.method]}</span>
                           <span className="mt-1 block font-serif text-xl font-bold leading-snug text-white md:text-2xl">{r.title}</span>
                           <span className="mt-1 line-clamp-2 block text-sm text-muted">{r.summary}</span>
                         </span>

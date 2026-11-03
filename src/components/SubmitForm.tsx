@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { CATEGORIES, TOOLS } from "@/data/tools";
 import { SITE } from "@/lib/site";
 
@@ -40,6 +40,30 @@ export function validate(v: Values): Partial<Record<keyof Values, string>> {
   if (!hostOf(v.pricingUrl) || !/^https:\/\//i.test(v.pricingUrl.trim())) e.pricingUrl = "Enter the official pricing page as a full https:// address.";
   if (v.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email.trim())) e.email = "That email address does not look right.";
   return e;
+}
+
+/** Adds https:// when someone types a bare address such as acme.com/pricing. Anything else is left as typed, so validation can explain it. */
+export function normalizeUrl(raw: string): string {
+  const t = raw.trim();
+  if (!t || /^[a-z][a-z0-9+.-]*:/i.test(t) || /\s/.test(t)) return t;
+  return /^[^/]+\.[^/.]{2,}(\/|$)/.test(t) ? `https://${t}` : t;
+}
+
+/** The submission as plain text, for pasting anywhere (an email, a chat, a GitHub comment). */
+export function submissionText(v: Values): string {
+  const cat = CATEGORIES.find((c) => c.slug === v.category)?.label ?? v.category;
+  const line = (k: string, val: string) => `${k}: ${val.trim() || "-"}`;
+  return [
+    `Tool submission: ${v.name.trim()}`,
+    line("Official website", v.website),
+    line("Official pricing page", v.pricingUrl),
+    line("Company or maker", v.company),
+    line("Category", cat),
+    line("Description", v.description),
+    line("Main features", v.features),
+    line("Anything else", v.extra),
+    line("Submitted by", v.submitter),
+  ].join("\n");
 }
 
 /** An existing catalog tool with the same website host or the same name, if any. */
@@ -97,6 +121,8 @@ export default function SubmitForm() {
   const [errors, setErrors] = useState<Partial<Record<keyof Values, string>>>({});
   const [trap, setTrap] = useState("");
   const [opened, setOpened] = useState<string | null>(null);
+  const [copied, setCopied] = useState<"yes" | "no" | null>(null);
+  const summary = useRef<HTMLDivElement>(null);
   const dup = findDuplicate(v);
   const set = (k: keyof Values) => (e: { target: { value: string } }) => setV((x) => ({ ...x, [k]: e.target.value }));
 
@@ -106,15 +132,29 @@ export default function SubmitForm() {
     const found = validate(v);
     setErrors(found);
     if (Object.keys(found).length) {
-      const first = document.querySelector<HTMLElement>(`#sub-${Object.keys(found)[0]}`);
-      first?.focus();
+      // Move focus to the list of problems; each entry links to its field.
+      setTimeout(() => summary.current?.focus(), 0);
       return;
     }
     if (dup) return;
-    const url = issueUrl(v);
+    const clean = { ...v, website: normalizeUrl(v.website), pricingUrl: normalizeUrl(v.pricingUrl) };
+    const url = issueUrl(clean);
     setOpened(url);
     window.open(url, "_blank", "noopener,noreferrer");
   }
+
+  const fix = (k: "website" | "pricingUrl") => () => setV((x) => (x[k] === normalizeUrl(x[k]) ? x : { ...x, [k]: normalizeUrl(x[k]) }));
+  const sameSite = hostOf(v.website) && hostOf(v.pricingUrl) && hostOf(v.website) === hostOf(v.pricingUrl);
+  const otherHost = hostOf(v.website) && hostOf(v.pricingUrl) && !sameSite;
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(submissionText({ ...v, website: normalizeUrl(v.website), pricingUrl: normalizeUrl(v.pricingUrl) }));
+      setCopied("yes");
+    } catch {
+      setCopied("no");
+    }
+  }
+  const fieldLabel: Record<string, string> = { name: "Tool name", company: "Company or maker", website: "Official website", pricingUrl: "Official pricing page", description: "Short description", features: "Main features", email: "Contact email" };
 
   // Only some fields have a hint line; pointing aria-describedby at a hint that is not on the page is invalid.
   const HINTED: (keyof Values)[] = ["website", "pricingUrl", "description", "features", "email"];
@@ -125,7 +165,22 @@ export default function SubmitForm() {
       <h2 id="submit-title" className="text-xl font-bold text-white">
         Tool details
       </h2>
-      <p className="mt-1 text-sm text-muted">Fields marked * are required.</p>
+      <p className="mt-1 text-sm text-muted">Fields marked * are required. You can type a bare address such as acme.com and we add https:// for you.</p>
+      {Object.keys(errors).length > 0 && (
+        <div ref={summary} tabIndex={-1} role="alert" className="mt-5 rounded-xl border border-amber/40 bg-amber/10 px-4 py-3 text-sm text-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-amber">
+          <p className="font-bold">Please fix {Object.keys(errors).length === 1 ? "this" : `these ${Object.keys(errors).length}`} before continuing:</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5">
+            {(Object.keys(errors) as (keyof Values)[]).map((k) => (
+              <li key={k}>
+                <a href={`#sub-${k}`} className="underline" onClick={(e) => { e.preventDefault(); document.getElementById(`sub-${k}`)?.focus(); }}>
+                  {fieldLabel[k] ?? k}
+                </a>
+                : {errors[k]}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="mt-6 grid gap-5 md:grid-cols-2">
         <Field id="sub-name" label="Tool name" error={errors.name}>
           <input id="sub-name" className={input} value={v.name} onChange={set("name")} {...err("name")} />
@@ -134,10 +189,10 @@ export default function SubmitForm() {
           <input id="sub-company" className={input} value={v.company} onChange={set("company")} {...err("company")} />
         </Field>
         <Field id="sub-website" label="Official website" hint="https://…" error={errors.website}>
-          <input id="sub-website" type="url" inputMode="url" className={input} value={v.website} onChange={set("website")} placeholder="https://" {...err("website")} />
+          <input id="sub-website" type="url" inputMode="url" className={input} value={v.website} onChange={set("website")} onBlur={fix("website")} placeholder="https://" {...err("website")} />
         </Field>
         <Field id="sub-pricingUrl" label="Official pricing page" hint="The vendor's own pricing page." error={errors.pricingUrl}>
-          <input id="sub-pricingUrl" type="url" inputMode="url" className={input} value={v.pricingUrl} onChange={set("pricingUrl")} placeholder="https://" {...err("pricingUrl")} />
+          <input id="sub-pricingUrl" type="url" inputMode="url" className={input} value={v.pricingUrl} onChange={set("pricingUrl")} onBlur={fix("pricingUrl")} placeholder="https://" {...err("pricingUrl")} />
         </Field>
         <Field id="sub-category" label="Category" required>
           <select id="sub-category" className="cur !w-full" value={v.category} onChange={set("category")}>
@@ -173,6 +228,12 @@ export default function SubmitForm() {
         </div>
       </div>
 
+      {otherHost && (
+        <p className="mt-5 rounded-xl border border-white/12 bg-white/[0.04] px-4 py-3 text-sm text-muted">
+          The pricing page is on a different site ({hostOf(v.pricingUrl)}) from the website ({hostOf(v.website)}). That is fine if it is the vendor&rsquo;s own pricing page; we will check.
+        </p>
+      )}
+
       {dup && (
         <p role="alert" className="mt-5 rounded-xl border border-amber/30 bg-amber/10 px-4 py-3 text-sm text-amber">
           {dup.name} is already in the directory.{" "}
@@ -191,18 +252,37 @@ export default function SubmitForm() {
         <button type="submit" className="btn-primary" disabled={!!dup}>
           Open pre-filled GitHub issue
         </button>
-        <p className="text-sm text-muted">Needs a free GitHub account. Nothing is sent until you press &ldquo;Submit new issue&rdquo; on GitHub.</p>
+        <button type="button" className="btn-ghost" onClick={copy}>
+          Copy details as text
+        </button>
+        <p className="w-full text-sm text-muted">
+          Needs a free GitHub account. Nothing is sent until you press &ldquo;Submit new issue&rdquo; on GitHub. &ldquo;Copy details&rdquo; copies what you typed so you can keep it or paste it elsewhere.
+        </p>
       </div>
+      {copied && (
+        <p role="status" className="mt-3 text-sm text-soft">
+          {copied === "yes" ? "Copied. Nothing has been sent." : "Your browser blocked copying. Select the text in the fields and copy it by hand."}
+        </p>
+      )}
 
       {opened && (
-        <p role="status" className="mt-5 rounded-xl border border-cyan/25 bg-cyan/5 px-4 py-3 text-sm text-[#c3e3ea]">
-          A GitHub tab should have opened with your details filled in. Your submission is <strong>not</strong> sent yet: press &ldquo;Submit new issue&rdquo; there. If no tab
-          opened,{" "}
-          <a href={opened} target="_blank" rel="noopener noreferrer" className="underline">
-            open the pre-filled issue
-          </a>
-          .
-        </p>
+        <div role="status" className="mt-5 rounded-xl border border-cyan/25 bg-cyan/5 px-4 py-4 text-sm text-[#c3e3ea]">
+          <p className="font-bold text-white">One more step: your suggestion has not been sent yet.</p>
+          <ol className="mt-2 list-decimal space-y-1 pl-5">
+            <li>
+              A GitHub tab should have opened with your details filled in. If it did not,{" "}
+              <a href={opened} target="_blank" rel="noopener noreferrer" className="underline">
+                open the pre-filled issue
+              </a>
+              .
+            </li>
+            <li>Sign in to GitHub (a free account is enough), check the text, and press &ldquo;Submit new issue&rdquo;.</li>
+            <li>We read it, check the official pages, and reply on that issue. Replies can take a while; there is no promise of a listing.</li>
+          </ol>
+          <button type="button" className="btn-ghost btn-sm mt-3" onClick={() => { setV(EMPTY); setOpened(null); setErrors({}); setCopied(null); }}>
+            Start another suggestion
+          </button>
+        </div>
       )}
     </form>
   );

@@ -6,6 +6,7 @@ import { CATEGORIES, PRICING_MODEL_LABEL, TOOLS } from "@/data/tools";
 import { formatChecked } from "@/lib/dates";
 import ToolLogo from "./ToolLogo";
 import PriceText from "./PriceText";
+import { STATS } from "@/lib/stats";
 
 const STATUS = { verified: "Verified", partial: "Partly verified", unverified: "Not verified" } as const;
 const STATUS_CLS = { verified: "text-emerald-300", partial: "text-amber", unverified: "text-muted" } as const;
@@ -77,7 +78,7 @@ export default function PricingHub() {
       </div>
 
       <p className="mt-5 text-sm text-muted" role="status" aria-live="polite">
-        {rows.length} of {TOOLS.length} tools
+        {rows.length} of {STATS.tools} tools
       </p>
 
       <div className="table-wrap glass mt-3">

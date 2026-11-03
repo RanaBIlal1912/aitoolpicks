@@ -15,6 +15,7 @@ import Photo from "../Photo";
 import type { PhotoId } from "@/data/photos";
 import ToolLogo from "../ToolLogo";
 import PriceText from "../PriceText";
+import { STATS } from "@/lib/stats";
 
 /** Section heading with a large index number, used instead of one repeated eyebrow + title pattern. */
 export function Head({ n, eyebrow, title, lead, href, cta, tone = "dark" }: { n: string; eyebrow: string; title: ReactNode; lead?: string; href?: string; cta?: string; tone?: "dark" | "light" }) {
@@ -149,7 +150,7 @@ export function PhotoBand({ checked, total }: { checked: number; total: number }
           See the verification report
         </Link>
       </div>
-      <span className="absolute bottom-2 right-3 rounded bg-black/70 px-1.5 py-0.5 text-[0.65rem] text-white/90 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
+      <span className="absolute bottom-2 right-3 rounded bg-black/70 px-1.5 py-0.5 text-[0.72rem] text-white/90 backdrop-blur-sm">Photo: İsmail Enes Ayhan / Unsplash</span>
     </section>
   );
 }
@@ -334,9 +335,9 @@ export function VersusTiles() {
 export function EcosystemBand() {
   const stats: [number, string][] = [
     [COMPANIES.length, "companies"],
-    [TOOLS.length, "products"],
+    [STATS.tools, "products"],
     [MODELS.length, "verified models"],
-    [CATEGORIES.length, "categories"],
+    [STATS.categories, "categories"],
   ];
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-white/10 p-8 md:p-14" style={{ background: "radial-gradient(700px 400px at 90% 0%, rgba(117,75,255,.35), transparent 70%), radial-gradient(600px 400px at 0% 100%, rgba(37,198,232,.22), transparent 70%), #0d1024" }}>
