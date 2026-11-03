@@ -75,7 +75,7 @@ d("health checks against the test database", () => {
     const real = readJournalWhen();
     const pending = await checkMigrations(db.sql, [...real, real.at(-1)! + 1000]);
     expect(pending.ok).toBe(false);
-    expect(pending.detail).toMatch(/1 pending of 3/);
+    expect(pending.detail).toBe(`1 pending of ${real.length + 1}`);
     const newer = await checkMigrations(db.sql, real.slice(0, 1));
     expect(newer.ok).toBe(false);
     expect(newer.detail).toMatch(/not in this repository/);

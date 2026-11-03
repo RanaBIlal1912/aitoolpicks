@@ -1,0 +1,91 @@
+{
+  "host": "127.0.0.1",
+  "commit": "564c8b7",
+  "ok": true,
+  "checkedAt": "2026-11-03T13:00:27.673Z",
+  "counts": {
+    "companies": {
+      "source": 65,
+      "database": 65
+    },
+    "categories": {
+      "source": 15,
+      "database": 15
+    },
+    "subcategories": {
+      "source": 36,
+      "database": 36
+    },
+    "tools": {
+      "source": 69,
+      "database": 69
+    },
+    "toolCategoryLinks": {
+      "source": 113,
+      "database": 113
+    },
+    "alternatives": {
+      "source": 172,
+      "database": 172
+    },
+    "pricingPlans": {
+      "source": 288,
+      "database": 288
+    },
+    "toolSources": {
+      "source": 139,
+      "database": 139
+    },
+    "affiliatePrograms": {
+      "source": 15,
+      "database": 15
+    }
+  },
+  "checks": [
+    {
+      "name": "1. counts: database equals the files",
+      "ok": true,
+      "detail": "companies 65, categories 15, subcategories 36, tools 69, toolCategoryLinks 113, alternatives 172, pricingPlans 288, toolSources 139, affiliatePrograms 15"
+    },
+    {
+      "name": "1b. counts: files equal the Phase 1 audit",
+      "ok": true,
+      "detail": "no change since the audit"
+    },
+    {
+      "name": "2. round trip: every tool exports to its original JSON",
+      "ok": true,
+      "detail": "69 tools identical (reviews link excluded until reviews are imported)"
+    },
+    {
+      "name": "2b. round trip: categories and subcategories",
+      "ok": true,
+      "detail": "15 categories identical, same order"
+    },
+    {
+      "name": "2c. round trip: affiliate programmes",
+      "ok": true,
+      "detail": "15 identical"
+    },
+    {
+      "name": "3. relationships: every tool has a company, a primary category in its category list, plans and sources",
+      "ok": true,
+      "detail": "primary category missing 0, company missing 0, no plans 0, no sources 0 (foreign keys are enforced by the database itself)"
+    },
+    {
+      "name": "3b. every imported tool is published with a date",
+      "ok": true,
+      "detail": "0 not published"
+    },
+    {
+      "name": "4. slugs: tool slugs equal the tool ids in the files",
+      "ok": true,
+      "detail": "69 slugs identical"
+    },
+    {
+      "name": "6. affiliate: statuses equal the files, no link exists, nothing is approved unless the files say so",
+      "ok": true,
+      "detail": "links 0, approved 0 (files: 0)"
+    }
+  ]
+}

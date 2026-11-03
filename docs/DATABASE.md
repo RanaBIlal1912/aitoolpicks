@@ -54,3 +54,27 @@ The migration creates three login-less roles if they do not exist: `anon` and `a
 ## Not in this phase
 
 Data import (phase 4), login and roles seeding (phase 5), the admin dashboard (phase 6), analytics collection (phase 7), health and deploy routes, and anything on Vercel (phase 8). The `/api/health` routes cannot exist yet because Route Handlers that read the request are not supported by a static export.
+
+## Data import (phase 4): catalogue
+
+The catalogue in `content/` (tools, categories, affiliate programmes) can be imported into the database. The files are only read; the website still builds from them.
+
+| Command | What it does |
+| --- | --- |
+| `npm run migrate:backup` | Copies `content/` and `src/data/*.ts` to `backups/<timestamp>/` (git-ignored) with a SHA-256 manifest, and re-hashes each copy. Run before every import. |
+| `npm run migrate:catalogue -- --dry-run` | Runs the whole import inside a transaction and rolls it back; prints what would be inserted, updated or left alone. |
+| `npm run migrate:catalogue` | Imports, then verifies. A database that is not on this computer needs `--confirm=<host>`. |
+| `npm run migrate:catalogue -- --verify --report` | Verifies only and writes `reports/migration-verification.json` and `.md`. |
+
+How it behaves:
+
+- **Repeatable.** Rows are matched by slug. A tool is rewritten only if its exported form differs from its file, so a second run changes nothing (`unchanged` counts).
+- **Atomic.** One transaction; any error leaves the database as it was.
+- **Non-destructive.** Nothing is deleted. Rows that are in the database but not in the files are listed as "kept".
+- **Strict.** The files are validated with Zod first; an unknown field or a broken cross reference stops the import before the database is touched.
+- **Verified by round trip.** The database is exported back to the original JSON shape and compared with the files field by field: all 69 tools, 15 categories with 36 subcategories, 15 affiliate programmes. Also checked: counts equal the files (and the Phase 1 audit), relationships, tool slugs equal the file ids, no affiliate link exists and nothing is approved.
+- **Affiliate safety.** The importer never writes `affiliate_links`. A programme keeps the status in `affiliate.json`.
+
+Imported tools are `published`, dated by their `added` field. Companies are the `vendor` of each tool. Not imported yet (later steps): reviews (the `review` field on 5 tools is left out of the comparison), articles, comparisons, news, roundups, models, media, redirects.
+
+The migration `0002` adds `tools.catalog_verified_on` (the `verified` date shown in listings differs from `verification.checked` for 6 tools), `tool_sources.position` (one tool cites the same address twice) and `tool_categories.position` (21 tools list categories in a different order than the categories file).

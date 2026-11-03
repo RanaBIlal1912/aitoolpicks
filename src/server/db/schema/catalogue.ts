@@ -103,6 +103,8 @@ export const tools = pgTable(
     // Verification summary: the latest human verification. History is in verification_checks.
     verificationStatus: verificationStatus("verification_status").notNull().default("partial"),
     verifiedAt: date("verified_at"),
+    /** The date shown as "verified" in listings (field `verified` in the tool JSON); equals verified_at for most tools but not all. */
+    catalogVerifiedOn: date("catalog_verified_on"),
     officialUrl: text("official_url"),
     pricingUrl: text("pricing_url"),
     verificationMethod: text("verification_method"),
@@ -138,6 +140,8 @@ export const toolCategories = pgTable(
   {
     toolId: fkCol("tool_id").notNull().references(() => tools.id, { onDelete: "cascade" }),
     categoryId: fkCol("category_id").notNull().references(() => categories.id, { onDelete: "restrict" }),
+    /** Position in the tool's own list (field `categories` in the JSON); the primary category is listed too. */
+    position: integer("position").notNull().default(1),
   },
   (t) => [primaryKey({ columns: [t.toolId, t.categoryId] }), index("tool_categories_category_idx").on(t.categoryId)],
 );
@@ -191,12 +195,13 @@ export const toolSources = pgTable(
   {
     id: pk(),
     toolId: fkCol("tool_id").notNull().references(() => tools.id, { onDelete: "cascade" }),
+    position: integer("position").notNull().default(1),
     label: text("label").notNull(),
     url: text("url").notNull(),
     type: sourceType("type").notNull().default("other"),
     checkedAt: date("checked_at"),
   },
-  (t) => [unique("tool_sources_tool_url_key").on(t.toolId, t.url), index("tool_sources_tool_idx").on(t.toolId), check("tool_sources_url_https", https(t.url))],
+  (t) => [unique("tool_sources_tool_position_key").on(t.toolId, t.position), index("tool_sources_tool_idx").on(t.toolId), check("tool_sources_url_https", https(t.url))],
 );
 
 /** History of verification. Automated rows (automated = true) never change the status shown on the tool; only a human does. */

@@ -17,5 +17,5 @@ export default defineConfig([
       "react/no-unescaped-entities": "warn",
     },
   },
-  globalIgnores([".next/**", "out/**", "node_modules/**", "drizzle/**", "src/data/generated/**", "next-env.d.ts"]),
+  globalIgnores([".next/**", "out/**", "node_modules/**", "drizzle/**", "backups/**", "reports/**", "src/data/generated/**", "next-env.d.ts"]),
 ]);
