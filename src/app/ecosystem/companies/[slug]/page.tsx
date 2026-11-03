@@ -7,6 +7,7 @@ import { pageMeta } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import ToolLogo from "@/components/ToolLogo";
 import NewsCard from "@/components/NewsCard";
+import { plural, statsFor } from "@/lib/stats";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -26,11 +27,9 @@ export default async function CompanyPage({ params }: Props) {
   const { slug } = await params;
   const c = getCompany(slug);
   if (!c) notFound();
-  const verified = c.tools.filter((t) => t.pricingStatus === "verified").length;
-  const free = c.tools.filter((t) => t.freePlan === true).length;
+  const { verified, withFreePlan: free } = statsFor(c.tools);
   const cats = CATEGORIES.filter((k) => c.tools.some((t) => t.category === k.slug));
-  const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? "" : "s"}`;
-  return (
+    return (
     <>
       <PageHeader
         eyebrow="Company"

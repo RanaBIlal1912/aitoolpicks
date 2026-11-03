@@ -2,6 +2,7 @@ import Link from "next/link";
 import { pageMeta } from "@/lib/meta";
 import { TOOLS } from "@/data/tools";
 import LegalPage from "@/components/LegalPage";
+import { STATS } from "@/lib/stats";
 
 export const metadata = pageMeta({
   title: "Methodology: how we verify tools, prices and news",
@@ -11,9 +12,7 @@ export const metadata = pageMeta({
 });
 
 export default function MethodologyPage() {
-  const v = TOOLS.filter((t) => t.pricingStatus === "verified").length;
-  const p = TOOLS.filter((t) => t.pricingStatus === "partial").length;
-  const u = TOOLS.filter((t) => t.pricingStatus === "unverified").length;
+  const { verified: v, partial: p, unverified: u } = STATS;
   return (
     <LegalPage
       eyebrow="Methodology"

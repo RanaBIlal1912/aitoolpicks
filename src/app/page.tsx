@@ -13,6 +13,7 @@ import { LatestBlog, LatestNews } from "@/components/home/Latest";
 import { AddedTimeline, CategoryRail, FeaturedBento, Head, LogoRibbon } from "@/components/home/Sections";
 import { FinalCta, TrendingTools } from "@/components/home/Discover";
 import Reveal from "@/components/Reveal";
+import { STATS } from "@/lib/stats";
 
 const TITLE = `${SITE.name}: find AI tools and their real prices`;
 const DESC = fitDescription(SITE.description);
@@ -71,7 +72,7 @@ export default function Home() {
                 <Word i={6}>Place</Word>
               </span>
             </h1>
-            <p className="mt-3 max-w-xl text-base text-soft md:mt-6 md:text-xl">{TOOLS.length} tools, with every plan and price read from the official page.</p>
+            <p className="mt-3 max-w-xl text-base text-soft md:mt-6 md:text-xl">{STATS.tools} tools, with every plan and price read from the official page.</p>
           </div>
           <div className="max-lg:order-last lg:col-start-1 lg:row-start-2 lg:self-start">
             <div className="mt-1 max-w-2xl">

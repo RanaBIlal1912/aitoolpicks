@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { RECORDS } from "@/lib/catalog";
+import { STATS } from "@/lib/stats";
 import { pageMeta } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import { formatChecked } from "@/lib/dates";
@@ -13,7 +14,6 @@ export const metadata = pageMeta({
 
 export default function VerificationPage() {
   const rows = [...RECORDS].sort((a, b) => a.name.localeCompare(b.name));
-  const count = (s: string) => rows.filter((r) => r.verification.status === s).length;
   return (
     <>
       <PageHeader variant="lab"
@@ -24,7 +24,7 @@ export default function VerificationPage() {
       />
       <div className="mx-auto max-w-7xl px-5">
         <p className="text-soft">
-          {rows.length} tools checked: {count("verified")} verified, {count("partial")} partially verified. Prices are shown in the currency the vendor displayed, and the billing period is
+          {STATS.tools} tools checked: {STATS.verified} verified, {STATS.partial} partially verified. Prices are shown in the currency the vendor displayed, and the billing period is
           stated only when the page states it. See the{" "}
           <Link href="/methodology/" className="underline">
             methodology

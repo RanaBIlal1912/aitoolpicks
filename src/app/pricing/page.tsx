@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import PricingHub from "@/components/PricingHub";
 import { RECORDS } from "@/lib/catalog";
 import Link from "next/link";
+import { STATS } from "@/lib/stats";
 
 export const metadata = pageMeta({
   title: "AI tool pricing compared: plans, free tiers and what is verified",
@@ -13,9 +14,7 @@ export const metadata = pageMeta({
 });
 
 export default function PricingPage() {
-  const v = TOOLS.filter((t) => t.pricingStatus === "verified").length;
-  const p = TOOLS.filter((t) => t.pricingStatus === "partial").length;
-  const u = TOOLS.filter((t) => t.pricingStatus === "unverified").length;
+  const { verified: v, partial: p, unverified: u } = STATS;
   return (
     <>
       <PageHeader
@@ -26,7 +25,7 @@ export default function PricingPage() {
             What AI tools really cost, <span className="gradient-text">side by side</span>
           </>
         }
-        lead={`Prices for ${TOOLS.length} tools, read from the vendors' own pricing pages. ${v} are fully verified, ${p} are partly verified${u ? ` and ${u} could not be read` : ""}. We never fill a gap with a guess.`}
+        lead={`Prices for ${STATS.tools} tools, read from the vendors' own pricing pages. ${v} are fully verified, ${p} are partly verified${u ? ` and ${u} could not be read` : ""}. We never fill a gap with a guess.`}
         crumbs={[{ name: "Pricing", href: "/pricing/" }]}
       />
       <PricingHub />

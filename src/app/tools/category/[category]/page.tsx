@@ -11,6 +11,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { catColors } from "@/data/palette";
 import ToolCard from "@/components/ToolCard";
 import JsonLd from "@/components/JsonLd";
+import { categoryStats } from "@/lib/stats";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -36,9 +37,8 @@ export default async function CategoryPage({ params }: Props) {
   const c = getCategory(category);
   if (!c) notFound();
   const tools = toolsInCategory(c.slug);
-  const verified = tools.filter((t) => t.pricingStatus === "verified").length;
+  const { verified, withFreePlan: free } = categoryStats(c.slug);
   const [a, b] = catColors(c.slug);
-  const free = tools.filter((t) => t.freePlan === true).length;
   const roundup = ROUNDUPS.find((r) => r.category === c.slug);
   // Group by subcategory in the order the category defines; tools in a secondary category (no matching sub) go last.
   const groups = c.subs
