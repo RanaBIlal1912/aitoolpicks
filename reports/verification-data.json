@@ -1,0 +1,279 @@
+{
+  "generatedAt": "2026-11-03T15:44:24.860Z",
+  "source": "127.0.0.1",
+  "kind": "data",
+  "counts": {
+    "error": 0,
+    "warning": 0,
+    "info": 17
+  },
+  "byCheck": {
+    "news": {
+      "error": 0,
+      "warning": 0,
+      "info": 17
+    }
+  },
+  "findings": [
+    {
+      "id": "news:news:agent-skills-donated-to-foundation:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "agent-skills-donated-to-foundation",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:ai-for-science-expands:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "ai-for-science-expands",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:anthropic-ai-spend-tools:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "anthropic-ai-spend-tools",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:anthropic-files-s1:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "anthropic-files-s1",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:anthropic-gsa-partnership:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "anthropic-gsa-partnership",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:anthropic-singapore-office:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "anthropic-singapore-office",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:anthropic-usage-policy-2026:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "anthropic-usage-policy-2026",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:chrome-autofill-reads-gmail:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "chrome-autofill-reads-gmail",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:claude-drug-development-progress:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "claude-drug-development-progress",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:gemini-app-edit-files:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "gemini-app-edit-files",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:genie-4-world-model:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "genie-4-world-model",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:google-opens-gemini-and-search-to-apps:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "google-opens-gemini-and-search-to-apps",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:granola-adds-dictation:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "granola-adds-dictation",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:mistral-large-4-on-hugging-face:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "mistral-large-4-on-hugging-face",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:mistral-releases-trillion-parameter-weights:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "mistral-releases-trillion-parameter-weights",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:nvidia-open-transcription-model:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "nvidia-open-transcription-model",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    },
+    {
+      "id": "news:news:project-protostar:source_verified_at",
+      "check": "news",
+      "severity": "info",
+      "entityType": "news",
+      "entityId": "project-protostar",
+      "message": "No person has recorded checking this source.",
+      "field": "source_verified_at"
+    }
+  ],
+  "humanReviewQueue": [
+    {
+      "entityType": "tool",
+      "entityId": "canva",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "chatgpt",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "cursor",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "descript",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "fathom",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "fireflies",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "gemini",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "grammarly",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "groq",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "hex",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "hostinger",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "julius",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "leonardo",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "make",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "namecheap",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "notebooklm",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "openrouter",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "quillbot",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "tidio",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "together",
+      "reason": "Pricing is partial."
+    },
+    {
+      "entityType": "tool",
+      "entityId": "wisprflow",
+      "reason": "Pricing is partial."
+    }
+  ]
+}
